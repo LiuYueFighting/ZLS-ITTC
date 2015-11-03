@@ -1,83 +1,6 @@
 //JQuery的入口
 $(function() {
 	listPoolEvaluate();
-	// 给文本框加上验证器
-	$("#PoolID").validatebox({
-		required : true,
-		missingMessage : '不能为空'
-	});
-	// 日期加上日期控件
-	$("#t").datebox({
-		required : true,
-		missingMessage : '不能为空'
-	});
-	$("#OpenDegree").numberbox({  //开启度最小为0
-	 	min:0,
-	 	required : true,
-		missingMessage : '不能为空'
-	});
-	$("#RotationSpeed").numberbox({	
-	 	min:0,
-	 	required : true,
-		missingMessage : '不能为空'
-	});
-//	$("#WaterTemp").numberbox({
-//	 	min:0,
-//	 	required : true,
-//		missingMessage : '不能为空'
-//	});
-	$("#FeCl3").numberbox({
-	 	min:0,
-	 	required : true,
-		missingMessage : '不能为空'
-	});
-	
-	$("#PAC").numberbox({
-	 	min:0,
-	 	required : true,
-		missingMessage : '不能为空'
-	});
-	
-	$("#SV").numberbox({
-	 	min:0,
-	 	required : true,
-		missingMessage : '不能为空'
-	});
-	$("#SmallMudFre").numberbox({
-	 	min:0,
-	 	required : true,
-		missingMessage : '不能为空'
-	});
-	$("#BigMudFre").numberbox({
-	 	min:0,
-	 	required : true,
-		missingMessage : '不能为空'
-	});
-	$("#NTU").numberbox({
-	 	min:0,
-	 	required : true,
-		missingMessage : '不能为空'
-	});
-	$("#AlgaeContent").numberbox({
-	 	min:0,
-	 	required : true,
-		missingMessage : '不能为空'
-	});
-	
-	$("#OutNTU").numberbox({
-	 	min:0,
-	 	required : true,
-		missingMessage : '不能为空'
-	});
-//	$("#state").combobox({
-//	 	required : true,
-//		missingMessage : '不能为空'
-//	});
-	$("#CL").numberbox({
-	 	min:0,
-	 	required : true,
-		missingMessage : '不能为空'
-	});
 });
 var tburl='searchPoolEvaluate.action'; 
 
@@ -124,7 +47,10 @@ function listPoolEvaluate() {
 			align : 'center',
 			width : 125,
 		//可以排序，但服务器也完成相应的代码，要加入sort和order属性
-			sortable : true
+			sortable : true,
+			formatter:function(value){
+				return formPoolID(value);
+			}
 		}, 
 		{
 			field : 'PAC',
@@ -310,9 +236,10 @@ function listPoolEvaluate() {
 function showEditForm() {
 	$("#tabEdit").dialog({
 		modal : true,// 模式窗口
-		title : '项目操作',
+		title : '添加/编辑操作',
 		iconCls : 'icon-save',
-		buttons : [ {
+		closed:false,
+	    buttons : [ {
 			text : '确认',
 			handler : function() {
 				// 进行表单字段验证，当全部字段都有效时返回true和validatebox一起使用
@@ -484,6 +411,7 @@ function showSearchForm() {
 		modal : true,// 模式窗口
 		title : '查询操作',
 		iconCls : 'icon-search',
+		closed:false,
 		buttons : [ {
 			text : '确认',
 			handler : function() {
@@ -514,45 +442,73 @@ function closeSearchForm() {
 
 
 var url = "${pageContext.request.contextPath}/listPoolEvaluate.action";
-var pidlist  = new Array();
-var poollist = new Array();
+var poolIDlist  = new Array();
+//查询下拉框显示的数据
 $.getJSON(url, function(json) {
 	//去除重复项
 	var datalist = eval(json).rows;
-
+	var tempPoolIDlist = new Array();
+	var pidlist=new Array();
 	for(var i=0;i<json.total;i++){
 		var row = datalist[i];
-		var flag =jQuery.inArray(row.poolID, pidlist);
-		if(flag<0){
-			poollist.push(row);
-			pidlist.push(row.poolID);
+		pidlist.push({poolID:row.poolID});
+		if(jQuery.inArray(row.poolID, tempPoolIDlist)<0){
+			tempPoolIDlist.push(row.poolID);
+			poolIDlist.push({poolID:row.poolID,text:formPoolID(row.poolID)});
 		}
-
-	}
-
-//	searchData.unshift('all');
-
+	}//for
+	console.log(poolIDlist)
 	$('#searchPoolID').combobox({
-
-		data : poollist,
+		data : poolIDlist.sort(keysrt('poolID',false)),
 		valueField:'poolID',
-		textField:'poolID',
+		textField:'text',
 		onLoadSuccess: function () {
-             $(this).combobox('setText', '');
-         }			
+			$(this).combobox('setText', '');
+		}			
 	});
 });
 
-//$.getJSON(url, function(json) {
-//	//去除重复项
-//	$('#searchPoolID').combobox({
-//
-//		data : json.rows,
-//		valueField:'poolID',
-//		textField:'poolID',
-//		 onLoadSuccess: function () {
-//             $(this).combobox('setText', '--请选择--');
-//         }
-//			
-//	});
-//});
+//水池编号转换
+function formPoolID(value){
+	var strs = new Array();
+	var poolID=null;
+	strs=value.split("_");//字符切割
+	for(var i=0;i<strs.length;i++)
+	{
+		switch(strs[i]){
+		case "MTG":
+			poolID="门头沟";break;
+		case "QingS":
+			poolID=poolID+"清水池";break;
+		case "QS":
+			poolID=poolID+"取水泵房";break;
+		case "JJ1":
+			poolID=poolID+"机加池";break;
+		default:
+			poolID=poolID+strs[i].replace("SC","")+"#";
+		}
+	}
+	return poolID;		
+}
+
+
+//根据对象key 对对象数组排序，使用 arr.sort(keystr('key',true)); false表示升序，ture表示降序 
+function keysrt(key,desc) {
+	return function(a,b){
+		return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
+	}
+}
+
+
+
+function export2excel(){
+	var params = $("#exportPoolEvaluate").serialize();
+	$.post("exportPoolEvaluate.action", params, function(result) {
+		if (result.operateSuccess){
+			$.messager.alert('导出', '导出成功', 'info');
+			alert("导出成功")
+		} else {
+			$.messager.alert('导出', '导出失败', 'warning');
+		}
+	});
+}

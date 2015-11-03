@@ -33,7 +33,7 @@
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-<script type="text/javascript" src="js/dataAnalysis.js"></script>
+<script type="text/javascript" src="js/dataAnalysis1.js"></script>
 <link rel="stylesheet" href="style/myStyle.css" type="text/css" />
 <style>
 body {
@@ -174,7 +174,7 @@ body {
 					<dl>
 						<dd>
 							&nbsp; &nbsp; &nbsp; &nbsp;时  &nbsp; &nbsp; &nbsp; &nbsp; 间 : &nbsp; &nbsp; <input
-								type="date" width="100px" id="t" name="dataAnalysis.t" />
+								type="text" style="width:200px" id="t" name="dataAnalysis.t" />
 						</dd>
 					</dl>
 					<dl>

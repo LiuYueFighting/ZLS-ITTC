@@ -301,54 +301,55 @@ public class PoolEvaluateAction extends ActionSupport{
 	}
 	
 	public String export2excel(){
-
-		String sql;
-//		/*查询条件拼接*/
-		if(searchT==null && searchPoolID ==null){
-			sql="from PoolEvaluate";
-		}
-		else {
-			sql="from PoolEvaluate where 1=1";
-			if (searchT!=null)
-			{
-				sql+= " and t = '"+searchT+"'";
-			}
-			if(!searchPoolID.equals(""))
-			{
-				sql+=" and PoolID like '%"+searchPoolID+"'";
-			}
-			if(searchState!=-1)
-			{
-				sql+=" and State ='"+searchState+"'";
-			}
-			if(lowNTU!=0)
-			{
-				sql+=" and NTU >='"+lowNTU+"'";
-			}
-			if(highNTU!=0)
-			{
-				sql+=" and NTU <= '"+highNTU+"'";
-			}
-			if(lowAlgaeContent!=0)
-			{
-				sql+=" and AlgaeContent >='"+lowAlgaeContent+"'";
-			}
-			if(highAlgaeContent!=0)
-			{
-				sql+=" and AlgaeContent <= '"+highAlgaeContent+"'";
-			}
-			if(lowOutNTU!=0)
-			{
-				sql+=" and OutNTU >='"+lowOutNTU+"'";
-			}
-			if(highOutNTU!=0)
-			{
-				sql+=" and OutNTU <= '"+highOutNTU+"'";
-			}
-			
-		}
-		System.out.println(sql);
-		List<PoolEvaluate> list = poolEvaluateService.findBySql(sql);
+//
+//		String sql;
+////		/*查询条件拼接*/
+//		if(searchT==null && searchPoolID ==null){
+//			sql="from PoolEvaluate";
+//		}
+//		else {
+//			sql="from PoolEvaluate where 1=1";
+//			if (searchT!=null)
+//			{
+//				sql+= " and t = '"+searchT+"'";
+//			}
+//			if(!searchPoolID.equals(""))
+//			{
+//				sql+=" and PoolID like '%"+searchPoolID+"'";
+//			}
+//			if(searchState!=-1)
+//			{
+//				sql+=" and State ='"+searchState+"'";
+//			}
+//			if(lowNTU!=0)
+//			{
+//				sql+=" and NTU >='"+lowNTU+"'";
+//			}
+//			if(highNTU!=0)
+//			{
+//				sql+=" and NTU <= '"+highNTU+"'";
+//			}
+//			if(lowAlgaeContent!=0)
+//			{
+//				sql+=" and AlgaeContent >='"+lowAlgaeContent+"'";
+//			}
+//			if(highAlgaeContent!=0)
+//			{
+//				sql+=" and AlgaeContent <= '"+highAlgaeContent+"'";
+//			}
+//			if(lowOutNTU!=0)
+//			{
+//				sql+=" and OutNTU >='"+lowOutNTU+"'";
+//			}
+//			if(highOutNTU!=0)
+//			{
+//				sql+=" and OutNTU <= '"+highOutNTU+"'";
+//			}
+//			
+//		}
+//		System.out.println(sql);
+//		List<PoolEvaluate> list = poolEvaluateService.findBySql(sql);
+		List<PoolEvaluate> list = (List<PoolEvaluate>) data.get("rows");
 		WritableWorkbook book = null;
 		try{
 			//打开文件
@@ -421,10 +422,12 @@ public class PoolEvaluateAction extends ActionSupport{
 				}//for
 			}//if
 			System.out.println("--写入excel:"+path+"--");
+			operateSuccess=true;
 			//写入数据并关闭文件
 			book.write();
 		}catch(Exception e){
 			System.out.println(e);
+			operateSuccess=false;
 		}finally{
 			if(book!=null){
 				try{

@@ -4,16 +4,19 @@ import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList; 
 import java.util.Map;
 
+import org.apache.struts2.ServletActionContext;
 import org.hibernate.exception.DataException;
 
 import jxl.Cell;
@@ -34,26 +37,44 @@ import com.water.service.DataAnalysisService;
 @SuppressWarnings("serial")
 public class DataAnalysisAction extends ActionSupport{
 	//保存的文件名
-	private String filename;
+	private String exportFileName;
 
-	public String getFilename() {
-		return filename;
+	public String getExportFileName() {
+		return exportFileName;
 	}
 
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-	
-	//导入的文件路径和文件名
-	private String importFileName;
-		
-
-	public String getImportFileName() {
-		return importFileName;
+	public void setExportFileName(String exportFileName) {
+		this.exportFileName = exportFileName;
 	}
 
-	public void setImportFileName(String importFileName) {
-		this.importFileName = importFileName;
+	//导入的文件路径和文件名,文件类型
+
+	private File   upload;
+	private String uploadFileName;
+	private String uploadContentType;
+
+	public File getUpload() {
+		return upload;
+	}
+
+	public void setUpload(File upload) {
+		this.upload = upload;
+	}
+
+	public String getUploadFileName() {
+		return uploadFileName;
+	}
+
+	public void setUploadFileName(String uploadFileName) {
+		this.uploadFileName = uploadFileName;
+	}
+
+	public String getUploadContentType() {
+		return uploadContentType;
+	}
+
+	public void setUploadContentType(String uploadContentType) {
+		this.uploadContentType = uploadContentType;
 	}
 
 	private DataAnalysisService dataAnalysisService;
@@ -88,7 +109,7 @@ public class DataAnalysisAction extends ActionSupport{
 
 	// 标识操作是否成功
 	private boolean operateSuccess;
-	
+
 	// set注入
 	public void setDataAnalysisService(DataAnalysisService dataAnalysisService) {
 		this.dataAnalysisService = dataAnalysisService;
@@ -124,7 +145,7 @@ public class DataAnalysisAction extends ActionSupport{
 	}
 
 	// getter/setter方法
-	
+
 	public DataAnalysis getDataAnalysis() {
 		return dataAnalysis;
 	}
@@ -176,9 +197,9 @@ public class DataAnalysisAction extends ActionSupport{
 		if (order == null) {
 			order = "asc";// Ĭ�ϰ���������
 		}
-		
+
 		data.put("total", dataAnalysisService.findTotal());// �õ����еļ�¼��
-//		data.put("rows", dataAnalysisService.findPages(page, size, sort, order));// �õ�ĳһҳ�����
+		//		data.put("rows", dataAnalysisService.findPages(page, size, sort, order));// �õ�ĳһҳ�����
 		data.put("rows", dataAnalysisService.findAll());
 		return "success";
 	}
@@ -214,7 +235,7 @@ public class DataAnalysisAction extends ActionSupport{
 		dataAnalysis = dataAnalysisService.findDataAnalysisById(dataAnalysis.getID());
 		return "success";
 	}
-	
+
 	/**
 	 * 通过设置查询条件查询
 	 */
@@ -243,36 +264,18 @@ public class DataAnalysisAction extends ActionSupport{
 		data.put("rows", searchList);// 查询的结果
 		return "success";
 	}
-	
-	public String export2excel(){
-		String sql;
-		/*查询条件拼接*/
-		if(searchT==null && searchPoolID ==null ){
-			sql="from DataAnalysis";
-		}
-		else {
-			sql="from DataAnalysis where 1=1";
-			if (searchT!=null)
-			{
-				sql+= " and Convert(varchar,t,120)  like '%"+(new SimpleDateFormat("yyyy-MM-dd")).format(searchT)+"%'";
-			}
-			if(!searchPoolID.equals(""))
-			{
-				sql+=" and PoolID like '%"+searchPoolID+"'";
-			}
-		}
 
-		System.out.println(sql);
-		List<DataAnalysis> list = dataAnalysisService.findBySql(sql);
+	public String export2excel(){
+		List<DataAnalysis> list=(List<DataAnalysis>) data.get("rows");
 		WritableWorkbook book = null;
 		try{
 			//打开文件
-			if(filename==null || filename.isEmpty())
+			if(exportFileName==null || exportFileName.isEmpty())
 			{
 				//导出文件名为系统当前时间
-				filename=(new SimpleDateFormat("yyyyMMdd-HHmmss")).format(System.currentTimeMillis());
+				exportFileName=(new SimpleDateFormat("yyyyMMdd-HHmmss")).format(System.currentTimeMillis());
 			}
-			String path="D://数据分析表-"+filename+".xls";
+			String path="D://数据分析表-"+exportFileName+".xls";
 			book = Workbook.createWorkbook(new File(path));
 			//生成工作表
 			WritableSheet sheet = book.createSheet("sheet1", 0);
@@ -291,7 +294,7 @@ public class DataAnalysisAction extends ActionSupport{
 			WritableCellFormat formatBody = new WritableCellFormat(formatB);
 			formatBody.setAlignment(jxl.format.Alignment.CENTRE); 
 
-//			List<DataAnalysis> list = dataAnalysisService.findAll();
+			//	List<DataAnalysis> list = dataAnalysisService.findAll();
 			if(list!=null && !list.isEmpty()){
 				sheet.addCell(new Label(0,0," 编号 ",formatHead));
 				sheet.addCell(new Label(1,0," 水池编号 ",formatHead));
@@ -326,8 +329,10 @@ public class DataAnalysisAction extends ActionSupport{
 			System.out.println("--写入excel:"+path+"--");
 			//写入数据并关闭文件
 			book.write();
+			operateSuccess=true;
 		}catch(Exception e){
-			System.out.println(e);
+			e.printStackTrace();
+			operateSuccess=false;
 		}finally{
 			if(book!=null){
 				try{
@@ -337,58 +342,126 @@ public class DataAnalysisAction extends ActionSupport{
 				}
 			}
 		}
-		return "success";
+		return SUCCESS;
 	}
-	
-	public String import2DB(){
 
-		Workbook workBook = null;
-		InputStream fs = null;
-		if(importFileName!=null || importFileName!="")
-		{
-		try{
-			//加载excel文件
-			fs = new FileInputStream(importFileName);
-			//得到工作簿
-			workBook = Workbook.getWorkbook(fs);
-		}catch(FileNotFoundException e){
-			e.printStackTrace();
-		}catch(BiffException e){
-			e.printStackTrace();
-		}catch(IOException e){
-			e.printStackTrace();
+	public String import2DB() throws Exception{
+		//	先上传，再导入
+		//		//取得文件上传路径（用于存放上传的文件）
+		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/uploadFiles"));
+		//判断上述路径是否存在，如果不存在则创建该路径
+		if (!uploadFile.exists()) {
+			uploadFile.mkdir();
 		}
-		DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH");
-		Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-		List<DataAnalysis> list = new ArrayList<DataAnalysis>();
 
-		for(int i=1;i<sheet.getRows();i++){ //共12列数据,从第二行开始
-			DataAnalysis dataTemp = new DataAnalysis();
-			dataTemp.setID(0);
-			dataTemp.setPoolID(sheet.getCell(1,i).getContents());
+		if(upload != null){
+			//判断上传文件的类型是否是excel
+			if(!uploadContentType.equals("application/vnd.ms-excel")){
+				System.out.println("上传文件中包含非法文件类型");
+				ServletActionContext.getServletContext().setAttribute("errorMsg", "上传文件中类型不符合条件");
+				operateSuccess=false;
+			}
+			//判断文件的大小
+
+			// 判断文件长度
+			if (1000000 < upload.length()) {
+				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "文件过大");
+				operateSuccess=false;
+			}
+
+			//	//		 第一种文件上传的读写方式
+			FileInputStream input = new FileInputStream(upload);
+			FileOutputStream out = new FileOutputStream(uploadFile + "\\" + uploadFileName);
+
 			try{
-				dataTemp.setT(sdf.parse(sheet.getCell(2,i).getContents()));
+				byte[] b = new byte[1024];
+				int m = 0;
+				while ((m = input.read(b)) > 0) {
+					out.write(b, 0, m);
+				}
 			}catch(Exception e){
 				e.printStackTrace();
+				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "上传过程中发生未知错误，请联系管理员。上传失败！");
+				operateSuccess=false;
+				//				return "error";
+			}finally{
+				input.close();
+				out.close();
+				//删除临时文件
+				upload.delete();
 			}
-			System.out.println(dataTemp.getT());
-			dataTemp.setInV(Double.parseDouble(sheet.getCell(3,i).getContents()));
-			dataTemp.setOutV(Double.parseDouble(sheet.getCell(4,i).getContents()));
-			dataTemp.setHXOutV(Double.parseDouble(sheet.getCell(5,i).getContents()));
-			dataTemp.setLCOutV(Double.parseDouble(sheet.getCell(6,i).getContents()));
-			dataTemp.setTCOutV(Double.parseDouble(sheet.getCell(7,i).getContents()));
-			dataTemp.setJJOutV(Double.parseDouble(sheet.getCell(8,i).getContents()));
-			dataTemp.setHLInV(Double.parseDouble(sheet.getCell(9,i).getContents()));
-			dataTemp.setStorage(Double.parseDouble(sheet.getCell(10,i).getContents()));
-			dataTemp.setPreH(Double.parseDouble(sheet.getCell(11,i).getContents()));
-			dataAnalysisService.addDataAnalysis(dataTemp);	//添加到数据库
+
+			Workbook workBook = null;
+			InputStream fs = null;
+			if(uploadFileName!=null || uploadFileName!="")
+			{
+				try{
+					//加载excel文件
+					fs = new FileInputStream(uploadFile + "\\" + uploadFileName);
+					//得到工作簿
+					workBook = Workbook.getWorkbook(fs);
+				}catch(FileNotFoundException e){
+					e.printStackTrace();
+					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
+					operateSuccess=false;
+				}catch(BiffException e){
+					e.printStackTrace();
+					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
+					operateSuccess=false;
+				}catch(IOException e){
+					e.printStackTrace();
+					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
+					operateSuccess=false;
+				}
+//				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH");
+				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
+				List<DataAnalysis> list = new ArrayList<DataAnalysis>();
+
+				//得到当前天数
+				Date day = (new SimpleDateFormat("yyyy-MM-dd").parse(sheet.getCell(0,0).getContents()));
+
+				for(int i=2;i<sheet.getRows();i++){ //共12列数据,从第三行开始
+					
+					if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
+					{	
+						continue;
+					}
+					else{
+						DataAnalysis dataTemp = new DataAnalysis();
+						dataTemp.setID(0);
+						dataTemp.setPoolID(sheet.getCell(1,i).getContents());
+						try{
+							int hour = Integer.parseInt(sheet.getCell(2,i).getContents());
+							Date datetime = new Date();
+							datetime.setTime(day.getTime()+hour*3600*1000);
+							dataTemp.setT(datetime);							
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+						dataTemp.setInV(Double.parseDouble(sheet.getCell(3,i).getContents()));
+						dataTemp.setOutV(Double.parseDouble(sheet.getCell(4,i).getContents()));
+						dataTemp.setHXOutV(Double.parseDouble(sheet.getCell(5,i).getContents()));
+						dataTemp.setLCOutV(Double.parseDouble(sheet.getCell(6,i).getContents()));
+						dataTemp.setTCOutV(Double.parseDouble(sheet.getCell(7,i).getContents()));
+						dataTemp.setJJOutV(Double.parseDouble(sheet.getCell(8,i).getContents()));
+						dataTemp.setHLInV(Double.parseDouble(sheet.getCell(9,i).getContents()));
+						dataTemp.setStorage(Double.parseDouble(sheet.getCell(10,i).getContents()));
+						dataTemp.setPreH(Double.parseDouble(sheet.getCell(11,i).getContents()));
+						operateSuccess=(dataAnalysisService.addDataAnalysis(dataTemp)>0);	//添加到数据库
+					}
+				} //for
+				workBook.close(); //关闭
 			}
-		workBook.close(); //关闭
-		return "success";
-		}
+			else{
+				operateSuccess=false;
+				ServletActionContext.getServletContext().setAttribute("errorMsg", "请选择上传文件");
+
+			}
+		}//upload!=null
 		else{
-			return "false";
+			operateSuccess=false;
+			ServletActionContext.getServletContext().setAttribute("errorMsg", "请选择上传文件");
 		}
-		
+		return SUCCESS;
 	}
 }
