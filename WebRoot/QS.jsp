@@ -128,12 +128,6 @@
     <li class="active">取水泵房</li>
     </ol>
     <div id="myContent" style="overflow: hidden">
-    <div id="flag1" class="flag">
-        <p>源水来水</p>
-    </div>
-    <div id="flag2" class="flag">
-        <p>送至混合井</p>
-    </div>
         <div id="left" class="col-lg-10" style="height: 753px">
             <canvas id="canvas_QS_zp" width="1400" height="775"></canvas>
         </div>

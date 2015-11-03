@@ -3,8 +3,6 @@
  */
 oCanvas.domReady(function () {
 
-
-
     var canvas = oCanvas.create({
         canvas: "#canvas_main",
         background: "#eeeeef",
@@ -66,8 +64,8 @@ oCanvas.domReady(function () {
             {x_cell: 748 ,y_cell: 98},
             {x_cell: 748 ,y_cell: 222},
             {x_cell: 775 ,y_cell: 240},
-            {x_cell: 1018 ,y_cell: 240},
-            {x_cell: 1018, y_cell: 256}
+            {x_cell: 1020 ,y_cell: 240},
+            {x_cell: 1020, y_cell: 256}
         ],
         deta: 1,
         deta_x: 1,
@@ -96,8 +94,8 @@ oCanvas.domReady(function () {
             x_d: 0, y_d: 0
         },
         cells: [
-            {x_cell: 1021 ,y_cell: 256},
-            {x_cell: 1021, y_cell: 348}
+            {x_cell: 1020 ,y_cell: 256},
+            {x_cell: 1020, y_cell: 348}
         ],
         deta: 1,
         deta_x: 1,
@@ -219,8 +217,8 @@ oCanvas.domReady(function () {
             x_d: 0, y_d: 0
         },
         cells: [
-            {x_cell: 1186,y_cell: 412},
-            {x_cell: 1186,y_cell: 567}
+            {x_cell: 1188,y_cell: 412},
+            {x_cell: 1188,y_cell: 567}
         ],
         deta: 1,
         deta_x: 1,
@@ -538,10 +536,10 @@ oCanvas.domReady(function () {
             x_d: 0, y_d: 0
         },
         cells: [
-            {x_cell: 674 ,y_cell: 697},
-            {x_cell: 674 ,y_cell: 734},
-            {x_cell: 434 ,y_cell: 734},
-            {x_cell: 434, y_cell: 691}
+            {x_cell: 675 ,y_cell: 697},
+            {x_cell: 675 ,y_cell: 734},
+            {x_cell: 436 ,y_cell: 734},
+            {x_cell: 436, y_cell: 691}
         ],
         deta: 1,
         deta_x: 1,
@@ -758,8 +756,8 @@ oCanvas.domReady(function () {
         cells: [
             {x_cell: 527 ,y_cell: 439},
             {x_cell: 527 ,y_cell: 401},
-            {x_cell: 590 ,y_cell: 401},
-            {x_cell: 590, y_cell: 375}
+            {x_cell: 592 ,y_cell: 401},
+            {x_cell: 592, y_cell: 375}
         ],
         deta: 1,
         deta_x: 1,

@@ -345,7 +345,7 @@ $(document).ready(function(){
                 {x_cell: 811, y_cell: 333},
                 {x_cell: 1049, y_cell: 333},
                 {x_cell: 1092, y_cell: 298},
-                {x_cell: 1183, y_cell: 298}
+                {x_cell: 1160, y_cell: 298}
             ],  //锟秸碉拷锟斤拷锟斤拷
             deta: 1,
             deta_x: 1, deta_y: 0,

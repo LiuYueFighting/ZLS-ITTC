@@ -19,6 +19,7 @@
 <style>
 body {
 	background: #eeeeed;
+	text-align:center;
 }
 
 #myPage {
@@ -71,39 +72,39 @@ a {
     }
     #name_QS{
     position: absolute;
-    left: 681px;
-    top: 62px;
+    left: 683px;
+    top: 69px;
     display: none;
     height: 50px;
     width: auto;
     }
     #name_QS2{
     position: absolute;
-    left: 674px;
-    top: 139px;
+    left: 679px;
+    top: 148px;
     display: none;
     height: 50px;
     width: auto;
     }
     #name_JJC1{
     position: absolute;
-    left: 858px;
-    top: 383px;
+    left: 859px;
+    top: 386px;
     display: none;
     height: 50px;
     width: auto;
     }
     #name_JJC2{
     position: absolute;
-    left: 1067px;
-    top: 383px;
+    left: 1069px;
+    top: 386px;
     display: none;
     height: 50px;
     width: auto;
     }
     #name_JJC3{
     position: absolute;
-    left:1146px;
+    left:1147px;
     top: 616px;
     display: none;
     height: 50px;
@@ -111,24 +112,27 @@ a {
     }
     #name_VL{
     position: absolute;
-    left: 860px;
-    top: 681px;
+    left: 862px;
+    top: 686px;
     display: none;
     height: 50px;
     width: auto;
     }
     #name_HHJ{
     position: absolute;
-    left:965px;
-    top: 343px;
+    left:961px;
+    top: 352px;
+    font-size:17px;
     display: none;
     height: 50px;
     width: auto;
+    
     }
     #name_HHJ2{
     position: absolute;
     left:1166px;
-    top: 355px;
+    top: 365px;
+    font-size:17px;
     display: none;
     height: auto;
     width: 30px;
@@ -136,14 +140,14 @@ a {
     #name_HX{
     position: absolute;
     left:837px;
-    top: 532px;
+    top: 539px;
     display: none;
     height: 50px;
     width: auto;
     }
     #name_QSC1{
     position: absolute;
-    left:305px;
+    left:260px;
     top: 485px;
     display: none;
     height: 50px;
@@ -151,8 +155,8 @@ a {
     }
     #name_CY{
     position: absolute;
-    left:590px;
-    top: 663px;
+    left:609px;
+    top: 653px;
     display: none;
     height: 50px;
     width: auto;
@@ -160,7 +164,7 @@ a {
     #name_CYC{
     position: absolute;
     left:620px;
-    top: 453px;
+    top: 464px;
     display: none;
     height: auto;
     width: 30px;
@@ -183,7 +187,7 @@ a {
     }
     #name_QSC4{
     position: absolute;
-    left:450px;
+    left:440px;
     top: 489px;
     display: none;
     height: 50px;
@@ -191,8 +195,8 @@ a {
     }
     #name_TC{
     position: absolute;
-    left:375px;
-    top: 655px;
+    left:378px;
+    top: 665px;
     display: none;
     height: 50px;
     width: auto;
@@ -200,14 +204,14 @@ a {
     #name_TC1{
     position: absolute;
     left:485px;
-    top: 655px;
+    top: 665px;
     display: none;
     height: 50px;
     width: auto;
     }
     #name_YC{
     position: absolute;
-    left:960px;
+    left:968px;
     top: 139px;
     display: none;
     height: 50px;
@@ -234,22 +238,23 @@ a {
     <button id="btn_reset" class="btn btn-info btn-lg btn_main">重新开始</button>
     <canvas id="canvas_main" width="1600" height="757"></canvas>
     <a href="QS.jsp" id="name_QS" style="text-decoration: none" class="name_ob">取水泵房</a>
-    <a href="JJC.jsp" id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
-    <a href="JJC.jsp" id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
-    <a href="JJC.jsp" id="name_JJC3" style="text-decoration: none" class="name_ob">3#机加池</a>
+     <a href="QS.jsp" id="name_QS2" style="text-decoration: none" class="name_ob">取水泵房</a>
+    <a href="JJC.jsp" id="name_JJC1" style="text-decoration: none" class="name_ob">机加池<br>#1</a>
+    <a href="JJC.jsp" id="name_JJC2" style="text-decoration: none" class="name_ob">机加池<br>#2</a>
+    <a href="JJC.jsp" id="name_JJC3" style="text-decoration: none" class="name_ob">机加池<br>#3</a>
     <a href="VL.jsp" id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
     <a href="hxt.jsp" id="name_TC" class="name_ob" style="text-decoration: none">活性炭池</a>
     <a href="hxt.jsp" id="name_TC1" class="name_ob" style="text-decoration: none">活性炭池</a>
-    <a href="cy.jsp" id="name_CY" class="name_ob" style="text-decoration: none">臭氧混合池</a>
+    <a href="cy.jsp" id="name_CY" class="name_ob" style="text-decoration: none">臭氧<br>混合池</a>
     <a href="cy.jsp" id="name_CYC" class="name_ob" style="text-decoration: none">臭氧生产池</a>
     <a href="#" id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
     <a href="hhj.jsp" id="name_HHJ" class="name_ob" style="text-decoration: none">旧混合井</a>
     <a href="hhj.jsp" id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
     <a href="hx.jsp" id="name_HX" class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
-    <a href="qsc.jsp" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
-    <a href="qsc.jsp" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
-    <a href="qsc.jsp" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
-    <a href="qsc.jsp" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
+    <a href="qsc.jsp" id="name_QSC1" class="name_ob" style="text-decoration: none">清水池#3</a>
+    <a href="qsc.jsp" id="name_QSC2" class="name_ob" style="text-decoration: none">清水池1#</a>
+    <a href="qsc.jsp" id="name_QSC3" class="name_ob" style="text-decoration: none">清水池2#</a>
+    <a href="qsc.jsp" id="name_QSC4" class="name_ob" style="text-decoration: none">清水池4#</a>
     </div>
 
 		</div>

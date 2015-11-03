@@ -2,6 +2,11 @@
 /* CSS Document */
  body {
             background: #eeeeed;
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+            line-height: 1;
         }
         html {
             -moz-box-sizing: border-box;
@@ -133,17 +138,19 @@
         .Secondary_menu{
             font-weight: 400;
             text-transform: none;
-            display: none;
+             display: none; 
             position: absolute;
+            overflow:hidden;
             left: 0px;
             width: 120px;
             color:#000;
             background: rgba(255, 255, 255, 0.8);
             z-index: 999;
+            
         }
         /* .nav_bag01:hover .Secondary_menu, .nav_bag02:hover .Secondary_menu, .nav_bag03:hover .Secondary_menu, .nav_bag04:hover .Secondary_menu { */
         .nav_bag01:hover .Secondary_menu, .nav_bag02:hover .Secondary_menu, .nav_bag03:hover .Secondary_menu, .nav_bag04:hover .Secondary_menu {
-            display: block;
+             display: block; 
         }
         .Secondary_menu_item{
             height:30px;

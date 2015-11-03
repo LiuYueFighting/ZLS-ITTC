@@ -74,7 +74,7 @@ oCanvas.domReady(function () {
     canvas.addChild(fg);
 
     var arrow_1=canvas.display.sprite({
-        x: 850,
+        x: 845,
         y: 200,
         image: "image/water-arrow/left_roll.png",
         generate:false,
@@ -85,7 +85,7 @@ oCanvas.domReady(function () {
     }).add();
 
     var arrow_2=canvas.display.sprite({
-        x: 905,
+        x: 910,
         y: 200,
         image: "image/water-arrow/right_roll.png",
         generate:false,
@@ -135,10 +135,10 @@ oCanvas.domReady(function () {
             x_d: 0, y_d: 0
         },
         cells: [
-            {x_cell: 597, y_cell: 600},
-            {x_cell: 597, y_cell: 520},
-            {x_cell: 905, y_cell: 520},
-            {x_cell: 905, y_cell: 220}
+            {x_cell: 599, y_cell: 600},
+            {x_cell: 599, y_cell: 521},
+            {x_cell: 907, y_cell: 521},
+            {x_cell: 907, y_cell: 232}
         ],  //�յ�����
         deta: 1,
         deta_x: 1,
@@ -199,10 +199,26 @@ oCanvas.domReady(function () {
         y:30,
         origin: { x:"center", y: "top" },
         font: "bold 32px sans-serif",
-        fill:"#43d9f9",
+        fill:"#337ab7",
         text:"取水泵房工艺展示纵剖图"
     });
     canvas.addChild(txt1);
+    var txt2=canvas.display.text({
+        x:204,
+        y:531,
+        origin: { x:"center", y: "top" },
+        font: "bold 25px sans-serif",
+        fill:"#337ab7",
+        text:"源水来水"
+    }).add();
+    var txt3=canvas.display.text({
+        x:1149,
+        y:531,
+        origin: { x:"center", y: "top" },
+        font: "bold 25px sans-serif",
+        fill:"#337ab7",
+        text:"取水泵房出水"
+    }).add();
     canvas.setLoop(function () {
         GD01.advance();
         SC01.advance();
