@@ -200,10 +200,28 @@ oCanvas.domReady(function () {
         y:30,
         origin: { x:"center", y: "top" },
         font: "bold 32px sans-serif",
-        fill:"#eeeeee",
+        fill:"#337ab7",
         text:"V型滤池工艺展示纵剖图"
     });
     canvas.addChild(txt1);
+    var txt2=canvas.display.text({
+        x:70,
+        y:110,
+        origin: { x:"center", y: "top" },
+        font: "bold 25px sans-serif",
+        fill:"#337ab7",
+        text:"机加池来水"
+    });
+    canvas.addChild(txt2);
+    var txt3=canvas.display.text({
+        x:1200,
+        y:400,
+        origin: { x:"center", y: "top" },
+        font: "bold 25px sans-serif",
+        fill:"#337ab7",
+        text:"V滤出水"
+    });
+    canvas.addChild(txt3);
     canvas.setLoop(function () {
         GD01.advance();
         GD02.advance();

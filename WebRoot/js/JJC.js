@@ -390,10 +390,10 @@ oCanvas.domReady(function () {
             x_d: 0, y_d: 0
         },
         cells: [
-            {x_cell: 127,y_cell: 511},
-            {x_cell: 187, y_cell: 511},
-            {x_cell: 259, y_cell: 450},
-            {x_cell: 477, y_cell: 450}
+				{x_cell: 127,y_cell: 511},
+				{x_cell: 189, y_cell: 511},
+				{x_cell: 258, y_cell: 448},
+				{x_cell: 477, y_cell: 448}
 
         ],  //閹锋劗鍋ｉ弫鎵矋
         cellIndex: 0,         //瑜版挸澧犻弫鎵矋缁便垹绱�
@@ -420,8 +420,8 @@ oCanvas.domReady(function () {
         },
         cells: [
             {x_cell: 1109,y_cell: 380},
-            {x_cell: 1109, y_cell: 500},
-            {x_cell: 1118, y_cell: 523},
+            {x_cell: 1109, y_cell: 505},
+            {x_cell: 1130, y_cell: 523},
             {x_cell: 1209, y_cell: 523}
 
         ],  //閹锋劗鍋ｉ弫鎵矋
@@ -445,11 +445,28 @@ oCanvas.domReady(function () {
         y:30,
         origin: { x:"center", y: "top" },
         font: "bold 32px sans-serif",
-        fill:"#eeeeee",
+        fill:"#337ab7",
         text:"机加池工艺展示纵剖图"
     });
     canvas.addChild(txt1);
-
+    var txt2=canvas.display.text({
+        x:110,
+        y:460,
+        origin: { x:"center", y: "top" },
+        font: "bold 25px sans-serif",
+        fill:"#337ab7",
+        text:"混合井来水"
+    });
+    canvas.addChild(txt2);
+    var txt3=canvas.display.text({
+        x:1220,
+        y:470,
+        origin: { x:"center", y: "top" },
+        font: "bold 25px sans-serif",
+        fill:"#337ab7",
+        text:"机加池出水"
+    });
+    canvas.addChild(txt3);
 
     canvas.setLoop(function () {
         GD01.advance();

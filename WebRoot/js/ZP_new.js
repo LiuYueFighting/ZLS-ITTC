@@ -293,12 +293,27 @@ $(document).ready(function(){
             start:start_all
         });
         canvas.addChild(SC14);
-
+        
+        var SC141 = canvas.display.SC_show({
+            x: 1052,
+            y: 668,
+            Width: 13,
+            Height: 39,
+            height_now: 0,
+            trail_flag: 0,
+            t: 0,
+            fill: color_SC,
+            speed:speed_SC,
+            full:0,
+            start:start_all
+        });
+        canvas.addChild(SC141);
+        
         var SC15 = canvas.display.SC_show({
             x: 904,
             y: 600,
             Width: 150,
-            Height: 55,
+            Height: 65,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -390,7 +405,7 @@ $(document).ready(function(){
                 {x_cell: 518, y_cell: 324},
                 {x_cell: 717, y_cell: 324},
                 {x_cell: 760, y_cell: 289},
-                {x_cell: 850, y_cell: 289}
+                {x_cell: 835, y_cell: 289}
             ],  //锟秸碉拷锟斤拷锟斤拷
             deta: 1,
             deta_x: 1, deta_y: 0,
@@ -631,6 +646,7 @@ $(document).ready(function(){
             SC12.advance();
             SC13.advance();
             SC14.advance();
+            SC141.advance();
             SC15.advance();
             SC16.advance();
 
@@ -695,7 +711,10 @@ $(document).ready(function(){
                 GD06.paused = 1;
             }
             if(GD06.full==1) {
-                SC15.start = 1;
+            	SC141.start=1;
+            }
+            if(SC141.full==1) {
+            	SC15.start = 1;
             }
             if(SC15.full==1) {
                 GD07.paused = 1;
