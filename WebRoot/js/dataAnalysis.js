@@ -319,13 +319,10 @@ $.getJSON(url, function(json) {
 	//去除重复项
 	var datalist = eval(json).rows;
 	var tempPoolIDlist = new Array();
-	var pidlist=new Array();
 	for(var i=0;i<json.total;i++){
 		var row = datalist[i];
-		pidlist.push({poolID:row.poolID});
 		if(jQuery.inArray(row.poolID, tempPoolIDlist)<0){
 			tempPoolIDlist.push(row.poolID);
-//			poolIDlist.push({poolID:row.poolID});
 			poolIDlist.push({poolID:row.poolID,text:formPoolID(row.poolID)});
 		}
 		if(jQuery.inArray(row.t, tlist)<0){
@@ -689,18 +686,26 @@ function convert(rows){
 	return nodes;
 }
 
-
 function export2excel(){
+
 	var params = $("#exportDataAnalysis").serialize();
+	var filename = $('#downloadFilename').val() ;
+	var downloadPath;
+	if(null==filename || ""==filename){
+		downloadPath = "downloadTemp/DataAnalysis.xls";
+	}else{
+		downloadPath = "downloadTemp/"+filename+".xls";
+	}
+	console.log(downloadPath);
 	$.post("exportDataAnalysis.action", params, function(result) {
 		if (result.operateSuccess){
-//			$('#dataAnalysisbody').datagrid('reload');// 重新加载
-			$.messager.alert('导出', '导出成功', 'info');
+			window.location.href=downloadPath;
+//			$.messager.alert('导出', '导出成功', 'info');		
 		} else {
 			$.messager.alert('导出', '导出失败', 'warning');
 		}
 	});
-	alert("导出成功")
+	
 }
 //导入文件操作
 function import2DB(){

@@ -161,5 +161,8 @@
 			 <result type="json"/>
 		</action>
 		
+		<action name="importPoolEvaluate" class="poolEvaluateAction" method="import2DB">
+			 <result type="json"/>
+		</action>
 	</package>
 </struts>

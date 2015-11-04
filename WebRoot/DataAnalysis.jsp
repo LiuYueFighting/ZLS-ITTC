@@ -118,7 +118,7 @@ body {
 
 	<div id="myPage">
 		<div id="myContent" style="overflow: hidden">
-			<a href="download/QingS_cal.xls">点击下载清水池水位计算表模板</a><br /> <br />
+			<a href="download/DataAnalysis.xls">点击下载清水池水位计算表模板</a><br /> <br />
 			<!-- 操作按钮 -->
 			<div id="btn_group" class="btn-group-vertical btn-group-lg"
 				role="group">
@@ -137,16 +137,16 @@ body {
 
 			<!-- 导出文件操作-->
 			<div id="tab_export">
-				<form  id="exportDataAnalysis">
-					<span style="font-size:18px">导出文件名：</span><br /> 
-					<input type="text"  class="easyui-textbox" 
-						id="exportFileName" name="exportFileName" style="width:100px" /> <br />
-					<br />
-					<button id="btn-export" class="btn btn-primary"
-						style="font-size:18px;" 
-						onclick="javascript:export2excel()">&nbsp; &nbsp; 导出
-						&nbsp; &nbsp;</button>
+
+				 <form  id="exportDataAnalysis">
+				   <span style="font-size:18px">导出文件名：</span><br/>
+				   <input type="text" class="easyui-textbox" id="downloadFilename" name="downloadFilename" style="width:100px"/>
+				   <br/><br/>	
+				   <input id="btn-export" class="btn btn-primary"
+						style="font-size:18px;width:100px;" value="导出"
+						onclick="javascript:export2excel()"/>
 				</form>
+
 				<br /><br />
 
 				<form action="${pageContext.request.contextPath}/importDataAnalysis" name="uploadForm"
@@ -200,7 +200,7 @@ body {
 								&nbsp; &nbsp;总 进 水 量 : &nbsp; 
 								<input
 									class="easyui-numberbox textbox" style="width:200px;height:25px" id="InV"
-									name="dataAnalysis.InV" data-options="min:0,precision:0">
+									name="dataAnalysis.InV" data-options="min:0,precision:0,">
 						 
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;出 &nbsp;水 &nbsp; 量 : &nbsp;
 								<input class="easyui-numberbox" style="width:200px;height:25px"

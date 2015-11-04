@@ -29,6 +29,8 @@
 <script type="text/javascript" src="easyui/jquery.min.js"></script>
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+
+<script type="text/javascript" src="js/ajaxfileupload.js"></script>
 <script type="text/javascript" src="js/poolEvaluate.js"></script>
 
 <style>
@@ -78,7 +80,7 @@
     font-family: '微软雅黑','Arial';
     position: absolute;
     left:1400px;
-    top: 435px;
+    top: 535px;
     z-index: 999;
     font-size:14px;
     width:200px;
@@ -107,7 +109,7 @@
 <div id="myPage">
     <div id="myContent" style="overflow: hidden">
 
-        <a href="download/QSC_cal.xlsx">点击下载机加池评估表 - 模板 .xlsx</a>
+        <a href="download/PoolEvaluate.xls">点击下载机加池评估表-模板</a>
         
      <!-- 操作按钮 -->
      <div id="btn_group" class="btn-group-vertical btn-group-lg" role="group">
@@ -125,11 +127,25 @@
 		</div>
 		<!-- 文件导出操作 -->
 		<div id="tab_export">
-				<form  id="exportPoolEvaluate">
-				   <span style="font-size:18px">导出文件名：</span><br/><input type="text" id="filename" name="filename" style="width:100px"/>
-				   <br/><br/>			
-				   <button id="btn-export" class="btn btn-primary" style="font-size:18px;"
-					   onclick="javascript:export2excel()"> &nbsp; &nbsp; 导出  &nbsp; &nbsp; </button>
+				 <form  id="exportPoolEvaluate">
+				   <span style="font-size:18px">导出文件名：</span><br/>
+				   <input type="text" class="easyui-textbox" id="downloadFilename" name="downloadFilename" style="width:100px"/>
+				   <br/><br/>	
+				   <input id="btn-export" class="btn btn-primary"
+						style="font-size:18px;width:100px;" value="导出"
+						onclick="javascript:export2excel()"/>
+				</form>
+				
+				<br /><br />
+				<form action="${pageContext.request.contextPath}/importPoolEvaluate" name="uploadForm"
+						enctype="multipart/form-data" method="post">
+					
+					<input type="file" id="upload" name="upload" 
+						style="width:100px;height:30px;font-size:16px"/>
+					<br/>
+					<input id="btn-import" class="btn btn-primary"
+						style="font-size:18px;width:100px;" value="导入"
+						onclick="javascript:import2DB()" />
 				</form>
 		</div>
 		<!-- 特征量说明 -->

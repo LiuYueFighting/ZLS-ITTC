@@ -1,25 +1,25 @@
 package com.water.beans;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class PoolEvaluate {
-	private long ID;  //±àºÅ
-	private Date t;   //Ê±¼ä
-	private String PoolID;  //Ë®³Ø±àºÅ
-	private double OpenDegree;	//¿ªÆô¶È
-	private double RotationSpeed;  //×ªËÙ
-	private double SV;	//³Á½µ±È
-	private double SmallMudFre;	//Ğ¡¶·ÅÅÄàÆµÂÊ
-	private double BigMudFre;	//´ó¶·ÅÅÄàÆµÂÊ
-	private double NTU;	//×Ç¶È
-	private double WaterTemp;	//Ë®ÎÂ
-	private double AlgaeContent;   //ÔåÀàº¬Á¿
-	private double FeCl3;	//¼ÓFeCl3µÄÁ¿
-	private double PAC;		//¼ÓPACÁ¿
-	private double OutNTU;	//»ú¼Ó³Ø³öË®×Ç¶È
-	private int state;   //×´Ì¬
-	private double CL; //Ô¤¼ÓÂÈ
+	private long ID;  //ID
+	private Date t;   //æ—¶é—´
+	private String PoolID;  //æ°´æ± ç¼–å·
+	private double FeCl3;	//FeCl3æŠ•åŠ é‡
+	private double PAC;		//PACæŠ•åŠ é‡
+	private double OpenDegree;	//å¼€å¯åº¦
+	private double RotationSpeed;  //è½¬é€Ÿ
+	private double SV;	//æ²‰é™æ¯”
+	private double SmallMudFre;	//å°æ–—æ’æ³¥æ—¶é•¿
+	private double BigMudFre;	//å¤§æ–—æ’æ³¥æ—¶é•¿
+	private double NTU;	//åŸæ°´æµŠåº¦
+	private double AlgaeContent;   //åŸæ°´è—»ç±»å«é‡
+	private double OutNTU;	//å‡ºæ°´æµŠåº¦
+	private double CL; //é¢„åŠ æ°¯é‡
 	
+//	private int state;  
+//	private double WaterTemp;	//Ë®ï¿½ï¿½
 	
 	
 	public long getID() {
@@ -78,12 +78,7 @@ public class PoolEvaluate {
 	public void setNTU(double nTU) {
 		NTU = nTU;
 	}
-	public double getWaterTemp() {
-		return WaterTemp;
-	}
-	public void setWaterTemp(double waterTemp) {
-		WaterTemp = waterTemp;
-	}
+	
 	public double getAlgaeContent() {
 		return AlgaeContent;
 	}
@@ -108,19 +103,25 @@ public class PoolEvaluate {
 	public void setOutNTU(double outNTU) {
 		OutNTU = outNTU;
 	}
-	public int getState() {
-		return state;
-	}
-	public void setState(int state) {
-		this.state = state;
-	}
+	
 	public double getCL() {
 		return CL;
 	}
 	public void setCL(double cL) {
 		CL = cL;
 	}
-	
-	
+//	public int getState() {
+//		return state;
+//	}
+//	public void setState(int state) {
+//		this.state = state;
+//	}
+//	public double getWaterTemp() {
+//		return WaterTemp;
+//	}
+//	public void setWaterTemp(double waterTemp) {
+//		WaterTemp = waterTemp;
+//	}
+//	
 }
 
