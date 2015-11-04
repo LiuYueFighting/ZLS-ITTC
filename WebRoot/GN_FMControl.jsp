@@ -34,6 +34,7 @@
     color:#ff4400;
     font-size: 20px;
     font-weight:bold;
+    display:none;
     }
     #name_QS{
     position: absolute;
@@ -1151,23 +1152,23 @@
         <div id="qs1" calss = "waterOut">
 
         </div>
-    <a href="GN_getWater.jsp" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
-    <a href="GN_JJ.jsp" id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
-    <a href="GN_JJ.jsp" id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
-    <a href="GN_JJ.jsp" id="name_JJC3" style="text-decoration: none" class="name_ob">3#机加池</a>
-    <a href="GN_VL.jsp" id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
-    <a href="GN_TC01.jsp" id="name_TC" class="name_ob" style="text-decoration: none">活性炭池</a>
-    <a href="#" id="name_TC1" class="name_ob" style="text-decoration: none">活性炭池</a>
-    <a href="GN_CY.jsp" id="name_CY" class="name_ob" style="text-decoration: none">臭氧混合池</a>
-    <a href="#" id="name_CYC" class="name_ob" style="text-decoration: none">臭氧生产池</a>
+    <a href="#" id="name_QS"  class="name_ob" style="text-decoration: none" class="name_ob">取水泵房</a>
+    <a href="#" id="name_JJC1" class="name_ob" style="text-decoration: none " class="name_ob">1#机加池</a>
+    <a href="#" id="name_JJC2" class="name_ob" style="text-decoration: none" class="name_ob">2#机加池</a>
+    <a href="#" id="name_JJC3" class="name_ob" style="text-decoration: none" class="name_ob">3#机加池</a>
+    <a href="#" id="name_VL" class="name_ob" style="text-decoration: none" class="name_ob">V型滤池</a>
+    <a href="#" id="name_TC" class="name_ob" style="text-decoration: none ">活性炭池</a>
+    <a href="#" id="name_TC1" class="name_ob" style="text-decoration: none ">活性炭池</a>
+    <a href="#" id="name_CY" class="name_ob" style="text-decoration: none ">臭氧混合池</a>
+    <a href="#" id="name_CYC" class="name_ob" style="text-decoration: none ">臭氧生产池</a>
     <a href="#" id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
-    <a href="GN_HH.jsp" id="name_HHJ1" class="name_ob" style="text-decoration: none">老混合井</a>
-    <a href="GN_HH.jsp" id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
-    <a href="GN_HX.jsp" id="name_HX" class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
-    <a href="GN_QingS.jsp" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
-    <a href="GN_QingS.jsp" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
-    <a href="GN_QingS.jsp" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
-    <a href="GN_QingS.jsp" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
+    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">老混合井</a>
+    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none ">新混合井</a>
+    <a href="#" id="name_HX" class="name_ob" style="text-decoration: none "> 虹吸滤池</a>
+    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
+    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none ">1#清水池</a>
+    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none ">2#清水池</a>
+    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
 
     <img id="FM05" src="image/y3.png" onclick="setOpenDgree('FM05')" hover="heighlight()">
     <img id="FM06" src="image/y3.png" onclick="setOpenDgree('FM06')">
