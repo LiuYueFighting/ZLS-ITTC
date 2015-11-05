@@ -25,7 +25,7 @@
 
 <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
-<link rel="stylesheet" type="text/css" href="style/myeasyui.css" />
+<!-- <link rel="stylesheet" type="text/css" href="style/myeasyui.css" /> -->
 
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="easyui/jquery.min.js"></script>
@@ -111,6 +111,57 @@ body {
 	width: 200px;
 }
 
+
+/*设置表头行高*/
+.datagrid-header-row {
+	height: 25px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #0E2D5F;
+}
+/*表头字体大小*/
+.datagrid-header .datagrid-cell span {
+  font-size: 14px;
+}
+/*设置表格行高*/
+.datagrid-row {
+	height: 23px;
+}
+/*单元格显示字体*/
+.datagrid-cell {
+	font-size: 12px;
+}
+
+/* 标题设计*/
+.panel-title {
+	font-size: 18px;
+	font-weight: bold;
+	color: #0E2D5F;
+	height: 25px;
+	text-align: center;
+	line-height: 25px;
+}
+
+.panel-body {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 14px;
+  width:600px;
+}
+
+.tree-title {
+  font-size: 14px;
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+  padding: 0 2px;
+  height: 18px;
+  line-height: 18px;
+}
+
+
+
 </style>
 </head>
 <body>
@@ -118,7 +169,8 @@ body {
 
 	<div id="myPage">
 		<div id="myContent" style="overflow: hidden">
-			<a href="download/DataAnalysis.xls">点击下载清水池水位计算表模板</a><br /> <br />
+			<span style="color:#6699CC">清水池水位计算表模板</span><br/> &nbsp; &nbsp; &nbsp; &nbsp;
+			<a href="download/DataAnalysis.xls" style="color:#6699CC">点击下载</a> <br />
 			<!-- 操作按钮 -->
 			<div id="btn_group" class="btn-group-vertical btn-group-lg"
 				role="group">
@@ -139,11 +191,12 @@ body {
 			<div id="tab_export">
 
 				 <form  id="exportDataAnalysis">
-				   <span style="font-size:18px">导出文件名：</span><br/>
-				   <input type="text" class="easyui-textbox" id="downloadFilename" name="downloadFilename" style="width:100px"/>
-				   <br/><br/>	
+				   <span style="font-size:18px"> &nbsp;导出文件名 </span><br/>
+				   <input type="text" id="downloadFilename" name="downloadFilename"
+				    style="width:105px;height:25px;border:1px solid #95B8E7"/>
+				   <br/><br/>
 				   <input id="btn-export" class="btn btn-primary"
-						style="font-size:18px;width:100px;" value="导出"
+						style="font-size:18px;width:105px;" value="导出"
 						onclick="javascript:export2excel()"/>
 				</form>
 
@@ -152,34 +205,44 @@ body {
 				<form action="${pageContext.request.contextPath}/importDataAnalysis" name="uploadForm"
 						enctype="multipart/form-data" method="post">
 					
-					<input type="file" id="upload" name="upload" 
-						style="width:100px;height:30px;font-size:16px"/>
-					<br/>
+				<!-- 	<input type="file" id="upload" name="upload" 
+						style="width:105px;height:30px; "/> -->
+						<input type=file name="upload"  id="upload" style="display: none;"
+							 onchange="ye.value=value">
+						
+						<input type=button class="btn btn-primary"value="选择文件"
+							 onclick=upload.click() style="width:105px;font-size:18px"><br/>
+						<input name=ye type="text" ondblclick=upload.click() 											
+							style="width:105px;height:25px;border:1px solid #95B8E7;"> 
+						
+						<!-- 
+						-->
+						
+					<br/><br/>
+					 
 					<input id="btn-import" class="btn btn-primary"
-						style="font-size:18px;width:100px;" value="导入"
-						onclick="javascript:import2DB()" />
+						style="font-size:18px;width:105px;" value="导入"
+						onclick="javascript:import2DB();ye.value='';" />
 
 				</form>
-		
-			</div>
+		</div>
 
-			<!-- <div class="easyui-layout" style="width:1200px; height:960px;"> -->
-			<div style="width:150px; position: absolute; left:100px;">
-				<p style="padding:5px;margin:0;">选择时间:</p>
+			<div style="width:160px; position: absolute; top:40px;left:100px; height:920px; border:1px solid #95B8E7" >
+				<p style="padding:3px;margin:0;font-size:16px">选择时间:</p><br/>
 				<!-- 树形导航菜单 -->
 				<ul id="timeTree" class="easyui-tree"></ul>
 			</div>
-			<div style="position: absolute;  left:300px;">
+			
+			<div style="position: absolute; top:40px; left:300px;">
 				<table id="dataAnalysisbody" style="max-width:1050px;height:300px;"
 					class="easyui-datagrid"></table>
 				<br />
-				<div id="imageContainer" style="max-width:1050px;height:760px;"></div>
+				<div id="imageContainer" style="max-width:1050px;height:600px;"></div>
 				<br>
 			</div>
-
 			<!-- 编辑数据的div，默认看不到 -->
 			<center>
-			<div style="display:none;width:700px">
+			<div style="display:none;width:700px" align="center">
 				<div id="tabEdit" class="easyui-dialog"  data-options="closed:true" style="align:center;width:800px;height:540px;padding:10px 60px 20px 60px">
 					<form id="frmEdit"><br />
 						<input type="hidden" id="ID" name="dataAnalysis.ID" /> <br />
