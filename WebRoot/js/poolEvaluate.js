@@ -15,9 +15,9 @@ function listAllPoolEvaluate(){
 // 加载项目列表
 function listPoolEvaluate() {
 	$("#poolEvaluatebody").datagrid({
-		title:'水池评估表',
+		title:'机加池分析表',
 		width : "1060",
-		height : "800",
+		height : "840",
 		//iconCls : 'icon-help', // 表格左上角的图标样式
 		url : tburl, // 访问服务器的地址，要求返回JSON对象
 		rownumbers : true, // 在最前面显示行号
@@ -448,16 +448,13 @@ $.getJSON(url, function(json) {
 	//去除重复项
 	var datalist = eval(json).rows;
 	var tempPoolIDlist = new Array();
-	var pidlist=new Array();
 	for(var i=0;i<json.total;i++){
 		var row = datalist[i];
-		pidlist.push({poolID:row.poolID});
 		if(jQuery.inArray(row.poolID, tempPoolIDlist)<0){
 			tempPoolIDlist.push(row.poolID);
 			poolIDlist.push({poolID:row.poolID,text:formPoolID(row.poolID)});
 		}
 	}//for
-	console.log(poolIDlist)
 	$('#searchPoolID').combobox({
 		data : poolIDlist.sort(keysrt('poolID',false)),
 		valueField:'poolID',
@@ -503,12 +500,44 @@ function keysrt(key,desc) {
 
 function export2excel(){
 	var params = $("#exportPoolEvaluate").serialize();
+	var filename = $('#downloadFilename').val() ;
+	var downloadPath;
+	if(null==filename || ""==filename){
+		downloadPath = "downloadTemp/PoolEvaluate.xls";
+	}else{
+		downloadPath = "downloadTemp/"+filename+".xls";
+	}
+	console.log(downloadPath);
 	$.post("exportPoolEvaluate.action", params, function(result) {
 		if (result.operateSuccess){
-			$.messager.alert('导出', '导出成功', 'info');
-			alert("导出成功")
+			window.location.href=downloadPath;
+//			$.messager.alert('导出', '导出成功', 'info');		
 		} else {
 			$.messager.alert('导出', '导出失败', 'warning');
 		}
 	});
+}
+
+function import2DB(){
+	var params=$('#upload').val();
+	
+	$.ajaxFileUpload({
+		url : "importPoolEvaluate.action",
+		fileElementId:'upload',
+		dataType:'json',
+		success: function(data, status){
+			if (data.operateSuccess){
+					console.log("上传成功");
+					$('#poolEvaluatebody').datagrid('reload');// 重新加载
+					$.messager.alert('导入', '导入成功', 'info');
+				} else {
+					$.messager.alert('导入', '导入失败', 'warning');
+				} 
+		},
+		error:function(data, status){
+			console.log("上传失败");
+			$('#poolEvaluatebody').datagrid('reload');// 重新加载
+			$.messager.alert('导入', '导入失败', 'warning');
+		}
+		});
 }

@@ -8,7 +8,7 @@
             <column name="ID" />
             <generator class="native" />
         </id>
-        <property name="t" type="java.sql.Date">
+        <property name="t" type="java.util.Date">
             <column name="T" />
         </property>
         <property name="PoolID" type="java.lang.String">
@@ -33,9 +33,6 @@
         <property name="NTU" type="java.lang.Double">
             <column name="NTU" />
         </property>
-        <property name="WaterTemp" type="java.lang.Double">
-            <column name="WATERTEMP" />
-        </property>
           <property name="AlgaeContent" type="java.lang.Double">
             <column name="ALGAECONTENT" />
         </property>
@@ -48,11 +45,14 @@
         <property name="OutNTU" type="java.lang.Double">
             <column name="OUTNTU" />
         </property>
-        <property name="state" type="java.lang.Integer">
-            <column name="STATE" />
-        </property>
         <property name="CL" type="java.lang.Double">
             <column name="CL" />
         </property>
+         <!-- <property name="state" type="java.lang.Integer">
+            <column name="STATE" />
+        </property> -->
+       <!--  <property name="WaterTemp" type="java.lang.Double">
+            <column name="WATERTEMP" />
+        </property> -->
     </class>
 </hibernate-mapping>

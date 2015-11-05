@@ -37,14 +37,14 @@ import com.water.service.DataAnalysisService;
 @SuppressWarnings("serial")
 public class DataAnalysisAction extends ActionSupport{
 	//保存的文件名
-	private String exportFileName;
+	private String downloadFilename;
 
-	public String getExportFileName() {
-		return exportFileName;
+	public String getDownloadFilename() {
+		return downloadFilename;
 	}
 
-	public void setExportFileName(String exportFileName) {
-		this.exportFileName = exportFileName;
+	public void setDownloadFilename(String downloadFilename) {
+		this.downloadFilename = downloadFilename;
 	}
 
 	//导入的文件路径和文件名,文件类型
@@ -268,61 +268,77 @@ public class DataAnalysisAction extends ActionSupport{
 	public String export2excel(){
 		List<DataAnalysis> list=(List<DataAnalysis>) data.get("rows");
 		WritableWorkbook book = null;
+		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTemp"));
+		//判断上述路径是否存在，如果不存在则创建该路径
+		if (!uploadFile.exists()) {
+			uploadFile.mkdir();
+		}
 		try{
 			//打开文件
-			if(exportFileName==null || exportFileName.isEmpty())
+			if(downloadFilename==null || downloadFilename.isEmpty())
 			{
-				//导出文件名为系统当前时间
-				exportFileName=(new SimpleDateFormat("yyyyMMdd-HHmmss")).format(System.currentTimeMillis());
-			}
-			String path="D://数据分析表-"+exportFileName+".xls";
+				//导出文件名默认为DataAnalysis
+//				filename=(new SimpleDateFormat("yyyyMMdd-HHmmss")).format(System.currentTimeMillis());
+				downloadFilename="DataAnalysis";
+			}			
+			String path=ServletActionContext.getServletContext().getRealPath("//downloadTemp")+"//"+downloadFilename+".xls";
+	
+//			String path="D://数据分析表-"+exportFileName+".xls";
 			book = Workbook.createWorkbook(new File(path));
 			//生成工作表
 			WritableSheet sheet = book.createSheet("sheet1", 0);
-
 
 			//给sheet电子版中所有的列设置默认的列的宽度;  
 			sheet.getSettings().setDefaultColumnWidth(15);
 			sheet.setColumnView(1, 20);//给第二列设置列宽 
 			//设置格式
-			WritableFont formatH = new WritableFont(WritableFont.TAHOMA,10,WritableFont.BOLD);   
-			WritableCellFormat formatHead = new WritableCellFormat(formatH);
+			//标题
+			WritableFont formatH = new WritableFont(WritableFont.TAHOMA,14,WritableFont.BOLD);   
+			WritableCellFormat formatTitle = new WritableCellFormat(formatH);
 			//设置自动对齐 
+			formatTitle.setAlignment(jxl.format.Alignment.CENTRE);
+			
+			//表头
+			WritableFont formatH1 = new WritableFont(WritableFont.TAHOMA,10,WritableFont.BOLD);   
+			WritableCellFormat formatHead = new WritableCellFormat(formatH1);
 			formatHead.setAlignment(jxl.format.Alignment.CENTRE);  
 
+			//内容
 			WritableFont formatB = new WritableFont(WritableFont.TAHOMA,10);   
 			WritableCellFormat formatBody = new WritableCellFormat(formatB);
-			formatBody.setAlignment(jxl.format.Alignment.CENTRE); 
+			formatBody.setAlignment(jxl.format.Alignment.CENTRE);  //单元格内容居中对齐
 
 			//	List<DataAnalysis> list = dataAnalysisService.findAll();
 			if(list!=null && !list.isEmpty()){
-				sheet.addCell(new Label(0,0," 编号 ",formatHead));
-				sheet.addCell(new Label(1,0," 水池编号 ",formatHead));
-				sheet.addCell(new Label(2,0," 时间 ",formatHead));
-				sheet.addCell(new Label(3,0," 总来水量 ",formatHead));
-				sheet.addCell(new Label(4,0," 出水量 ",formatHead));
-				sheet.addCell(new Label(5,0," 洗虹吸滤池 ",formatHead));
-				sheet.addCell(new Label(6,0," 洗V型滤池 ",formatHead));				
-				sheet.addCell(new Label(7,0," 炭池反冲洗 ",formatHead));
-				sheet.addCell(new Label(8,0," 机加池排泥 ",formatHead));					
-				sheet.addCell(new Label(9,0," 回流水量 ",formatHead));
-				sheet.addCell(new Label(10,0," 蓄水量 ",formatHead));
-				sheet.addCell(new Label(11,0," 预测水位 ",formatHead));
-
+				sheet.mergeCells(0, 0, 10, 0); //合并单元格，用于显示标题
+				sheet.addCell(new Label(0,0, "清水池水位计算表",formatTitle));
+				//添加表头
+//				sheet.addCell(new Label(0,1," 编号 ",formatHead));
+				sheet.addCell(new Label(0,1," 时间 ",formatHead));
+				sheet.addCell(new Label(1,1," 水池编号 ",formatHead));
+				sheet.addCell(new Label(2,1," 总来水量 ",formatHead));
+				sheet.addCell(new Label(3,1," 出水量 ",formatHead));
+				sheet.addCell(new Label(4,1," 洗虹吸滤池 ",formatHead));
+				sheet.addCell(new Label(5,1," 洗V型滤池 ",formatHead));				
+				sheet.addCell(new Label(6,1," 炭池反冲洗 ",formatHead));
+				sheet.addCell(new Label(7,1," 机加池排泥 ",formatHead));					
+				sheet.addCell(new Label(8,1," 回流水量 ",formatHead));
+				sheet.addCell(new Label(9,1," 蓄水量 ",formatHead));
+				sheet.addCell(new Label(10,1," 预测水位 ",formatHead));
+				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 				for (int i=0;i<list.size();i++){
-
-					sheet.addCell(new Label(0,i+1,Long.toString(list.get(i).getID()),formatBody));
-					sheet.addCell(new Label(1,i+1,list.get(i).getPoolID()));
-					sheet.addCell(new Label(2,i+1,(new SimpleDateFormat("yyyy-MM-dd hh:mm")).format(list.get(i).getT()),formatBody));
-					sheet.addCell(new Label(3,i+1,Double.toString(list.get(i).getInV()),formatBody));
-					sheet.addCell(new Label(4,i+1,Double.toString(list.get(i).getOutV()),formatBody));
-					sheet.addCell(new Label(5,i+1,Double.toString(list.get(i).getHXOutV()),formatBody));
-					sheet.addCell(new Label(6,i+1,Double.toString(list.get(i).getLCOutV()),formatBody));
-					sheet.addCell(new Label(7,i+1,Double.toString(list.get(i).getTCOutV()),formatBody));					
-					sheet.addCell(new Label(8,i+1,Double.toString(list.get(i).getJJOutV()),formatBody));	
-					sheet.addCell(new Label(9,i+1,Double.toString(list.get(i).getHLInV()),formatBody));
-					sheet.addCell(new Label(10,i+1,Double.toString(list.get(i).getStorage()),formatBody));
-					sheet.addCell(new Label(11,i+1,Double.toString(list.get(i).getPreH()),formatBody));
+//					sheet.addCell(new Label(0,i+2,Long.toString(list.get(i).getID()),formatBody));
+					sheet.addCell(new Label(0,i+2,sdf.format(list.get(i).getT()),formatBody));
+					sheet.addCell(new Label(1,i+2,list.get(i).getPoolID(),formatBody));
+					sheet.addCell(new Label(2,i+2,Double.toString(list.get(i).getInV()),formatBody));
+					sheet.addCell(new Label(3,i+2,Double.toString(list.get(i).getOutV()),formatBody));
+					sheet.addCell(new Label(4,i+2,Double.toString(list.get(i).getHXOutV()),formatBody));
+					sheet.addCell(new Label(5,i+2,Double.toString(list.get(i).getLCOutV()),formatBody));
+					sheet.addCell(new Label(6,i+2,Double.toString(list.get(i).getTCOutV()),formatBody));					
+					sheet.addCell(new Label(7,i+2,Double.toString(list.get(i).getJJOutV()),formatBody));	
+					sheet.addCell(new Label(8,i+2,Double.toString(list.get(i).getHLInV()),formatBody));
+					sheet.addCell(new Label(9,i+2,Double.toString(list.get(i).getStorage()),formatBody));
+					sheet.addCell(new Label(10,i+2,Double.toString(list.get(i).getPreH()),formatBody));
 
 				}//for
 			}//if
@@ -420,7 +436,7 @@ public class DataAnalysisAction extends ActionSupport{
 				//得到当前天数
 				Date day = (new SimpleDateFormat("yyyy-MM-dd").parse(sheet.getCell(0,0).getContents()));
 
-				for(int i=2;i<sheet.getRows();i++){ //共12列数据,从第三行开始
+				for(int i=2;i<sheet.getRows();i++){ //共11列数据,从第三行开始
 					
 					if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
 					{	
@@ -429,24 +445,24 @@ public class DataAnalysisAction extends ActionSupport{
 					else{
 						DataAnalysis dataTemp = new DataAnalysis();
 						dataTemp.setID(0);
-						dataTemp.setPoolID(sheet.getCell(1,i).getContents());
-						try{
-							int hour = Integer.parseInt(sheet.getCell(2,i).getContents());
+							try{
+							int hour = Integer.parseInt(sheet.getCell(0,i).getContents());
 							Date datetime = new Date();
 							datetime.setTime(day.getTime()+hour*3600*1000);
 							dataTemp.setT(datetime);							
 						}catch(Exception e){
 							e.printStackTrace();
 						}
-						dataTemp.setInV(Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setOutV(Double.parseDouble(sheet.getCell(4,i).getContents()));
-						dataTemp.setHXOutV(Double.parseDouble(sheet.getCell(5,i).getContents()));
-						dataTemp.setLCOutV(Double.parseDouble(sheet.getCell(6,i).getContents()));
-						dataTemp.setTCOutV(Double.parseDouble(sheet.getCell(7,i).getContents()));
-						dataTemp.setJJOutV(Double.parseDouble(sheet.getCell(8,i).getContents()));
-						dataTemp.setHLInV(Double.parseDouble(sheet.getCell(9,i).getContents()));
-						dataTemp.setStorage(Double.parseDouble(sheet.getCell(10,i).getContents()));
-						dataTemp.setPreH(Double.parseDouble(sheet.getCell(11,i).getContents()));
+						dataTemp.setPoolID(sheet.getCell(1,i).getContents());						
+						dataTemp.setInV(Double.parseDouble(sheet.getCell(2,i).getContents()));
+						dataTemp.setOutV(Double.parseDouble(sheet.getCell(3,i).getContents()));
+						dataTemp.setHXOutV(Double.parseDouble(sheet.getCell(4,i).getContents()));
+						dataTemp.setLCOutV(Double.parseDouble(sheet.getCell(5,i).getContents()));
+						dataTemp.setTCOutV(Double.parseDouble(sheet.getCell(6,i).getContents()));
+						dataTemp.setJJOutV(Double.parseDouble(sheet.getCell(7,i).getContents()));
+						dataTemp.setHLInV(Double.parseDouble(sheet.getCell(8,i).getContents()));
+						dataTemp.setStorage(Double.parseDouble(sheet.getCell(9,i).getContents()));
+						dataTemp.setPreH(Double.parseDouble(sheet.getCell(10,i).getContents()));
 						operateSuccess=(dataAnalysisService.addDataAnalysis(dataTemp)>0);	//添加到数据库
 					}
 				} //for
