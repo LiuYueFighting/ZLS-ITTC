@@ -84,7 +84,7 @@ oCanvas.domReady(function () {
     var SC02 = canvas.display.SC_show({
         x: 208,
         y: 341,
-        Width: 310,
+        Width: 330,
         Height: 200,
         height_now: 0,
         trail_flag: 1,
@@ -92,8 +92,8 @@ oCanvas.domReady(function () {
             {x_t: 0, y_t: 24},
             {x_t: 0, y_t: 58},
             {x_t: 158, y_t: 193},
-            {x_t: 289, y_t: 58},
-            {x_t: 289, y_t: 0},
+            {x_t: 299, y_t: 61},
+            {x_t: 299, y_t: 0},
             {x_t: 39, y_t: 0},
             {x_t: 39, y_t: 23}
         ],

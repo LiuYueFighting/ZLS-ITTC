@@ -25,7 +25,7 @@ oCanvas.domReady(function () {
     var SC01 = canvas.display.SC_show({
         x: 326,
         y: 200,
-        Width: 171,
+        Width: 181,
         Height: 438,
         height_now: 0,
         trail_flag: 0,
@@ -39,9 +39,9 @@ oCanvas.domReady(function () {
 
     var SC02 = canvas.display.SC_show({
         x: 496,
-        y: 569,
-        Width: 183,
-        Height: 70,
+        y: 567,
+        Width: 186,
+        Height: 72,
         height_now: 0,
         trail_flag: 0,
         t: 0,
@@ -55,7 +55,7 @@ oCanvas.domReady(function () {
     var SC03 = canvas.display.SC_show({
         x: 841,
         y: 219,
-        Width: 142,
+        Width: 144,
         Height: 393,
         height_now: 0,
         trail_flag: 0,

@@ -12,7 +12,7 @@ oCanvas.domReady(function () {
 //绘制两个水池
  var SC01=createSC({
      parent:canvas,
-     x:566,y:306,height:351,width:138,trail_flag:0,speed:speed_SC,color:color_SC
+     x:560,y:306,height:357,width:140,trail_flag:0,speed:speed_SC,color:color_SC
  });
  var SC02=createSC({
      parent:canvas,
