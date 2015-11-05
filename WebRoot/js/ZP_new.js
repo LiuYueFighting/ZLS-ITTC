@@ -355,7 +355,7 @@ $(document).ready(function(){
             flag_y: 0,
             cellIndex: 0,
             Speed: speed_all,
-            GDwidth: 40,
+            GDwidth: 30,
             LineHeight: 5,
             x_now: 0,
             y_now: 0,

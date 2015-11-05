@@ -793,9 +793,11 @@ oCanvas.domReady(function () {
     img1.bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
         $("#name_QS").css("display","inline");
+        this.shadow="0 0 10px #eee";
         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
+        this.shadow="0 0 0px #eee";
         $("#name_QS").css("display","none");
     }).bind("flash",function(){
         $("#name_QS").animate({
@@ -826,10 +828,12 @@ oCanvas.domReady(function () {
     });
     img11.bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_QS2").css("display","inline");
         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
+        this.shadow="0 0 0px #eee";
         $("#name_QS2").css("display","none");
     }).bind("flash",function(){
         $("#name_QS2").animate({
@@ -855,10 +859,12 @@ oCanvas.domReady(function () {
         window.location.href="JJC.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_JJC1").css("display","inline");
         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
+        this.shadow="0 0 0 #eee";
         $("#name_JJC1").css("display","none");
     }).bind("flash",function(){
         $("#name_JJC1").animate({
@@ -887,9 +893,11 @@ oCanvas.domReady(function () {
         window.location.href="JJC.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_JJC2").css("display","inline");
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
+        this.shadow="0 0 0px #eee";
         $("#name_JJC2").css("display","none");
     }).bind("flash",function(){
         $("#name_JJC2").animate({
@@ -918,9 +926,11 @@ oCanvas.domReady(function () {
         window.location.href="JJC.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_JJC3").css("display","inline");
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
+        this.shadow="0 0 0px #eee";
         $("#name_JJC3").css("display","none");
     }).bind("flash",function(){
         $("#name_JJC3").animate({
@@ -950,9 +960,11 @@ oCanvas.domReady(function () {
         window.location.href="VL.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_VL").css("display","inline");
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
+        this.shadow="0 0 0px #eee";
         $("#name_VL").css("display","none");
 
     }).bind("flash",function(){
@@ -984,9 +996,11 @@ oCanvas.domReady(function () {
         window.location.href="hhj.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_HHJ").css("display","inline");
     }).bind("mouseleave",function(){
         $("#name_HHJ").css("display","none");
+        this.shadow="0 0 0px #eee";
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_HHJ").animate({
@@ -1017,9 +1031,11 @@ oCanvas.domReady(function () {
         window.location.href="hhj.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_HHJ2").css("display","inline");
     }).bind("mouseleave",function(){
         $("#name_HHJ2").css("display","none");
+        this.shadow="0 0 0px #eee";
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_HHJ2").animate({
@@ -1046,9 +1062,11 @@ oCanvas.domReady(function () {
         window.location.href="hxt.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_HX").css("display","inline");
     }).bind("mouseleave",function(){
         $("#name_HX").css("display","none");
+        this.shadow="0 0 0px #eee";
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_HX").animate({
@@ -1079,9 +1097,11 @@ oCanvas.domReady(function () {
         window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_QSC1").css("display","inline");
     }).bind("mouseleave",function(){
         $("#name_QSC1").css("display","none");
+        this.shadow="0 0 0px #eee";
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_QSC1").animate({
@@ -1112,9 +1132,11 @@ oCanvas.domReady(function () {
         window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_QSC2").css("display","inline");
     }).bind("mouseleave",function(){
         $("#name_QSC2").css("display","none");
+        this.shadow="0 0 0px #eee";
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_QSC2").animate({
@@ -1139,9 +1161,11 @@ oCanvas.domReady(function () {
         window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_QSC3").css("display","inline");
     }).bind("mouseleave",function(){
         $("#name_QSC3").css("display","none");
+        this.shadow="0 0 0px #eee";
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_QSC3").animate({
@@ -1166,9 +1190,11 @@ oCanvas.domReady(function () {
         window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_QSC4").css("display","inline");
     }).bind("mouseleave",function(){
         $("#name_QSC4").css("display","none");
+        this.shadow="0 0 0px #eee";
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_QSC4").animate({
@@ -1197,9 +1223,11 @@ oCanvas.domReady(function () {
     canvas.addChild(img7);
     img7.bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_YC").css("display","inline");
     }).bind("mouseleave",function(){
         $("#name_YC").css("display","none");
+        this.shadow="0 0 0px #eee";
         canvas.mouse.cursor("default");
     });
 
@@ -1213,8 +1241,10 @@ oCanvas.domReady(function () {
         window.location.href="hxt.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_TC").css("display","inline");
     }).bind("mouseleave",function(){
+        this.shadow="0 0 0px #eee";
         $("#name_TC").css("display","none");
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
@@ -1245,9 +1275,11 @@ oCanvas.domReady(function () {
         window.location.href="hxt.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_TC1").css("display","inline");
     }).bind("mouseleave",function(){
         $("#name_TC1").css("display","none");
+        this.shadow="0 0 0px #eee";
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_TC1").animate({
@@ -1273,9 +1305,11 @@ oCanvas.domReady(function () {
         window.location.href="cy.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_CY").css("display","inline");
     }).bind("mouseleave",function(){
         $("#name_CY").css("display","none");
+        this.shadow="0 0 0px #eee";
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_CY").animate({
@@ -1305,9 +1339,11 @@ oCanvas.domReady(function () {
         window.location.href="cy.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
         $("#name_CYC").css("display","inline");
     }).bind("mouseleave",function(){
         $("#name_CYC").css("display","none");
+        this.shadow="0 0 0px #eee";
         canvas.mouse.cursor("default");
     });
 

@@ -19,47 +19,39 @@
     <style>
     #ZP_New_content {
     font-family: '微软雅黑','Source Sans Pro';
+    position:relative;
     font-size: 15px;
     width: 1600px;
     height: 800px;
     margin:0px auto;
     }
-    #btn_start{
-    z-index: 11;
-    position: relative;
+    #btn_menu{
+    position:absolute;
     left: 1100px;
+    z-index: 11;
     top: 15px;
+    }
+    #btn_start{
+    float:left;
     }
     #btn_upS{
-    z-index: 11;
-    position: relative;
-    left: 1100px;
-    top: 15px;
+    float:left;
     }
     #txt_speed{
-    z-index: 11;
-    position: relative;
+    float:left;
     text-align: center;
-    padding-top: 5px;
-    left: 1100px;
     width:50px;
     height:34px;
-    top: 15px;
+    padding-top:7px;
     display: inline-block;
     background-color:#5cc0de;
     color:#ffffff;
     }
     #btn_downS{
-    z-index: 11;
-    position: relative;
-    left: 1100px;
-    top: 15px;
+    float:left;
     }
     #btn_reset{
-    z-index: 11;
-    position: relative;
-    left: 1100px;
-    top: 15px;
+    float:left;
     }
     </style>
     
@@ -71,11 +63,13 @@
     <li class="active">新系列工艺线</li>
     </ol>
     <div id="ZP_New_content">
-    <button id="btn_start" class="btn btn-info">开始</button>
-    <button id="btn_downS" class="btn btn-info">减速</button>
-    <span id="txt_speed">1.0</span>
-    <button id="btn_upS" class="btn btn-info">加速</button>
-    <button id="btn_reset" class="btn btn-info">重置</button>
+    	<div id="btn_menu">
+    		<button id="btn_start" class="btn btn-info">开始</button>
+		    <button id="btn_downS" class="btn btn-info">减速</button>
+		    <span id="txt_speed">1.0</span>
+		    <button id="btn_upS" class="btn btn-info">加速</button>
+		    <button id="btn_reset" class="btn btn-info">重置</button>
+        </div>
     	<div id="mainView" style="position: absolute;z-index: 1" >
         	<canvas id="canvas_ZP_new" width="1600" height="757"></canvas>
     	</div>
