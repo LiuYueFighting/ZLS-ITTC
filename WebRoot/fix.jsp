@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/top_down.css">
     <link rel="stylesheet" href="css/breadcrumb.css">
+    <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
@@ -37,128 +38,162 @@
          #myContent a{
     color: #ff4400;
     }
-        .name_ob{
+    .name_Model{
     font-family: '微软雅黑','Arial';
     color:#ff4400;
-    font-size: 20px;
+    font-size: 15px;
     font-weight:bold;
-        }
+    }
+    #chackBox_name{
+    position:absolute;
+    top:363px;
+    left:79px;
+    }
+    #WShow{
+    position:absolute;
+    top:373px;
+    left:9px;
+    z-index:999;
+    }
+    .name_ob{
+    font-family: '微软雅黑','Arial';
+    color:#ff4400;
+    font-size: 18px;
+    font-weight:bold;
+    <%--display:none;--%>
+    }
     #name_QS{
     position: absolute;
-    left: 705px;
-    top: 98px;
+    left: 681px;
+    top: 62px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_JJC1{
     position: absolute;
-    left: 870px;
-    top: 435px;
+    left: 858px;
+    top: 383px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_JJC2{
     position: absolute;
-    left: 1079px;
-    top: 435px;
+    left: 1067px;
+    top: 383px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_JJC3{
     position: absolute;
-    left:1175px;
-    top: 615px;
+    left:1146px;
+    top: 616px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_VL{
     position: absolute;
-    left: 875px;
-    top: 670px;
+    left: 860px;
+    top: 681px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_HHJ1{
     position: absolute;
-    left:980px;
-    top: 376px;
+    left:965px;
+    top: 343px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_HHJ2{
     position: absolute;
-    left:1190px;
-    top: 376px;
-    height: 50px;
-    width: auto;
+    left:1166px;
+    top: 355px;
+    height: auto;
+    width: 30px;
     z-index:999;
     }
     #name_HX{
     position: absolute;
-    left:852px;
-    top: 565px;
+    left:837px;
+    top: 532px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_QSC1{
     position: absolute;
-    left:320px;
-    top: 521px;
+    left:305px;
+    top: 485px;
     height: 50px;
     width: 150px;
     z-index:999;
     }
     #name_CY{
     position: absolute;
-    left:605px;
-    top: 678px;
+    left:590px;
+    top: 663px;
     height: 50px;
     width: auto;
     z-index:999;
     }
+    #name_CYC{
+    position: absolute;
+    left:620px;
+    top: 453px;
+    height: auto;
+    width: 30px;
+    z-index:999;
+    }
     #name_QSC2{
     position: absolute;
-    left:330px;
-    top: 337px;
+    left:315px;
+    top: 301px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_QSC3{
     position: absolute;
-    left:502px;
-    top: 337px;
+    left:487px;
+    top: 301px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_QSC4{
     position: absolute;
-    left:508px;
-    top: 525px;
+    left:450px;
+    top: 489px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_TC{
     position: absolute;
-    left:455px;
-    top: 675px;
+    left:375px;
+    top: 655px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_TC1{
+    position: absolute;
+    left:485px;
+    top: 655px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_YC{
     position: absolute;
-    left:975px;
-    top: 185px;
+    left:960px;
+    top: 139px;
     height: 50px;
     width: auto;
     z-index:999;
@@ -674,6 +709,47 @@
         else image.src ="image/y3.png";
     }
     }
+    function showName(e){
+    if(e.checked==true){
+    document.getElementById("name_QS" ).style.display="block";
+    document.getElementById("name_JJC1").style.display="block";
+    document.getElementById("name_JJC2").style.display="block";
+    document.getElementById("name_JJC3").style.display="block";
+    document.getElementById("name_VL" ).style.display="block";
+    document.getElementById("name_TC" ).style.display="block";
+    document.getElementById("name_TC1").style.display="block";
+    document.getElementById("name_CY" ).style.display="block";
+    document.getElementById("name_CYC").style.display="block";
+    document.getElementById("name_YC" ).style.display="block";
+    document.getElementById("name_HHJ1").style.display="block";
+    document.getElementById("name_HHJ2").style.display="block";
+    document.getElementById("name_HX" ).style.display="block";
+    document.getElementById("name_QSC1").style.display="block";
+    document.getElementById("name_QSC2").style.display="block";
+    document.getElementById("name_QSC3").style.display="block";
+    document.getElementById("name_QSC4").style.display="block";
+
+    }
+    if(e.checked==false){
+    document.getElementById("name_QS").style.display="none";
+    document.getElementById("name_JJC1").style.display="none";
+    document.getElementById("name_JJC2").style.display="none";
+    document.getElementById("name_JJC3").style.display="none";
+    document.getElementById("name_VL" ).style.display="none";
+    document.getElementById("name_TC" ).style.display="none";
+    document.getElementById("name_TC1").style.display="none";
+    document.getElementById("name_CY" ).style.display="none";
+    document.getElementById("name_CYC").style.display="none";
+    document.getElementById("name_YC" ).style.display="none";
+    document.getElementById("name_HHJ1").style.display="none";
+    document.getElementById("name_HHJ2").style.display="none";
+    document.getElementById("name_HX" ).style.display="none";
+    document.getElementById("name_QSC1").style.display="none";
+    document.getElementById("name_QSC2").style.display="none";
+    document.getElementById("name_QSC3").style.display="none";
+    document.getElementById("name_QSC4").style.display="none";
+    }
+    }
     </script>
 </head>
 <body>
@@ -690,7 +766,8 @@
     <div id="FMhelp" class="name_ob">
     单击需要维修的部件！
     </div>
-
+    <p class="name_Model" id="WShow">显示名称</p>
+    <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label>
     <a href="#" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
     <a href="#" id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
     <a href="#" id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>

@@ -67,9 +67,10 @@
 		<action name="listPoolEvaluate" class="poolEvaluateAction"
 			method="list">
 			<!-- 指定的属性作为根元素输出 -->
-			<result type="json">
+			<result name="success" type="json">
 				<param name="root">data</param>
 			</result>
+			<result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
 
 		<!-- 添加项目 -->
@@ -99,18 +100,20 @@
 		<!-- 查询项目 -->
 		<action name="searchPoolEvaluate" class="poolEvaluateAction"
 			method="searchPoolEvaluate">
-			<result type="json">
+			<result name="success" type="json">
 				<param name="root">data</param>
 			</result>
+			<result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
 
 		<!-- 显示所有的项目 -->
 		<action name="listDataAnalysis" class="dataAnalysisAction"
 			method="list">
 			<!-- 指定的属性作为根元素输出 -->
-			<result type="json">
+			<result name="success" type="json">
 				<param name="root">data</param>
 			</result>
+			<result name="input" type="json">DataAnalysis.jsp</result>
 		</action>
 
 		<!-- 添加项目 -->
@@ -139,30 +142,35 @@
 
 		<action name="searchDataAnalysis" class="dataAnalysisAction"
 			method="searchDataAnalysis">
-			<result type="json">
+			<result name="success" type="json">
 				<param name="root">data</param>
 			</result>
+			<result name="input" type="json">DataAnalysis.jsp</result>
 		</action>
 
 		<!-- 导出到excel -->
 		<action name="exportDataAnalysis" class="dataAnalysisAction"
 			method="export2excel">
-			<result type="json" />
+			<result name="success" type="json"/>
+			<result name="input" type="json">DataAnalysis.jsp</result>
 		</action>
 
 		<action name="exportPoolEvaluate" class="poolEvaluateAction"
 			method="export2excel">
-			<result type="json" />
+			<result  name="success" type="json" />
+			<result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
 
 		<!-- 导入excel -->
 		<action name="importDataAnalysis" class="dataAnalysisAction" method="import2DB">
 			 <!-- <result name="success" type="json">DataAnalysis.jsp</result> -->
-			 <result type="json"/>
+			<result  name="success" type="json"/>			 
+			<result name="input" type="json">DataAnalysis.jsp</result>
 		</action>
 		
 		<action name="importPoolEvaluate" class="poolEvaluateAction" method="import2DB">
-			 <result type="json"/>
+			 <result  name="success" type="json"/>
+			 <result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
 	</package>
 </struts>

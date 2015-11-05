@@ -13,7 +13,7 @@ function listDataAnalysis() {
 	$("#dataAnalysisbody").datagrid({
 		title:title,
 		width : "1050",
-		height : "200",
+		height : "300",
 //		iconCls : 'icon-save', // 表格左上角的图标样式
 		/*url : 'listDataAnalysis.action', // 访问服务器的地址，要求返回JSON对象*/
 		url:tburl,
@@ -394,7 +394,8 @@ function prehImage(){
 	options = {
 			//常规图表选项设置
 			chart: {
-				renderTo: 'imageContainer',	//在哪个区域呈现			
+				renderTo: 'imageContainer',	//在哪个区域呈现
+				borderColor: '#95B8E7',	//边框颜色
 				//type: 'spline'          //指定图表的类型，默认是折线图（line）
 //				zoomType: 'x',	//图标缩放
 			},
@@ -410,6 +411,11 @@ function prehImage(){
 			},
 			title:{
 				text: ImageTitle,
+				style:{
+					font: '18px',
+					color: '#0E2D5F',
+					fontWeight: 'bold',
+				}
 			},
 			lang: {
 	            noData: "没有数据"
@@ -417,7 +423,7 @@ function prehImage(){
 	   		noData: {
 				style: {
 					fontWeight: 'bold',
-					fontSize: '15px',
+					font: '15px',
 					color: '#303030'
 				}
 			},
@@ -439,7 +445,7 @@ function prehImage(){
 			},
 			yAxis: [
 			        {	//第一个y轴坐标
-			        	min: 0,
+//			        	min: 0,
 			        	title: {
 			        		text: '单位：米'                  //指定y轴的标题
 			        	},

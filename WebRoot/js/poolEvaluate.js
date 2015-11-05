@@ -17,7 +17,7 @@ function listPoolEvaluate() {
 	$("#poolEvaluatebody").datagrid({
 		title:'机加池分析表',
 		width : "1060",
-		height : "840",
+		height : "900",
 		//iconCls : 'icon-help', // 表格左上角的图标样式
 		url : tburl, // 访问服务器的地址，要求返回JSON对象
 		rownumbers : true, // 在最前面显示行号
@@ -498,25 +498,25 @@ function keysrt(key,desc) {
 
 
 
-function export2excel(){
-	var params = $("#exportPoolEvaluate").serialize();
-	var filename = $('#downloadFilename').val() ;
-	var downloadPath;
-	if(null==filename || ""==filename){
-		downloadPath = "downloadTemp/PoolEvaluate.xls";
-	}else{
-		downloadPath = "downloadTemp/"+filename+".xls";
-	}
-	console.log(downloadPath);
-	$.post("exportPoolEvaluate.action", params, function(result) {
-		if (result.operateSuccess){
-			window.location.href=downloadPath;
-//			$.messager.alert('导出', '导出成功', 'info');		
-		} else {
-			$.messager.alert('导出', '导出失败', 'warning');
-		}
-	});
-}
+//function export2excel(){
+//	var params = $("#exportPoolEvaluate").serialize();
+//	var filename = $('#downloadFilename').val() ;
+//	var downloadPath;
+//	if(null==filename || ""==filename){
+//		downloadPath = "downloadTemp/PoolEvaluate.xls";
+//	}else{
+//		downloadPath = "downloadTemp/"+filename+".xls";
+//	}
+//	console.log(downloadPath);
+//	$.post("exportPoolEvaluate.action", params, function(result) {
+//		if (result.operateSuccess){
+//			window.location.href=downloadPath;
+////			$.messager.alert('导出', '导出成功', 'info');		
+//		} else {
+//			$.messager.alert('导出', '导出失败', 'warning');
+//		}
+//	});
+//}
 
 function import2DB(){
 	var params=$('#upload').val();
