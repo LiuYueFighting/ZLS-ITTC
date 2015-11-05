@@ -76,7 +76,7 @@
         <div id="btn_menu">
             <button id="btn_start" class="btn btn-info">开始</button>
             <button id="btn_downS" class="btn btn-info">减速</button>
-            <span id="txt_speed">1.0</span>
+            <span id="txt_speed">1.0X</span>
             <button id="btn_upS" class="btn btn-info">加速</button>
             <button id="btn_reset" class="btn btn-info">重置</button>
         </div>
