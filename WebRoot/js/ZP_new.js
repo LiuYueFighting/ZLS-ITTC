@@ -772,7 +772,7 @@ $(document).ready(function(){
             SC16.init();
             GD01.paused=1;
             canvas.settings.fps=50;
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-50)/50+1.0);
+            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-50)/50+1.0)+'X';
             $("#btn_start").innerText='暂停';
             $("#btn_start").value=0;
 
@@ -781,14 +781,14 @@ $(document).ready(function(){
         $("#btn_upS").click(function(){
             canvas.settings.fps+=5;
 
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-50)/50+1.0);
+            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-50)/50+1.0)+'X';
             canvas.redraw();
         });
         $("#btn_downS").click(function () {
             if(canvas.settings.fps>=25)
             canvas.settings.fps-=5;
 
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-50)/50+1.0);
+            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-50)/50+1.0)+'X';
             canvas.redraw();
         });
     });
