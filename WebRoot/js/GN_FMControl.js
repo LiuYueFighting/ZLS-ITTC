@@ -86,25 +86,19 @@ oCanvas.domReady(function(){
     var img1=canvas.display.image({
         x:692,
         y:58,
-        image:"image/main/qs.png",
-    });
-    var img1b=canvas.display.image({
-        x:692,
-        y:58,
-        image:"image/main/qs_black.png"
+        image:"image/main/qs.png"
     });
     canvas.addChild(img1);
     img1.bind("click",function(){
         window.location.href="GN_getWater.jsp";
     }).bind("mouseenter", function () {
             canvas.mouse.cursor("pointer");
-            img1.stroke="1px red";
-            document.getElementById("name_QS").style.display="block";
+        this.shadow="0 0 10px #eee";
             canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img1.stroke="";
-        document.getElementById("name_QS").style.display="none";
+        this.shadow="0 0 0px #eee";
+
         canvas.redraw();
      });
     var img1_2=canvas.display.image({
@@ -117,8 +111,10 @@ oCanvas.domReady(function(){
         window.location.href="GN_getWater.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
+        this.shadow="0 0 0px #eee";
     });
     //????????
     var img2=canvas.display.image({
@@ -131,13 +127,11 @@ oCanvas.domReady(function(){
         window.location.href="GN_JJ.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img2.stroke="1px red";
-        document.getElementById("name_JJC1").style.display="block";
+        this.shadow="0 0 10px #eee";
         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img2.stroke="";
-        document.getElementById("name_JJC1").style.display="none";
+        this.shadow="0 0 0px #eee";
         canvas.redraw();
     });
     //???????????
@@ -150,13 +144,11 @@ oCanvas.domReady(function(){
         window.location.href="GN_JJ.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img21.stroke="1px red";
-        document.getElementById("name_JJC2").style.display="block";
+        this.shadow="0 0 10px #eee";
         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img21.stroke="";
-        document.getElementById("name_JJC2").style.display="none";
+        this.shadow="0 0 0px #eee";
         canvas.redraw();
     });
     var img22=img2.clone({
@@ -168,13 +160,12 @@ oCanvas.domReady(function(){
         window.location.href="GN_JJ.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img22.stroke="1px red";
-        document.getElementById("name_JJC3").style.display="block";
+        this.shadow="0 0 10px #eee";
         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img22.stroke="";
-        document.getElementById("name_JJC3").style.display="none";
+        this.shadow="0 0 0px #eee";
+
         canvas.redraw();
     });
     //V?????????
@@ -188,14 +179,12 @@ oCanvas.domReady(function(){
         window.location.href="GN_VL.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img3.stroke="1px red";
-        document.getElementById("name_VL").style.display="block";
+        this.shadow="0 0 10px #eee";
         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img3.stroke="";
-        document.getElementById("name_VL").style.display="none";
-        canvas.redraw();
+        this.shadow="0 0 0px #eee";
+       canvas.redraw();
     });
 
     //?????????
@@ -209,13 +198,11 @@ oCanvas.domReady(function(){
         window.location.href="GN_HH.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img4.stroke="1px red";
-        document.getElementById("name_HHJ1").style.display="block";
-        canvas.redraw();
+        this.shadow="0 0 10px #eee";
+         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img4.stroke="";
-        document.getElementById("name_HHJ1").style.display="none";
+        this.shadow="0 0 0px #eee";
         canvas.redraw();
     });
     var img10=canvas.display.image({
@@ -227,14 +214,12 @@ oCanvas.domReady(function(){
     img10.bind("click",function(){
         window.location.href="GN_HH.jsp";
     }).bind("mouseenter", function () {
-        img10.stroke="1px red";
-        document.getElementById("name_HHJ2").style.display="block";
-        canvas.redraw();
+        this.shadow="0 0 10px #eee";
+         canvas.redraw();
         canvas.mouse.cursor("pointer");
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img10.stroke="";
-        document.getElementById("name_HHJ2").style.display="none";
+        this.shadow="0 0 0px #eee";
         canvas.redraw();
     });
     //???????
@@ -248,14 +233,12 @@ oCanvas.domReady(function(){
         window.location.href="GN_HX.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img5.stroke="1px red";
-        document.getElementById("name_HX").style.display="block";
-        canvas.redraw();
+        this.shadow="0 0 10px #eee";
+       canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img5.stroke="";
-        document.getElementById("name_HX").style.display="none";
-        canvas.redraw();
+        this.shadow="0 0 0px #eee";
+       anvas.redraw();
     });
     //?????
     var img6=canvas.display.image({
@@ -268,13 +251,11 @@ oCanvas.domReady(function(){
         window.location.href="GN_QingS_new.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img6.stroke="1px red";
-        document.getElementById("name_QSC1").style.display="block";
-        canvas.redraw();
+        this.shadow="0 0 10px #eee";
+         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img6.stroke="";
-        document.getElementById("name_QSC1").style.display="none";
+        this.shadow="0 0 0px #eee";
         canvas.redraw();
     });
     var img61=canvas.display.image({
@@ -287,13 +268,11 @@ oCanvas.domReady(function(){
         window.location.href="GN_QingS.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img61.stroke="1px red";
-        document.getElementById("name_QSC2").style.display="block";
-        canvas.redraw();
+        this.shadow="0 0 10px #eee";
+         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img61.stroke="";
-        document.getElementById("name_QSC2").style.display="none";
+        this.shadow="0 0 0px #eee";
         canvas.redraw();
     });
     var img62=canvas.display.image({
@@ -306,13 +285,11 @@ oCanvas.domReady(function(){
         window.location.href="GN_QingS.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img62.stroke="1px red";
-        document.getElementById("name_QSC3").style.display="block";
-        canvas.redraw();
+        this.shadow="0 0 10px #eee";
+         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img62.stroke="";
-        document.getElementById("name_QSC3").style.display="none";
+        this.shadow="0 0 0px #eee";
         canvas.redraw();
     });
     var img63=canvas.display.image({
@@ -325,13 +302,11 @@ oCanvas.domReady(function(){
         window.location.href="GN_QingS_new.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img63.stroke="1px red";
-        document.getElementById("name_QSC4").style.display="block";
-        canvas.redraw();
+        this.shadow="0 0 10px #eee";
+         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img63.stroke="";
-        document.getElementById("name_QSC4").style.display="none";
+        this.shadow="0 0 0px #eee";
         canvas.redraw();
     });
 
@@ -345,13 +320,11 @@ oCanvas.domReady(function(){
         window.location.href="#";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img7.stroke="1px red";
-        document.getElementById("name_YC").style.display="block";
+        this.shadow="0 0 10px #eee";
         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img7.stroke="";
-        document.getElementById("name_YC").style.display="none";
+        this.shadow="0 0 0px #eee";
         canvas.redraw();
     });
     var img8=canvas.display.image({
@@ -364,14 +337,12 @@ oCanvas.domReady(function(){
         window.location.href="GN_TC01.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img8.stroke="1px red";
-        document.getElementById("name_TC").style.display="block";
-        canvas.redraw();
+        this.shadow="0 0 10px #eee";
+       canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img8.stroke="";
-        document.getElementById("name_TC").style.display="none";
-        canvas.redraw();
+        this.shadow="0 0 0px #eee";
+       anvas.redraw();
     });
 
     var img8_1=canvas.display.image({
@@ -384,14 +355,12 @@ oCanvas.domReady(function(){
         window.location.href="GN_TC01.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img8_1.stroke="1px red";
-        document.getElementById("name_TC1").style.display="block";
+        this.shadow="0 0 10px #eee";
         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img8_1.stroke="";
-        document.getElementById("name_TC1").style.display="none";
-        canvas.redraw();
+        this.shadow="0 0 0px #eee";
+        anvas.redraw();
     });
 
     var img9=canvas.display.image({
@@ -404,14 +373,12 @@ oCanvas.domReady(function(){
         window.location.href="GN_CY.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img9.stroke="1px red";
-        document.getElementById("name_CY").style.display="block";
-        canvas.redraw();
+        this.shadow="0 0 10px #eee";
+        anvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img9.stroke="";
-        document.getElementById("name_CY").style.display="none";
-        canvas.redraw();
+        this.shadow="0 0 0px #eee";
+       anvas.redraw();
     });
 
     var img10=canvas.display.image({
@@ -424,14 +391,12 @@ oCanvas.domReady(function(){
         window.location.href="#";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        img10.stroke="1px red";
-        document.getElementById("name_CYC").style.display="block";
+        this.shadow="0 0 10px #eee";
         canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-        img10.stroke="";
-        document.getElementById("name_CYC").style.display="none";
-        canvas.redraw();
+        this.shadow="0 0 0px #eee";
+        anvas.redraw();
     });
 
 

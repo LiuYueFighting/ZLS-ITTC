@@ -1,6 +1,5 @@
     <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +12,7 @@
     <link rel="stylesheet" href="css/normal.css">
     <link rel="stylesheet" href="css/top_down.css">
     <link rel="stylesheet" href="css/breadcrumb.css">
+    <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
@@ -32,9 +32,16 @@
     .name_ob{
     font-family: '微软雅黑','Arial';
     color:#ff4400;
-    font-size: 20px;
+    font-size: 18px;
     font-weight:bold;
-    display:none;
+    <%--display:none;--%>
+    }
+    .name_ob_input{
+    font-family: '微软雅黑','Arial';
+    color:#ff4400;
+    font-size: 16px;
+    font-weight:bold;
+    <%--display:none;--%>
     }
     #name_QS{
     position: absolute;
@@ -382,10 +389,11 @@
     top: 416px;
     z-index:999;
     }
+
     #readout_input{
     position: absolute;
-    left: 665px;
-    top: 24px;
+    left: 687px;
+    top: 35px;
     z-index: 999;
     }
     #setConfig{
@@ -765,8 +773,9 @@
         }#btn_model1_4{
         position:absolute;
         top:160px;
-        left:40px;
+        left:30px;
         z-index:999;
+        width:90px;
         }
         #Wmodel2{
         position: absolute;
@@ -789,8 +798,9 @@
         #btn_model2_3{
         position:absolute;
         top:320px;
-        left:40px;
+        left:30px;
         z-index:999;
+        width:90px;
         }
     .name_FM{
     font-family: '微软雅黑','Arial';
@@ -801,7 +811,7 @@
         .flow{
         font-family: '微软雅黑','Arial';
         color:#8dd9ff;
-        font-size: 15px;
+        font-size: 16px;
         font-weight:bold;
         border:1px solid #008fd7;
         background:rgba(0,0,0,0.5);
@@ -814,6 +824,17 @@
         color:#ff4400;
         font-size: 15px;
         font-weight:bold;
+        }
+        #chackBox_name{
+        position:absolute;
+        top:363px;
+        left:79px;
+        }
+        #WShow{
+        position:absolute;
+        top:373px;
+        left:9px;
+        z-index:999;
         }
     #FMList{
     margin-left:144px;
@@ -836,7 +857,7 @@
     function changeInput(){
     read =document.getElementById("read").value ;
     var textFeild =document.getElementById("write");
-    textFeild.innerHTML="进水量："+read+" m3/h";
+    textFeild.innerHTML=+read;
     computeAll();
     write();
     }
@@ -876,6 +897,47 @@
 
     }
     }
+    function showName(e){
+        if(e.checked==true){
+        document.getElementById("name_QS" ).style.display="block";
+        document.getElementById("name_JJC1").style.display="block";
+        document.getElementById("name_JJC2").style.display="block";
+        document.getElementById("name_JJC3").style.display="block";
+        document.getElementById("name_VL" ).style.display="block";
+        document.getElementById("name_TC" ).style.display="block";
+        document.getElementById("name_TC1").style.display="block";
+        document.getElementById("name_CY" ).style.display="block";
+        document.getElementById("name_CYC").style.display="block";
+        document.getElementById("name_YC" ).style.display="block";
+        document.getElementById("name_HHJ1").style.display="block";
+        document.getElementById("name_HHJ2").style.display="block";
+        document.getElementById("name_HX" ).style.display="block";
+        document.getElementById("name_QSC1").style.display="block";
+        document.getElementById("name_QSC2").style.display="block";
+        document.getElementById("name_QSC3").style.display="block";
+        document.getElementById("name_QSC4").style.display="block";
+
+        }
+        if(e.checked==false){
+        document.getElementById("name_QS").style.display="none";
+        document.getElementById("name_JJC1").style.display="none";
+        document.getElementById("name_JJC2").style.display="none";
+        document.getElementById("name_JJC3").style.display="none";
+        document.getElementById("name_VL" ).style.display="none";
+        document.getElementById("name_TC" ).style.display="none";
+        document.getElementById("name_TC1").style.display="none";
+        document.getElementById("name_CY" ).style.display="none";
+        document.getElementById("name_CYC").style.display="none";
+        document.getElementById("name_YC" ).style.display="none";
+        document.getElementById("name_HHJ1").style.display="none";
+        document.getElementById("name_HHJ2").style.display="none";
+        document.getElementById("name_HX" ).style.display="none";
+        document.getElementById("name_QSC1").style.display="none";
+        document.getElementById("name_QSC2").style.display="none";
+        document.getElementById("name_QSC3").style.display="none";
+        document.getElementById("name_QSC4").style.display="none";
+        }
+        }
         var qsOut1;
         var qsOut2;
         var hh1In1;
@@ -1140,8 +1202,8 @@
             <!--<p>测试cookie</p>-->
         <!--</div>-->
         </div>
-        <div id="readout_input" class="name_ob">
-           <P id="write">进水量：3600 m3/h</P>
+        <div id="readout_input" class="name_ob_input">
+           <P >当前进水量：<span id="write" class="flow">3600</span> m3/h</P>
         </div>
         <div id="setConfig">
             <h1>参数设置：</h1>
@@ -1150,8 +1212,10 @@
             <button id="btn_submit" class="btn btn-info btn-sm btn_main" value="0" onclick="changeInput()">提交</button>
         </div>
         <div id="qs1" calss = "waterOut">
-
         </div>
+        <p class="name_Model" id="WShow">显示名称</p>
+        <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label>
+
     <a href="#" id="name_QS"  class="name_ob" style="text-decoration: none" class="name_ob">取水泵房</a>
     <a href="#" id="name_JJC1" class="name_ob" style="text-decoration: none " class="name_ob">1#机加池</a>
     <a href="#" id="name_JJC2" class="name_ob" style="text-decoration: none" class="name_ob">2#机加池</a>
