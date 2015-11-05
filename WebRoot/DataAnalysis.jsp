@@ -160,8 +160,6 @@ body {
   line-height: 18px;
 }
 
-
-
 </style>
 </head>
 <body>
@@ -215,9 +213,6 @@ body {
 						<input name=ye type="text" ondblclick=upload.click() 											
 							style="width:105px;height:25px;border:1px solid #95B8E7;"> 
 						
-						<!-- 
-						-->
-						
 					<br/><br/>
 					 
 					<input id="btn-import" class="btn btn-primary"
@@ -227,8 +222,9 @@ body {
 				</form>
 		</div>
 
-			<div style="width:160px; position: absolute; top:40px;left:100px; height:920px; border:1px solid #95B8E7" >
-				<p style="padding:3px;margin:0;font-size:16px">选择时间:</p><br/>
+			<div id="treeGuid" style="width:160px;	position: absolute;	top:40px; left:100px;
+							   	      height:920px;	padding:5px; border:1px solid #95B8E7";>
+				<p style="padding:5px;margin:0;font-size:18px">选择时间:</p><br/>
 				<!-- 树形导航菜单 -->
 				<ul id="timeTree" class="easyui-tree"></ul>
 			</div>

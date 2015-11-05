@@ -79,11 +79,16 @@
     #tab_description{
     font-family: '微软雅黑','Arial';
     position: absolute;
-    left:1400px;
-    top: 570px;
+   /*  left:1380px;
+    top: 570px; */
+    top:40px;
+    left:50px;
+    padding:5px;
     z-index: 999;
     font-size:14px;
-    width:200px;
+    width:220px;
+    height:900px;
+    border:1px solid #95B8E7
     }
     #tab_description h1{
     font-size:20px;
@@ -164,10 +169,11 @@
 					<br /> <img src="image/JJC4.png" alt="" /><br />
 				</div>
 
-				<center>
-					<table id="poolEvaluatebody" class="easyui-datagrid">
+			<div style="position: absolute; top:40px; left:300px;">
+				<table id="poolEvaluatebody" class="easyui-datagrid">
 					</table>
-				</center> <!-- 编辑数据的div，默认看不到 -->
+			</div>
+			<!-- 编辑数据的div，默认看不到 -->
 				<div style="display:none">
 					<div id="tabEdit" class="easyui-dialog" data-options="closed:true"
 						style="align:center;width:830px;height:540px;padding:10px 60px 20px 60px">
