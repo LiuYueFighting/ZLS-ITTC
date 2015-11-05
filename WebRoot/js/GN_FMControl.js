@@ -238,7 +238,7 @@ oCanvas.domReady(function(){
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
         this.shadow="0 0 0px #eee";
-       anvas.redraw();
+       canvas.redraw();
     });
     //?????
     var img6=canvas.display.image({
@@ -342,7 +342,7 @@ oCanvas.domReady(function(){
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
         this.shadow="0 0 0px #eee";
-       anvas.redraw();
+       canvas.redraw();
     });
 
     var img8_1=canvas.display.image({
@@ -360,7 +360,7 @@ oCanvas.domReady(function(){
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
         this.shadow="0 0 0px #eee";
-        anvas.redraw();
+        canvas.redraw();
     });
 
     var img9=canvas.display.image({
@@ -378,7 +378,7 @@ oCanvas.domReady(function(){
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
         this.shadow="0 0 0px #eee";
-       anvas.redraw();
+       canvas.redraw();
     });
 
     var img10=canvas.display.image({
@@ -396,7 +396,7 @@ oCanvas.domReady(function(){
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
         this.shadow="0 0 0px #eee";
-        anvas.redraw();
+        canvas.redraw();
     });
 
 
