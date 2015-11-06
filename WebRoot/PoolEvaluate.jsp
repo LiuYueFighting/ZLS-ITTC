@@ -113,7 +113,7 @@
 
 <div id="myPage">
 		<div id="myContent" style="overflow: hidden">
-			<span style="color:#6699CC">机加池评估表模板</span><br/> &nbsp;&nbsp;&nbsp;
+			<span style="color:#6699CC">机加池分析表模板</span><br/> &nbsp;&nbsp;&nbsp;
 			<a href="download/PoolEvaluate.xls" style="color:#6699CC">点击下载</a> <br />
 				<!-- 操作按钮 -->
 				<div id="btn_group" class="btn-group-vertical btn-group-lg"
@@ -189,11 +189,11 @@
 							<br /> &nbsp; &nbsp; &nbsp; PAC投加量 :&nbsp; <input
 								class="easyui-numberbox textbox" style="width:200px;height:25px"
 								id="PAC" name="poolEvaluate.PAC"
-								data-options="prompt:'请输入PAC投加量.',precision:2"> &nbsp;
+								data-options="prompt:'',precision:2"> &nbsp;
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FeCl3投加量 :&nbsp; <input
 								class="easyui-numberbox textbox" style="width:200px;height:25px"
 								id="FeCl3" name="poolEvaluate.FeCl3"
-								data-options="prompt:'请输入FeCl3投加量.',precision:2" /> <br />
+								data-options="prompt:'',precision:2" /> <br />
 							<br /> &nbsp; &nbsp; &nbsp; 开 &nbsp;启&nbsp; 度 : &nbsp; &nbsp; <input
 								class="easyui-numberbox textbox" style="width:200px;height:25px"
 								id="OpenDegree" name="poolEvaluate.OpenDegree"

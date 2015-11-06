@@ -777,6 +777,7 @@
         left:30px;
         z-index:999;
         width:90px;
+        background:#5cb85c;
         }
         #Wmodel2{
         position: absolute;
@@ -802,6 +803,7 @@
         left:30px;
         z-index:999;
         width:90px;
+        background:#5cb85c;
         }
     .name_FM{
     font-family: '微软雅黑','Arial';
@@ -1014,7 +1016,6 @@
     }
     var model1=4;
     var model2=3;
-
     function chose1(c){
         model1 = c;
         computeAll();
@@ -1092,6 +1093,35 @@
         qsc3In1=tc1Out;
         qsc3In2=tc2Out;
         }
+        function clearEmphasize1(){
+        <%--$('#btn_model1_1').className='btn btn-info btn-sm btn_main';--%>
+        <%--$('#btn_model1_2').className='btn btn-info btn-sm btn_main';--%>
+        <%--$('#btn_model1_3').className='btn btn-info btn-sm btn_main';--%>
+        <%--$('#btn_model1_4').className='btn btn-info btn-sm btn_main';--%>
+        document.getElementById("btn_model1_1").style.background="#5bc0de";
+        document.getElementById("btn_model1_2").style.background="#5bc0de";
+        document.getElementById("btn_model1_3").style.background="#5bc0de";
+        document.getElementById("btn_model1_4").style.background="#5bc0de";
+
+
+        }
+        function setEmphasize1(c){
+        <%--$('#btn_model1_1').className='btn btn-success btn-sm btn_main';--%>
+        document.getElementById("btn_model1_"+c).style.background="#5cb85c";
+        }
+        function clearEmphasize2(){
+        <%--$('#btn_model1_1').className='btn btn-info btn-sm btn_main';--%>
+        <%--$('#btn_model1_2').className='btn btn-info btn-sm btn_main';--%>
+        <%--$('#btn_model1_3').className='btn btn-info btn-sm btn_main';--%>
+        <%--$('#btn_model1_4').className='btn btn-info btn-sm btn_main';--%>
+        document.getElementById("btn_model2_1").style.background="#5bc0de";
+        document.getElementById("btn_model2_2").style.background="#5bc0de";
+        document.getElementById("btn_model2_3").style.background="#5bc0de";
+        }
+        function setEmphasize2(c){
+        <%--$('#btn_model1_1').className='btn btn-success btn-sm btn_main';--%>
+        document.getElementById("btn_model2_"+c).style.background="#5cb85c";
+        }
     function write(){
         document.getElementById("qsOut1").innerHTML=qsOut1;
         document.getElementById("qsOut2").innerHTML=qsOut2;
@@ -1115,6 +1145,7 @@
         document.getElementById("qsc3In3").innerHTML=qsc3In3;
         }
     function clearModle1(){
+        clearEmphasize1();
         clearOpenDgree("FM05");
         clearOpenDgree("FM06");
         clearOpenDgree("FM07");
@@ -1132,6 +1163,7 @@
         clearOpenDgree("FM067");
     }
     function clearModle2(){
+        clearEmphasize2();
         clearOpenDgree("FM017");
         clearOpenDgree("FM018");
         clearOpenDgree("FM019");
@@ -1148,6 +1180,7 @@
         clearOpenDgree("FM024");
         }
     function changeModle2(c){
+        setEmphasize2(c);
         if(c==1){
         setOpenDgree("FM056");
         setOpenDgree("FM054");
@@ -1166,6 +1199,7 @@
         }
         }
     function changeModle1(c){
+    setEmphasize1(c);
     if(c==1){
     setOpenDgree("FM062");
     setOpenDgree("FM045");
