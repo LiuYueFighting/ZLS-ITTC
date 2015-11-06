@@ -512,6 +512,7 @@ oCanvas.domReady(function () {
             arrow_102.start();
             arrow_111.frame=2;
             arrow_112.frame=2;
+         
 
         }
         if(SC02.full == 1 && SC03.full == 1){
@@ -541,6 +542,7 @@ oCanvas.domReady(function () {
             arrow_5.stopAnimation();
             arrow_6.stopAnimation();
             arrow_7.stopAnimation();
+
         }
         canvas.redraw();
     }).start();

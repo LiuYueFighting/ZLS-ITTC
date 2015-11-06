@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/normal.css">
     <link rel="stylesheet" href="css/top_down.css">
     <link rel="stylesheet" href="css/breadcrumb.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

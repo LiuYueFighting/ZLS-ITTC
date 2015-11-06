@@ -530,25 +530,37 @@ var constructor_gd = function (settings, core) {
                     this.flag_x = this.deta_x / this.deta;
                     this.flag_y = this.deta_y / this.deta;
                     if (this.endHeight > 0) {
-                        if(this.endHeight<=Math.sqrt((this.destination.x_d-this.cells[this.cellIndex].x_cell)*(this.destination.x_d-this.cells[this.cellIndex].x_cell)+(this.destination.y_d-this.cells[this.cellIndex].y_cell)*(this.destination.y_d-this.cells[this.cellIndex].y_cell))){
-                            canvas.moveTo(this.cells[this.cellIndex].x_cell, this.cells[this.cellIndex].y_cell);
-                            canvas.lineTo(this.cells[this.cellIndex].x_cell + this.flag_x * (this.endHeight ), this.cells[this.cellIndex].y_cell + this.flag_y * this.endHeight);
-                            this.x_now = this.cells[this.cellIndex].x_cell + this.flag_x * ( this.endHeight);
-                            this.y_now = this.cells[this.cellIndex].y_cell + this.flag_y * ( this.endHeight);
-                            if(Math.abs(this.destination.x_d-this.x_now)>this.LineHeight*Math.abs(this.flag_x)||Math.abs(this.destination.y_d-this.y_now)>this.LineHeight*Math.abs(this.flag_y)){
-                                this.x_now+=this.LineHeight*this.flag_x;
-                                this.y_now+=this.LineHeight*this.flag_y;
-                            }
-                            else{
-                                this.x_now=this.destination.x_d;
-                                this.y_now=this.destination.y_d;
-                            }
-                        }else{
-                            canvas.moveTo(this.cells[this.cellIndex].x_cell, this.cells[this.cellIndex].y_cell);
-                            canvas.lineTo(this.destination.x_d, this.destination.y_d);
-                            this.x_now = this.destination.x_d;
-                            this.y_now = this.destination.y_d;
+                        canvas.moveTo(this.cells[this.cellIndex].x_cell, this.cells[this.cellIndex].y_cell);
+                        canvas.lineTo(this.cells[this.cellIndex].x_cell + this.flag_x * (this.endHeight ), this.cells[this.cellIndex].y_cell + this.flag_y * this.endHeight);
+                        this.x_now = this.cells[this.cellIndex].x_cell + this.flag_x * ( this.endHeight);
+                        this.y_now = this.cells[this.cellIndex].y_cell + this.flag_y * ( this.endHeight);
+                        if(Math.abs(this.destination.x_d-this.x_now)>this.LineHeight*Math.abs(this.flag_x)||Math.abs(this.destination.y_d-this.y_now)>this.LineHeight*Math.abs(this.flag_y)){
+                            this.x_now+=this.LineHeight*this.flag_x;
+                            this.y_now+=this.LineHeight*this.flag_y;
                         }
+                        else{
+                            this.x_now=this.destination.x_d;
+                            this.y_now=this.destination.y_d;
+                        }
+                        //if(this.endHeight<=Math.sqrt((this.destination.x_d-this.cells[this.cellIndex].x_cell)*(this.destination.x_d-this.cells[this.cellIndex].x_cell)+(this.destination.y_d-this.cells[this.cellIndex].y_cell)*(this.destination.y_d-this.cells[this.cellIndex].y_cell))){
+                        //    canvas.moveTo(this.cells[this.cellIndex].x_cell, this.cells[this.cellIndex].y_cell);
+                        //    canvas.lineTo(this.cells[this.cellIndex].x_cell + this.flag_x * (this.endHeight ), this.cells[this.cellIndex].y_cell + this.flag_y * this.endHeight);
+                        //    this.x_now = this.cells[this.cellIndex].x_cell + this.flag_x * ( this.endHeight);
+                        //    this.y_now = this.cells[this.cellIndex].y_cell + this.flag_y * ( this.endHeight);
+                        //    if(Math.abs(this.destination.x_d-this.x_now)>this.LineHeight*Math.abs(this.flag_x)||Math.abs(this.destination.y_d-this.y_now)>this.LineHeight*Math.abs(this.flag_y)){
+                        //        this.x_now+=this.LineHeight*this.flag_x;
+                        //        this.y_now+=this.LineHeight*this.flag_y;
+                        //    }
+                        //    else{
+                        //        this.x_now=this.destination.x_d;
+                        //        this.y_now=this.destination.y_d;
+                        //    }
+                        //}else{
+                        //    canvas.moveTo(this.cells[this.cellIndex].x_cell, this.cells[this.cellIndex].y_cell);
+                        //    canvas.lineTo(this.destination.x_d, this.destination.y_d);
+                        //    this.x_now = this.destination.x_d;
+                        //    this.y_now = this.destination.y_d;
+                        //}
                         //canvas.moveTo(this.cells[this.cellIndex].x_cell - this.flag_x * (this.GDwidth / 8), this.cells[this.cellIndex].y_cell - this.flag_y * (this.GDwidth / 8));
 
                     }
