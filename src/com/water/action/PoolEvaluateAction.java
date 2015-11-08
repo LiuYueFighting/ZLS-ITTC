@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Date;
+import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -33,15 +33,15 @@ import com.water.service.PoolEvaluateService;
 @SuppressWarnings("serial")
 public class PoolEvaluateAction extends ActionSupport{
 	//保存的文件名
-	private String downloadFilename;
-
-	public String getDownloadFilename() {
-		return downloadFilename;
-	}
-
-	public void setDownloadFilename(String downloadFilename) {
-		this.downloadFilename = downloadFilename;
-	}
+//	private String downloadFilename;
+//
+//	public String getDownloadFilename() {
+//		return downloadFilename;
+//	}
+//
+//	public void setDownloadFilename(String downloadFilename) {
+//		this.downloadFilename = downloadFilename;
+//	}
 
 	private File   upload;
 	private String uploadFileName;
@@ -114,13 +114,7 @@ public class PoolEvaluateAction extends ActionSupport{
 	public void setHighNTU(double highNTU) {
 		this.highNTU = highNTU;
 	}
-	private int searchState=-1;		//查询状态	
-	public int getSearchState() {
-		return searchState;
-	}
-	public void setSearchState(int searchState) {
-		this.searchState = searchState;
-	}
+	
 	/*来水藻类含量查询参数*/
 	private double lowAlgaeContent;  //来水藻类含量下限
 	private double highAlgaeContent; //来水藻类含量上限
@@ -291,22 +285,19 @@ public class PoolEvaluateAction extends ActionSupport{
 	public String searchPoolEvaluate() {
 		String sql;
 		//查询条件拼接
-		if(searchT==null && searchPoolID ==null && searchState==-1){
+		if(searchT==null && searchPoolID ==null){
 			sql="from PoolEvaluate";
 		}
 		else {
 			sql="from PoolEvaluate where 1=1";
+			
 			if (searchT!=null)
 			{
-				sql+= " and t = '"+searchT+"'";
+				sql+= " and Convert(varchar,t,120)  like '%"+(new SimpleDateFormat("yyyy-MM-dd")).format(searchT)+"%'";
 			}
 			if(!searchPoolID.equals(""))
 			{
 				sql+=" and PoolID like '%"+searchPoolID+"'";
-			}
-			if(searchState!=-1)
-			{
-				sql+=" and State ='"+searchState+"'";
 			}
 			if(lowNTU!=0)
 			{
@@ -352,13 +343,14 @@ public class PoolEvaluateAction extends ActionSupport{
 
 		try{
 			//打开文件
-			if(downloadFilename==null || downloadFilename.isEmpty())
-			{
-				//导出文件名默认为PoolEvaluate
-//				downloadFilename=(new SimpleDateFormat("yyyyMMdd-HHmmss")).format(System.currentTimeMillis());
-				downloadFilename="PoolEvaluate";
-			}
-			String path=ServletActionContext.getServletContext().getRealPath("//downloadTemp")+"//"+downloadFilename+".xls";
+//			if(downloadFilename==null || downloadFilename.isEmpty())
+//			{
+//				//导出文件名默认为PoolEvaluate
+////				downloadFilename=(new SimpleDateFormat("yyyyMMdd-HHmmss")).format(System.currentTimeMillis());
+//				downloadFilename="PoolEvaluate";
+//			}
+			
+			String path=ServletActionContext.getServletContext().getRealPath("//downloadTemp")+"//PoolEvaluate.xls";
 			book = Workbook.createWorkbook(new File(path));
 			//生成工作表
 			WritableSheet sheet = book.createSheet("sheet1", 0);
@@ -450,11 +442,11 @@ public class PoolEvaluateAction extends ActionSupport{
 	public String import2DB() throws Exception{
 		//	先上传，再导入
 		//		//取得文件上传路径（用于存放上传的文件）
-		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/uploadFiles"));
-		//判断上述路径是否存在，如果不存在则创建该路径
-		if (!uploadFile.exists()) {
-			uploadFile.mkdir();
-		}
+//		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/uploadFiles"));
+//		//判断上述路径是否存在，如果不存在则创建该路径
+//		if (!uploadFile.exists()) {
+//			uploadFile.mkdir();
+//		}
 
 		if(upload != null){
 			//判断上传文件的类型是否是excel
@@ -472,34 +464,33 @@ public class PoolEvaluateAction extends ActionSupport{
 			}
 
 			//	//		 第一种文件上传的读写方式
-			FileInputStream input = new FileInputStream(upload);
-			FileOutputStream out = new FileOutputStream(uploadFile + "\\" + uploadFileName);
-
-			try{
-				byte[] b = new byte[1024];
-				int m = 0;
-				while ((m = input.read(b)) > 0) {
-					out.write(b, 0, m);
-				}
-			}catch(Exception e){
-				e.printStackTrace();
-				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "上传过程中发生未知错误，请联系管理员。上传失败！");
-				operateSuccess=false;
-				//				return "error";
-			}finally{
-				input.close();
-				out.close();
-				//删除临时文件
-				upload.delete();
-			}
+//			FileInputStream input = new FileInputStream(upload);
+//			FileOutputStream out = new FileOutputStream(uploadFile + "\\" + uploadFileName);
+//
+//			try{
+//				byte[] b = new byte[1024];
+//				int m = 0;
+//				while ((m = input.read(b)) > 0) {
+//					out.write(b, 0, m);
+//				}
+//			}catch(Exception e){
+//				e.printStackTrace();
+//				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "上传过程中发生未知错误，请联系管理员。上传失败！");
+//				operateSuccess=false;
+//				//				return "error";
+//			}finally{
+//				input.close();
+//				out.close();
+//				//删除临时文件
+//				upload.delete();
+//			}
 
 			Workbook workBook = null;
 			InputStream fs = null;
-			if(uploadFileName!=null || uploadFileName!="")
-			{
 				try{
 					//加载excel文件
-					fs = new FileInputStream(uploadFile + "\\" + uploadFileName);
+//					fs = new FileInputStream(uploadFile + "\\" + uploadFileName);
+					fs = new FileInputStream(upload);
 					//得到工作簿
 					workBook = Workbook.getWorkbook(fs);
 				}catch(FileNotFoundException e){
@@ -517,10 +508,14 @@ public class PoolEvaluateAction extends ActionSupport{
 				}
 				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-				List<PoolEvaluate> list = new ArrayList<PoolEvaluate>();
-
+				Date day = (Date) sdf.parse(sheet.getCell(0,2).getContents());
+				String poolIDTemp=sheet.getCell(1,2).getContents();
+				String sql="delete PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
+//				sql+=" and PoolID like '%"+poolIDTemp+"'";
+				// 直接覆盖当天信息
+				int deleteResult = poolEvaluateService.bulkUpadte(sql);
+				System.out.println("受影响的行数："+deleteResult);
 				for(int i=2;i<sheet.getRows();i++){ //共14列数据,从第3行开始
-					
 					if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
 					{	
 						continue;
@@ -545,17 +540,58 @@ public class PoolEvaluateAction extends ActionSupport{
 					}
 				} //for
 				workBook.close(); //关闭
-			}
+			}//upload!=null
 			else{
 				operateSuccess=false;
 				ServletActionContext.getServletContext().setAttribute("errorMsg", "请选择上传文件");
-
 			}
-		}//upload!=null
-		else{
+		return SUCCESS;
+	}
+	
+	
+	public String importCheck() throws Exception{
+		String errMsg = "" ;
+		if(upload != null){
+			//判断上传文件的类型是否是excel
+			if(!uploadContentType.equals("application/vnd.ms-excel")){
+				errMsg = "上传文件中类型不符合条件";
+				operateSuccess=false;
+			}
+			Workbook workBook = null;
+			InputStream fs = null;
+			try{
+				//加载excel文件
+				fs = new FileInputStream(upload);
+				//得到工作簿
+				workBook = Workbook.getWorkbook(fs);
+			}catch(Exception e){
+				e.printStackTrace();
+				errMsg = uploadFileName+ "数据导入发生错误！";	
+				operateSuccess=false;
+			}
+			DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
+			//得到当前天数
+			Date day = (Date) sdf.parse(sheet.getCell(0,2).getContents());
+			String poolIDTemp=sheet.getCell(1,2).getContents();
+			String sql="from PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
+			sql+=" and PoolID like '%"+poolIDTemp+"'";
+			List<PoolEvaluate> list = poolEvaluateService.findBySql(sql);
+
+			if(null == list||list.isEmpty()){
+				errMsg="";
+				operateSuccess=true;
+			}
+			else{
+				errMsg = "文件冲突，已存在相关信息！";	
+				operateSuccess=false;
+			}
+		}else{ //upload=''
+			errMsg = "请选择上传文件！";
 			operateSuccess=false;
-			ServletActionContext.getServletContext().setAttribute("errorMsg", "请选择上传文件");
 		}
+		System.out.println(errMsg);
+		ServletActionContext.getServletContext().setAttribute("errorMsg",errMsg);
 		return SUCCESS;
 	}
 }

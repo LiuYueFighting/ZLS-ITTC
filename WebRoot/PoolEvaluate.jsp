@@ -100,7 +100,8 @@
     font-family: '微软雅黑','Arial';
     position: absolute;
     left:1482px;
-    top: 320px;
+   /*  top: 320px; */
+    top:350px;
     z-index: 999;
     font-size:14px;
     width:200px;
@@ -118,7 +119,6 @@
 				<!-- 操作按钮 -->
 				<div id="btn_group" class="btn-group-vertical btn-group-lg"
 					role="group">
-
 					<button id="btn_addRow" class="btn btn-primary"
 						onclick="javascript:addPoolEvaluate()">添加</button>
 					<button id="btn_editRow" class="btn btn-primary"
@@ -129,16 +129,21 @@
 						onclick="javascript:listAllPoolEvaluate()">查询全部</button>
 					<button id="btn_search" class="btn btn-primary"
 						onclick="javascript:searchPoolEvaluate()">条件查询</button>
+					<button id="btn_export" class="btn btn-primary"
+						onclick="javascript:export2excel()">导出</button>
 				</div> <!-- 文件导出操作 -->
+				
+			
 				<div id="tab_export">
-					<form id="exportPoolEvaluate">
+					
+					<!-- <form id="exportPoolEvaluate">
 						<span style="font-size:18px">&nbsp;导出文件名</span><br /> <input
 							type="text" id="downloadFilename" name="downloadFilename"
 							style="width:105px;height:25px;border:1px solid #95B8E7;" /> <br />
 						<br /> <input id="btn-export" class="btn btn-primary"
 							style="font-size:18px;width:105px;" value="导出"
 							onclick="javascript:export2excel()" />
-					</form>
+					</form> -->
 
 					<br />
 					<br />
@@ -149,16 +154,17 @@
 						<!-- <input type="file" id="upload" name="upload"
 							style="width:105px;height:30px;font-size:16px" /> -->
 						<input type=file name="upload"  id="upload" style="display: none;"
-							 onchange="ye.value=value">						
+							 onchange="fakeUpload.value=value">						
 						<input type=button class="btn btn-primary"value="选择文件"
 							 onclick=upload.click() style="width:105px;font-size:18px"><br/>
-						<input name=ye type="text" ondblclick=upload.click() 											
+						<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click() 											
 							style="width:105px;height:25px;border:1px solid #95B8E7;"><br/><br/>
 						 <input
 							id="btn-import" class="btn btn-primary"
 							style="font-size:18px;width:105px;" value="导入"
-							onclick="javascript:import2DB()" />
+							onclick="javascript:import2DB();fakeUpload.value='';" />
 					</form>
+					<input type="hidden" value='${errorMsg}' id="errMsg"/>
 				</div> <!-- 特征量说明 -->
 				<div id="tab_description">
 					<h1 style="font-size: 20px">填表说明:</h1>

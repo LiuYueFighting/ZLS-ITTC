@@ -7,14 +7,14 @@ import com.water.beans.DataAnalysis;
 public interface DataAnalysisDao{
 
 	/**
-	 * ²éÑ¯ËùÓĞÊé¼®
+	 * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½ï¿½é¼®
 	 * 
 	 * @return
 	 */
 	public List<DataAnalysis> find();
 
 	/**
-	 * Ìí¼ÓÊé¼®
+	 * ï¿½ï¿½ï¿½ï¿½é¼®
 	 * 
 	 * @param book
 	 * @return
@@ -22,7 +22,7 @@ public interface DataAnalysisDao{
 	public int add(DataAnalysis dataAnalysis);
 
 	/**
-	 * É¾³ıÊé¼®
+	 * É¾ï¿½ï¿½ï¿½é¼®
 	 * 
 	 * @param id
 	 * @return
@@ -30,7 +30,7 @@ public interface DataAnalysisDao{
 	public int delete(long id);
 
 	/**
-	 * »ñµÃÒ»Êé¼®¼ÇÂ¼
+	 * ï¿½ï¿½ï¿½Ò»ï¿½é¼®ï¿½ï¿½Â¼
 	 * 
 	 * @param id
 	 * @return
@@ -38,7 +38,7 @@ public interface DataAnalysisDao{
 	public DataAnalysis findById(long id);
 
 	/**
-	 * ¸üĞÂÊé¼®
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½é¼®
 	 * 
 	 * @param book
 	 * @return
@@ -46,23 +46,25 @@ public interface DataAnalysisDao{
 	public int update(DataAnalysis dataAnalysis);
 
 	/**
-	 * Í³¼ÆÊé¼®¹²¶àÉÙ±¾
+	 * Í³ï¿½ï¿½ï¿½é¼®ï¿½ï¿½ï¿½ï¿½ï¿½Ù±ï¿½
 	 * 
 	 * @return
 	 */
 	public long findTotal();
 
 	/**
-	 * ²éÑ¯Ò»Ò³µÄÊı¾İ
+	 * ï¿½ï¿½Ñ¯Ò»Ò³ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
-	 * @param begin ´ÓÄÄÌõ¿ªÊ¼0
-	 * @param end µÃµ½¶àÉÙÌõ
-	 * @param sort ÅÅĞò×Ö¶Î
-	 * @param order ÉıĞò»ò½µĞò desc/asc
+	 * @param begin ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼0
+	 * @param end ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * @param sort ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½
+	 * @param order ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ desc/asc
 	 */
 	public List<DataAnalysis> findPages(int begin, int end, String sort, String order);
 	
 	
 	public List<DataAnalysis> findBySql(String sql);
+	
+	public int  bulkUpdate(String sql); //æ‰¹é‡æ›´æ–°åˆ é™¤
 
 }

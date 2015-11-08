@@ -60,4 +60,8 @@ public class PoolEvaluateServiceImpl implements PoolEvaluateService{
 		return poolEvaluateDao.findBySql(sql);
 	}
 	
+	@Override
+	public int bulkUpadte(String sql){
+		return poolEvaluateDao.bulkUpdate(sql);
+	}
 }

@@ -3,12 +3,13 @@ import java.util.List;
 
 import com.water.beans.PoolEvaluate;
 public interface PoolEvaluateService {
-	int addPoolEvaluate(PoolEvaluate poolEvaluate);			//Ìí¼ÓÓÃ»§
-	int deletePoolEvaluate(long id);			//É¾³ýÓÃ»§
-	int updatePoolEvaluate(PoolEvaluate poolEvaluate);			//¸üÐÂÓÃ»§
-	PoolEvaluate findPoolEvaluateById(long id);			//°´id²éÕÒÓÃ»§
-	List<PoolEvaluate> findAll();				//²éÕÒÈ«²¿ÓÃ»§
+	int addPoolEvaluate(PoolEvaluate poolEvaluate);			//ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
+	int deletePoolEvaluate(long id);			//É¾ï¿½ï¿½ï¿½Ã»ï¿½
+	int updatePoolEvaluate(PoolEvaluate poolEvaluate);			//ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
+	PoolEvaluate findPoolEvaluateById(long id);			//ï¿½ï¿½idï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½
+	List<PoolEvaluate> findAll();				//ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½Ã»ï¿½
 	long findTotal();
 	List<PoolEvaluate> findPages(int page, int size, String sort, String order);
 	List<PoolEvaluate> findBySql(String sql);
+	int bulkUpadte(String sql);
 }

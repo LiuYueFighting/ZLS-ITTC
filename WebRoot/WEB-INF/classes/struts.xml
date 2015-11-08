@@ -172,5 +172,14 @@
 			 <result  name="success" type="json"/>
 			 <result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
+		
+			<!-- 导入excel -->
+		<action name="importCheckDataAnalysis" class="dataAnalysisAction" method="importCheck">
+			<result  name="success" type="json">DataAnalysis.jsp</result>
+		</action>
+		
+		<action name="importCheckPoolEvaluate" class="poolEvaluateAction" method="importCheck">
+			<result  name="success" type="json">PoolEvaluate.jsp</result>
+		</action>
 	</package>
 </struts>

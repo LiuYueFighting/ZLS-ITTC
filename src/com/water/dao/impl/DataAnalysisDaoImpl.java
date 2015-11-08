@@ -121,5 +121,14 @@ public class DataAnalysisDaoImpl extends HibernateDaoSupport implements DataAnal
 			
 			
 	}
-
+	
+	public int bulkUpdate(String sql){
+		int result=0;
+		try{
+			result= getHibernateTemplate().bulkUpdate(sql);
+		} catch (DataAccessException ex) {
+			ex.printStackTrace();
+		}
+		return result;
+	}
 }

@@ -4,14 +4,6 @@ $(function() {
 });
 var tburl='searchPoolEvaluate.action'; 
 
-function listAllPoolEvaluate(){
-	$('#frmSearch').form('clear');
-//	$('#searchState').combobox('setValue','-1');
-	$('#searchPoolID').combobox('setValue','');
-//	$('#lowAlgaeContent').val('0');
-//	$('#highAlgaeContent').val('100');
-	dealSearch();
-}
 // 加载项目列表
 function listPoolEvaluate() {
 	$("#poolEvaluatebody").datagrid({
@@ -26,10 +18,11 @@ function listPoolEvaluate() {
 		striped : true, // 隔行变色
 		singleSelect : true, // 每次只选中一行
 		loadMsg : '加载项目列表ing……',
-		pageSize : 15, // 指定每页的大小，服务器要加上page属性和total属性
-		remoteSort : false, // 从服务器端排序，默认true
-		pageList : [ 10, 15, 20, 30], // 可以设置每页记录条数的列表，服务器要加上rows属性
 		idField : 'ID', // 主键属性
+		remoteSort : false, // 从服务器端排序，默认true
+		pageSize : 20, // 指定每页的大小，服务器要加上page属性和total属性
+		pageList : [ 10, 15, 20, 30], // 可以设置每页记录条数的列表，服务器要加上rows属性
+		loader: myLoader, //前段假分页
 		columns : [ [
 		     {
 		     field : 't',
@@ -198,6 +191,54 @@ function listPoolEvaluate() {
          }
      });
  }
+
+//前端假的分页函数
+function myLoader(param, success, error) {
+    var that = $(this);
+    var opts = that.datagrid("options");
+    if (!opts.url) {
+        return false;
+    }
+
+    var cache = that.data().datagrid.cache;
+    if (!cache) {
+        $.ajax({
+            type: opts.method,
+            url: opts.url,
+            data: param,
+            dataType: "json",
+            success: function (data) {
+                that.data().datagrid['cache'] = data;
+                success(bulidData(data));
+            },
+            error: function () {
+                error.apply(this, arguments);
+            }
+        });
+    } else {
+        success(bulidData(cache));
+    }
+
+    function bulidData(data) {
+        var temp = $.extend({}, data);
+        var tempRows = [];
+        var start = (param.page - 1) * parseInt(param.rows);
+        var end = start + parseInt(param.rows);
+        var rows = data.rows;
+        for (var i = start; i < end; i++) {
+            if (rows[i]) {
+                tempRows.push(rows[i]);
+            } else {
+                break;
+            }
+        }
+
+        temp.rows = tempRows;
+        return temp;
+    }
+}
+
+//选择显示的项目
  var cmenu;
  function createColumnMenu(){
      cmenu = $('<div/>').appendTo('body');
@@ -229,9 +270,7 @@ function listPoolEvaluate() {
          });
      }
  }
-//$('#poolEvaluatebody').datagrid('hideColumn', 'openDegree');
-//$('#poolEvaluatebody').datagrid('hideColumn', '状态');
-//$('#poolEvaluatebody').datagrid('hideColumn', 'smallMudFre');
+
 // 显示编辑窗口
 function showEditForm() {
 	$("#tabEdit").dialog({
@@ -315,6 +354,7 @@ function dealSave() {
 	if ($("#ID").val() == "") {
 		$.post("addPoolEvaluate.action", params, function(result) {
 			if (result.operateSuccess) {
+				$("#poolEvaluatebody").data().datagrid.cache = null;
 				$('#poolEvaluatebody').datagrid('reload');// 重新加载
 				$.messager.alert('添加', '添加成功', 'info');
 			} else {
@@ -325,6 +365,7 @@ function dealSave() {
 		// 表示更新
 		$.post("updatePoolEvaluate.action", params, function(result) {
 			if (result.operateSuccess) {
+				$("#poolEvaluatebody").data().datagrid.cache = null;
 				$('#poolEvaluatebody').datagrid('reload');// 重新加载
 				$.messager.alert('更新', '更新成功', 'info');
 			} else {
@@ -350,6 +391,7 @@ function deletePoolEvaluate() {
 				if (result.operateSuccess) {
 					$.messager.alert('删除', '选中的项目成功删除！', 'info');
 					// 重新加载
+					$("#poolEvaluatebody").data().datagrid.cache = null;
 					$("#poolEvaluatebody").datagrid('reload');
 				} else {
 					$.messager.alert('删除', '删除失败！', 'warning');
@@ -358,11 +400,17 @@ function deletePoolEvaluate() {
 		}
 	});
 }
- 
+
+
+function listAllPoolEvaluate(){
+	$('#frmSearch').form('clear');
+//	$('#searchPoolID').combobox('setValue','');
+	dealSearch();
+}
+
 function searchPoolEvaluate(){
 	$("#searchT").val(searchT);
 	$("#searchPoolID").val(searchPoolID);
-//	$("#searchState").val(searchState);
 	$('#lowAlgaeContent').numberbox("setValue",lowAlgaeContent);
 	$('#highAlgaeContent').numberbox("setValue",highAlgaeContent);
 	$('#lowNTU').numberbox("setValue",lowNTU);
@@ -379,30 +427,13 @@ function dealSearch() {
 	console.log(params);
 	$.post("searchPoolEvaluate.action", params, function(result) {
 		if (result.total!=0) {
-			
+			$("#poolEvaluatebody").data().datagrid.cache = null;
 			$('#poolEvaluatebody').datagrid('reload');// 重新加载
-		
 //			$.messager.alert('查询', '查询成功', 'info');
 		} else {
 			$.messager.alert('查询', '查询失败,未查找到相关信息', 'warning');
 		}
 	});
-	
-//	if ($("#searchT").datebox("getValue")!= null) {
-//		$.post("searchPoolEvaluate.action", params, function(result) {
-//			if (result.total!=0) {
-//				
-//				$('#poolEvaluatebody').datagrid('reload');// 重新加载
-//			
-////				$.messager.alert('查询', '查询成功', 'info');
-//			} else {
-//				$.messager.alert('查询', '查询失败,未查找到相关信息', 'warning');
-//			}
-//		});
-//	} else {
-//	
-//		$.messager.alert('查询', '请选择。。。', 'warning');
-//	}
 }
  
 //显示查询窗口
@@ -498,7 +529,7 @@ function keysrt(key,desc) {
 
 
 
-//function export2excel(){
+function export2excel(){
 //	var params = $("#exportPoolEvaluate").serialize();
 //	var filename = $('#downloadFilename').val() ;
 //	var downloadPath;
@@ -516,28 +547,112 @@ function keysrt(key,desc) {
 //			$.messager.alert('导出', '导出失败', 'warning');
 //		}
 //	});
+	
+	var downloadPath = "downloadTemp/PoolEvaluate.xls";
+	$.post("exportPoolEvaluate.action", function(result) {
+		if (result.operateSuccess){
+			window.location.href=downloadPath;
+//			$.messager.alert('导出', '导出成功', 'info');		
+		} else {
+			$.messager.alert('导出', '导出失败', 'warning');
+		}
+	});
+}
+
+//function import2DB(){
+//	var params=$('#upload').val();
+//	
+//	$.ajaxFileUpload({
+//		url : "importPoolEvaluate.action",
+//		fileElementId:'upload',
+//		dataType:'json',
+//		success: function(data, status){
+//			if (data.operateSuccess){
+//					console.log("上传成功");
+//					$("#poolEvaluatebody").data().datagrid.cache = null;
+//					$('#poolEvaluatebody').datagrid('reload');// 重新加载
+//					$.messager.alert('导入', '导入成功', 'info');
+//				} else {
+//					$.messager.alert('导入', '导入失败', 'warning');
+//				} 
+//		},
+//		error:function(data, status){
+//			console.log("上传失败");
+//			$("#poolEvaluatebody").data().datagrid.cache = null;
+//			$('#poolEvaluatebody').datagrid('reload');// 重新加载
+//			$.messager.alert('导入', '导入失败', 'warning');
+//		}
+//		});
 //}
 
+//导入文件操作
 function import2DB(){
 	var params=$('#upload').val();
-	
-	$.ajaxFileUpload({
-		url : "importPoolEvaluate.action",
-		fileElementId:'upload',
-		dataType:'json',
-		success: function(data, status){
-			if (data.operateSuccess){
-					console.log("上传成功");
-					$('#poolEvaluatebody').datagrid('reload');// 重新加载
-					$.messager.alert('导入', '导入成功', 'info');
-				} else {
-					$.messager.alert('导入', '导入失败', 'warning');
+	if(''==params || null== params){
+		$.messager.alert('导入', '请选择上传文件', 'warning');
+	}
+	else
+	{
+		$.ajaxFileUpload({
+			url : "importCheckPoolEvaluate.action",
+			fileElementId:'upload',
+			dataType:'json',
+			success: function(data, status){
+				if (data.operateSuccess){
+						$.ajaxFileUpload({
+								url : "importPoolEvaluate.action",
+								fileElementId:'upload',
+								dataType:'json',
+								success: function(result){
+									if (result.operateSuccess){	
+										$("#poolEvaluatebody").data().datagrid.cache = null;
+										$('#poolEvaluatebody').datagrid('reload');// 重新加载									
+										$.messager.alert('导入', '导入成功', 'info');	
+										
+									} else {
+										$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+									}
+								},//success
+								error:function(result){
+									console.log("error 上传失败");
+									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+								} //error
+							});//ajaxFileUpload	
+						location.reload();
 				} 
-		},
-		error:function(data, status){
-			console.log("上传失败");
-			$('#poolEvaluatebody').datagrid('reload');// 重新加载
-			$.messager.alert('导入', '导入失败', 'warning');
-		}
+				else {		
+					$.messager.confirm("导入提示",'已存在相关日期的数据，是否继续覆盖导入？',function(r){
+						if (r) { //上传文件
+							$.ajaxFileUpload({
+								url : "importPoolEvaluate.action",
+								fileElementId:'upload',
+								dataType:'json',
+								success: function(data, status){
+									if (data.operateSuccess){
+										$("#poolEvaluatebody").data().datagrid.cache = null;
+										$('#poolEvaluatebody').datagrid('reload');// 重新加载
+										$.messager.alert('导入', '导入成功', 'info');
+									} else {
+										$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+									}
+								},//success
+								error:function(data,status){
+									console.log("error 上传失败");
+									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+									$("#poolEvaluatebody").data().datagrid.cache = null;
+									$('#poolEvaluatebody').datagrid('reload');// 重新加载
+								} //error
+							}//ajaxFileUpload
+							);
+						}//if r
+					}) //confirm					
+				}
+			},
+			error:function(data, status){
+				$.messager.alert('导入', '导入失败<br><br>请检查文件格式是否正确！', 'warning');
+			}
 		});
+	}
+	$('#fakeUpload').val('');
+
 }

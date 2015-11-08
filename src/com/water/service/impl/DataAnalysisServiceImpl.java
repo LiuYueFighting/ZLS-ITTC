@@ -61,4 +61,9 @@ public class DataAnalysisServiceImpl implements DataAnalysisService{
 		return dataAnalysisDao.findBySql(sql);
 	}
 	
+	@Override
+	public int bulkUpadte(String sql){
+		return dataAnalysisDao.bulkUpdate(sql);
+	}
+	
 }

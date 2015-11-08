@@ -3,12 +3,13 @@ import java.util.List;
 
 import com.water.beans.DataAnalysis;
 public interface DataAnalysisService {
-	int addDataAnalysis(DataAnalysis dataAnalysis);			//Ìí¼ÓDataAnalysis
-	int deleteDataAnalysis(long id);			//É¾³ýDataAnalysis
-	int updateDataAnalysis(DataAnalysis dataAnalysis);			//¸üÐÂDataAnalysis
-	DataAnalysis findDataAnalysisById(long id);			//°´id²éÕÒDataAnalysis
-	List<DataAnalysis> findAll();				//²éÕÒÈ«²¿DataAnalysis
+	int addDataAnalysis(DataAnalysis dataAnalysis);			//ï¿½ï¿½ï¿½DataAnalysis
+	int deleteDataAnalysis(long id);			//É¾ï¿½ï¿½DataAnalysis
+	int updateDataAnalysis(DataAnalysis dataAnalysis);			//ï¿½ï¿½ï¿½ï¿½DataAnalysis
+	DataAnalysis findDataAnalysisById(long id);			//ï¿½ï¿½idï¿½ï¿½ï¿½ï¿½DataAnalysis
+	List<DataAnalysis> findAll();				//ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½DataAnalysis
 	long findTotal();
 	List<DataAnalysis> findPages(int page, int size, String sort, String order);
 	List<DataAnalysis> findBySql(String sql);
+	int bulkUpadte(String sql);
 }

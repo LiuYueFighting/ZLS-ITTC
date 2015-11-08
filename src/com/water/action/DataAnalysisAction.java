@@ -1,25 +1,19 @@
 package com.water.action;
 
-import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
-import java.util.ArrayList; 
 import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
-import org.hibernate.exception.DataException;
 
-import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
@@ -37,15 +31,15 @@ import com.water.service.DataAnalysisService;
 @SuppressWarnings("serial")
 public class DataAnalysisAction extends ActionSupport{
 	//保存的文件名
-	private String downloadFilename;
-
-	public String getDownloadFilename() {
-		return downloadFilename;
-	}
-
-	public void setDownloadFilename(String downloadFilename) {
-		this.downloadFilename = downloadFilename;
-	}
+	//	private String downloadFilename;
+	//
+	//	public String getDownloadFilename() {
+	//		return downloadFilename;
+	//	}
+	//
+	//	public void setDownloadFilename(String downloadFilename) {
+	//		this.downloadFilename = downloadFilename;
+	//	}
 
 	//导入的文件路径和文件名,文件类型
 
@@ -275,15 +269,15 @@ public class DataAnalysisAction extends ActionSupport{
 		}
 		try{
 			//打开文件
-			if(downloadFilename==null || downloadFilename.isEmpty())
-			{
-				//导出文件名默认为DataAnalysis
-//				filename=(new SimpleDateFormat("yyyyMMdd-HHmmss")).format(System.currentTimeMillis());
-				downloadFilename="DataAnalysis";
-			}			
-			String path=ServletActionContext.getServletContext().getRealPath("//downloadTemp")+"//"+downloadFilename+".xls";
-	
-//			String path="D://数据分析表-"+exportFileName+".xls";
+			//			if(downloadFilename==null || downloadFilename.isEmpty())
+			//			{
+			//				//导出文件名默认为DataAnalysis
+			////				filename=(new SimpleDateFormat("yyyyMMdd-HHmmss")).format(System.currentTimeMillis());
+			//				downloadFilename="DataAnalysis";
+			//			}			
+			String path=ServletActionContext.getServletContext().getRealPath("//downloadTemp")+"//DataAnalysis.xls";
+
+			//			String path="D://数据分析表-"+exportFileName+".xls";
 			book = Workbook.createWorkbook(new File(path));
 			//生成工作表
 			WritableSheet sheet = book.createSheet("sheet1", 0);
@@ -297,7 +291,7 @@ public class DataAnalysisAction extends ActionSupport{
 			WritableCellFormat formatTitle = new WritableCellFormat(formatH);
 			//设置自动对齐 
 			formatTitle.setAlignment(jxl.format.Alignment.CENTRE);
-			
+
 			//表头
 			WritableFont formatH1 = new WritableFont(WritableFont.TAHOMA,10,WritableFont.BOLD);   
 			WritableCellFormat formatHead = new WritableCellFormat(formatH1);
@@ -313,7 +307,7 @@ public class DataAnalysisAction extends ActionSupport{
 				sheet.mergeCells(0, 0, 10, 0); //合并单元格，用于显示标题
 				sheet.addCell(new Label(0,0, "清水池水位计算表",formatTitle));
 				//添加表头
-//				sheet.addCell(new Label(0,1," 编号 ",formatHead));
+				//				sheet.addCell(new Label(0,1," 编号 ",formatHead));
 				sheet.addCell(new Label(0,1," 时间 ",formatHead));
 				sheet.addCell(new Label(1,1," 水池编号 ",formatHead));
 				sheet.addCell(new Label(2,1," 总来水量 ",formatHead));
@@ -327,7 +321,7 @@ public class DataAnalysisAction extends ActionSupport{
 				sheet.addCell(new Label(10,1," 预测水位 ",formatHead));
 				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 				for (int i=0;i<list.size();i++){
-//					sheet.addCell(new Label(0,i+2,Long.toString(list.get(i).getID()),formatBody));
+					//					sheet.addCell(new Label(0,i+2,Long.toString(list.get(i).getID()),formatBody));
 					sheet.addCell(new Label(0,i+2,sdf.format(list.get(i).getT()),formatBody));
 					sheet.addCell(new Label(1,i+2,list.get(i).getPoolID(),formatBody));
 					sheet.addCell(new Label(2,i+2,Double.toString(list.get(i).getInV()),formatBody));
@@ -362,14 +356,7 @@ public class DataAnalysisAction extends ActionSupport{
 	}
 
 	public String import2DB() throws Exception{
-		//	先上传，再导入
-		//		//取得文件上传路径（用于存放上传的文件）
-		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/uploadFiles"));
-		//判断上述路径是否存在，如果不存在则创建该路径
-		if (!uploadFile.exists()) {
-			uploadFile.mkdir();
-		}
-
+		//判断是否选中上传文件
 		if(upload != null){
 			//判断上传文件的类型是否是excel
 			if(!uploadContentType.equals("application/vnd.ms-excel")){
@@ -378,42 +365,16 @@ public class DataAnalysisAction extends ActionSupport{
 				operateSuccess=false;
 			}
 			//判断文件的大小
-
-			// 判断文件长度
 			if (1000000 < upload.length()) {
 				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "文件过大");
 				operateSuccess=false;
 			}
 
-			//	//		 第一种文件上传的读写方式
-			FileInputStream input = new FileInputStream(upload);
-			FileOutputStream out = new FileOutputStream(uploadFile + "\\" + uploadFileName);
-
-			try{
-				byte[] b = new byte[1024];
-				int m = 0;
-				while ((m = input.read(b)) > 0) {
-					out.write(b, 0, m);
-				}
-			}catch(Exception e){
-				e.printStackTrace();
-				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "上传过程中发生未知错误，请联系管理员。上传失败！");
-				operateSuccess=false;
-				//				return "error";
-			}finally{
-				input.close();
-				out.close();
-				//删除临时文件
-				upload.delete();
-			}
-
 			Workbook workBook = null;
 			InputStream fs = null;
-			if(uploadFileName!=null || uploadFileName!="")
-			{
-				try{
+			try{
 					//加载excel文件
-					fs = new FileInputStream(uploadFile + "\\" + uploadFileName);
+					fs = new FileInputStream(upload);
 					//得到工作簿
 					workBook = Workbook.getWorkbook(fs);
 				}catch(FileNotFoundException e){
@@ -429,15 +390,18 @@ public class DataAnalysisAction extends ActionSupport{
 					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
 					operateSuccess=false;
 				}
-//				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH");
+				//				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH");
 				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-				List<DataAnalysis> list = new ArrayList<DataAnalysis>();
-
 				//得到当前天数
 				Date day = (new SimpleDateFormat("yyyy-MM-dd").parse(sheet.getCell(0,0).getContents()));
-
+				String poolIDTemp=sheet.getCell(1,2).getContents();
+				String sql="delete DataAnalysis where PoolID like '%"+poolIDTemp+"'";
+				sql+= " and Convert(varchar,t,120)  like '%"+(new SimpleDateFormat("yyyy-MM-dd")).format(day)+"%'";
+				// 直接覆盖
+				int deleteResult = dataAnalysisService.bulkUpadte(sql);
+				System.out.println("受影响结果："+deleteResult);
 				for(int i=2;i<sheet.getRows();i++){ //共11列数据,从第三行开始
-					
+
 					if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
 					{	
 						continue;
@@ -445,7 +409,7 @@ public class DataAnalysisAction extends ActionSupport{
 					else{
 						DataAnalysis dataTemp = new DataAnalysis();
 						dataTemp.setID(0);
-							try{
+						try{
 							int hour = Integer.parseInt(sheet.getCell(0,i).getContents());
 							Date datetime = new Date();
 							datetime.setTime(day.getTime()+hour*3600*1000);
@@ -467,17 +431,57 @@ public class DataAnalysisAction extends ActionSupport{
 					}
 				} //for
 				workBook.close(); //关闭
-			}
-			else{
-				operateSuccess=false;
-				ServletActionContext.getServletContext().setAttribute("errorMsg", "请选择上传文件");
-
-			}
 		}//upload!=null
 		else{
 			operateSuccess=false;
 			ServletActionContext.getServletContext().setAttribute("errorMsg", "请选择上传文件");
 		}
+		return SUCCESS;
+	}
+
+
+	public String importCheck() throws Exception{
+		String errMsg = null ;
+		if(upload != null){
+			//判断上传文件的类型是否是excel
+			if(!uploadContentType.equals("application/vnd.ms-excel")){
+				errMsg = "上传文件中类型不符合条件";
+				operateSuccess=false;
+			}
+			Workbook workBook = null;
+			InputStream fs = null;
+			try{
+				//加载excel文件
+				fs = new FileInputStream(upload);
+				//得到工作簿
+				workBook = Workbook.getWorkbook(fs);
+			}catch(Exception e){
+				e.printStackTrace();
+				errMsg = uploadFileName+ "数据导入发生错误！";	
+				operateSuccess=false;
+			}
+			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
+			//得到当前天数
+			Date day = (new SimpleDateFormat("yyyy-MM-dd").parse(sheet.getCell(0,0).getContents()));		
+			String poolIDTemp=sheet.getCell(1,2).getContents();
+			String sql="from DataAnalysis where 1=1 ";
+			sql+= " and Convert(varchar,t,120)  like '%"+(new SimpleDateFormat("yyyy-MM-dd")).format(day)+"%'";
+			sql+=" and PoolID like '%"+poolIDTemp+"'";
+			List<DataAnalysis> list = dataAnalysisService.findBySql(sql);
+			if(null == list||list.isEmpty()){
+				errMsg="";
+				operateSuccess=true;
+			}
+			else{
+				errMsg = "文件冲突，已存在相关信息！";	
+				operateSuccess=false;
+			}
+		}else{ //upload=''
+			errMsg = "请选择上传文件！";
+			operateSuccess=false;
+		}
+		System.out.println(errMsg);
+		ServletActionContext.getServletContext().setAttribute("errorMsg",errMsg);
 		return SUCCESS;
 	}
 }

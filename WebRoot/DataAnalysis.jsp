@@ -31,9 +31,9 @@
 <script type="text/javascript" src="easyui/jquery.min.js"></script>
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
-<script src="highcharts/highcharts.js" type="text/javascript"></script>
-<script src="highcharts/exporting.src.js" type="text/javascript"></script>
-<script src="highcharts/themes/grid.js" type="text/javascript"></script>
+<script type="text/javascript" src="highcharts/highcharts.js" ></script>
+<script type="text/javascript" src="highcharts/exporting.src.js"></script>
+<script type="text/javascript" src="highcharts/themes/grid.js"></script>
 
 <script type="text/javascript" src="js/ajaxfileupload.js"></script>
 <script type="text/javascript" src="js/dataAnalysis.js"></script>
@@ -105,7 +105,8 @@ body {
 	font-family: '微软雅黑', 'Arial';
 	position: absolute;
 	left: 1482px;
-	top: 320px;
+	/* top: 320px; */
+	top:350px;
 	z-index: 999;
 	font-size: 14px;
 	width: 200px;
@@ -183,12 +184,15 @@ body {
 					onclick="javascript:listAllDataAnalysis()">查询全部</button>
 				<button id="btn_search" class="btn btn-primary"
 					onclick="javascript:searchDataAnalysis()">条件查询</button>
+				<button id="btn_export" class="btn btn-primary"
+					onclick="javascript:export2excel()">导出</button>
+					
 			</div>
 
 			<!-- 导出文件操作-->
 			<div id="tab_export">
-
-				 <form  id="exportDataAnalysis">
+				<!--
+				  <form  id="exportDataAnalysis">
 				   <span style="font-size:18px"> &nbsp;导出文件名 </span><br/>
 				   <input type="text" id="downloadFilename" name="downloadFilename"
 				    style="width:105px;height:25px;border:1px solid #95B8E7"/>
@@ -197,7 +201,7 @@ body {
 						style="font-size:18px;width:105px;" value="导出"
 						onclick="javascript:export2excel()"/>
 				</form>
-
+				 -->
 				<br /><br />
 
 				<form action="${pageContext.request.contextPath}/importDataAnalysis" name="uploadForm"
@@ -206,29 +210,29 @@ body {
 				<!-- 	<input type="file" id="upload" name="upload" 
 						style="width:105px;height:30px; "/> -->
 						<input type=file name="upload"  id="upload" style="display: none;"
-							 onchange="ye.value=value">
+							 onchange="fakeUpload.value=value">
 						
 						<input type=button class="btn btn-primary"value="选择文件"
 							 onclick=upload.click() style="width:105px;font-size:18px"><br/>
-						<input name=ye type="text" ondblclick=upload.click() 											
+						<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click() 											
 							style="width:105px;height:25px;border:1px solid #95B8E7;"> 
 						
 					<br/><br/>
 					 
 					<input id="btn-import" class="btn btn-primary"
 						style="font-size:18px;width:105px;" value="导入"
-						onclick="javascript:import2DB();ye.value='';" />
-
+						onclick="javascript:import2DB();fakeUpload.value='';" />
 				</form>
+				<input type="hidden" value='${errorMsg}' id="errMsg"/>
 		</div>
-
+	
 			<div id="treeGuid" style="width:160px;	position: absolute;	top:40px; left:100px;
 							   	      height:920px;	padding:5px; border:1px solid #95B8E7";>
 				<p style="padding:5px;margin:0;font-size:18px">选择时间:</p><br/>
 				<!-- 树形导航菜单 -->
 				<ul id="timeTree" class="easyui-tree"></ul>
 			</div>
-			
+
 			<div style="position: absolute; top:40px; left:300px;">
 				<table id="dataAnalysisbody" style="max-width:1050px;height:300px;"
 					class="easyui-datagrid"></table>

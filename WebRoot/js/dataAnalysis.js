@@ -199,7 +199,8 @@ function dealSave() {
 	if ($("#ID").val() == "") {
 		$.post("addDataAnalysis.action", params, function(result) {
 			if (result.operateSuccess){
-				$('#dataAnalysisbody').datagrid('reload');// 重新加载
+				location.reload();
+//				$('#dataAnalysisbody').datagrid('reload');// 重新加载
 				$.messager.alert('添加', '添加成功', 'info');
 			} else {
 				$.messager.alert('添加', '添加失败', 'warning');
@@ -209,7 +210,8 @@ function dealSave() {
 		// 表示更新
 		$.post("updateDataAnalysis.action", params, function(result) {
 			if (result.operateSuccess) {
-				$('#dataAnalysisbody').datagrid('reload');// 重新加载
+				location.reload();
+//				$('#dataAnalysisbody').datagrid('reload');// 重新加载
 				$.messager.alert('更新', '更新成功', 'info');
 			} else {
 				$.messager.alert('更新', '更新失败', 'warning');
@@ -233,7 +235,8 @@ function deleteDataAnalysis() {
 			// 试一下get方法（地址，回调函数）
 			$.get(url, function(result) {
 				if (result.operateSuccess) {
-					$.messager.alert('删除', '选中的项目成功删除！', 'info');
+					location.reload();
+//					$.messager.alert('删除', '选中的项目成功删除！', 'info');
 					// 重新加载
 					$("#dataAnalysisbody").datagrid('reload');
 				} else {
@@ -264,10 +267,8 @@ function dealSearch() {
 		$.post("searchDataAnalysis.action", params, function(result) {
 			if (result.total!=0) {
 				$('#dataAnalysisbody').datagrid('reload');// 重新加载
-//				listTreeNode(tlist);
-//				$.messager.alert('查询', '查询成功', 'info');
 			} else {
-				$.messager.alert('查询', '查询失败', 'warning');
+				$.messager.alert('查询', '未查询到相关信息', 'warning');
 			}
 		});
 	} else {
@@ -344,19 +345,20 @@ $.getJSON(url, function(json) {
 //水池编号转换
 function formPoolID(value){
 	var strs = new Array();
-	var poolID=null;
+	var poolID="";
 	strs=value.split("_");//字符切割
 	for(var i=0;i<strs.length;i++)
-	{
-		switch(strs[i]){
-		case "MTG":
-			poolID="门头沟";break;
-		case "QingS":
-			poolID=poolID+"清水池";break;
-		default:
-			poolID=poolID+strs[i].replace("SC","")+"#";
+		{
+			switch(strs[i]){
+			case "MTG":
+				poolID="门头沟";break;
+			case "QingS":
+				poolID=poolID+"清水池";break;
+			default:
+				poolID=poolID+strs[i].replace("SC","")+"#";
+			}
 		}
-	}
+	
 	return poolID;		
 }
 
@@ -693,47 +695,95 @@ function convert(rows){
 }
 
 function export2excel(){
-
-	var params = $("#exportDataAnalysis").serialize();
-	var filename = $('#downloadFilename').val() ;
-	var downloadPath;
-	if(null==filename || ""==filename){
-		downloadPath = "downloadTemp/DataAnalysis.xls";
-	}else{
-		downloadPath = "downloadTemp/"+filename+".xls";
-	}
-	console.log(downloadPath);
-	$.post("exportDataAnalysis.action", params, function(result) {
+//	var params = $("#exportDataAnalysis").serialize();
+//	var filename = $('#downloadFilename').val() ;
+//	var downloadPath;
+//	if(null==filename || ""==filename){
+//		downloadPath = "downloadTemp/DataAnalysis.xls";
+//	}else{
+//		downloadPath = "downloadTemp/"+filename+".xls";
+//	}
+//	console.log(downloadPath);
+	var downloadPath = "downloadTemp/DataAnalysis.xls";
+	$.post("exportDataAnalysis.action", function(result) {
 		if (result.operateSuccess){
 			window.location.href=downloadPath;
-//			$.messager.alert('导出', '导出成功', 'info');		
+//			$.messager.alert('导出', '导出成功,请在浏览器下载路径中查看', 'info');		
 		} else {
 			$.messager.alert('导出', '导出失败', 'warning');
 		}
 	});
+
 	
 }
 //导入文件操作
 function import2DB(){
 	var params=$('#upload').val();
-	
-	$.ajaxFileUpload({
-		url : "importDataAnalysis.action",
-		fileElementId:'upload',
-		dataType:'json',
-		success: function(data, status){
-			if (data.operateSuccess){
-					console.log("上传成功");
-					$('#dataAnalysisbody').datagrid('reload');// 重新加载
-					$.messager.alert('导入', '导入成功', 'info');
-				} else {
-					$.messager.alert('导入', '导入失败', 'warning');
+	if(''==params || null== params){
+		$.messager.alert('导入', '请选择上传文件', 'warning');
+	}
+	else
+	{
+		$.ajaxFileUpload({
+			url : "importCheckDataAnalysis.action",
+//			url :'uploadDataAnalysis.action',
+			fileElementId:'upload',
+			dataType:'json',
+			success: function(data, status){
+				if (data.operateSuccess){ //没有冲突
+						$.ajaxFileUpload({
+								url : "importDataAnalysis.action",
+								fileElementId:'upload',
+								dataType:'json',
+								success: function(result){
+									if (result.operateSuccess){	
+										$('#dataAnalysisbody').datagrid('reload');// 重新加载									
+										$.messager.alert('导入', '导入成功', 'info');	
+										
+									} else {
+										$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+									}
+								},//success
+								error:function(result){
+									console.log("error 上传失败");
+									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+								} //error
+							});//ajaxFileUpload	
+						setTimeout(location.reload(),10000);
 				} 
-		},
-		error:function(data, status){
-			console.log("上传失败");
-			$('#dataAnalysisbody').datagrid('reload');// 重新加载
-			$.messager.alert('导入', '导入失败', 'warning');
-		}
+				else {		//有冲突
+					$.messager.confirm("导入提示",'已存在相关日期的数据，是否继续覆盖导入？',function(r){
+						if (r) { //上传文件
+							$.ajaxFileUpload({
+								url : "importDataAnalysis.action",
+								fileElementId:'upload',
+								dataType:'json',
+								success: function(data, status){
+									if (data.operateSuccess){
+										$('#dataAnalysisbody').datagrid('reload');// 重新加载/
+										$.messager.alert('导入', '导入成功', 'info');
+									
+									} else {
+										$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+									}
+								},//success
+								error:function(data,status){
+									console.log("error 上传失败");
+									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+									
+								} //error
+							}//ajaxFileUpload
+							);
+						}//if r
+					}) //confirm	
+				}
+			},
+			error:function(data, status){
+				$.messager.alert('导入', '导入失败<br><br>请检查文件格式是否正确！', 'warning');
+			}
 		});
+	}
+	$('#fakeUpload').val('');
+
+
 }
