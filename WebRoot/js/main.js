@@ -412,8 +412,8 @@ oCanvas.domReady(function () {
         cells: [
             {x_cell: 848 ,y_cell: 570},
             {x_cell: 848 ,y_cell: 605},
-            {x_cell: 654 ,y_cell: 605},
-            {x_cell:654, y_cell: 638}
+            {x_cell: 660 ,y_cell: 605},
+            {x_cell:660, y_cell: 641}
         ],
         deta: 1,
         deta_x: 1,
@@ -794,7 +794,6 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("pointer");
         $("#name_QS").css("display","inline");
         this.shadow="0 0 10px #eee";
-        canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
         this.shadow="0 0 0px #eee";
@@ -830,7 +829,6 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
         $("#name_QS2").css("display","inline");
-        canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
         this.shadow="0 0 0px #eee";
@@ -861,7 +859,6 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
         $("#name_JJC1").css("display","inline");
-        canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
         this.shadow="0 0 0 #eee";

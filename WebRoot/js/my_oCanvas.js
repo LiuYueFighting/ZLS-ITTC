@@ -54,7 +54,7 @@ var constructor_show = function (settings, core) {
             this.height_now=0;
         },
         advance: function () {
-           if(this.start==1){
+           if(this.start==1&&this.full!=1){
                if (this.height_now < this.Height) {
                    this.height_now += this.speed;
                }
@@ -102,7 +102,7 @@ var constructor_show_down = function (settings, core) {
             this.height_now=0;
         },
         advance: function () {
-            if(this.start==1){
+            if(this.start==1&&this.full!=1){
                 if (this.height_now < this.Height) {
                     this.height_now += this.speed;
                 }
@@ -326,7 +326,7 @@ oCanvas.registerDisplayObject("SC_show_down", constructor_show_down, "init");
 //};
 //oCanvas.registerDisplayObject("GD", constructor_gd, "init");
 
-//新的管道绘制方法（尝试版）
+//新的管道绘制方法
 var constructor_gd = function (settings, core) {
 
     return oCanvas.extend({
@@ -371,6 +371,8 @@ var constructor_gd = function (settings, core) {
                             this.destination.y_d = this.cells[this.cellIndex].y_cell + this.flag_y * this.legacyHeight;
                             if (Math.abs(this.destination.x_d - this.cells[this.cellIndex + 1].x_cell) > this.Speed * Math.abs(this.flag_x) || Math.abs(this.destination.y_d - this.cells[this.cellIndex + 1].y_cell) > this.Speed * Math.abs(this.flag_y)) {
                                 this.legacyHeight = -1;
+                                this.destination.x_d += this.flag_x * this.Speed;
+                                this.destination.y_d += this.flag_y * this.Speed;
                             }
                             else {
                                 if (this.flag_x == 0) {
