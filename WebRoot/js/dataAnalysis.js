@@ -193,6 +193,7 @@ function editDataAnalysis() {
 
 //在增加和更新时点确定按钮的处理函数
 function dealSave() {
+	$('#dateTemp').val($("#t").datetimebox("getValue"));
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#frmEdit").serialize();
 	// 得到id的值，为空串表示添加
@@ -263,7 +264,6 @@ function dealSearch() {
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#frmSearch").serialize();
 	if ($("#searchT").datetimebox("getValue")!= null || $("#searchPoolID").combobox("getValue")!= null){
-		console.log($("#searchT").datetimebox("getValue"));
 		$.post("searchDataAnalysis.action", params, function(result) {
 			if (result.total!=0) {
 				$('#dataAnalysisbody').datagrid('reload');// 重新加载
@@ -397,17 +397,17 @@ function prehImage(){
 			//常规图表选项设置
 			chart: {
 				renderTo: 'imageContainer',	//在哪个区域呈现
-				borderColor: '#95B8E7',	//边框颜色
+				borderColor: '#95B8E7'	//边框颜色
 				//type: 'spline'          //指定图表的类型，默认是折线图（line）
 //				zoomType: 'x',	//图标缩放
 			},
 			lang:{					
 				printChart: "打印",
 				downloadJPEG: "下载JPEG 图片",
-				downloadPDF: "下载PDF文档",
-				downloadPNG: "下载PNG 图片",
-				downloadSVG: "下载SVG 矢量图",
-				exportButtonTitle: "导出图片",
+                downloadPDF: "下载PDF文档",
+                downloadPNG: "下载PNG 图片",
+                downloadSVG: "下载SVG 矢量图",
+                exportButtonTitle: "导出图片",
 				noData: "没有查询到数据",
 				resetZoom:"重置",				
 			},

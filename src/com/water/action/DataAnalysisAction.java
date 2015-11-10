@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
@@ -40,8 +41,18 @@ public class DataAnalysisAction extends ActionSupport{
 	//	public void setDownloadFilename(String downloadFilename) {
 	//		this.downloadFilename = downloadFilename;
 	//	}
+	private String dateTemp; /*传递时间参数有问题，作为中间变量传入*/
 
+	public String getDateTemp() {
+		return dateTemp;
+	}
+
+	public void setDateTemp(String dateTemp) {
+		this.dateTemp = dateTemp;
+	}
+	
 	//导入的文件路径和文件名,文件类型
+
 
 	private File   upload;
 	private String uploadFileName;
@@ -200,16 +211,21 @@ public class DataAnalysisAction extends ActionSupport{
 
 	/**
 	 * 添加一项数据
+	 * @throws ParseException 
 	 */
-	public String addDataAnalysis() {
+	public String addDataAnalysis() throws ParseException {
+		dataAnalysis.setT((new SimpleDateFormat( "yyyy-MM-dd HH")).parse(dateTemp));
 		operateSuccess = (dataAnalysisService.addDataAnalysis(dataAnalysis) > 0);
 		return "success";
 	}
 
 	/**
 	 * 更新一项数据
+	 * @throws ParseException 
 	 */
-	public String updateDataAnalysis() {
+	public String updateDataAnalysis() throws ParseException {
+		dataAnalysis.setT((new SimpleDateFormat( "yyyy-MM-dd HH")).parse(dateTemp));
+		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH").format(dataAnalysis.getT()));
 		operateSuccess = (dataAnalysisService.updateDataAnalysis(dataAnalysis) > 0);
 		return "success";
 	}

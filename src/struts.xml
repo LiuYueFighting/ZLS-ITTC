@@ -76,25 +76,29 @@
 		<!-- 添加项目 -->
 		<action name="addPoolEvaluate" class="poolEvaluateAction"
 			method="addPoolEvaluate">
-			<result type="json" />
+			<result name="success" type="json" />
+			<result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
 
 		<!-- 删除项目 -->
 		<action name="deletePoolEvaluate" class="poolEvaluateAction"
 			method="deletePoolEvaluate">
-			<result type="json" />
+			<result name="success" type="json" />
+			<result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
 
 		<!-- 得到一项记录 -->
 		<action name="findPoolEvaluate" class="poolEvaluateAction"
 			method="findPoolEvaluate">
-			<result type="json" />
+			<result name="success" type="json" />
+			<result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
 
 		<!-- 更新项目 -->
 		<action name="updatePoolEvaluate" class="poolEvaluateAction"
 			method="updatePoolEvaluate">
-			<result type="json" />
+			<result name="success" type="json" />
+			<result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
 
 		<!-- 查询项目 -->
@@ -119,25 +123,29 @@
 		<!-- 添加项目 -->
 		<action name="addDataAnalysis" class="dataAnalysisAction"
 			method="addDataAnalysis">
-			<result type="json" />
+			<result name="success" type="json" />
+			<result name="input" type="json">DataAnalysis.jsp</result>
 		</action>
 
 		<!-- 删除项目 -->
 		<action name="deleteDataAnalysis" class="dataAnalysisAction"
 			method="deleteDataAnalysis">
-			<result type="json" />
+			<result name="success" type="json" />
+			<result name="input" type="json">DataAnalysis.jsp</result>
 		</action>
 
 		<!-- 得到一项记录 -->
 		<action name="findDataAnalysis" class="dataAnalysisAction"
 			method="findDataAnalysis">
-			<result type="json" />
+			<result name="success" type="json" />
+			<result name="input" type="json">DataAnalysis.jsp</result>
 		</action>
 
 		<!-- 更新项目 -->
 		<action name="updateDataAnalysis" class="dataAnalysisAction"
 			method="updateDataAnalysis">
-			<result type="json" />
+			<result name="success" type="json" />
+			<result name="input" type="json">DataAnalysis.jsp</result>
 		</action>
 
 		<action name="searchDataAnalysis" class="dataAnalysisAction"
@@ -157,31 +165,31 @@
 
 		<action name="exportPoolEvaluate" class="poolEvaluateAction"
 			method="export2excel">
-			<result  name="success" type="json" />
+			<result name="success" type="json" />
 			<result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
 
 		<!-- 导入excel -->
 		<action name="importDataAnalysis" class="dataAnalysisAction" method="import2DB">
 			 <!-- <result name="success" type="json">DataAnalysis.jsp</result> -->
-			<result  name="success" type="json"/>			 
+			<result name="success" type="json"/>			 
 			<result name="input" type="json">DataAnalysis.jsp</result>
 		</action>
 		
 		<action name="importPoolEvaluate" class="poolEvaluateAction" method="import2DB">
-			 <result  name="success" type="json"/>
+			 <result name="success" type="json"/>
 			 <result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
 		
 			<!-- 导入excel -->
 		<action name="importCheckDataAnalysis" class="dataAnalysisAction" method="importCheck">
-			<result  name="success" type="json">DataAnalysis.jsp</result>						 
+			<result name="success" type="json">DataAnalysis.jsp</result>						 
 			<result name="input" type="json">DataAnalysis.jsp</result>
 		</action>
 		
 		<action name="importCheckPoolEvaluate" class="poolEvaluateAction" method="importCheck">
-			<result  name="success" type="json">PoolEvaluate.jsp</result>
-			 <result name="input" type="json">PoolEvaluate.jsp</result>
+			<result name="success" type="json">PoolEvaluate.jsp</result>
+			<result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
 	</package>
 </struts>

@@ -101,17 +101,38 @@ body {
 	
 }
 
+#tab_entity {
+	position: absolute;
+	top: 20px;
+	left: 300px;
+}
+
 #tab_export {
 	font-family: '微软雅黑', 'Arial';
 	position: absolute;
 	left: 1482px;
 	/* top: 320px; */
-	top:350px;
+	top: 350px;
 	z-index: 999;
 	font-size: 14px;
 	width: 200px;
 }
 
+#treeGuid {
+	width: 160px;
+	position: absolute;
+	top: 20px;
+	left: 100px;
+	height: 920px;
+	padding: 5px;
+	border: 1px solid #95B8E7;
+}
+
+#treeGuid p{
+    padding:5px;
+    margin:0;
+    font-size:18px"
+}
 
 /*设置表头行高*/
 .datagrid-header-row {
@@ -122,7 +143,7 @@ body {
 }
 /*表头字体大小*/
 .datagrid-header .datagrid-cell span {
-  font-size: 14px;
+	font-size: 14px;
 }
 /*设置表格行高*/
 .datagrid-row {
@@ -144,23 +165,22 @@ body {
 }
 
 .panel-body {
-  background-color: #ffffff;
-  color: #000000;
-  font-size: 14px;
-  width:600px;
+	background-color: #ffffff;
+	color: #000000;
+	font-size: 14px;
+	width: 600px;
 }
 
 .tree-title {
-  font-size: 14px;
-  display: inline-block;
-  text-decoration: none;
-  vertical-align: top;
-  white-space: nowrap;
-  padding: 0 2px;
-  height: 18px;
-  line-height: 18px;
+	font-size: 14px;
+	display: inline-block;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	padding: 0 2px;
+	height: 18px;
+	line-height: 18px;
 }
-
 </style>
 </head>
 <body>
@@ -168,8 +188,8 @@ body {
 
 	<div id="myPage">
 		<div id="myContent" style="overflow: hidden">
-			<span style="color:#6699CC">清水池水位计算表模板</span><br/> &nbsp; &nbsp; &nbsp; &nbsp;
-			<a href="download/DataAnalysis.xls" style="color:#6699CC">点击下载</a> <br />
+			<!-- <span style="color:#6699CC">清水池水位计算表模板</span><br/> &nbsp; &nbsp; &nbsp; &nbsp;
+			<a href="download/DataAnalysis.xls" style="color:#6699CC">点击下载</a> <br /> -->
 			<!-- 操作按钮 -->
 			<div id="btn_group" class="btn-group-vertical btn-group-lg"
 				role="group">
@@ -223,28 +243,29 @@ body {
 						style="font-size:18px;width:105px;" value="导入"
 						onclick="javascript:import2DB();fakeUpload.value='';" />
 				</form>
+				<br /> <a href="download/DataAnalysis.xls"
+				 		style="margin:0;border:0;font-size:15px;">点击下载清水池<br />水位计算表模板</a> 
 				<input type="hidden" value='${errorMsg}' id="errMsg"/>
 		</div>
 	
-			<div id="treeGuid" style="width:160px;	position: absolute;	top:40px; left:100px;
-							   	      height:920px;	padding:5px; border:1px solid #95B8E7";>
-				<p style="padding:5px;margin:0;font-size:18px">选择时间:</p><br/>
+			<div id="treeGuid">
+				<p>选择时间:</p><br/>
 				<!-- 树形导航菜单 -->
 				<ul id="timeTree" class="easyui-tree"></ul>
 			</div>
 
-			<div style="position: absolute; top:40px; left:300px;">
+			<div id="tab_entity">
 				<table id="dataAnalysisbody" style="max-width:1050px;height:300px;"
 					class="easyui-datagrid"></table>
 				<br />
 				<div id="imageContainer" style="max-width:1050px;height:600px;"></div>
-				<br>
 			</div>
 			<!-- 编辑数据的div，默认看不到 -->
 			<center>
 			<div style="display:none;width:700px" align="center">
 				<div id="tabEdit" class="easyui-dialog"  data-options="closed:true" style="align:center;width:800px;height:540px;padding:10px 60px 20px 60px">
 					<form id="frmEdit"><br />
+						<input type="hidden" id="dateTemp" name="dateTemp"	> 
 						<input type="hidden" id="ID" name="dataAnalysis.ID" /> <br />
 							<dl>
 								&nbsp; &nbsp;时 &nbsp; &nbsp; &nbsp; &nbsp; 间 : &nbsp;

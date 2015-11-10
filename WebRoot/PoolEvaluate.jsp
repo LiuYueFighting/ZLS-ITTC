@@ -74,14 +74,19 @@
         {
             color: #d510ff;
             background: #ffeae4;}
-   
+ 
+#tab_entity{
+	position: absolute;
+	top:20px; 
+	left:300px;"
+}
       
     #tab_description{
     font-family: '微软雅黑','Arial';
     position: absolute;
    /*  left:1380px;
     top: 570px; */
-    top:40px;
+    top:20px;
     left:50px;
     padding:5px;
     z-index: 999;
@@ -114,8 +119,8 @@
 
 <div id="myPage">
 		<div id="myContent" style="overflow: hidden">
-			<span style="color:#6699CC">机加池分析表模板</span><br/> &nbsp;&nbsp;&nbsp;
-			<a href="download/PoolEvaluate.xls" style="color:#6699CC">点击下载</a> <br />
+		<!-- <span style="color:#6699CC;text-overflow:;font-size:1.2em">机加池分析表模板</span><br/> &nbsp;&nbsp;&nbsp;
+			<a href="download/PoolEvaluate.xls" style="color:#6699CC">点击下载</a> <br /> -->
 				<!-- 操作按钮 -->
 				<div id="btn_group" class="btn-group-vertical btn-group-lg"
 					role="group">
@@ -147,25 +152,27 @@
 
 					<br />
 					<br />
-					<form
-						action="${pageContext.request.contextPath}/importPoolEvaluate"
-						name="uploadForm" enctype="multipart/form-data" method="post">
+				<form action="${pageContext.request.contextPath}/importPoolEvaluate"
+					name="uploadForm" enctype="multipart/form-data" method="post">
 
-						<!-- <input type="file" id="upload" name="upload"
+					<!-- <input type="file" id="upload" name="upload"
 							style="width:105px;height:30px;font-size:16px" /> -->
-						<input type=file name="upload"  id="upload" style="display: none;"
-							 onchange="fakeUpload.value=value">						
-						<input type=button class="btn btn-primary"value="选择文件"
-							 onclick=upload.click() style="width:105px;font-size:18px"><br/>
-						<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click() 											
-							style="width:105px;height:25px;border:1px solid #95B8E7;"><br/><br/>
-						 <input
-							id="btn-import" class="btn btn-primary"
-							style="font-size:18px;width:105px;" value="导入"
-							onclick="javascript:import2DB();fakeUpload.value='';" />
-					</form>
-					<input type="hidden" value='${errorMsg}' id="errMsg"/>
-				</div> <!-- 特征量说明 -->
+					<input type=file name="upload" id="upload" style="display: none;"
+						onchange="fakeUpload.value=value"> <input type=button
+						class="btn btn-primary" value="选择文件" onclick=upload.click()
+						style="width:105px;font-size:18px"><br /> <input
+						id="fakeUpload" name="fakeUpload" type="text"
+						ondblclick=upload.click()
+						style="width:105px;height:25px;border:1px solid #95B8E7;"><br />
+					<br /> <input id="btn-import" class="btn btn-primary"
+						style="font-size:18px;width:105px;" value="导入"
+						onclick="javascript:import2DB();fakeUpload.value='';" />
+				</form>
+
+				<br /> <a href="download/PoolEvaluate.xls"
+				 		style="margin:0;border:0;font-size:15px;">点击下载机加池<br /> &nbsp; &nbsp;分析表模板 &nbsp; &nbsp; </a> 
+				<input type="hidden" value='${errorMsg}' id="errMsg" />
+			</div> <!-- 特征量说明 -->
 				<div id="tab_description">
 					<h1 style="font-size: 20px">填表说明:</h1>
 					<p style="font-size: 15px">各特征量取值分段为：</p>
@@ -175,7 +182,7 @@
 					<br /> <img src="image/JJC4.png" alt="" /><br />
 				</div>
 
-			<div style="position: absolute; top:40px; left:300px;">
+			<div id="tab_entity">
 				<table id="poolEvaluatebody" class="easyui-datagrid">
 					</table>
 			</div>
