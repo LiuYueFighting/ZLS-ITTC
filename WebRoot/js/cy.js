@@ -107,7 +107,7 @@ oCanvas.domReady(function () {
      x:700,
      y:30,
      origin: { x:"center", y: "top" },
-     font: "bold 32px sans-serif",
+     font: "bold 36px sans-serif",
      fill:"#337ab7",
      text:"臭氧池工艺展示纵剖图"
  }).add();

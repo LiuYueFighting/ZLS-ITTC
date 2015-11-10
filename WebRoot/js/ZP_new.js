@@ -34,8 +34,8 @@ $(document).ready(function(){
 
         canvas.addChild(bg1);
         var SC01 = canvas.display.SC_show({
-            x: 99, y: 154,
-            Width: 260, Height: 192,
+            x: 99, y: 164,
+            Width: 240, Height: 182,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -45,7 +45,19 @@ $(document).ready(function(){
             fill: color_SC
         });
         canvas.addChild(SC01);
-        
+
+        var SC011 = canvas.display.SC_show({
+            x: 338, y: 164,
+            Width: 20, Height: 182,
+            height_now: 0,
+            trail_flag: 0,
+            t: 0,
+            start:start_all,
+            full:0,
+            speed:speed_SC,
+            fill: color_SC
+        });
+        canvas.addChild(SC011);
         var SC02 = canvas.display.SC_show({
             x: 422, y: 172,
             Width: 75, Height: 162,
@@ -631,6 +643,7 @@ $(document).ready(function(){
             GD08.advance();
 
             SC01.advance();
+            SC011.advance();
             SC02.advance();
             SC03.advance();
             left_t.advance();
@@ -655,6 +668,9 @@ $(document).ready(function(){
                 SC01.start = 1;
             }
             if(SC01.full==1){
+                SC011.start=1;
+            }
+            if(SC011.full==1){
                 GD02.paused = 1;
             }
             if(GD02.full==1) {
@@ -753,6 +769,7 @@ $(document).ready(function(){
             GD07.init();
             GD08.init();
             SC01.init();
+            SC011.init();
             SC02.init();
             SC03.init();
             left_t.init();

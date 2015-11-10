@@ -10,7 +10,7 @@ oCanvas.domReady(function () {
     var canvas = oCanvas.create({
         canvas: "#canvas_JJC",
         background: "#ccc",
-        fps: 50
+        fps: 30
     });
 
     var bg = canvas.display.image({
@@ -232,111 +232,22 @@ oCanvas.domReady(function () {
     var arrow_81=canvas.display.sprite({
         x: 257,
         y: 340,
-        image: "image/water-arrow/upright_roll.png",
+        image: "image/water-arrow/upright_roll5.png",
         generate:false,
         frames: [
-            {x:35,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:30,h:50,d:800}
-
-        ]
-    }).add();
-    var arrow_82=canvas.display.sprite({
-        x: 297,
-        y: 340,
-        image: "image/water-arrow/upright_roll.png",
-        generate:false,
-        frames: [
-            {x:35,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:30,h:50,d:800}
-
-        ]
-    }).add();
-    var arrow_83=canvas.display.sprite({
-        x: 337,
-        y: 340,
-        image: "image/water-arrow/upright_roll.png",
-        generate:false,
-        frames: [
-            {x:35,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:30,h:50,d:800}
-
-        ]
-    }).add();
-    var arrow_84=canvas.display.sprite({
-        x: 377,
-        y: 340,
-        image: "image/water-arrow/upright_roll.png",
-        generate:false,
-        frames: [
-            {x:35,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:30,h:50,d:800}
-
-        ]
-    }).add();
-    var arrow_85=canvas.display.sprite({
-        x: 417,
-        y: 340,
-        image: "image/water-arrow/upright_roll.png",
-        generate:false,
-        frames: [
-            {x:35,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:30,h:50,d:800}
+            {x:240,y:0,w:30,h:50,d:400},
+            {x:0,y:0,w:230,h:50,d:800}
 
         ]
     }).add();
     var arrow_91=canvas.display.sprite({
         x: 833,
         y: 340,
-        image: "image/water-arrow/upleft_roll.png",
+        image: "image/water-arrow/upleft_roll5.png",
         generate:false,
         frames: [
-            {x:35,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:30,h:50,d:800}
-
-        ]
-    }).add();
-    var arrow_92=canvas.display.sprite({
-        x: 873,
-        y: 340,
-        image: "image/water-arrow/upleft_roll.png",
-        generate:false,
-        frames: [
-            {x:35,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:30,h:50,d:800}
-
-        ]
-    }).add();
-    var arrow_93=canvas.display.sprite({
-        x: 913,
-        y: 340,
-        image: "image/water-arrow/upleft_roll.png",
-        generate:false,
-        frames: [
-            {x:35,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:30,h:50,d:800}
-
-        ]
-    }).add();
-    var arrow_94=canvas.display.sprite({
-        x: 953,
-        y: 340,
-        image: "image/water-arrow/upleft_roll.png",
-        generate:false,
-        frames: [
-            {x:35,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:30,h:50,d:800}
-
-        ]
-    }).add();
-    var arrow_95=canvas.display.sprite({
-        x: 993,
-        y: 340,
-        image: "image/water-arrow/upleft_roll.png",
-        generate:false,
-        frames: [
-            {x:35,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:30,h:50,d:800}
-
+            {x:240,y:0,w:30,h:50,d:400},
+            {x:0,y:0,w:230,h:50,d:800}
         ]
     }).add();
     var arrow_101=canvas.display.sprite({
@@ -444,7 +355,7 @@ oCanvas.domReady(function () {
         x:650,
         y:30,
         origin: { x:"center", y: "top" },
-        font: "bold 32px sans-serif",
+        font: "bold 36px sans-serif",
         fill:"#337ab7",
         text:"机加池工艺展示纵剖图"
     });
@@ -499,15 +410,7 @@ oCanvas.domReady(function () {
             arrow_5.start();
             arrow_6.start();
             arrow_81.start();
-            arrow_82.start();
-            arrow_83.start();
-            arrow_84.start();
-            arrow_85.start();
             arrow_91.start();
-            arrow_92.start();
-            arrow_93.start();
-            arrow_94.start();
-            arrow_95.start();
             arrow_101.start();
             arrow_102.start();
             arrow_111.frame=2;
@@ -522,26 +425,12 @@ oCanvas.domReady(function () {
             arrow_5.frame=2;
             arrow_6.frame=2;
             arrow_81.frame=2;
-            arrow_82.frame=2;
-            arrow_83.frame=2;
-            arrow_84.frame=2;
-            arrow_85.frame=2;
             arrow_91.frame=2;
-            arrow_92.frame=2;
-            arrow_93.frame=2;
-            arrow_94.frame=2;
-            arrow_95.frame=2;
             arrow_101.frame=2;
             arrow_102.frame=2;
 
             arrow_7.start();
-            arrow_1.stopAnimation();
-            arrow_2.stopAnimation();
-            arrow_3.stopAnimation();
-            arrow_4.stopAnimation();
-            arrow_5.stopAnimation();
-            arrow_6.stopAnimation();
-            arrow_7.stopAnimation();
+
 
         }
         canvas.redraw();
