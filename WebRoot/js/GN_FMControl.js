@@ -374,11 +374,11 @@ oCanvas.domReady(function(){
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
-        anvas.redraw();
+        canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
         this.shadow="0 0 0px #eee";
-       canvas.redraw();
+         canvas.redraw();
     });
 
     var img10=canvas.display.image({
