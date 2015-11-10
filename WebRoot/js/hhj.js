@@ -84,7 +84,7 @@ oCanvas.domReady(function () {
      x:650,
      y:10,
      origin: { x:"center", y: "top" },
-     font: "bold 32px sans-serif",
+     font: "bold 36px sans-serif",
      fill:"#337ab7",
      text:"混合井工艺展示纵剖图"
  }).add();
