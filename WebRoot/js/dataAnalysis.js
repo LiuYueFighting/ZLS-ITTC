@@ -7,7 +7,7 @@ $(function() {
 var tburl = 'searchDataAnalysis.action';
 var datalist = new Array();
 var title="清水池水位计算表";
-
+var dataLength =datalist.length; 
 //加载项目列表
 function listDataAnalysis() {
 	$("#dataAnalysisbody").datagrid({
@@ -37,7 +37,11 @@ function listDataAnalysis() {
 //				alert('没有相关数据！');
 //			}
 			datalist = eval(data).rows;
-			prehImage(); //作图		
+
+			if(data.total!=dataLength){
+				prehImage(); //作图			
+			}
+			dataLength =datalist.length; 
 		},
 		columns : [ [ /*{field : 'ID', title : '编号', align :'center', sortable : true,width:80},*/
 		              {field : 'poolID', title : '水池编号', align : 'center', sortable : true,width:150,
