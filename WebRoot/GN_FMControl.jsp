@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/normal.css">
     <link rel="stylesheet" href="css/top_down.css">
     <link rel="stylesheet" href="css/breadcrumb.css">
-    <link rel="stylesheet" href="css/normalize.css">
+    <%--<link rel="stylesheet" href="css/normalize.css">--%>
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -46,16 +46,16 @@
     }
     #name_QS{
     position: absolute;
-    left: 681px;
-    top: 62px;
+    left: 685px;
+    top: 70px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_JJC1{
     position: absolute;
-    left: 858px;
-    top: 383px;
+    left: 852px;
+    top: 394px;
     height: 50px;
     width: auto;
     z-index:999;
@@ -63,7 +63,7 @@
     #name_JJC2{
     position: absolute;
     left: 1067px;
-    top: 383px;
+    top: 394px;
     height: 50px;
     width: auto;
     z-index:999;
@@ -71,47 +71,47 @@
     #name_JJC3{
     position: absolute;
     left:1146px;
-    top: 616px;
+    top: 626px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_VL{
     position: absolute;
-    left: 860px;
-    top: 681px;
+    left: 868px;
+    top: 691px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_HHJ1{
     position: absolute;
-    left:965px;
-    top: 343px;
+    left:959px;
+    top: 353px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_HHJ2{
     position: absolute;
-    left:1166px;
-    top: 355px;
+    left:1170px;
+    top: 363px;
     height: auto;
     width: 30px;
     z-index:999;
     }
     #name_HX{
     position: absolute;
-    left:837px;
-    top: 532px;
+    left:843px;
+    top: 537px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_QSC1{
     position: absolute;
-    left:305px;
-    top: 485px;
+    left:295px;
+    top: 489px;
     height: 50px;
     width: 150px;
     z-index:999;
@@ -126,8 +126,8 @@
     }
     #name_CYC{
     position: absolute;
-    left:620px;
-    top: 453px;
+    left:623px;
+    top: 469px;
     height: auto;
     width: 30px;
     z-index:999;
@@ -158,23 +158,23 @@
     }
     #name_TC{
     position: absolute;
-    left:375px;
-    top: 655px;
+    left:385px;
+    top: 664px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_TC1{
     position: absolute;
-    left:485px;
-    top: 655px;
+    left:490px;
+    top: 664px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_YC{
     position: absolute;
-    left:960px;
+    left:972px;
     top: 139px;
     height: 50px;
     width: auto;
@@ -776,7 +776,7 @@
         top:160px;
         left:30px;
         z-index:999;
-        width:90px;
+        width:97px;
         background:#5cb85c;
         }
         #Wmodel2{
@@ -802,7 +802,7 @@
         top:320px;
         left:30px;
         z-index:999;
-        width:90px;
+        width:97px;
         background:#5cb85c;
         }
     .name_FM{
@@ -830,13 +830,13 @@
         }
         #chackBox_name{
         position:absolute;
-        top:363px;
-        left:79px;
+        top:403px;
+        left:35px;
         }
         #WShow{
         position:absolute;
         top:373px;
-        left:9px;
+        left:44px;
         z-index:999;
         }
     #FMList{
@@ -1098,10 +1098,10 @@
         <%--$('#btn_model1_2').className='btn btn-info btn-sm btn_main';--%>
         <%--$('#btn_model1_3').className='btn btn-info btn-sm btn_main';--%>
         <%--$('#btn_model1_4').className='btn btn-info btn-sm btn_main';--%>
-        document.getElementById("btn_model1_1").style.background="#5bc0de";
-        document.getElementById("btn_model1_2").style.background="#5bc0de";
-        document.getElementById("btn_model1_3").style.background="#5bc0de";
-        document.getElementById("btn_model1_4").style.background="#5bc0de";
+        document.getElementById("btn_model1_1").style.background="#337ab7";
+        document.getElementById("btn_model1_2").style.background="#337ab7";
+        document.getElementById("btn_model1_3").style.background="#337ab7";
+        document.getElementById("btn_model1_4").style.background="#337ab7";
 
 
         }
@@ -1114,9 +1114,9 @@
         <%--$('#btn_model1_2').className='btn btn-info btn-sm btn_main';--%>
         <%--$('#btn_model1_3').className='btn btn-info btn-sm btn_main';--%>
         <%--$('#btn_model1_4').className='btn btn-info btn-sm btn_main';--%>
-        document.getElementById("btn_model2_1").style.background="#5bc0de";
-        document.getElementById("btn_model2_2").style.background="#5bc0de";
-        document.getElementById("btn_model2_3").style.background="#5bc0de";
+        document.getElementById("btn_model2_1").style.background="#337ab7";
+        document.getElementById("btn_model2_2").style.background="#337ab7";
+        document.getElementById("btn_model2_3").style.background="#337ab7";
         }
         function setEmphasize2(c){
         <%--$('#btn_model1_1').className='btn btn-success btn-sm btn_main';--%>

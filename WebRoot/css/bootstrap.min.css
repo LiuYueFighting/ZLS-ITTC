@@ -3505,8 +3505,8 @@ select[multiple].form-group-lg .form-control, textarea.form-group-lg .form-contr
 
 .btn-info {
     color: #fff;
-    background-color: #5bc0de;
-    border-color: #46b8da
+    background-color: #337ab7;
+    border-color:#337ab7
 }
 
 .btn-info.active, .btn-info.focus, .btn-info:active, .btn-info:focus, .btn-info:hover, .open>.dropdown-toggle.btn-info {
@@ -5149,7 +5149,7 @@ a.label:focus, a.label:hover {
 }
 
 .label-info {
-    background-color: #5bc0de
+    background-color: #337ab7
 }
 
 .label-info[href]:focus, .label-info[href]:hover {
@@ -5968,17 +5968,17 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-info {
-    border-color: #bce8f1
+    border-color: #337ab7
 }
 
 .panel-info>.panel-heading {
     color: #31708f;
     background-color: #d9edf7;
-    border-color: #bce8f1
+    border-color: #337ab7
 }
 
 .panel-info>.panel-heading+.panel-collapse>.panel-body {
-    border-top-color: #bce8f1
+    border-top-color: #337ab7
 }
 
 .panel-info>.panel-heading .badge {
@@ -5987,7 +5987,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-info>.panel-footer+.panel-collapse>.panel-body {
-    border-bottom-color: #bce8f1
+    border-bottom-color: #337ab7
 }
 
 .panel-warning {
