@@ -233,7 +233,7 @@
     <button id="btn_reset" class="btn btn-info btn-lg btn_main">重新开始</button>
     <canvas id="canvas_main" width="1600" height="757"></canvas>
     <p class="name_Model" id="WShow">显示名称</p>
-    <label><input id="checkBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked onclick="showName(this)"></label>
+    <input id="checkBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked onclick="showName(this)">
     <a href="QS.jsp"  id="name_QS"    style="text-decoration: none" class="name_ob">取水泵房</a>
      <a href="QS.jsp" id="name_QS2"   style="text-decoration: none" class="name_ob">取水泵房</a>
     <a href="JJC.jsp" id="name_JJC1"  style="text-decoration: none" class="name_ob">机加池<br>#1</a>
@@ -270,7 +270,7 @@
             document.getElementById("name_CY").style.display="block";
             document.getElementById("name_CYC").style.display="block";
             document.getElementById("name_YC").style.display="block";
-            document.getElementById("name_HHJ1").style.display="block";
+            document.getElementById("name_HHJ").style.display="block";
             document.getElementById("name_HHJ2").style.display="block";
             document.getElementById("name_HX").style.display="block";
             document.getElementById("name_QSC1").style.display="block";
@@ -290,7 +290,7 @@
             document.getElementById("name_CY").style.display="none";
             document.getElementById("name_CYC").style.display="none";
             document.getElementById("name_YC").style.display="none";
-            document.getElementById("name_HHJ1").style.display="none";
+            document.getElementById("name_HHJ").style.display="none";
             document.getElementById("name_HHJ2").style.display="none";
             document.getElementById("name_HX").style.display="none";
             document.getElementById("name_QSC1").style.display="none";
