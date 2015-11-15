@@ -51,8 +51,8 @@
          <!-- <property name="state" type="java.lang.Integer">
             <column name="STATE" />
         </property> -->
-       <!--  <property name="WaterTemp" type="java.lang.Double">
+       <property name="WaterTemp" type="java.lang.Double">
             <column name="WATERTEMP" />
-        </property> -->
+        </property>
     </class>
 </hibernate-mapping>

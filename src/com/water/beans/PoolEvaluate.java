@@ -17,9 +17,9 @@ public class PoolEvaluate {
 	private double AlgaeContent;   //原水藻类含量
 	private double OutNTU;	//出水浊度
 	private double CL; //预加氯量
+	private double WaterTemp;	//水温
 	
 //	private int state;  
-//	private double WaterTemp;	//ˮ��
 	
 	
 	public long getID() {
@@ -116,12 +116,12 @@ public class PoolEvaluate {
 //	public void setState(int state) {
 //		this.state = state;
 //	}
-//	public double getWaterTemp() {
-//		return WaterTemp;
-//	}
-//	public void setWaterTemp(double waterTemp) {
-//		WaterTemp = waterTemp;
-//	}
-//	
+	public double getWaterTemp() {
+		return WaterTemp;
+	}
+	public void setWaterTemp(double waterTemp) {
+		WaterTemp = waterTemp;
+	}
+	
 }
 

@@ -90,13 +90,26 @@ public class PoolEvaluateAction extends ActionSupport{
 		this.searchPoolID = searchPoolID;
 	}
 	
-	private Date searchT=null;		//查询时间
-	public Date getSearchT() {
-		return searchT;
+	private Date lowT;		//查询时间上限
+	private Date highT;		//查询时间下限
+		
+	public Date getLowT() {
+		return lowT;
 	}
-	public void setSearchT(Date searchT) {
-		this.searchT = searchT;
+
+	public void setLowT(Date lowT) {
+		this.lowT = lowT;
 	}
+
+	public Date getHighT() {
+		return highT;
+	}
+
+	public void setHighT(Date highT) {
+		this.highT = highT;
+	}
+
+
 	/*NTU查询参数*/
 	private double lowNTU;  //来水浊度下限
 	private double highNTU;	//来水浊度上限
@@ -153,6 +166,27 @@ public class PoolEvaluateAction extends ActionSupport{
 		this.highOutNTU = highOutNTU;
 	}
 	
+	/* 沉降比查询参数	 */
+	private double lowSV;	//沉降比下限
+	private double highSV;	//沉降比上限
+			
+	public double getLowSV() {
+		return lowSV;
+	}
+
+	public void setLowSV(double lowSV) {
+		this.lowSV = lowSV;
+	}
+
+	public double getHighSV() {
+		return highSV;
+	}
+
+	public void setHighSV(double highSV) {
+		this.highSV = highSV;
+	}
+
+
 	// 标识操作是否成功
 	private boolean operateSuccess;
 
@@ -233,7 +267,7 @@ public class PoolEvaluateAction extends ActionSupport{
 	}
 
 	/**
-	 * 查询某一页数据
+	 * 查询所有数据
 	 */
 	public String list() {
 		data.clear();// 清除
@@ -244,8 +278,8 @@ public class PoolEvaluateAction extends ActionSupport{
 			order = "asc";// 默认升序
 		}
 		data.put("total", poolEvaluateService.findTotal());// 得到所有的记录数
-//		data.put("rows", poolEvaluateService.findAll());
-		data.put("rows", poolEvaluateService.findPages(page, size, sort, order));// 得到某一页数据
+		data.put("rows", poolEvaluateService.findAll());
+//		data.put("rows", poolEvaluateService.findPages(page, size, sort, order));// 得到某一页数据
 		
 		return "success";
 	}
@@ -285,15 +319,18 @@ public class PoolEvaluateAction extends ActionSupport{
 	public String searchPoolEvaluate() {
 		String sql;
 		//查询条件拼接
-		if(searchT==null && searchPoolID ==null){
+		if(lowT==null && highT==null && searchPoolID ==null){
 			sql="from PoolEvaluate";
 		}
 		else {
 			sql="from PoolEvaluate where 1=1";
 			
-			if (searchT!=null)
+			if (lowT!=null)
 			{
-				sql+= " and Convert(varchar,t,120)  like '%"+(new SimpleDateFormat("yyyy-MM-dd")).format(searchT)+"%'";
+				sql+= " and t  >= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(lowT)+"'";
+			}
+			if (highT!=null){
+				sql+= " and t <= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(highT)+"'";
 			}
 			if(!searchPoolID.equals(""))
 			{
@@ -322,7 +359,15 @@ public class PoolEvaluateAction extends ActionSupport{
 			if(highOutNTU!=0)
 			{
 				sql+=" and OutNTU <= '"+highOutNTU+"'";
-			}			
+			}
+			if(lowSV!=0)
+			{
+				sql+=" and SV >='"+lowSV+"'";
+			}
+			if(highSV!=0)
+			{
+				sql+=" and SV <= '"+highSV+"'";
+			}
 		}
 		System.out.println(sql);
 		data.clear();//清除数据
@@ -377,7 +422,7 @@ public class PoolEvaluateAction extends ActionSupport{
 			        
 //			List<PoolEvaluate> list = dataAnalysisService.findAll();
 			if(list!=null && !list.isEmpty()){
-				sheet.mergeCells(0, 0, 12, 0);
+				sheet.mergeCells(0, 0, 13, 0);
 				sheet.addCell(new Label(0,0,"机加池评估表",formatTitle));
 				
 				sheet.addCell(new Label(0,1," 时间 ",formatHead));
@@ -393,9 +438,9 @@ public class PoolEvaluateAction extends ActionSupport{
 				sheet.addCell(new Label(10,1," 原水藻类含量 ",formatHead));
 				sheet.addCell(new Label(11,1," 出水浊度 ",formatHead));
 				sheet.addCell(new Label(12,1," 预加氯量 ",formatHead));
+				sheet.addCell(new Label(13,1," 水温 ",formatHead));
 
 //				sheet.addCell(new Label(0,0," 编号 ",formatHead));
-//				sheet.addCell(new Label(9,0," 水温 ",formatHead));
 //				sheet.addCell(new Label(15,0," 状态 ",formatHead));
 			
 				for (int i=0;i<list.size();i++){
@@ -412,9 +457,9 @@ public class PoolEvaluateAction extends ActionSupport{
 					sheet.addCell(new Label(10,i+2,Double.toString(list.get(i).getAlgaeContent()),formatBody)); //原水藻类含量
 					sheet.addCell(new Label(11,i+2,Double.toString(list.get(i).getOutNTU()),formatBody)); // 出水浊度
 					sheet.addCell(new Label(12,i+2,Double.toString(list.get(i).getCL()),formatBody));  //预加氯量
+					sheet.addCell(new Label(13,i+2,Double.toString(list.get(i).getWaterTemp()),formatBody));
 					
 //					sheet.addCell(new Label(0,i+1,Long.toString(list.get(i).getID()),formatBody));
-//					sheet.addCell(new Label(9,i+1,Double.toString(list.get(i).getWaterTemp()),formatBody));
 //					sheet.addCell(new Label(15,i+1,list.get(i).getState()==0?"不正常":"正常",formatBody));
 					
 
@@ -508,14 +553,12 @@ public class PoolEvaluateAction extends ActionSupport{
 				}
 				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-				Date day = (Date) sdf.parse(sheet.getCell(0,2).getContents());
-				String poolIDTemp=sheet.getCell(1,2).getContents();
+				Date day = (new SimpleDateFormat("yyyy-MM-dd").parse(sheet.getCell(0,0).getContents()));
 				String sql="delete PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
-//				sql+=" and PoolID like '%"+poolIDTemp+"'";
 				// 直接覆盖当天信息
 				int deleteResult = poolEvaluateService.bulkUpadte(sql);
 				System.out.println("受影响的行数："+deleteResult);
-				for(int i=2;i<sheet.getRows();i++){ //共14列数据,从第3行开始
+				for(int i=2;i<sheet.getRows();i++){ //共13列数据,从第3行开始
 					if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
 					{	
 						continue;
@@ -523,19 +566,20 @@ public class PoolEvaluateAction extends ActionSupport{
 					else{
 						PoolEvaluate dataTemp = new PoolEvaluate();
 						dataTemp.setID(0);
-						dataTemp.setT(sdf.parse(sheet.getCell(0,i).getContents()));
-						dataTemp.setPoolID(sheet.getCell(1,i).getContents());
-						dataTemp.setPAC(Double.parseDouble(sheet.getCell(2,i).getContents()));
-						dataTemp.setFeCl3(Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setOpenDegree(Double.parseDouble(sheet.getCell(4,i).getContents()));
-						dataTemp.setRotationSpeed(Double.parseDouble(sheet.getCell(5,i).getContents()));
-						dataTemp.setSV(Double.parseDouble(sheet.getCell(6,i).getContents()));
-						dataTemp.setSmallMudFre(Double.parseDouble(sheet.getCell(7,i).getContents()));
-						dataTemp.setBigMudFre(Double.parseDouble(sheet.getCell(8,i).getContents()));
-						dataTemp.setNTU(Double.parseDouble(sheet.getCell(9,i).getContents()));
-						dataTemp.setAlgaeContent(Double.parseDouble(sheet.getCell(10,i).getContents()));
-						dataTemp.setOutNTU(Double.parseDouble(sheet.getCell(11,i).getContents()));
-						dataTemp.setCL(Double.parseDouble(sheet.getCell(12,i).getContents()));
+						dataTemp.setT(day);
+						dataTemp.setPoolID(sheet.getCell(0,i).getContents());
+						dataTemp.setPAC(Double.parseDouble(sheet.getCell(1,i).getContents()));
+						dataTemp.setFeCl3(Double.parseDouble(sheet.getCell(2,i).getContents()));
+						dataTemp.setOpenDegree(Double.parseDouble(sheet.getCell(3,i).getContents()));
+						dataTemp.setRotationSpeed(Double.parseDouble(sheet.getCell(4,i).getContents()));
+						dataTemp.setSV(Double.parseDouble(sheet.getCell(5,i).getContents()));
+						dataTemp.setSmallMudFre(Double.parseDouble(sheet.getCell(6,i).getContents()));
+						dataTemp.setBigMudFre(Double.parseDouble(sheet.getCell(7,i).getContents()));
+						dataTemp.setNTU(Double.parseDouble(sheet.getCell(8,i).getContents()));
+						dataTemp.setAlgaeContent(Double.parseDouble(sheet.getCell(9,i).getContents()));
+						dataTemp.setOutNTU(Double.parseDouble(sheet.getCell(10,i).getContents()));
+						dataTemp.setCL(Double.parseDouble(sheet.getCell(11,i).getContents()));
+						dataTemp.setWaterTemp(Double.parseDouble(sheet.getCell(12,i).getContents()));
 						operateSuccess=(poolEvaluateService.addPoolEvaluate(dataTemp)>0);	//添加到数据库
 					}
 				} //for
@@ -572,8 +616,8 @@ public class PoolEvaluateAction extends ActionSupport{
 			DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
 			//得到当前天数
-			Date day = (Date) sdf.parse(sheet.getCell(0,2).getContents());
-			String poolIDTemp=sheet.getCell(1,2).getContents();
+			Date day = (Date) sdf.parse(sheet.getCell(0,0).getContents());
+			String poolIDTemp=sheet.getCell(0,2).getContents();
 			String sql="from PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
 			sql+=" and PoolID like '%"+poolIDTemp+"'";
 			List<PoolEvaluate> list = poolEvaluateService.findBySql(sql);
