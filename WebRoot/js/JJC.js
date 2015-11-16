@@ -58,20 +58,25 @@ oCanvas.domReady(function () {
     canvas.addChild(left_t);
     canvas.addChild(right_t);
     var SC01 = canvas.display.SC_show({
-        x: 368,
-        y: 320,
-        Width: 555,
-        Height: 300,
+    	x: 212,
+        y: 349,
+        Width: 860,
+        Height: 230,
         height_now: 0,
         trail_flag: 1,
         trail: [
-            {x_t: 138, y_t: 0},
-            {x_t: 414, y_t: 0},
-            {x_t: 414, y_t: 87},
-            {x_t: 552, y_t: 215},
-            {x_t: 276, y_t: 297},
-            {x_t: 0, y_t: 215},
-            {x_t: 138, y_t: 87}
+            {x_t: 0, y_t: 17},
+            {x_t: 0, y_t: 230},
+            {x_t: 860, y_t: 230},
+            {x_t: 860, y_t: 17},
+            {x_t: 829, y_t: 17},
+            {x_t: 829, y_t: 8},
+            {x_t: 572, y_t: 8},
+            {x_t: 572, y_t: 0},
+            {x_t: 292, y_t: 0},
+            {x_t: 292, y_t: 8},
+            {x_t: 31, y_t: 8},
+            {x_t: 31, y_t: 17}
         ],
         t: 1405,
         speed:speed_SC,
@@ -81,53 +86,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(SC01);
 
-    var SC02 = canvas.display.SC_show({
-        x: 208,
-        y: 341,
-        Width: 330,
-        Height: 200,
-        height_now: 0,
-        trail_flag: 1,
-        trail: [
-            {x_t: 0, y_t: 24},
-            {x_t: 0, y_t: 58},
-            {x_t: 158, y_t: 193},
-            {x_t: 299, y_t: 61},
-            {x_t: 299, y_t: 0},
-            {x_t: 39, y_t: 0},
-            {x_t: 39, y_t: 23}
-        ],
-        t: 1405,
-        speed:speed_SC,
-        fill: color_SC,
-        full:0,
-        start:0
-    });
-    canvas.addChild(SC02);
-
-    var SC03 = canvas.display.SC_show({
-        x: 790,
-        y: 341,
-        Width: 310,
-        Height: 200,
-        height_now: 0,
-        trail_flag: 1,
-        trail: [
-            {x_t: 0, y_t: 0},
-            {x_t: 0, y_t: 63},
-            {x_t: 135, y_t: 193},
-            {x_t: 291, y_t: 63},
-            {x_t: 291, y_t: 24},
-            {x_t: 255, y_t: 24},
-            {x_t: 255, y_t: 0}
-        ],
-        t: 1405,
-        speed:speed_SC,
-        fill: color_SC,
-        full:0,
-        start:0
-    });
-    canvas.addChild(SC03);
+    
     var x=140;
     var xx=140;
     var t=200;
@@ -175,8 +134,8 @@ oCanvas.domReady(function () {
         ]
     }).add();
     var arrow_3=canvas.display.sprite({
-        x: 477,
-        y: 292,
+        x: 474,
+        y: 292+36,
         image: "image/water-arrow/left_roll.png",
         generate:false,
         frames: [
@@ -187,7 +146,7 @@ oCanvas.domReady(function () {
     }).add();
     var arrow_4=canvas.display.sprite({
         x: 760,
-        y: 292,
+        y: 292+36,
         image: "image/water-arrow/right_roll.png",
         generate:false,
         frames: [
@@ -383,8 +342,6 @@ oCanvas.domReady(function () {
         GD01.advance();
         GD02.advance();
         SC01.advance();
-        SC02.advance();
-        SC03.advance();
         left_t.advance();
         right_t.advance();
         
@@ -399,10 +356,6 @@ oCanvas.domReady(function () {
         }
         if(left_t.full==1 && right_t.full==1){
             SC01.start=1;
-        }
-        if(SC01.full==1){
-        	SC02.start = 1;
-        	SC03.start = 1;
             arrow_1.frame=2;
             arrow_2.frame=2;
             arrow_3.start();
@@ -415,10 +368,8 @@ oCanvas.domReady(function () {
             arrow_102.start();
             arrow_111.frame=2;
             arrow_112.frame=2;
-         
-
         }
-        if(SC02.full == 1 && SC03.full == 1){
+        if(SC01.full==1){
         	GD02.paused = 1;
             arrow_3.frame=2;
             arrow_4.frame=2;
@@ -428,10 +379,7 @@ oCanvas.domReady(function () {
             arrow_91.frame=2;
             arrow_101.frame=2;
             arrow_102.frame=2;
-
             arrow_7.start();
-
-
         }
         canvas.redraw();
     }).start();

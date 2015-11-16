@@ -62,6 +62,7 @@
             float:left;
             margin-top:6px;
             z-index: 999;
+             font-size:17px;
         }
         .nav__menu{
             line-height: 34px;
@@ -98,13 +99,13 @@
         .nav_bag04 ul li{
             padding-left:0px;
         }
-        .nav li.nav_bag01{background:url(../images/nav_01.png) no-repeat;display: inline-block; position: relative;line-height:23px;font-size:17px;}
+        .nav li.nav_bag01{background:url(../images/nav_01.png) no-repeat;display: inline-block; position: relative;line-height:23px;}
         .nav li.nav_bag01:hover{background:url(../images/nva_bg.png) no-repeat;color:#FFF;cursor: pointer;}
-        .nav li.nav_bag02{background:url(../images/nav_02.png) no-repeat;display: inline-block; position: relative;line-height:23px;font-size:17px;}
+        .nav li.nav_bag02{background:url(../images/nav_02.png) no-repeat;display: inline-block; position: relative;line-height:23px;}
         .nav li.nav_bag02:hover{background:url(../images/nav_bg2.png) no-repeat;color:#FFF;cursor: pointer;}
-        .nav li.nav_bag03{background:url(../images/nav_03.png) no-repeat;display: inline-block; position: relative;line-height:23px;font-size:17px;}
+        .nav li.nav_bag03{background:url(../images/nav_03.png) no-repeat;display: inline-block; position: relative;line-height:23px;}
         .nav li.nav_bag03:hover{background:url(../images/nav_bg3.png) no-repeat;color:#FFF;cursor: pointer;}
-        .nav li.nav_bag04{background:url(../images/nav_04.png) no-repeat;display: inline-block; position: relative;line-height:23px;font-size:17px;}
+        .nav li.nav_bag04{background:url(../images/nav_04.png) no-repeat;display: inline-block; position: relative;line-height:23px;}
         .nav li.nav_bag04:hover{background:url(../images/nav_bg4.png) no-repeat;color:#FFF;cursor: pointer;}
         .Check_btn{
             width:254px;

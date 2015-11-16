@@ -167,34 +167,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(GD01);
 
-    var GD02 = canvas.display.GD({
-        x: 0,
-        y: 0,
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
-            {x_cell: 860, y_cell: 466},
-            {x_cell: 1063, y_cell: 466},
-            {x_cell: 1063, y_cell: 346},
-            {x_cell: 1228, y_cell: 346}
-
-        ],  //拐点数组
-        cellIndex: 0,         //当前数组索引
-        Speed: 2,           //水流速度
-        GDwidth: 20,          //管道宽度
-        LineHeight: 20,       //线条的长??
-        x_now: 0,        //当前绘制点的位置x
-        y_now: 0,        //当前绘制点的位置y
-        firstX: 0,       //第一个水流效果线段的起始坐标X
-        firstY: 0,       //第一个水流效果线段的其实坐标Y
-        beginHeight: 0,       //第一段管道第??个水流效果线段的长度
-        endHeight: 0,     //第一段管道最后一个水流效果线段的长度
-        paused: 0,
-        full:0,
-        fill:color_GD
-    });
-    canvas.addChild(GD02);
+    
     var txt1=canvas.display.text({
         x:700,
         y:30,
@@ -224,7 +197,6 @@ oCanvas.domReady(function () {
     canvas.addChild(txt3);
     canvas.setLoop(function () {
         GD01.advance();
-        GD02.advance();
         SC01.advance();
         SC02.advance();
         SC03.advance();
@@ -248,14 +220,11 @@ oCanvas.domReady(function () {
         	SC03.start = 1;
         }
         if(SC03.full==1){
-            //arrow_1.frame=2;
-            //arrow_2.frame=2;
             arrow_3.frame=2;
             arrow_4.frame=2;
             arrow_5.frame=2;
             arrow_6.frame=2;
         	GD01.paused = 1;
-        	GD02.paused = 1;
         }
         canvas.redraw();
     }).start();

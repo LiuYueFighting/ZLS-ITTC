@@ -136,7 +136,7 @@ oCanvas.domReady(function () {
      origin: { x:"center", y: "top" },
      font: "bold 36px sans-serif",
      fill:"#337ab7",
-     text:"臭氧池工艺展示纵剖图"
+     text:"活性炭池工艺展示纵剖图"
  }).add();
  var txt2=canvas.display.text({
      x:110,
