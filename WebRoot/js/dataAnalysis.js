@@ -1,13 +1,12 @@
 //JQuery的入口
-
 $(function() {
 	listDataAnalysis();
 });
 
+
 var tburl = 'searchDataAnalysis.action';
 var datalist = new Array();
 var title="清水池水位计算表";
-var dataLength =datalist.length; 
 //加载项目列表
 function listDataAnalysis() {
 	$("#dataAnalysisbody").datagrid({
@@ -17,6 +16,7 @@ function listDataAnalysis() {
 //		iconCls : 'icon-save', // 表格左上角的图标样式
 		/*url : 'listDataAnalysis.action', // 访问服务器的地址，要求返回JSON对象*/
 		url:tburl,
+//		loadData:datalist,//加载
 		rownumbers : true, // 在最前面显示行号
 		fitColumns : true, // 自动适应列宽
 		striped : true, // 隔行变色
@@ -36,12 +36,10 @@ function listDataAnalysis() {
 //			}else{
 //				alert('没有相关数据！');
 //			}
-			datalist = eval(data).rows;
-
-			if(data.total!=dataLength){
+			if(data.rows!=datalist){		
+				datalist = eval(data).rows;
 				prehImage(); //作图			
 			}
-			dataLength =datalist.length; 
 		},
 		columns : [ [ /*{field : 'ID', title : '编号', align :'center', sortable : true,width:80},*/
 		              {field : 'poolID', title : '水池编号', align : 'center', sortable : true,width:150,
@@ -252,11 +250,13 @@ function deleteDataAnalysis() {
 	});
 }
 
+//查询全部
 function listAllDataAnalysis(){
 	$('#frmSearch').form('clear');
 	dealSearch();
 }
 
+//条件查询
 function searchDataAnalysis(){
 	$("#searchT").val(searchT);
 	$("#searchPoolID").val(searchPoolID);
@@ -310,7 +310,7 @@ function showSearchForm() {
 	});
 }
 
-//关闭窗口
+//关闭查询窗口
 function closeSearchForm() {
 	$("#frmSearch").form('clear');
 	$('#tabSearch').dialog('close');
@@ -374,6 +374,7 @@ function keysrt(key,desc) {
 	}
 }
 
+//预测水位分析图
 var ImageTitle="清水池水位预测图";
 function prehImage(){
 	var listArray=new Array();
@@ -423,9 +424,6 @@ function prehImage(){
 					fontWeight: 'bold',
 				}
 			},
-			lang: {
-	            noData: "没有数据"
-	        },
 	   		noData: {
 				style: {
 					fontWeight: 'bold',
@@ -451,7 +449,8 @@ function prehImage(){
 			},
 			yAxis: [
 			        {	//第一个y轴坐标
-//			        	min: 0,
+			        	min: 0,
+			        	max: 5,
 			        	title: {
 			        		text: '单位：米'                  //指定y轴的标题
 			        	},
@@ -460,7 +459,7 @@ function prehImage(){
 			        	           {//第一条标示线	
 			        	        	   color:'red',           //线的颜色，定义为红色
 			        	        	   dashStyle:'ShortDash',     //默认值，这里定义为实线
-			        	        	   value:4,               //定义在那个值上显示标示线，这里是在y轴上刻度为3的值处垂直化一条线
+			        	        	   value:4.5,               //定义在那个值上显示标示线，这里是在y轴上刻度为3的值处垂直化一条线
 			        	        	   width:2,               //标示线的宽度，2px
 			        	        	   label:{
 			        	        		   text:'高预警线',     //标签的内容
@@ -472,7 +471,7 @@ function prehImage(){
 			        	           {//第二条标示线	
 			        	        	   color:'orange',           //线的颜色，定义为红色
 			        	        	   dashStyle:'ShortDash',     //默认值，这里定义为实线
-			        	        	   value:3,               //定义在那个值上显示标示线，这里是在y轴上刻度为0.5的值处垂直化一条线
+			        	        	   value:2.5,               //定义在那个值上显示标示线，这里是在y轴上刻度为0.5的值处垂直化一条线
 			        	        	   width:2,               //标示线的宽度，2px
 			        	        	   label:{
 			        	        		   text:'低预警线',     //标签的内容
@@ -531,17 +530,11 @@ function prehImage(){
 	}
 	options.series.sort(keysrt("name",false));
 	chart = new Highcharts.Chart(options);
-
-
-	/************/
-
-//	}); //document; 
 }//preH;
 
-
+//左侧时间列表显示
 var treeNodeList= [{id:1,name:"时间列表",text:"时间列表",parentId:0}];
 function listTreeNode(tlist){
-
 	var yearlist = new Array();
 	var monthlist = new Array();
 	var daylist = new Array();
@@ -698,6 +691,8 @@ function convert(rows){
 	return nodes;
 }
 
+
+//导出到excel
 function export2excel(){
 //	var params = $("#exportDataAnalysis").serialize();
 //	var filename = $('#downloadFilename').val() ;
@@ -720,6 +715,7 @@ function export2excel(){
 
 	
 }
+
 //导入文件操作
 function import2DB(){
 	var params=$('#upload').val();
@@ -753,7 +749,7 @@ function import2DB(){
 									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
 								} //error
 							});//ajaxFileUpload	
-						setTimeout(location.reload(),10000);
+						location.reload();
 				} 
 				else {		//有冲突
 					$.messager.confirm("导入提示",'已存在相关日期的数据，是否继续覆盖导入？',function(r){
@@ -766,15 +762,15 @@ function import2DB(){
 									if (data.operateSuccess){
 										$('#dataAnalysisbody').datagrid('reload');// 重新加载/
 										$.messager.alert('导入', '导入成功', 'info');
-									
+										
 									} else {
 										$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
 									}
+									location.reload();
 								},//success
 								error:function(data,status){
 									console.log("error 上传失败");
 									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
-									
 								} //error
 							}//ajaxFileUpload
 							);
@@ -788,6 +784,4 @@ function import2DB(){
 		});
 	}
 	$('#fakeUpload').val('');
-
-
 }

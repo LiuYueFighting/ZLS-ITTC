@@ -25,8 +25,7 @@
 
 <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
-<!-- <link rel="stylesheet" type="text/css" href="style/myeasyui.css" /> -->
-
+<link rel="stylesheet" type="text/css" href="style/myeasyui.css" />
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="easyui/jquery.min.js"></script>
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
@@ -134,53 +133,6 @@ body {
     font-size:18px"
 }
 
-/*设置表头行高*/
-.datagrid-header-row {
-	height: 25px;
-	font-size: 16px;
-	font-weight: bold;
-	color: #0E2D5F;
-}
-/*表头字体大小*/
-.datagrid-header .datagrid-cell span {
-	font-size: 14px;
-}
-/*设置表格行高*/
-.datagrid-row {
-	height: 23px;
-}
-/*单元格显示字体*/
-.datagrid-cell {
-	font-size: 12px;
-}
-
-/* 标题设计*/
-.panel-title {
-	font-size: 18px;
-	font-weight: bold;
-	color: #0E2D5F;
-	height: 25px;
-	text-align: center;
-	line-height: 25px;
-}
-
-.panel-body {
-	background-color: #ffffff;
-	color: #000000;
-	font-size: 14px;
-	width: 600px;
-}
-
-.tree-title {
-	font-size: 14px;
-	display: inline-block;
-	text-decoration: none;
-	vertical-align: top;
-	white-space: nowrap;
-	padding: 0 2px;
-	height: 18px;
-	line-height: 18px;
-}
 </style>
 </head>
 <body>

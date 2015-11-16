@@ -29,6 +29,9 @@
 <script type="text/javascript" src="easyui/jquery.min.js"></script>
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="highcharts/highcharts.js" ></script>
+<script type="text/javascript" src="highcharts/exporting.src.js"></script>
+<script type="text/javascript" src="highcharts/themes/grid.js"></script>
 
 <script type="text/javascript" src="js/ajaxfileupload.js"></script>
 <script type="text/javascript" src="js/poolEvaluate.js"></script>
@@ -175,7 +178,7 @@
 			</div> <!-- 特征量说明 -->
 				<div id="tab_description">
 					<h1 style="font-size: 20px">填表说明:</h1>
-					<p style="font-size: 15px">各特征量取值分段为：</p>
+					<p style="font-size: 15px">各特征量取值分段为:</p>
 					<img src="image/JJC1.png" alt="" /><br />
 					<br /> <img src="image/JJC2.png" alt="" /><br />
 					<br /> <img src="image/JJC3.png" alt="" /><br />
@@ -183,7 +186,11 @@
 				</div>
 
 			<div id="tab_entity">
-				<table id="poolEvaluatebody" class="easyui-datagrid">
+			<div class="easyui-tabs" style="max-width:1050px;height:600px;">
+			  	<div title="浊度分析图" id="imageContainer1" style="max-width:1050px;height:600px;padding:0px"></div>
+			  	<div title="加药量分析图" id="imageContainer2" style="max-width:1050px;height:600px;padding:0px"></div>
+			</div>
+			<table id="poolEvaluatebody" class="easyui-datagrid" style="max-width:1050px;height:300px;">
 					</table>
 			</div>
 			<!-- 编辑数据的div，默认看不到 -->
@@ -192,65 +199,81 @@
 						style="align:center;width:830px;height:540px;padding:10px 60px 20px 60px">
 						<form id="frmEdit">
 							<input type="hidden" id="ID" name="poolEvaluate.ID" /> <br />
-							&nbsp; &nbsp; &nbsp; 时 &nbsp; &nbsp; &nbsp; &nbsp; 间 : &nbsp; <input
-								class="easyui-datebox" id="t" name="poolEvaluate.t"
-								style="width:200px;height:25px" required="required" /> &nbsp;
-							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 机加池编号 &nbsp; : &nbsp; <input
-								class="easyui-validatebox textbox" id="PoolID"
-								name="poolEvaluate.PoolID" style="width:200px;height:25px"
-								data-options="required:true,missingMessage:'请输入机加池编号'" /> <br />
-							<br /> &nbsp; &nbsp; &nbsp; PAC投加量 :&nbsp; <input
-								class="easyui-numberbox textbox" style="width:200px;height:25px"
+							&nbsp; &nbsp; &nbsp; 时 &nbsp; &nbsp; &nbsp; &nbsp; 间 : &nbsp; 
+							<input	class="easyui-datebox" id="t" name="poolEvaluate.t"
+								    style="width:200px;height:25px" required="required" /> 
+						    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 机加池编号 : &nbsp; 
+						    <input class="easyui-validatebox textbox" id="PoolID"
+								name="poolEvaluate.PoolID" style="width:205px;height:25px"
+								data-options="required:true,missingMessage:'请输入机加池编号'" />
+							<br />
+							<br /> 
+							&nbsp; &nbsp; &nbsp; PAC投加量 : &nbsp; 
+							<input class="easyui-numberbox textbox" style="width:195px;height:25px"
 								id="PAC" name="poolEvaluate.PAC"
-								data-options="prompt:'',precision:2"> &nbsp;
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FeCl3投加量 :&nbsp; <input
-								class="easyui-numberbox textbox" style="width:200px;height:25px"
+								data-options="prompt:'',precision:2">
+						    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FeCl3投加量 : &nbsp; 
+						    <input class="easyui-numberbox textbox" style="width:198px;height:25px"
 								id="FeCl3" name="poolEvaluate.FeCl3"
-								data-options="prompt:'',precision:2" /> <br />
-							<br /> &nbsp; &nbsp; &nbsp; 开 &nbsp;启&nbsp; 度 : &nbsp; &nbsp; <input
-								class="easyui-numberbox textbox" style="width:200px;height:25px"
+								data-options="prompt:'',precision:2" /> 
+							<br />
+							<br />
+							&nbsp; &nbsp; &nbsp; 开  &nbsp; 启 &nbsp; 度  : &nbsp; 
+							<input class="easyui-numberbox textbox" style="width:200px;height:25px"
 								id="OpenDegree" name="poolEvaluate.OpenDegree"
-								data-options="prompt:'',precision:2" /> &nbsp; &nbsp; &nbsp;
-								&nbsp; &nbsp; &nbsp; &nbsp; 转 &nbsp; &nbsp; &nbsp; &nbsp; 速 :
-								&nbsp; <input class="easyui-numberbox"
-								style="width:210px;height:25px" id="RotationSpeed"
+								data-options="prompt:'',precision:2,min:0" /> 
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 转 &nbsp; &nbsp; &nbsp; &nbsp; 速  : &nbsp; 
+							<input class="easyui-numberbox" style="width:210px;height:25px" id="RotationSpeed"
 								name="poolEvaluate.RotationSpeed"
-								data-options="prompt:'',precision:2" /> <br />
-							<br /> &nbsp; &nbsp; &nbsp; 沉 &nbsp;降 &nbsp;比 : &nbsp; &nbsp; <input
-								class="easyui-numberbox" style="width:200px;height:25px" id="SV"
+								data-options="prompt:'',precision:2,min:0" /> 
+							<br />
+							<br /> 
+							&nbsp; &nbsp; &nbsp; 沉  &nbsp; 降  &nbsp; 比 : &nbsp; 
+							<input class="easyui-numberbox" style="width:200px;height:25px" id="SV"
 								name="poolEvaluate.SV" data-options="prompt:'',precision:2" />
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 小斗排泥时长 : &nbsp;
-								<input class="easyui-numberbox" style="width:190px;height:25px"
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水 &nbsp; &nbsp; &nbsp; &nbsp; 温 : &nbsp; 
+							<input class="easyui-numberbox" style="width:210px;height:25px" id="WaterTemp"
+								name="poolEvaluate.WaterTemp" 
+								data-options="prompt:'',precision:2" /> 
+							<br />
+							<br/>
+							&nbsp; &nbsp; &nbsp; 小斗排泥时长 : &nbsp; 
+							<input class="easyui-numberbox" style="width:183px;height:25px"
 								id="SmallMudFre" name="poolEvaluate.SmallMudFre"
-								data-options="prompt:'',precision:2" /> <br />
-							<br /> &nbsp; &nbsp; &nbsp; 大斗排泥时长 :&nbsp; <input
-								class="easyui-numberbox" style="width:190px;height:25px"
+								data-options="prompt:'',precision:2" /> 
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 大斗排泥时长 : &nbsp; 
+							<input class="easyui-numberbox" style="width:190px;height:25px"
 								id="BigMudFre" name="poolEvaluate.BigMudFre"
-								data-options="prompt:'',precision:2" /> &nbsp; &nbsp; &nbsp;
-								&nbsp; &nbsp; &nbsp; &nbsp; 原 水 浊 度 : &nbsp;&nbsp; <input
-								class="easyui-numberbox" style="width:200px;height:25px"
+								data-options="prompt:'',precision:2" />
+							<br />
+						    <br />
+						    &nbsp; &nbsp; &nbsp; 原 水 浊 度  : &nbsp;
+						    <input
+								class="easyui-numberbox" style="width:198px;height:25px"
 								id="NTU" name="poolEvaluate.NTU"
-								data-options="prompt:'',precision:2" /> <br />
-							<br /> <!-- 	&nbsp; &nbsp;水&nbsp; &nbsp;温: &nbsp; &nbsp;  
-				<input class="easyui-numberbox" precision="1" size="15" id="WaterTemp" name="poolEvaluate.WaterTemp" />
-				--> &nbsp; &nbsp; &nbsp; 原水藻类含量 :&nbsp; <input
+								data-options="prompt:'',precision:2" />
+							&nbsp; &nbsp; &nbsp;
+								&nbsp; &nbsp; &nbsp; &nbsp; 原水藻类含量 : &nbsp; 
+							<input
 								class="easyui-numberbox" style="width:190px;height:25px"
 								id="AlgaeContent" name="poolEvaluate.AlgaeContent"
-								data-options="prompt:'',precision:2" /> &nbsp; &nbsp; &nbsp;
-								&nbsp; &nbsp; &nbsp; &nbsp; 出 水 浊 度 : &nbsp;&nbsp; <input
-								class="easyui-numberbox" style="width:200px;height:25px"
+								data-options="prompt:'',precision:2" />
+							<br />
+						    <br />
+								&nbsp; &nbsp; &nbsp; 出 水 浊 度 : &nbsp; <input
+								class="easyui-numberbox" style="width:198px;height:25px"
 								id="OutNTU" name="poolEvaluate.OutNTU"
-								data-options="prompt:'',precision:2" /> <br />
-							<br /> <!-- &nbsp; &nbsp;
+								data-options="prompt:'',precision:2" /> <!-- &nbsp; &nbsp;
 				状&nbsp;态:&nbsp;
 				<select id="state" class="easyui-combobox" name="poolEvaluate.state" style="width:150px;">
 					<option value="0">不正常</option>
 					<option value="1">正常</option>
 				</select> --> <!-- <input  size="10" id="state" name="poolEvaluate.state" /> -->
 
-
-								&nbsp; &nbsp; &nbsp; 预 加 氯 量 : &nbsp; <input
-								class="easyui-numberbox" style="width:200px;height:25px" id="CL"
+								&nbsp; &nbsp; &nbsp;
+								&nbsp; &nbsp; &nbsp; &nbsp; 预 加 氯 量 : &nbsp; 
+							<input
+								class="easyui-numberbox" style="width:205px;height:25px" id="CL"
 								name="poolEvaluate.CL" data-options="prompt:'',precision:2" />
 						</form>
 					</div>
@@ -261,10 +284,11 @@
 						style="align:center;width:600px;height:400px;padding:10px 60px 20px 60px">
 						<form id="frmSearch">
 
-							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 时 &nbsp; &nbsp; &nbsp;
-							间： &nbsp; <input class="easyui-datebox" style="width:150px"
-								id="searchT" name="searchT"/ > <br />
-							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水 池 编 号 : &nbsp; <input
+							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp; <input class="easyui-datebox" style="width:150px"
+								id="lowT" name="lowT"/ ><br/><br/>
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp; <input class="easyui-datebox" style="width:150px"
+								id="highT" name="highT"/ > <br />
+							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水  &nbsp;池 &nbsp; 编  &nbsp;号 : &nbsp; <input
 								class="easyui-combobox" type="text" style="width:150px"
 								id="searchPoolID" name="searchPoolID" /> <br />
 							<br /> <!-- <select  lass="easyui-combobox" type="text"  id="searchPoolID" style="width:120px"
@@ -273,27 +297,33 @@
 					          </select> --> <!-- 
 						<br/>
 					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-					 状  &nbsp; 态：<select id="searchState" name="searchState" style="width:120px" class="easyui-combobox" >
+					 状  &nbsp; 态:<select id="searchState" name="searchState" style="width:120px" class="easyui-combobox" >
                                     <option value="-1" selected="">--请选择--</option>
                                     <option value="0">不正常</option>
                                     <option value="1">正常</option>
                                  </select>
-					 --> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 来 水 浊 度： &nbsp; <input
+					 --> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 来  &nbsp;水 &nbsp; 浊  &nbsp;度 : &nbsp; <input
 								class="easyui-numberbox" id="lowNTU" name="lowNTU"
-								style="width:60px" value="0"></input> ~ <input
+								style="width:120px" value="0"></input> ~ <input
 								class="easyui-numberbox" id="highNTU" name="highNTU"
-								style="width:60px" value="100"></input> <br />
-							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 来水藻类含量： &nbsp; <input
+								style="width:120px" value="100"></input> <br />
+							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 来水藻类含量 : &nbsp; <input
 								class="easyui-numberbox" id="lowAlgaeContent"
-								name="lowAlgaeContent" style="width:60px" value="0"></input> ~
+								name="lowAlgaeContent" style="width:120px" value="0"></input> ~
 								<input class="easyui-numberbox" id="highAlgaeContent"
-								name="highAlgaeContent" style="width:60px" value="100"></input>
+								name="highAlgaeContent" style="width:120px" value="100"></input>
 								<br />
-							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 出 水 浊 度： &nbsp; <input
+							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 出  &nbsp;水  &nbsp;浊 &nbsp; 度 : &nbsp; <input
 								class="easyui-numberbox" id="lowOutNTU" name="lowOutNTU"
-								style="width:60px" value="0"></input> ~ <input
+								style="width:120px" value="0"></input> ~ <input
 								class="easyui-numberbox" id="highOutNTU" name="highOutNTU"
-								style="width:60px" value="100"></input>
+								style="width:120px" value="100"></input>
+								<br />
+							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 沉  &nbsp; &nbsp; 降  &nbsp; &nbsp; 比 : &nbsp; <input
+								class="easyui-numberbox" id="lowSV" name="lowSV"
+								style="width:122px" value="0" data-options="prompt:'',precision:2"></input> ~ <input
+								class="easyui-numberbox" id="highSV" name="highSV"
+								style="width:120px" value="100" data-options="prompt:'',precision:2"></input>
 						</form>
 					</div>
 				</div>

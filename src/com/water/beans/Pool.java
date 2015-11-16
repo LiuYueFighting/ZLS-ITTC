@@ -1,20 +1,16 @@
 package com.water.beans;
 
-	/**
-	*	*@author yangsj
-	*/
-
 public class Pool{
-	private int ID;
+	private long ID;
 	private String PoolID;
 	private int BuildingID;
 	private double VMax;
 	private String Location;
 
-	public int getID(){
+	public long getID(){
 		return this.ID;
 	}
-	public void setID(int ID){
+	public void setID(long ID){
 		this.ID=ID;
 	}
 	public String getPoolID(){
