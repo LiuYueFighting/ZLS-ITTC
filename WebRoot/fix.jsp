@@ -38,21 +38,48 @@
          #myContent a{
     color: #ff4400;
     }
+    #show_hide{
+        position:absolute;
+        top:10px;
+        left:270px;
+    }
+    #export{
+    position: absolute;
+    top: 510px;
+    left: 120px;
+    /* background: rgba(290,140,110,0.5); */
+    font-size: 18px;
+    }
     .name_Model{
     font-family: '微软雅黑','Arial';
     color:#ff4400;
     font-size: 15px;
     font-weight:bold;
     }
+    #panel_heading{
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin-left: 134px;
+    height: 72px;
+    width: 312px;
+    position: absolute;
+    left: 1580px;
+    top: 93px;
+    Z-INDEX: 999;
+    /* border: 1px solid; */
+    background: rgba(255,255,255,0.7);
+    }
     #chackBox_name{
     position:absolute;
-    top:363px;
-    left:79px;
+    top:403px;
+    left:35px;
     }
     #WShow{
     position:absolute;
     top:373px;
-    left:9px;
+    left:44px;
     z-index:999;
     }
     .name_ob{
@@ -64,16 +91,16 @@
     }
     #name_QS{
     position: absolute;
-    left: 681px;
-    top: 62px;
+    left: 685px;
+    top: 70px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_JJC1{
     position: absolute;
-    left: 858px;
-    top: 383px;
+    left: 852px;
+    top: 394px;
     height: 50px;
     width: auto;
     z-index:999;
@@ -81,7 +108,7 @@
     #name_JJC2{
     position: absolute;
     left: 1067px;
-    top: 383px;
+    top: 394px;
     height: 50px;
     width: auto;
     z-index:999;
@@ -89,47 +116,47 @@
     #name_JJC3{
     position: absolute;
     left:1146px;
-    top: 616px;
+    top: 626px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_VL{
     position: absolute;
-    left: 860px;
-    top: 681px;
+    left: 868px;
+    top: 691px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_HHJ1{
     position: absolute;
-    left:965px;
-    top: 343px;
+    left:959px;
+    top: 353px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_HHJ2{
     position: absolute;
-    left:1166px;
-    top: 355px;
+    left:1170px;
+    top: 363px;
     height: auto;
     width: 30px;
     z-index:999;
     }
     #name_HX{
     position: absolute;
-    left:837px;
-    top: 532px;
+    left:843px;
+    top: 537px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_QSC1{
     position: absolute;
-    left:305px;
-    top: 485px;
+    left:295px;
+    top: 489px;
     height: 50px;
     width: 150px;
     z-index:999;
@@ -144,8 +171,8 @@
     }
     #name_CYC{
     position: absolute;
-    left:620px;
-    top: 453px;
+    left:623px;
+    top: 469px;
     height: auto;
     width: 30px;
     z-index:999;
@@ -176,23 +203,23 @@
     }
     #name_TC{
     position: absolute;
-    left:375px;
-    top: 655px;
+    left:385px;
+    top: 664px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_TC1{
     position: absolute;
-    left:485px;
-    top: 655px;
+    left:490px;
+    top: 664px;
     height: 50px;
     width: auto;
     z-index:999;
     }
     #name_YC{
     position: absolute;
-    left:960px;
+    left:972px;
     top: 139px;
     height: 50px;
     width: auto;
@@ -200,10 +227,19 @@
     }
     #fix{
     margin-left:134px;
+    height:600px;
+    width:313px;
+    position:absolute;
+    left:1580px;
+    top:164px;
+    Z-INDEX:999;
+    display:none;
     }
     .panel{
     height:600px;
-    width:1333px;
+    width:313px;
+    background: rgba(255,255,255,0.7);
+    color: black;
     }
     #FMhelp{
     position: absolute;
@@ -226,6 +262,141 @@
     position: absolute;
     left:695px;
     top: 106px;
+    z-index:999;
+    }#name_QS{
+    position: absolute;
+    left: 685px;
+    top: 70px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_JJC1{
+    position: absolute;
+    left: 852px;
+    top: 394px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_JJC2{
+    position: absolute;
+    left: 1067px;
+    top: 394px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_JJC3{
+    position: absolute;
+    left:1146px;
+    top: 626px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_VL{
+    position: absolute;
+    left: 868px;
+    top: 691px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_HHJ1{
+    position: absolute;
+    left:959px;
+    top: 353px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_HHJ2{
+    position: absolute;
+    left:1170px;
+    top: 363px;
+    height: auto;
+    width: 30px;
+    z-index:999;
+    }
+    #name_HX{
+    position: absolute;
+    left:843px;
+    top: 537px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_QSC1{
+    position: absolute;
+    left:295px;
+    top: 489px;
+    height: 50px;
+    width: 150px;
+    z-index:999;
+    }
+    #name_CY{
+    position: absolute;
+    left:590px;
+    top: 663px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_CYC{
+    position: absolute;
+    left:623px;
+    top: 469px;
+    height: auto;
+    width: 30px;
+    z-index:999;
+    }
+    #name_QSC2{
+    position: absolute;
+    left:315px;
+    top: 301px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_QSC3{
+    position: absolute;
+    left:487px;
+    top: 301px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_QSC4{
+    position: absolute;
+    left:450px;
+    top: 489px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_TC{
+    position: absolute;
+    left:385px;
+    top: 664px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_TC1{
+    position: absolute;
+    left:490px;
+    top: 664px;
+    height: 50px;
+    width: auto;
+    z-index:999;
+    }
+    #name_YC{
+    position: absolute;
+    left:972px;
+    top: 139px;
+    height: 50px;
+    width: auto;
     z-index:999;
     }
     #FM07{
@@ -664,6 +835,10 @@
     top: 416px;
     z-index:999;
     }
+    #fix_table{
+    font-size:13px}
+    #fix-content{
+    }
     .name_FM{
     font-family: '微软雅黑','Arial';
     color:black;
@@ -672,6 +847,115 @@
     }
     </style>
     <script>
+    var hide=1;
+        function changeImage(id){
+        var image = document.getElementById(id);
+        if(image.src.match("image/y3.png"))
+        image.src = "image/y2.png";
+        else image.src = "image/y3.png";
+        }
+
+    function setOpenDgree(id){
+    var openDgree = 0;
+    var num = id.substr(2);
+    <%--var table =document.getElementById(num);--%>
+    var image = document.getElementById(id);
+    <%--var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");--%>
+    <%--if(openDgree<0||openDgree>100||isNaN(openDgree)){--%>
+    <%--alert("输入有误！请重新输入！");--%>
+    <%--return;--%>
+    <%--}--%>
+    <%--else if(openDgree==null){--%>
+    <%--return;--%>
+    <%--}--%>
+    if (openDgree==0){
+    <%--table.innerHTML=openDgree+"%";--%>
+    image.src = "image/y2.png";
+    <%--$('#'+num).toggleClass('danger');--%>
+    return;
+    }
+    else if(openDgree==100)
+    {
+    <%--table.innerHTML=openDgree+"%";--%>
+    image.src = "image/y3.png";
+    <%--$('#'+num).toggleClass('info');--%>
+    return;
+    }
+    else{
+    <%--table.innerHTML=openDgree+"%";--%>
+    image.src = "image/y1.png";
+    <%--$('#'+num).toggleClass('warning');--%>
+    return;
+    }
+    }
+
+    function clearOpenDgree(id){
+    var openDgree = 100;
+    var num = id.substr(2);
+    <%--var table =document.getElementById(num);--%>
+    var image =document.getElementById(id);
+    <%--var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");--%>
+    <%--if(openDgree<0||openDgree>100||isNaN(openDgree)){--%>
+    <%--alert("输入有误！请重新输入！");--%>
+    <%--return;--%>
+    <%--}--%>
+    <%--else if(openDgree==null){--%>
+    <%--return;--%>
+    <%--}--%>
+    if (openDgree==0){
+    <%--table.innerHTML=openDgree+"%";--%>
+    image.src = "image/y2.png";
+    <%--$('#'+num).toggleClass('danger');--%>
+    return;
+    }
+    else if(openDgree==100)
+    {
+    <%--table.innerHTML=openDgree+"%";--%>
+    image.src = "image/y3.png";
+    <%--$('#'+num).toggleClass('info');--%>
+    return;
+    }
+    else{
+    <%--table.innerHTML=openDgree+"%";--%>
+    image.src = "image/y1.png";
+    <%--$('#'+num).toggleClass('warning');--%>
+    return;
+    }
+    }
+
+    function clearAll(){
+    clearOpenDgree("FM05");
+    clearOpenDgree("FM06");
+    clearOpenDgree("FM07");
+    clearOpenDgree("FM09");
+    clearOpenDgree("FM010");
+    clearOpenDgree("FM065");
+    clearOpenDgree("FM062");
+    clearOpenDgree("FM066");
+    clearOpenDgree("FM069");
+    clearOpenDgree("FM015");
+    clearOpenDgree("FM045");
+    clearOpenDgree("FM014");
+    clearOpenDgree("FM016");
+    clearOpenDgree("FM068");
+    clearOpenDgree("FM067");
+    clearOpenDgree("FM017");
+    clearOpenDgree("FM018");
+    clearOpenDgree("FM019");
+    clearOpenDgree("FM067");
+    clearOpenDgree("FM052");
+    clearOpenDgree("FM020");
+    clearOpenDgree("FM056");
+    clearOpenDgree("FM057");
+    clearOpenDgree("FM058");
+    clearOpenDgree("FM053");
+    clearOpenDgree("FM054");
+    clearOpenDgree("FM021");
+    clearOpenDgree("FM022");
+    clearOpenDgree("FM024");
+    }
+
+
         oCanvas.domReady(function () {
             var canvas=oCanvas.create({
                 canvas: "#canvas_main",
@@ -696,19 +980,19 @@
     <%--var textFeild =document.getElementById("write");--%>
     <%--textFeild.innerHTML="进水量："+read+" m3/h";--%>
     <%--}--%>
-    function setFix(id){
-    <%--var num = id.substr(2);--%>
-    <%--var table =document.getElementById(num);--%>
-    var image = document.getElementById(id);
-        var fix = confirm("确定维修"+id+"?");
-    if(fix==true){
-        if( image.src.match("image/y3.png")){
-            image.src ="image/y2.png";
-            return;
-        }
-        else image.src ="image/y3.png";
-    }
-    }
+    <%--function setFix(id){--%>
+    <%--&lt;%&ndash;var num = id.substr(2);&ndash;%&gt;--%>
+    <%--&lt;%&ndash;var table =document.getElementById(num);&ndash;%&gt;--%>
+    <%--var image = document.getElementById(id);--%>
+        <%--var fix = confirm("确定维修"+id+"?");--%>
+    <%--if(fix==true){--%>
+        <%--if( image.src.match("image/y3.png")){--%>
+            <%--image.src ="image/y2.png";--%>
+            <%--return;--%>
+        <%--}--%>
+        <%--else image.src ="image/y3.png";--%>
+    <%--}--%>
+    <%--}--%>
     function showName(e){
     if(e.checked==true){
     document.getElementById("name_QS" ).style.display="block";
@@ -750,6 +1034,31 @@
     document.getElementById("name_QSC4").style.display="none";
     }
     }
+    function hideList(){
+    document.getElementById("fix").style.display="none";
+    }
+    function showList(){
+    document.getElementById("fix").style.display="block";
+    }
+    function setShow(){
+    showList();
+    document.getElementById("show_hide").innerHTML='隐藏';
+    hide=0;
+    }
+    function changeHide(){
+        if(hide==1){
+            showList();
+            document.getElementById("show_hide").innerHTML='隐藏';
+            hide=0;
+            return;
+        }
+        else if(hide==0){
+            hideList();
+            document.getElementById("show_hide").innerHTML='显示';
+            hide=1;
+            return;
+        }
+    }
     </script>
 </head>
 <body>
@@ -763,9 +1072,6 @@
         <div id="mainView" style="position: absolute;z-index: 1" >
             <canvas id="canvas_fix" width="1583" height="757"></canvas>
         </div>
-    <div id="FMhelp" class="name_ob">
-    单击需要维修的部件！
-    </div>
     <p class="name_Model" id="WShow">显示名称</p>
     <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label>
     <a href="#" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
@@ -862,12 +1168,17 @@
     <p id="WFM050" class="name_FM">050#</p>
     <p id="WFM051" class="name_FM">051#</p>
     </div>
+    <div id="panel_heading">
+    <h2 id="fix_head" >请点击需要维修的构筑物</h2>
+    <a href="#" id="show_hide" onclick="changeHide()">显示</a>
+
+    </div>
     <div id="fix">
     <div class="panel panel-default">
     <!-- Default panel contents -->
-    <div class="panel-heading"><h2 id="fix_head" >请点击需要维修的构筑物</h2></div>
-    <div class="panel-body">
-    <p><h3>配合开关闸门的顺序表</h3></p>
+
+    <div class="panel-body" id="fix-content">
+    <p><h3>配合开关闸门顺序表</h3></p>
     </div>
 
     <!-- Table -->
@@ -877,18 +1188,19 @@
         <td>操作</td>
     </thead>
     <tbody>
-        <tr><td>1</td><td>#59全开</td></tr>
-        <tr><td>2</td><td>#58全开</td></tr>
-        <tr><td>3</td><td>#56关闭</td></tr>
-        <tr><td>4</td><td>#23关闭</td></tr>
-        <tr><td>5</td><td>新炭池各格进水闸全开</td></tr>
-        <tr><td>6</td><td>#19全开</td></tr>
-        <tr><td>7</td><td>#23开启一格</td></tr>
-        <tr><td>8</td><td>#21开启一格</td></tr>
-        <tr><td>9</td><td>#57缓慢关闭</td></tr>
-        <tr><td>10</td><td>老炭池2-6#进水闸关闭</td></tr>
+        <tr><td>1</td><td id="fix_line1"></td></tr>
+        <tr><td>2</td><td id="fix_line2"></td></tr>
+        <tr><td>3</td><td id="fix_line3"></td></tr>
+        <tr><td>4</td><td id="fix_line4"></td></tr>
+        <tr><td>5</td><td id="fix_line5"></td></tr>
+        <tr><td>6</td><td id="fix_line6"></td></tr>
+        <tr><td>7</td><td id="fix_line7"></td></tr>
+        <tr><td>8</td><td id="fix_line8"></td></tr>
+        <tr><td>9</td><td id="fix_line9"></td></tr>
+        <tr><td>10</td><td id="fix_line10"></td></tr>
     </tbody>
     </table>
+    <a href="#" id="export">生成方案</a>
     </div>
     </div>
     <jsp:include page="down.jsp" />
