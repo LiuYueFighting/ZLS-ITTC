@@ -2,6 +2,13 @@
 $(function() {
 	listPoolEvaluate();
 });
+
+//$(document).ready(function() {
+//	$('#imageContainer2').click(function() {
+//		document.body.style.zoom = 1.5;
+//	});
+//});
+
 var tburl='searchPoolEvaluate.action'; 
 var datalist = new Array();
 //加载项目列表
@@ -27,7 +34,6 @@ function listPoolEvaluate() {
 			if(data.rows!=datalist){		
 				datalist = eval(data).rows;
 				drawImage(); //作图
-
 			}
 		},
 		columns : [ [
@@ -485,6 +491,7 @@ function closeSearchForm() {
 var url = "listPoolEvaluate.action";
 var poolIDlist  = new Array();
 var alldata = new Array();
+var tlist = new Array();
 //查询下拉框显示的数据
 $.getJSON(url, function(json) {
 	//去除重复项
@@ -496,6 +503,9 @@ $.getJSON(url, function(json) {
 			tempPoolIDlist.push(row.poolID);
 			poolIDlist.push({poolID:row.poolID,text:formPoolID(row.poolID)});
 		}
+		if(jQuery.inArray(row.t, tlist) < 0) {
+			tlist.push(row.t);
+		}
 	}//for
 	$('#searchPoolID').combobox({
 		data : poolIDlist.sort(keysrt('poolID',false)),
@@ -505,6 +515,7 @@ $.getJSON(url, function(json) {
 			$(this).combobox('setText', '');
 		}			
 	});
+	listTreeNode(tlist.sort());
 });
 
 //水池编号转换
@@ -657,7 +668,7 @@ function drawImage(){
 	var chart1;
 	var chart2;
 	var options1;  //浊度分析图
-	var options2; //加药量分析图
+	var options2;  //加药量分析图
 	if (datalist.length>0){					
 		for (var i=0; i<datalist.length;i++){
 			var row = datalist[i]; 
@@ -700,6 +711,31 @@ function drawImage(){
 				borderColor: '#FFF',	//边框颜色
 					//type: 'spline'          //指定图表的类型，默认是折线图（line）
 //				zoomType: 'x',	//图标缩放
+				zoomType: 'x',
+	            selectionMarkerFill: 'rgba(0,0,0, 0.2)',
+	            resetZoomButton: {
+	                // 按钮定位
+	            	position:{
+	                    align: 'right', // by default
+	                    verticalAlign: 'top', // by default
+	                    x: 0,
+	                    y: -30
+	                },
+	                // 按钮样式
+	                theme: {
+	                    fill: 'white',
+	                    stroke: 'silver',
+	                    r: 0,
+	                    states: {
+	                        hover: {
+	                            fill: '#41739D',
+	                            style: {
+	                                color: 'white'
+	                            }
+	                        }
+	                    }
+	                }
+	            }
 			},
 			lang:{					
 				printChart: "打印",
@@ -709,7 +745,7 @@ function drawImage(){
 				downloadSVG: "下载SVG 矢量图",
 				exportButtonTitle: "导出图片",
 				noData: "没有查询到数据",
-				resetZoom:"重置",				
+				resetZoom: "重置"				
 			},
 			title:{
 				text: ImageTitle1,
@@ -981,3 +1017,162 @@ function drawImage(){
 	chart1 = new Highcharts.Chart(options1);
 	chart2 = new Highcharts.Chart(options2);
 }//preH;
+
+var treeNodeList= [{id:1,name:"时间列表",text:"时间列表",parentId:0}];
+function listTreeNode(tlist){
+	var yearlist = new Array();
+	var monthlist = new Array();
+	var daylist = new Array();
+	var j=1; 
+	for(var i=0;i<tlist.length;i++){
+		var year = tlist[i].substring(0,4);
+		var month = tlist[i].substring(0,7);
+		var day = tlist[i].substring(0,10);
+		var yearIndex=yearlist.indexOf(year);
+		var monthIndex=monthlist.indexOf(month);
+		var dayIndex=daylist.indexOf(day);
+		if(yearIndex<0){	//不存在该年份
+			j=j+1;	
+			yearlist.push(year);
+			treeNodeList.push({id:j,name:year+"年",text:year,parentId:1});	
+			j=j+1;
+			monthlist.push(month);
+			treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,parentId:j-1});
+			j=j+1;
+			daylist.push(day);
+			treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,parentId:j-1});		
+		}
+		else{
+			if(monthIndex<0) //不存在该月份
+			{	
+				j=j+1;
+				monthlist.push(month);
+				treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,
+									parentId:findParentId(treeNodeList, year)});
+				j=j+1;
+				daylist.push(day);
+				treeNodeList.push({id:j,name:day.substring(8,10)+"日",
+								text:day,parentId:j-1});
+			}else{
+				if(dayIndex<0){
+					j=j+1;
+					daylist.push(day);
+					treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,
+									parentId:findParentId(treeNodeList, month)});
+				}
+			}
+		}
+	}
+
+	$('#timeTree').tree({
+//		url: 'tree_data.json',
+		data: treeNodeList,
+		animate:true,	//动画效果
+		lines:true,
+		loadFilter: function(data){
+			return convert(data);
+		},
+		onDblClick:function(node){
+			var pnode=$('#timeTree').tree('getParent',node.target);
+			var out=node.text;
+			while(pnode.text!="时间列表"){
+				out=pnode.text+out;
+				pnode=$('#timeTree').tree('getParent',pnode.target);	
+			}
+			if($('#timeTree').tree('isLeaf',node.target)){	//是根节点
+				out=out.replace("年",'-'); out=out.replace("月",'-'); out=out.replace("日",'');
+				$("#searchT").datebox("setValue",out);
+				$("#searchPoolID").val();
+				dealSearch();		
+			}
+		},
+		cascadeCheck:true,//是否支持级联选择
+		
+	});
+}
+
+function GetNode(type){  
+    var node = $('#timeTree').tree('getChecked');  
+    var chilenodes = '';  
+    var parantsnodes = '';  
+    var prevNode = '';  
+    for (var i = 0; i < node.length; i++) {  
+     
+        if ($('#timeTree').tree('isLeaf', node[i].target)) {  
+            chilenodes += node[i].text + ',';  
+             
+            var pnode = $('#timeTree').tree('getParent', node[i].target);  
+            if (prevNode != pnode.text) {  
+                parantsnodes += pnode.text + ',';  
+                prevNode = pnode.text;  
+            }  
+        }  
+    }  
+    chilenodes = chilenodes.substring(0, chilenodes.length - 1);  
+    parantsnodes = parantsnodes.substring(0, parantsnodes.length - 1);  
+     
+    if (type == 'child') {  
+        return chilenodes;  
+    }  
+    else {  
+        return parantsnodes  
+    };  
+}; 
+
+
+function findParentId(rows, text){
+	for(var i=0; i<rows.length; i++){
+		if (rows[i].text == text) return rows[i].id;
+	}
+	return -1;
+}
+//显示树目录的数据
+function convert(rows){
+	//判断是否存在父节点
+	function exists(rows, parentId){
+		for(var i=0; i<rows.length; i++){
+			if (rows[i].id == parentId) return true;
+		}
+		return false;
+	}
+
+	var nodes = [];
+	// get the top level nodes
+	//遍历查找最高一层节点
+	for(var i=0; i<rows.length; i++){
+		var row = rows[i];
+		//如果不存在父节点，添加节点
+		if (!exists(rows, row.parentId)){
+			nodes.push({
+				id:row.id,
+				text:row.name
+			});
+		}
+	}
+
+//	利用堆栈的结构
+	var toDo = []; //所有的父节点
+	for(var i=0; i<nodes.length; i++){
+		toDo.push(nodes[i]);
+	}
+	while(toDo.length){
+		//	shift从集合中把第一个元素删除，并返回这个元素的值
+		var node = toDo.shift();	// the parent node
+		// get the children nodes
+		//	获得所有父节点各自的子节点
+		for(var i=0; i<rows.length; i++){
+			var row = rows[i];
+			if (row.parentId == node.id){
+				var child = {id:row.id,text:row.name};
+				if (node.children){
+					node.children.push(child);
+				} else {
+					node.children = [child];
+				}
+				toDo.push(child);//添加子节点，以便进一步遍历子节点查看是否有子目录
+			}
+		}
+	}
+	return nodes;
+}
+
