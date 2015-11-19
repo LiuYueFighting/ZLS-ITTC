@@ -50,6 +50,20 @@
     /* background: rgba(290,140,110,0.5); */
     font-size: 18px;
     }
+    #nextPage{
+    position: absolute;
+    top: 477px;
+    left: 250px;
+    /* background: rgba(290,140,110,0.5); */
+    font-size: 16px;
+    }
+    #lastPage{
+    position: absolute;
+    top: 477px;
+    left: 10px;
+    /* background: rgba(290,140,110,0.5); */
+    font-size: 16px;
+    }
     .name_Model{
     font-family: '微软雅黑','Arial';
     color:#ff4400;
@@ -1200,7 +1214,9 @@
         <tr><td>10</td><td id="fix_line10"></td></tr>
     </tbody>
     </table>
-    <a href="#" id="export">生成方案</a>
+    <a href="#" id="nextPage">下一页</a>
+    <a href="#" id="lastPage">上一页</a>
+    <a  id="export">生成方案</a>
     </div>
     </div>
     <jsp:include page="down.jsp" />
