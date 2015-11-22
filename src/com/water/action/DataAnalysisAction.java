@@ -9,6 +9,7 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +28,7 @@ import jxl.write.WritableWorkbook;
 import com.opensymphony.xwork2.ActionSupport;
 import com.water.beans.DataAnalysis;
 import com.water.service.DataAnalysisService;
+import com.water.util.ListSort;
 
 
 @SuppressWarnings("serial")
@@ -295,12 +297,12 @@ public class DataAnalysisAction extends ActionSupport{
 
 			//			String path="D://数据分析表-"+exportFileName+".xls";
 			book = Workbook.createWorkbook(new File(path));
-			//生成工作表
-			WritableSheet sheet = book.createSheet("sheet1", 0);
-
-			//给sheet电子版中所有的列设置默认的列的宽度;  
-			sheet.getSettings().setDefaultColumnWidth(15);
-			sheet.setColumnView(1, 20);//给第二列设置列宽 
+//			//生成工作表
+//			WritableSheet sheet = book.createSheet("sheet1", 0);
+//
+//			//给sheet电子版中所有的列设置默认的列的宽度;  
+//			sheet.getSettings().setDefaultColumnWidth(15);
+//			sheet.setColumnView(1, 20);//给第二列设置列宽 
 			//设置格式
 			//标题
 			WritableFont formatH = new WritableFont(WritableFont.TAHOMA,14,WritableFont.BOLD);   
@@ -320,10 +322,19 @@ public class DataAnalysisAction extends ActionSupport{
 
 			//	List<DataAnalysis> list = dataAnalysisService.findAll();
 			if(list!=null && !list.isEmpty()){
+				ListSort<DataAnalysis> listSort = new ListSort<DataAnalysis>();
+				listSort.Sort(list, "getT","asc"); //排序
+				DateFormat sdfDay = new SimpleDateFormat("yyyy-MM-dd");
+				DateFormat sdf = new SimpleDateFormat("HH");
+				
+				String tempT = sdfDay.format(list.get(0).getT());
+				WritableSheet sheet = book.createSheet(tempT, 0);
+				//给sheet电子版中所有的列设置默认的列的宽度;  
+				sheet.getSettings().setDefaultColumnWidth(15);
+				sheet.setColumnView(1, 20);//给第二列设置列宽 
 				sheet.mergeCells(0, 0, 10, 0); //合并单元格，用于显示标题
 				sheet.addCell(new Label(0,0, "清水池水位计算表",formatTitle));
 				//添加表头
-				//				sheet.addCell(new Label(0,1," 编号 ",formatHead));
 				sheet.addCell(new Label(0,1," 时间 ",formatHead));
 				sheet.addCell(new Label(1,1," 水池编号 ",formatHead));
 				sheet.addCell(new Label(2,1," 总来水量 ",formatHead));
@@ -335,22 +346,59 @@ public class DataAnalysisAction extends ActionSupport{
 				sheet.addCell(new Label(8,1," 回流水量 ",formatHead));
 				sheet.addCell(new Label(9,1," 蓄水量 ",formatHead));
 				sheet.addCell(new Label(10,1," 预测水位 ",formatHead));
-				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-				for (int i=0;i<list.size();i++){
-					//					sheet.addCell(new Label(0,i+2,Long.toString(list.get(i).getID()),formatBody));
-					sheet.addCell(new Label(0,i+2,sdf.format(list.get(i).getT()),formatBody));
-					sheet.addCell(new Label(1,i+2,list.get(i).getPoolID(),formatBody));
-					sheet.addCell(new Label(2,i+2,Double.toString(list.get(i).getInV()),formatBody));
-					sheet.addCell(new Label(3,i+2,Double.toString(list.get(i).getOutV()),formatBody));
-					sheet.addCell(new Label(4,i+2,Double.toString(list.get(i).getHXOutV()),formatBody));
-					sheet.addCell(new Label(5,i+2,Double.toString(list.get(i).getLCOutV()),formatBody));
-					sheet.addCell(new Label(6,i+2,Double.toString(list.get(i).getTCOutV()),formatBody));					
-					sheet.addCell(new Label(7,i+2,Double.toString(list.get(i).getJJOutV()),formatBody));	
-					sheet.addCell(new Label(8,i+2,Double.toString(list.get(i).getHLInV()),formatBody));
-					sheet.addCell(new Label(9,i+2,Double.toString(list.get(i).getStorage()),formatBody));
-					sheet.addCell(new Label(10,i+2,Double.toString(list.get(i).getPreH()),formatBody));
-
-				}//for
+				int j=2;
+				for(int i=0;i<list.size();i++){
+					String day = sdfDay.format(list.get(i).getT());
+					if (day.equals(tempT)){					
+						sheet.addCell(new Label(0,j,sdf.format(list.get(i).getT()),formatBody));
+						sheet.addCell(new Label(1,j,list.get(i).getPoolID(),formatBody));
+						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getInV()),formatBody));
+						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOutV()),formatBody));
+						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getHXOutV()),formatBody));
+						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getLCOutV()),formatBody));
+						sheet.addCell(new Label(6,j,Double.toString(list.get(i).getTCOutV()),formatBody));					
+						sheet.addCell(new Label(7,j,Double.toString(list.get(i).getJJOutV()),formatBody));	
+						sheet.addCell(new Label(8,j,Double.toString(list.get(i).getHLInV()),formatBody));
+						sheet.addCell(new Label(9,j,Double.toString(list.get(i).getStorage()),formatBody));
+						sheet.addCell(new Label(10,j,Double.toString(list.get(i).getPreH()),formatBody));
+						j=j+1;
+					}else{ //新建个sheet
+						j=2;
+						tempT = day;
+						sheet = book.createSheet(tempT, 0);
+						//给sheet电子版中所有的列设置默认的列的宽度;  
+						sheet.getSettings().setDefaultColumnWidth(15);
+						sheet.setColumnView(1, 20);//给第二列设置列宽 
+						sheet.mergeCells(0, 0, 10, 0); //合并单元格，用于显示标题
+						sheet.addCell(new Label(0,0, "清水池水位计算表",formatTitle));
+						//添加表头
+						//				sheet.addCell(new Label(0,1," 编号 ",formatHead));
+						sheet.addCell(new Label(0,1," 时间 ",formatHead));
+						sheet.addCell(new Label(1,1," 水池编号 ",formatHead));
+						sheet.addCell(new Label(2,1," 总来水量 ",formatHead));
+						sheet.addCell(new Label(3,1," 出水量 ",formatHead));
+						sheet.addCell(new Label(4,1," 洗虹吸滤池 ",formatHead));
+						sheet.addCell(new Label(5,1," 洗V型滤池 ",formatHead));				
+						sheet.addCell(new Label(6,1," 炭池反冲洗 ",formatHead));
+						sheet.addCell(new Label(7,1," 机加池排泥 ",formatHead));					
+						sheet.addCell(new Label(8,1," 回流水量 ",formatHead));
+						sheet.addCell(new Label(9,1," 蓄水量 ",formatHead));
+						sheet.addCell(new Label(10,1," 预测水位 ",formatHead));
+						
+						sheet.addCell(new Label(0,j,sdf.format(list.get(i).getT()),formatBody));
+						sheet.addCell(new Label(1,j,list.get(i).getPoolID(),formatBody));
+						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getInV()),formatBody));
+						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOutV()),formatBody));
+						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getHXOutV()),formatBody));
+						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getLCOutV()),formatBody));
+						sheet.addCell(new Label(6,j,Double.toString(list.get(i).getTCOutV()),formatBody));					
+						sheet.addCell(new Label(7,j,Double.toString(list.get(i).getJJOutV()),formatBody));	
+						sheet.addCell(new Label(8,j,Double.toString(list.get(i).getHLInV()),formatBody));
+						sheet.addCell(new Label(9,j,Double.toString(list.get(i).getStorage()),formatBody));
+						sheet.addCell(new Label(10,j,Double.toString(list.get(i).getPreH()),formatBody));
+						j=j+1;
+					}
+				}
 			}//if
 			System.out.println("--写入excel:"+path+"--");
 			//写入数据并关闭文件
@@ -406,13 +454,13 @@ public class DataAnalysisAction extends ActionSupport{
 					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
 					operateSuccess=false;
 				}
-				//				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH");
 				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
 				//得到当前天数
-				Date day = (new SimpleDateFormat("yyyy-MM-dd").parse(sheet.getCell(0,0).getContents()));
+				String sheetName = sheet.getName();
+				Date day = (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
 				String poolIDTemp=sheet.getCell(1,2).getContents();
 				String sql="delete DataAnalysis where PoolID like '%"+poolIDTemp+"'";
-				sql+= " and Convert(varchar,t,120)  like '%"+(new SimpleDateFormat("yyyy-MM-dd")).format(day)+"%'";
+				sql+= " and Convert(varchar,t,120)  like '%"+sheetName+"%'";
 				// 直接覆盖
 				int deleteResult = dataAnalysisService.bulkUpadte(sql);
 				System.out.println("受影响结果："+deleteResult);
@@ -478,12 +526,13 @@ public class DataAnalysisAction extends ActionSupport{
 			}
 			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
 			//得到当前天数
-			Date day = (new SimpleDateFormat("yyyy-MM-dd").parse(sheet.getCell(0,0).getContents()));		
+			String sheetName = sheet.getName();
 			String poolIDTemp=sheet.getCell(1,2).getContents();
 			String sql="from DataAnalysis where 1=1 ";
-			sql+= " and Convert(varchar,t,120)  like '%"+(new SimpleDateFormat("yyyy-MM-dd")).format(day)+"%'";
+			sql+= "and Convert(varchar,t,120) like '%"+sheetName+"%'";
 			sql+=" and PoolID like '%"+poolIDTemp+"'";
 			List<DataAnalysis> list = dataAnalysisService.findBySql(sql);
+			System.out.println(list.size());
 			if(null == list||list.isEmpty()){
 				errMsg="";
 				operateSuccess=true;

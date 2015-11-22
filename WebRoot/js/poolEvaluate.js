@@ -1081,7 +1081,8 @@ function listTreeNode(tlist){
 			}
 			if($('#timeTree').tree('isLeaf',node.target)){	//是根节点
 				out=out.replace("年",'-'); out=out.replace("月",'-'); out=out.replace("日",'');
-				$("#searchT").datebox("setValue",out);
+				$("#lowT").datebox("setValue",out);
+				$("#highT").datebox("setValue",out);
 				$("#searchPoolID").val();
 				dealSearch();		
 			}
