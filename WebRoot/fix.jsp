@@ -79,7 +79,7 @@
     height: 72px;
     width: 312px;
     position: absolute;
-    left: 1580px;
+    left: 1430px;
     top: 93px;
     Z-INDEX: 999;
     /* border: 1px solid; */
@@ -244,7 +244,7 @@
     height:600px;
     width:313px;
     position:absolute;
-    left:1580px;
+    left:1430px;
     top:164px;
     Z-INDEX:999;
     display:none;
@@ -391,7 +391,7 @@
     }
     #name_TC{
     position: absolute;
-    left:385px;
+    left:380px;
     top: 664px;
     height: 50px;
     width: auto;
@@ -399,7 +399,7 @@
     }
     #name_TC1{
     position: absolute;
-    left:490px;
+    left:494px;
     top: 664px;
     height: 50px;
     width: auto;
@@ -967,6 +967,25 @@
     clearOpenDgree("FM021");
     clearOpenDgree("FM022");
     clearOpenDgree("FM024");
+
+    clearOpenDgree("FM059");
+    clearOpenDgree("FM046");
+    clearOpenDgree("FM044");
+    clearOpenDgree("FM055");
+    clearOpenDgree("FM026");
+    clearOpenDgree("FM051");
+    clearOpenDgree("FM055");
+
+    document.getElementById("fix_line1").innerHTML="";
+    document.getElementById("fix_line2").innerHTML="";
+    document.getElementById("fix_line3").innerHTML="";
+    document.getElementById("fix_line4").innerHTML="";
+    document.getElementById("fix_line5").innerHTML="";
+    document.getElementById("fix_line6").innerHTML="";
+    document.getElementById("fix_line7").innerHTML="";
+    document.getElementById("fix_line8").innerHTML="";
+    document.getElementById("fix_line9").innerHTML="";
+    document.getElementById("fix_line10").innerHTML="";
     }
 
 
@@ -1093,7 +1112,8 @@
     <a href="#" id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
     <a href="#" id="name_JJC3" style="text-decoration: none" class="name_ob">3#机加池</a>
     <a href="#" id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
-    <a href="#" id="name_TC" class="name_ob" style="text-decoration: none">活性炭池</a>
+    <a href="#" id="name_TC" class="name_ob" style="text-decoration: none">现有活性炭池</a>
+    <a href="#" id="name_TC1" class="name_ob" style="text-decoration: none">新建活性炭池</a>
     <a href="#" id="name_CY" class="name_ob" style="text-decoration: none">臭氧混合池</a>
     <a href="#" id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
     <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
