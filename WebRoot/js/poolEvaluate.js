@@ -862,6 +862,8 @@ function drawImage(){
 				renderTo: 'imageContainer2',	//在哪个区域呈现
 				borderColor: '#FFF',	//边框颜色
 //					zoomType: 'x',	//图标缩放
+				width:1048,
+				height:568,
 			},
 			lang:{					
 				printChart: "打印",
