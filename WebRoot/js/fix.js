@@ -113,6 +113,46 @@ oCanvas.domReady(function () {
         setShow();
 
     }
+
+    function fix_cy_right(){
+        document.getElementById("fix_head").innerHTML="东侧臭氧池闸门配合方案";
+        clearAll();
+        setOpenDgree("FM053");
+        setOpenDgree("FM058");
+        setOpenDgree("FM056");
+        setOpenDgree("FM057");
+//        setOpenDgree("FM023");
+        setOpenDgree("FM021");
+
+        document.getElementById("fix_line1").innerHTML="打开阀门22#";
+        document.getElementById("fix_line2").innerHTML="打开阀门24#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门53#";
+        document.getElementById("fix_line4").innerHTML="关闭阀门58#";
+        document.getElementById("fix_line5").innerHTML="关闭阀门57#";
+        document.getElementById("fix_line6").innerHTML="关闭阀门56#";
+//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+
+        setShow();
+    }
+    function  fix_cy_left(){
+        document.getElementById("fix_head").innerHTML="西侧臭氧池闸门配合方案";
+        clearAll();
+        setOpenDgree("FM022");
+        setOpenDgree("FM054");
+        setOpenDgree("FM058");
+        setOpenDgree("FM059");
+        setOpenDgree("FM056");
+
+        document.getElementById("fix_line1").innerHTML="打开阀门21#";
+        document.getElementById("fix_line2").innerHTML="打开阀门23#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门54#";
+        document.getElementById("fix_line4").innerHTML="关闭阀门58#";
+        document.getElementById("fix_line5").innerHTML="关闭阀门59#";
+        document.getElementById("fix_line6").innerHTML="关闭阀门56#";
+
+        setShow();
+
+    }
     function fix_tc_old(){
         document.getElementById("fix_head").innerHTML="现有碳池闸门配合方案";
         clearAll();
@@ -216,7 +256,7 @@ oCanvas.domReady(function () {
             fix_jjc1();
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
-            document.getElementById("export").href="download/1#机加池维修工作配合方案.docx";
+            document.getElementById("export").href="download/fix-jjc1.docx";
             setShow();
         }
     });
@@ -262,8 +302,15 @@ oCanvas.domReady(function () {
     });
     $("#name_CY").click(function(){
         if(confirm("是否将“臭氧接触池”设置为维修状态？")){
+            fix_cy_right();
+            document.getElementById("nextPage").onclick=function(){
+                fix_cy_left();
+            };
+            document.getElementById("lastPage").onclick=function(){
+                fix_cy_right();
+            };
+            document.getElementById("export").href="download/fix-cy.doc";
             setShow();
-            document.getElementById("fix_head").innerHTML="臭氧接触池维修闸门配合方案";
         }
     });
     $("#name_HHJ1").click(function(){
