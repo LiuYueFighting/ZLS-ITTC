@@ -6,66 +6,27 @@ oCanvas.domReady(function () {
     var canvas = oCanvas.create({
         canvas: "#canvas_QS_zp",
         background: "#ccc",
-        fps: 50
+        fps: 22
     });
-    var bg = canvas.display.image({
-        x: 0,
-        y: 0,
-        image: "image/QS_v.png"
-    });
-//    canvas.addChild(bg);
-    var speed_all=1.5,
-        width_all=30,
+    var width_all=30,
         speed_SC=0.9,
         color_GD="#007fff",
         color_SC="#43d9f9";
-
-    
-   
-    var SC01 = canvas.display.SC_show({
-        x: 326,
-        y: 200,
-        Width: 181,
-        Height: 438,
-        height_now: 0,
-        trail_flag: 0,
-        t: 0,
-        fill: color_SC,
-        speed:speed_SC,
-        full:0,
-        start:0
+    var SC01=createSC({
+        parent:canvas,
+        x:326,y:200,height:438,width:181,trail_flag:0,speed:speed_SC,color:color_SC
     });
-    canvas.addChild(SC01);
 
-    var SC02 = canvas.display.SC_show({
-        x: 496,
-        y: 567,
-        Width: 186,
-        Height: 72,
-        height_now: 0,
-        trail_flag: 0,
-        t: 0,
-        speed:speed_SC,
-        fill: color_SC,
-        full:0,
-        start:0
+    var SC02=createSC({
+        parent:canvas,
+        x:496,y:567,height:72,width:186,trail_flag:0,speed:speed_SC,color:color_SC
     });
-    canvas.addChild(SC02);
 
-    var SC03 = canvas.display.SC_show({
-        x: 841,
-        y: 219,
-        Width: 144,
-        Height: 393,
-        height_now: 0,
-        trail_flag: 0,
-        t: 150,
-        speed:speed_SC,
-        fill: color_SC,
-        full:0,
-        start:0
+    var SC03=createSC({
+        parent:canvas,
+        x:841,y:219,height:393,width:144,trail_flag:0,speed:speed_SC,color:color_SC
     });
-    canvas.addChild(SC03);
+
     var fg = canvas.display.image({
         x: 0,
         y: 0,
@@ -95,105 +56,38 @@ oCanvas.domReady(function () {
         ]
     }).add();
 
-    var GD01 = canvas.display.GD({
-        x: 0,
-        y: 0,
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD01=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 195, y_cell: 587},
             {x_cell: 335, y_cell: 587}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,         //��ǰ��������
-        Speed: speed_all,           //ˮ���ٶ�
-        GDwidth: width_all,          //�ܵ����
-        LineHeight: 10,       //�����ĳ���
-        x_now: 0,        //��ǰ���Ƶ��λ��x
-        y_now: 0,        //��ǰ���Ƶ��λ��y
-        firstX: 0,       //��һ��ˮ��Ч���߶ε���ʼ���X
-        firstY: 0,       //��һ��ˮ��Ч���߶ε���ʵ���Y
-        beginHeight: 0,       //��һ�ιܵ���һ��ˮ��Ч���߶εĳ���
-        endHeight: 0,     //��һ�ιܵ����һ��ˮ��Ч���߶εĳ���
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
 
-    canvas.addChild(GD01);
-
-    var GD02 = canvas.display.GD({
-        x: 0,
-        y: 0,
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD02=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 599, y_cell: 600},
             {x_cell: 599, y_cell: 521},
             {x_cell: 907, y_cell: 521},
             {x_cell: 907, y_cell: 232}
-        ],  //�յ�����
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed:speed_all,
-        GDwidth: width_all,
-        LineHeight: 10,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 0,
-        fill:color_GD,
-        full:0
+        ],
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD02);
 
-    var GD03 = canvas.display.GD({
-        x: 0,
-        y: 0,
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD03=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 985, y_cell: 587},
             {x_cell: 1146, y_cell: 587}
-
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,         //��ǰ��������
-        Speed: speed_all,           //ˮ���ٶ�
-        GDwidth: width_all,          //�ܵ����
-        LineHeight: 10,       //�����ĳ���
-        x_now: 0,        //��ǰ���Ƶ��λ��x
-        y_now: 0,        //��ǰ���Ƶ��λ��y
-        firstX: 0,       //��һ��ˮ��Ч���߶ε���ʼ���X
-        firstY: 0,       //��һ��ˮ��Ч���߶ε���ʵ���Y
-        beginHeight: 0,       //��һ�ιܵ���һ��ˮ��Ч���߶εĳ���
-        endHeight: 0,     //��һ�ιܵ����һ��ˮ��Ч���߶εĳ���
-        legacyHeight: 0,
-        paused: 0,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD03);
+
     var txt1=canvas.display.text({
         x:700,
         y:30,
@@ -203,6 +97,7 @@ oCanvas.domReady(function () {
         text:"取水泵房工艺展示纵剖图"
     });
     canvas.addChild(txt1);
+
     var txt2=canvas.display.text({
         x:204,
         y:531,
@@ -211,6 +106,7 @@ oCanvas.domReady(function () {
         fill:"#337ab7",
         text:"源水来水"
     }).add();
+
     var txt3=canvas.display.text({
         x:1149,
         y:531,
@@ -219,16 +115,13 @@ oCanvas.domReady(function () {
         fill:"#337ab7",
         text:"取水泵房出水"
     }).add();
+
     canvas.setLoop(function () {
         GD01.advance();
         SC01.advance();
-
         SC02.advance();
-
         GD02.advance();
-
         SC03.advance();
-
         GD03.advance();
 
         if(GD01.full==1){
@@ -243,7 +136,6 @@ oCanvas.domReady(function () {
         	SC03.start = 1;
             arrow_1.start();
             arrow_2.start();
-
         }
         if(SC03.full==1) {
         	GD03.paused = 1;
@@ -264,6 +156,18 @@ oCanvas.domReady(function () {
             this.value=1;
             canvas.timeline.start();
         }
-
     });
+    $("#btn_upS").click(function(){
+        canvas.settings.fps+=5;
+        var spanText=document.getElementById("speed");
+        spanText.innerHTML=canvas.settings.fps;
+        //spanText.val=canvas.settings.fps;
+        console.log(spanText.innerHTML);
+    });
+    $("#btn_downS").click(function(){
+        canvas.settings.fps-=5;
+        var spanText=document.getElementById("speed");
+        spanText.innerHTML=canvas.settings.fps;
+    });
+
 });

@@ -23,763 +23,263 @@ oCanvas.domReady(function () {
         color_GD_new="blue",
         lineHeight_all=10;
 
-    var GD01 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD01=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 707 ,y_cell: 96},
             {x_cell: 707 ,y_cell: 223},
             {x_cell: 765 ,y_cell: 258},
             {x_cell: 989 ,y_cell: 258},
             {x_cell: 989, y_cell: 349}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD01);
-
-    var GD02 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD02=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 748 ,y_cell: 98},
             {x_cell: 748 ,y_cell: 222},
             {x_cell: 775 ,y_cell: 240},
             {x_cell: 1020 ,y_cell: 240},
             {x_cell: 1020, y_cell: 256}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD02);
-
-    var GD03 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD03=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 1020 ,y_cell: 256},
             {x_cell: 1020, y_cell: 348}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD03);
-
-    var GD04 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD04=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 1026,y_cell: 256},
             {x_cell: 1188 ,y_cell: 256},
             {x_cell: 1188, y_cell: 374}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD_new,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD04);
-
-    var GD05 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD05=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 989 ,y_cell: 365},
             {x_cell: 989 ,y_cell: 411},
             {x_cell: 955, y_cell: 411}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD05);
-
-    var GD06 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD06=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 1019 ,y_cell: 360},
             {x_cell: 1019, y_cell: 411},
             {x_cell: 1058, y_cell: 411}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD06);
-
-    var GD07 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD07=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 1188,y_cell: 412},
             {x_cell: 1188,y_cell: 567}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD_new,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD07);
-
-    var GD08 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD08=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 896 ,y_cell: 445},
             {x_cell: 896 ,y_cell: 482},
             {x_cell: 792 ,y_cell: 482},
             {x_cell: 792 ,y_cell: 539},
             {x_cell: 819, y_cell: 539}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD08);
-
-    var GD09 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD09=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 896 ,y_cell: 445},
             {x_cell: 896 ,y_cell: 482},
             {x_cell: 792 ,y_cell: 482},
             {x_cell: 792 ,y_cell: 562},
             {x_cell: 819, y_cell: 562}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD09);
-
-    var GD10 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD10=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 1108 ,y_cell: 445},
             {x_cell: 1108 ,y_cell: 482},
             {x_cell: 990 ,y_cell: 482},
             {x_cell: 990 ,y_cell: 542},
             {x_cell: 970, y_cell: 542}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD10);
-
-    var GD11 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD11=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 1108 ,y_cell: 445},
             {x_cell: 1108 ,y_cell: 482},
             {x_cell: 990 ,y_cell: 482},
             {x_cell: 990 ,y_cell: 562},
             {x_cell: 970, y_cell: 562}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD11);
-
-    var GD12 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD12=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 1124 ,y_cell: 650},
             {x_cell: 962, y_cell: 650},
             {x_cell: 962, y_cell: 667}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD_new,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD12);
-
-    var GD13 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD13=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 848 ,y_cell: 570},
             {x_cell: 848 ,y_cell: 605},
             {x_cell: 660 ,y_cell: 605},
             {x_cell:660, y_cell: 641}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD13);
 
-    var GD14 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD14=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 879 ,y_cell: 570},
             {x_cell: 879 ,y_cell: 605},
             {x_cell: 844 ,y_cell: 605}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD14);
 
-    var GD15 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD15=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 807 ,y_cell: 708},
             {x_cell: 715 ,y_cell: 708},
             {x_cell: 715 ,y_cell: 630},
             {x_cell: 636 ,y_cell: 630},
             {x_cell: 636, y_cell: 646}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD_new,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD15);
-
-    var GD16 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD16=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 615 ,y_cell: 673},
             {x_cell: 582, y_cell: 673}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD_new,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD16);
-
-    var GD17 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD17=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 675 ,y_cell: 697},
             {x_cell: 675 ,y_cell: 734},
             {x_cell: 436 ,y_cell: 734},
             {x_cell: 436, y_cell: 691}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD17);
-
-    var GD18 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD18=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 415 ,y_cell: 657},
             {x_cell: 415, y_cell: 568}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD18);
-
-    var GD19 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD19=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 539 ,y_cell: 654},
             {x_cell: 539 ,y_cell: 603},
             {x_cell: 415 ,y_cell: 603},
             {x_cell: 415, y_cell: 563}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD_new,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD19);
-
-    var GD20 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD20=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 403 ,y_cell: 482},
             {x_cell: 372 ,y_cell: 482}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD20);
-
-    var GD21 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD21=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 309 ,y_cell: 431},
             {x_cell: 309, y_cell: 401},
             {x_cell: 405, y_cell: 401},
             {x_cell: 405, y_cell: 376}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD21);
+    //var GD22=createGD({
+    //    parent:canvas,
+    //    cells:[
+    //        {x_cell: 399 ,y_cell: 434},
+    //        {x_cell: 399, y_cell: 400}
+    //    ],
+    //    GDwidth:width_all,
+    //    color:color_GD
+    //});
 
-    var GD22 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
-            {x_cell: 399 ,y_cell: 434},
-            {x_cell: 399, y_cell: 400}
-        ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
-    });
-    //canvas.addChild(GD22);
-
-    var GD23 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD23=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 421 ,y_cell: 433},
             {x_cell: 421, y_cell: 401},
             {x_cell: 465, y_cell: 401},
             {x_cell: 465, y_cell: 435}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD23);
-
-    var GD24 = canvas.display.GD({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD24=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 527 ,y_cell: 439},
             {x_cell: 527 ,y_cell: 401},
             {x_cell: 592 ,y_cell: 401},
             {x_cell: 592, y_cell: 375}
         ],
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,
-        Speed: speed_all,
-        GDwidth: width_all,
-        LineHeight: lineHeight_all,
-        x_now: 0,
-        y_now: 0,
-        firstX: 0,
-        firstY: 0,
-        beginHeight: 0,
-        endHeight: 0,
-        legacyHeight: 0,
-        paused: 1,
-        fill:color_GD,
-        full:0
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD24);
 
     var img1=canvas.display.image({
         x:692,

@@ -19,74 +19,45 @@ oCanvas.domReady(function () {
         image: "image/JJC_bg1.png"
     });
 
-    var left_t=canvas.display.SC_show({
-        x: 468,
-        y: 429,
-        Width: 45,
-        Height: 38,
-        height_now: 0,
-        trail_flag: 1,
+    var left_t=createSC({
+        parent:canvas,
+        x:468,y:429,height:38,width:45,trail_flag:1,speed:speed_SC,color:color_SC,
         trail: [
             {x_t: 0, y_t: 38},
             {x_t: 35, y_t: 38},
             {x_t: 35, y_t: 0}
-        ],
-        t: 1405,
-        speed:speed_SC,
-        fill: color_SC,
-        full:0,
-        start:0
+        ]
     });
-    var right_t=canvas.display.SC_show({
-        x: 792,
-        y: 429,
-        Width: 45,
-        Height: 38,
-        height_now: 0,
-        trail_flag: 1,
+
+    var right_t=createSC({
+        parent:canvas,
+        x:792,y:429,height:38,width:45,trail_flag:1,speed:speed_SC,color:color_SC,
         trail: [
             {x_t: 0, y_t: 0},
             {x_t: 0, y_t: 38},
             {x_t: 35, y_t: 38}
-        ],
-        t: 1405,
-        speed:speed_SC,
-        fill: color_SC,
-        full:0,
-        start:0
+        ]
     });
-    canvas.addChild(left_t);
-    canvas.addChild(right_t);
-    var SC01 = canvas.display.SC_show({
-    	x: 212,
-        y: 349,
-        Width: 860,
-        Height: 230,
-        height_now: 0,
-        trail_flag: 1,
-        trail: [
-            {x_t: 0, y_t: 17},
-            {x_t: 0, y_t: 230},
-            {x_t: 860, y_t: 230},
-            {x_t: 860, y_t: 17},
-            {x_t: 829, y_t: 17},
-            {x_t: 829, y_t: 8},
-            {x_t: 572, y_t: 8},
-            {x_t: 572, y_t: 0},
-            {x_t: 292, y_t: 0},
-            {x_t: 292, y_t: 8},
-            {x_t: 31, y_t: 8},
-            {x_t: 31, y_t: 17}
-        ],
-        t: 1405,
-        speed:speed_SC,
-        fill: color_SC,
-        full:0,
-        start:0
-    });
-    canvas.addChild(SC01);
 
-    
+    var SC01=createSC({
+        parent:canvas,
+        x:212,y:349,height:230,width:860,trail_flag:1,speed:speed_SC,color:color_SC,
+         trail: [
+             {x_t: 0, y_t: 17},
+             {x_t: 0, y_t: 230},
+             {x_t: 860, y_t: 230},
+             {x_t: 860, y_t: 17},
+             {x_t: 829, y_t: 17},
+             {x_t: 829, y_t: 8},
+             {x_t: 572, y_t: 8},
+             {x_t: 572, y_t: 0},
+             {x_t: 292, y_t: 0},
+             {x_t: 292, y_t: 8},
+             {x_t: 31, y_t: 8},
+             {x_t: 31, y_t: 17}
+         ]
+    });
+
     var x=140;
     var xx=140;
     var t=200;
@@ -118,7 +89,6 @@ oCanvas.domReady(function () {
         frames: [
             {x:20,y:0,w:20,h:60,d:400},
             {x:0,y:0,w:20,h:60,d:800}
-
         ]
     }).add();
 
@@ -130,7 +100,6 @@ oCanvas.domReady(function () {
         frames: [
             {x:20,y:0,w:20,h:60,d:400},
             {x:0,y:0,w:20,h:60,d:800}
-
         ]
     }).add();
     var arrow_3=canvas.display.sprite({
@@ -152,7 +121,6 @@ oCanvas.domReady(function () {
         frames: [
             {x:60,y:0,w:60,h:60,d:400},
             {x:0,y:0,w:60,h:60,d:800}
-
         ]
     }).add();
     var arrow_5=canvas.display.sprite({
@@ -163,7 +131,6 @@ oCanvas.domReady(function () {
         frames: [
             {x:60,y:0,w:60,h:40,d:400},
             {x:0,y:0,w:60,h:40,d:800}
-
         ]
     }).add();
     var arrow_6=canvas.display.sprite({
@@ -184,7 +151,6 @@ oCanvas.domReady(function () {
         frames: [
             {x:60,y:0,w:60,h:40,d:400},
             {x:0,y:0,w:60,h:40,d:800}
-
         ]
     }).add();
 
@@ -196,7 +162,6 @@ oCanvas.domReady(function () {
         frames: [
             {x:240,y:0,w:30,h:50,d:400},
             {x:0,y:0,w:230,h:50,d:800}
-
         ]
     }).add();
     var arrow_91=canvas.display.sprite({
@@ -217,7 +182,6 @@ oCanvas.domReady(function () {
         frames: [
             {x:80,y:0,w:80,h:50,d:400},
             {x:0,y:0,w:80,h:50,d:800}
-
         ]
     }).add();
     var arrow_102=canvas.display.sprite({
@@ -228,7 +192,6 @@ oCanvas.domReady(function () {
         frames: [
             {x:80,y:0,w:80,h:50,d:400},
             {x:0,y:0,w:80,h:50,d:800}
-
         ]
     }).add();
     var arrow_111=canvas.display.sprite({
@@ -253,63 +216,31 @@ oCanvas.domReady(function () {
 
         ]
     }).add();
-    var GD01 = canvas.display.GD({
-        x: 0,
-        y: 0,
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
-				{x_cell: 127,y_cell: 511},
-				{x_cell: 189, y_cell: 511},
-				{x_cell: 258, y_cell: 448},
-				{x_cell: 477, y_cell: 448}
 
-        ],  //閹锋劗鍋ｉ弫鎵矋
-        cellIndex: 0,         //瑜版挸澧犻弫鎵矋缁便垹绱�
-        Speed: 2,           //濮樺瓨绁﹂柅鐔峰
-        GDwidth: width_all,          //缁狅繝浜剧�钘夊
-        LineHeight: 10,       //缁炬寧娼惃鍕毐閿燂拷
-        x_now: 0,        //瑜版挸澧犵紒妯哄煑閻愬湱娈戞担宥囩枂x
-        y_now: 0,        //瑜版挸澧犵紒妯哄煑閻愬湱娈戞担宥囩枂y
-        firstX: 0,       //缁楊兛绔存稉顏呮寜濞翠焦鏅ラ弸婊呭殠濞堢數娈戠挧宄邦潗閸ф劖鐖
-        firstY: 0,       //缁楊兛绔存稉顏呮寜濞翠焦鏅ラ弸婊呭殠濞堢數娈戦崗璺虹杽閸ф劖鐖
-        beginHeight: 0,       //缁楊兛绔村▓鐢殿吀闁挾顑囬敓锟芥稉顏呮寜濞翠焦鏅ラ弸婊呭殠濞堢數娈戦梹鍨
-        endHeight: 0,     //缁楊兛绔村▓鐢殿吀闁挻娓堕崥搴濈娑擃亝鎸夊ù浣规櫏閺嬫粎鍤庡▓鐢垫畱闂�灝瀹�
-        paused: 1,
-        full:0,
-        fill:color_GD
+    var GD01=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 127,y_cell: 511},
+            {x_cell: 189, y_cell: 511},
+            {x_cell: 258, y_cell: 448},
+            {x_cell: 477, y_cell: 448}
+        ],
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD01);
 
-    var GD02 = canvas.display.GD({
-        x: 0,
-        y: 0,
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
+    var GD02=createGD({
+        parent:canvas,
+        cells:[
             {x_cell: 1109,y_cell: 380},
             {x_cell: 1109, y_cell: 505},
             {x_cell: 1130, y_cell: 523},
             {x_cell: 1209, y_cell: 523}
-
-        ],  //閹锋劗鍋ｉ弫鎵矋
-        cellIndex: 0,         //瑜版挸澧犻弫鎵矋缁便垹绱�
-        Speed: 2,           //濮樺瓨绁﹂柅鐔峰
-        GDwidth: width_all,          //缁狅繝浜剧�钘夊
-        LineHeight: 10,       //缁炬寧娼惃鍕毐閿燂拷
-        x_now: 0,        //瑜版挸澧犵紒妯哄煑閻愬湱娈戞担宥囩枂x
-        y_now: 0,        //瑜版挸澧犵紒妯哄煑閻愬湱娈戞担宥囩枂y
-        firstX: 0,       //缁楊兛绔存稉顏呮寜濞翠焦鏅ラ弸婊呭殠濞堢數娈戠挧宄邦潗閸ф劖鐖
-        firstY: 0,       //缁楊兛绔存稉顏呮寜濞翠焦鏅ラ弸婊呭殠濞堢數娈戦崗璺虹杽閸ф劖鐖
-        beginHeight: 0,       //缁楊兛绔村▓鐢殿吀闁挾顑囬敓锟芥稉顏呮寜濞翠焦鏅ラ弸婊呭殠濞堢數娈戦梹鍨
-        endHeight: 0,     //缁楊兛绔村▓鐢殿吀闁挻娓堕崥搴濈娑擃亝鎸夊ù浣规櫏閺嬫粎鍤庡▓鐢垫畱闂�灝瀹�
-        paused: 0,
-        full:0,
-        fill:color_GD
+        ],
+        GDwidth:width_all,
+        color:color_GD
     });
-    canvas.addChild(GD02);
+
     var txt1=canvas.display.text({
         x:650,
         y:30,
@@ -398,6 +329,5 @@ oCanvas.domReady(function () {
             canvas.timeline.start();
             sprite.startAnimation();
         }
-
     });
 });

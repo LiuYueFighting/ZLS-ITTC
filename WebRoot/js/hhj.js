@@ -7,7 +7,7 @@ oCanvas.domReady(function () {
  var canvas = oCanvas.create({
      canvas: "#canvas_hhj",
      background: "#ccc",
-     fps: 50
+     fps: 25
  });
 //绘制两个水池
  var SC01=createSC({
@@ -16,7 +16,7 @@ oCanvas.domReady(function () {
  });
  var SC02=createSC({
      parent:canvas,
-     x:703,y:307,height:299,width:85,trail_flag:0,speed:speed_SC,color:color_SC
+     x:703,y:307,height:347,width:85,trail_flag:0,speed:speed_SC,color:color_SC
  });
 //添加背景图片
  var bg = canvas.display.image({
@@ -28,7 +28,7 @@ oCanvas.domReady(function () {
  var GD01=createGD({
      parent:canvas,
      cells:[
-         {x_cell: 322,y_cell: 628},
+         {x_cell: 330,y_cell: 628},
          {x_cell: 632, y_cell: 628},
          {x_cell: 630, y_cell: 526}
      ],
@@ -38,10 +38,8 @@ oCanvas.domReady(function () {
  var GD02=createGD({
      parent:canvas,
      cells:[
-         {x_cell: 785,y_cell: 587},
-         {x_cell: 839, y_cell: 587},
-         {x_cell: 901, y_cell: 629},
-         {x_cell: 1042, y_cell: 629}
+         {x_cell: 785,y_cell: 628},
+         {x_cell: 1027, y_cell: 628}
      ],
      GDwidth:width_all,
      color:color_GD
@@ -118,8 +116,6 @@ oCanvas.domReady(function () {
      if(SC01.full==1){
          SC02.start=1;
          arrow_3.start();
-     }
-     if(SC02.full==1){
          GD02.paused=1;
      }
      canvas.redraw();

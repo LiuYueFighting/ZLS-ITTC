@@ -349,7 +349,6 @@ var constructor_gd = function (settings, core) {
 
             this.legacyHeight = -1;
             this.LineHeight=10;
-            this.Speed=2*this.LineHeight/20;
         },
         advance: function () {
             if(this.paused==1){
@@ -520,7 +519,7 @@ var constructor_gd = function (settings, core) {
 
                 }
             }
-            //管道的最前片段现在闪烁
+
             if (this.cellIndex < this.cells.length - 1) {
                 //canvas.moveTo(this.cells[this.cellIndex].x_cell,this.cells[this.cellIndex].y_cell);
                 //canvas.lineTo(this.destination.x_d,this.destination.y_d);
@@ -723,7 +722,7 @@ function createGD(options){
         },
         cells: options.cells,
         cellIndex: 0,
-        Speed: 1,
+        Speed: 2,
         GDwidth: options.GDwidth,
         LineHeight: 10,
         x_now: 0,
@@ -753,7 +752,7 @@ function createSC(options){
             trail_flag: 1,
             trail: options.trail,
             t: 1405,
-            speed:options.speed,
+            speed:options.speed*2,
             fill: options.color,
             full:0,
             start:0
@@ -767,7 +766,7 @@ function createSC(options){
             height_now: 0,
             trail_flag: 0,
             t: 1405,
-            speed:options.speed,
+            speed:options.speed*2,
             fill: options.color,
             full:0,
             start:0

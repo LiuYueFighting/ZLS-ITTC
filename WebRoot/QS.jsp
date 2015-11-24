@@ -134,7 +134,7 @@
         <div id="right" class="col-lg-2" style="height: 753px">
             <div id="up">
                 <ul class="list-group">
-                    <li class="list-group-item"><span class="badge" >暂未添加</span>当前仿真时间：</li>
+                    <li class="list-group-item"><span class="badge" id="speed">暂未添加</span>当前仿真时间：</li>
                     <li class="list-group-item"><span class="badge" >暂未添加</span>当前水位情况：</li>
                     <li class="list-group-item"><span class="badge" >暂未添加</span>当前水流量：</li>
                     <li class="list-group-item"><span class="badge" >暂未添加</span>当前负载情况：</li>
