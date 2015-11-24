@@ -1234,7 +1234,7 @@
         <tr><td>5</td><td id="fix_line5"></td></tr>
         <tr><td>6</td><td id="fix_line6"></td></tr>
         <tr><td>7</td><td id="fix_line7"></td></tr>
-        <tr><td>8</td><td id="fix_line8"></td></tr>
+        <tr><td>8</td><td id="fix_line8"> </td></tr>
         <tr><td>9</td><td id="fix_line9"></td></tr>
         <tr><td>10</td><td id="fix_line10"></td></tr>
     </tbody>

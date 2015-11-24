@@ -114,6 +114,23 @@ oCanvas.domReady(function () {
 
     }
 
+    function fix_vl(){
+        document.getElementById("fix_head").innerHTML="V型滤池维修闸门配合方案";
+
+        clearAll();
+        setOpenDgree("FM052");
+        setOpenDgree("FM020");
+         setOpenDgree("FM056");
+//        setOpenDgree("FM014");
+
+        document.getElementById("fix_line1").innerHTML="打开阀门68#";
+        document.getElementById("fix_line2").innerHTML="关闭1#~5#滤格控制阀";
+        document.getElementById("fix_line3").innerHTML="关闭阀门52#";
+        document.getElementById("fix_line4").innerHTML="关闭阀门20#";
+        document.getElementById("fix_line5").innerHTML="关闭阀门56#";
+
+        setShow();
+    }
     function fix_cy_right(){
         document.getElementById("fix_head").innerHTML="东侧臭氧池闸门配合方案";
         clearAll();
@@ -280,8 +297,11 @@ oCanvas.domReady(function () {
     });
     $("#name_VL").click(function(){
         if(confirm("是否将“V型滤池设置为维修状态？”")){
+            fix_vl();
+            document.getElementById("nextPage").onclick="";
+            document.getElementById("lastPage").onclick="";
+            document.getElementById("export").href="download/fix-vl.docx";
             setShow();
-            document.getElementById("fix_head").innerHTML="V型滤池维修闸门配合方案";
         }
     });
     $("#name_TC").click(function(){
