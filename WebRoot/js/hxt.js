@@ -1,5 +1,4 @@
 oCanvas.domReady(function () {
-
 	 var width_all=30,
      speed_SC=0.9,
      color_GD="#007fff",

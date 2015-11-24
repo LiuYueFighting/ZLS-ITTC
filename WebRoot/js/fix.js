@@ -1,7 +1,5 @@
-
 oCanvas.domReady(function () {
 
-//��������
     var canvas = oCanvas.create({
         canvas: "#canvas_fix",
         background: "#ccc",

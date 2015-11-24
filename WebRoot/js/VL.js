@@ -1,7 +1,6 @@
 /**
  * Created by Administrator on 2015/7/26.
  */
-
 oCanvas.domReady(function () {
 
     var canvas = oCanvas.create({
@@ -20,36 +19,20 @@ oCanvas.domReady(function () {
         speed_SC=0.9,
         color_GD="#007fff",
         color_SC="#43d9f9";
-    var SC01 = canvas.display.SC_show({
-        x: 145,
-        y: 207,
-        Width: 125,
-        Height: 61,
-        height_now: 0,
-        trail_flag: 0,
-        t: 7540,
-        speed:speed_SC,
-        fill: color_SC,
-        full:0,
-        start:1
+
+    var SC01=createSC({
+        parent:canvas,
+        x:145,y:207,height:61,width:125,trail_flag:0,speed:speed_SC,color:color_SC
     });
-    canvas.addChild(SC01);
-    
-    var SC02 = canvas.display.SC_show({
-        x: 270,
-        y: 207,
-        Width: 39,
-        Height: 61,
-        height_now: 0,
-        trail_flag: 0,
-        t: 7540,
-        speed:speed_SC,
-        fill: color_SC,
-        full:0,
-        start:0
+    var SC02=createSC({
+        parent:canvas,
+        x:270,y:207,height:61,width:39,trail_flag:0,speed:speed_SC,color:color_SC
     });
-    canvas.addChild(SC02);
-    
+
+    //var SC03=createSC({
+    //    parent:canvas,
+    //    x:359,y:207,height:61,width:39,trail_flag:0,speed:speed_SC,color:color_SC
+    //});
     var SC03 = canvas.display.SC_show_down({
         x: 359,
         y: 265,
@@ -64,7 +47,7 @@ oCanvas.domReady(function () {
         start:0
     });
     canvas.addChild(SC03);
-    
+
     var fg = canvas.display.image({
         x: 0,
         y: 0,
@@ -146,9 +129,8 @@ oCanvas.domReady(function () {
             x_d: 0, y_d: 0
         },
         cells: [
-            {x_cell: 860, y_cell: 466},
-            {x_cell: 1153, y_cell: 466},
-            {x_cell: 1228, y_cell: 466}
+            {x_cell: 860, y_cell: 468},
+            {x_cell: 1228, y_cell: 468}
 
         ],  //拐点数组
         cellIndex: 0,         //当前数组索引
@@ -167,7 +149,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(GD01);
 
-    
+
     var txt1=canvas.display.text({
         x:700,
         y:30,
@@ -208,22 +190,22 @@ oCanvas.domReady(function () {
             arrow_1.start();
             arrow_2.start();
             arrow_3.start();
-            arrow_4.start();
-            arrow_5.start();
-            arrow_6.start();
+            //arrow_4.start();
+            //arrow_5.start();
+            //arrow_6.start();
             arrow_1.stopAnimation();
             arrow_2.stopAnimation();
             arrow_3.stopAnimation();
-            arrow_4.stopAnimation();
-            arrow_5.stopAnimation();
-            arrow_6.stopAnimation();
+            //arrow_4.stopAnimation();
+            //arrow_5.stopAnimation();
+            //arrow_6.stopAnimation();
         	SC03.start = 1;
         }
         if(SC03.full==1){
             arrow_3.frame=2;
-            arrow_4.frame=2;
-            arrow_5.frame=2;
-            arrow_6.frame=2;
+            //arrow_4.frame=2;
+            //arrow_5.frame=2;
+            //arrow_6.frame=2;
         	GD01.paused = 1;
         }
         canvas.redraw();
