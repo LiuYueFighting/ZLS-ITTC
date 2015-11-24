@@ -1,0 +1,8 @@
+diff a/WebRoot/js/fix.js b/WebRoot/js/fix.js	(rejected hunks)
+@@ -1,6 +1,5 @@
+ oCanvas.domReady(function () {
+ 
+-//��������
+     var canvas = oCanvas.create({
+         canvas: "#canvas_fix",
+         background: "#ccc",

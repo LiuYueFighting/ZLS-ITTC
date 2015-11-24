@@ -1,7 +1,5 @@
-
 oCanvas.domReady(function () {
 
-//��������
     var canvas = oCanvas.create({
         canvas: "#canvas_fix",
         background: "#ccc",
@@ -218,7 +216,7 @@ oCanvas.domReady(function () {
             fix_jjc1();
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
-            document.getElementById("export").href="download/fix-jjc1.docx";
+            document.getElementById("export").href="download/1#机加池维修工作配合方案.docx";
             setShow();
         }
     });
