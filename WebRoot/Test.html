@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<link href="*.css" type="text/css" rel="stylesheet">-->
+</head>
+<script>
+    window.onload=function(){
+        var obj=document.getElementById("showZone");
+        var timer=null;
+        obj.onclick=function(){
+            var i=0;
+            clearInterval(timer);
+            timer=setInterval(function(){
+                obj.style.display=i++%2?"none":"block";//还是有收获的，这个写法比if..else想必简单了好多
+                i>8&&clearInterval(timer);//这个短路用的经典啊
+            },80);
+        };
+    };
+</script>
+<body>
+<div style="width: 50px;height: 50px;background-color: cyan;display: block;" id="showZone"></div>//是不是很熟悉啊
+</body>
+</html>

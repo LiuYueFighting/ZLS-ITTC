@@ -12,158 +12,321 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(bg);
 
-    var GD01 = canvas.display.GD1({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
-            {x_cell: 736 ,y_cell: 168},
-            {x_cell: 736, y_cell: 268},
-            {x_cell: 906, y_cell: 268},
-            {x_cell: 906, y_cell: 377},
-            {x_cell: 816, y_cell: 377}
+    function fix_jjc1(){
+        document.getElementById("fix_head").innerHTML="#1机加池维修闸门配合方案";
 
-        ],  //�յ�����
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,         //��ǰ��������
-        Speed: 2,           //ˮ���ٶ�
-        GDwidth: 20,          //�ܵ����
-        LineHeight: 30,       //�����ĳ���
-        x_now: 0,        //��ǰ���Ƶ��λ��x
-        y_now: 0,        //��ǰ���Ƶ��λ��y
-        firstX: 0,       //��һ��ˮ��Ч���߶ε���ʼ���X
-        firstY: 0,       //��һ��ˮ��Ч���߶ε���ʵ���Y
-        beginHeight: 0,       //��һ�ιܵ���һ��ˮ��Ч���߶εĳ���
-        endHeight: 0,     //��һ�ιܵ����һ��ˮ��Ч���߶εĳ���
-        legacyHeight: 0,
-        paused: 0,              //�Ƿ���ͣ
-        full:0                      //�ܵ���ˮ�Ƿ��ѳ���
-    });
-    canvas.addChild(GD01);
+        clearAll();
+        setOpenDgree("FM062");
+        setOpenDgree("FM045");
+        setOpenDgree("FM068");
+        setOpenDgree("FM014");
 
-    var GD02 = canvas.display.GD1({
-        destination: {
-            x_d: 0, y_d: 0
-        },
-        cells: [
-            {x_cell: 600, y_cell: 100},
-            {x_cell: 600, y_cell: 300},
-            {x_cell: 600, y_cell: 500},
-            {x_cell: 700, y_cell: 700},
-            {x_cell: 900, y_cell: 700},
-            {x_cell: 1100, y_cell: 500},
-            {x_cell: 1100, y_cell: 100},
-            {x_cell: 600, y_cell: 100}
-        ],  //�յ�����
-        deta: 1,
-        deta_x: 1,
-        deta_y: 0,
-        flag_x: 1,
-        flag_y: 0,
-        cellIndex: 0,         //��ǰ��������
-        Speed: 2,           //ˮ���ٶ�
-        GDwidth: 20,          //�ܵ����
-        LineHeight: 30,       //�����ĳ���
-        x_now: 0,        //��ǰ���Ƶ��λ��x
-        y_now: 0,        //��ǰ���Ƶ��λ��y
-        firstX: 0,       //��һ��ˮ��Ч���߶ε���ʼ���X
-        firstY: 0,       //��һ��ˮ��Ч���߶ε���ʵ���Y
-        beginHeight: 0,       //��һ�ιܵ���һ��ˮ��Ч���߶εĳ���
-        endHeight: 0,     //��һ�ιܵ����һ��ˮ��Ч���߶εĳ���
-        legacyHeight: 0,
-        paused: 0,
-        full:0
-    });
-    GD02.bind("start",function(){
-        GD02.paused=1;
-        canvas.redraw();
-    });
-    canvas.addChild(GD02);
-    canvas.setLoop(function () {
-       
-        GD01.advance();
-        GD02.advance();
-        if(GD01.full==1){
-            GD02.trigger("start");
-        }
-        canvas.redraw();
-    }).start();
-    $("#btn_start").click(function(){
-        GD01.paused=1;
-    });
-    $("#name_QS").click(function(){
+        document.getElementById("fix_line1").innerHTML="打开阀门65#";
+        document.getElementById("fix_line2").innerHTML="打开阀门66#";
+        document.getElementById("fix_line3").innerHTML="打开阀门69#";
+        document.getElementById("fix_line4").innerHTML="打开阀门15#";
+        document.getElementById("fix_line5").innerHTML="打开阀门16#";
+        document.getElementById("fix_line6").innerHTML="关闭阀门62#";
+        document.getElementById("fix_line7").innerHTML="关闭阀门45#";
+        document.getElementById("fix_line8").innerHTML="关闭阀门14#";
+
+        setShow();
+    }
+
+    function fix_jjc2(){
+        document.getElementById("fix_head").innerHTML="#2机加池维修闸门配合方案";
+
+        clearAll();
+        setOpenDgree("FM015");
+        setOpenDgree("FM069");
+        setOpenDgree("FM068");
+//        setOpenDgree("FM014");
+
+        document.getElementById("fix_line1").innerHTML="打开阀门65#";
+        document.getElementById("fix_line2").innerHTML="打开阀门66#";
+        document.getElementById("fix_line3").innerHTML="打开阀门62#";
+        document.getElementById("fix_line4").innerHTML="打开阀门45#";
+        document.getElementById("fix_line5").innerHTML="打开阀门14#";
+        document.getElementById("fix_line6").innerHTML="打开阀门16#";
+        document.getElementById("fix_line7").innerHTML="关闭阀门15#";
+        document.getElementById("fix_line8").innerHTML="关闭阀门69#";
+        document.getElementById("fix_line9").innerHTML="关闭阀门68#";
+
+        setShow();
+    }
+
+    function fix_jjc3(){
+        document.getElementById("fix_head").innerHTML="#3机加池维修闸门配合方案";
+
+        clearAll();
+        setOpenDgree("FM065");
+        setOpenDgree("FM066");
+        setOpenDgree("FM068");
+        setOpenDgree("FM067");
+//        setOpenDgree("FM014");
+
+        document.getElementById("fix_line1").innerHTML="打开阀门62#";
+        document.getElementById("fix_line2").innerHTML="打开阀门45#";
+        document.getElementById("fix_line3").innerHTML="打开阀门14#";
+        document.getElementById("fix_line4").innerHTML="打开阀门69#";
+        document.getElementById("fix_line5").innerHTML="打开阀门15#";
+        document.getElementById("fix_line6").innerHTML="打开阀门16#";
+        document.getElementById("fix_line7").innerHTML="关闭阀门65#";
+        document.getElementById("fix_line8").innerHTML="关闭阀门66#";
+        document.getElementById("fix_line9").innerHTML="关闭阀门68#";
+        document.getElementById("fix_line10").innerHTML="关闭阀门67#";
+
+        setShow();
+    }
+    function fix_hx_right(){
+        document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门配合方案";
+        clearAll();
+        setOpenDgree("FM016");
+        setOpenDgree("FM018");
+//            setOpenDgree("FM068");
+        setOpenDgree("FM019");
+
+        document.getElementById("fix_line1").innerHTML="关闭阀门65#";
+        document.getElementById("fix_line2").innerHTML="关闭阀门9#~14#小虹吸";
+        document.getElementById("fix_line3").innerHTML="关闭阀门18#";
+        document.getElementById("fix_line4").innerHTML="打开9#~14#滤池排空闸";
+        document.getElementById("fix_line5").innerHTML="断开东西滤池清水联通闸";
+        document.getElementById("fix_line6").innerHTML="关闭阀门19#";
+//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+
+        setShow();
+    }
+    function  fix_hx_left(){
+        document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门配合方案";
+        clearAll();
+        setOpenDgree("FM014");
+        setOpenDgree("FM017");
+        setOpenDgree("FM019");
+
+        document.getElementById("fix_line1").innerHTML="关闭阀门14#";
+        document.getElementById("fix_line2").innerHTML="关闭阀门1#~8#小虹吸";
+        document.getElementById("fix_line3").innerHTML="关闭阀门17#";
+        document.getElementById("fix_line4").innerHTML="打开1#~8#滤池排空闸";
+        document.getElementById("fix_line5").innerHTML="断开东西滤池清水联通闸";
+        document.getElementById("fix_line6").innerHTML="关闭阀门19#";
+
+        setShow();
+
+    }
+    function fix_tc_old(){
+        document.getElementById("fix_head").innerHTML="现有碳池闸门配合方案";
+        clearAll();
+        setOpenDgree("FM056");
+        setOpenDgree("FM057");
+        setOpenDgree("FM044");
+        setOpenDgree("FM022");
+        setOpenDgree("FM024");
+        setOpenDgree("FM021");
+
+
+        document.getElementById("fix_line1").innerHTML="打开阀门20#";
+        document.getElementById("fix_line2").innerHTML="打开阀门52#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门56#";
+        document.getElementById("fix_line4").innerHTML="关闭阀门57#";
+        document.getElementById("fix_line5").innerHTML="打开阀门58#";
+        document.getElementById("fix_line6").innerHTML="打开阀门59#";
+        document.getElementById("fix_line7").innerHTML="打开阀门55#";
+        document.getElementById("fix_line8").innerHTML="关闭阀门44#";
+
+        setShow();
+
+//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+    }
+    function fix_tc_new(){
+        document.getElementById("fix_head").innerHTML="新建碳池闸门配合方案";
+        clearAll();
+        setOpenDgree("FM056");
+        setOpenDgree("FM059");
+        setOpenDgree("FM055");
+        setOpenDgree("FM022");
+        setOpenDgree("FM024");
+        setOpenDgree("FM021");
+
+
+        document.getElementById("fix_line1").innerHTML="打开阀门20#";
+        document.getElementById("fix_line2").innerHTML="打开阀门52#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门56#";
+        document.getElementById("fix_line4").innerHTML="打开阀门57#";
+        document.getElementById("fix_line5").innerHTML="打开阀门58#";
+        document.getElementById("fix_line6").innerHTML="关闭阀门59#";
+        document.getElementById("fix_line7").innerHTML="关闭阀门55#";
+        document.getElementById("fix_line8").innerHTML="打开阀门44#";
+
+        setShow();
+
+//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+    }
+
+    function fix_qsc1(){
+        document.getElementById("fix_head").innerHTML="1#清水池施工空池倒泵方案";
+        clearAll();
+
+        document.getElementById("fix_line1").innerHTML="关闭东、西两清水池之间的连通闸（27#）";
+        document.getElementById("fix_line2").innerHTML="关闭清水池出水管路的连通闸（29#）";
+        document.getElementById("fix_line3").innerHTML="将5#配水泵倒成4#配水泵";
+        document.getElementById("fix_line4").innerHTML="将7#配水泵倒成2#配水泵";
+        document.getElementById("fix_line5").innerHTML="断管施工";
+        document.getElementById("fix_line6").innerHTML="开启东、西两清水池之间的连通闸（27#）约一半";
+        document.getElementById("fix_line7").innerHTML="将来水降至1800m3/h";
+        document.getElementById("fix_line8").innerHTML="开启东、西两清水池之间的连通闸27#";
+        document.getElementById("fix_line9").innerHTML="开启清水池出水管路的连通闸（29#）";
+        document.getElementById("fix_line10").innerHTML="清水池满足满水状态，将来水涨至1950m3/h";
+
+        setShow();
+
+//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+    }
+
+
+    function fix_qsc2(){
+        document.getElementById("fix_head").innerHTML="2#清水池施工空池倒泵方案";
+        clearAll();
+
+        document.getElementById("fix_line1").innerHTML="关闭东、西两清水池之间的连通闸（27#）";
+        document.getElementById("fix_line2").innerHTML="关闭清水池出水管路的连通闸（30#）";
+        document.getElementById("fix_line3").innerHTML="将____配水泵倒成____配水泵";
+        document.getElementById("fix_line4").innerHTML="断管施工";
+        document.getElementById("fix_line5").innerHTML="开启东、西两清水池之间的连通闸（27#）约一半";
+        document.getElementById("fix_line6").innerHTML="将来水降至____m3/h";
+        document.getElementById("fix_line7").innerHTML="开启东、西两清水池之间的连通闸27#";
+        document.getElementById("fix_line8").innerHTML="开启清水池出水管路的连通闸（29#）";
+        document.getElementById("fix_line9").innerHTML="清水池满足满水状态，将来水涨至____m3/h";
+
+        setShow();
+
+//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+    }
+
+
+
+    $("name_QS").click(function(){
         if(confirm("是否将“取水泵房”设置为维修状态？")){
             document.getElementById("fix_head").innerHTML="取水泵房维修闸门配合方案";
+            setShow();
         }
 
     });
     $("#name_JJC1").click(function(){
         if(confirm("是否将“#1机加池”设置为维修状态？")){
-        	document.getElementById("fix_head").innerHTML="#1机加池维修闸门配合方案";
+            fix_jjc1();
+            document.getElementById("nextPage").onclick="";
+            document.getElementById("lastPage").onclick="";
+            document.getElementById("export").href="download/fix-jjc1.docx";
+            setShow();
         }
     });
     $("#name_JJC2").click(function(){
         if(confirm("是否将“#2机加池”设置为维修状态？")){
-        	document.getElementById("fix_head").innerHTML="#2机加池维修闸门配合方案";
+            fix_jjc2();
+            document.getElementById("nextPage").onclick="";
+            document.getElementById("lastPage").onclick="";
+            document.getElementById("export").href="download/fix-jjc2.docx";
+            setShow();
         }
     });
     $("#name_JJC3").click(function(){
         if(confirm("是否将“#3机加池”设置为维修状态？3")){
-        	document.getElementById("fix_head").innerHTML="#3机加池维修闸门配合方案";
+            fix_jjc3();
+            document.getElementById("nextPage").onclick="";
+            document.getElementById("lastPage").onclick="";
+            document.getElementById("export").href="download/fix-jjc3.docx";
+            setShow();
         }
     });
     $("#name_VL").click(function(){
         if(confirm("是否将“V型滤池设置为维修状态？”")){
-        	document.getElementById("fix_head").innerHTML="V型滤池维修闸门配合方案";
+            setShow();
+            document.getElementById("fix_head").innerHTML="V型滤池维修闸门配合方案";
         }
     });
     $("#name_TC").click(function(){
-        if(confirm("是否将“活性炭池”设置为维修状态？")){
-        	document.getElementById("fix_head").innerHTML="活性炭池维修闸门配合方案";
+        if(confirm("是否将“现有活性炭池”设置为维修状态？")){
+            fix_tc_old();
+            document.getElementById("nextPage").onclick="";
+            document.getElementById("lastPage").onclick="";
+            document.getElementById("export").href="download/fix-tc-old.doc";
+        }
+    });
+    $("#name_TC1").click(function(){
+        if(confirm("是否将“新建活性炭池”设置为维修状态？")){
+            fix_tc_new();
+            document.getElementById("nextPage").onclick="";
+            document.getElementById("lastPage").onclick="";
+            document.getElementById("export").href="download/fix-tc-new.doc";
         }
     });
     $("#name_CY").click(function(){
         if(confirm("是否将“臭氧接触池”设置为维修状态？")){
-        	document.getElementById("fix_head").innerHTML="臭氧接触池维修闸门配合方案";
+            setShow();
+            document.getElementById("fix_head").innerHTML="臭氧接触池维修闸门配合方案";
         }
     });
     $("#name_HHJ1").click(function(){
         if(confirm("是否将“旧混合井”设置为维修状态？")){
-        	document.getElementById("fix_head").innerHTML="旧混合井维修闸门配合方案";
+            setShow();
+            document.getElementById("fix_head").innerHTML="旧混合井维修闸门配合方案";
         }
     });
     $("#name_HHJ2").click(function(){
         if(confirm("是否将“新混合井”设置为维修状态？")){
-        	document.getElementById("fix_head").innerHTML="新混合井维修闸门配合方案";
+            setShow();
+            document.getElementById("fix_head").innerHTML="新混合井维修闸门配合方案";
         }
     });
     $("#name_HX").click(function(){
         if(confirm("是否将“虹吸滤池”设置为维修状态？")){
-        	document.getElementById("fix_head").innerHTML="虹吸滤池维修闸门配合方案";
+
+            fix_hx_right();
+            document.getElementById("nextPage").onclick=function(){
+                fix_hx_left();
+            };
+            document.getElementById("lastPage").onclick=function(){
+                fix_hx_right();
+            };
+            document.getElementById("export").href="download/fix-hx.doc";
+            setShow();
+
         }
     });
+
     $("#name_QSC1").click(function(){
         if(confirm("是否将“#1清水池”设置为维修状态？")){
-        	document.getElementById("fix_head").innerHTML="#1清水池维修闸门配合方案";
+            setShow();
+            document.getElementById("fix_head").innerHTML="#1清水池维修闸门配合方案";
         }
     });
     $("#name_QSC2").click(function(){
         if(confirm("是否将“#2清水池”设置为维修状态？")){
-        	document.getElementById("fix_head").innerHTML="#2清水池维修闸门配合方案";
+            fix_qsc1();
+            document.getElementById("nextPage").onclick=function(){
+            };
+            document.getElementById("lastPage").onclick=function(){
+            };
+            document.getElementById("export").href="download/fix-qsc1.doc";
+            setShow();
+
         }
     });
     $("#name_QSC3").click(function(){
         if(confirm("是否将“#3清水池”设置为维修状态？")){
-        	document.getElementById("fix_head").innerHTML="#3清水池维修闸门配合方案";
+            fix_qsc2();
+            document.getElementById("nextPage").onclick=function(){
+            };
+            document.getElementById("lastPage").onclick=function(){
+            };
+            document.getElementById("export").href="download/fix-qsc2.doc";
+            setShow();
         }
     });
     $("#name_QSC4").click(function(){
         if(confirm("是否将“#4清水池”设置为维修状态？")){
-        	document.getElementById("fix_head").innerHTML="#4清水池维修闸门配合方案";
+            setShow();
+            document.getElementById("fix_head").innerHTML="#4清水池维修闸门配合方案";
         }
     });
 

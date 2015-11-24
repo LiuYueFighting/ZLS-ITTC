@@ -28,6 +28,7 @@ import jxl.write.WritableWorkbook;
 import com.opensymphony.xwork2.ActionSupport;
 import com.water.beans.PoolEvaluate;
 import com.water.service.PoolEvaluateService;
+import com.water.util.ListSort;
 
 
 @SuppressWarnings("serial")
@@ -397,12 +398,7 @@ public class PoolEvaluateAction extends ActionSupport{
 			
 			String path=ServletActionContext.getServletContext().getRealPath("//downloadTemp")+"//PoolEvaluate.xls";
 			book = Workbook.createWorkbook(new File(path));
-			//生成工作表
-			WritableSheet sheet = book.createSheet("sheet1", 0);
-			
-			 //给sheet电子版中所有的列设置默认的列的宽度;  
-	        sheet.getSettings().setDefaultColumnWidth(15);
-	        sheet.setColumnView(1, 20);//给第二列设置列宽 
+
 			//设置格式
 	      //标题
 			WritableFont formatH = new WritableFont(WritableFont.TAHOMA,14,WritableFont.BOLD);   
@@ -419,50 +415,99 @@ public class PoolEvaluateAction extends ActionSupport{
 			WritableFont formatB = new WritableFont(WritableFont.TAHOMA,10);   
 			WritableCellFormat formatBody = new WritableCellFormat(formatB);
 			formatBody.setAlignment(jxl.format.Alignment.CENTRE);  //单元格内容居中对齐
-			        
-//			List<PoolEvaluate> list = dataAnalysisService.findAll();
 			if(list!=null && !list.isEmpty()){
-				sheet.mergeCells(0, 0, 13, 0);
-				sheet.addCell(new Label(0,0,"机加池评估表",formatTitle));
+				ListSort<PoolEvaluate> listSort=new ListSort<PoolEvaluate>();
+				listSort.Sort(list, "getT","asc"); //按时间升序排序
+				DateFormat sdfDay = new SimpleDateFormat("yyyy-MM-dd");
+				String tempT = sdfDay.format(list.get(0).getT());
 				
-				sheet.addCell(new Label(0,1," 时间 ",formatHead));
-				sheet.addCell(new Label(1,1," 机加池编号 ",formatHead));				
-				sheet.addCell(new Label(2,1," PAC投加量 ",formatHead));
-				sheet.addCell(new Label(3,1," FeCl3投加量 ",formatHead));
-				sheet.addCell(new Label(4,1," 开启度 ",formatHead));
-				sheet.addCell(new Label(5,1," 转速 ",formatHead));
-				sheet.addCell(new Label(6,1," 沉降比 ",formatHead));
-				sheet.addCell(new Label(7,1," 小斗排泥时长 ",formatHead));
-				sheet.addCell(new Label(8,1," 大斗排泥时长 ",formatHead));				
-				sheet.addCell(new Label(9,1," 原水浊度 ",formatHead));	
-				sheet.addCell(new Label(10,1," 原水藻类含量 ",formatHead));
-				sheet.addCell(new Label(11,1," 出水浊度 ",formatHead));
-				sheet.addCell(new Label(12,1," 预加氯量 ",formatHead));
-				sheet.addCell(new Label(13,1," 水温 ",formatHead));
-
-//				sheet.addCell(new Label(0,0," 编号 ",formatHead));
-//				sheet.addCell(new Label(15,0," 状态 ",formatHead));
-			
+				//生成工作表
+				WritableSheet sheet = book.createSheet(tempT, 0);
+				
+				 //给sheet电子版中所有的列设置默认的列的宽度;  
+		        sheet.getSettings().setDefaultColumnWidth(15);
+		        sheet.setColumnView(1, 20);//给第二列设置列宽 
+		        
+				sheet.mergeCells(0, 0, 12, 0);
+				sheet.addCell(new Label(0,0,"机加池评估表",formatTitle));					
+//				sheet.addCell(new Label(0,1," 时间 ",formatHead));
+				sheet.addCell(new Label(0,1," 机加池编号 ",formatHead));				
+				sheet.addCell(new Label(1,1," PAC投加量 ",formatHead));
+				sheet.addCell(new Label(2,1," FeCl3投加量 ",formatHead));
+				sheet.addCell(new Label(3,1," 开启度 ",formatHead));
+				sheet.addCell(new Label(4,1," 转速 ",formatHead));
+				sheet.addCell(new Label(5,1," 沉降比 ",formatHead));
+				sheet.addCell(new Label(6,1," 小斗排泥时长 ",formatHead));
+				sheet.addCell(new Label(7,1," 大斗排泥时长 ",formatHead));				
+				sheet.addCell(new Label(8,1," 原水浊度 ",formatHead));	
+				sheet.addCell(new Label(9,1," 原水藻类含量 ",formatHead));
+				sheet.addCell(new Label(10,1," 出水浊度 ",formatHead));
+				sheet.addCell(new Label(11,1," 预加氯量 ",formatHead));
+				sheet.addCell(new Label(12,1," 水温 ",formatHead));
+				
+				int j=2; //每个sheet中添加记录的索引行号
 				for (int i=0;i<list.size();i++){
-					sheet.addCell(new Label(0,i+2,(new SimpleDateFormat("yyyy-MM-dd")).format(list.get(i).getT()),formatBody));  //时间
-					sheet.addCell(new Label(1,i+2,list.get(i).getPoolID(),formatBody));	//水池编号
-					sheet.addCell(new Label(2,i+2,Double.toString(list.get(i).getPAC()),formatBody)); //PAC投加量
-					sheet.addCell(new Label(3,i+2,Double.toString(list.get(i).getFeCl3()),formatBody));	 //FeCl3投加量
-					sheet.addCell(new Label(4,i+2,Double.toString(list.get(i).getOpenDegree()),formatBody)); //开启度
-					sheet.addCell(new Label(5,i+2,Double.toString(list.get(i).getRotationSpeed()),formatBody)); //转速
-					sheet.addCell(new Label(6,i+2,Double.toString(list.get(i).getSV()),formatBody)); //沉降比
-					sheet.addCell(new Label(7,i+2,Double.toString(list.get(i).getSmallMudFre()),formatBody)); //小斗排泥时长
-					sheet.addCell(new Label(8,i+2,Double.toString(list.get(i).getBigMudFre()),formatBody)); //大斗排泥时长
-					sheet.addCell(new Label(9,i+2,Double.toString(list.get(i).getNTU()),formatBody)); //原水浊度
-					sheet.addCell(new Label(10,i+2,Double.toString(list.get(i).getAlgaeContent()),formatBody)); //原水藻类含量
-					sheet.addCell(new Label(11,i+2,Double.toString(list.get(i).getOutNTU()),formatBody)); // 出水浊度
-					sheet.addCell(new Label(12,i+2,Double.toString(list.get(i).getCL()),formatBody));  //预加氯量
-					sheet.addCell(new Label(13,i+2,Double.toString(list.get(i).getWaterTemp()),formatBody));
-					
+					String day = sdfDay.format(list.get(i).getT());
+					if (day.equals(tempT)){	
+						sheet.addCell(new Label(0,j,list.get(i).getPoolID(),formatBody));	//水池编号
+						sheet.addCell(new Label(1,j,Double.toString(list.get(i).getPAC()),formatBody)); //PAC投加量
+						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getFeCl3()),formatBody));	 //FeCl3投加量
+						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOpenDegree()),formatBody)); //开启度
+						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getRotationSpeed()),formatBody)); //转速
+						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getSV()),formatBody)); //沉降比
+						sheet.addCell(new Label(6,j,Double.toString(list.get(i).getSmallMudFre()),formatBody)); //小斗排泥时长
+						sheet.addCell(new Label(7,j,Double.toString(list.get(i).getBigMudFre()),formatBody)); //大斗排泥时长
+						sheet.addCell(new Label(8,j,Double.toString(list.get(i).getNTU()),formatBody)); //原水浊度
+						sheet.addCell(new Label(9,j,Double.toString(list.get(i).getAlgaeContent()),formatBody)); //原水藻类含量
+						sheet.addCell(new Label(10,j,Double.toString(list.get(i).getOutNTU()),formatBody)); // 出水浊度
+						sheet.addCell(new Label(11,j,Double.toString(list.get(i).getCL()),formatBody));  //预加氯量
+						sheet.addCell(new Label(12,j,Double.toString(list.get(i).getWaterTemp()),formatBody));
+						
 //					sheet.addCell(new Label(0,i+1,Long.toString(list.get(i).getID()),formatBody));
 //					sheet.addCell(new Label(15,i+1,list.get(i).getState()==0?"不正常":"正常",formatBody));
-					
+					j=j+1;
+					}else{
+						j=2;
+						tempT = day;
+						sheet = book.createSheet(tempT, 0);
+						 //给sheet电子版中所有的列设置默认的列的宽度;  
+				        sheet.getSettings().setDefaultColumnWidth(15);
+				        sheet.setColumnView(1, 20);//给第二列设置列宽 
+						sheet.mergeCells(0, 0, 12, 0);
+						sheet.addCell(new Label(0,0,"机加池评估表",formatTitle));					
+//						sheet.addCell(new Label(0,1," 时间 ",formatHead));
+						sheet.addCell(new Label(0,1," 机加池编号 ",formatHead));				
+						sheet.addCell(new Label(1,1," PAC投加量 ",formatHead));
+						sheet.addCell(new Label(2,1," FeCl3投加量 ",formatHead));
+						sheet.addCell(new Label(3,1," 开启度 ",formatHead));
+						sheet.addCell(new Label(4,1," 转速 ",formatHead));
+						sheet.addCell(new Label(5,1," 沉降比 ",formatHead));
+						sheet.addCell(new Label(6,1," 小斗排泥时长 ",formatHead));
+						sheet.addCell(new Label(7,1," 大斗排泥时长 ",formatHead));				
+						sheet.addCell(new Label(8,1," 原水浊度 ",formatHead));	
+						sheet.addCell(new Label(9,1," 原水藻类含量 ",formatHead));
+						sheet.addCell(new Label(10,1," 出水浊度 ",formatHead));
+						sheet.addCell(new Label(11,1," 预加氯量 ",formatHead));
+						sheet.addCell(new Label(12,1," 水温 ",formatHead));
 
+//						sheet.addCell(new Label(0,j,sdfDay.format(list.get(i).getT()),formatBody));  //时间
+						sheet.addCell(new Label(0,j,list.get(i).getPoolID(),formatBody));	//水池编号
+						sheet.addCell(new Label(1,j,Double.toString(list.get(i).getPAC()),formatBody)); //PAC投加量
+						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getFeCl3()),formatBody));	 //FeCl3投加量
+						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOpenDegree()),formatBody)); //开启度
+						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getRotationSpeed()),formatBody)); //转速
+						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getSV()),formatBody)); //沉降比
+						sheet.addCell(new Label(6,j,Double.toString(list.get(i).getSmallMudFre()),formatBody)); //小斗排泥时长
+						sheet.addCell(new Label(7,j,Double.toString(list.get(i).getBigMudFre()),formatBody)); //大斗排泥时长
+						sheet.addCell(new Label(8,j,Double.toString(list.get(i).getNTU()),formatBody)); //原水浊度
+						sheet.addCell(new Label(9,j,Double.toString(list.get(i).getAlgaeContent()),formatBody)); //原水藻类含量
+						sheet.addCell(new Label(10,j,Double.toString(list.get(i).getOutNTU()),formatBody)); // 出水浊度
+						sheet.addCell(new Label(11,j,Double.toString(list.get(i).getCL()),formatBody));  //预加氯量
+						sheet.addCell(new Label(12,j,Double.toString(list.get(i).getWaterTemp()),formatBody));
+						
+						j=j+1;
+						
+					}
 				}//for
 			}//if
 			System.out.println("--写入excel:"+path+"--");
@@ -508,33 +553,10 @@ public class PoolEvaluateAction extends ActionSupport{
 				operateSuccess=false;
 			}
 
-			//	//		 第一种文件上传的读写方式
-//			FileInputStream input = new FileInputStream(upload);
-//			FileOutputStream out = new FileOutputStream(uploadFile + "\\" + uploadFileName);
-//
-//			try{
-//				byte[] b = new byte[1024];
-//				int m = 0;
-//				while ((m = input.read(b)) > 0) {
-//					out.write(b, 0, m);
-//				}
-//			}catch(Exception e){
-//				e.printStackTrace();
-//				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "上传过程中发生未知错误，请联系管理员。上传失败！");
-//				operateSuccess=false;
-//				//				return "error";
-//			}finally{
-//				input.close();
-//				out.close();
-//				//删除临时文件
-//				upload.delete();
-//			}
-
 			Workbook workBook = null;
 			InputStream fs = null;
 				try{
 					//加载excel文件
-//					fs = new FileInputStream(uploadFile + "\\" + uploadFileName);
 					fs = new FileInputStream(upload);
 					//得到工作簿
 					workBook = Workbook.getWorkbook(fs);
@@ -553,7 +575,8 @@ public class PoolEvaluateAction extends ActionSupport{
 				}
 				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-				Date day = (new SimpleDateFormat("yyyy-MM-dd").parse(sheet.getCell(0,0).getContents()));
+				String sheetName = sheet.getName();
+				Date day = sdf.parse(sheetName);
 				String sql="delete PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
 				// 直接覆盖当天信息
 				int deleteResult = poolEvaluateService.bulkUpadte(sql);
@@ -615,13 +638,11 @@ public class PoolEvaluateAction extends ActionSupport{
 			}
 			DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
+			String sheetName = sheet.getName();
 			//得到当前天数
-			Date day = (Date) sdf.parse(sheet.getCell(0,0).getContents());
-			String poolIDTemp=sheet.getCell(0,2).getContents();
+			Date day = (Date) sdf.parse(sheetName);
 			String sql="from PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
-			sql+=" and PoolID like '%"+poolIDTemp+"'";
 			List<PoolEvaluate> list = poolEvaluateService.findBySql(sql);
-
 			if(null == list||list.isEmpty()){
 				errMsg="";
 				operateSuccess=true;
