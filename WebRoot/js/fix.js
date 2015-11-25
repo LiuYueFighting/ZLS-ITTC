@@ -13,9 +13,9 @@ oCanvas.domReady(function () {
     canvas.addChild(bg);
 
     function fix_hh_right(){
-        document.getElementById("fix_head").innerHTML="现有混合井东侧配合方案";
         clearAll();
-
+        document.getElementById("fix_head").innerHTML="现有混合井东侧配合方案";
+        document.getElementById("name_HHJ1").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
 
@@ -37,9 +37,9 @@ oCanvas.domReady(function () {
         setShow();
     }
     function  fix_hh_left(){
-        document.getElementById("fix_head").innerHTML="现有混合井西侧配合方案";
         clearAll();
-
+        document.getElementById("fix_head").innerHTML="现有混合井西侧配合方案";
+        document.getElementById("name_HHJ1").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
 
@@ -59,9 +59,9 @@ oCanvas.domReady(function () {
     }
 
     function fix_hh_new(){
-        document.getElementById("fix_head").innerHTML="#新建混合井维修闸门配合方案";
-
         clearAll();
+        document.getElementById("fix_head").innerHTML="#新建混合井维修闸门配合方案";
+        document.getElementById("name_HHJ2").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM065");
         setOpenDgree("FM066");
         setOpenDgree("FM068");
@@ -73,9 +73,11 @@ oCanvas.domReady(function () {
     }
 
     function fix_jjc1(){
-        document.getElementById("fix_head").innerHTML="#1机加池维修闸门配合方案";
-
         clearAll();
+        document.getElementById("fix_head").innerHTML="#1机加池维修闸门配合方案";
+        document.getElementById("name_JJC1").style.background="rgba(255,0,0,0.7)";
+
+
         setOpenDgree("FM062");
         setOpenDgree("FM045");
         setOpenDgree("FM068");
@@ -94,9 +96,10 @@ oCanvas.domReady(function () {
     }
 
     function fix_jjc2(){
-        document.getElementById("fix_head").innerHTML="#2机加池维修闸门配合方案";
-
         clearAll();
+        document.getElementById("fix_head").innerHTML="#2机加池维修闸门配合方案";
+        document.getElementById("name_JJC2").style.background="rgba(255,0,0,0.7)";
+
         setOpenDgree("FM015");
         setOpenDgree("FM069");
         setOpenDgree("FM068");
@@ -116,9 +119,9 @@ oCanvas.domReady(function () {
     }
 
     function fix_jjc3(){
-        document.getElementById("fix_head").innerHTML="#3机加池维修闸门配合方案";
-
         clearAll();
+        document.getElementById("fix_head").innerHTML="#3机加池维修闸门配合方案";
+        document.getElementById("name_JJC3").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM065");
         setOpenDgree("FM066");
         setOpenDgree("FM068");
@@ -139,8 +142,9 @@ oCanvas.domReady(function () {
         setShow();
     }
     function fix_hx_right(){
-        document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门配合方案";
         clearAll();
+        document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门配合方案";
+        document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
         setOpenDgree("FM016");
@@ -159,8 +163,9 @@ oCanvas.domReady(function () {
         setShow();
     }
     function  fix_hx_left(){
-        document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门配合方案";
         clearAll();
+        document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门配合方案";
+        document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
         setOpenDgree("FM014");
@@ -179,9 +184,10 @@ oCanvas.domReady(function () {
     }
 
     function fix_vl(){
-        document.getElementById("fix_head").innerHTML="V型滤池维修闸门配合方案";
-
         clearAll();
+        document.getElementById("fix_head").innerHTML="V型滤池维修闸门配合方案";
+        document.getElementById("name_VL").style.background="rgba(255,0,0,0.7)";
+
         setOpenDgree("FM052");
         setOpenDgree("FM020");
          setOpenDgree("FM056");
@@ -196,8 +202,9 @@ oCanvas.domReady(function () {
         setShow();
     }
     function fix_cy_right(){
-        document.getElementById("fix_head").innerHTML="东侧臭氧池闸门配合方案";
         clearAll();
+        document.getElementById("fix_head").innerHTML="东侧臭氧池闸门配合方案";
+        document.getElementById("name_CY").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
         setOpenDgree("FM053");
@@ -218,8 +225,9 @@ oCanvas.domReady(function () {
         setShow();
     }
     function  fix_cy_left(){
-        document.getElementById("fix_head").innerHTML="西侧臭氧池闸门配合方案";
         clearAll();
+        document.getElementById("fix_head").innerHTML="西侧臭氧池闸门配合方案";
+        document.getElementById("name_CY").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
         setOpenDgree("FM022");
@@ -239,8 +247,9 @@ oCanvas.domReady(function () {
 
     }
     function fix_tc_old(){
-        document.getElementById("fix_head").innerHTML="现有碳池闸门配合方案";
         clearAll();
+        document.getElementById("fix_head").innerHTML="现有碳池闸门配合方案";
+        document.getElementById("name_TC").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM056");
         setOpenDgree("FM057");
         setOpenDgree("FM044");
@@ -263,8 +272,9 @@ oCanvas.domReady(function () {
 //            document.getElementById("fix_line7").innerHTML="打开阀门45#";
     }
     function fix_tc_new(){
-        document.getElementById("fix_head").innerHTML="新建碳池闸门配合方案";
         clearAll();
+        document.getElementById("fix_head").innerHTML="新建碳池闸门配合方案";
+        document.getElementById("name_TC1").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM056");
         setOpenDgree("FM059");
         setOpenDgree("FM055");
@@ -288,8 +298,9 @@ oCanvas.domReady(function () {
     }
 
     function fix_qsc1(){
-        document.getElementById("fix_head").innerHTML="1#清水池施工空池倒泵方案";
         clearAll();
+        document.getElementById("fix_head").innerHTML="1#清水池施工空池倒泵方案";
+        document.getElementById("name_QSC2").style.background="rgba(255,0,0,0.7)";
 
         document.getElementById("fix_line1").innerHTML="关闭东、西两清水池之间的连通闸（27#）";
         document.getElementById("fix_line2").innerHTML="关闭清水池出水管路的连通闸（29#）";
@@ -309,8 +320,9 @@ oCanvas.domReady(function () {
 
 
     function fix_qsc2(){
-        document.getElementById("fix_head").innerHTML="2#清水池施工空池倒泵方案";
         clearAll();
+        document.getElementById("fix_head").innerHTML="2#清水池施工空池倒泵方案";
+        document.getElementById("name_QSC3").style.background="rgba(255,0,0,0.7)";
 
         document.getElementById("fix_line1").innerHTML="关闭东、西两清水池之间的连通闸（27#）";
         document.getElementById("fix_line2").innerHTML="关闭清水池出水管路的连通闸（30#）";
@@ -328,8 +340,9 @@ oCanvas.domReady(function () {
     }
 
     function  fix_qsc3(){
-        document.getElementById("fix_head").innerHTML="#3清水池维修闸门配合方案";
         clearAll();
+        document.getElementById("fix_head").innerHTML="#3清水池维修闸门配合方案";
+        document.getElementById("name_QSC1").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM046");
         setOpenDgree("FM047");
         setOpenDgree("FM048");
@@ -344,8 +357,9 @@ oCanvas.domReady(function () {
     }
 
     function  fix_qsc4(){
-        document.getElementById("fix_head").innerHTML="#4清水池维修闸门配合方案";
         clearAll();
+        document.getElementById("fix_head").innerHTML="#4清水池维修闸门配合方案";
+        document.getElementById("name_QSC4").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM049");
         setOpenDgree("FM051");
 
