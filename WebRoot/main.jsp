@@ -23,7 +23,7 @@
     }
     #myPage {
         font-family: '微软雅黑', 'Source Sans Pro';
-        font-size: 15px;
+        font-size: 13px;
         width: 1600px;
         height: 800px;
         margin: 0px auto;

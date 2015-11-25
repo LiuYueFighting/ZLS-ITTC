@@ -19,7 +19,7 @@ $(document).ready(function(){
         var canvas = oCanvas.create({
             canvas: "#canvas_ZP_new",
             background: "#ccc",
-            fps: 50
+            fps: 25
         });
         var bg = canvas.display.image({
             x: 0,
@@ -44,7 +44,7 @@ $(document).ready(function(){
         });
         var SC03=createSC({
             parent:canvas,
-            x:497,y:195,height:139,width:43,trail_flag:0,speed:speed_SC,color:color_SC
+            x:497,y:172,height:179,width:43,trail_flag:0,speed:speed_SC,color:color_SC
         });
 
         //var SC04=createSC({
@@ -109,21 +109,22 @@ $(document).ready(function(){
             full:0,
             start:start_all
         }).add();
+        //水池4表示的是机加池整个大池子
         var SC04 = canvas.display.SC_show({
-            x: 778,
-            y: 166,
-            Width: 290,
-            Height: 230,
+            x: 698,
+            y: 181,
+            Width: 431,
+            Height: 208,
             height_now: 0,
             trail_flag: 1,
             trail: [
-                {x_t: 72, y_t: 0},
-                {x_t: 72, y_t: 104},
-                {x_t: 0, y_t: 174},
-                {x_t: 140, y_t: 228},
-                {x_t: 280, y_t: 172},
-                {x_t: 200, y_t: 105},
-                {x_t: 201, y_t: 0}
+                {x_t: 0, y_t: 24},
+                {x_t: 78, y_t: 208},
+                {x_t: 335, y_t: 208},
+                {x_t: 417, y_t: 24},
+                {x_t: 417, y_t: 0},
+                {x_t: 22, y_t: 0},
+                {x_t: 22, y_t: 24}
             ],
             t: 1405,
             fill: color_SC,
@@ -133,20 +134,14 @@ $(document).ready(function(){
         });
         canvas.addChild(SC04);
 
+        //5、6原来表示的是机加池左右的两个池子
         var SC05 = canvas.display.SC_show({
-            x: 711,
-            y: 176,
-            Width: 142,
-            Height: 155,
+            x: 703,
+            y: 187,
+            Width: 427,
+            Height: 16,
             height_now: 0,
-            trail_flag: 1,
-            trail: [
-                {x_t: 0, y_t: 0},
-                {x_t: 0, y_t: 42},
-                {x_t: 72, y_t: 151},
-                {x_t: 138, y_t: 99},
-                {x_t: 138, y_t: 0}
-            ],
+            trail_flag: 0,
             t: 1405,
             fill: color_SC,
             speed:speed_SC,
@@ -156,19 +151,12 @@ $(document).ready(function(){
         canvas.addChild(SC05);
 
         var SC06 = canvas.display.SC_show({
-            x: 975,
-            y: 179,
-            Width: 155,
-            Height: 155,
+            x: 1131,
+            y: 185,
+            Width: 14,
+            Height: 18,
             height_now: 0,
-            trail_flag: 1,
-            trail: [
-                {x_t: 0, y_t: 0},
-                {x_t: 0, y_t: 93},
-                {x_t: 73, y_t: 151},
-                {x_t: 152, y_t: 31},
-                {x_t: 1527, y_t: 0}
-            ],
+            trail_flag: 0,
             t: 0,
             fill: color_SC,
             speed:speed_SC,
@@ -675,9 +663,10 @@ $(document).ready(function(){
             }
             if(SC04.full==1) {
                 SC05.start = 1;
-                SC06.start = 1;
+
             }
-            if(SC05.full==1 && SC06.full==1) {
+            if(SC05.full==1 ) {
+                SC06.start = 1;
                 GD04.paused = 1;
             }
             if(GD04.full==1) {
@@ -772,7 +761,7 @@ $(document).ready(function(){
             SC16.init();
             GD01.paused=1;
             canvas.settings.fps=50;
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-50)/50+1.0)+'X';
+            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-25)/25+1.0)+'X';
             $("#btn_start").innerText='暂停';
             $("#btn_start").value=0;
 
@@ -781,14 +770,14 @@ $(document).ready(function(){
         $("#btn_upS").click(function(){
             canvas.settings.fps+=5;
 
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-50)/50+1.0)+'X';
+            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-25)/25+1.0)+'X';
             canvas.redraw();
         });
         $("#btn_downS").click(function () {
             if(canvas.settings.fps>=25)
             canvas.settings.fps-=5;
 
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-50)/50+1.0)+'X';
+            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-25)/25+1.0)+'X';
             canvas.redraw();
         });
     });

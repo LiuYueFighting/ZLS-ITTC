@@ -7,7 +7,7 @@ oCanvas.domReady(function () {
  var canvas = oCanvas.create({
      canvas: "#canvas_cy",
      background: "#ccc",
-     fps: 50
+     fps: 25
  });
 //绘制两个水池
  var SC01=createSC({
@@ -186,45 +186,27 @@ oCanvas.domReady(function () {
          canvas.timeline.start();
      }
 	 });
-	 $("#btn_upS").click(function(){
-		 
-	 });
-	// $scope.speedUp = function () {
-//	     if ($scope.num < 4) {
-//	         $scope.num++;
-//	         $scope.waterSpeed = $scope.speed[$scope.num];
-//	         canvas.settings.fps += 10;
-//	         $scope.waterWarn = "暂无";
-//	     }
-//	     else {
-//	         $scope.waterWarn = "速度已最快"
-//	     }
-//	     canvas.redraw();
-//	     canvas.timeline.stop();
-//	     canvas.timeline.start();
-	// };
-	 $("#btn_downS").click(function(){
-		 
-	 });
-	// $scope.speedDown = function () {
-//	     if ($scope.num > 0) {
-//	         $scope.num--;
-//	         $scope.waterSpeed = $scope.speed[$scope.num];
-//	         canvas.settings.fps -= 10;
-//	         $scope.waterWarn = "暂无";
-//	     }
-//	     else {
-//	         $scope.waterWarn = "速度已最慢";
-//	     }
-//	     canvas.redraw();
-//	     canvas.timeline.stop();
-//	     canvas.timeline.start();
-	// };
-	 $("#btn_reset").click(function(){
-		 function reset(){
-
-	     }
-	     reset();
-	 });
+    $("#btn_upS").click(function(){
+        canvas.settings.fps+=5;
+        var spanText=document.getElementById("speed");
+        spanText.innerHTML=canvas.settings.fps/25+"X";
+        //spanText.val=canvas.settings.fps;
+        console.log(spanText.innerHTML);
+    });
+    $("#btn_downS").click(function(){
+        canvas.settings.fps-=5;
+        var spanText=document.getElementById("speed");
+        spanText.innerHTML=canvas.settings.fps/25+"X";
+    });
+    $("#btn_reset").click(function(){
+        GD01.init();
+        SC01.init();
+        SC02.init();
+        GD02.init();
+        SC03.init();
+        SC04.init();
+        SC05.init();
+        GD01.paused=1;
+    });
 
 });
