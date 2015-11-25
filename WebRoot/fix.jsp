@@ -45,21 +45,28 @@
     }
     #export{
     position: absolute;
-    top: 510px;
+    top: 550px;
     left: 120px;
+    /* background: rgba(290,140,110,0.5); */
+    font-size: 18px;
+    }
+    #reset{
+    position: absolute;
+    top: 510px;
+    left: 137px;
     /* background: rgba(290,140,110,0.5); */
     font-size: 18px;
     }
     #nextPage{
     position: absolute;
-    top: 477px;
+    top: 510px;
     left: 250px;
     /* background: rgba(290,140,110,0.5); */
     font-size: 16px;
     }
     #lastPage{
     position: absolute;
-    top: 477px;
+    top: 510px;
     left: 10px;
     /* background: rgba(290,140,110,0.5); */
     font-size: 16px;
@@ -79,7 +86,7 @@
     height: 72px;
     width: 312px;
     position: absolute;
-    left: 1430px;
+    left: 1580px;
     top: 93px;
     Z-INDEX: 999;
     /* border: 1px solid; */
@@ -244,7 +251,7 @@
     height:600px;
     width:313px;
     position:absolute;
-    left:1430px;
+    left:1580px;
     top:164px;
     Z-INDEX:999;
     display:none;
@@ -975,6 +982,13 @@
     clearOpenDgree("FM026");
     clearOpenDgree("FM051");
     clearOpenDgree("FM055");
+    clearOpenDgree("FM047");
+    clearOpenDgree("FM048");
+    clearOpenDgree("FM049");
+
+    document.getElementById("nextPage").style.display="none";
+    document.getElementById("lastPage").style.display="none";
+
 
     document.getElementById("fix_line1").innerHTML="";
     document.getElementById("fix_line2").innerHTML="";
@@ -1036,7 +1050,6 @@
     document.getElementById("name_TC" ).style.display="block";
     document.getElementById("name_TC1").style.display="block";
     document.getElementById("name_CY" ).style.display="block";
-    document.getElementById("name_CYC").style.display="block";
     document.getElementById("name_YC" ).style.display="block";
     document.getElementById("name_HHJ1").style.display="block";
     document.getElementById("name_HHJ2").style.display="block";
@@ -1056,7 +1069,6 @@
     document.getElementById("name_TC" ).style.display="none";
     document.getElementById("name_TC1").style.display="none";
     document.getElementById("name_CY" ).style.display="none";
-    document.getElementById("name_CYC").style.display="none";
     document.getElementById("name_YC" ).style.display="none";
     document.getElementById("name_HHJ1").style.display="none";
     document.getElementById("name_HHJ2").style.display="none";
@@ -1229,14 +1241,15 @@
         <tr><td>5</td><td id="fix_line5"></td></tr>
         <tr><td>6</td><td id="fix_line6"></td></tr>
         <tr><td>7</td><td id="fix_line7"></td></tr>
-        <tr><td>8</td><td id="fix_line8"></td></tr>
+        <tr><td>8</td><td id="fix_line8"> </td></tr>
         <tr><td>9</td><td id="fix_line9"></td></tr>
         <tr><td>10</td><td id="fix_line10"></td></tr>
     </tbody>
     </table>
-    <a href="#" id="nextPage">下一页</a>
-    <a href="#" id="lastPage">上一页</a>
-    <a  id="export">生成方案</a>
+    <a href="#" id="nextPage">西侧</a>
+    <a href="#" id="lastPage">东侧</a>
+    <a  href="#" id="export">生成方案</a>
+    <a  href="#" id="reset" onclick="clearAll()">重置</a>
     </div>
     </div>
     <jsp:include page="down.jsp" />
