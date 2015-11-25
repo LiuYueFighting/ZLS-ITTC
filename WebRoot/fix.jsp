@@ -982,6 +982,13 @@
     clearOpenDgree("FM026");
     clearOpenDgree("FM051");
     clearOpenDgree("FM055");
+    clearOpenDgree("FM047");
+    clearOpenDgree("FM048");
+    clearOpenDgree("FM049");
+
+    document.getElementById("nextPage").style.display="none";
+    document.getElementById("lastPage").style.display="none";
+
 
     document.getElementById("fix_line1").innerHTML="";
     document.getElementById("fix_line2").innerHTML="";
@@ -1239,8 +1246,8 @@
         <tr><td>10</td><td id="fix_line10"></td></tr>
     </tbody>
     </table>
-    <a href="#" id="nextPage">下一页</a>
-    <a href="#" id="lastPage">上一页</a>
+    <a href="#" id="nextPage">西侧</a>
+    <a href="#" id="lastPage">东侧</a>
     <a  href="#" id="export">生成方案</a>
     <a  href="#" id="reset" onclick="clearAll()">重置</a>
     </div>
