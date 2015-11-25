@@ -6,7 +6,7 @@ oCanvas.domReady(function () {
     var canvas = oCanvas.create({
         canvas: "#canvas_VL",
         background: "#eeeeef",
-        fps: 50
+        fps: 25
     });
     var bg = canvas.display.image({
         x: 0,
@@ -224,5 +224,24 @@ oCanvas.domReady(function () {
             canvas.timeline.start();
         }
 
+    });
+    $("#btn_upS").click(function(){
+        canvas.settings.fps+=5;
+        var spanText=document.getElementById("speed");
+        spanText.innerHTML=canvas.settings.fps/25+"X";
+        //spanText.val=canvas.settings.fps;
+        console.log(spanText.innerHTML);
+    });
+    $("#btn_downS").click(function(){
+        canvas.settings.fps-=5;
+        var spanText=document.getElementById("speed");
+        spanText.innerHTML=canvas.settings.fps/25+"X";
+    });
+    $("#btn_reset").click(function(){
+        GD01.init();
+        SC01.init();
+        SC02.init();
+        SC03.init();
+        SC01.start=1;
     });
 });

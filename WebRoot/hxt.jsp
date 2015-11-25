@@ -46,11 +46,11 @@
             font-family: '微软雅黑', 'Arial';
         }
         #up{
-            height: 30%;
+            height: 25%;
             background-color: #f1f3f5;
         }
         #down{
-            height:70%;
+            height:75%;
             background-color: #f1f3f5;
         }
         #left {
@@ -135,7 +135,7 @@
         <div id="right" class="col-lg-2" style="height: 753px">
             <div id="up">
                 <ul class="list-group">
-                    <li class="list-group-item"><span class="badge" >暂未添加</span>当前仿真时间：</li>
+                    <li class="list-group-item"><span class="badge" id="speed">1.0X</span>当前演示速度：</li>
                     <li class="list-group-item"><span class="badge" >暂未添加</span>当前水位情况：</li>
                     <li class="list-group-item"><span class="badge" >暂未添加</span>当前水流量：</li>
                     <li class="list-group-item"><span class="badge" >暂未添加</span>当前负载情况：</li>
@@ -154,6 +154,7 @@
                     <button  class="btn btn-info  btn_list" onclick="window.location.href='hhj.jsp'" >混合井</button>
                     <button  class="btn btn-info  btn_list" onclick="window.location.href='JJC.jsp'"  >机加池</button>
                     <button  class="btn btn-info  btn_list" onclick="window.location.href='VL.jsp'">V型滤池</button>
+                    <button  class="btn btn-info  btn_list" onclick="window.location.href='hx.jsp'">虹吸滤池</button>
                     <button  class="btn btn-info  btn_list" onclick="window.location.href='cy.jsp'" >臭氧池</button>
                     <button  class="btn btn-info  btn_list active" onclick="window.location.href='hxt.jsp'">活性炭池</button>
                     <button class="btn btn-info  btn_list" onclick="window.location.href='qsc.jsp'">清水池</button>

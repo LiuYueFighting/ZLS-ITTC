@@ -10,7 +10,7 @@ oCanvas.domReady(function () {
     var canvas = oCanvas.create({
         canvas: "#canvas_JJC",
         background: "#ccc",
-        fps: 30
+        fps: 25
     });
 
     var bg = canvas.display.image({
@@ -329,5 +329,25 @@ oCanvas.domReady(function () {
             canvas.timeline.start();
             sprite.startAnimation();
         }
+    });
+    $("#btn_upS").click(function(){
+        canvas.settings.fps+=5;
+        var spanText=document.getElementById("speed");
+        spanText.innerHTML=canvas.settings.fps/25+"X";
+        //spanText.val=canvas.settings.fps;
+        console.log(spanText.innerHTML);
+    });
+    $("#btn_downS").click(function(){
+        canvas.settings.fps-=5;
+        var spanText=document.getElementById("speed");
+        spanText.innerHTML=canvas.settings.fps/25+"X";
+    });
+    $("#btn_reset").click(function(){
+        GD01.init();
+        SC01.init();
+        GD02.init();
+        left_t.init();
+        right_t.init();
+        GD01.paused=1;
     });
 });
