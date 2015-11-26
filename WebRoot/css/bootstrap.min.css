@@ -1487,11 +1487,11 @@ hr {
 }
 
 .h2, h2 {
-    font-size: 22px
+    font-size: 17px
 }
 
 .h3, h3 {
-    font-size: 19px
+    font-size: 15px
 }
 
 .h4, h4 {
@@ -5730,7 +5730,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-body {
-    padding: 15px
+    padding: 2px
 }
 
 .panel-heading {
