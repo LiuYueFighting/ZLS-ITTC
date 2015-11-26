@@ -145,10 +145,11 @@ ul li{
     border-bottom:1px solid #FFF;
     line-height:34px;
     font-size:16px;
+    padding: 10px auto;
+}
+.Secondary_menu>li{
 
 }
-.Secondary_menu ul li{
-    margin-left:0;}
 .Secondary_menu_item:hover{
     color:#364387;
     background-color:#e3d1b3;

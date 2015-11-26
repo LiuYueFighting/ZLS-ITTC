@@ -759,18 +759,21 @@
         top:40px;
         left:30px;
         z-index:999;
+        width:97px;
         }
         #btn_model1_2{
         position:absolute;
         top:80px;
         left:30px;
         z-index:999;
+        width:97px;
         }
         #btn_model1_3{
         position:absolute;
         top:120px;
         left:30px;
         z-index:999;
+        width:97px;
         }#btn_model1_4{
         position:absolute;
         top:160px;
@@ -784,18 +787,21 @@
         left:17px;
         top: 205px;
         z-index:999;
+        width:97px;
         }
         #btn_model2_1{
         position:absolute;
         top:240px;
         left:30px;
         z-index:999;
+        width:97px;
         }
         #btn_model2_2{
         position:absolute;
         top:280px;
         left:30px;
         z-index:999;
+        width:97px;
         }
         #btn_model2_3{
         position:absolute;
