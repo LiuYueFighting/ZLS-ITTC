@@ -190,22 +190,22 @@ oCanvas.domReady(function () {
             arrow_1.start();
             arrow_2.start();
             arrow_3.start();
-            //arrow_4.start();
-            //arrow_5.start();
-            //arrow_6.start();
+            arrow_4.start();
+            arrow_5.start();
+            arrow_6.start();
             arrow_1.stopAnimation();
             arrow_2.stopAnimation();
             arrow_3.stopAnimation();
-            //arrow_4.stopAnimation();
-            //arrow_5.stopAnimation();
-            //arrow_6.stopAnimation();
+            arrow_4.stopAnimation();
+            arrow_5.stopAnimation();
+            arrow_6.stopAnimation();
         	SC03.start = 1;
         }
         if(SC03.full==1){
             arrow_3.frame=2;
-            //arrow_4.frame=2;
-            //arrow_5.frame=2;
-            //arrow_6.frame=2;
+            arrow_4.frame=2;
+            arrow_5.frame=2;
+            arrow_6.frame=2;
         	GD01.paused = 1;
         }
         canvas.redraw();
