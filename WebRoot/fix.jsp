@@ -28,6 +28,7 @@
             width: 1600px;
             height: 800px;
             margin:0px auto;
+            position:relative;
         }
         #myContent{
             margin: 0px 0px 0px 0px;
@@ -41,40 +42,38 @@
     border: 1px solid black;
     }
     #show_hide{
-        position:absolute;
-        top:10px;
-        left:270px;
+    position: absolute;
+    top: 6px;
+    left: 147px;
+    font-size: 13px;
     }
     #export{
-    position:absolute;
-    left:111px;
-    top:630px;
-
+    position: absolute;
+    left: 70px;
+    top: 580px;
     /* background: rgba(290,140,110,0.5); */
-    font-size: 18px;
+    font-size: 14px;
     }
     #reset{
-    position:absolute;
-    left:130px;
-    top:580px;
-
+    position: absolute;
+    left: 81px;
+    top: 541px;
     /* background: rgba(290,140,110,0.5); */
-    font-size: 18px;
+    font-size: 14px;
     }
     #nextPage{
-    position:absolute;
-    left:10px;
-    top:580px;
-
+    position: absolute;
+    left: 15px;
+    top: 540px;
     /* background: rgba(290,140,110,0.5); */
-    font-size: 18px;
+    font-size: 14px;
     }
     #lastPage{
-    position:absolute;
-    left:260px;
-    top:580px;;
+    position: absolute;
+    right: 15px;
+    top: 540px;
     /* background: rgba(290,140,110,0.5); */
-    font-size: 18px;
+    font-size: 14px;
     }
     .name_Model{
     font-family: '微软雅黑','Arial';
@@ -85,39 +84,32 @@
     }
     #fix-panel{
     <%--border:1px solid black;--%>
-    height: 672px;
-    width: 312px;
+    height: 604px;
+    width: 183px;
     position: absolute;
-    left: 1723px;
-    top: 93px;
+    left: 79.6%;
+    top: 2.7%;
     Z-INDEX: 999;
     }
     #panel_heading{
-    padding: 10px 15px;
+    padding: 5px 5px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    <%--margin-left: 134px;--%>
-    height: 72px;
-    width: 312px;
-    <%--position: absolute;--%>
-    <%--left: 1580px;--%>
-    <%--top: 93px;--%>
+    height: 85px;
+    width: 181px;
     Z-INDEX: 999;
     /* border: 1px solid; */
     background: rgba(255,255,255,0.7);
-    border: 3px solid #008fd7;
+    border: 2px solid #008fd7;
+    text-align: center;
     }
     #fix{
-    <%--margin-left:134px;--%>
-    height:600px;
-    width:312px;
-    <%--position:absolute;--%>
-    <%--left:1580px;--%>
-    <%--top:164px;--%>
-    Z-INDEX:999;
-    display:none;
-    border: 3px solid #008fd7;
+    height: 535px;
+    width: 181px;
+    Z-INDEX: 999;
+    display: none;
+    border: 2px solid #008fd7;
     }
     #chackBox_name{
     position:absolute;
@@ -222,8 +214,8 @@
     top: 150px;
     }
     .panel{
-    height:594px;
-    width:307px;
+    height: 529px;
+    width: 175px;
     background: rgba(255,255,255,0.7);
     color: black;
     }
@@ -687,7 +679,8 @@
     z-index:999;
     }
     #fix_table{
-    font-size:13px}
+    font-size:12px
+    }
     #fix-content{
     }
     .name_FM{
@@ -1048,9 +1041,9 @@
     <div class="panel panel-default">
     <!-- Default panel contents -->
 
-    <div class="panel-body" id="fix-content">
-    <p><h3>配合开关闸门顺序表</h3></p>
-    </div>
+    <%--<div class="panel-body" id="fix-content">--%>
+    <%--<p><h3>配合开关闸门顺序表</h3></p>--%>
+    <%--</div>--%>
 
     <!-- Table -->
     <table id="fix_table" class="table" >

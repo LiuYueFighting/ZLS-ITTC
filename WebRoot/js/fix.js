@@ -342,16 +342,16 @@ oCanvas.domReady(function () {
         document.getElementById("fix_head").innerHTML="1#清水池施工空池倒泵方案";
         document.getElementById("name_QSC2").style.background="rgba(255,0,0,0.7)";
 
-        document.getElementById("fix_line1").innerHTML="关闭东、西两清水池之间的连通闸（27#）";
-        document.getElementById("fix_line2").innerHTML="关闭清水池出水管路的连通闸（29#）";
-        document.getElementById("fix_line3").innerHTML="将5#配水泵倒成4#配水泵";
-        document.getElementById("fix_line4").innerHTML="将7#配水泵倒成2#配水泵";
+        document.getElementById("fix_line1").innerHTML="关闭东、西池间连通闸27#";
+        document.getElementById("fix_line2").innerHTML="关闭清水池出水闸29#";
+        document.getElementById("fix_line3").innerHTML="5#配水泵倒成4#";
+        document.getElementById("fix_line4").innerHTML="7#配水泵倒成2#";
         document.getElementById("fix_line5").innerHTML="断管施工";
-        document.getElementById("fix_line6").innerHTML="开启东、西两清水池之间的连通闸（27#）约一半";
-        document.getElementById("fix_line7").innerHTML="将来水降至1800m3/h";
-        document.getElementById("fix_line8").innerHTML="开启东、西两清水池之间的连通闸27#";
-        document.getElementById("fix_line9").innerHTML="开启清水池出水管路的连通闸（29#）";
-        document.getElementById("fix_line10").innerHTML="清水池满足满水状态，将来水涨至1950m3/h";
+        document.getElementById("fix_line6").innerHTML="开启1/连通闸27#";
+        document.getElementById("fix_line7").innerHTML="来水降至1800m3/h";
+        document.getElementById("fix_line8").innerHTML="开启连通闸27#";
+        document.getElementById("fix_line9").innerHTML="开启清水池出水闸29#";
+        document.getElementById("fix_line10").innerHTML="来水涨至1950m3/h";
 
         setShow();
 
@@ -364,15 +364,15 @@ oCanvas.domReady(function () {
         document.getElementById("fix_head").innerHTML="2#清水池施工空池倒泵方案";
         document.getElementById("name_QSC3").style.background="rgba(255,0,0,0.7)";
 
-        document.getElementById("fix_line1").innerHTML="关闭东、西两清水池之间的连通闸（27#）";
-        document.getElementById("fix_line2").innerHTML="关闭清水池出水管路的连通闸（30#）";
-        document.getElementById("fix_line3").innerHTML="将____配水泵倒成____配水泵";
+        document.getElementById("fix_line1").innerHTML="关闭东、西池间连通闸27#";
+        document.getElementById("fix_line2").innerHTML="关闭清水池出水闸30#";
+        document.getElementById("fix_line3").innerHTML="__#配水泵倒成__#";
         document.getElementById("fix_line4").innerHTML="断管施工";
-        document.getElementById("fix_line5").innerHTML="开启东、西两清水池之间的连通闸（27#）约一半";
-        document.getElementById("fix_line6").innerHTML="将来水降至____m3/h";
-        document.getElementById("fix_line7").innerHTML="开启东、西两清水池之间的连通闸27#";
-        document.getElementById("fix_line8").innerHTML="开启清水池出水管路的连通闸（29#）";
-        document.getElementById("fix_line9").innerHTML="清水池满足满水状态，将来水涨至____m3/h";
+        document.getElementById("fix_line5").innerHTML="开启1/连通闸27#";
+        document.getElementById("fix_line6").innerHTML="来水降至__m3/h";
+        document.getElementById("fix_line7").innerHTML="开启连通闸27";
+        document.getElementById("fix_line8").innerHTML="开启清水池出水闸30#";
+        document.getElementById("fix_line9").innerHTML="来水涨至__m3/h";
 
         setShow();
 
