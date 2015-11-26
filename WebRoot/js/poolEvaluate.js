@@ -3,18 +3,75 @@ $(function() {
 	listPoolEvaluate();
 });
 
-//$(document).ready(function() {
-//	$('#imageContainer2').click(function() {
-//		document.body.style.zoom = 1.5;
-//	});
-//});
+var strDate = '';
+
+$(document).ready(function() {
+	$('#addButton').click(function(event) {
+		event.preventDefault();
+		//++addCount;
+		var _len = $("#tab tr").length;
+		//alert(_len);
+		$('#tab').append(
+			"<tr id='tr" + _len + "'>"
+			+ "<td><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
+			+ "<td><input type='hidden' id='IDAdd' name='poolEvaluate.ID' style='width:1px;height:25px' /></td>"
+			+ "<td id='indexNum" + _len + "'>" + _len + "</td>"
+			+ "<td><input name='poolEvaluate.t' id='tAdd' type='date' style='width:200px;height:25px'/></td>"
+			+ "<td><select name='poolEvaluate.PoolID' id='PoolIDAdd' style='width:200px;height:25px'><option value='MTG_QingS_SC01' selected='selected'>MTG_QingS_SC01</option><option value='MTG_QingS_SC02'>MTG_QingS_SC02</option><option value='MTG_QingS_SC03'>MTG_QingS_SC03</option></select></td>"
+			+ "<td><input style='width:100px;height:25px' id='PAC' name='poolEvaluate.PAC' data-options='min:0,precision:0,' /></td>"
+			+ "<td><input style='width:100px;height:25px' id='FeCl3' name='poolEvaluate.FeCl3' data-options='min:0,precision:0' /></td>"
+			+ "<td><input style='width:100px;height:25px' id='OpenDegree' name='poolEvaluate.OpenDegree' data-options='min:0,precision:0'/></td>"
+			+ "<td><input style='width:100px;height:25px' id='RotationSpeed' name='poolEvaluate.RotationSpeed' data-options='min:0,precision:0'/></td>"
+			+ "<td><input style='width:100px;height:25px' id='SV' name='poolEvaluate.SV' data-options='min:0,precision:0' /></td>"
+			+ "<td><input style='width:100px;height:25px' id='WaterTemp' name='poolEvaluate.WaterTemp' data-options='min:0,precision:0'/></td>"
+			+ "<td><input style='width:100px;height:25px' id='SmallMudFre' name='poolEvaluate.SmallMudFre' data-options='min:0,precision:0'/></td>"
+			+ "<td><input style='width:100px;height:25px' id='BigMudFre' name='poolEvaluate.BigMudFre'  data-options='precision:0'/></td>"
+			+ "<td><input style='width:100px;height:25px' id='NTU' name='poolEvaluate.NTU' data-options='precision:2'/></td>"
+			+ "<td><input style='width:100px;height:25px' id='AlgaeContent' name='poolEvaluate.AlgaeContent' data-options='precision:2'/></td>"
+			+ "<td><input style='width:100px;height:25px' id='OutNTU' name='poolEvaluate.OutNTU' data-options='precision:2'/></td>"
+			+ "<td><input style='width:100px;height:25px' id='CL' name='poolEvaluate.CL' data-options='precision:2'/></td>"
+			+ "<td id='delete" + _len + "'><a href='#' onclick='deltr(" + _len + ",event)'>删除</a></td>"
+			+ "</tr>");
+	});
+});
+
+var deltr = function(index, event) {
+	event.preventDefault();
+	var _len = $("#tab tr").length;
+	$("tr[id='tr" + index + "']").remove();
+	for(var i = index + 1; i < _len; ++i) {
+		//alert("i = " + i + " _len = " + _len);
+		$("tr[id='tr" + i + "']").replaceWith("<tr id='tr" + (i-1) + "'>"
+				+ "<td><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
+				+ "<td><input type='hidden' id='IDAdd' name='poolEvaluate.ID' style='width:1px;height:25px' /></td>"
+				+ "<td id='indexNum" + (i-1) + "'>" + (i-1) + "</td>"
+				+ "<td><input name='poolEvaluate.t' id='tAdd' type='date' style='width:200px;height:25px'/></td>"
+				+ "<td><select name='poolEvaluate.PoolID' id='PoolIDAdd' style='width:200px;height:25px'><option value='MTG_QingS_SC01' selected='selected'>MTG_QingS_SC01</option><option value='MTG_QingS_SC02'>MTG_QingS_SC02</option><option value='MTG_QingS_SC03'>MTG_QingS_SC03</option></select></td>"
+				+ "<td><input style='width:100px;height:25px' id='PAC' name='poolEvaluate.PAC' data-options='min:0,precision:0,' /></td>"
+				+ "<td><input style='width:100px;height:25px' id='FeCl3' name='poolEvaluate.FeCl3' data-options='min:0,precision:0' /></td>"
+				+ "<td><input style='width:100px;height:25px' id='OpenDegree' name='poolEvaluate.OpenDegree' data-options='min:0,precision:0'/></td>"
+				+ "<td><input style='width:100px;height:25px' id='RotationSpeed' name='poolEvaluate.RotationSpeed' data-options='min:0,precision:0'/></td>"
+				+ "<td><input style='width:100px;height:25px' id='SV' name='poolEvaluate.SV' data-options='min:0,precision:0' /></td>"
+				+ "<td><input style='width:100px;height:25px' id='WaterTemp' name='poolEvaluate.WaterTemp' data-options='min:0,precision:0'/></td>"
+				+ "<td><input style='width:100px;height:25px' id='SmallMudFre' name='poolEvaluate.SmallMudFre' data-options='min:0,precision:0'/></td>"
+				+ "<td><input style='width:100px;height:25px' id='BigMudFre' name='poolEvaluate.BigMudFre'  data-options='precision:0'/></td>"
+				+ "<td><input style='width:100px;height:25px' id='NTU' name='poolEvaluate.NTU' data-options='precision:2'/></td>"
+				+ "<td><input style='width:100px;height:25px' id='AlgaeContent' name='poolEvaluate.AlgaeContent' data-options='precision:2'/></td>"
+				+ "<td><input style='width:100px;height:25px' id='OutNTU' name='poolEvaluate.OutNTU' data-options='precision:2'/></td>"
+				+ "<td><input style='width:100px;height:25px' id='CL' name='poolEvaluate.CL' data-options='precision:2'/></td>"
+				+ "<td id='delete" + (i-1) + "'><a href='#' onclick='deltr(" + (i-1) + ",event)'>删除</a></td>"
+				+ "</tr>");
+	}
+}
+
 
 var tburl='searchPoolEvaluate.action'; 
 var datalist = new Array();
+var title= '机加池分析表';
 //加载项目列表
 function listPoolEvaluate() {
 	$("#poolEvaluatebody").datagrid({
-		title:'机加池分析表',
+		title:title,
 		width : "1050",
 		height : "300",
 		//iconCls : 'icon-help', // 表格左上角的图标样式
@@ -23,7 +80,7 @@ function listPoolEvaluate() {
 		fitColumns : true, // 自动适应列宽
 		striped : true, // 隔行变色
 		singleSelect : true, // 每次只选中一行
-		loadMsg : '加载项目列表ing……',
+		loadMsg : '正在加载项目列表，请稍后...',
 		idField : 'ID', // 主键属性
 		remoteSort : false, // 从服务器端排序，默认true	
 //		pagination : true, // 在底部显示分页工具栏
@@ -320,12 +377,52 @@ function closeForm() {
 	$('#tabEdit').dialog('close');
 }
 
+function closeAddForm() {
+	$("#newfrmEdit").form('clear');
+	$('#newEdit').dialog('close');
+}
+
 //添加的函数
 function addPoolEvaluate() {
 	// 清空原有的数据
-	$('#frmEdit').form('clear');
+	$('#newfrmEdit').form('clear');
 	// 显示添加对话框
-	showEditForm();
+	showAddForm();
+	//$('#frmEdit').form('clear');
+	//showEditForm();
+}
+
+function showAddForm() {
+	$("#newEdit").dialog({
+		modal : true,// 模式窗口
+		title : '添加操作',
+		iconCls : 'icon-edit',
+		closed:false,
+		buttons : [{
+			text : '确认',
+			handler : function() {
+				//$.messager.alert('表单数据', $('#newfrmEdit').serialize(), 'info');
+				//$.messager.alert('验证信息', $('#newfrmEdit').form('validate'), 'info');
+				//alert('test of Test1');
+				// 进行表单字段验证，当全部字段都有效时返回true和validatebox一起使用
+				if ($('#newfrmEdit').form('validate')) {
+					//alert('If condition');
+					// 提交到服务器并写入数据库
+					dealAddSave();
+					// 关闭窗口
+					closeAddForm();
+				} else {
+					$.messager.alert('验证', '项目信息有误或不完整', 'error');
+				}
+			}
+		}, {
+			text : '取消',
+			handler : function() {
+				//alert('click Camcel!');
+				closeAddForm();
+			}
+		} ]
+	});
 }
 
 //编辑按钮的操作
@@ -363,6 +460,7 @@ function editPoolEvaluate() {
 function dealSave() {
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#frmEdit").serialize();
+	alert("params is \n" + params);
 	// 得到id的值，为空串表示添加
 	if ($("#ID").val() == "") {
 		$.post("addPoolEvaluate.action", params, function(result) {
@@ -387,6 +485,92 @@ function dealSave() {
 		});
 	}
 }
+
+
+function dealAddSave() {
+	// 表单数据序列化成一个字符串用&拼接
+	var params = $("#newfrmEdit").serialize();
+	alert("prams is \n" + params);
+	var paramsArray = params.split("split=&");
+	alert("paramsArray.length is \n" + paramsArray.length);
+	alert("pramsArray is \n" + paramsArray);
+	//var strLength;
+	//var tempStr;
+	//var newStr;
+	/*
+	for(var i = 1; i < paramsArray.length; ++i) {
+		//alert("Into for loop!");
+		strLength = paramsArray[i].length;
+		tempStr = paramsArray[i].substring(42, 60);
+		//alert("old tempStr" + tempStr);
+		newtempStr = tempStr.substring(0, 10) + '+' + tempStr.substring(11, tempStr.length);
+		//alert("new temStr" + newtempStr);
+		newStr = paramsArray[i].substring(0, 9) + newtempStr + paramsArray[i].substring(9, 42)
+					+ newtempStr + paramsArray[i].substring(60, strLength);
+		paramsArray[i] = newStr;
+		
+	}*/
+	//strTAddalert('Form表单' + params);
+	//alert('Form表单Array' + paramsArray);
+	var errorMessage = '';
+	var flag = true;
+	for(var i = 1; i < paramsArray.length; ++i) {
+		alert('Form表单Array' + i + "\n" + paramsArray[i]);
+		// 得到id的值，为空串表示添加
+		//var re = new RegExp(/^dateTemp=\d{4}-\d{2}\-\d{2}\+\d{2}%3A\d{2}/);
+		//var test = re.test(paramsArray[i]);
+		//alert(test);
+		
+		var re_ID = new RegExp(/poolEvaluate.PoolID=MTG_QingS_SC0\d/);
+		var re_t = new RegExp(/poolEvaluate.t=\d{4}-\d{2}\-\d{2}/);
+		alert("test 1 \n" + re_ID.test(paramsArray[i]));
+		alert("test 2 \n" + re_t.test(paramsArray[i]));
+		var test = re_t.test(paramsArray[i]) && re_ID.test(paramsArray[i]);
+		
+		if(!test) {
+			var errorMessageTemp = '';
+			if(i == 1)
+				errorMessageTemp = '错误！第' + i + '条记录ID和日期有误！';
+			else {
+				errorMessageTemp += '<br />错误！第' + i + '条记录ID和日期有误！';
+			}
+			errorMessage += errorMessageTemp;
+			flag = false;
+		}//test = false; 
+		else {
+			if ($("#IDAdd").val() == "") {
+				//alert('Add POST test');
+				$.post("addPoolEvaluate.action", paramsArray[i], function(result) {
+					//alert('test' + result.operateSuccess);
+					if (result.operateSuccess){
+						location.reload();
+//						$('#dataAnalysisbody').datagrid('reload');// 重新加载
+						$.messager.alert('添加', '添加成功', 'info');
+					} else {
+						$.messager.alert('添加', '添加失败', 'warning');
+					}
+				});
+			}//添加if
+			else {
+				// 表示更新
+				$.post("updatePoolEvaluate.action", params, function(result) {
+					if (result.operateSuccess) {
+						location.reload();
+//						$('#dataAnalysisbody').datagrid('reload');// 重新加载
+						$.messager.alert('更新', '更新成功', 'info');
+					} else {
+						$.messager.alert('更新', '更新失败', 'warning');
+					}
+				});
+			}//更新else
+			//flag = true;
+			
+		}//test = trye
+	}//for loop
+	if(flag == false)
+		$.messager.alert('错误', errorMessage, 'error');	
+}
+
 
 //删除项目
 function deletePoolEvaluate() {
@@ -436,16 +620,35 @@ function searchPoolEvaluate(){
 	showSearchForm();
 }
 
-//查询处理
+
 function dealSearch() {
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#frmSearch").serialize();
 	console.log(params);
+	//alert(params);
+	
+	  
+	var re = new RegExp(/^lowT=\d{4}-\d{2}\-\d{2}/);
+	var test = re.test(params);
+	if(test) {
+		strDate = ' ' + params.substring(5, 15);
+		title = "机加池分析表" + strDate;
+		ImageTitle1 = "浊度分析图 " + strDate;
+		ImageTitle2 = "加药量分析图 " + strDate;
+	}
+	else {
+		title = "机加池分析表";
+		ImageTitle1 = "浊度分析图 ";
+		ImageTitle2 = "加药量分析图 ";
+	} 
+	 
+	
 	$.post("searchPoolEvaluate.action", params, function(result) {
 		if (result.total!=0) {
-			$("#poolEvaluatebody").data().datagrid.cache = null;
-			$('#poolEvaluatebody').datagrid('reload');// 重新加载
+			//$("#poolEvaluatebody").data().datagrid.cache = null;
+			//$('#poolEvaluatebody').datagrid('reload');// 重新加载
 //			$.messager.alert('查询', '查询成功', 'info');
+			listPoolEvaluate();
 		} else {
 			$.messager.alert('查询', '查询失败,未查找到相关信息', 'warning');
 		}
@@ -655,11 +858,10 @@ function import2DB(){
 
 }
 
-
+var ImageTitle1="浊度分析图" + strDate;
+var ImageTitle2="加药量分析图" + strDate;
 function drawImage(){
 	//加药量分析图
-	var ImageTitle1="浊度分析图";
-	var ImageTitle2="加药量分析图";
 	var PACArray=new Array();
 	var FeCl3Array=new Array();
 	var NTUArray=new Array();
@@ -705,282 +907,479 @@ function drawImage(){
 	} //if datalist.length
 	/**绘图**/
 	options1 = {
-			//常规图表选项设置
-			chart: {
-				renderTo: 'imageContainer1',	//在哪个区域呈现
-				borderColor: '#FFF',	//边框颜色
-					//type: 'spline'          //指定图表的类型，默认是折线图（line）
-//				zoomType: 'x',	//图标缩放
-				zoomType: 'x',
-	            selectionMarkerFill: 'rgba(0,0,0, 0.2)',
-	            resetZoomButton: {
-	                // 按钮定位
-	            	position:{
-	                    align: 'right', // by default
-	                    verticalAlign: 'top', // by default
-	                    x: 0,
-	                    y: -30
-	                },
-	                // 按钮样式
-	                theme: {
-	                    fill: 'white',
-	                    stroke: 'silver',
-	                    r: 0,
-	                    states: {
-	                        hover: {
-	                            fill: '#41739D',
-	                            style: {
-	                                color: 'white'
-	                            }
-	                        }
-	                    }
-	                }
-	            }
+		chart: {
+			borderColor: '#FFFFFF',	//边框颜色
+	        selectionMarkerFill: 'rgba(0,0,0, 0.2)',
+	        height: 660,
+	        width:1050,
+		},
+	    credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
+			text: '北京市自来水集团',
+		    href: '',
+		    position: {
+		    	align: 'right',
+		        x: -10,
+		        verticalAlign: 'bottom',
+		        y: -25
+		    },
+		    style: {                            // 样式设置
+		        cursor: 'default',
+		        color: 'blue',
+		        fontSize: '12px'
+		    }
+		},	//显示图表版权信息
+		exporting : {
+			buttons: {
+		    	contextButton: {
+		        	text: '导出'
+		        }
+		    }
+		},
+		lang:{						
+			printChart: '打印',
+			downloadJPEG: '下载JPEG 图片',
+	        downloadPDF: '下载PDF文档',
+	        downloadPNG: '下载PNG 图片',
+	        downloadSVG: '下载SVG 矢量图',
+	        exportButtonTitle: '导出图片',
+			noData: '没有查询到数据',	
+		},
+		legend: {  //The legend is a box containing a symbol and name for each series item or point item in the chart.
+        	enabled: true,	//显示图例	
+        	layout:"vertical",
+        	align: 'right', //水平方向位置
+        	verticalAlign: 'top', //垂直方向位置
+        	x:0,
+        	y:100		            	            
+        },
+        navigation : {
+        	menuItemStyle: {
+                fontWeight: 'normal',
+                background: 'none'
+            },
+            menuItemHoverStyle: {
+                fontWeight: 'bolder',
+                background: 'none',
+                color: 'black'
+            }, 
+        	menuStyle: {
+                 background: '#E0E0E0'
+             }
+        },
+        navigator: {
+        	enable:true,
+            handles: {
+                backgroundColor: '#66CCFF',
+                borderColor: '#6650FF'
+            },
+            margin: 2,
+            maskFill: 'rgba(102,204,255, 0.5)'
+        },
+        rangeSelector: {
+        	allButtonsEnabled: true,
+            buttonTheme: { // styles for the buttons
+                fill: 'none',
+                stroke: 'none',
+                'stroke-width': 0,
+                r: 3,
+                style: {
+                    color: '#039',
+                    fontWeight: 'bold'
+                },
+                states: {
+                    hover: {
+                    },
+                    select: {
+                        fill: '#039',
+                        style: {
+                            color: 'white'
+                        }
+                    }
+                }
+            },
+            buttons: [{
+    	    	type: 'month',
+    	    	count: 1,
+    	    	text: '1月'
+    			}, {
+    			type: 'month',
+    			count: 3,
+    			text: '3月'
+    			}, {
+    			type: 'month',
+    			count: 6,
+    			text: '半年'
+    			}, {
+    			type: 'ytd',
+    			text: '今年'
+    			}, {
+    			type: 'year',
+    			count: 1,
+    			text: '1年'
+    			}, {
+    				type: 'all',
+    				text: '全部'
+    			}],
+            inputBoxBorderColor: 'gray',
+            inputBoxWidth: 100,
+            inputBoxHeight: 18,
+            inputStyle: {
+                color: '#000000',
+                fontWeight: 'bold'
+            },
+            labelStyle: {
+                color: 'red',
+                fontWeight: 'bold'
+            },
+            selected: 1
+        },
+        scrollbar: {
+            barBackgroundColor: 'gray',
+            barBorderRadius: 7,
+            barBorderWidth: 0,
+            buttonBackgroundColor: 'gray',
+            buttonBorderWidth: 0,
+            buttonArrowColor: 'yellow',
+            buttonBorderRadius: 7,
+            rifleColor: 'yellow',
+            trackBackgroundColor: 'white',
+            trackBorderWidth: 1,
+            trackBorderColor: 'silver',
+            trackBorderRadius: 7
+        },
+		// 按钮样式
+	    title:{
+	    	text: ImageTitle1,
+			style:{
+				font: '18px',
+				color: '#0E2D5F',
+				fontWeight: 'bold',
+			}
+		},
+		tooltip: {
+            backgroundColor: {
+                linearGradient: {
+                    x1: 0,
+                    y1: 0,
+                    x2: 0,
+                    y2: 1
+                },
+                stops: [
+                    [0, 'white'],
+                    [1, '#EEE']
+                ]
+            },
+            borderColor: 'gray',
+            borderWidth: 1,
+        },
+		xAxis: {
+			type: 'datetime',
+			dateTimeLabelFormats: { // don't display the dummy year
+				hours: '%H时',
+				day: "%m-%d",
+				month:'%Y年 %m月',
+				year: '%Y年'
 			},
-			lang:{					
-				printChart: "打印",
-				downloadJPEG: "下载JPEG 图片",
-				downloadPDF: "下载PDF文档",
-				downloadPNG: "下载PNG 图片",
-				downloadSVG: "下载SVG 矢量图",
-				exportButtonTitle: "导出图片",
-				noData: "没有查询到数据",
-				resetZoom: "重置"				
+			tickColor: 'green',
+            tickLength: 10,
+            tickWidth: 3,
+            tickPosition: 'inside',
+			labels: { 
+				//rotation: -45 
+			} 
+		},
+		yAxis: [{	//第一个y轴坐标
+			min: 0,
+		    max: 12,
+		    startOnTick: true,
+            endOnTick: true,
+            minPadding: 0,
+            maxPadding: 0,
+		    gridLineColor: 'silver',
+		    opposite:false,
+		    showLastLabel: true,
+		    tickColor: 'green',
+            tickLength: 10,
+            tickWidth: 3,
+            tickPosition: 'inside',
+			title: {
+				text: '来水浊度'                  //指定y轴的标题
 			},
-			title:{
-				text: ImageTitle1,
-				style:{
-					font: '18px',
-					color: '#0E2D5F',
-					fontWeight: 'bold',
-				}
+		},{	//第二个Y坐标
+			min: 0,
+		    max: 6,
+		    startOnTick: true,
+            endOnTick: true,
+            minPadding: 0,
+            maxPadding: 0,
+		    gridLineColor: 'silver',
+		    showLastLabel: true,
+		    tickColor: 'green',
+            tickLength: 10,
+            tickWidth: 3,
+            tickPosition: 'inside',
+			title: {
+				text: '出水浊度'                  //指定y轴的标题
 			},
-			noData: {
-				style: {
-					fontWeight: 'bold',
-					font: '15px',
-					color: '#303030'
-				}
-			},
-			xAxis: {
-				title:{
-					text:" 日  期 "
-				},
-//				categories: tlist   //指定x轴分组
-				type: 'datetime',
-				dateTimeLabelFormats: { // don't display the dummy year
-					hours: '%Y-%m-%d %H时',
-					day: "%Y-%m-%d",
-					month:'%Y年 %m月',
-					year: '%Y年'
-				},
-				labels: { 
-					rotation: -45 
-				} 
-			},
-			yAxis: [
-			        {	//第一个y轴坐标
-
-			        	title: {
-			        		text: '来水浊度'                  //指定y轴的标题
-			        	},
-			        	lebels:{
-			        		format: '{value*100}%'
-			        	},
-			        	//添加标示线
-			        	plotLines:[
-			        	           /*{//第一条标示线	
-			        	        	   color:'red',           //线的颜色，定义为红色
-			        	        	   dashStyle:'ShortDash',     //默认值，这里定义为实线
-			        	        	   value:4.5,               //定义在那个值上显示标示线，这里是在y轴上刻度为3的值处垂直化一条线
-			        	        	   width:2,               //标示线的宽度，2px
-			        	        	   label:{
-			        	        		   text:'高预警线',     //标签的内容
-//			        	        		   align:'left',                //标签的水平位置，水平居左,默认是水平居中center
-//			        	        		   x:10                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
-			        	        	   },
-			        	        	   zIndex:100, 				//标示线位置，值越大，显示在越前面
-			        	           },
-			        	           {//第二条标示线	
-			        	        	   color:'orange',           //线的颜色，定义为红色
-			        	        	   dashStyle:'ShortDash',     //默认值，这里定义为实线
-			        	        	   value:2.5,               //定义在那个值上显示标示线，这里是在y轴上刻度为0.5的值处垂直化一条线
-			        	        	   width:2,               //标示线的宽度，2px
-			        	        	   label:{
-			        	        		   text:'低预警线',     //标签的内容
-			        	        	   },
-			        	        	   zIndex:100, 			//标示线位置，值越大，显示在越前面
-			        	           }*/]
-			        },
-			        {	//第二个Y坐标
-
-			        	title: {
-			        		text: '出水浊度'                  //指定y轴的标题
-			        	},
-
-			        	opposite:true,
-			        },
-			        
-			        ],
-			        //鼠标移动时显示的数据
-			        tooltip: {
-			        	enabled: true,
-			        	shared: true,
-//			        	formatter: function() {
-//			        		return ' 日期： ' +Highcharts.dateFormat('%Y-%m-%d <br>',this.x)
-//			        		+' <br> FeCl3投加量：  ' 		+ this.y*100 +'%';
-//			        	}
-			        },
-			        //显示数据
-			        plotOptions: {
-			        	/*line: {
-			        		dataLabels: {
-			        			enabled: true,
-			        			formatter: function() {
-			        				return this.y;
-			        			} 
-			        		},
-			        		enableMouseTracking: true,
-			        	}, */
-			        },
-			        legend: {
-			        	enabled: true,	//显示图例	
-			        	layout:"vertical",
-			        	align: 'right', //水平方向位置
-			        	verticalAlign: 'top', //垂直方向位置
-			        	x:0,
-			        	y:100		            	            
-			        },
-			        credits:false,	//不显示图表版权信息
-			        //指定数据列
-			        series: []
-	}//options1
+		},
+		],
+		plotOptions: {
+			line: {
+				dataLabels: {
+					enabled: true,
+					formatter: function() {
+						return this.y;
+					} 
+			    },
+			    enableMouseTracking: true,
+			}, 
+		},
+		//指定数据列
+		series: []
+	};//options1
 	
 	options2 = {
-			//常规图表选项设置
-			chart: {
-				renderTo: 'imageContainer2',	//在哪个区域呈现
-				borderColor: '#FFF',	//边框颜色
-//					zoomType: 'x',	//图标缩放
-				width:1048,
-				height:568,
+		chart: {
+			borderColor: '#FFFFFF',	//边框颜色
+		    selectionMarkerFill: 'rgba(0,0,0, 0.2)',
+		    height: 660,
+		    width:1050,
+		},
+		credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
+			text: '北京市自来水集团',
+			href: '',
+			position: {
+			    align: 'right',
+			    x: -10,
+			    verticalAlign: 'bottom',
+			    y: -25
 			},
-			lang:{					
-				printChart: "打印",
-				downloadJPEG: "下载JPEG 图片",
-				downloadPDF: "下载PDF文档",
-				downloadPNG: "下载PNG 图片",
-				downloadSVG: "下载SVG 矢量图",
-				exportButtonTitle: "导出图片",
-				noData: "没有查询到数据",
-				resetZoom:"重置",				
-			},
-			title:{
-				text: ImageTitle2,
+			style: {                            // 样式设置
+			    cursor: 'default',
+			    color: 'blue',
+			    fontSize: '12px'
+			}
+		},	//显示图表版权信息
+		exporting : {
+			buttons: {
+			    contextButton: {
+			        text: '导出'
+			    }
+			}
+		},
+		lang:{						
+			printChart: '打印',
+			downloadJPEG: '下载JPEG 图片',
+		    downloadPDF: '下载PDF文档',
+		    downloadPNG: '下载PNG 图片',
+		    downloadSVG: '下载SVG 矢量图',
+		    exportButtonTitle: '导出图片',
+			noData: '没有查询到数据',
+			Zoom: '时间选择',
+		},
+		legend: {  //The legend is a box containing a symbol and name for each series item or point item in the chart.
+	        enabled: true,	//显示图例	
+	        layout:"vertical",
+	        align: 'right', //水平方向位置
+	        verticalAlign: 'top', //垂直方向位置
+	        x:0,
+	        y:100		            	            
+	    },
+	    navigation : {
+	        menuItemStyle: {
+	        fontWeight: 'normal',
+	        background: 'none'
+	    },
+	    menuItemHoverStyle: {
+	        fontWeight: 'bolder',
+	        background: 'none',
+	        color: 'black'
+	    }, 
+	    menuStyle: {
+	        background: '#E0E0E0'
+	    }
+	},
+	navigator: {
+		handles: {
+	    	backgroundColor: '#66CCFF',
+	    	borderColor: '#6650FF'
+	    },
+	    margin: 2,
+	    maskFill: 'rgba(102,204,255, 0.5)'
+	},
+	rangeSelector: {
+	    allButtonsEnabled: true,
+	    buttonTheme: { // styles for the buttons
+	    	fill: 'none',
+	        stroke: 'none',
+	        'stroke-width': 0,
+	        r: 3,
+	        style: {
+	        	color: '#039',
+	            fontWeight: 'bold'
+	        },
+	        states: {
+	        	hover: {
+	        	},
+	        	select: {
+	        		fill: '#039',
+	        		style: {
+	        			color: 'white'
+	        		}
+	        	}
+	        }
+	    },
+	    buttons: [{
+	    	type: 'month',
+	    	count: 1,
+	    	text: '1月'
+			}, {
+			type: 'month',
+			count: 3,
+			text: '3月'
+			}, {
+			type: 'month',
+			count: 6,
+			text: '半年'
+			}, {
+			type: 'ytd',
+			text: '今年'
+			}, {
+			type: 'year',
+			count: 1,
+			text: '1年'
+			}, {
+				type: 'all',
+				text: '全部'
+			}],
+		inputBoxBorderColor: 'gray',
+		inputBoxWidth: 100,
+		inputBoxHeight: 18,
+		inputStyle: {
+			color: '#000000',
+			fontWeight: 'bold'
+		},
+		labelStyle: {
+			color: 'red',
+			fontWeight: 'bold'
+		},
+		selected: 1
+	},
+	scrollbar: {
+		barBackgroundColor: 'gray',
+	    barBorderRadius: 7,
+	            barBorderWidth: 0,
+	            buttonBackgroundColor: 'gray',
+	            buttonBorderWidth: 0,
+	            buttonArrowColor: 'yellow',
+	            buttonBorderRadius: 7,
+	            rifleColor: 'yellow',
+	            trackBackgroundColor: 'white',
+	            trackBorderWidth: 1,
+	            trackBorderColor: 'silver',
+	            trackBorderRadius: 7
+	},
+			// 按钮样式
+		    title:{
+		    	text: ImageTitle2,
 				style:{
 					font: '18px',
 					color: '#0E2D5F',
 					fontWeight: 'bold',
 				}
 			},
-			noData: {
-				style: {
-					fontWeight: 'bold',
-					font: '15px',
-					color: '#303030'
-				}
-			},
+			tooltip: {
+	            backgroundColor: {
+	                linearGradient: {
+	                    x1: 0,
+	                    y1: 0,
+	                    x2: 0,
+	                    y2: 1
+	                },
+	                stops: [
+	                    [0, 'white'],
+	                    [1, '#EEE']
+	                ]
+	            },
+	            borderColor: 'gray',
+	            borderWidth: 1,
+	        },
 			xAxis: {
-				title:{
-					text:" 日  期 "
-				},
-//				categories: tlist   //指定x轴分组
 				type: 'datetime',
 				dateTimeLabelFormats: { // don't display the dummy year
-					hours: '%Y-%m-%d %H时',
-					day: "%Y-%m-%d",
+					hours: '%H时',
+					day: "%m-%d",
 					month:'%Y年 %m月',
 					year: '%Y年'
 				},
+				tickColor: 'green',
+	            tickLength: 10,
+	            tickWidth: 3,
+	            tickPosition: 'inside',
 				labels: { 
-					rotation: -45 
+					//rotation: -45 
 				} 
 			},
-			yAxis: [
-			        {	//第一个y轴坐标
-			        	title: {
-			        		text: 'PAC投加量'                  //指定y轴的标题
-			        	},
-			        	lebels:{
-			        		format: '{value*100}%'
-			        	},
+	yAxis: [{	//第一个y轴坐标
+		min: 0,
+	    max: 1,
+	    startOnTick: true,
+        endOnTick: true,
+        minPadding: 0,
+        maxPadding: 0,
+	    gridLineColor: 'silver',
+	    opposite:false,
+	    showLastLabel: true,
+	    //tickAmount: 5,
+	    tickColor: 'green',
+        tickLength: 10,
+        tickWidth: 3,
+        tickPosition: 'inside',
+        tickPositions: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+		title: {
+			text: 'PAC投加量'                  //指定y轴的标题
+		},
+			        	//lebels:{
+			        	//	format: '{value*100}%'
+			        	//},
 			        	//添加标示线
-			        	plotLines:[
-			        	           /*{//第一条标示线	
-			        	        	   color:'red',           //线的颜色，定义为红色
-			        	        	   dashStyle:'ShortDash',     //默认值，这里定义为实线
-			        	        	   value:4.5,               //定义在那个值上显示标示线，这里是在y轴上刻度为3的值处垂直化一条线
-			        	        	   width:2,               //标示线的宽度，2px
-			        	        	   label:{
-			        	        		   text:'高预警线',     //标签的内容
-//			        	        		   align:'left',                //标签的水平位置，水平居左,默认是水平居中center
-//			        	        		   x:10                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
-			        	        	   },
-			        	        	   zIndex:100, 				//标示线位置，值越大，显示在越前面
-			        	           },
-			        	           {//第二条标示线	
-			        	        	   color:'orange',           //线的颜色，定义为红色
-			        	        	   dashStyle:'ShortDash',     //默认值，这里定义为实线
-			        	        	   value:2.5,               //定义在那个值上显示标示线，这里是在y轴上刻度为0.5的值处垂直化一条线
-			        	        	   width:2,               //标示线的宽度，2px
-			        	        	   label:{
-			        	        		   text:'低预警线',     //标签的内容
-			        	        	   },
-			        	        	   zIndex:100, 			//标示线位置，值越大，显示在越前面
-			        	           }*/]
-			        },
-			        {	//第二个Y坐标
-
-			        	title: {
+			        
+		},{	//第二个Y坐标
+			min: 0,
+		    max: 1,
+		    startOnTick: true,
+	        endOnTick: true,
+	        minPadding: 0,
+	        maxPadding: 0,
+		    gridLineColor: 'silver',
+		    showLastLabel: true,
+		    //tickAmount: 5,
+		    tickColor: 'green',
+            tickLength: 10,
+            tickWidth: 3,
+            tickPosition: 'inside',
+            tickPositions: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+		    title: {
 			        		text: 'FeCl3投加量'                  //指定y轴的标题
-			        	},
+			},
 
-			        	opposite:true,
-			        },
-			        ],
-			        //鼠标移动时显示的数据
-			        tooltip: {
-			        	enabled: true,
-			        	shared: true,
-//			        	formatter: function() {
-//			        		return ' 日期： ' +Highcharts.dateFormat('%Y-%m-%d <br>',this.x)
-//			        		+' <br> '+ this.y*100 +'%';
-//			        	}
-			        },
-			        //显示数据
-			       /* plotOptions: {
-			        	line: {
-			        		dataLabels: {
-			        			enabled: true,
-			        			formatter: function() {
-			        				return this.y;
-			        			} 
-			        		},
-			        		enableMouseTracking: true,
-			        	}, 
-			        },*/
-			        legend: {
-			        	enabled: true,	//显示图例	
-			        	layout:"vertical",
-			        	align: 'right', //水平方向位置
-			        	verticalAlign: 'top', //垂直方向位置
-			        	x:0,
-			        	y:100		            	            
-			        },
-			        credits:false,	//不显示图表版权信息
+		},
+		],
+			       //显示数据
+		plotOptions: {
+			line: {
+				dataLabels: {
+					enabled: true,
+					formatter: function() {
+						return this.y;
+					} 
+			    },
+			    enableMouseTracking: true,
+			}, 
+		},
 			        //指定数据列
 			        series: []
-	}//options2
+	};//options2
 	
 	options1.series = new Array();
 	options2.series = new Array();
@@ -1016,8 +1415,10 @@ function drawImage(){
 	}
 	options1.series.sort(keysrt("name",false));
 	options2.series.sort(keysrt("name",false));
-	chart1 = new Highcharts.Chart(options1);
-	chart2 = new Highcharts.Chart(options2);
+	//chart1 = new Highcharts.Chart(options1);
+	//chart2 = new Highcharts.Chart(options2);
+	$('#imageContainer1').highcharts('StockChart',options1);
+	$('#imageContainer2').highcharts('StockChart',options2);
 }//preH;
 
 var treeNodeList= [{id:1,name:"时间列表",text:"时间列表",parentId:0}];
@@ -1074,7 +1475,7 @@ function listTreeNode(tlist){
 		loadFilter: function(data){
 			return convert(data);
 		},
-		onDblClick:function(node){
+		onClick:function(node){
 			var pnode=$('#timeTree').tree('getParent',node.target);
 			var out=node.text;
 			while(pnode.text!="时间列表"){

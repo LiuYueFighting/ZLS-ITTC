@@ -44,7 +44,7 @@ var deltr = function(index, event) {
 				+ "<td><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
 				+ "<td><input type='hidden' id='dateTempAdd' name='dateTemp' style='width:1px;height:25px' /></td>"
 				+ "<td><input type='hidden' id='IDAdd' name='dataAnalysis.ID' style='width:1px;height:25px' /></td>"
-				+ "<td id='indexNum" + (i-1) + "'>" + (i-1) + "</td>"
+				+ "<td id='indexNum" + (i-1) + "''>" + (i-1) + "</td>"
 				+ "<td><input name='dataAnalysis.t' id='tAdd' type='datetime-local' style='width:200px;height:25px'/></td>"
 				+ "<td><select name='dataAnalysis.PoolID' id='PoolIDAdd' style='width:200px;height:25px'><option value='MTG_QingS_SC01' selected='selected'>MTG_QingS_SC01</option><option value='MTG_QingS_SC02'>MTG_QingS_SC02</option><option value='MTG_QingS_SC03'>MTG_QingS_SC03</option></select></td>"
 				+ "<td><input style='width:100px;height:25px' id='InV' name='dataAnalysis.InV' data-options='min:0,precision:0,' /></td>"
@@ -61,15 +61,7 @@ var deltr = function(index, event) {
 	}
 }
 
-$(document).ready(function() {
-	$('.delete').click(function(event) {
-		event.preventDefault();
-		//var value = $(this).text();
-		//alert(value);
-		//if($(this).text() == 'Delete')
-		$(this).parent().parent().remove();
-	});
-});
+
 
 
 
@@ -90,7 +82,7 @@ function listDataAnalysis() {
 		fitColumns : true, // 自动适应列宽
 		striped : true, // 隔行变色
 		singleSelect : true, // 每次只选中一行
-		loadMsg : '正在项目列表，请稍后...',
+		loadMsg : '正在加载项目列表，请稍后...',
 		remoteSort : false, // 排序，true表示从服务器端排序
 		
 //		pagination : true, // 在底部显示分页工具栏
@@ -309,7 +301,7 @@ function dealSave() {
 	$('#dateTemp').val($("#t").datetimebox("getValue"));
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#frmEdit").serialize();
-	alert('edit form' + $("#frmEdit").serialize());
+	//alert('edit form' + $("#frmEdit").serialize());
 	// 得到id的值，为空串表示添加
 	if ($("#ID").val() == "") {
 		$.post("addDataAnalysis.action", params, function(result) {
@@ -525,7 +517,10 @@ var poolIDlist  = new Array();
 var url = "${pageContext.request.contextPath}/listDataAnalysis.action";
 $.getJSON(url, function(json) {
 	//去除重复项
+	//alert("json<br />" + json);
+	//alert("eval(json)<br />" + eval(json));
 	var datalist = eval(json).rows;
+	//alert("datalist<br />" + datalist);
 	var tempPoolIDlist = new Array();
 	for(var i=0;i<json.total;i++){
 		var row = datalist[i];
@@ -600,43 +595,38 @@ function prehImage(){
 			),row.preH]);	//填充数据，预测高度
 		} //for
 	} //if datalist.length
+	//var data=listArray[0].sort();
 	/**绘图**/
 	options = {
-			//常规图表选项设置
+			//Options regarding the chart area and plot area as well as general chart options.
 			chart: {
-				renderTo: 'imageContainer',	//在哪个区域呈现
 				borderColor: '#95B8E7',	//边框颜色
-				panning: true,
-				panKey: 'shift',
-				zoomType: 'x',
 		        selectionMarkerFill: 'rgba(0,0,0, 0.2)',
-		        resetZoomButton: {
-		        	// 按钮定位
-		            position:{
-		            	align: 'right', // by default
-		            	verticalAlign: 'top', // by default
-		            	x: 0,
-		            	y: -30
-		            },
-		            	// 按钮样式
-		            theme: {
-		            	fill: 'white',
-		            	stroke: 'silver',
-		            	r: 0,
-		            	states: {
-		            		hover: {
-		            			fill: '#41739D',
-		            			style: {
-		            				color: 'white'
-		            			}
-		                    }
-		                }
-		            }
-		        }		
+		        height: 650,
 			},
-			lang:{					
-				resetZoom: '打印',
-	            resetZoomTitle: '重置缩放比例',	
+			 credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
+		        	text: '北京市自来水集团',
+		        	href: '',
+		        	position: {
+		        		align: 'right',
+		        		x: -10,
+		        		verticalAlign: 'bottom',
+		        		y: -25
+		        	},
+		        	style: {                            // 样式设置
+		        		cursor: 'default',
+		        		color: 'blue',
+		        		fontSize: '12px'
+		        	}
+		        },	//显示图表版权信息
+			exporting : {
+				buttons: {
+	                contextButton: {
+	                    text: '导出'
+	                }
+	            }
+			},
+			lang:{						
 				printChart: '打印',
 				downloadJPEG: '下载JPEG 图片',
                 downloadPDF: '下载PDF文档',
@@ -645,6 +635,110 @@ function prehImage(){
                 exportButtonTitle: '导出图片',
 				noData: '没有查询到数据',	
 			},
+			legend: {  //The legend is a box containing a symbol and name for each series item or point item in the chart.
+	        	enabled: true,	//显示图例	
+	        	layout:"vertical",
+	        	align: 'right', //水平方向位置
+	        	verticalAlign: 'top', //垂直方向位置
+	        	x:0,
+	        	y:100		            	            
+	        },
+	        navigation : {
+	        	menuItemStyle: {
+	                fontWeight: 'normal',
+	                background: 'none'
+	            },
+	            menuItemHoverStyle: {
+	                fontWeight: 'bolder',
+	                background: 'none',
+	                color: 'black'
+	            }, 
+	        	menuStyle: {
+	                 background: '#E0E0E0'
+	             }
+	        },
+	        navigator: {
+	            handles: {
+	                backgroundColor: '#66CCFF',
+	                borderColor: '#6600FF'
+	            },
+	            margin: 2,
+	            maskFill: 'rgba(102,204,255, 0.5)'
+	        },
+	        rangeSelector: {
+	        	allButtonsEnabled: true,
+	            buttonTheme: { // styles for the buttons
+	                fill: 'none',
+	                stroke: 'none',
+	                'stroke-width': 0,
+	                r: 3,
+	                style: {
+	                    color: '#039',
+	                    fontWeight: 'bold'
+	                },
+	                states: {
+	                    hover: {
+	                    },
+	                    select: {
+	                        fill: '#039',
+	                        style: {
+	                            color: 'white'
+	                        }
+	                    }
+	                }
+	            },
+	            buttons: [{
+	    	    	type: 'month',
+	    	    	count: 1,
+	    	    	text: '1月'
+	    			}, {
+	    			type: 'month',
+	    			count: 3,
+	    			text: '3月'
+	    			}, {
+	    			type: 'month',
+	    			count: 6,
+	    			text: '半年'
+	    			}, {
+	    			type: 'ytd',
+	    			text: '今年'
+	    			}, {
+	    			type: 'year',
+	    			count: 1,
+	    			text: '1年'
+	    			}, {
+	    				type: 'all',
+	    				text: '全部'
+	    			}],
+	            inputBoxBorderColor: 'gray',
+	            inputBoxWidth: 100,
+	            inputBoxHeight: 18,
+	            inputStyle: {
+	                color: '#000000',
+	                fontWeight: 'bold'
+	            },
+	            labelStyle: {
+	                color: 'red',
+	                fontWeight: 'bold'
+	            },
+	            selected: 1
+	        },
+	        scrollbar: {
+	            barBackgroundColor: 'gray',
+	            barBorderRadius: 7,
+	            barBorderWidth: 0,
+	            buttonBackgroundColor: 'gray',
+	            buttonBorderWidth: 0,
+	            buttonArrowColor: 'yellow',
+	            buttonBorderRadius: 7,
+	            rifleColor: 'yellow',
+	            trackBackgroundColor: 'white',
+	            trackBorderWidth: 1,
+	            trackBorderColor: 'silver',
+	            trackBorderRadius: 7
+	        },
+	        
+	        
 			title:{
 				text: ImageTitle,
 				style:{
@@ -653,35 +747,78 @@ function prehImage(){
 					fontWeight: 'bold',
 				}
 			},
-	   		noData: {
-				style: {
-					fontWeight: 'bold',
-					font: '15px',
-					color: '#303030'
-				}
-			},
+			//鼠标移动时显示的数据
+			tooltip: {
+	            backgroundColor: {
+	                linearGradient: {
+	                    x1: 0,
+	                    y1: 0,
+	                    x2: 0,
+	                    y2: 1
+	                },
+	                stops: [
+	                    [0, 'white'],
+	                    [1, '#EEE']
+	                ]
+	            },
+	            borderColor: 'gray',
+	            borderWidth: 1,
+	            /*formatter: function () {
+	                var s = '<b>' + Highcharts.dateFormat('%A, %b %e, %Y', this.x) + '</b>';
+
+	                $.each(this.points, function () {
+	                    s += '<br/>1 USD = ' + this.y + ' EUR';
+	                });
+
+	                return s;
+	            }
+	            formatter: function() {
+	        		var s = "水池编号： "+this.series.name
+	        		+' <br> 日期： ' +Highcharts.dateFormat('%Y-%m-%d <br> 时间： %H 点',this.x)
+	        		+' <br> 预测水位：  '
+	        		+ this.y +'米';
+	        		return s;
+	        	}*/
+	        },
 			xAxis: {
-				title:{
-					text:" 日  期 "
-				},
+				//title:{
+				//	text:" 日  期 "
+				//},
 //				categories: tlist   //指定x轴分组
 				type: 'datetime',
 				dateTimeLabelFormats: { // don't display the dummy year
-					hours: '%Y-%m-%d %H时',
-					day: "%Y-%m-%d",
+					hours: '%H时',
+					day: "%m-%d",
 					month:'%Y年 %m月',
 					year: '%Y年'
 				},
+				tickColor: 'green',
+	            tickLength: 10,
+	            tickWidth: 3,
+	            tickPosition: 'inside',
 				labels: { 
-					rotation: -45 
+					//rotation: -45 
 				} 
 			},
-			yAxis: [
-			        {	//第一个y轴坐标
-			        	min: 0,
-			        	max: 5,
+			yAxis: [{	//第一个y轴坐标
+				labels: {
+	            	overflow: 'justify'
+	            },
+				min: 0,
+			    max: 5,
+			    startOnTick: true,
+	            endOnTick: true,
+	            minPadding: 0,
+	            maxPadding: 0,
+			    gridLineColor: 'silver',
+			    opposite:false,
+			    tickColor: 'green',
+	            tickLength: 10,
+	            tickWidth: 3,
+	            tickPosition: 'inside',
+			    showLastLabel: true,
 			        	title: {
-			        		text: '单位：米'                  //指定y轴的标题
+			        		text: '预测水位(/m)'                  //指定y轴的标题
 			        	},
 			        	//添加标示线
 			        	plotLines:[
@@ -693,7 +830,7 @@ function prehImage(){
 			        	        	   label:{
 			        	        		   text:'高预警线 4.9m',     //标签的内容
 //			        	        		   align:'left',                //标签的水平位置，水平居左,默认是水平居中center
-//			        	        		   x:10                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+			        	        		   //y:10                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
 			        	        	   },
 			        	        	   zIndex:100, 				//标示线位置，值越大，显示在越前面
 			        	           },
@@ -708,17 +845,9 @@ function prehImage(){
 			        	        	   zIndex:100, 			//标示线位置，值越大，显示在越前面
 			        	           }]
 			        },
+			        
 			        ],
-			        //鼠标移动时显示的数据
-			        tooltip: {
-			        	enabled: true,
-			        	formatter: function() {
-			        		return  "水池编号： "+this.series.name
-			        		+' <br> 日期： ' +Highcharts.dateFormat('%Y-%m-%d <br> 时间： %H 点',this.x)
-			        		+' <br> 预测水位：  '
-			        		+ this.y +'米';
-			        	}
-			        },
+			        
 			        //显示数据
 			        plotOptions: {
 			        	line: {
@@ -731,32 +860,11 @@ function prehImage(){
 			        		enableMouseTracking: true,
 			        	}, 
 			        },
-			        legend: {
-			        	enabled: true,	//显示图例	
-			        	layout:"vertical",
-			        	align: 'right', //水平方向位置
-			        	verticalAlign: 'top', //垂直方向位置
-			        	x:0,
-			        	y:100		            	            
-			        },
-			        credits: {
-			        	text: '缩放后按住"Shift"键可拖动图像<br />北京市自来水集团',
-			        	href: '',
-			        	position: {
-			        		align: 'right',
-			        		x: -10,
-			        		verticalAlign: 'bottom',
-			        		y: -25
-			        	},
-			        	style: {                            // 样式设置
-			        		cursor: 'default',
-			        		color: 'blue',
-			        		fontSize: '12px'
-			        	}
-			        },	//显示图表版权信息
+			        
+			       
 			        //指定数据列
 			        series: []
-	}//options
+	};//options
 	options.series = new Array();
 	for(var i=0;i<poollist.length;i++)
 	{	
@@ -766,10 +874,9 @@ function prehImage(){
 		options.series[i].type="line";
 	}
 	options.series.sort(keysrt("name",false));
-	chart = new Highcharts.Chart(options);
-	chart.setOptions({
-		
-	});
+	//chart = new Highcharts.Chart(options);
+	$('#imageContainer').highcharts('StockChart',options);
+	
 }//preH;
 
 //左侧时间列表显示
