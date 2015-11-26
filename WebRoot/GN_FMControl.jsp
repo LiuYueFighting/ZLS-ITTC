@@ -750,8 +750,8 @@
         }
         #Wmodel1{
         position: absolute;
-        left:37px;
-        top: 5px;
+        left: 40px;
+        top: 10px;
         z-index:999;
         }
         #btn_model1_1{
@@ -784,10 +784,10 @@
         }
         #Wmodel2{
         position: absolute;
-        left:17px;
-        top: 205px;
+        left: 25px;
+        top: 208px;
         z-index:999;
-        width:97px;
+        width:107px;
         }
         #btn_model2_1{
         position:absolute;
