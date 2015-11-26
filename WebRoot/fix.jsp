@@ -121,13 +121,13 @@
     }
     #chackBox_name{
     position:absolute;
-    top:403px;
-    left:35px;
+    top: 707px;
+    left: 165px;
     }
     #WShow{
     position:absolute;
-    top:373px;
-    left:44px;
+    top: 683px;
+    left: 172px;
     z-index:999;
     }
     .name_ob{
@@ -832,6 +832,7 @@
     document.getElementById("fix_line10").innerHTML="";
 
     document.getElementById("fix_head").innerHTML="请点击需要维修的构筑物";
+    document.getElementById("name_QS").style.background="rgba(0,0,0,0.5)";
     document.getElementById("name_JJC1").style.background="rgba(0,0,0,0.5)";
     document.getElementById("name_HHJ1").style.background="rgba(0,0,0,0.5)";
     document.getElementById("name_HHJ2").style.background="rgba(0,0,0,0.5)";

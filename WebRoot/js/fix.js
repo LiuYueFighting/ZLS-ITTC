@@ -2,7 +2,7 @@ oCanvas.domReady(function () {
 
     var canvas = oCanvas.create({
         canvas: "#canvas_fix",
-        background: "#ccc",
+        background: "#eeeeed",
         fps: 15
     });
     var bg = canvas.display.image({
@@ -12,7 +12,49 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(bg);
 
-    function fix_hh_right(){
+    function fix_qs_right(){
+        clearAll();
+        document.getElementById("fix_head").innerHTML="取水泵房东侧配合方案";
+        document.getElementById("name_QS").style.background="rgba(255,0,0,0.7)";
+        document.getElementById("nextPage").style.display="block";
+        document.getElementById("lastPage").style.display="block";
+
+        setOpenDgree("FM07");
+        setOpenDgree("FM010");
+
+
+        document.getElementById("fix_line1").innerHTML="打开阀门64#";
+        document.getElementById("fix_line2").innerHTML="关闭阀门04#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门07#";
+        document.getElementById("fix_line4").innerHTML="关闭阀门10#";
+        document.getElementById("fix_line5").innerHTML="关闭阀门08#";
+        document.getElementById("fix_line6").innerHTML="打开东侧池排空泵#";
+//        document.getElementById("fix_line6").innerHTML="关闭阀门68#";
+//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+
+        setShow();
+    }
+
+    function fix_qs_left(){
+        clearAll();
+        document.getElementById("fix_head").innerHTML="取水泵房西侧配合方案";
+        document.getElementById("name_QS").style.background="rgba(255,0,0,0.7)";
+        document.getElementById("nextPage").style.display="block";
+        document.getElementById("lastPage").style.display="block";
+
+        setOpenDgree("FM07");
+        setOpenDgree("FM09");
+
+        document.getElementById("fix_line1").innerHTML="打开阀门64#";
+        document.getElementById("fix_line2").innerHTML="关闭阀门03#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门07#";
+        document.getElementById("fix_line4").innerHTML="关闭阀门09#";
+        document.getElementById("fix_line5").innerHTML="打开西侧池排空泵#";
+
+        setShow();
+    }
+
+    function  fix_hh_right(){
         clearAll();
         document.getElementById("fix_head").innerHTML="现有混合井东侧配合方案";
         document.getElementById("name_HHJ1").style.background="rgba(255,0,0,0.7)";
@@ -22,20 +64,18 @@ oCanvas.domReady(function () {
         setOpenDgree("FM015");
         setOpenDgree("FM069");
         setOpenDgree("FM068");
-//        setOpenDgree("FM057");
-//        setOpenDgree("FM023");
-//        setOpenDgree("FM021");
 
         document.getElementById("fix_line1").innerHTML="打开阀门62#";
         document.getElementById("fix_line2").innerHTML="打开阀门65#";
-        document.getElementById("fix_line3").innerHTML="打开东侧池排水泵";
-        document.getElementById("fix_line4").innerHTML="关闭阀门15#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门69#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门15#";
+        document.getElementById("fix_line4").innerHTML="关闭阀门69#";
+        document.getElementById("fix_line5").innerHTML="打开东侧池排水泵";
         document.getElementById("fix_line6").innerHTML="关闭阀门68#";
-//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
 
         setShow();
+
     }
+
     function  fix_hh_left(){
         clearAll();
         document.getElementById("fix_head").innerHTML="现有混合井西侧配合方案";
@@ -51,8 +91,8 @@ oCanvas.domReady(function () {
         document.getElementById("fix_line2").innerHTML="打开阀门65#";
         document.getElementById("fix_line3").innerHTML="打开阀门15#";
         document.getElementById("fix_line4").innerHTML="打开阀门69#";
-        document.getElementById("fix_line5").innerHTML="打开西侧池排水泵";
-        document.getElementById("fix_line6").innerHTML="关闭阀门45#";
+        document.getElementById("fix_line5").innerHTML="关闭阀门45#";
+        document.getElementById("fix_line6").innerHTML="打开西侧池排水泵";
 
         setShow();
 
@@ -60,7 +100,7 @@ oCanvas.domReady(function () {
 
     function fix_hh_new(){
         clearAll();
-        document.getElementById("fix_head").innerHTML="#新建混合井维修闸门配合方案";
+        document.getElementById("fix_head").innerHTML="#新建混合井维修配合方案";
         document.getElementById("name_HHJ2").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM065");
         setOpenDgree("FM066");
@@ -372,13 +412,22 @@ oCanvas.domReady(function () {
     }
 
 
+    $("#name_YC").click(function(){
+        alert("预沉池管线阀门未添加，敬请期待！")
+    });
 
-    $("name_QS").click(function(){
+    $("#name_QS").click(function(){
         if(confirm("是否将“取水泵房”设置为维修状态？")){
-            document.getElementById("fix_head").innerHTML="取水泵房维修闸门配合方案";
+            fix_qs_right();
+            document.getElementById("nextPage").onclick=function(){
+                fix_qs_left();
+            };
+            document.getElementById("lastPage").onclick=function(){
+                fix_qs_right();
+            };
+            document.getElementById("export").href="download/fix-qs.doc";
             setShow();
         }
-
     });
     $("#name_JJC1").click(function(){
         if(confirm("是否将“#1机加池”设置为维修状态？")){
