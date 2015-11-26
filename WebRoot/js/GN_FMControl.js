@@ -74,7 +74,7 @@ oCanvas.domReady(function(){
 //创建画布
     var canvas = oCanvas.create({
         canvas: "#canvas_QS",
-        background: "#ccc",
+        background: "#eeeeed",
         fps:1
     });
     var bg=canvas.display.image({

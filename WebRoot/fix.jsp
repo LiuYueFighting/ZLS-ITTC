@@ -26,7 +26,7 @@
             font-family: '微软雅黑','Source Sans Pro';
             font-size: 15px;
             width: 1600px;
-            height: 1600px;
+            height: 800px;
             margin:0px auto;
         }
         #myContent{
@@ -36,7 +36,9 @@
             width: 1600px;
        }
          #myContent a{
-    color: #ff4400;
+    color: #8dd9ff;
+    background: rgba(0,0,0,0.5);
+    border: 1px solid black;
     }
     #show_hide{
         position:absolute;
@@ -44,63 +46,88 @@
         left:270px;
     }
     #export{
-    position: absolute;
-    top: 550px;
-    left: 120px;
+    position:absolute;
+    left:111px;
+    top:630px;
+
     /* background: rgba(290,140,110,0.5); */
     font-size: 18px;
     }
     #reset{
-    position: absolute;
-    top: 510px;
-    left: 137px;
+    position:absolute;
+    left:130px;
+    top:580px;
+
     /* background: rgba(290,140,110,0.5); */
     font-size: 18px;
     }
     #nextPage{
-    position: absolute;
-    top: 510px;
-    left: 250px;
+    position:absolute;
+    left:10px;
+    top:580px;
+
     /* background: rgba(290,140,110,0.5); */
-    font-size: 16px;
+    font-size: 18px;
     }
     #lastPage{
-    position: absolute;
-    top: 510px;
-    left: 10px;
+    position:absolute;
+    left:260px;
+    top:580px;;
     /* background: rgba(290,140,110,0.5); */
-    font-size: 16px;
+    font-size: 18px;
     }
     .name_Model{
     font-family: '微软雅黑','Arial';
     color:#ff4400;
     font-size: 15px;
     font-weight:bold;
+
+    }
+    #fix-panel{
+    <%--border:1px solid black;--%>
+    height: 672px;
+    width: 312px;
+    position: absolute;
+    left: 1723px;
+    top: 93px;
+    Z-INDEX: 999;
     }
     #panel_heading{
     padding: 10px 15px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    margin-left: 134px;
+    <%--margin-left: 134px;--%>
     height: 72px;
     width: 312px;
-    position: absolute;
-    left: 1580px;
-    top: 93px;
+    <%--position: absolute;--%>
+    <%--left: 1580px;--%>
+    <%--top: 93px;--%>
     Z-INDEX: 999;
     /* border: 1px solid; */
     background: rgba(255,255,255,0.7);
+    border: 3px solid #008fd7;
+    }
+    #fix{
+    <%--margin-left:134px;--%>
+    height:600px;
+    width:312px;
+    <%--position:absolute;--%>
+    <%--left:1580px;--%>
+    <%--top:164px;--%>
+    Z-INDEX:999;
+    display:none;
+    border: 3px solid #008fd7;
     }
     #chackBox_name{
     position:absolute;
-    top:403px;
-    left:35px;
+    top: 707px;
+    left: 165px;
     }
     #WShow{
     position:absolute;
-    top:373px;
-    left:44px;
+    top: 683px;
+    left: 172px;
     z-index:999;
     }
     .name_ob{
@@ -109,156 +136,94 @@
     font-size: 18px;
     font-weight:bold;
     <%--display:none;--%>
+    height: auto;
+    width: auto;
+    z-index: 1000;
+    padding: 4px;
     }
     #name_QS{
     position: absolute;
-    left: 685px;
+    left: 689px;
     top: 70px;
-    height: 50px;
-    width: auto;
-    z-index:999;
     }
     #name_JJC1{
     position: absolute;
-    left: 852px;
-    top: 394px;
-    height: 50px;
-    width: auto;
-    z-index:999;
+    left: 856px;
+    top: 392px;
     }
     #name_JJC2{
     position: absolute;
-    left: 1067px;
-    top: 394px;
-    height: 50px;
-    width: auto;
-    z-index:999;
+    left: 1068px;
+    top: 389px;
     }
     #name_JJC3{
     position: absolute;
-    left:1146px;
-    top: 626px;
-    height: 50px;
-    width: auto;
-    z-index:999;
+    left:1145px;
+    top: 622px;
     }
     #name_VL{
     position: absolute;
-    left: 868px;
-    top: 691px;
-    height: 50px;
-    width: auto;
-    z-index:999;
+    left: 877px;
+    top: 688px;
     }
     #name_HHJ1{
     position: absolute;
-    left:959px;
+    left:975px;
     top: 353px;
-    height: 50px;
-    width: auto;
-    z-index:999;
     }
     #name_HHJ2{
     position: absolute;
     left:1170px;
     top: 363px;
-    height: auto;
-    width: 30px;
-    z-index:999;
     }
     #name_HX{
     position: absolute;
-    left:843px;
-    top: 537px;
-    height: 50px;
-    width: auto;
-    z-index:999;
+    left:849px;
+    top: 533px;
     }
     #name_QSC1{
     position: absolute;
     left:295px;
     top: 489px;
-    height: 50px;
-    width: 150px;
-    z-index:999;
     }
     #name_CY{
     position: absolute;
-    left:590px;
-    top: 663px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_CYC{
-    position: absolute;
-    left:623px;
-    top: 469px;
-    height: auto;
-    width: 30px;
-    z-index:999;
+    left:604px;
+    top: 670px;
     }
     #name_QSC2{
     position: absolute;
-    left:315px;
-    top: 301px;
-    height: 50px;
-    width: auto;
-    z-index:999;
+    left:322px;
+    top: 307px;
     }
     #name_QSC3{
     position: absolute;
-    left:487px;
-    top: 301px;
-    height: 50px;
-    width: auto;
-    z-index:999;
+    left:495px;
+    top: 307px;
     }
     #name_QSC4{
     position: absolute;
-    left:450px;
+    left:447px;
     top: 489px;
-    height: 50px;
-    width: auto;
-    z-index:999;
     }
     #name_TC{
     position: absolute;
-    left:385px;
-    top: 664px;
-    height: 50px;
-    width: auto;
-    z-index:999;
+    left:368px;
+    top: 666px;
     }
     #name_TC1{
     position: absolute;
-    left:490px;
-    top: 664px;
-    height: 50px;
-    width: auto;
-    z-index:999;
+    left:487px;
+    top: 666px;
     }
     #name_YC{
     position: absolute;
-    left:972px;
-    top: 139px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #fix{
-    margin-left:134px;
-    height:600px;
-    width:313px;
-    position:absolute;
-    left:1580px;
-    top:164px;
-    Z-INDEX:999;
-    display:none;
+    left:979px;
+    top: 150px;
     }
     .panel{
-    height:600px;
-    width:313px;
+    height:594px;
+    width:307px;
     background: rgba(255,255,255,0.7);
     color: black;
     }
@@ -283,141 +248,6 @@
     position: absolute;
     left:695px;
     top: 106px;
-    z-index:999;
-    }#name_QS{
-    position: absolute;
-    left: 685px;
-    top: 70px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_JJC1{
-    position: absolute;
-    left: 852px;
-    top: 394px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_JJC2{
-    position: absolute;
-    left: 1067px;
-    top: 394px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_JJC3{
-    position: absolute;
-    left:1146px;
-    top: 626px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_VL{
-    position: absolute;
-    left: 868px;
-    top: 691px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_HHJ1{
-    position: absolute;
-    left:959px;
-    top: 353px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_HHJ2{
-    position: absolute;
-    left:1170px;
-    top: 363px;
-    height: auto;
-    width: 30px;
-    z-index:999;
-    }
-    #name_HX{
-    position: absolute;
-    left:843px;
-    top: 537px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_QSC1{
-    position: absolute;
-    left:295px;
-    top: 489px;
-    height: 50px;
-    width: 150px;
-    z-index:999;
-    }
-    #name_CY{
-    position: absolute;
-    left:590px;
-    top: 663px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_CYC{
-    position: absolute;
-    left:623px;
-    top: 469px;
-    height: auto;
-    width: 30px;
-    z-index:999;
-    }
-    #name_QSC2{
-    position: absolute;
-    left:315px;
-    top: 301px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_QSC3{
-    position: absolute;
-    left:487px;
-    top: 301px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_QSC4{
-    position: absolute;
-    left:450px;
-    top: 489px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_TC{
-    position: absolute;
-    left:380px;
-    top: 664px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_TC1{
-    position: absolute;
-    left:494px;
-    top: 664px;
-    height: 50px;
-    width: auto;
-    z-index:999;
-    }
-    #name_YC{
-    position: absolute;
-    left:972px;
-    top: 139px;
-    height: 50px;
-    width: auto;
     z-index:999;
     }
     #FM07{
@@ -1000,6 +830,23 @@
     document.getElementById("fix_line8").innerHTML="";
     document.getElementById("fix_line9").innerHTML="";
     document.getElementById("fix_line10").innerHTML="";
+
+    document.getElementById("fix_head").innerHTML="请点击需要维修的构筑物";
+    document.getElementById("name_QS").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_JJC1").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_HHJ1").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_HHJ2").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_JJC2").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_JJC3").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_HX").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_VL").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_CY").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_TC").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_TC1").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_QSC1").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_QSC2").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_QSC3").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_QSC4").style.background="rgba(0,0,0,0.5)";
     }
 
 
@@ -1016,30 +863,7 @@
             });
             canvas.addChild(bg);
         });
-    <%--function changeImage(id){--%>
-    <%--var image = document.getElementById(id);--%>
-    <%--if(image.src.match("image/y3.png"))--%>
-    <%--image.src = "image/y2.png";--%>
-    <%--else image.src = "image/y3.png";--%>
-    <%--}--%>
-    <%--function changeInput(){--%>
-    <%--var read =document.getElementById("read").value ;--%>
-    <%--var textFeild =document.getElementById("write");--%>
-    <%--textFeild.innerHTML="进水量："+read+" m3/h";--%>
-    <%--}--%>
-    <%--function setFix(id){--%>
-    <%--&lt;%&ndash;var num = id.substr(2);&ndash;%&gt;--%>
-    <%--&lt;%&ndash;var table =document.getElementById(num);&ndash;%&gt;--%>
-    <%--var image = document.getElementById(id);--%>
-        <%--var fix = confirm("确定维修"+id+"?");--%>
-    <%--if(fix==true){--%>
-        <%--if( image.src.match("image/y3.png")){--%>
-            <%--image.src ="image/y2.png";--%>
-            <%--return;--%>
-        <%--}--%>
-        <%--else image.src ="image/y3.png";--%>
-    <%--}--%>
-    <%--}--%>
+
     function showName(e){
     if(e.checked==true){
     document.getElementById("name_QS" ).style.display="block";
@@ -1214,6 +1038,7 @@
     <p id="WFM050" class="name_FM">050#</p>
     <p id="WFM051" class="name_FM">051#</p>
     </div>
+    <div id="fix-panel">
     <div id="panel_heading">
     <h2 id="fix_head" >请点击需要维修的构筑物</h2>
     <a href="#" id="show_hide" onclick="changeHide()">显示</a>
@@ -1229,29 +1054,33 @@
 
     <!-- Table -->
     <table id="fix_table" class="table" >
-     <thead>
-        <td>#</td>
-        <td>操作</td>
+    <thead>
+    <td>#</td>
+    <td>操作</td>
     </thead>
     <tbody>
-        <tr><td>1</td><td id="fix_line1"></td></tr>
-        <tr><td>2</td><td id="fix_line2"></td></tr>
-        <tr><td>3</td><td id="fix_line3"></td></tr>
-        <tr><td>4</td><td id="fix_line4"></td></tr>
-        <tr><td>5</td><td id="fix_line5"></td></tr>
-        <tr><td>6</td><td id="fix_line6"></td></tr>
-        <tr><td>7</td><td id="fix_line7"></td></tr>
-        <tr><td>8</td><td id="fix_line8"> </td></tr>
-        <tr><td>9</td><td id="fix_line9"></td></tr>
-        <tr><td>10</td><td id="fix_line10"></td></tr>
+    <tr><td>1</td><td id="fix_line1"></td></tr>
+    <tr><td>2</td><td id="fix_line2"></td></tr>
+    <tr><td>3</td><td id="fix_line3"></td></tr>
+    <tr><td>4</td><td id="fix_line4"></td></tr>
+    <tr><td>5</td><td id="fix_line5"></td></tr>
+    <tr><td>6</td><td id="fix_line6"></td></tr>
+    <tr><td>7</td><td id="fix_line7"></td></tr>
+    <tr><td>8</td><td id="fix_line8"> </td></tr>
+    <tr><td>9</td><td id="fix_line9"></td></tr>
+    <tr><td>10</td><td id="fix_line10"></td></tr>
     </tbody>
     </table>
+    <div id="panel_button">
     <a href="#" id="nextPage">西侧</a>
     <a href="#" id="lastPage">东侧</a>
     <a  href="#" id="export">生成方案</a>
     <a  href="#" id="reset" onclick="clearAll()">重置</a>
     </div>
     </div>
+    </div>
+    </div>
+
     <jsp:include page="down.jsp" />
 </div>
 
