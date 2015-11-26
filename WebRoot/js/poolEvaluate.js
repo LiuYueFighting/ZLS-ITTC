@@ -460,7 +460,7 @@ function editPoolEvaluate() {
 function dealSave() {
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#frmEdit").serialize();
-	alert("params is \n" + params);
+//	alert("params is \n" + params);
 	// 得到id的值，为空串表示添加
 	if ($("#ID").val() == "") {
 		$.post("addPoolEvaluate.action", params, function(result) {
@@ -490,10 +490,10 @@ function dealSave() {
 function dealAddSave() {
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#newfrmEdit").serialize();
-	alert("prams is \n" + params);
+//	alert("prams is \n" + params);
 	var paramsArray = params.split("split=&");
-	alert("paramsArray.length is \n" + paramsArray.length);
-	alert("pramsArray is \n" + paramsArray);
+//	alert("paramsArray.length is \n" + paramsArray.length);
+//	alert("pramsArray is \n" + paramsArray);
 	//var strLength;
 	//var tempStr;
 	//var newStr;
@@ -515,7 +515,7 @@ function dealAddSave() {
 	var errorMessage = '';
 	var flag = true;
 	for(var i = 1; i < paramsArray.length; ++i) {
-		alert('Form表单Array' + i + "\n" + paramsArray[i]);
+//		alert('Form表单Array' + i + "\n" + paramsArray[i]);
 		// 得到id的值，为空串表示添加
 		//var re = new RegExp(/^dateTemp=\d{4}-\d{2}\-\d{2}\+\d{2}%3A\d{2}/);
 		//var test = re.test(paramsArray[i]);
@@ -523,8 +523,8 @@ function dealAddSave() {
 		
 		var re_ID = new RegExp(/poolEvaluate.PoolID=MTG_QingS_SC0\d/);
 		var re_t = new RegExp(/poolEvaluate.t=\d{4}-\d{2}\-\d{2}/);
-		alert("test 1 \n" + re_ID.test(paramsArray[i]));
-		alert("test 2 \n" + re_t.test(paramsArray[i]));
+//		alert("test 1 \n" + re_ID.test(paramsArray[i]));
+//		alert("test 2 \n" + re_t.test(paramsArray[i]));
 		var test = re_t.test(paramsArray[i]) && re_ID.test(paramsArray[i]);
 		
 		if(!test) {
