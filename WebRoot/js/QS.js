@@ -92,7 +92,7 @@ oCanvas.domReady(function () {
         x:700,
         y:30,
         origin: { x:"center", y: "top" },
-        font: "bold 36px sans-serif",
+        font: "bold 36px Tahoma",
         fill:"#337ab7",
         text:"取水泵房工艺展示纵剖图"
     });
@@ -104,7 +104,7 @@ oCanvas.domReady(function () {
         origin: { x:"center", y: "top" },
         font: "bold 25px sans-serif",
         fill:"#337ab7",
-        text:"源水来水"
+        text:"来水"
     }).add();
 
     var txt3=canvas.display.text({
@@ -145,14 +145,14 @@ oCanvas.domReady(function () {
 
     $("#btn_start").click(function(){
         if(this.value==1){
-            this.innerText='开始';
+            this.innerHTML='&#xe626;';
             this.value=0;
             canvas.timeline.stop();
         }
         else{
             GD01.paused=1;
             canvas.redraw();
-            this.innerText='暂停';
+            this.innerHTML="&#xe608;";
             this.value=1;
             canvas.timeline.start();
         }
@@ -160,14 +160,15 @@ oCanvas.domReady(function () {
     $("#btn_upS").click(function(){
         canvas.settings.fps+=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
-        //spanText.val=canvas.settings.fps;
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
         console.log(spanText.innerHTML);
     });
     $("#btn_downS").click(function(){
         canvas.settings.fps-=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
         GD01.init();

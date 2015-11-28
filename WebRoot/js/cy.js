@@ -108,7 +108,7 @@ oCanvas.domReady(function () {
      origin: { x:"center", y: "top" },
      font: "bold 36px sans-serif",
      fill:"#337ab7",
-     text:"臭氧池工艺展示纵剖图"
+     text:"臭氧接触池工艺展示纵剖图"
  }).add();
  var txt2=canvas.display.text({
      x:110,
@@ -120,12 +120,33 @@ oCanvas.domReady(function () {
  }).add();
  var txt3=canvas.display.text({
      x:1250,
-     y:505,
+     y:485,
      origin: { x:"center", y: "top" },
      font: "bold 25px sans-serif",
      fill:"#337ab7",
-     text:"臭氧池出水"
+     text:"臭氧接\n触池出水"
  }).add();
+ var pp1=canvas.display.bubble({
+     start:{x:425,y:566},
+     container:SC02,
+     width:50,
+     offset:2,
+     speed:5
+ }).add();
+    var pp2=canvas.display.bubble({
+        start:{x:620,y:566},
+        container:SC03,
+        width:50,
+        offset:2,
+        speed:5
+    }).add();
+    var pp3=canvas.display.bubble({
+        start:{x:903,y:566},
+        container:SC04,
+        width:50,
+        offset:2,
+        speed:5
+    }).add();
 //设置循环
  canvas.setLoop(function () {
      GD01.advance();
@@ -135,6 +156,9 @@ oCanvas.domReady(function () {
      SC03.advance();
      SC04.advance();
      SC05.advance();
+     pp1.advance();
+     pp2.advance();
+     pp3.advance();
      if(GD01.full==1){
          SC01.start=1;
      }
@@ -173,7 +197,7 @@ oCanvas.domReady(function () {
  
  $("#btn_start").click(function(){
 	 if(this.value==1){
-         this.innerText='开始演示';
+         this.innerHTML='&#xe626;';
          this.value=0;
          canvas.timeline.stop();
      }
@@ -181,7 +205,7 @@ oCanvas.domReady(function () {
          GD01.paused=1;
 
          canvas.redraw();
-         this.innerText='暂停演示';
+         this.innerHTML="&#xe608;";
          this.value=1;
          canvas.timeline.start();
      }
@@ -189,14 +213,15 @@ oCanvas.domReady(function () {
     $("#btn_upS").click(function(){
         canvas.settings.fps+=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
-        //spanText.val=canvas.settings.fps;
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
         console.log(spanText.innerHTML);
     });
     $("#btn_downS").click(function(){
         canvas.settings.fps-=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
         GD01.init();
@@ -206,6 +231,9 @@ oCanvas.domReady(function () {
         SC03.init();
         SC04.init();
         SC05.init();
+        pp1.init();
+        pp2.init();
+        pp3.init();
         GD01.paused=1;
     });
 

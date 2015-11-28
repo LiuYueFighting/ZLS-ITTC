@@ -12,15 +12,19 @@ oCanvas.domReady(function () {
 //绘制6个水池
     var SC01=createSC({
         parent:canvas,
-        x:581,y:151,height:27,width:38,trail_flag:0,speed:speed_SC,color:color_SC
+        x:581,y:138,height:40,width:38,trail_flag:0,speed:speed_SC,color:color_SC
     });
     var SC02=createSC({
         parent:canvas,
-        x:528,y:151,height:26,width:37,trail_flag:0,speed:speed_SC,color:color_SC
+        x:528,y:161,height:16,width:37,trail_flag:0,speed:speed_SC,color:color_SC
     });
     var SC03=createSC({
         parent:canvas,
         x:528,y:473,height:160,width:53,trail_flag:0,speed:speed_SC,color:color_SC
+    });
+    var SC031=createSC({
+        parent:canvas,
+        x:528,y:367,height:123,width:340,trail_flag:0,speed:speed_SC*0.35,color:color_SC
     });
     var SC04 = canvas.display.SC_show_down({
         x: 600,
@@ -52,7 +56,7 @@ oCanvas.domReady(function () {
     });
     var SC06=createSC({
         parent:canvas,
-        x:413,y:406,height:84,width:36,trail_flag:0,speed:speed_SC,color:color_SC
+        x:413,y:375,height:113,width:105,trail_flag:0,speed:speed_SC,color:color_SC
     });
 //添加背景图片
     var bg = canvas.display.image({
@@ -159,9 +163,9 @@ oCanvas.domReady(function () {
 //添加文字标注
     var txt1=canvas.display.text({
         x:696,
-        y:26,
+        y:15,
         origin: { x:"center", y: "top" },
-        font: "bold 36px sans-serif",
+        font: "bold 36px Tahoma",
         fill:"#337ab7",
         text:"虹吸滤池工艺展示纵剖图"
     }).add();
@@ -188,10 +192,11 @@ oCanvas.domReady(function () {
         SC01.advance();
         SC02.advance();
         SC03.advance();
+        SC031.advance();
         SC04.advance();
         SC05.advance();
         SC06.advance();
-        if(SC01.full==1){
+        if(SC01.height_now>=SC01.Height*0.75){
             GD01.paused=1;
         }
         if(GD01.full==1){
@@ -211,6 +216,7 @@ oCanvas.domReady(function () {
         }
         if(SC04.full==1){
             SC05.start=1;
+            SC031.start=1;
         }
         if(SC05.full==1){
             SC06.start=1;
@@ -222,7 +228,7 @@ oCanvas.domReady(function () {
             arrow_22.frame=2;
             arrow_23.frame=2;
         }
-        if(SC06.full==1){
+        if(SC06.height_now>=SC06.Height*0.3){
             GD02.paused=1;
         }
         canvas.redraw();
@@ -231,7 +237,7 @@ oCanvas.domReady(function () {
 
     $("#btn_start").click(function(){
         if(this.value==1){
-            this.innerText='开始演示';
+            this.innerHTML='&#xe626;';
             this.value=0;
             canvas.timeline.stop();
         }
@@ -239,7 +245,7 @@ oCanvas.domReady(function () {
             SC01.start=1;
 
             canvas.redraw();
-            this.innerText='暂停演示';
+            this.innerHTML="&#xe608;";
             this.value=1;
             canvas.timeline.start();
         }
@@ -247,14 +253,15 @@ oCanvas.domReady(function () {
     $("#btn_upS").click(function(){
         canvas.settings.fps+=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
-        //spanText.val=canvas.settings.fps;
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
         console.log(spanText.innerHTML);
     });
     $("#btn_downS").click(function(){
         canvas.settings.fps-=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
         GD01.init();

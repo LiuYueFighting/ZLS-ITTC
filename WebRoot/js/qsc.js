@@ -241,7 +241,7 @@ canvas.setLoop(function () {
 //添加按钮函数
 $("#btn_start").click(function(){
 	if(this.value==1){
-        this.innerText='开始演示';
+        this.innerHTML='&#xe626;';
         this.value=0;
         canvas.timeline.stop();
     }
@@ -249,7 +249,7 @@ $("#btn_start").click(function(){
         SC01.start=1;
 
         canvas.redraw();
-        this.innerText='暂停演示';
+        this.innerHTML="&#xe608;";
         this.value=1;
         canvas.timeline.start();
     }
@@ -257,14 +257,15 @@ $("#btn_start").click(function(){
     $("#btn_upS").click(function(){
         canvas.settings.fps+=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
-        //spanText.val=canvas.settings.fps;
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
         console.log(spanText.innerHTML);
     });
     $("#btn_downS").click(function(){
         canvas.settings.fps-=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
         GD01.init();

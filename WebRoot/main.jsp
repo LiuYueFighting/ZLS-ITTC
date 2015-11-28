@@ -10,7 +10,7 @@
 <title>北京自来水集团工艺平台</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/breadcrumb.css"><link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
+<link rel="stylesheet" href="css/breadcrumb.css">
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/ocanvas-2.7.4.min.js"></script>
@@ -23,7 +23,7 @@
     }
     #myPage {
         font-family: '微软雅黑', 'Source Sans Pro';
-        font-size: 13px;
+        font-size: 1px;
         width: 1600px;
         height: 800px;
         margin: 0px auto;
@@ -60,23 +60,7 @@
     width: 120px;
     background-color: #337ab7;
     }
-    .name_Model{
-    font-family: '微软雅黑','Arial';
-    color:#ff4400;
-    font-size: 15px;
-    font-weight:bold;
-    }
-    #checkBox_name{
-    position:absolute;
-    top:363px;
-    left:79px;
-    }
-    #WShow{
-    position:absolute;
-    top:373px;
-    left:9px;
-    z-index:999;
-    }
+
     .name_ob{
     font-family: '微软雅黑','Arial';
     color:#006699;
@@ -232,8 +216,6 @@
     <button id="btn_downS" class="btn btn-info btn-lg btn_main">减速</button>
     <button id="btn_reset" class="btn btn-info btn-lg btn_main">重新开始</button>
     <canvas id="canvas_main" width="1600" height="757"></canvas>
-    <p class="name_Model" id="WShow">显示名称</p>
-    <input id="checkBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked onclick="showName(this)">
     <a href="QS.jsp"  id="name_QS"    style="text-decoration: none" class="name_ob">取水泵房</a>
      <a href="QS.jsp" id="name_QS2"   style="text-decoration: none" class="name_ob">取水泵房</a>
     <a href="JJC.jsp" id="name_JJC1"  style="text-decoration: none" class="name_ob">机加池<br>#1</a>

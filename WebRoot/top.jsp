@@ -19,8 +19,8 @@
                 <li class="nav_bag01"> 动态演示<img src="images/12.png" />
                     <ul class="Secondary_menu">
                         <li class="Secondary_menu_item"><a href="main.jsp">厂平展示</a></li>
-                        <li class="Secondary_menu_item"><a href="ZP_new.jsp">新系列工艺线</a></li>
-                        <li class="Secondary_menu_item"><a href="ZP_old.jsp">旧系列工艺线</a></li>
+                        <li class="Secondary_menu_item"><a href="ZP_new.jsp">新工艺流程图</a></li>
+                        <li class="Secondary_menu_item"><a href="ZP_old.jsp">老工艺流程图</a></li>
                     </ul>
                 </li>
                 <li class="nav_bag02"> 水量控制<img src="images/12.png" />

@@ -711,6 +711,71 @@ var constructor_gd1 = function (settings, core) {
     }, settings);
 };
 oCanvas.registerDisplayObject("GD1", constructor_gd1, "init");
+//随机气泡模型
+//
+var constructor_bubble = function (settings, core) {
+
+    return oCanvas.extend({
+        core: core,
+        shapeType: "rectangular",
+
+        init: function () {
+            this.map=[
+                {r:2,speed:3},
+                {r:3,speed:3},
+                {r:4,speed:3},
+                {r:5,speed:3},
+                {r:6,speed:3},
+                {r:7,speed:3},
+                {r:8,speed:3},
+                {r:9,speed:3},
+                {r:10,speed:3}
+            ];
+                this.points=[];
+                this.height=this.container.height_now;
+
+        },
+        advance: function () {
+            this.height=this.container.height_now;
+                if(Math.random()>0.95){
+                    var new_point={
+                        x:this.start.x+this.offset*2*(Math.random()-0.5),
+                        y:this.start.y-this.map[0].r,
+                        r:this.map[0].r
+                    };
+                    this.points.push(new_point);
+
+                }
+            if(this.points.length>0){
+                for(var i=0;i<this.points.length;i++){
+                    this.points[i].x+=this.offset*2*(Math.random()-0.5);
+                    this.points[i].y-=3;
+                    if(this.start.y-this.points[i].y>this.height-this.points[i].r-33){
+                        this.points.shift();
+                    }
+                }
+            }
+        },
+        draw: function () {
+            var canvas = this.core.canvas;
+
+            canvas.lineJoin = 'round';
+            canvas.lineWidth = this.GDwidth / 2;
+            canvas.strokeStyle = "#fff";
+            if(this.points.length>0){
+                for(var i=0;i<this.points.length;i++){
+                    canvas.beginPath();
+                    canvas.arc(this.points[i].x,this.points[i].y,5,0,2*Math.PI);
+                    canvas.stroke();
+                    canvas.closePath();
+                }
+
+            }
+
+        }
+    }, settings);
+};
+oCanvas.registerDisplayObject("bubble", constructor_bubble, "init");
 //画管道函数,参数：
 //parent,cells,GDwidth,color
 function createGD(options){

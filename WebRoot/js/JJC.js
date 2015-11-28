@@ -293,15 +293,21 @@ oCanvas.domReady(function () {
             arrow_4.start();
             arrow_5.start();
             arrow_6.start();
-            arrow_81.start();
-            arrow_91.start();
+
             arrow_101.start();
             arrow_102.start();
             arrow_111.frame=2;
             arrow_112.frame=2;
         }
+        if(SC01.height_now>=SC01.Height*0.8){
+            arrow_81.start();
+            arrow_91.start();
+        }
         if(SC01.full==1){
         	GD02.paused = 1;
+            arrow_7.start();
+        }
+        if(GD02.full==1){
             arrow_3.frame=2;
             arrow_4.frame=2;
             arrow_5.frame=2;
@@ -310,13 +316,13 @@ oCanvas.domReady(function () {
             arrow_91.frame=2;
             arrow_101.frame=2;
             arrow_102.frame=2;
-            arrow_7.start();
         }
+
         canvas.redraw();
     }).start();
     $("#btn_start").click(function(){
         if(this.value==1){
-            this.innerText='开始';
+            this.innerHTML='&#xe626;';
             this.value=0;
             canvas.timeline.stop();
             sprite.stopAnimation();
@@ -324,7 +330,7 @@ oCanvas.domReady(function () {
         else{
             GD01.paused=1;
             canvas.redraw();
-            this.innerText='暂停';
+            this.innerHTML="&#xe608;";
             this.value=1;
             canvas.timeline.start();
             sprite.startAnimation();
@@ -333,14 +339,15 @@ oCanvas.domReady(function () {
     $("#btn_upS").click(function(){
         canvas.settings.fps+=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
-        //spanText.val=canvas.settings.fps;
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
         console.log(spanText.innerHTML);
     });
     $("#btn_downS").click(function(){
         canvas.settings.fps-=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
         GD01.init();

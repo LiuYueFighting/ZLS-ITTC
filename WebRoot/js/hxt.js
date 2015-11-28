@@ -138,20 +138,20 @@ oCanvas.domReady(function () {
      text:"活性炭池工艺展示纵剖图"
  }).add();
  var txt2=canvas.display.text({
-     x:110,
-     y:425,
+     x:410,
+     y:675,
      origin: { x:"center", y: "top" },
      font: "bold 25px sans-serif",
      fill:"#337ab7",
-     text:"滤池来水"
+     text:"臭氧接触池来水"
  }).add();
  var txt3=canvas.display.text({
-     x:1250,
-     y:505,
+     x:1227,
+     y:585,
      origin: { x:"center", y: "top" },
      font: "bold 25px sans-serif",
      fill:"#337ab7",
-     text:"臭氧池出水"
+     text:"活性炭池出水"
  }).add();
 //设置循环
  canvas.setLoop(function () {
@@ -207,7 +207,7 @@ oCanvas.domReady(function () {
 //添加按钮函数
 $("#btn_start").click(function(){
 	 if(this.value==1){
-         this.innerText='开始演示';
+         this.innerHTML='&#xe626;';
          this.value=0;
          canvas.timeline.stop();
      }
@@ -215,7 +215,7 @@ $("#btn_start").click(function(){
          GD01.paused=1;
 
          canvas.redraw();
-         this.innerText='暂停演示';
+         this.innerHTML="&#xe608;";
          this.value=1;
          canvas.timeline.start();
      }
@@ -223,14 +223,15 @@ $("#btn_start").click(function(){
     $("#btn_upS").click(function(){
         canvas.settings.fps+=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
-        //spanText.val=canvas.settings.fps;
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
         console.log(spanText.innerHTML);
     });
     $("#btn_downS").click(function(){
         canvas.settings.fps-=5;
         var spanText=document.getElementById("speed");
-        spanText.innerHTML=canvas.settings.fps/25+"X";
+        var speed=(canvas.settings.fps/25).toFixed(1);
+        spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
         GD01.init();

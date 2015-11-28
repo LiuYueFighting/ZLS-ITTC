@@ -2,6 +2,9 @@
   <dictionary name="Administrator">
     <words>
       <w>anim</w>
+      <w>iconbtn</w>
+      <w>icontext</w>
+      <w>pointt</w>
       <w>upleft</w>
     </words>
   </dictionary>

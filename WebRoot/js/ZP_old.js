@@ -620,8 +620,8 @@ $(document).ready(function(){
             x:180,
             y:20,
             origin: { x: "center", y: "top" },
-            font: "bold 29px sans-serif",
-            text:"旧工艺线纵剖展示图",
+            font: "bold 29px Tahoma",
+            text:"老工艺流程图",
             fill:color_txt
         });
         var txt_HHJ=txt_QS.clone({

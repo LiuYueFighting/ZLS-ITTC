@@ -10,6 +10,7 @@
     <title>北京自来水集团工艺平台</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="icon_btn/iconfont.css">
     <link rel="stylesheet" href="css/breadcrumb.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -45,78 +46,71 @@
         * {
             font-family: '微软雅黑', 'Arial';
         }
-        #up{
-            height: 25%;
-            background-color: #f1f3f5;
-        }
-        #down{
-            height:75%;
-            background-color: #f1f3f5;
-        }
-        #left {
-            padding-right: 0px;
-            padding-top: 0px;
-            padding-left: 0px;
-            margin-left: 0px;
-            margin-top: 0px;
-            margin-right: 0px;
-        }
-        #right {
-            padding-right: 0px;
-            padding-top: 0px;
-            padding-left: 0px;
-            margin-left: 0px;
-            margin-top: 0px;
-            margin-right: 0px;
-        }
-
-         #btn_start{
-             position: relative;
-             left: 60px;
-         }
-         #btn_downS{
-             position: relative;
-             left: 60px;
-         }
-         #btn_upS{
-             position: relative;
-             left: 60px;
-         }#btn_reset{
-              position: relative;
-              left: 60px;
-          }
-         .btn_main{
-             width: 150px;
-             display: block;
-             background-color: #337ab7;
-         }
-         .btn_list{
-             width: 100%;
-             display: block;
-             color:black;
-             background-color: #ffffff;
-             font-size:18px;
-             margin:0px 5px;
-         }
-		.btn-info.disabled{
-			background-color: #eeeeee;
-		}
-        .flag{
-            font-size: 30px;
-            color: #000000;
-            z-index: 999;
-            width: 150px;
-            height: 40px;
-        }
-        #flag1{
-        position: absolute;
-    left: 138px;
-    top: 533px;
-         }
-    #flag2{
-    position: absolute;
-    left: 1061px;
-    top: 533px;
+    #down{
+    height:100%;
+    background-color: #f1f3f5;
+    }
+    #left {
+    position:relative;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    margin-left: 5%;
+    margin-top: 0px;
+    margin-right: 0px;
+    }
+    #right {
+    padding-right: 0;
+    padding-top: 0;
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 0;
+    margin-right:0;
+    }
+    #btn_group_container{
+    position:absolute;
+    bottom:5px;
+    width:100%;
+    height:500px;
+    overflow:hidden;
+    }
+    #btn_group_both{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100px;
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+    }
+    #btn_group_both:hover{
+    top:-50px;
+    }
+    #btn_group_up{
+    width:100%;
+    height:500px;
+    }
+    #btn_group{
+    margin:0 auto;
+    position:absolute;
+    top:500px;
+    left:40%;
+    }
+    #btn_group i{
+    margin-left:10px;
+    }
+    .btn_list{
+    width: 100%;
+    display: block;
+    color:black;
+    background-color: #ffffff;
+    font-size:18px;
+    margin:0 5px;
+    }
+    #list_group{
+    position:absolute;
+    top:25%;
     }
     </style>
 </head>
@@ -131,24 +125,24 @@
     
         <div id="left" class="col-lg-10" style="height: 753px">
             <canvas id="canvas_qsc" width="1400" height="775"></canvas>
+    <div id="btn_group_container">
+    <div id="btn_group_both">
+    <div id="btn_group_up"></div>
+    <div id="btn_group" class="list-group">
+    <i id="btn_downS" class="icon iconfont iconbtn">&#xe617;</i>
+    <i  id="btn_start" class="icon iconfont iconbtn">&#xe626;</i>
+    <i id="btn_upS" class="icon iconfont iconbtn">&#xe616;</i>
+    <i id="btn_reset" class="icon iconfont iconbtn">&#xe690;</i>
+    <i id="speed" class="icon iconfont icontext">1.0X</i>
+    </div>
+    </div>
+
+    </div>
         </div>
-        <div id="right" class="col-lg-2" style="height: 753px">
-            <div id="up">
-                <ul class="list-group">
-                    <li class="list-group-item"><span class="badge" id="speed">1.0X</span>当前演示速度：</li>
-                    <li class="list-group-item"><span class="badge" >暂未添加</span>当前水位情况：</li>
-                    <li class="list-group-item"><span class="badge" >暂未添加</span>当前水流量：</li>
-                    <li class="list-group-item"><span class="badge" >暂未添加</span>当前负载情况：</li>
-                    <li class="list-group-item"><span class="badge" >暂未添加</span>预警信息：</li>
-                </ul>
-            </div>
+        <div id="right" class="col-lg-1" style="height: 753px">
+
             <div id="down">
-                <div id="btn_group" class="list-group">
-                    <button id="btn_start" class="btn btn-info btn-lg btn_main" value="0">开始演示</button>
-                    <button id="btn_upS" class="btn btn-info btn-lg btn_main">速度加</button>
-                    <button id="btn_downS" class="btn btn-info btn-lg btn_main">速度减</button>
-                    <button id="btn_reset" class="btn btn-info btn-lg btn_main">重新开始</button>
-                </div>
+
                 <div id="list_group" class="list-group">
                     <button  class="btn btn-info  btn_list" onclick="window.location.href='QS.jsp'" >取水泵房</button>
                     <button  class="btn btn-info  btn_list" onclick="window.location.href='hhj.jsp'" >混合井</button>
@@ -158,7 +152,7 @@
                     <button  class="btn btn-info  btn_list" onclick="window.location.href='cy.jsp'" >臭氧池</button>
                     <button  class="btn btn-info  btn_list" onclick="window.location.href='hxt.jsp'">活性炭池</button>
                     <button class="btn btn-info  btn_list active" onclick="window.location.href='qsc.jsp'">清水池</button>
-                    <button class="btn btn-info  btn_list " onclick="window.location.href='main.jsp'">厂平图</button>
+                    <button class="btn btn-info  btn_list " onclick="window.location.href='main.jsp'">膜车间</button>
                  </div>
 
             </div>
