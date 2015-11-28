@@ -15,7 +15,8 @@ oCanvas.domReady(function () {
     function fix_qs_right(){
         clearAll();
         document.getElementById("fix_head").innerHTML="取水泵房东侧配合方案";
-        document.getElementById("name_QS").style.color="red";
+        document.getElementById("name_QS").style.color="#8dd9ff";
+        document.getElementById("name_QS").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
 
@@ -38,6 +39,7 @@ oCanvas.domReady(function () {
     function fix_qs_left(){
         clearAll();
         document.getElementById("fix_head").innerHTML="取水泵房西侧配合方案";
+        document.getElementById("name_QS").style.color="#8dd9ff";
         document.getElementById("name_QS").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
@@ -57,6 +59,7 @@ oCanvas.domReady(function () {
     function  fix_hh_right(){
         clearAll();
         document.getElementById("fix_head").innerHTML="现有混合井东侧配合方案";
+        document.getElementById("name_HHJ1").style.color="#8dd9ff";
         document.getElementById("name_HHJ1").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
@@ -79,6 +82,7 @@ oCanvas.domReady(function () {
     function  fix_hh_left(){
         clearAll();
         document.getElementById("fix_head").innerHTML="现有混合井西侧配合方案";
+        document.getElementById("name_HHJ1").style.color="#8dd9ff";
         document.getElementById("name_HHJ1").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
@@ -101,6 +105,7 @@ oCanvas.domReady(function () {
     function fix_hh_new(){
         clearAll();
         document.getElementById("fix_head").innerHTML="#新建混合井维修配合方案";
+        document.getElementById("name_HHJ2").style.color="#8dd9ff";
         document.getElementById("name_HHJ2").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM065");
         setOpenDgree("FM066");
@@ -115,6 +120,7 @@ oCanvas.domReady(function () {
     function fix_jjc1(){
         clearAll();
         document.getElementById("fix_head").innerHTML="#1机加池维修闸门配合方案";
+        document.getElementById("name_JJC1").style.color="#8dd9ff";
         document.getElementById("name_JJC1").style.background="rgba(255,0,0,0.7)";
 
 
@@ -138,6 +144,7 @@ oCanvas.domReady(function () {
     function fix_jjc2(){
         clearAll();
         document.getElementById("fix_head").innerHTML="#2机加池维修闸门配合方案";
+        document.getElementById("name_JJC2").style.color="#8dd9ff";
         document.getElementById("name_JJC2").style.background="rgba(255,0,0,0.7)";
 
         setOpenDgree("FM015");
@@ -161,6 +168,7 @@ oCanvas.domReady(function () {
     function fix_jjc3(){
         clearAll();
         document.getElementById("fix_head").innerHTML="#3机加池维修闸门配合方案";
+        document.getElementById("name_JJC3").style.color="#8dd9ff";
         document.getElementById("name_JJC3").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM065");
         setOpenDgree("FM066");
@@ -184,6 +192,7 @@ oCanvas.domReady(function () {
     function fix_hx_right(){
         clearAll();
         document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门配合方案";
+        document.getElementById("name_HX").style.color="#8dd9ff";
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
@@ -205,6 +214,7 @@ oCanvas.domReady(function () {
     function  fix_hx_left(){
         clearAll();
         document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门配合方案";
+        document.getElementById("name_HX").style.color="#8dd9ff";
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
@@ -226,6 +236,7 @@ oCanvas.domReady(function () {
     function fix_vl(){
         clearAll();
         document.getElementById("fix_head").innerHTML="V型滤池维修闸门配合方案";
+        document.getElementById("name_VL").style.color="#8dd9ff";
         document.getElementById("name_VL").style.background="rgba(255,0,0,0.7)";
 
         setOpenDgree("FM052");
@@ -244,6 +255,7 @@ oCanvas.domReady(function () {
     function fix_cy_right(){
         clearAll();
         document.getElementById("fix_head").innerHTML="东侧臭氧池闸门配合方案";
+        document.getElementById("name_CY").style.color="#8dd9ff";
         document.getElementById("name_CY").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
@@ -267,6 +279,7 @@ oCanvas.domReady(function () {
     function  fix_cy_left(){
         clearAll();
         document.getElementById("fix_head").innerHTML="西侧臭氧池闸门配合方案";
+        document.getElementById("name_CY").style.color="#8dd9ff";
         document.getElementById("name_CY").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
@@ -289,6 +302,7 @@ oCanvas.domReady(function () {
     function fix_tc_old(){
         clearAll();
         document.getElementById("fix_head").innerHTML="现有碳池闸门配合方案";
+        document.getElementById("name_TC").style.color="#8dd9ff";
         document.getElementById("name_TC").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM056");
         setOpenDgree("FM057");
@@ -314,6 +328,7 @@ oCanvas.domReady(function () {
     function fix_tc_new(){
         clearAll();
         document.getElementById("fix_head").innerHTML="新建碳池闸门配合方案";
+        document.getElementById("name_TC1").style.color="#8dd9ff";
         document.getElementById("name_TC1").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM056");
         setOpenDgree("FM059");
@@ -340,6 +355,7 @@ oCanvas.domReady(function () {
     function fix_qsc1(){
         clearAll();
         document.getElementById("fix_head").innerHTML="1#清水池施工空池倒泵方案";
+        document.getElementById("name_QSC2").style.color="#8dd9ff";
         document.getElementById("name_QSC2").style.background="rgba(255,0,0,0.7)";
 
         document.getElementById("fix_line1").innerHTML="关闭东、西池间连通闸27#";
@@ -362,6 +378,7 @@ oCanvas.domReady(function () {
     function fix_qsc2(){
         clearAll();
         document.getElementById("fix_head").innerHTML="2#清水池施工空池倒泵方案";
+        document.getElementById("name_QSC3").style.color="#8dd9ff";
         document.getElementById("name_QSC3").style.background="rgba(255,0,0,0.7)";
 
         document.getElementById("fix_line1").innerHTML="关闭东、西池间连通闸27#";
@@ -382,6 +399,7 @@ oCanvas.domReady(function () {
     function  fix_qsc3(){
         clearAll();
         document.getElementById("fix_head").innerHTML="#3清水池维修闸门配合方案";
+        document.getElementById("name_QSC1").style.color="#8dd9ff";
         document.getElementById("name_QSC1").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM046");
         setOpenDgree("FM047");
@@ -399,6 +417,7 @@ oCanvas.domReady(function () {
     function  fix_qsc4(){
         clearAll();
         document.getElementById("fix_head").innerHTML="#4清水池维修闸门配合方案";
+        document.getElementById("name_QSC4").style.color="#8dd9ff";
         document.getElementById("name_QSC4").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM049");
         setOpenDgree("FM051");
@@ -412,8 +431,14 @@ oCanvas.domReady(function () {
     }
 
 
-    $("#name_YC").click(function(){
-        alert("预沉池管线阀门未添加，敬请期待！")
+    $("#fix_head").bind("mouseenter", function () {
+        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        canvas.redraw();
+    }).bind("mouseleave", function () {
+        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
     });
 
     $("#name_QS").click(function(){
