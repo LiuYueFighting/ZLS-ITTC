@@ -37,8 +37,8 @@
             width: 1600px;
        }
          #myContent a{
-    color: #8dd9ff;
-    background: rgba(0,0,0,0.5);
+    color: #283a45;
+    background: rgba(255,255,255,0.5);
     border: 1px solid black;
     }
     #show_hide{
@@ -92,6 +92,8 @@
     Z-INDEX: 999;
     }
     #panel_heading{
+    cursor: pointer;
+    vertical-align: middle;
     padding: 5px 5px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
@@ -100,9 +102,16 @@
     width: 181px;
     Z-INDEX: 999;
     /* border: 1px solid; */
-    background: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.5);
     border: 2px solid #008fd7;
     text-align: center;
+    }
+    #panel_heading:hover{
+    background: rgba(194,215,245,0.5);
+    }
+    #panel_heading h2{
+    color: #283a45;
+    font-weight: bolder;
     }
     #fix{
     height: 535px;
@@ -823,23 +832,39 @@
     document.getElementById("fix_line8").innerHTML="";
     document.getElementById("fix_line9").innerHTML="";
     document.getElementById("fix_line10").innerHTML="";
+    changeHide();
 
     document.getElementById("fix_head").innerHTML="请点击需要维修的构筑物";
-    document.getElementById("name_QS").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_JJC1").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_HHJ1").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_HHJ2").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_JJC2").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_JJC3").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_HX").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_VL").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_CY").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_TC").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_TC1").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_QSC1").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_QSC2").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_QSC3").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_QSC4").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_QS").style.color="#283a45";
+    document.getElementById("name_JJC1").style.color="#283a45";
+    document.getElementById("name_HHJ1").style.color="#283a45";
+    document.getElementById("name_HHJ2").style.color="#283a45";
+    document.getElementById("name_JJC2").style.color="#283a45";
+    document.getElementById("name_JJC3").style.color="#283a45";
+    document.getElementById("name_HX").style.color="#283a45";
+    document.getElementById("name_VL").style.color="#283a45";
+    document.getElementById("name_CY").style.color="#283a45";
+    document.getElementById("name_TC").style.color="#283a45";
+    document.getElementById("name_TC1").style.color="#283a45";
+    document.getElementById("name_QSC1").style.color="#283a45";
+    document.getElementById("name_QSC2").style.color="#283a45";
+    document.getElementById("name_QSC3").style.color="#283a45";
+    document.getElementById("name_QSC4").style.color=" #283a45";
+    document.getElementById("name_QS").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_JJC1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_HHJ1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_HHJ2").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_JJC2").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_JJC3").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_VL").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_CY").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_TC").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_TC1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC2").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC3").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC4").style.background="rgba(255,255,255,0.5)";
     }
 
 
@@ -904,19 +929,19 @@
     }
     function setShow(){
     showList();
-    document.getElementById("show_hide").innerHTML='隐藏';
+    <%--document.getElementById("show_hide").innerHTML='隐藏';--%>
     hide=0;
     }
     function changeHide(){
         if(hide==1){
             showList();
-            document.getElementById("show_hide").innerHTML='隐藏';
+            <%--document.getElementById("show_hide").innerHTML='隐藏';--%>
             hide=0;
             return;
         }
         else if(hide==0){
             hideList();
-            document.getElementById("show_hide").innerHTML='显示';
+            <%--document.getElementById("show_hide").innerHTML='显示';--%>
             hide=1;
             return;
         }
@@ -1032,11 +1057,11 @@
     <p id="WFM051" class="name_FM">051#</p>
     </div>
     <div id="fix-panel">
-    <div id="panel_heading">
+    <button type="button" id="panel_heading" onclick="changeHide()">
     <h2 id="fix_head" >请点击需要维修的构筑物</h2>
-    <a href="#" id="show_hide" onclick="changeHide()">显示</a>
+    <%--<a href="#" id="show_hide" onclick="changeHide()">显示</a>--%>
 
-    </div>
+    </button>
     <div id="fix">
     <div class="panel panel-default">
     <!-- Default panel contents -->
