@@ -15,7 +15,7 @@ oCanvas.domReady(function () {
     function fix_qs_right(){
         clearAll();
         document.getElementById("fix_head").innerHTML="取水泵房东侧配合方案";
-        document.getElementById("name_QS").style.background="rgba(255,0,0,0.7)";
+        document.getElementById("name_QS").style.color="red";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
 

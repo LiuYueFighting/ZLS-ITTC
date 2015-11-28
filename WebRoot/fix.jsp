@@ -37,8 +37,8 @@
             width: 1600px;
        }
          #myContent a{
-    color: #8dd9ff;
-    background: rgba(0,0,0,0.5);
+    color: #283a45;
+    background: rgba(255,255,255,0.5);
     border: 1px solid black;
     }
     #show_hide{
@@ -825,21 +825,21 @@
     document.getElementById("fix_line10").innerHTML="";
 
     document.getElementById("fix_head").innerHTML="请点击需要维修的构筑物";
-    document.getElementById("name_QS").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_JJC1").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_HHJ1").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_HHJ2").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_JJC2").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_JJC3").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_HX").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_VL").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_CY").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_TC").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_TC1").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_QSC1").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_QSC2").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_QSC3").style.background="rgba(0,0,0,0.5)";
-    document.getElementById("name_QSC4").style.background="rgba(0,0,0,0.5)";
+    document.getElementById("name_QS").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_JJC1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_HHJ1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_HHJ2").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_JJC2").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_JJC3").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_VL").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_CY").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_TC").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_TC1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC2").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC3").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC4").style.background="rgba(255,255,255,0.5)";
     }
 
 
