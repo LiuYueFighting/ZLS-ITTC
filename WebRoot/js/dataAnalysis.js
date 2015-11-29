@@ -1,38 +1,180 @@
 //JQuery的入口
 $(function() {
-	listDataAnalysis();
+	dealSearch();
 });
-
-var addCount = 0;
+var tlist = new Array();
 var strDate = '';
+var searchMode = 0;
 $(document).ready(function() {
 	$('#addButton').click(function(event) {
 		event.preventDefault();
-		//++addCount;
 		var _len = $("#tab tr").length;
 		//alert(_len);
 		$('#tab').append(
 			"<tr id='tr" + _len + "'>"
-			+ "<td><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
-			+ "<td><input type='hidden' id='dateTempAdd' name='dateTemp' style='width:1px;height:25px' /></td>"
-			+ "<td><input type='hidden' id='IDAdd' name='dataAnalysis.ID' style='width:1px;height:25px' /></td>"
-			+ "<td id='indexNum" + _len + "'>" + _len + "</td>"
-			+ "<td><input name='dataAnalysis.t' id='tAdd' type='datetime-local' style='width:200px;height:25px'/></td>"
-			+ "<td><select name='dataAnalysis.PoolID' id='PoolIDAdd' style='width:200px;height:25px'><option value='MTG_QingS_SC01' selected='selected'>MTG_QingS_SC01</option><option value='MTG_QingS_SC02'>MTG_QingS_SC02</option><option value='MTG_QingS_SC03'>MTG_QingS_SC03</option></select></td>"
-			+ "<td><input style='width:100px;height:25px' id='InV' name='dataAnalysis.InV' data-options='min:0,precision:0,' /></td>"
-			+ "<td><input style='width:100px;height:25px' id='OutV' name='dataAnalysis.OutV' data-options='min:0,precision:0' /></td>"
-			+ "<td><input style='width:100px;height:25px' id='HXOutV' name='dataAnalysis.HXOutV' data-options='min:0,precision:0'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='LCOutV' name='dataAnalysis.LCOutV' data-options='min:0,precision:0'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='TCOutV' name='dataAnalysis.TCOutV' data-options='min:0,precision:0' /></td>"
-			+ "<td><input style='width:100px;height:25px' id='JJOutV' name='dataAnalysis.JJOutV' data-options='min:0,precision:0'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='HLInV' name='dataAnalysis.HLInV' data-options='min:0,precision:0'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='Storage' name='dataAnalysis.Storage'  data-options='precision:0'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='PreH' name='dataAnalysis.PreH' data-options='precision:2'/></td>"
-			+ "<td id='delete" + _len + "'><a href='#' onclick='deltr(" + _len + ",event)'>删除</a></td>"
+			+ "<td style='width:1px;height:26px'><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
+			+ "<td style='width:1px;height:26px'><input type='hidden' id='dateTempAdd' name='dateTemp' style='width:1px;height:25px' /></td>"
+			+ "<td style='width:1px;height:26px'><input type='hidden' id='IDAdd' name='dataAnalysis.ID' style='width:1px;height:25px' /></td>"
+			+ "<td id='indexNum" + _len + "'style='text-align:center; width:40px;height:26px'>" + _len + "</td>"
+			+ "<td style='width:152px;height:26px'><input name='dataAnalysis.t' id='tAdd' type='datetime-local' style='width:150px;height:25px'/></td>"
+			+ "<td style='width:102px;height:26px'><select name='dataAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'><option value='MTG_QingS_SC01' selected='selected'>清水池01#</option><option value='MTG_QingS_SC02'>清水池02#</option><option value='MTG_QingS_SC03'>清水池03#</option></select></td>"
+			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='InV' name='dataAnalysis.InV' data-options='min:0,precision:0,' /></td>"
+			+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OutV' name='dataAnalysis.OutV' data-options='min:0,precision:0' /></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='HXOutV' name='dataAnalysis.HXOutV' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='LCOutV' name='dataAnalysis.LCOutV' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='TCOutV' name='dataAnalysis.TCOutV' data-options='min:0,precision:0' /></td>"
+			+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='JJOutV' name='dataAnalysis.JJOutV' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='HLInV' name='dataAnalysis.HLInV' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:52px;height:26px'><input style='width:50px;height:25px' id='Storage' name='dataAnalysis.Storage'  data-options='precision:0'/></td>"
+			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='PreH' name='dataAnalysis.PreH' data-options='precision:2'/></td>"
+			+ "<td id='delete" + _len + "'style='width:40px;height:26px'><a href='#' onclick='deltr(" + _len + ",event)'>删除</a></td>"
 			+ "</tr>");
+	});
+	
+	$('.radioItem').change(function() {
+		//var $selectedValue = $('input[name="chooseIndexButton"]:checked').val();
+		//alert("$selectedValue = " + $selectedValue);
+		hideImportPanel();
+		searchMode = 0;
+		dealSearch();
 	});
 });
 
+
+$(document).ready(function() {
+	var count = 0;
+	$('#menu').click(function() {
+		hideImportPanel();
+		count += 1;
+		if(count % 2 == 1) {
+			$('#menu').text("隐藏");
+			$('#add').animate({
+				'left': '120px',
+				'top': '0'
+			},{
+				//duration: 'slow'
+			});
+			$('#edit').animate({
+				'left': '60px',
+				'top': '16px'
+			},{
+				//duration: 'slow'
+			});	
+			$('#delete').animate({
+				'left': '16px',
+				'top': '60px'
+			},{
+				//duration: 'slow'
+			});	
+			$('#search').animate({
+				'left': '0px',
+				'top': '120px'
+			},{
+				//duration: 'slow'
+			});
+			$('#export').animate({
+				'left': '16px',
+				'top': '180px'
+			},{
+				//duration: 'slow'
+			});
+			$('#import').animate({
+				'left': '60px',
+				'top': '224px'
+			},{
+				//duration: 'slow'
+			});
+			$('#template').animate({
+				'left': '120px',
+				'top': '250px'
+			},{
+				//duration: 'slow'
+			});
+
+		} else {
+			$('#menu').text("菜单");
+			$('#add').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});
+			$('#edit').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});	
+			$('#delete').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});	
+			$('#search').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'fast'
+			});
+			$('#export').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});
+			$('#import').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});
+			$('#template').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});
+		}
+		
+	});
+	$('#add').click(function() {
+		hideImportPanel();
+		addDataAnalysis();
+	});
+	$('#edit').click(function() {
+		hideImportPanel();
+		editDataAnalysis();
+	});
+	$('#delete').click(function() {
+		hideImportPanel();
+		deleteDataAnalysis();
+	});
+	$('#search').click(function() {
+		hideImportPanel();
+		searchMode = 1;
+		searchDataAnalysis();
+	});
+	$('#export').click(function() {
+		hideImportPanel();
+		export2excel();
+	});
+	$('#import').click(function() {
+		$('#tab_export').css('display','block');
+	});
+	//$('#template').click(function() {
+	//	$('#download').click();
+	//});
+	$('#btn-cancel').click(function() {
+		$('#tab_export').css('display','none');
+	});
+});
+
+function hideImportPanel() {
+	$('#import').text('导入');
+	$('#tab_export').css('display','none');
+	//alert($('#tab_export').css('display'));
+}
 
 var deltr = function(index, event) {
 	event.preventDefault();
@@ -41,22 +183,22 @@ var deltr = function(index, event) {
 	for(var i = index + 1; i < _len; ++i) {
 		//alert("i = " + i + " _len = " + _len);
 		$("tr[id='tr" + i + "']").replaceWith("<tr id='tr" + (i-1) + "'>"
-				+ "<td><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
-				+ "<td><input type='hidden' id='dateTempAdd' name='dateTemp' style='width:1px;height:25px' /></td>"
-				+ "<td><input type='hidden' id='IDAdd' name='dataAnalysis.ID' style='width:1px;height:25px' /></td>"
-				+ "<td id='indexNum" + (i-1) + "''>" + (i-1) + "</td>"
-				+ "<td><input name='dataAnalysis.t' id='tAdd' type='datetime-local' style='width:200px;height:25px'/></td>"
-				+ "<td><select name='dataAnalysis.PoolID' id='PoolIDAdd' style='width:200px;height:25px'><option value='MTG_QingS_SC01' selected='selected'>MTG_QingS_SC01</option><option value='MTG_QingS_SC02'>MTG_QingS_SC02</option><option value='MTG_QingS_SC03'>MTG_QingS_SC03</option></select></td>"
-				+ "<td><input style='width:100px;height:25px' id='InV' name='dataAnalysis.InV' data-options='min:0,precision:0,' /></td>"
-				+ "<td><input style='width:100px;height:25px' id='OutV' name='dataAnalysis.OutV' data-options='min:0,precision:0' /></td>"
-				+ "<td><input style='width:100px;height:25px' id='HXOutV' name='dataAnalysis.HXOutV' data-options='min:0,precision:0'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='LCOutV' name='dataAnalysis.LCOutV' data-options='min:0,precision:0'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='TCOutV' name='dataAnalysis.TCOutV' data-options='min:0,precision:0' /></td>"
-				+ "<td><input style='width:100px;height:25px' id='JJOutV' name='dataAnalysis.JJOutV' data-options='min:0,precision:0'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='HLInV' name='dataAnalysis.HLInV' data-options='min:0,precision:0'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='Storage' name='dataAnalysis.Storage'  data-options='precision:0'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='PreH' name='dataAnalysis.PreH' data-options='precision:2'/></td>"
-				+ "<td id='delete" + (i-1) + "'><a href='#' onclick='deltr(" + (i-1) + ",event)'>删除</a></td>"
+				+ "<td style='width:1px;height:26px'><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
+				+ "<td style='width:1px;height:26px'><input type='hidden' id='dateTempAdd' name='dateTemp' style='width:1px;height:25px' /></td>"
+				+ "<td style='width:1px;height:26px'><input type='hidden' id='IDAdd' name='dataAnalysis.ID' style='width:1px;height:25px' /></td>"
+				+ "<td id='indexNum" + (i-1) + "'style='text-align:center; width:40px;height:26px'>" + (i-1) + "</td>"
+				+ "<td style='width:152px;height:26px'><input name='dataAnalysis.t' id='tAdd' type='datetime-local' style='width:150px;height:25px'/></td>"
+				+ "<td style='width:102px;height:26px'><select name='dataAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'><option value='MTG_QingS_SC01' selected='selected'>清水池01#</option><option value='MTG_QingS_SC02'>清水池02#</option><option value='MTG_QingS_SC03'>清水池03#</option></select></td>"
+				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='InV' name='dataAnalysis.InV' data-options='min:0,precision:0,' /></td>"
+				+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OutV' name='dataAnalysis.OutV' data-options='min:0,precision:0' /></td>"
+				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='HXOutV' name='dataAnalysis.HXOutV' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='LCOutV' name='dataAnalysis.LCOutV' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='TCOutV' name='dataAnalysis.TCOutV' data-options='min:0,precision:0' /></td>"
+				+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='JJOutV' name='dataAnalysis.JJOutV' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='HLInV' name='dataAnalysis.HLInV' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:52px;height:26px'><input style='width:50px;height:25px' id='Storage' name='dataAnalysis.Storage'  data-options='precision:0'/></td>"
+				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='PreH' name='dataAnalysis.PreH' data-options='precision:2'/></td>"
+				+ "<td id='delete" + (i-1) + "'style='width:40px;height:26px'><a href='#' onclick='deltr(" + (i-1) + ",event)'>删除</a></td>"
 				+ "</tr>");
 	}
 }
@@ -69,15 +211,15 @@ var tburl = 'searchDataAnalysis.action';
 var datalist = new Array();
 var title="清水池水位计算表" + strDate;
 //加载项目列表
-function listDataAnalysis() {
+function listDataAnalysis(data) {
 	$("#dataAnalysisbody").datagrid({
 		title: title,
-		width : "1050",
+		width : "1300",
 		height : "300",
 //		iconCls : 'icon-save', // 表格左上角的图标样式
 		/*url : 'listDataAnalysis.action', // 访问服务器的地址，要求返回JSON对象*/
-		url:tburl,
-//		loadData:datalist,//加载
+		//url:tburl,
+		data:data,//加载
 		rownumbers : true, // 在最前面显示行号
 		fitColumns : true, // 自动适应列宽
 		striped : true, // 隔行变色
@@ -91,65 +233,66 @@ function listDataAnalysis() {
 		
 		idField : 'ID', // 主键属性
 		onLoadSuccess: function(data){
-//			if(data.total>0){
-//				datalist = eval(data).rows;
-//				prehImage(); //作图
-//			}else{
-//				alert('没有相关数据！');
-//			}
 			if(data.rows!=datalist){		
 				datalist = eval(data).rows;
 				prehImage(); //作图			
 			}
-},
-		columns : [ [ /*{field : 'ID', title : '编号', align :'center', sortable : true,width:80},*/
-		              {field : 'poolID', title : '水池编号', align : 'center', sortable : true,width:150,
-		            	  formatter:function(value){
-		            		    return formPoolID(value);
-		            	  }},
-		              {field : 't', title : '时间',align : 'center', sortable : true, width:150,
-		            	  formatter : function(value) {
-		            		  //显示日期到小时
+		},
+		columns : [[
+		            {field : 't', title : '时间',align : 'center', sortable : true, width:110,
+		            	  formatter : function(value) { //显示日期到小时
 		            		  return value.substring(0, 10)+" "+value.substring(11,13)+"时";
-		            	  }},
-		            	  {field : 'inV', title : '总来水量', align :'center', sortable : true, orderwidth:80},
-		            	  {field : 'outV', title : '出水量', align : 'center', sortable : true,width:80},
-		            	  {field : 'HXOutV', title : '洗虹吸滤池', align :'center', sortable : true,width:100},
-		            	  {field : 'LCOutV', title : '洗V型滤池', align : 'center', sortable : true,width:100},
-		            	  {field : 'TCOutV', title : '炭池反冲洗', align :'center', sortable : true,width:100},
-		            	  {field : 'JJOutV', title : '机加池排泥', align : 'center', sortable : true,width:100},
-		            	  {field : 'HLInV', title : '回流进水', align : 'center', sortable : true,width:80},
-		            	  {field : 'storage',	title : '蓄水量',	align : 'center',sortable : true,width:80},
-		            	  {field : 'preH', title : '预测水位', align :'center', sortable : true,width:80,
-		            		  //只显示两位小数
-		            		  formatter : function(value) {
-		            			  return value.toFixed(2);
-		            		  }}
-		            	  ] ],
-
-		 onDblClickRow: function (rowIndex,rowData){
-			 			    editDataAnalysis();
-		            	  },
-		
-		 onHeaderContextMenu: function(e, field){
-		            		  e.preventDefault();
-		            		  if (!cmenu){
-		            			  createColumnMenu();
-		            		  }
-		            		  cmenu.menu('show', {
-		            			  left:e.pageX,
-		            			  top:e.pageY
-		            		  });
 		            	  }
+		            },
+		            {field : 'poolID', title : '水池编号', align : 'center', sortable : true,width:80,
+			            	  formatter:function(value){
+			            		    return formPoolID(value);
+			            	  }
+		            },
+		            {field : 'inV', title : '总来水量', align :'center', sortable : true, width:80},
+		            {field : 'outV', title : '出水量', align : 'center', sortable : true,width:70},
+		            {field : 'HXOutV', title : '虹吸滤池反冲洗', align :'center', sortable : true,width:105},
+		            {field : 'LCOutV', title : 'V型滤池反冲洗', align : 'center', sortable : true,width:105},
+		            {field : 'TCOutV', title : '炭池反冲洗', align :'center', sortable : true,width:90},
+		            {field : 'JJOutV', title : '机加池排泥', align : 'center', sortable : true,width:90},
+		            {field : 'HLInV', title : '回流进水', align : 'center', sortable : true,width:80},
+		            {field : 'storage',	title : '蓄水量',	align : 'center',sortable : true,width:70},
+		            {field : 'preH', title : '预测水位', align :'center', sortable : true,width:80,
+		            	formatter : function(value) {  //只显示两位小数
+		            			  return value.toFixed(2);
+		            	},
+		            	styler: function(value) {
+		            		if(value <= 2) {
+		            			return 'background-color:#FFFF00;font-weight:bolder;border:2px solid #FFFF00';
+		            		} else if(value> 2 && value < 4.9) {
+		            			return 'background-color:#66FF33;border:0';
+		            		} else {
+		            			return 'background-color:#FF0033;font-weight:bolder;border:2px solid #FF0033' ;
+		            		}
+		            	}
+		            }
+		            ]],
+		onLoadError: function () {
+			 $.messager.alert("提示", "服务器忙，请稍后再试！", "warning");
+		},
+		            	  
+		onDblClickRow: function (rowIndex,rowData){
+			editDataAnalysis();
+		},
+		
+		onHeaderContextMenu: function(e, field){
+			e.preventDefault();
+			if (!cmenu){
+				createColumnMenu();
+			}
+			cmenu.menu('show', {
+				left:e.pageX,
+				top:e.pageY
+			});
+		}
 	});
-//过滤器？？？
-//	$("#dataAnalysisbody").datagrid('enableFilter',[{
-//		fileld:'inV',
-//		type:'numberbox',
-//		options:{precision:0},
-//		op:['equal','notequal','less','greater']
-//	}]);
 }
+
 var cmenu;
 function createColumnMenu(){
 	cmenu = $('<div/>').appendTo('body');
@@ -225,7 +368,6 @@ function closeAddForm() {
 	$('#newEdit').dialog('close');
 }
 
-var editRow = undefined;
 //添加的函数
 function addDataAnalysis() {
 
@@ -281,7 +423,7 @@ function editDataAnalysis() {
 
 	// 填充数据 填充的是json数据
 	$("#ID").val(dataAnalysis.ID);
-	$("#PoolID").val(dataAnalysis.poolID);
+	$("#PoolID").combobox('setValue',dataAnalysis.poolID);
 	$("#t").datetimebox("setValue",(dataAnalysis.t).replace('T',' '));
 	$("#InV").numberbox('setValue',dataAnalysis.inV);
 	$("#OutV").numberbox('setValue',dataAnalysis.outV);
@@ -439,40 +581,257 @@ function listAllDataAnalysis(){
 
 //条件查询
 function searchDataAnalysis(){
-	$("#searchT").val(searchT);
-	$("#searchPoolID").val(searchPoolID);
+	//$("#searchT").val(searchT);
+	//$("#searchPoolID").val(searchPoolID);
 	showSearchForm();
 }
 
+var treeURL; //params = 'searchT=&searchPoolID
 //查询处理
 function dealSearch() {
-	// 表单数据序列化成一个字符串用&拼接
-	var params = $("#frmSearch").serialize();
-	//alert(params);
-	var re = new RegExp(/^searchT=\d{4}-\d{2}\-\d{2}/);
-	var test = re.test(params);
-	if(test) {
-		strDate = ' ' + params.substring(8, 18);
-		title = "清水池水位计算表" + strDate;
-		ImageTitle = "清水池水位预测图 " + strDate;
+	var indexButton = $('#indexForm').serialize();
+	var buttonID = indexButton.slice(-6);  //searchID = 'index3'
+
+	var ImageTitleTemp;
+	var newParams = '';
+
+	if(searchMode == 0) {   //如果是从三个radio进行查询
+		var params = $("#frmSearch").form('clear').serialize(); //params = 'searchT=&searchPoolID='
+		switch(buttonID) {
+		case 'index1':
+			title = '清水池01#  水位计算表';
+			ImageTitle = "清水池01#  水位预测图 ";
+			newParams = params + 'MTG_QingS_SC01';
+			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+			break;
+		case 'index2':
+			title = '清水池02#  水位计算表';
+			ImageTitle = "清水池02#  水位预测图 ";
+			newParams = params + 'MTG_QingS_SC02';
+			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+			break;
+		case 'index3':
+			title = '清水池03#  水位计算表';
+			ImageTitle = "清水池03#  水位预测图 ";
+			newParams = params + 'MTG_QingS_SC03';
+			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+			break;
+		default :
+			title = '清水池水位计算表';
+			ImageTitle = "清水池水位预测图 ";
+			newParams = params;
+			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+		}
+	} else if(searchMode == 1){  //如果是从查询窗口进入
+		var params = $("#frmSearch").serialize(); //params = 'searchT=不确定是否为空&searchPoolID=不确定是否为空'
+		//alert("poolID " + poolID);
+		
+		var reTime = new RegExp(/^searchT=\d{4}-\d{2}\-\d{2}/);
+		var testTime = reTime.test(params);
+		var reID = new RegExp(/searchPoolID=MTG_QingS_SC0\d{1}/);
+		var testID = reID.test(params);
+		
+		if(!testTime && !testID) {  //日期空 ID空     searchT=&searchPoolID=
+			switch(buttonID) {
+				case 'index1':
+					titleTemp = '清水池01#  水位计算表';
+					ImageTitleTemp = "清水池01#  水位预测图 ";
+					newParams = params + 'MTG_QingS_SC01';
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+					break;
+				case 'index2':
+					titleTemp = '清水池02#  水位计算表';
+					ImageTitleTemp = "清水池02#  水位预测图 ";
+					newParams = params + 'MTG_QingS_SC02';
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+					break;
+				case 'index3':
+					titleTemp = '清水池03#  水位计算表';
+					ImageTitleTemp = "清水池03#  水位预测图 ";
+					newParams = params + 'MTG_QingS_SC03';
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+					break;
+				default :
+					titleTemp = '清水池水位计算表';
+					ImageTitleTemp = "清水池水位预测图 ";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+			}   //searchT=&searchPoolID=MTG_QingS_SC0X
+			title = titleTemp;
+			ImageTitle = ImageTitleTemp;
+		}  //忽略日期，只显示水池，且树形菜单时间与水池数据对应
+		
+		if(!testTime && testID) {  //日期空 ID不空     searchT=&searchPoolID=MTG_QingS_SC0X
+			var index = param.slice(-1);
+			switch(index) {
+				case '1':
+					titleTemp = '清水池01#  水位计算表';
+					ImageTitleTemp = "清水池01#  水位预测图 ";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+					break;
+				case '2':
+					titleTemp = '清水池02#  水位计算表';
+					ImageTitleTemp = "清水池02#  水位预测图 ";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+					break;
+				case '3':
+					titleTemp = '清水池03#  水位计算表';
+					ImageTitleTemp = "清水池03#  水位预测图 ";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+					break;
+				default :
+					titleTemp = '清水池水位计算表';
+					ImageTitleTemp = "清水池水位预测图 ";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+			}//searchT=&searchPoolID=MTG_QingS_SC0X
+			title = titleTemp;
+			ImageTitle = ImageTitleTemp;
+		}//忽略日期，只显示水池，且树形菜单时间与水池数据对应
+		
+		if(testTime && !testID) {  //日期不空 ID空     searchT=XXXX-XX-XX&searchPoolID=
+			switch(buttonID) {
+				case 'index1':
+					titleTemp = '清水池01#  水位计算表';
+					ImageTitleTemp = "清水池01#  水位预测图 ";
+					newParams = params + 'MTG_QingS_SC01';
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+					break;
+				case 'index2':
+					titleTemp = '清水池02#  水位计算表';
+					ImageTitleTemp = "清水池02#  水位预测图 ";
+					newParams = params + 'MTG_QingS_SC02';
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+					break;
+				case 'index3':
+					titleTemp = '清水池03#  水位计算表';
+					ImageTitleTemp = "清水池03#  水位预测图 ";
+					newParams = params + 'MTG_QingS_SC03';
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+					break;
+				default :
+					titleTemp = '清水池水位计算表';
+					ImageTitleTemp = "清水池水位预测图 ";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+			} //searchT=XXXX-XX-XX&searchPoolID=MTG_QingS_SC0X
+			var strDate = ' ' + params.substring(8, 18);  // XXXX-XX-XX
+			title = titleTemp + strDate;
+			ImageTitle = ImageTitleTemp + strDate;
+		}//图标显示日期，显示水池编号，且树形菜单时间与水池数据对应
+		
+		if(testTime && testID) {  //日期不空 ID不空     searchT=XXXX-XX-XX&searchPoolID=MTG_QingS_SC0X
+			var index = param.slice(-1);
+			switch(index) {
+				case '1':
+					titleTemp = '清水池01#  水位计算表';
+					ImageTitleTemp = "清水池01#  水位预测图 ";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+					break;
+				case '2':
+					titleTemp = '清水池02#  水位计算表';
+					ImageTitleTemp = "清水池02#  水位预测图 ";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+					break;
+				case '3':
+					titleTemp = '清水池03#  水位计算表';
+					ImageTitleTemp = "清水池03#  水位预测图 ";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+					break;
+				default :
+					titleTemp = '清水池水位计算表';
+					ImageTitleTemp = "清水池水位预测图 ";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+			}//searchT=XXXX-XX-XX&searchPoolID=MTG_QingS_SC0X
+			var strDate = ' ' + params.substring(8, 18);  // XXXX-XX-XX
+			title = titleTemp + strDate;
+			ImageTitle = ImageTitleTemp + strDate;
+		}//图标显示日期，只显示水池，且树形菜单时间与水池数据对应
+	} else if(searchMode == 2) {  //如果是从树形菜单进入  
+		var params = $("#frmSearch").serialize();  //params = 'searchT=XXXX-XX-XX&searchPoolID=不关心有没有'
+//		alert(params);
+		strDate = params.substring(8, 18);  //'XXXX-XX-XX'
+		switch(buttonID) {  //先查看现在radio的值为多少
+			case 'index1':
+				title = '清水池01#  水位计算表' + '' + strDate;
+				ImageTitle = "清水池01#  水位预测图 " + ' ' + strDate;
+				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_QingS_SC01';
+				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+				break;
+			case 'index2':
+				title = '清水池02#  水位计算表' + '' + strDate;
+				ImageTitle = "清水池02#  水位预测图 " + '' + strDate;
+				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_QingS_SC02';
+				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+				break;
+			case 'index3':
+				title = '清水池03#  水位计算表' + '' + strDate;
+				ImageTitle = "清水池03#  水位预测图 " + '' + strDate;
+				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_QingS_SC03';
+				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+				break;
+			default :
+				title = '清水池水位计算表';
+				ImageTitle = "清水池水位预测图 ";
+				newParams = params;
+				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+		}
 	}
-	else {
-		title = "清水池水位计算表";
-		ImageTitle = "清水池水位预测图 ";
-	}
-	//alert(title + '<br />' + ImageTitle);
-	if ($("#searchT").datetimebox("getValue")!= null || $("#searchPoolID").combobox("getValue")!= null){
-		$.post("searchDataAnalysis.action", params, function(result) {
+	//alert("searchMode = " + searchMode +
+			//"\nindexButton" + indexButton +
+			//"\nbuttonID = " + buttonID + 
+			//"\nnewParams = " + newParams);
+	
+	$.post("searchDataAnalysis.action", newParams, function(result) {
 			if (result.total!=0) {
 				//$('#dataAnalysisbody').datagrid('reload');// 重新加载
-				listDataAnalysis();
+				tlist = result.tlist;
+				listDataAnalysis(result);
+				if(searchMode != 2) {
+					listTreeNode(tlist);
+				}
 			} else {
 				$.messager.alert('查询', '未查询到相关信息', 'warning');
 			}
+	});
+	
+	//alert("treeURL = " +  treeURL);
+	
+	/*
+	if(searchMode != 2) {
+		//tlist = [];
+		$.getJSON(treeURL, function(json) {
+			//去除重复项
+			//alert("json<br />" + json);
+			//alert("eval(json)<br />" + eval(json));
+			var datalist = eval(json).rows;
+			//alert("datalist<br />" + datalist);
+			var tempPoolIDlist = new Array();
+			for(var i=0;i<json.total;i++){
+				var row = datalist[i];
+				if(jQuery.inArray(row.poolID, tempPoolIDlist)<0){
+					tempPoolIDlist.push(row.poolID);
+					poolIDlist.push({poolID:row.poolID,text:formPoolID(row.poolID)});
+				}
+//				if(jQuery.inArray(row.t, tlist)<0){
+//					tlist.push(row.t);
+//				}
+			}//for
+			
+//			listTreeNode(tlist.sort());
+			listTreeNode(tlist);
 		});
-	} else {
-		$.messager.alert('查询', '请选择。。。', 'warning');
 	}
+	*/
+	
+	
 }
 
 
@@ -487,14 +846,14 @@ function showSearchForm() {
 			text : '确认',
 			handler : function() {
 				// 进行表单字段验证，当全部字段都有效时返回true和validatebox一起使用
-				if ($('#frmSearch').form('validate')) {
+				//if ($('#frmSearch').form('validate')) {
 					// 提交到服务器并写入数据库
 					dealSearch();
 					// 关闭窗口
 					closeSearchForm();
-				} else {
-					$.messager.alert('验证', '项目信息有误或不完整', 'error');
-				}
+				//} else {
+				//	$.messager.alert('验证', '项目信息有误或不完整', 'error');
+				//}
 			}
 		}, {
 			text : '取消',
@@ -511,57 +870,23 @@ function closeSearchForm() {
 	$('#tabSearch').dialog('close');
 }
 
-var tlist = new Array();
+//var tlist = new Array();
 var poolIDlist  = new Array();
 //查询下拉框显示的数据
-var url = "${pageContext.request.contextPath}/listDataAnalysis.action";
-$.getJSON(url, function(json) {
-	//去除重复项
-	//alert("json<br />" + json);
-	//alert("eval(json)<br />" + eval(json));
-	var datalist = eval(json).rows;
-	//alert("datalist<br />" + datalist);
-	var tempPoolIDlist = new Array();
-	for(var i=0;i<json.total;i++){
-		var row = datalist[i];
-		if(jQuery.inArray(row.poolID, tempPoolIDlist)<0){
-			tempPoolIDlist.push(row.poolID);
-			poolIDlist.push({poolID:row.poolID,text:formPoolID(row.poolID)});
-		}
-		if(jQuery.inArray(row.t, tlist)<0){
-			tlist.push(row.t);
-		}
-	}//for
-	
-	$('#searchPoolID').combobox({
-		data : poolIDlist.sort(keysrt('poolID',false)),
-		valueField:'poolID',
-		textField:'text',
-		onLoadSuccess: function () {
-			$(this).combobox('setText', '');
-		}			
-	});
-	listTreeNode(tlist.sort());
-});
+
+
+
+
+//var url = "${pageContext.request.contextPath}/searchDataAnalysis.action";
+
 
 //水池编号转换
 function formPoolID(value){
 	var strs = new Array();
-	var poolID="";
+	var poolID;
 	strs=value.split("_");//字符切割
-	for(var i=0;i<strs.length;i++)
-		{
-			switch(strs[i]){
-			case "MTG":
-				poolID="门头沟";break;
-			case "QingS":
-				poolID=poolID+"清水池";break;
-			default:
-				poolID=poolID+strs[i].replace("SC","")+"#";
-			}
-		}
-	
-	return poolID;		
+	poolID = strs[2].replace(/SC/,'');
+	return 	"清水池" + poolID + "#";
 }
 
 
@@ -577,7 +902,6 @@ var ImageTitle="清水池水位预测图" + strDate;
 function prehImage(){
 	var listArray=new Array();
 	var poollist = new Array();
-	var chart;
 	var options;
 	if (datalist.length>0){					
 		for (var i=0; i<datalist.length;i++){
@@ -688,31 +1012,33 @@ function prehImage(){
 	                }
 	            },
 	            buttons: [{
-	    	    	type: 'month',
+	            	type: 'day',
+	            	count: 1,
+	            	text: '1天'
+	            },{
+	            	type: 'day',
+	            	count: 3,
+	            	text: '3天'
+	            },{
+	    	    	type: 'week',
 	    	    	count: 1,
-	    	    	text: '1月'
+	    	    	text: '1周'
 	    			}, {
 	    			type: 'month',
-	    			count: 3,
-	    			text: '3月'
-	    			}, {
-	    			type: 'month',
-	    			count: 6,
-	    			text: '半年'
-	    			}, {
-	    			type: 'ytd',
-	    			text: '今年'
-	    			}, {
-	    			type: 'year',
 	    			count: 1,
-	    			text: '1年'
-	    			}, {
-	    				type: 'all',
-	    				text: '全部'
+	    			text: '1月'
 	    			}],
+	    		buttonSpacing: 10,
 	            inputBoxBorderColor: 'gray',
-	            inputBoxWidth: 100,
-	            inputBoxHeight: 18,
+	            inputBoxWidth: 120,
+	            //inputBoxHeight: 40,
+	            inputEnabled: true,
+	            inputEditDateFormat: '%Y-%m-%d',
+	            inputDateFormat: '%Y-%m-%d',
+	            inputDateParser: function(value) {
+	            	value = value.split('-');
+	            	return Date.UTC(value[0], (value[1] - 1), value[2]);
+	            },
 	            inputStyle: {
 	                color: '#000000',
 	                fontWeight: 'bold'
@@ -882,59 +1208,62 @@ function prehImage(){
 //左侧时间列表显示
 var treeNodeList= [{id:1,name:"时间列表",text:"时间列表",parentId:0}];
 function listTreeNode(tlist){
-	var yearlist = new Array();
-	var monthlist = new Array();
-	var daylist = new Array();
-	var j=1; 
-	for(var i=0;i<tlist.length;i++){
-		var year = tlist[i].substring(0,4);
-		var month = tlist[i].substring(0,7);
-		var day = tlist[i].substring(0,10);
-		var yearIndex=yearlist.indexOf(year);
-		var monthIndex=monthlist.indexOf(month);
-		var dayIndex=daylist.indexOf(day);
-		if(yearIndex<0){	//不存在该年份
-			j=j+1;	
-			yearlist.push(year);
-			treeNodeList.push({id:j,name:year+"年",text:year,parentId:1});	
-			j=j+1;
-			monthlist.push(month);
-			treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,parentId:j-1});
-			j=j+1;
-			daylist.push(day);
-			treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,parentId:j-1});		
-		}
-		else{
-			if(monthIndex<0) //不存在该月份
-			{	
-				j=j+1;
-				monthlist.push(month);
-				treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,
-									parentId:findParentId(treeNodeList, year)});
-				j=j+1;
-				daylist.push(day);
-				treeNodeList.push({id:j,name:day.substring(8,10)+"日",
-								text:day,parentId:j-1});
-			}else{
-				if(dayIndex<0){
-					j=j+1;
-					daylist.push(day);
-					treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,
-									parentId:findParentId(treeNodeList, month)});
-				}
-			}
-		}
-	}
+//	var yearlist = new Array();
+//	var monthlist = new Array();
+//	var daylist = new Array();
+//	var j=1; 
+//	for(var i=0;i<tlist.length;i++){
+//		var year = tlist[i].substring(0,4);
+//		var month = tlist[i].substring(0,7);
+//		var day = tlist[i].substring(0,10);
+//		var yearIndex=yearlist.indexOf(year);
+//		var monthIndex=monthlist.indexOf(month);
+//		var dayIndex=daylist.indexOf(day);
+//		if(yearIndex<0){	//不存在该年份
+//			j=j+1;	
+//			yearlist.push(year);
+//			treeNodeList.push({id:j,name:year+"年",text:year,parentId:1});	
+//			j=j+1;
+//			monthlist.push(month);
+//			treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,parentId:j-1});
+//			j=j+1;
+//			daylist.push(day);
+//			treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,parentId:j-1});		
+//		}
+//		else{
+//			if(monthIndex<0) //不存在该月份
+//			{	
+//				j=j+1;
+//				monthlist.push(month);
+//				treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,
+//									parentId:findParentId(treeNodeList, year)});
+//				j=j+1;
+//				daylist.push(day);
+//				treeNodeList.push({id:j,name:day.substring(8,10)+"日",
+//								text:day,parentId:j-1});
+//			}else{
+//				if(dayIndex<0){
+//					j=j+1;
+//					daylist.push(day);
+//					treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,
+//									parentId:findParentId(treeNodeList, month)});
+//				}
+//			}
+//		}
+//	}
 
 	$('#timeTree').tree({
 //		url: 'tree_data.json',
-		data: treeNodeList,
+//		data: treeNodeList,
+		data: tlist,
 		animate:true,	//动画效果
 		lines:true,
-		loadFilter: function(data){
-			return convert(data);
-		},
+//		loadFilter: function(data){
+//			return convert(data);
+//		},
 		onClick:function(node){
+			hideImportPanel()
+			searchMode = 2;
 			var pnode=$('#timeTree').tree('getParent',node.target);
 			var out=node.text;
 			while(pnode.text!="时间列表"){
@@ -982,75 +1311,67 @@ function GetNode(type){
     };  
 }; 
 
-
-function findParentId(rows, text){
-	for(var i=0; i<rows.length; i++){
-		if (rows[i].text == text) return rows[i].id;
-	}
-	return -1;
-}
-//显示树目录的数据
-function convert(rows){
-	//判断是否存在父节点
-	function exists(rows, parentId){
-		for(var i=0; i<rows.length; i++){
-			if (rows[i].id == parentId) return true;
-		}
-		return false;
-	}
-
-	var nodes = [];
-	// get the top level nodes
-	//遍历查找最高一层节点
-	for(var i=0; i<rows.length; i++){
-		var row = rows[i];
-		//如果不存在父节点，添加节点
-		if (!exists(rows, row.parentId)){
-			nodes.push({
-				id:row.id,
-				text:row.name
-			});
-		}
-	}
-
-//	利用堆栈的结构
-	var toDo = []; //所有的父节点
-	for(var i=0; i<nodes.length; i++){
-		toDo.push(nodes[i]);
-	}
-	while(toDo.length){
-		//	shift从集合中把第一个元素删除，并返回这个元素的值
-		var node = toDo.shift();	// the parent node
-		// get the children nodes
-		//	获得所有父节点各自的子节点
-		for(var i=0; i<rows.length; i++){
-			var row = rows[i];
-			if (row.parentId == node.id){
-				var child = {id:row.id,text:row.name};
-				if (node.children){
-					node.children.push(child);
-				} else {
-					node.children = [child];
-				}
-				toDo.push(child);//添加子节点，以便进一步遍历子节点查看是否有子目录
-			}
-		}
-	}
-	return nodes;
-}
+//
+//function findParentId(rows, text){
+//	for(var i=0; i<rows.length; i++){
+//		if (rows[i].text == text) return rows[i].id;
+//	}
+//	return -1;
+//}
+////显示树目录的数据
+//function convert(rows){
+//	//判断是否存在父节点
+//	function exists(rows, parentId){
+//		for(var i=0; i<rows.length; i++){
+//			if (rows[i].id == parentId) return true;
+//		}
+//		return false;
+//	}
+//
+//	var nodes = [];
+//	// get the top level nodes
+//	//遍历查找最高一层节点
+//	for(var i=0; i<rows.length; i++){
+//		var row = rows[i];
+//		//如果不存在父节点，添加节点
+//		if (!exists(rows, row.parentId)){
+//			nodes.push({
+//				id:row.id,
+//				text:row.name,
+//				state:'closed'
+//			});
+//		}
+//	}
+//
+////	利用堆栈的结构
+//	var toDo = []; //所有的父节点
+//	for(var i=0; i<nodes.length; i++){
+//		toDo.push(nodes[i]);
+//	}
+//	while(toDo.length){
+//		//	shift从集合中把第一个元素删除，并返回这个元素的值
+//		var node = toDo.shift();	// the parent node
+//		// get the children nodes
+//		//	获得所有父节点各自的子节点
+//		for(var i=0; i<rows.length; i++){
+//			var row = rows[i];
+//			if (row.parentId == node.id){
+//				var child = {id:row.id,text:row.name};
+//				if (node.children){
+//					node.children.push(child);
+//				} else {
+//					node.children = [child];
+//				}
+//				toDo.push(child);//添加子节点，以便进一步遍历子节点查看是否有子目录
+//			}
+//		}
+//	}
+//	return nodes;
+//}
 
 
 //导出到excel
 function export2excel(){
-//	var params = $("#exportDataAnalysis").serialize();
-//	var filename = $('#downloadFilename').val() ;
-//	var downloadPath;
-//	if(null==filename || ""==filename){
-//		downloadPath = "downloadTemp/DataAnalysis.xls";
-//	}else{
-//		downloadPath = "downloadTemp/"+filename+".xls";
-//	}
-//	console.log(downloadPath);
 	var downloadPath = "downloadTemp/DataAnalysis.xls";
 	$.post("exportDataAnalysis.action", function(result) {
 		if (result.operateSuccess){
@@ -1068,8 +1389,7 @@ function import2DB(){
 	if(''==params || null== params){
 		$.messager.alert('导入', '请选择上传文件', 'warning');
 	}
-	else
-	{
+	else{
 		$.ajaxFileUpload({
 			url : "importCheckDataAnalysis.action",
 //			url :'uploadDataAnalysis.action',
@@ -1077,27 +1397,26 @@ function import2DB(){
 			dataType:'json',
 			success: function(data, status){
 				if (data.operateSuccess){ //没有冲突
-						$.ajaxFileUpload({
-								url : "importDataAnalysis.action",
-								fileElementId:'upload',
-								dataType:'json',
-								success: function(result){
-									if (result.operateSuccess){	
-										$('#dataAnalysisbody').datagrid('reload');// 重新加载									
-										$.messager.alert('导入', '导入成功', 'info');	
-										
-									} else {
-										$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
-									}
-								},//success
-								error:function(result){
-									console.log("error 上传失败");
-									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
-								} //error
-							});//ajaxFileUpload	
-						location.reload();
-				} 
-				else {		//有冲突
+					$.ajaxFileUpload({
+						url : "importDataAnalysis.action",
+						fileElementId:'upload',
+						dataType:'json',
+						success: function(result){
+							$.messager.alert('导入', '导入成功', 'info');
+							if (result.operateSuccess){	
+								
+								$('#dataAnalysisbody').datagrid('reload');// 重新加载									
+							} else {
+								$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+							}
+						},//success
+						error:function(result){
+							console.log("error 上传失败");
+							$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+						} //error
+					});//ajaxFileUpload	
+					location.reload();
+				} else {		//有冲突
 					$.messager.confirm("导入提示",'已存在相关日期的数据，是否继续覆盖导入？',function(r){
 						if (r) { //上传文件
 							$.ajaxFileUpload({
@@ -1105,10 +1424,13 @@ function import2DB(){
 								fileElementId:'upload',
 								dataType:'json',
 								success: function(data, status){
+									$.messager.alert('导入', '导入成功', 'info');
 									if (data.operateSuccess){
-										$('#dataAnalysisbody').datagrid('reload');// 重新加载/
-										$.messager.alert('导入', '导入成功', 'info');
 										
+										$('#dataAnalysisbody').datagrid('reload');// 重新加载/
+										
+										$('#import').text('导入');
+										$('#tab_export').css('display','none');
 									} else {
 										$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
 									}
@@ -1118,12 +1440,11 @@ function import2DB(){
 									console.log("error 上传失败");
 									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
 								} //error
-							}//ajaxFileUpload
-							);
+							});//ajaxFileUpload
 						}//if r
-					}) //confirm	
+					}); //confirm	
 				}
-			},
+			},//success
 			error:function(data, status){
 				$.messager.alert('导入', '导入失败<br><br>请检查文件格式是否正确！', 'warning');
 			}

@@ -1,5 +1,9 @@
 package com.water.action;
-
+/**  
+ * @projectName ZLS-ITTC  
+ * @author chenhua 
+ * @date 2015年11月29日 
+ */
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -27,27 +31,16 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.water.beans.DataAnalysis;
-import com.water.service.DataAnalysisService;
-import com.water.util.JsonTreeData;
+import com.water.beans.OutStat;
+import com.water.service.OutStatService;
 import com.water.util.ListSort;
-import com.water.util.ListTool;
 import com.water.util.TimeTree;
 import com.water.util.TreeNode;
 
 
 @SuppressWarnings("serial")
-public class DataAnalysisAction extends ActionSupport{
-	//保存的文件名
-	//	private String downloadFilename;
-	//
-	//	public String getDownloadFilename() {
-	//		return downloadFilename;
-	//	}
-	//
-	//	public void setDownloadFilename(String downloadFilename) {
-	//		this.downloadFilename = downloadFilename;
-	//	}
+public class OutStatAction extends ActionSupport{
+
 	private String dateTemp; /*传递时间参数有问题，作为中间变量传入*/
 
 	public String getDateTemp() {
@@ -57,7 +50,7 @@ public class DataAnalysisAction extends ActionSupport{
 	public void setDateTemp(String dateTemp) {
 		this.dateTemp = dateTemp;
 	}
-	
+
 	//导入的文件路径和文件名,文件类型
 
 
@@ -89,9 +82,9 @@ public class DataAnalysisAction extends ActionSupport{
 		this.uploadContentType = uploadContentType;
 	}
 
-	private DataAnalysisService dataAnalysisService;
+	private OutStatService outStatService;
 
-	private DataAnalysis dataAnalysis; 
+	private OutStat outStat; 
 
 	//查询条件
 	private String searchPoolID=null;
@@ -123,8 +116,8 @@ public class DataAnalysisAction extends ActionSupport{
 	private boolean operateSuccess;
 
 	// set注入
-	public void setDataAnalysisService(DataAnalysisService dataAnalysisService) {
-		this.dataAnalysisService = dataAnalysisService;
+	public void setOutStatService(OutStatService outStatService) {
+		this.outStatService = outStatService;
 	}
 
 	/*
@@ -158,8 +151,8 @@ public class DataAnalysisAction extends ActionSupport{
 
 	// getter/setter方法
 
-	public DataAnalysis getDataAnalysis() {
-		return dataAnalysis;
+	public OutStat getOutStat() {
+		return outStat;
 	}
 
 	public int getPage() {
@@ -186,8 +179,8 @@ public class DataAnalysisAction extends ActionSupport{
 		return sort;
 	}
 
-	public void setDataAnalysis(DataAnalysis dataAnalysis) {
-		this.dataAnalysis = dataAnalysis;
+	public void setOutStat(OutStat outStat) {
+		this.outStat = outStat;
 	}
 
 	public boolean isOperateSuccess() {
@@ -202,25 +195,22 @@ public class DataAnalysisAction extends ActionSupport{
 	 * 查询某一页的数据
 	 */
 	public String list() {
-		data.clear();// ���
+		data.clear();
 		if (sort == null) {
-			sort = "ID";// Ĭ�ϰ���������
+			sort = "ID";
 		}
 		if (order == null) {
-			order = "asc";// Ĭ�ϰ���������
+			order = "asc";
 		}
-
-		List<DataAnalysis> searchList = dataAnalysisService.findAll();
+		List<OutStat> searchList = outStatService.findAll();
 		List<String> tlist = new ArrayList<String>();
 		DateFormat sdFormat=new SimpleDateFormat("yyyy-MM-dd");
-		for(DataAnalysis s:searchList){
+		for(OutStat s:searchList){
 			tlist.add(sdFormat.format(s.getT()));
 		}
 		List <TreeNode> timeTree = TimeTree.convert(TimeTree.buildTree(tlist));
 		data.put("tlist", timeTree);
-		data.put("total", dataAnalysisService.findTotal());// �õ����еļ�¼��
-		
-		//		data.put("rows", dataAnalysisService.findPages(page, size, sort, order));// �õ�ĳһҳ�����
+		data.put("total", outStatService.findTotal());
 		data.put("rows", searchList);
 		return "success";
 	}
@@ -229,9 +219,8 @@ public class DataAnalysisAction extends ActionSupport{
 	 * 添加一项数据
 	 * @throws ParseException 
 	 */
-	public String addDataAnalysis() throws ParseException {
-		dataAnalysis.setT((new SimpleDateFormat( "yyyy-MM-dd HH")).parse(dateTemp));
-		operateSuccess = (dataAnalysisService.addDataAnalysis(dataAnalysis) > 0);
+	public String addOutStat() throws ParseException {
+		operateSuccess = (outStatService.addOutStat(outStat) > 0);
 		return "success";
 	}
 
@@ -239,44 +228,42 @@ public class DataAnalysisAction extends ActionSupport{
 	 * 更新一项数据
 	 * @throws ParseException 
 	 */
-	public String updateDataAnalysis() throws ParseException {
-		dataAnalysis.setT((new SimpleDateFormat( "yyyy-MM-dd HH")).parse(dateTemp));
-		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH").format(dataAnalysis.getT()));
-		operateSuccess = (dataAnalysisService.updateDataAnalysis(dataAnalysis) > 0);
+	public String updateOutStat() throws ParseException {
+		outStat.setT((new SimpleDateFormat( "yyyy-MM-dd")).parse(dateTemp));
+		operateSuccess = (outStatService.updateOutStat(outStat) > 0);
 		return "success";
 	}
 
 	/**
 	 * 删除一项数据
 	 */
-	public String deleteDataAnalysis() {
-		operateSuccess = (dataAnalysisService.deleteDataAnalysis(dataAnalysis.getID()) > 0);
+	public String deleteOutStat() {
+		operateSuccess = (outStatService.deleteOutStat(outStat.getID()) > 0);
 		return "success";
 	}
 
 	/**
 	 * 通过ID查询数据
 	 */
-	public String findDataAnalysis() {
-		dataAnalysis = dataAnalysisService.findDataAnalysisById(dataAnalysis.getID());
+	public String findOutStat() {
+		outStat = outStatService.findOutStatById(outStat.getID());
 		return "success";
 	}
 
 	/**
 	 * 通过设置查询条件查询
 	 */
-	public String searchDataAnalysis() {
+	public String searchOutStat() {
 		String sql;
-		DateFormat sdFormat=new SimpleDateFormat("yyyy-MM-dd");
 		//查询条件拼接
 		if(searchT==null && searchPoolID ==null ){
-			sql="from DataAnalysis";
+			sql="from OutStat";
 		}
 		else {
-			sql="from DataAnalysis where 1=1";
+			sql="from OutStat where 1=1";
 			if (searchT!=null)
 			{
-				sql+= " and Convert(varchar,t,120)  like '%"+sdFormat.format(searchT)+"%'";
+				sql+= " and Convert(varchar,t,120)  like '%"+(new SimpleDateFormat("yyyy-MM-dd")).format(searchT)+"%'";
 			}
 			if(!searchPoolID.equals(""))
 			{
@@ -285,9 +272,11 @@ public class DataAnalysisAction extends ActionSupport{
 		}
 
 		System.out.println(sql);
-		List<DataAnalysis> searchList = dataAnalysisService.findBySql(sql);
+
+		List<OutStat> searchList = outStatService.findBySql(sql);
 		List<String> tlist = new ArrayList<String>();
-		for(DataAnalysis s:searchList){
+		DateFormat sdFormat=new SimpleDateFormat("yyyy-MM-dd");
+		for(OutStat s:searchList){
 			tlist.add(sdFormat.format(s.getT()));
 		}
 		List <TreeNode> timeTree = TimeTree.convert(TimeTree.buildTree(tlist));
@@ -298,7 +287,7 @@ public class DataAnalysisAction extends ActionSupport{
 	}
 
 	public String export2excel(){
-		List<DataAnalysis> list=(List<DataAnalysis>) data.get("rows");
+		List<OutStat> list=(List<OutStat>) data.get("rows");
 		WritableWorkbook book = null;
 		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTemp"));
 		//判断上述路径是否存在，如果不存在则创建该路径
@@ -306,23 +295,8 @@ public class DataAnalysisAction extends ActionSupport{
 			uploadFile.mkdir();
 		}
 		try{
-			//打开文件
-			//			if(downloadFilename==null || downloadFilename.isEmpty())
-			//			{
-			//				//导出文件名默认为DataAnalysis
-			////				filename=(new SimpleDateFormat("yyyyMMdd-HHmmss")).format(System.currentTimeMillis());
-			//				downloadFilename="DataAnalysis";
-			//			}			
-			String path=ServletActionContext.getServletContext().getRealPath("//downloadTemp")+"//DataAnalysis.xls";
-
-			//			String path="D://数据分析表-"+exportFileName+".xls";
+			String path=ServletActionContext.getServletContext().getRealPath("//downloadTemp")+"//OutStat.xls";
 			book = Workbook.createWorkbook(new File(path));
-//			//生成工作表
-//			WritableSheet sheet = book.createSheet("sheet1", 0);
-//
-//			//给sheet电子版中所有的列设置默认的列的宽度;  
-//			sheet.getSettings().setDefaultColumnWidth(15);
-//			sheet.setColumnView(1, 20);//给第二列设置列宽 
 			//设置格式
 			//标题
 			WritableFont formatH = new WritableFont(WritableFont.TAHOMA,14,WritableFont.BOLD);   
@@ -340,47 +314,37 @@ public class DataAnalysisAction extends ActionSupport{
 			WritableCellFormat formatBody = new WritableCellFormat(formatB);
 			formatBody.setAlignment(jxl.format.Alignment.CENTRE);  //单元格内容居中对齐
 
-			//	List<DataAnalysis> list = dataAnalysisService.findAll();
+			//	List<OutStat> list = outStatService.findAll();
 			if(list!=null && !list.isEmpty()){
-				ListSort<DataAnalysis> listSort = new ListSort<DataAnalysis>();
+				ListSort<OutStat> listSort = new ListSort<OutStat>();
 				listSort.Sort(list, "getT","asc"); //排序
 				DateFormat sdfDay = new SimpleDateFormat("yyyy-MM-dd");
 				DateFormat sdf = new SimpleDateFormat("HH");
-				
+
 				String tempT = sdfDay.format(list.get(0).getT());
 				WritableSheet sheet = book.createSheet(tempT, 0);
 				//给sheet电子版中所有的列设置默认的列的宽度;  
 				sheet.getSettings().setDefaultColumnWidth(15);
 				sheet.setColumnView(1, 20);//给第二列设置列宽 
-				sheet.mergeCells(0, 0, 10, 0); //合并单元格，用于显示标题
-				sheet.addCell(new Label(0,0, "清水池水位计算表",formatTitle));
+				sheet.mergeCells(0, 0, 5, 0); //合并单元格，用于显示标题
+				sheet.addCell(new Label(0,0, "出厂水水质统计表",formatTitle));
 				//添加表头
 				sheet.addCell(new Label(0,1," 时间 ",formatHead));
 				sheet.addCell(new Label(1,1," 水池编号 ",formatHead));
-				sheet.addCell(new Label(2,1," 总来水量 ",formatHead));
-				sheet.addCell(new Label(3,1," 出水量 ",formatHead));
-				sheet.addCell(new Label(4,1," 虹吸滤池反冲洗 ",formatHead));
-				sheet.addCell(new Label(5,1," V型滤池反冲洗 ",formatHead));				
-				sheet.addCell(new Label(6,1," 炭池反冲洗 ",formatHead));
-				sheet.addCell(new Label(7,1," 机加池排泥 ",formatHead));					
-				sheet.addCell(new Label(8,1," 回流水量 ",formatHead));
-				sheet.addCell(new Label(9,1," 蓄水量 ",formatHead));
-				sheet.addCell(new Label(10,1," 预测水位 ",formatHead));
+				sheet.addCell(new Label(2,1," 出水浊度 ",formatHead));
+				sheet.addCell(new Label(3,1," 余氯",formatHead));
+				sheet.addCell(new Label(4,1," 铁  ",formatHead));
+				sheet.addCell(new Label(5,1," 铝 ",formatHead));
 				int j=2;
 				for(int i=0;i<list.size();i++){
 					String day = sdfDay.format(list.get(i).getT());
 					if (day.equals(tempT)){					
 						sheet.addCell(new Label(0,j,sdf.format(list.get(i).getT()),formatBody));
 						sheet.addCell(new Label(1,j,list.get(i).getPoolID(),formatBody));
-						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getInV()),formatBody));
-						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOutV()),formatBody));
-						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getHXOutV()),formatBody));
-						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getLCOutV()),formatBody));
-						sheet.addCell(new Label(6,j,Double.toString(list.get(i).getTCOutV()),formatBody));					
-						sheet.addCell(new Label(7,j,Double.toString(list.get(i).getJJOutV()),formatBody));	
-						sheet.addCell(new Label(8,j,Double.toString(list.get(i).getHLInV()),formatBody));
-						sheet.addCell(new Label(9,j,Double.toString(list.get(i).getStorage()),formatBody));
-						sheet.addCell(new Label(10,j,Double.toString(list.get(i).getPreH()),formatBody));
+						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getNTU()),formatBody));
+						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getCl()),formatBody));
+						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getFe()),formatBody));
+						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getAl()),formatBody));
 						j=j+1;
 					}else{ //新建个sheet
 						j=2;
@@ -389,33 +353,23 @@ public class DataAnalysisAction extends ActionSupport{
 						//给sheet电子版中所有的列设置默认的列的宽度;  
 						sheet.getSettings().setDefaultColumnWidth(15);
 						sheet.setColumnView(1, 20);//给第二列设置列宽 
-						sheet.mergeCells(0, 0, 10, 0); //合并单元格，用于显示标题
-						sheet.addCell(new Label(0,0, "清水池水位计算表",formatTitle));
+						sheet.mergeCells(0, 0, 5, 0); //合并单元格，用于显示标题
+						sheet.addCell(new Label(0,0, "出厂水水质统计表",formatTitle));
 						//添加表头
 						//				sheet.addCell(new Label(0,1," 编号 ",formatHead));
 						sheet.addCell(new Label(0,1," 时间 ",formatHead));
 						sheet.addCell(new Label(1,1," 水池编号 ",formatHead));
-						sheet.addCell(new Label(2,1," 总来水量 ",formatHead));
-						sheet.addCell(new Label(3,1," 出水量 ",formatHead));
-						sheet.addCell(new Label(4,1," 虹吸滤池反冲洗 ",formatHead));
-						sheet.addCell(new Label(5,1," V型滤池反冲洗",formatHead));				
-						sheet.addCell(new Label(6,1," 炭池反冲洗 ",formatHead));
-						sheet.addCell(new Label(7,1," 机加池排泥 ",formatHead));					
-						sheet.addCell(new Label(8,1," 回流水量 ",formatHead));
-						sheet.addCell(new Label(9,1," 蓄水量 ",formatHead));
-						sheet.addCell(new Label(10,1," 预测水位 ",formatHead));
-						
+						sheet.addCell(new Label(2,1," 出水浊度 ",formatHead));
+						sheet.addCell(new Label(3,1," 余氯",formatHead));
+						sheet.addCell(new Label(4,1," 铁  ",formatHead));
+						sheet.addCell(new Label(5,1," 铝 ",formatHead));
+
 						sheet.addCell(new Label(0,j,sdf.format(list.get(i).getT()),formatBody));
 						sheet.addCell(new Label(1,j,list.get(i).getPoolID(),formatBody));
-						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getInV()),formatBody));
-						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOutV()),formatBody));
-						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getHXOutV()),formatBody));
-						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getLCOutV()),formatBody));
-						sheet.addCell(new Label(6,j,Double.toString(list.get(i).getTCOutV()),formatBody));					
-						sheet.addCell(new Label(7,j,Double.toString(list.get(i).getJJOutV()),formatBody));	
-						sheet.addCell(new Label(8,j,Double.toString(list.get(i).getHLInV()),formatBody));
-						sheet.addCell(new Label(9,j,Double.toString(list.get(i).getStorage()),formatBody));
-						sheet.addCell(new Label(10,j,Double.toString(list.get(i).getPreH()),formatBody));
+						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getNTU()),formatBody));
+						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getCl()),formatBody));
+						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getFe()),formatBody));
+						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getAl()),formatBody));
 						j=j+1;
 					}
 				}
@@ -457,39 +411,33 @@ public class DataAnalysisAction extends ActionSupport{
 			Workbook workBook = null;
 			InputStream fs = null;
 			try{
-					//加载excel文件
-					fs = new FileInputStream(upload);
-					//得到工作簿
-					workBook = Workbook.getWorkbook(fs);
-				}catch(FileNotFoundException e){
-					e.printStackTrace();
-					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
-					operateSuccess=false;
-				}catch(BiffException e){
-					e.printStackTrace();
-					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
-					operateSuccess=false;
-				}catch(IOException e){
-					e.printStackTrace();
-					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
-					operateSuccess=false;
-				}
-				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-				//得到当前天数
-				String sheetName = sheet.getName();
-				Date day=new Date();
-				try{
-					 day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
-				}catch(Exception e){
-					e.printStackTrace();
-					ServletActionContext.getServletContext().setAttribute("errorMsg", "文件格式不正确！");
-					operateSuccess = false;
-				}
+				//加载excel文件
+				fs = new FileInputStream(upload);
+				//得到工作簿
+				workBook = Workbook.getWorkbook(fs);
+			}catch(FileNotFoundException e){
+				e.printStackTrace();
+				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
+				operateSuccess=false;
+			}catch(BiffException e){
+				e.printStackTrace();
+				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
+				operateSuccess=false;
+			}catch(IOException e){
+				e.printStackTrace();
+				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
+				operateSuccess=false;
+			}
+			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
+			//得到当前天数
+			String sheetName = sheet.getName();
+			try{
+				Date day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
 				String poolIDTemp=sheet.getCell(1,2).getContents();
-				String sql="delete DataAnalysis where PoolID like '%"+poolIDTemp+"'";
+				String sql="delete OutStat where PoolID like '%"+poolIDTemp+"'";
 				sql+= " and Convert(varchar,t,120)  like '%"+day+"%'";
 				// 直接覆盖
-				int deleteResult = dataAnalysisService.bulkUpadte(sql);
+				int deleteResult = outStatService.bulkUpadte(sql);
 				System.out.println("受影响结果："+deleteResult);
 				for(int i=2;i<sheet.getRows();i++){ //共11列数据,从第三行开始
 
@@ -498,7 +446,7 @@ public class DataAnalysisAction extends ActionSupport{
 						continue;
 					}
 					else{
-						DataAnalysis dataTemp = new DataAnalysis();
+						OutStat dataTemp = new OutStat();
 						dataTemp.setID(0);
 						try{
 							int hour = Integer.parseInt(sheet.getCell(0,i).getContents());
@@ -509,19 +457,19 @@ public class DataAnalysisAction extends ActionSupport{
 							e.printStackTrace();
 						}
 						dataTemp.setPoolID(sheet.getCell(1,i).getContents());						
-						dataTemp.setInV(Double.parseDouble(sheet.getCell(2,i).getContents()));
-						dataTemp.setOutV(Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setHXOutV(Double.parseDouble(sheet.getCell(4,i).getContents()));
-						dataTemp.setLCOutV(Double.parseDouble(sheet.getCell(5,i).getContents()));
-						dataTemp.setTCOutV(Double.parseDouble(sheet.getCell(6,i).getContents()));
-						dataTemp.setJJOutV(Double.parseDouble(sheet.getCell(7,i).getContents()));
-						dataTemp.setHLInV(Double.parseDouble(sheet.getCell(8,i).getContents()));
-						dataTemp.setStorage(Double.parseDouble(sheet.getCell(9,i).getContents()));
-						dataTemp.setPreH(Double.parseDouble(sheet.getCell(10,i).getContents()));
-						operateSuccess=(dataAnalysisService.addDataAnalysis(dataTemp)>0);	//添加到数据库
+						dataTemp.setNTU(Double.parseDouble(sheet.getCell(2,i).getContents()));
+						dataTemp.setCl(Double.parseDouble(sheet.getCell(3,i).getContents()));
+						dataTemp.setFe(Double.parseDouble(sheet.getCell(4,i).getContents()));
+						dataTemp.setAl(Double.parseDouble(sheet.getCell(5,i).getContents()));
+						operateSuccess=(outStatService.addOutStat(dataTemp)>0);	//添加到数据库
 					}
 				} //for
-				workBook.close(); //关闭
+			}catch(Exception e){
+				e.printStackTrace();
+				ServletActionContext.getServletContext().setAttribute("errorMsg", "文件上传错误！");
+				operateSuccess = false;
+			}
+			workBook.close(); //关闭
 		}//upload!=null
 		else{
 			operateSuccess=false;
@@ -554,28 +502,28 @@ public class DataAnalysisAction extends ActionSupport{
 			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
 			//得到当前天数
 			String sheetName = sheet.getName();
-			Date day=new Date();
 			try{
-				 day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
+				Date day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
+				String poolIDTemp=sheet.getCell(1,2).getContents();
+				String sql="from OutStat where 1=1 ";
+				sql+= "and Convert(varchar,t,120) like '%"+day+"%'";
+				sql+=" and PoolID like '%"+poolIDTemp+"'";
+				List<OutStat> list = outStatService.findBySql(sql);
+				System.out.println(list.size());
+				if(null == list||list.isEmpty()){
+					errMsg="";
+					operateSuccess=true;
+				}
+				else{
+					errMsg = "文件冲突，已存在相关信息！";	
+					operateSuccess=false;
+				}
 			}catch(Exception e){
 				e.printStackTrace();
 				errMsg="文件格式不正确";
 				operateSuccess = false;
 			}
-			String poolIDTemp=sheet.getCell(1,2).getContents();
-			String sql="from DataAnalysis where 1=1 ";
-			sql+= "and Convert(varchar,t,120) like '%"+day+"%'";
-			sql+=" and PoolID like '%"+poolIDTemp+"'";
-			List<DataAnalysis> list = dataAnalysisService.findBySql(sql);
-			System.out.println(list.size());
-			if(null == list||list.isEmpty()){
-				errMsg="";
-				operateSuccess=true;
-			}
-			else{
-				errMsg = "文件冲突，已存在相关信息！";	
-				operateSuccess=false;
-			}
+
 		}else{ //upload=''
 			errMsg = "请选择上传文件！";
 			operateSuccess=false;
