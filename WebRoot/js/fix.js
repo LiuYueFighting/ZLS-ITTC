@@ -65,15 +65,16 @@ oCanvas.domReady(function () {
         document.getElementById("lastPage").style.display="block";
 
         setOpenDgree("FM015");
+        setOpenDgree("FM063");
         setOpenDgree("FM069");
         setOpenDgree("FM068");
 
         document.getElementById("fix_line1").innerHTML="打开阀门62#";
         document.getElementById("fix_line2").innerHTML="打开阀门65#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门15#";
-        document.getElementById("fix_line4").innerHTML="关闭阀门69#";
-        document.getElementById("fix_line5").innerHTML="打开东侧池排水泵";
-        document.getElementById("fix_line6").innerHTML="关闭阀门68#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门63#";
+        document.getElementById("fix_line4").innerHTML="关闭阀门15#";
+        document.getElementById("fix_line5").innerHTML="关闭阀门69#";
+        document.getElementById("fix_line6").innerHTML="打开东侧池排水泵";
 
         setShow();
 
@@ -92,7 +93,7 @@ oCanvas.domReady(function () {
         setOpenDgree("FM068");
 
         document.getElementById("fix_line1").innerHTML="关闭阀门62#";
-        document.getElementById("fix_line2").innerHTML="打开阀门65#";
+        document.getElementById("fix_line2").innerHTML="打开阀门63#";
         document.getElementById("fix_line3").innerHTML="打开阀门15#";
         document.getElementById("fix_line4").innerHTML="打开阀门69#";
         document.getElementById("fix_line5").innerHTML="关闭阀门45#";
@@ -111,9 +112,11 @@ oCanvas.domReady(function () {
         setOpenDgree("FM066");
         setOpenDgree("FM068");
 
-        document.getElementById("fix_line1").innerHTML="关闭阀门65#";
-        document.getElementById("fix_line2").innerHTML="关闭阀门66#";
-        document.getElementById("fix_line3").innerHTML="打开新建混合井排水泵";
+        document.getElementById("fix_line1").innerHTML="打开阀门62#";
+        document.getElementById("fix_line2").innerHTML="打开阀门63#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门65#";
+        document.getElementById("fix_line4").innerHTML="关闭阀门66#";
+        document.getElementById("fix_line5").innerHTML="打开新建混合井排水泵";
         setShow();
     }
 
@@ -130,13 +133,12 @@ oCanvas.domReady(function () {
         setOpenDgree("FM014");
 
         document.getElementById("fix_line1").innerHTML="打开阀门65#";
-        document.getElementById("fix_line2").innerHTML="打开阀门66#";
+        document.getElementById("fix_line2").innerHTML="打开阀门63#";
         document.getElementById("fix_line3").innerHTML="打开阀门69#";
-        document.getElementById("fix_line4").innerHTML="打开阀门15#";
-        document.getElementById("fix_line5").innerHTML="打开阀门16#";
-        document.getElementById("fix_line6").innerHTML="关闭阀门62#";
-        document.getElementById("fix_line7").innerHTML="关闭阀门45#";
-        document.getElementById("fix_line8").innerHTML="关闭阀门14#";
+        document.getElementById("fix_line4").innerHTML="打开阀门66#";
+        document.getElementById("fix_line5").innerHTML="关闭阀门45#";
+        document.getElementById("fix_line6").innerHTML="关闭阀门14#";
+        document.getElementById("fix_line7").innerHTML="打开1#机加池排水泵";
 
         setShow();
     }
@@ -150,17 +152,17 @@ oCanvas.domReady(function () {
         setOpenDgree("FM015");
         setOpenDgree("FM069");
         setOpenDgree("FM068");
+        setOpenDgree("FM063");
 //        setOpenDgree("FM014");
 
         document.getElementById("fix_line1").innerHTML="打开阀门65#";
-        document.getElementById("fix_line2").innerHTML="打开阀门66#";
-        document.getElementById("fix_line3").innerHTML="打开阀门62#";
-        document.getElementById("fix_line4").innerHTML="打开阀门45#";
-        document.getElementById("fix_line5").innerHTML="打开阀门14#";
-        document.getElementById("fix_line6").innerHTML="打开阀门16#";
+        document.getElementById("fix_line2").innerHTML="打开阀门62#";
+        document.getElementById("fix_line3").innerHTML="打开阀门45#";
+        document.getElementById("fix_line4").innerHTML="打开阀门66#";
+        document.getElementById("fix_line5").innerHTML="关闭阀门63#";
+        document.getElementById("fix_line6").innerHTML="关闭阀门69#";
         document.getElementById("fix_line7").innerHTML="关闭阀门15#";
-        document.getElementById("fix_line8").innerHTML="关闭阀门69#";
-        document.getElementById("fix_line9").innerHTML="关闭阀门68#";
+        document.getElementById("fix_line8").innerHTML="打开2#机加池排水泵";
 
         setShow();
     }
@@ -176,16 +178,14 @@ oCanvas.domReady(function () {
         setOpenDgree("FM067");
 //        setOpenDgree("FM014");
 
-        document.getElementById("fix_line1").innerHTML="打开阀门62#";
-        document.getElementById("fix_line2").innerHTML="打开阀门45#";
-        document.getElementById("fix_line3").innerHTML="打开阀门14#";
+        document.getElementById("fix_line1").innerHTML="打开阀门63#";
+        document.getElementById("fix_line2").innerHTML="打开阀门62#";
+        document.getElementById("fix_line3").innerHTML="打开阀门45#";
         document.getElementById("fix_line4").innerHTML="打开阀门69#";
-        document.getElementById("fix_line5").innerHTML="打开阀门15#";
-        document.getElementById("fix_line6").innerHTML="打开阀门16#";
-        document.getElementById("fix_line7").innerHTML="关闭阀门65#";
-        document.getElementById("fix_line8").innerHTML="关闭阀门66#";
-        document.getElementById("fix_line9").innerHTML="关闭阀门68#";
-        document.getElementById("fix_line10").innerHTML="关闭阀门67#";
+        document.getElementById("fix_line5").innerHTML="关闭阀门65#";
+        document.getElementById("fix_line6").innerHTML="关闭阀门66#";
+        document.getElementById("fix_line7").innerHTML="关闭阀门67#";
+        document.getElementById("fix_line8").innerHTML="打开3#机加池排水泵";
 
         setShow();
     }

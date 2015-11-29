@@ -1366,45 +1366,45 @@
         <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
         <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
 
-    <img id="FM05" src="image/y3.png" onclick="setOpenDgree('FM05')" hover="heighlight()">
-    <img id="FM06" src="image/y3.png" onclick="setOpenDgree('FM06')">
-    <img id="FM07" src="image/y3.png" onclick="setOpenDgree('FM07')">
-    <img id="FM09" src="image/y3.png" onclick="setOpenDgree('FM09')">
-    <img id="FM010" src="image/y3.png" onclick="setOpenDgree('FM010')">
-    <img id="FM065" src="image/y3.png" onclick="setOpenDgree('FM065')">
-    <img id="FM062" src="image/y3.png" onclick="setOpenDgree('FM062')">
-    <img id="FM063" src="image/y3.png" onclick="setOpenDgree('FM063')">
-    <img id="FM045" src="image/y3.png" onclick="setOpenDgree('FM045')">
-    <img id="FM014" src="image/y3.png" onclick="setOpenDgree('FM014')">
-    <img id="FM015" src="image/y3.png" onclick="setOpenDgree('FM015')">
-    <img id="FM069" src="image/y3.png" onclick="setOpenDgree('FM069')">
-    <img id="FM066" src="image/y3.png" onclick="setOpenDgree('FM066')">
-    <img id="FM016" src="image/y3.png" onclick="setOpenDgree('FM016')">
-    <img id="FM068" src="image/y3.png" onclick="setOpenDgree('FM068')">
-    <img id="FM067" src="image/y3.png" onclick="setOpenDgree('FM067')">
-    <img id="FM017" src="image/y3.png" onclick="setOpenDgree('FM017')">
-    <img id="FM018" src="image/y3.png" onclick="setOpenDgree('FM018')">
-    <img id="FM019" src="image/y3.png" onclick="setOpenDgree('FM019')">
-    <img id="FM020" src="image/y3.png" onclick="setOpenDgree('FM020')">
-    <img id="FM052" src="image/y3.png" onclick="setOpenDgree('FM052')">
-    <img id="FM056" src="image/y3.png" onclick="setOpenDgree('FM056')">
-    <img id="FM053" src="image/y3.png" onclick="setOpenDgree('FM053')">
-    <img id="FM054" src="image/y3.png" onclick="setOpenDgree('FM054')">
-    <img id="FM057" src="image/y3.png" onclick="setOpenDgree('FM057')">
-    <img id="FM058" src="image/y3.png" onclick="setOpenDgree('FM058')">
-    <img id="FM059" src="image/y3.png" onclick="setOpenDgree('FM059')">
-    <img id="FM021" src="image/y3.png" onclick="setOpenDgree('FM021')">
-    <img id="FM022" src="image/y3.png" onclick="setOpenDgree('FM022')">
-    <img id="FM046" src="image/y3.png" onclick="setOpenDgree('FM046')">
-    <img id="FM024" src="image/y3.png" onclick="setOpenDgree('FM024')">
-    <img id="FM044" src="image/y3.png" onclick="setOpenDgree('FM044')">
-    <img id="FM055" src="image/y3.png" onclick="setOpenDgree('FM055')">
-    <img id="FM026" src="image/y3.png" onclick="setOpenDgree('FM026')">
-    <img id="FM047" src="image/y3.png" onclick="setOpenDgree('FM047')">
-    <img id="FM048" src="image/y3.png" onclick="setOpenDgree('FM048')">
-    <img id="FM049" src="image/y3.png" onclick="setOpenDgree('FM049')">
-    <img id="FM050" src="image/y3.png" onclick="setOpenDgree('FM050')">
-    <img id="FM051" src="image/y3.png" onclick="setOpenDgree('FM051')">
+    <img id="FM05" src="image/y3.png" >
+    <img id="FM06" src="image/y3.png" >
+    <img id="FM07" src="image/y3.png" >
+    <img id="FM09" src="image/y3.png" >
+    <img id="FM010" src="image/y3.png" >
+    <img id="FM065" src="image/y3.png" >
+    <img id="FM062" src="image/y3.png" >
+    <img id="FM063" src="image/y3.png" >
+    <img id="FM045" src="image/y3.png" >
+    <img id="FM014" src="image/y3.png" >
+    <img id="FM015" src="image/y3.png" >
+    <img id="FM069" src="image/y3.png" >
+    <img id="FM066" src="image/y3.png" >
+    <img id="FM016" src="image/y3.png" >
+    <img id="FM068" src="image/y3.png" >
+    <img id="FM067" src="image/y3.png" >
+    <img id="FM017" src="image/y3.png" >
+    <img id="FM018" src="image/y3.png" >
+    <img id="FM019" src="image/y3.png" >
+    <img id="FM020" src="image/y3.png" >
+    <img id="FM052" src="image/y3.png" >
+    <img id="FM056" src="image/y3.png" >
+    <img id="FM053" src="image/y3.png" >
+    <img id="FM054" src="image/y3.png" >
+    <img id="FM057" src="image/y3.png" >
+    <img id="FM058" src="image/y3.png" >
+    <img id="FM059" src="image/y3.png" >
+    <img id="FM021" src="image/y3.png" >
+    <img id="FM022" src="image/y3.png" >
+    <img id="FM046" src="image/y3.png" >
+    <img id="FM024" src="image/y3.png" >
+    <img id="FM044" src="image/y3.png" >
+    <img id="FM055" src="image/y3.png" >
+    <img id="FM026" src="image/y3.png" >
+    <img id="FM047" src="image/y3.png" >
+    <img id="FM048" src="image/y3.png" >
+    <img id="FM049" src="image/y3.png" >
+    <img id="FM050" src="image/y3.png" >
+    <img id="FM051" src="image/y3.png" >
 
     <%--<p id="WFM05" class="name_FM">05#</p>--%>
     <%--<p id="WFM06" class="name_FM">06#</p>--%>

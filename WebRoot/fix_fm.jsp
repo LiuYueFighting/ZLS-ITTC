@@ -123,12 +123,12 @@
     #chackBox_name{
     position:absolute;
     top: 707px;
-    left: 165px;
+    left: 1369px;
     }
     #WShow{
     position:absolute;
     top: 683px;
-    left: 172px;
+    left: 1372px;
     z-index:999;
     }
     .name_ob{
@@ -273,10 +273,26 @@
     z-index:999;
     }#FM062{
     position: absolute;
-    left:978px;
-    top: 275px;
+    left: 973px;
+    top: 306px;
     z-index:999;
-    }#FM045{
+    cursor:pointer;
+    }
+    #FM063{
+    position: absolute;
+    left: 1007px;
+    top: 306px;
+    z-index:999;
+    <%--cursor:pointer;--%>
+    }
+    #FM064{
+    position: absolute;
+    left: 990px;
+    top: 270px;
+    z-index:999;
+    <%--cursor:pointer;--%>
+    }
+    #FM045{
     position: absolute;
     left:879px;
     top: 458px;
@@ -332,6 +348,7 @@
     left:867px;
     top: 605px;
     z-index:999;
+    cursor:pointer;
     }#FM020{
     position: absolute;
     left:705px;
@@ -517,8 +534,19 @@
     z-index:999;
     }#WFM062{
     position: absolute;
-    left:978px;
-    top: 275px;
+    left: 970px;
+    top: 311px;
+    z-index:999;
+    }
+    #WFM063{
+    position: absolute;
+    left: 1007px;
+    top: 311px;
+    z-index:999;
+    }#WFM064{
+    position: absolute;
+    left: 987px;
+    top: 274px;
     z-index:999;
     }#WFM045{
     position: absolute;
@@ -784,6 +812,8 @@
     clearOpenDgree("FM010");
     clearOpenDgree("FM065");
     clearOpenDgree("FM062");
+    clearOpenDgree("FM063");
+    clearOpenDgree("FM064");
     clearOpenDgree("FM066");
     clearOpenDgree("FM069");
     clearOpenDgree("FM015");
@@ -834,37 +864,38 @@
     document.getElementById("fix_line10").innerHTML="";
     changeHide();
 
-    document.getElementById("fix_head").innerHTML="请点击需要维修的构筑物";
-    document.getElementById("name_QS").style.color="#283a45";
-    document.getElementById("name_JJC1").style.color="#283a45";
-    document.getElementById("name_HHJ1").style.color="#283a45";
-    document.getElementById("name_HHJ2").style.color="#283a45";
-    document.getElementById("name_JJC2").style.color="#283a45";
-    document.getElementById("name_JJC3").style.color="#283a45";
-    document.getElementById("name_HX").style.color="#283a45";
-    document.getElementById("name_VL").style.color="#283a45";
-    document.getElementById("name_CY").style.color="#283a45";
-    document.getElementById("name_TC").style.color="#283a45";
-    document.getElementById("name_TC1").style.color="#283a45";
-    document.getElementById("name_QSC1").style.color="#283a45";
-    document.getElementById("name_QSC2").style.color="#283a45";
-    document.getElementById("name_QSC3").style.color="#283a45";
-    document.getElementById("name_QSC4").style.color=" #283a45";
-    document.getElementById("name_QS").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_JJC1").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_HHJ1").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_HHJ2").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_JJC2").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_JJC3").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_VL").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_CY").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_TC").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_TC1").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_QSC1").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_QSC2").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_QSC3").style.background="rgba(255,255,255,0.5)";
-    document.getElementById("name_QSC4").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("fix_head").innerHTML="请点击需要维修的阀门";
+
+    <%--document.getElementById("name_QS").style.color="#283a45";--%>
+    <%--document.getElementById("name_JJC1").style.color="#283a45";--%>
+    <%--document.getElementById("name_HHJ1").style.color="#283a45";--%>
+    <%--document.getElementById("name_HHJ2").style.color="#283a45";--%>
+    <%--document.getElementById("name_JJC2").style.color="#283a45";--%>
+    <%--document.getElementById("name_JJC3").style.color="#283a45";--%>
+    <%--document.getElementById("name_HX").style.color="#283a45";--%>
+    <%--document.getElementById("name_VL").style.color="#283a45";--%>
+    <%--document.getElementById("name_CY").style.color="#283a45";--%>
+    <%--document.getElementById("name_TC").style.color="#283a45";--%>
+    <%--document.getElementById("name_TC1").style.color="#283a45";--%>
+    <%--document.getElementById("name_QSC1").style.color="#283a45";--%>
+    <%--document.getElementById("name_QSC2").style.color="#283a45";--%>
+    <%--document.getElementById("name_QSC3").style.color="#283a45";--%>
+    <%--document.getElementById("name_QSC4").style.color=" #283a45";--%>
+    <%--document.getElementById("name_QS").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_JJC1").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_HHJ1").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_HHJ2").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_JJC2").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_JJC3").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_VL").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_CY").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_TC").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_TC1").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_QSC1").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_QSC2").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_QSC3").style.background="rgba(255,255,255,0.5)";--%>
+    <%--document.getElementById("name_QSC4").style.background="rgba(255,255,255,0.5)";--%>
     }
 
 
@@ -952,7 +983,7 @@
     <jsp:include page="top.jsp" />
     <ol class="breadcrumb">
     <li><a href="main.jsp">设备检修</a></li>
-    <li class="active">维修单元显示</li>
+    <li class="active">阀门维修</li>
     </ol>
 <div id="myPage">
     <div id="myContent" style="overflow: hidden">
@@ -978,44 +1009,46 @@
     <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
     <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
 
-    <img id="FM05" src="image/y3.png" onclick="setFix('FM05')" >
-    <img id="FM06" src="image/y3.png" onclick="setFix('FM06')">
-    <img id="FM07" src="image/y3.png" onclick="setFix('FM07')">
-    <img id="FM09" src="image/y3.png" onclick="setFix('FM09')">
-    <img id="FM010" src="image/y3.png" onclick="setFix('FM010')">
-    <img id="FM065" src="image/y3.png" onclick="setFix('FM065')">
-    <img id="FM062" src="image/y3.png" onclick="setFix('FM062')">
-    <img id="FM045" src="image/y3.png" onclick="setFix('FM045')">
-    <img id="FM014" src="image/y3.png" onclick="setFix('FM014')">
-    <img id="FM015" src="image/y3.png" onclick="setFix('FM015')">
-    <img id="FM069" src="image/y3.png" onclick="setFix('FM069')">
-    <img id="FM066" src="image/y3.png" onclick="setFix('FM066')">
-    <img id="FM016" src="image/y3.png" onclick="setFix('FM016')">
-    <img id="FM068" src="image/y3.png" onclick="setFix('FM068')">
-    <img id="FM067" src="image/y3.png" onclick="setFix('FM067')">
-    <img id="FM017" src="image/y3.png" onclick="setFix('FM017')">
-    <img id="FM018" src="image/y3.png" onclick="setFix('FM018')">
-    <img id="FM019" src="image/y3.png" onclick="setFix('FM019')">
-    <img id="FM020" src="image/y3.png" onclick="setFix('FM020')">
-    <img id="FM052" src="image/y3.png" onclick="setFix('FM052')">
-    <img id="FM056" src="image/y3.png" onclick="setFix('FM056')">
-    <img id="FM053" src="image/y3.png" onclick="setFix('FM053')">
-    <img id="FM054" src="image/y3.png" onclick="setFix('FM054')">
-    <img id="FM057" src="image/y3.png" onclick="setFix('FM057')">
-    <img id="FM058" src="image/y3.png" onclick="setFix('FM058')">
-    <img id="FM059" src="image/y3.png" onclick="setFix('FM059')">
-    <img id="FM021" src="image/y3.png" onclick="setFix('FM021')">
-    <img id="FM022" src="image/y3.png" onclick="setFix('FM022')">
-    <img id="FM046" src="image/y3.png" onclick="setFix('FM046')">
-    <img id="FM024" src="image/y3.png" onclick="setFix('FM024')">
-    <img id="FM044" src="image/y3.png" onclick="setFix('FM044')">
-    <img id="FM055" src="image/y3.png" onclick="setFix('FM055')">
-    <img id="FM026" src="image/y3.png" onclick="setFix('FM026')">
-    <img id="FM047" src="image/y3.png" onclick="setFix('FM047')">
-    <img id="FM048" src="image/y3.png" onclick="setFix('FM048')">
-    <img id="FM049" src="image/y3.png" onclick="setFix('FM049')">
-    <img id="FM050" src="image/y3.png" onclick="setFix('FM050')">
-    <img id="FM051" src="image/y3.png" onclick="setFix('FM051')">
+    <img id="FM05" src="image/y3.png" >
+    <img id="FM06" src="image/y3.png" >
+    <img id="FM07" src="image/y3.png" >
+    <img id="FM09" src="image/y3.png" >
+    <img id="FM010" src="image/y3.png" >
+    <img id="FM065" src="image/y3.png" >
+    <img id="FM062" src="image/y3.png" >
+    <img id="FM063" src="image/y3.png" >
+    <img id="FM064" src="image/y3.png" >
+    <img id="FM045" src="image/y3.png" >
+    <img id="FM014" src="image/y3.png" >
+    <img id="FM015" src="image/y3.png" >
+    <img id="FM069" src="image/y3.png" >
+    <img id="FM066" src="image/y3.png" >
+    <img id="FM016" src="image/y3.png" >
+    <img id="FM068" src="image/y3.png" >
+    <img id="FM067" src="image/y3.png" >
+    <img id="FM017" src="image/y3.png" >
+    <img id="FM018" src="image/y3.png" >
+    <img id="FM019" src="image/y3.png" >
+    <img id="FM020" src="image/y3.png" >
+    <img id="FM052" src="image/y3.png" >
+    <img id="FM056" src="image/y3.png" >
+    <img id="FM053" src="image/y3.png" >
+    <img id="FM054" src="image/y3.png" >
+    <img id="FM057" src="image/y3.png" >
+    <img id="FM058" src="image/y3.png" >
+    <img id="FM059" src="image/y3.png" >
+    <img id="FM021" src="image/y3.png" >
+    <img id="FM022" src="image/y3.png" >
+    <img id="FM046" src="image/y3.png" >
+    <img id="FM024" src="image/y3.png" >
+    <img id="FM044" src="image/y3.png" >
+    <img id="FM055" src="image/y3.png" >
+    <img id="FM026" src="image/y3.png" >
+    <img id="FM047" src="image/y3.png" >
+    <img id="FM048" src="image/y3.png" >
+    <img id="FM049" src="image/y3.png" >
+    <img id="FM050" src="image/y3.png" >
+    <img id="FM051" src="image/y3.png" >
 
     <p id="WFM05" class="name_FM">05#</p>
     <p id="WFM06" class="name_FM">06#</p>
@@ -1024,6 +1057,8 @@
     <p id="WFM010" class="name_FM">010#</p>
     <p id="WFM065" class="name_FM">065#</p>
     <p id="WFM062" class="name_FM">062#</p>
+    <p id="WFM063" class="name_FM">063#</p>
+    <p id="WFM064" class="name_FM">064#</p>
     <p id="WFM045" class="name_FM">045#</p>
     <p id="WFM014" class="name_FM">014#</p>
     <p id="WFM015" class="name_FM">015#</p>
@@ -1058,7 +1093,7 @@
     </div>
     <div id="fix-panel">
     <button type="button" id="panel_heading" onclick="changeHide()">
-    <h2 id="fix_head" >请点击需要维修的构筑物</h2>
+    <h2 id="fix_head" >请点击需要维修的阀门</h2>
     <%--<a href="#" id="show_hide" onclick="changeHide()">显示</a>--%>
 
     </button>
