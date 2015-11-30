@@ -78,326 +78,326 @@ oCanvas.domReady(function(){
         fps:1
     });
     var bg=canvas.display.image({
-        x:0,
-        y:0,
+        x:130,
+        y: -13,
         image:"./image/FMControl.png"
     });
     canvas.addChild(bg);
-    var img1=canvas.display.image({
-        x:692,
-        y:58,
-        image:"image/main/qs.png"
-    });
-    canvas.addChild(img1);
-    img1.bind("click",function(){
-        window.location.href="GN_getWater.jsp";
-    }).bind("mouseenter", function () {
-            canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-            canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-
-        canvas.redraw();
-     });
-    var img1_2=canvas.display.image({
-        x:678,
-        y:141,
-        image:"image/main/qs2.png"
-    });
-    canvas.addChild(img1_2);
-    img1_2.bind("click",function(){
-        window.location.href="GN_getWater.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-    });
-    //????????
-    var img2=canvas.display.image({
-        x:839,
-        y:342,
-        image:"image/main/5.png"
-    });
-    canvas.addChild(img2);
-    img2.bind("click",function(){
-        window.location.href="GN_JJ.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        canvas.redraw();
-    });
-    //???????????
-    var img21=img2.clone({
-        x:1049,
-        y:340
-    });
-    canvas.addChild(img21);
-    img21.bind("click",function(){
-        window.location.href="GN_JJ.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        canvas.redraw();
-    });
-    var img22=img2.clone({
-        x:1127,
-        y:573
-    });
-    canvas.addChild(img22);
-    img22.bind("click",function(){
-        window.location.href="GN_JJ.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-
-        canvas.redraw();
-    });
-    //V?????????
-    var img3=canvas.display.image({
-        x:847,
-        y:665,
-        image:"image/main/6.png"
-    });
-    canvas.addChild(img3);
-    img3.bind("click",function(){
-        window.location.href="GN_VL.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-       canvas.redraw();
-    });
-
-    //?????????
-    var img4=canvas.display.image({
-        x:967,
-        y:352,
-        image:"image/main/hhj.png"
-    });
-    canvas.addChild(img4);
-    img4.bind("click",function(){
-        window.location.href="GN_HH.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-         canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        canvas.redraw();
-    });
-    var img10=canvas.display.image({
-        x:1179,
-        y:381,
-        image:"image/main/hhj2.png"
-    });
-    canvas.addChild(img10);
-    img10.bind("click",function(){
-        window.location.href="GN_HH.jsp";
-    }).bind("mouseenter", function () {
-        this.shadow="0 0 10px #eee";
-         canvas.redraw();
-        canvas.mouse.cursor("pointer");
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        canvas.redraw();
-    });
-    //???????
-    var img5=canvas.display.image({
-        x:810,
-        y:529,
-        image:"image/main/hx.png"
-    });
-    canvas.addChild(img5);
-    img5.bind("click",function(){
-        window.location.href="GN_HX.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-       canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-       canvas.redraw();
-    });
-    //?????
-    var img6=canvas.display.image({
-        x:284,
-        y:435,
-        image:"image/main/qsc1.png"
-    });
-    canvas.addChild(img6);
-    img6.bind("click",function(){
-        window.location.href="GN_QingS_new.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-         canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        canvas.redraw();
-    });
-    var img61=canvas.display.image({
-        x:287,
-        y:253,
-        image:"image/main/qsc2.png"
-    });
-    canvas.addChild(img61);
-    img61.bind("click",function(){
-        window.location.href="GN_QingS.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-         canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        canvas.redraw();
-    });
-    var img62=canvas.display.image({
-        x:462,
-        y:251,
-        image:"image/main/qsc2.png"
-    });
-    canvas.addChild(img62);
-    img62.bind("click",function(){
-        window.location.href="GN_QingS.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-         canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        canvas.redraw();
-    });
-    var img63=canvas.display.image({
-        x:432,
-        y:434,
-        image:"image/main/qsc3.png"
-    });
-    canvas.addChild(img63);
-    img63.bind("click",function(){
-        window.location.href="GN_QingS_new.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-         canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        canvas.redraw();
-    });
-
-    var img7=canvas.display.image({
-        x:870,
-        y:-7,
-        image:"image/main/1.png"
-    });
-    canvas.addChild(img7);
-    img7.bind("click",function(){
-        window.location.href="#";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        canvas.redraw();
-    });
-    var img8=canvas.display.image({
-        x:379,
-        y:652,
-        image:"image/main/tc.png"
-    });
-    canvas.addChild(img8);
-    img8.bind("click",function(){
-        window.location.href="GN_TC01.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-       canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-       canvas.redraw();
-    });
-
-    var img8_1=canvas.display.image({
-        x:488,
-        y:652,
-        image:"image/main/tc.png"
-    });
-    canvas.addChild(img8_1);
-    img8_1.bind("click",function(){
-        window.location.href="GN_TC01.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        canvas.redraw();
-    });
-
-    var img9=canvas.display.image({
-        x:613,
-        y:645,
-        image:"image/main/cy.png"
-    });
-    canvas.addChild(img9);
-    img9.bind("click",function(){
-        window.location.href="GN_CY.jsp";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-         canvas.redraw();
-    });
-
-    var img10=canvas.display.image({
-        x:623,
-        y:465,
-        image:"image/main/cyc.png"
-    });
-    canvas.addChild(img10);
-    img10.bind("click",function(){
-        window.location.href="#";
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        canvas.redraw();
-    });
+//    var img1=canvas.display.image({
+//        x:692,
+//        y:58,
+//        image:"image/main/qs.png"
+//    });
+//    canvas.addChild(img1);
+//    img1.bind("click",function(){
+//        window.location.href="GN_getWater.jsp";
+//    }).bind("mouseenter", function () {
+//            canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//            canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//
+//        canvas.redraw();
+//     });
+//    var img1_2=canvas.display.image({
+//        x:678,
+//        y:141,
+//        image:"image/main/qs2.png"
+//    });
+//    canvas.addChild(img1_2);
+//    img1_2.bind("click",function(){
+//        window.location.href="GN_getWater.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//    });
+//    //????????
+//    var img2=canvas.display.image({
+//        x:839,
+//        y:342,
+//        image:"image/main/5.png"
+//    });
+//    canvas.addChild(img2);
+//    img2.bind("click",function(){
+//        window.location.href="GN_JJ.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
+//    });
+//    //???????????
+//    var img21=img2.clone({
+//        x:1049,
+//        y:340
+//    });
+//    canvas.addChild(img21);
+//    img21.bind("click",function(){
+//        window.location.href="GN_JJ.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
+//    });
+//    var img22=img2.clone({
+//        x:1127,
+//        y:573
+//    });
+//    canvas.addChild(img22);
+//    img22.bind("click",function(){
+//        window.location.href="GN_JJ.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//
+//        canvas.redraw();
+//    });
+//    //V?????????
+//    var img3=canvas.display.image({
+//        x:847,
+//        y:665,
+//        image:"image/main/6.png"
+//    });
+//    canvas.addChild(img3);
+//    img3.bind("click",function(){
+//        window.location.href="GN_VL.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//       canvas.redraw();
+//    });
+//
+//    //?????????
+//    var img4=canvas.display.image({
+//        x:967,
+//        y:352,
+//        image:"image/main/hhj.png"
+//    });
+//    canvas.addChild(img4);
+//    img4.bind("click",function(){
+//        window.location.href="GN_HH.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//         canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
+//    });
+//    var img10=canvas.display.image({
+//        x:1179,
+//        y:381,
+//        image:"image/main/hhj2.png"
+//    });
+//    canvas.addChild(img10);
+//    img10.bind("click",function(){
+//        window.location.href="GN_HH.jsp";
+//    }).bind("mouseenter", function () {
+//        this.shadow="0 0 10px #eee";
+//         canvas.redraw();
+//        canvas.mouse.cursor("pointer");
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
+//    });
+//    //???????
+//    var img5=canvas.display.image({
+//        x:810,
+//        y:529,
+//        image:"image/main/hx.png"
+//    });
+//    canvas.addChild(img5);
+//    img5.bind("click",function(){
+//        window.location.href="GN_HX.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//       canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//       canvas.redraw();
+//    });
+//    //?????
+//    var img6=canvas.display.image({
+//        x:284,
+//        y:435,
+//        image:"image/main/qsc1.png"
+//    });
+//    canvas.addChild(img6);
+//    img6.bind("click",function(){
+//        window.location.href="GN_QingS_new.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//         canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
+//    });
+//    var img61=canvas.display.image({
+//        x:287,
+//        y:253,
+//        image:"image/main/qsc2.png"
+//    });
+//    canvas.addChild(img61);
+//    img61.bind("click",function(){
+//        window.location.href="GN_QingS.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//         canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
+//    });
+//    var img62=canvas.display.image({
+//        x:462,
+//        y:251,
+//        image:"image/main/qsc2.png"
+//    });
+//    canvas.addChild(img62);
+//    img62.bind("click",function(){
+//        window.location.href="GN_QingS.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//         canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
+//    });
+//    var img63=canvas.display.image({
+//        x:432,
+//        y:434,
+//        image:"image/main/qsc3.png"
+//    });
+//    canvas.addChild(img63);
+//    img63.bind("click",function(){
+//        window.location.href="GN_QingS_new.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//         canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
+//    });
+//
+//    var img7=canvas.display.image({
+//        x:870,
+//        y:-7,
+//        image:"image/main/1.png"
+//    });
+//    canvas.addChild(img7);
+//    img7.bind("click",function(){
+//        window.location.href="#";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
+//    });
+//    var img8=canvas.display.image({
+//        x:379,
+//        y:652,
+//        image:"image/main/tc.png"
+//    });
+//    canvas.addChild(img8);
+//    img8.bind("click",function(){
+//        window.location.href="GN_TC01.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//       canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//       canvas.redraw();
+//    });
+//
+//    var img8_1=canvas.display.image({
+//        x:488,
+//        y:652,
+//        image:"image/main/tc.png"
+//    });
+//    canvas.addChild(img8_1);
+//    img8_1.bind("click",function(){
+//        window.location.href="GN_TC01.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
+//    });
+//
+//    var img9=canvas.display.image({
+//        x:613,
+//        y:645,
+//        image:"image/main/cy.png"
+//    });
+//    canvas.addChild(img9);
+//    img9.bind("click",function(){
+//        window.location.href="GN_CY.jsp";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//         canvas.redraw();
+//    });
+//
+//    var img10=canvas.display.image({
+//        x:623,
+//        y:465,
+//        image:"image/main/cyc.png"
+//    });
+//    canvas.addChild(img10);
+//    img10.bind("click",function(){
+//        window.location.href="#";
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        canvas.redraw();
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        canvas.redraw();
+//    });
 
 
 

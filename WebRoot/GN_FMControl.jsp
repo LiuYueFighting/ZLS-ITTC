@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/top_down.css">
     <link rel="stylesheet" href="css/breadcrumb.css">
     <%--<link rel="stylesheet" href="css/normalize.css">--%>
+    <link rel="stylesheet" href="css/FM&GZW_name.css">
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -57,142 +58,6 @@
         font-weight:normal;
         <%--display:none;--%>
         }
-    <%--#name_QS{--%>
-    <%--position: absolute;--%>
-    <%--left: 685px;--%>
-    <%--top: 70px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_JJC1{--%>
-    <%--position: absolute;--%>
-    <%--left: 852px;--%>
-    <%--top: 394px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_JJC2{--%>
-    <%--position: absolute;--%>
-    <%--left: 1067px;--%>
-    <%--top: 394px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_JJC3{--%>
-    <%--position: absolute;--%>
-    <%--left:1146px;--%>
-    <%--top: 626px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_VL{--%>
-    <%--position: absolute;--%>
-    <%--left: 868px;--%>
-    <%--top: 691px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_HHJ1{--%>
-    <%--position: absolute;--%>
-    <%--left:959px;--%>
-    <%--top: 353px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_HHJ2{--%>
-    <%--position: absolute;--%>
-    <%--left:1170px;--%>
-    <%--top: 363px;--%>
-    <%--height: auto;--%>
-    <%--width: 30px;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_HX{--%>
-    <%--position: absolute;--%>
-    <%--left:843px;--%>
-    <%--top: 537px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_QSC1{--%>
-    <%--position: absolute;--%>
-    <%--left:295px;--%>
-    <%--top: 489px;--%>
-    <%--height: 50px;--%>
-    <%--width: 150px;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_CY{--%>
-    <%--position: absolute;--%>
-    <%--left:590px;--%>
-    <%--top: 663px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_CYC{--%>
-    <%--position: absolute;--%>
-    <%--left:623px;--%>
-    <%--top: 469px;--%>
-    <%--height: auto;--%>
-    <%--width: 30px;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_QSC2{--%>
-    <%--position: absolute;--%>
-    <%--left:315px;--%>
-    <%--top: 301px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_QSC3{--%>
-    <%--position: absolute;--%>
-    <%--left:487px;--%>
-    <%--top: 301px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_QSC4{--%>
-    <%--position: absolute;--%>
-    <%--left:450px;--%>
-    <%--top: 489px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_TC{--%>
-    <%--position: absolute;--%>
-    <%--left:374px;--%>
-    <%--top: 664px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_TC1{--%>
-    <%--position: absolute;--%>
-    <%--left:482px;--%>
-    <%--top: 664px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
-    <%--#name_YC{--%>
-    <%--position: absolute;--%>
-    <%--left:972px;--%>
-    <%--top: 139px;--%>
-    <%--height: 50px;--%>
-    <%--width: auto;--%>
-    <%--z-index:999;--%>
-    <%--}--%>
         #name_QS{
         position: absolute;
         left: 682px;
@@ -273,224 +138,6 @@
         left:969px;
         top: 150px;
         }
-    #FM05{
-    position: absolute;
-    left:695px;
-    top: 106px;
-    z-index:999;
-    }
-    #FM06{
-    position: absolute;
-    left:733px;
-    top: 106px;
-    z-index:999;
-    }
-    #FM05{
-    position: absolute;
-    left:695px;
-    top: 106px;
-    z-index:999;
-    }
-    #FM07{
-    position: absolute;
-    left:713px;
-    top: 172px;
-    z-index:999;
-    }#FM09{
-    position: absolute;
-    left:688px;
-    top: 192px;
-    z-index:999;
-    }#FM010{
-    position: absolute;
-    left:738px;
-    top: 193px;
-    z-index:999;
-    }#FM065{
-    position: absolute;
-    left:1032px;
-    top: 240px;
-    z-index:999;
-    }#FM062{
-    position: absolute;
-    left: 973px;
-    top: 306px;
-    z-index:999;
-    }
-        #FM063{
-        position: absolute;
-        left: 1007px;
-        top: 306px;
-        z-index:999;
-        }
-        #FM045{
-    position: absolute;
-    left:879px;
-    top: 458px;
-    z-index:999;
-    }
-    #FM014{
-    position: absolute;
-    left:826px;
-    top: 475px;
-    z-index:999;
-    }#FM015{
-    position: absolute;
-    left:989px;
-    top: 463px;
-    z-index:999;
-    }#FM069{
-    position: absolute;
-    left:1034px;
-    top: 463px;
-    z-index:999;
-    }#FM066{
-    position: absolute;
-    left:1174px;
-    top: 466px;
-    z-index:999;
-    }#FM016{
-    position: absolute;
-    left:978px;
-    top: 501px;
-    z-index:999;
-    }#FM068{
-    position: absolute;
-    left:1012px;
-    top: 567px;
-    z-index:999;
-    }#FM067{
-    position: absolute;
-    left:1011px;
-    top: 635px;
-    z-index:999;
-    }#FM017{
-    position: absolute;
-    left:834px;
-    top:569px;
-    z-index:999;
-    }#FM018{
-    position: absolute;
-    left:869px;
-    top: 569px;
-    z-index:999;
-    }#FM019{
-    position: absolute;
-    left:867px;
-    top: 605px;
-    z-index:999;
-    }#FM020{
-    position: absolute;
-    left:705px;
-    top: 645px;
-    z-index:999;
-    }
-    #FM052{
-    position: absolute;
-    left:756px;
-    top: 693px;
-    z-index:999;
-    }
-    #FM056{
-    position: absolute;
-    left:692px;
-    top: 723px;
-    z-index:999;
-    }#FM053{
-    position: absolute;
-    left:653px;
-    top:634px;
-    z-index:999;
-    }#FM054{
-    position: absolute;
-    left:622px;
-    top: 632px;
-    z-index:999;
-    }#FM057{
-    position: absolute;
-    left:663px;
-    top: 699px;
-    z-index:999;
-    }#FM058{
-    position: absolute;
-    left:633px;
-    top: 703px;
-    z-index:999;
-    }#FM059{
-    position: absolute;
-    left:588px;
-    top: 657px;
-    z-index:999;
-    }
-    #FM021{
-    position: absolute;
-    left:597px;
-    top: 616px;
-    z-index:999;
-    }
-    #FM022{
-    position: absolute;
-    left:611px;
-    top: 578px;
-    z-index:999;
-    }
-    #FM046{
-    position: absolute;
-    left:382px;
-    top: 469px;
-    z-index:999;
-    }
-    #FM024{
-    position: absolute;
-    left:559px;
-    top: 578px;
-    z-index:999;
-    }#FM044{
-    position: absolute;
-    left:402px;
-    top: 627px;
-    z-index:999;
-    }
-    #FM055{
-    position: absolute;
-    left:526px;
-    top: 618px;
-    z-index:999;
-    }
-    #FM026{
-    position: absolute;
-    left:401px;
-    top: 572px;
-    z-index:999;
-    }
-    #FM047{
-    position: absolute;
-    left:347px;
-    top: 394px;
-    z-index:999;
-    }#FM048{
-    position: absolute;
-    left:389px;
-    top: 415px;
-    z-index:999;
-    }#FM049{
-    position: absolute;
-    left:451px;
-    top: 418px;
-    z-index:999;
-    }#FM050{
-    position: absolute;
-    left:485px;
-    top: 392px;
-    z-index:999;
-    }
-    #FM051{
-    position: absolute;
-    left:515px;
-    top: 416px;
-    z-index:999;
-    }
-
     #readout_input{
     position: absolute;
     left: 687px;
@@ -525,257 +172,6 @@
     #btn_submit{
         margin: 20px auto auto 36px;
     }
-    #FMhelp{
-    position: absolute;
-    left:1203px;
-    top: 27px;
-    z-index: 999;
-    color:black;
-    }
-    #WFM05{
-    position: absolute;
-    left:695px;
-     top: 106px;
-    z-index:999;
-    }
-    #WFM06{
-    position: absolute;
-    left:733px;
-    top: 106px;
-    z-index:999;
-    }
-    #WFM05{
-    position: absolute;
-    left:695px;
-    top: 106px;
-    z-index:999;
-    }
-    #WFM07{
-    position: absolute;
-    left:713px;
-    top: 172px;
-    z-index:999;
-    }#WFM09{
-    position: absolute;
-    left:688px;
-    top: 192px;
-    z-index:999;
-    }#WFM010{
-    position: absolute;
-    left:738px;
-    top: 193px;
-    z-index:999;
-    }#WFM065{
-    position: absolute;
-    left:1032px;
-    top: 240px;
-    z-index:999;
-    }#WFM062{
-    position: absolute;
-        left: 970px;
-        top: 311px;
-    z-index:999;
-    }
-        #WFM063{
-        position: absolute;
-        left: 1007px;
-        top: 311px;
-        z-index:999;
-        }#WFM045{
-    position: absolute;
-    left:879px;
-    top: 458px;
-    z-index:999;
-    }
-    #WFM014{
-    position: absolute;
-    left:826px;
-    top: 475px;
-    z-index:999;
-    }#WFM015{
-    position: absolute;
-    left:989px;
-    top: 463px;
-    z-index:999;
-    }#WFM069{
-    position: absolute;
-    left:1034px;
-    top: 463px;
-    z-index:999;
-    }#WFM066{
-    position: absolute;
-    left:1174px;
-    top: 466px;
-    z-index:999;
-    }#WFM016{
-    position: absolute;
-    left:978px;
-    top: 501px;
-    z-index:999;
-    }#WFM068{
-    position: absolute;
-    left:1012px;
-    top: 567px;
-    z-index:999;
-    }#WFM067{
-    position: absolute;
-    left:1011px;
-    top: 635px;
-    z-index:999;
-    }#WFM017{
-    position: absolute;
-    left:834px;
-    top:569px;
-    z-index:999;
-    }#WFM018{
-    position: absolute;
-    left:869px;
-    top: 569px;
-    z-index:999;
-    }#WFM019{
-    position: absolute;
-    left:867px;
-    top: 605px;
-    z-index:999;
-    }#WFM020{
-    position: absolute;
-    left:705px;
-    top: 645px;
-    z-index:999;
-    }
-    #WFM052{
-    position: absolute;
-    left:756px;
-    top: 693px;
-    z-index:999;
-    }
-    #WFM056{
-    position: absolute;
-    left:692px;
-    top: 723px;
-    z-index:999;
-    }#WFM053{
-    position: absolute;
-    left:653px;
-    top:634px;
-    z-index:999;
-    }#WFM054{
-    position: absolute;
-    left:622px;
-    top: 632px;
-    z-index:999;
-    }#WFM057{
-    position: absolute;
-    left:663px;
-    top: 699px;
-    z-index:999;
-    }#WFM058{
-    position: absolute;
-    left:633px;
-    top: 703px;
-    z-index:999;
-    }#WFM059{
-    position: absolute;
-    left:588px;
-    top: 657px;
-    z-index:999;
-    }
-    #WFM021{
-    position: absolute;
-    left:597px;
-    top: 616px;
-    z-index:999;
-    }
-    #WFM022{
-    position: absolute;
-    left:611px;
-    top: 578px;
-    z-index:999;
-    }
-    #WFM046{
-    position: absolute;
-    left:382px;
-    top: 469px;
-    z-index:999;
-    }
-    #WFM024{
-    position: absolute;
-    left:559px;
-    top: 578px;
-    z-index:999;
-    }#WFM044{
-    position: absolute;
-    left:402px;
-    top: 627px;
-    z-index:999;
-    }
-    #WFM055{
-    position: absolute;
-    left:526px;
-    top: 618px;
-    z-index:999;
-    }
-    #WFM026{
-    position: absolute;
-    left:401px;
-    top: 572px;
-    z-index:999;
-    }
-    #WFM047{
-    position: absolute;
-    left:347px;
-    top: 394px;
-    z-index:999;
-    }#WFM048{
-    position: absolute;
-    left:389px;
-    top: 415px;
-    z-index:999;
-    }#WFM049{
-    position: absolute;
-    left:451px;
-    top: 418px;
-    z-index:999;
-    }#WFM050{
-    position: absolute;
-    left:485px;
-    top: 392px;
-    z-index:999;
-    }
-    #WFM051{
-    position: absolute;
-    left:515px;
-    top: 416px;
-    z-index:999;
-    }
-    #qsOut1{
-        position: absolute;
-        left:639px;
-        top: 200px;
-        z-index:999;
-        }
-        #qsOut2{
-        position: absolute;
-        left:780px;
-        top: 200px;
-        z-index:999;
-        }
-        #hh1In1{
-        position: absolute;
-        left:943px;
-        top: 328px;
-        z-index:999;
-        }#hh1In2{
-        position: absolute;
-        left:1031px;
-        top: 328px;
-        z-index:999;
-        }#hh2In{
-        position: absolute;
-        left:1200px;
-        top: 328px;
-        z-index:999;
-        }
         #jjc1In{
         position: absolute;
         left:951px;
@@ -812,36 +208,7 @@
         top: 725px;;
         z-index:999;
         }
-        #cy1In{
-        position: absolute;
-        left:590px;
-        top: 637px;
-        z-index:999;
-        }
-        #cy2In{
-        position: absolute;
-        left:670px;
-        top: 637px;
-        z-index:999;
-        }
-        #tc1In{
-        position: absolute;
-        left:388px;
-        top: 711px;
-        z-index:999;
-        }
-        #tc2In{
-        position: absolute;
-        left:570px;
-        top: 693px;
-        z-index:999;
-        }
-        #qsc2In2{
-        position: absolute;
-        left:609px;
-        top: 367px;
-        z-index:999;
-        }
+
         #qsc3In1{
         position: absolute;
         left: 355px;
@@ -854,81 +221,7 @@
         top: 613px;
         z-index:999;
         }
-        #qsc3In3{
-        position: absolute;
-        left:545px;
-        top: 553px;
-        z-index:999;
-        }
-        #Wmodel1{
-        position: absolute;
-        left: 40px;
-        top: 10px;
-        z-index:999;
-        }
-        #btn_model1_1{
-        position:absolute;
-        top:40px;
-        left:30px;
-        z-index:999;
-        width:97px;
-        }
-        #btn_model1_2{
-        position:absolute;
-        top:80px;
-        left:30px;
-        z-index:999;
-        width:97px;
-        }
-        #btn_model1_3{
-        position:absolute;
-        top:120px;
-        left:30px;
-        z-index:999;
-        width:97px;
-        }#btn_model1_4{
-        position:absolute;
-        top:160px;
-        left:30px;
-        z-index:999;
-        width:97px;
-        background:#5cb85c;
-        }
-        #Wmodel2{
-        position: absolute;
-        left: 25px;
-        top: 208px;
-        z-index:999;
-        width:107px;
-        }
-        #btn_model2_1{
-        position:absolute;
-        top:240px;
-        left:30px;
-        z-index:999;
-        width:97px;
-        }
-        #btn_model2_2{
-        position:absolute;
-        top:280px;
-        left:30px;
-        z-index:999;
-        width:97px;
-        }
-        #btn_model2_3{
-        position:absolute;
-        top:320px;
-        left:30px;
-        z-index:999;
-        width:97px;
-        background:#5cb85c;
-        }
-    .name_FM{
-    font-family: '微软雅黑','Arial';
-    color:black;
-    font-size: 15px;
-    font-weight:bold;
-    }
+
         .flow{
         font-family: '微软雅黑','Arial';
         color: #e12200;
@@ -956,15 +249,7 @@
         left: 1372px;
         z-index:999;
         }
-    #FMList{
-    margin-left:144px;
-    margin-top:10px;
-    }
-    #FM_table{
-    height:257px;
-    width:1333px;
-    text-align:center;
-    }
+
     </style>
     <script>
     <%--function changeImage(id){--%>
@@ -1123,42 +408,6 @@
         var qsc3Out;
         var qsc4In;
         var qsc4Out;
-    <%--function clearOpenDgree(id){--%>
-    <%--var openDgree = 100;--%>
-    <%--var num = id.substr(2);--%>
-    <%--&lt;%&ndash;var table =document.getElementById(num);&ndash;%&gt;--%>
-    <%--var image =document.getElementById(id);--%>
-    <%--&lt;%&ndash;var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");&ndash;%&gt;--%>
-    <%--&lt;%&ndash;if(openDgree<0||openDgree>100||isNaN(openDgree)){&ndash;%&gt;--%>
-    <%--&lt;%&ndash;alert("输入有误！请重新输入！");&ndash;%&gt;--%>
-    <%--&lt;%&ndash;return;&ndash;%&gt;--%>
-    <%--&lt;%&ndash;}&ndash;%&gt;--%>
-    <%--&lt;%&ndash;else if(openDgree==null){&ndash;%&gt;--%>
-    <%--&lt;%&ndash;return;&ndash;%&gt;--%>
-    <%--&lt;%&ndash;}&ndash;%&gt;--%>
-    <%--if (openDgree==0){--%>
-    <%--&lt;%&ndash;table.innerHTML=openDgree+"%";&ndash;%&gt;--%>
-    <%--image.src = "image/y2.png";--%>
-    <%--&lt;%&ndash;$('#'+num).toggleClass('danger');&ndash;%&gt;--%>
-    <%--return;--%>
-    <%--}--%>
-    <%--else if(openDgree==100)--%>
-    <%--{--%>
-    <%--&lt;%&ndash;table.innerHTML=openDgree+"%";&ndash;%&gt;--%>
-    <%--image.src = "image/y3.png";--%>
-    <%--&lt;%&ndash;$('#'+num).toggleClass('info');&ndash;%&gt;--%>
-    <%--return;--%>
-    <%--}--%>
-    <%--else{--%>
-    <%--&lt;%&ndash;table.innerHTML=openDgree+"%";&ndash;%&gt;--%>
-    <%--image.src = "image/y1.png";--%>
-    <%--&lt;%&ndash;$('#'+num).toggleClass('warning');&ndash;%&gt;--%>
-    <%--return;--%>
-    <%--}--%>
-    <%--}--%>
-    <%--&lt;%&ndash;var model1=4;&ndash;%&gt;--%>
-    <%--&lt;%&ndash;var model2=3;&ndash;%&gt;--%>
-
     function computeAll(){
         compute1();
         compute2();
@@ -1221,7 +470,7 @@
         <%--document.getElementById("qsc3In3").innerHTML=qsc3In3.toFixed(0);--%>
         }
     <%--function clearModle1(){--%>
-        <%--&lt;%&ndash;clearEmphasize1();&ndash;%&gt;--%>
+        <%--<%--clearEmphasize1();--%>
         <%--clearOpenDgree("FM05");--%>
         <%--clearOpenDgree("FM06");--%>
         <%--clearOpenDgree("FM07");--%>
@@ -1239,7 +488,7 @@
         <%--clearOpenDgree("FM067");--%>
     <%--}--%>
     <%--function clearModle2(){--%>
-        <%--&lt;%&ndash;clearEmphasize2();&ndash;%&gt;--%>
+        <%--<%--clearEmphasize2();--%>
         <%--clearOpenDgree("FM017");--%>
         <%--clearOpenDgree("FM018");--%>
         <%--clearOpenDgree("FM019");--%>
@@ -1374,6 +623,7 @@
     <img id="FM065" src="image/y3.png" >
     <img id="FM062" src="image/y3.png" >
     <img id="FM063" src="image/y3.png" >
+    <img id="FM064" src="image/y3.png" >
     <img id="FM045" src="image/y3.png" >
     <img id="FM014" src="image/y3.png" >
     <img id="FM015" src="image/y3.png" >
@@ -1396,7 +646,9 @@
     <img id="FM021" src="image/y3.png" >
     <img id="FM022" src="image/y3.png" >
     <img id="FM046" src="image/y3.png" >
+    <img id="FM023" src="image/y3.png" >
     <img id="FM024" src="image/y3.png" >
+    <img id="FM025" src="image/y3.png" >
     <img id="FM044" src="image/y3.png" >
     <img id="FM055" src="image/y3.png" >
     <img id="FM026" src="image/y3.png" >
