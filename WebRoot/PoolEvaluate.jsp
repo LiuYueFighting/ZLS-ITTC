@@ -7,18 +7,18 @@
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.ddd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
-	<head>
+<head>
 		<base href="<%=basePath%>" />
-	<meta charset="UTF-8">
-    <meta http-equiv="Access-Control-Allow-Origin" content="*">
-    <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
-    <title>北京自来水集团工艺平台</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+	<title>北京自来水集团工艺平台</title>
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/top_down.css">
-<link rel="stylesheet" href="css/normal.css">
-<link rel="stylesheet" href="css/breadcrumb.css"> 
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/top_down.css" />
+<link rel="stylesheet" href="css/normal.css" />
+<link rel="stylesheet" href="css/breadcrumb.css" /> 
 
 <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
@@ -64,14 +64,14 @@ body {
  
 #tab_entity {
 	position: absolute;
-	top: 50px;
+	top: 25px;
 	left: 50px;
 	width: 1300px;
 }
 
 #leftContainer {
 	position: absolute;
-	top: 50px;
+	top: 25px;
 	left: 1400px;
 	width: 200px;
 }
@@ -205,6 +205,7 @@ div.menu:hover{
 	font-size: 16px;
 	color: #FFFFFF;
 	text-decoration:none;
+	margin-left:0;
 }
 
 #template a:hover {
@@ -253,7 +254,7 @@ div.menu:hover{
 	top: 5px;
 }
 
-th, td, input {
+th, td, input, option {
 	text-align:center;
 }
 
@@ -305,23 +306,22 @@ th, td, input {
         			<div class="menu" id="export">导出</div>
         			<div class="menu" id="import">导入</div>
         			<div class="menu" id="template"><a href="download/PoolEvaluate.xls" style="height:50px">模板</a></div>
-        			<!-- tab_export -->
-					<div id="tab_export" style="display:none">
-						<form action="${pageContext.request.contextPath}/importDataAnalysis" 
-							name="uploadForm" enctype="multipart/form-data" method="post">
-							<input type=file name="upload" id="upload" style="display: none;" onchange="fakeUpload.value=value" /> 
-							<input id="btn-select" type=button  class="btn btn-primary" value="选择文件" onclick=upload.click() 
-								style="width: 134px; font-size: 18px; background-color:#3399FF" /><br /> 
-							<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click()
-								style="width: 134px; height: 35px; border: 1px solid #95B8E7;"><br />
-							<input id="btn-import" class="btn btn-primary" style="font-size: 18px; width: 65px;
-								background-color:#3399FF"" value="确定" onclick="javascript:import2DB();fakeUpload.value='';" />
-							<input id="btn-cancel" class="btn btn-primary" style="font-size: 18px; width: 65px;
-								background-color:#3399FF"" value="取消"/>
-						</form>	
-					</div>
+        		</div>
+        		<!-- tab_export -->
+				<div id="tab_export" style="display:none">
+					<form action="${pageContext.request.contextPath}/importDataAnalysis" 
+						name="uploadForm" enctype="multipart/form-data" method="post">
+						<input type=file name="upload" id="upload" style="display: none;" onchange="fakeUpload.value=value" /> 
+						<input id="btn-select" type=button  class="btn btn-primary" value="选择文件" onclick=upload.click() 
+							style="width: 134px; font-size: 18px; background-color:#3399FF" /><br /> 
+						<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click()
+							style="width: 134px; height: 35px; border: 1px solid #95B8E7;"><br />
+						<input id="btn-import" class="btn btn-primary" style="font-size: 18px; width: 65px;
+							background-color:#3399FF"" value="确定" onclick="javascript:import2DB();fakeUpload.value='';" />
+						<input id="btn-cancel" class="btn btn-primary" style="font-size: 18px; width: 65px;
+							background-color:#3399FF"" value="取消"/>
+					</form>	
 				</div>
-				
 			</div>
 			
 			<!-- tab_entity -->
@@ -350,9 +350,9 @@ th, td, input {
 					<select class="easyui-combobox" id="PoolID"
 						name="poolEvaluate.PoolID" style="width:200px;height:25px"
 						data-options="required:true,missingMessage:'请输入机加池编号'" >
-						<option value="MTG_JJ1_SC01" selected>MTG_JJ1_SC01</option>
-						<option value="MTG_JJ1_SC02">MTG_JJ1_SC02</option>
-						<option value="MTG_JJ1_SC03">MTG_JJ1_SC03</option>
+						<option value="MTG_JJC_SC01" selected>机加池01#</option>
+						<option value="MTG_JJC_SC02">机加池02#</option>
+						<option value="MTG_JJC_SC03">机加池03#</option>
 					</select>	<br /><br /> 
 					&nbsp; &nbsp; &nbsp; PAC投加量 : &nbsp; 
 					<input class="easyui-numberbox textbox" style="width:195px;height:25px"
@@ -557,6 +557,7 @@ th, td, input {
 					</form>
 				</div>
 			</div>
+		</div>
 		</div>
 	</div>
 	<jsp:include page="down.jsp" />

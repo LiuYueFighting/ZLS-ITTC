@@ -10,6 +10,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -28,6 +29,7 @@ import jxl.write.WritableWorkbook;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.water.beans.DataAnalysis;
+import com.water.beans.PoolEvaluate;
 import com.water.service.DataAnalysisService;
 import com.water.util.JsonTreeData;
 import com.water.util.ListSort;
@@ -197,7 +199,9 @@ public class DataAnalysisAction extends ActionSupport{
 	public void setOperateSuccess(boolean operateSuccess) {
 		this.operateSuccess = operateSuccess;
 	}
-
+	
+	
+	
 	/**
 	 * 查询某一页的数据
 	 */
@@ -262,6 +266,16 @@ public class DataAnalysisAction extends ActionSupport{
 		return "success";
 	}
 
+	
+	
+	
+	public static final Comparator<DataAnalysis> COMPARATOR = new Comparator<DataAnalysis>() {
+		public int compare(DataAnalysis data1, DataAnalysis data2) {
+			return data1.compareTo(data2);
+		}
+	};
+	
+	
 	/**
 	 * 通过设置查询条件查询
 	 */
@@ -286,6 +300,7 @@ public class DataAnalysisAction extends ActionSupport{
 
 		System.out.println(sql);
 		List<DataAnalysis> searchList = dataAnalysisService.findBySql(sql);
+		Collections.sort(searchList, COMPARATOR);
 		List<String> tlist = new ArrayList<String>();
 		for(DataAnalysis s:searchList){
 			tlist.add(sdFormat.format(s.getT()));

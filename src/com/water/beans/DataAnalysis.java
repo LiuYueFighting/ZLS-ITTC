@@ -1,8 +1,9 @@
 package com.water.beans;
 
+import java.util.Comparator;
 import java.util.Date;
 
-public class DataAnalysis {
+public class DataAnalysis implements Comparable<DataAnalysis>{
 	private long ID;		//���
 	private String PoolID;		//ˮ�ر��
 	private Date t;		//ʱ��
@@ -15,6 +16,19 @@ public class DataAnalysis {
 	private double Storage;		//��ˮ��
 	private double HLInV;		//��ˮ������ˮ
 	private double PreH;		//Ԥ��ˮλ
+	
+	@Override
+	public int compareTo(DataAnalysis other) {
+		if(this.t == null || other.t == null)
+			return 0;
+		else {
+			if(this.t.before(other.t))
+				return -1;
+			else 
+				return 1;
+			}
+	}
+	
 	public long getID() {
 		return ID;
 	}

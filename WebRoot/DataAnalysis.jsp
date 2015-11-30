@@ -11,19 +11,18 @@
 <head>
 <base href="<%=basePath%>" />
 
-<meta charset="UTF-8">
-<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta charset="UTF-8" />
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title>北京自来水集团工艺平台</title>
 
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/top_down.css">
-<link rel="stylesheet" href="css/top_down.css">
-<link rel="stylesheet" href="css/breadcrumb.css">
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/top_down.css" />
+<link rel="stylesheet" href="css/top_down.css" />
+<link rel="stylesheet" href="css/breadcrumb.css" />
 
-<link rel="stylesheet" type="text/css"
-	href="easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
 <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 <link rel="stylesheet" type="text/css" href="style/myeasyui.css" />
 <script src="js/bootstrap.min.js"></script>
@@ -66,14 +65,14 @@ body {
 
 #tab_entity {
 	position: absolute;
-	top: 50px;
+	top: 25px;
 	left: 50px;
 	width: 1300px;
 }
 
 #leftContainer {
 	position: absolute;
-	top: 50px;
+	top: 25px;
 	left: 1400px;
 	width:200px;
 }
@@ -244,7 +243,7 @@ div.menu:hover{
 	line-height:50px;
 }
 
-th, td, input {
+th, td, input, option {
 	text-align:center;
 }
 
@@ -279,7 +278,6 @@ text-align: center;
 			<!-- 操作按钮 -->
 			<div id="btn_group" class="btn-group-vertical btn-group-lg"
 				role="group" style="left: 1482px; top: 20px; z-index: 999; display:none">
-
 				<button id="btn_addRow" class="btn btn-primary"
 					onclick="javascript:addDataAnalysis()">添加</button>
 				<button id="btn_editRow" class="btn btn-primary"
@@ -292,15 +290,8 @@ text-align: center;
 					onclick="javascript:searchDataAnalysis()">条件查询</button>
 				<button id="btn_export" class="btn btn-primary"
 					onclick="javascript:export2excel()">导出</button>
-
 			</div>
-
-			<!-- 导出文件操作-->
-			
-			
-			
 			<div id="leftContainer">
-				
 				<div id="treeGuid" style="overflow: scroll">
 					<p>选择时间:</p>
 					<br />
@@ -325,29 +316,27 @@ text-align: center;
         			<div class="menu" id="search">查询</div>
         			<div class="menu" id="export">导出</div>
         			<div class="menu" id="import">导入</div>
-        			<div class="menu" id="template"><a href="download/DataAnalysis.xls" style="height:50px">
-					模板</a>
+        			<div class="menu" id="template"><a href="download/DataAnalysis.xls" style="height:50px">模板</a></div>
 				</div>
 					
-					<div id="tab_export" style="display:none">
-				<form action="${pageContext.request.contextPath}/importDataAnalysis"
-					name="uploadForm" enctype="multipart/form-data" method="post">
-					<input type=file name="upload" id="upload" style="display: none;"
-						onchange="fakeUpload.value=value"> 
-					<input id="btn-select" type=button  class="btn btn-primary" value="选择文件" onclick=upload.click()
-						style="width: 134px; font-size: 18px; background-color:#3399FF"><br /> 
-					<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click()
-						style="width: 134px; height: 35px; border: 1px solid #95B8E7;">
-					<br />
-					<input id="btn-import" class="btn btn-primary"
-						style="font-size: 18px; width: 65px;  background-color:#3399FF"" value="确定"
-						onclick="javascript:import2DB();fakeUpload.value='';" />
-					<input id="btn-cancel" class="btn btn-primary"
-						style="font-size: 18px; width: 65px;  background-color:#3399FF"" value="取消"/>
-				</form>	
+				<div id="tab_export" style="display:none">
+					<form action="${pageContext.request.contextPath}/importDataAnalysis"
+						name="uploadForm" enctype="multipart/form-data" method="post">
+						<input type=file name="upload" id="upload" style="display: none;"
+							onchange="fakeUpload.value=value" /> 
+						<input id="btn-select" type=button  class="btn btn-primary" value="选择文件" onclick=upload.click()
+							style="width: 134px; font-size: 18px; background-color:#3399FF" /><br /> 
+						<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click()
+							style="width: 134px; height: 35px; border: 1px solid #95B8E7;" />
+						<br />
+						<input id="btn-import" class="btn btn-primary"
+							style="font-size: 18px; width: 65px;  background-color:#3399FF"" value="确定"
+							onclick="javascript:import2DB();fakeUpload.value='';" />
+						<input id="btn-cancel" class="btn btn-primary"
+							style="font-size: 18px; width: 65px;  background-color:#3399FF"" value="取消"/>
+					</form>	
+				</div>
 			</div>
-    			</div>
-				
 				<!-- <div id="picLegend">
 					<h4 style="color:blue"><strong><span style="color:red;">Zoom</span> 选项说明:</strong></h4>
 					<table id="legendTable" style="text-align:left">
@@ -377,38 +366,28 @@ text-align: center;
 					</tr>
 					</table>
 				</div> -->
-			</div>
 			<div id="tab_entity">
 				<table id="dataAnalysisbody"
 					style="max-width: 1300px; height: 300px;" class="easyui-datagrid"></table>
 				<div style="height:40px"></div>
-				<div id="imageContainer" style="max-width: 1300px; height: 600px;">
-				</div>
-
+				<div id="imageContainer" style="max-width: 1300px; height: 600px;"></div>
 			</div>
-
-			
-
-			<!-- 编辑数据的div，默认看不到 -->
+				<!-- 编辑数据的div，默认看不到 -->
 			<center>
 				<div style="display: none; width: 700px" align="center">
 					<div id="tabEdit" class="easyui-dialog" data-options="closed:true"
 						style="align: center; width: 800px; height: 540px; padding: 10px 60px 20px 60px">
-						<form id="frmEdit">
-						
-							<br /> <input type="hidden" id="dateTemp" name="dateTemp" /> <input
+						<form id="frmEdit"><br />
+							<input type="hidden" id="dateTemp" name="dateTemp" /> <input
 								type="hidden" id="ID" name="dataAnalysis.ID" /> <br />
 							<dl>
 								&nbsp; &nbsp;时 &nbsp; &nbsp; &nbsp; &nbsp; 间 : &nbsp;
 								<input class="easyui-datetimebox" name="dataAnalysis.t" id="t"
-									type="text"
-									data-options="required:true,showSeconds:false,missingMessage:'请选择时间'"
-									style="width: 200px; height: 25px" /> &nbsp; &nbsp; &nbsp;
-								&nbsp; &nbsp;水 池 编 号 : &nbsp;
-								<select class="easyui-combobox textbox "
-									id="PoolID" name="dataAnalysis.PoolID"
-									style="width: 200px; height: 25px"
-									data-options="required:true,missingMessage:'请输入水池编号'">
+									type="text"	data-options="required:true,showSeconds:false,missingMessage:'请选择时间'"
+									style="width: 200px; height: 25px" />
+								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;水 池 编 号 : &nbsp;
+								<select class="easyui-combobox textbox " id="PoolID" name="dataAnalysis.PoolID"
+									style="width: 200px; height: 25px" data-options="required:true,missingMessage:'请输入水池编号'">
 									<option value="MTG_QingS_SC01" selected>清水池01#</option>
 									<option value="MTG_QingS_SC02">清水池02#</option>
 									<option value="MTG_QingS_SC03">清水池03#</option>
@@ -417,80 +396,51 @@ text-align: center;
 							<dl>
 								&nbsp; &nbsp;总 进 水 量 : &nbsp;
 								<input class="easyui-numberbox textbox" name="dataAnalysis.InV"
-									style="width: 200px; height: 25px" id="InV"
-									data-options="min:0,precision:0,"> &nbsp; &nbsp; &nbsp;
-									&nbsp; &nbsp;出 &nbsp;水 &nbsp; 量 : &nbsp; <input
-									class="easyui-numberbox" name="dataAnalysis.OutV"
-									style="width: 200px; height: 25px" id="OutV"
-									data-options="min:0,precision:0" />
+									style="width: 200px; height: 25px" id="InV" data-options="min:0,precision:0," />
+								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;出 &nbsp;水 &nbsp; 量 : &nbsp;
+								<input class="easyui-numberbox" name="dataAnalysis.OutV"
+								style="width: 200px; height: 25px" id="OutV" data-options="min:0,precision:0" />
 							</dl>
-
 							<dl>
-
 								&nbsp; &nbsp;洗虹吸滤池 : &nbsp;
-								<input class="easyui-numberbox textbox"
-									style="width: 200px; height: 25px" id="HXOutV"
+								<input class="easyui-numberbox textbox" style="width: 200px; height: 25px" id="HXOutV"
 									name="dataAnalysis.HXOutV" data-options="min:0,precision:0" />
-
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;洗V型滤池 : &nbsp;
-								<input class="easyui-numberbox textbox"
-									style="width: 200px; height: 25px" id="LCOutV"
+								<input class="easyui-numberbox textbox" style="width: 200px; height: 25px" id="LCOutV"
 									name="dataAnalysis.LCOutV" data-options="min:0,precision:0" />
-
 							</dl>
 							<dl>
-
 								&nbsp; &nbsp;炭池反冲洗 : &nbsp;
 								<input class="easyui-numberbox textbox"
 									style="width: 200px; height: 25px" id="TCOutV"
 									name="dataAnalysis.TCOutV" data-options="min:0,precision:0" />
-
-
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;机加池排泥 : &nbsp;
 								<input class="easyui-numberbox textbox"
 									style="width: 200px; height: 25px" id="JJOutV"
 									name="dataAnalysis.JJOutV" data-options="min:0,precision:0" />
-
 							</dl>
 							<dl>
-
 								&nbsp; &nbsp;回 流 进 水: &nbsp; &nbsp;
 								<input class="easyui-numberbox textbox"
 									style="width: 200px; height: 25px" id="HLInV"
 									name="dataAnalysis.HLInV" data-options="min:0,precision:0" />
-
-
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;蓄 &nbsp;水 &nbsp; 量 : &nbsp;
-								<input class="easyui-numberbox textbox"
-									style="width: 200px; height: 25px" id="Storage"
+								<input class="easyui-numberbox textbox" style="width: 200px; height: 25px" id="Storage"
 									name="dataAnalysis.Storage" data-options="precision:0" />
-
 							</dl>
 							<dl>
-
 								&nbsp; &nbsp;预 测 水 位: &nbsp; &nbsp;
 								<input class="easyui-numberbox textbox"
 									style="width: 200px; height: 25px" id="PreH"
 									name="dataAnalysis.PreH" data-options="precision:2" />
-
 							</dl>
-							<!-- <input  type="hidden" id="Storage" name="dataAnalysis.Storage" />
-						<input  type="hidden" id="PreH" name="dataAnalysis.PreH" />
-						 -->
-
 						</form>
 					</div>
 					<div id="newEdit" class="easyui-dialog" data-options="closed:true"
 						style="align: center; width: 1180px; height: 600px; padding: 10px 60px 10px 60px">
-						<form id="newfrmEdit" style="width:1060px">
-							<br />
-							<!-- <input type="hidden" id="dateTempAdd" name="dateTemp"	/> 
-						<input type="hidden" id="IDAdd" name="dataAnalysis.ID" /> -->
+						<form id="newfrmEdit" style="width:1060px"><br />
 							<table id="tab" style="align: center">
-
-
 								<tr>
-									
 									<th style="width: 1px; height: 26px"></th>
 									<th style="width: 1px; height: 26px"></th>
 									<th style="width: 1px; height: 26px"></th>
@@ -506,12 +456,7 @@ text-align: center;
 									<th style="width: 72px; height: 26px">回流进水</th>
 									<th style="width: 52px; height: 26px">蓄水量</th>
 									<th style="width: 72px; height: 26px">预测水位</th>
-									
-									
-									
 								</tr>
-
-
 								<tr id="tr1">
 									<td style="width: 1px; height: 26px">
 										<input type="hidden" id="splitSign" name="split" style="width: 1px; height: 25px" />
@@ -533,7 +478,7 @@ text-align: center;
 											<option value="MTG_QingS_SC01" selected>清水池01#</option>
 											<option value="MTG_QingS_SC02">清水池02#</option>
 											<option value="MTG_QingS_SC03">清水池03#</option>
-									</select>
+										</select>
 									</td>
 									<td style="width: 72px; height: 26px">
 										<!-- 总进水量 -->
@@ -572,31 +517,26 @@ text-align: center;
 										<input id="PreHAdd1" name="dataAnalysis.PreH" style="width: 70px; height: 25px" data-options="precision:2" />
 									</td>
 								</tr>
-
 							</table>
 							<a id="addButton" href="#" class="easyui-linkbutton"
 								data-options="iconCls:'icon-add'">添加</a>
-
 						</form>
 					</div>
 				</div>
-
 				<div style="display: none; width: 400px">
 					<div id="tabSearch" class="easyui-dialog"
 						data-options="closed:true"
 						style="align: center; width: 400px; height: 270px; padding: 10px 60px 20px 60px">
 						<form id="frmSearch">
 							<dl>
-
 								<br /> &nbsp; &nbsp; &nbsp; 时 &nbsp; &nbsp; &nbsp; 间: &nbsp;
 								<input class="easyui-datebox" style="width: 150px" id="searchT"
 									name="searchT" text="" type="text"></input>
-
 								<br />
 								<br />
 								<br /> &nbsp; &nbsp; &nbsp;
 								<!-- 水池编号:  <input  class="easyui-validatebox" type="text" style="width:120px" id="searchPoolID"
-					                 size="20px" name="searchPoolID" ></input> -->
+				            	     size="20px" name="searchPoolID" ></input> -->
 								水池编号:&nbsp;
 								<!--  <input type="text" size="15" id="searchPoolID" name="searchPoolID" /> -->
 								<select class="easyui-combobox" style="width: 150px"
@@ -604,19 +544,13 @@ text-align: center;
 									<option value="MTG_QingS_SC01">清水池01#</option>
 									<option value="MTG_QingS_SC02">清水池02#</option>
 									<option value="MTG_QingS_SC03">清水池03#</option>
-								</select>
-									<!-- <select class="easyui-combobox" id="searchPoolID" name="searchPoolID" style="width: 150px; height: 25px">
-											<option value="MTG_QingS_SC01">MTG_QingS_SC01</option>
-											<option value="MTG_QingS_SC02">MTG_QingS_SC02</option>
-											<option value="MTG_QingS_SC03" selected>MTG_QingS_SC03</option>
-									</select>-->
-									
+								</select>									
 							</dl>
 						</form>
 					</div>
 				</div>
-		</div>
 		</center>
+		</div>
 	</div>
 
 </body>

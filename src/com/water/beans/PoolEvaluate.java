@@ -2,7 +2,7 @@ package com.water.beans;
 
 import java.util.Date;
 
-public class PoolEvaluate {
+public class PoolEvaluate implements Comparable<PoolEvaluate> {
 	private long ID;  //ID
 	private Date t;   //时间
 	private String PoolID;  //水池编号
@@ -20,7 +20,17 @@ public class PoolEvaluate {
 	private double WaterTemp;	//水温
 	
 //	private int state;  
-	
+	@Override
+	public int compareTo(PoolEvaluate other) {
+		if(this.t == null || other.t == null)
+			return 0;
+		else {
+			if(this.t.before(other.t))
+				return -1;
+			else 
+				return 1;
+			}
+	}
 	
 	public long getID() {
 		return ID;
@@ -124,4 +134,3 @@ public class PoolEvaluate {
 	}
 	
 }
-

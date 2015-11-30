@@ -229,7 +229,7 @@ function listPoolEvaluate(data) {
 		singleSelect : true, // 每次只选中一行
 		loadMsg : '正在加载项目列表，请稍后...',
 		idField : 'ID', // 主键属性
-		remoteSort : false, // 从服务器端排序，默认true	
+		remoteSort : true, // 从服务器端排序，默认true	
 //		pagination : true, // 在底部显示分页工具栏
 //		pageSize : 20, // 指定每页的大小，服务器要加上page属性和total属性
 //		pageList : [ 10, 15, 20, 30], // 可以设置每页记录条数的列表，服务器要加上rows属性
@@ -250,6 +250,28 @@ function listPoolEvaluate(data) {
 		            	 formatter : function(value) {
 		            		 return value.substring(0, 10);
 		            	 },
+		            	 /*
+		            	 sorter: function(date1, date2) {
+		            		 date1 = date1.substring(0, 10).split('-');
+		            		 date2 = date2.substring(0, 10).split('-');
+		            		 if(date1[0] > date2[0]) {
+		            			 return 1;
+		            		 } else if(date1[0] < date2[0]){
+		            			 return -1;
+		            		 } else {
+		            			 if(date1[1] > date2[1]) {
+		            				 return 1;
+		            			 } else if(date1[1] < date2[1]) {
+		            				 return -1;
+		            			 } else {
+		            				 if(date1[2] >= date2[2]) {
+		            					 return 1;
+		            				 } else {
+		            					 return -1;
+		            				 }
+		            			 }
+		            		 }
+		            	 },*/
 		            	 sortable : true
 		             },
 		             {
@@ -616,41 +638,18 @@ function dealSave() {
 function dealAddSave() {
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#newfrmEdit").serialize();
-//	alert("prams is \n" + params);
 	var paramsArray = params.split("split=&");
-//	alert("paramsArray.length is \n" + paramsArray.length);
-//	alert("pramsArray is \n" + paramsArray);
-	//var strLength;
-	//var tempStr;
-	//var newStr;
-	/*
-	for(var i = 1; i < paramsArray.length; ++i) {
-		//alert("Into for loop!");
-		strLength = paramsArray[i].length;
-		tempStr = paramsArray[i].substring(42, 60);
-		//alert("old tempStr" + tempStr);
-		newtempStr = tempStr.substring(0, 10) + '+' + tempStr.substring(11, tempStr.length);
-		//alert("new temStr" + newtempStr);
-		newStr = paramsArray[i].substring(0, 9) + newtempStr + paramsArray[i].substring(9, 42)
-					+ newtempStr + paramsArray[i].substring(60, strLength);
-		paramsArray[i] = newStr;
-		
-	}*/
-	//strTAddalert('Form表单' + params);
-	//alert('Form表单Array' + paramsArray);
+	alert("prams is " + params + 
+			"\nparamsArray.length is " + paramsArray.length + 
+			"\npramsArray is " + paramsArray);
 	var errorMessage = '';
 	var flag = true;
 	for(var i = 1; i < paramsArray.length; ++i) {
-//		alert('Form表单Array' + i + "\n" + paramsArray[i]);
-		// 得到id的值，为空串表示添加
-		//var re = new RegExp(/^dateTemp=\d{4}-\d{2}\-\d{2}\+\d{2}%3A\d{2}/);
-		//var test = re.test(paramsArray[i]);
-		//alert(test);
-		
 		var re_ID = new RegExp(/poolEvaluate.PoolID=MTG_JJC_SC0\d/);
 		var re_t = new RegExp(/poolEvaluate.t=\d{4}-\d{2}\-\d{2}/);
-//		alert("test 1 \n" + re_ID.test(paramsArray[i]));
-//		alert("test 2 \n" + re_t.test(paramsArray[i]));
+		//alert('Form表单Array' + i + "\n" + paramsArray[i] + 
+		//		"\ntest1 = " + re_t.test(paramsArray[i]) + 
+		//		"\ntest2 = " + re_ID.test(paramsArray[i]));
 		var test = re_t.test(paramsArray[i]) && re_ID.test(paramsArray[i]);
 		
 		if(!test) {
@@ -664,34 +663,15 @@ function dealAddSave() {
 			flag = false;
 		}//test = false; 
 		else {
-			if ($("#IDAdd").val() == "") {
-				//alert('Add POST test');
-				$.post("addPoolEvaluate.action", paramsArray[i], function(result) {
-					//alert('test' + result.operateSuccess);
-					if (result.operateSuccess){
-						location.reload();
-//						$('#dataAnalysisbody').datagrid('reload');// 重新加载
-						$.messager.alert('添加', '添加成功', 'info');
-					} else {
-						$.messager.alert('添加', '添加失败', 'warning');
-					}
-				});
-			}//添加if
-			else {
-				// 表示更新
-				$.post("updatePoolEvaluate.action", params, function(result) {
-					if (result.operateSuccess) {
-						location.reload();
-//						$('#dataAnalysisbody').datagrid('reload');// 重新加载
-						$.messager.alert('更新', '更新成功', 'info');
-					} else {
-						$.messager.alert('更新', '更新失败', 'warning');
-					}
-				});
-			}//更新else
-			//flag = true;
-			
-		}//test = trye
+			$.post("addPoolEvaluate.action", paramsArray[i], function(result) {
+				if (result.operateSuccess){
+					$.messager.alert('添加', '添加成功', 'info');
+					location.reload();
+				} else {
+					$.messager.alert('添加', '添加失败', 'warning');
+				}
+			});
+		}//flag = true;
 	}//for loop
 	if(flag == false)
 		$.messager.alert('错误', errorMessage, 'error');	
@@ -1358,7 +1338,7 @@ function drawImage(){
                 color: 'red',
                 fontWeight: 'bold'
             },
-            selected: 1
+            selected: 2
         },
         scrollbar: {
             barBackgroundColor: 'gray',
@@ -1604,7 +1584,7 @@ function drawImage(){
             color: 'red',
             fontWeight: 'bold'
         },
-        selected: 1
+        selected: 2
     },
 	scrollbar: {
 		barBackgroundColor: 'gray',
@@ -1870,7 +1850,7 @@ function drawImage(){
                 color: 'red',
                 fontWeight: 'bold'
             },
-            selected: 1
+            selected: 2
         },
 		scrollbar: {
 			barBackgroundColor: 'gray',

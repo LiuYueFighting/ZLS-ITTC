@@ -10,9 +10,11 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Collections;
 
 import org.apache.struts2.ServletActionContext;
 
@@ -327,6 +329,12 @@ public class PoolEvaluateAction extends ActionSupport{
 		return "success";
 	}
 	
+	public static final Comparator<PoolEvaluate> COMPARATOR = new Comparator<PoolEvaluate>() {
+		public int compare(PoolEvaluate p1, PoolEvaluate p2) {
+			return p1.compareTo(p2);
+		}
+	};
+	
 	public String searchPoolEvaluate() {
 		String sql;
 		//查询条件拼接
@@ -383,6 +391,7 @@ public class PoolEvaluateAction extends ActionSupport{
 		System.out.println(sql);
 		data.clear();//清除数据
 		List<PoolEvaluate> searchList = poolEvaluateService.findBySql(sql);
+		Collections.sort(searchList, COMPARATOR);
 		List<String> tlist = new ArrayList<String>();
 		DateFormat sdFormat=new SimpleDateFormat("yyyy-MM-dd");
 		for(PoolEvaluate s:searchList){
