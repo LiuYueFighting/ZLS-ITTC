@@ -31,7 +31,7 @@
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="highcharts/highstock.js"></script>
-<script type="text/javascript" src="highcharts/exporting.src.js"></script>
+<script type="text/javascript" src="highcharts/exporting.js"></script>
 <script type="text/javascript" src="highcharts/themes/grid.js"></script>
 
 <script type="text/javascript" src="js/ajaxfileupload.js"></script>
@@ -47,29 +47,15 @@ body {
 	font-family: '微软雅黑', 'Source Sans Pro';
 	font-size: 15px;
 	width: 1600px;
-	height: 1000px;
+	height: 1100px;
 	margin: 0px auto;
-}
-
-#myNav {
-	background: #f1f3f5;
-}
-
-#pageHead {
-	height: 50px;
-	font-size: 19px;
-}
-
-#pageHead .navbar {
-	/*opacity: 0.85;*/
-	z-index: 10;
 }
 
 #myContent {
 	margin: 0px auto;
 	position: relative;
-	height: 1000px;
 	width: 1600px;
+	height: 1100px;
 	background-position: bottom;
 }
 
@@ -78,47 +64,47 @@ body {
 	cellpadding: 10px;
 }
 
-/*#word_title{*/
-/*font-family: '微软雅黑','Arial';*/
-/*font-size: 39px;*/
-/*color: #eeeeee;*/
-/*position: absolute;*/
-/*top: 180px;*/
-/*left: 590px;*/
-/*opacity: 0.85;*/
-/*}*/
-#pageFooter {
-	background: #e5e5e5;
-}
-
-#pageFooter p {
-	text-align: center;
-}
-
-#myNavbar a:hover {
-	color: #d510ff;
-	background: #ffeae4;
-}
-
-#myContent {
-	/*   background: url("image/QSC3.png") no-repeat;
-    		   background-position: center; */
-	
-}
-
 #tab_entity {
 	position: absolute;
+	top: 50px;
+	left: 50px;
+	width: 1300px;
+}
+
+#leftContainer {
+	position: absolute;
+	top: 50px;
+	left: 1400px;
+	width:200px;
+}
+
+#treeGuid {
+	position: relative;
+	top: 0px;
+	width: 200px;
+	height: 400px;
+	padding: 5px;
+	border: 1px solid #95B8E7;
+}
+
+#chooseIndex {
+	position: relative;
 	top: 20px;
-	left: 300px;
-	width: 1400px;
+	width: 200px;
+	height: 200px;
+	padding: 5px;
+	inline-height: 30px;
+	border: 1px solid #95B87E;
+	
+	border: 0;
 }
 
 #tab_export {
 	font-family: '微软雅黑', 'Arial';
 	position: absolute;
-	left: 1482px;
+	left: 25px;
 	/* top: 320px; */
-	top: 350px;
+	top: 320px;
 	z-index: 999;
 	font-size: 14px;
 	width: 200px;
@@ -137,25 +123,15 @@ body {
 	left: 0px;
 }
 
-#leftContainer {
-	position: absolute;
-	top: 20px;
-	left: 20px;
-}
+
 
 #legendTable tr, #legendTable td {
 	padding: 5px;
 	margin: 5px;
 }
 
-#treeGuid {
-	position: relative;
-	top: 0px;
-	width: 220px;
-	height: 970px;
-	padding: 5px;
-	border: 1px solid #95B8E7;
-}
+
+
 #picLegend {
 	position: relative;
 	top: 50px;
@@ -179,9 +155,103 @@ body {
 	font-size: 18px"
 }
 
+
+
+div.icon {
+	position: absolute;
+	top: 520px;
+	left: 0px;
+	width: 180px;
+	height: 180px;
+ 	
+}
+
+div.menuBar {  
+ 	line-height:70px;  
+	font-family: '微软雅黑';
+	font-weight: 100;
+	font-size: 20px;
+	border: 1px solid #CCCCCC;
+	border-radius: 90%;
+	color: #FFFFFF;
+	background-color: #3399FF; 
+	display: block;
+	height: 70px;
+	width: 70px;
+	text-align:center;
+	text-indent:0;
+	position: absolute;
+	left: 110px;
+	top: 110px;
+	z-index:999;
+}
+
+div.menuBar:hover{
+	cursor: pointer;
+}
+
+
+div.menu{   
+ 	line-height:40px;  
+	font-family: '微软雅黑';
+	font-weight: 100;
+	font-size: 16px;
+	border: 1px solid #CCCCCC;
+	border-radius: 90%;
+	color: #FFFFFF;
+	background-color: #3399FF; 
+	display: block;
+	height: 50px;
+	width: 50px;
+	text-align:center;
+	text-indent:0;
+}
+div.menu:hover{
+	background-color: rgba(0, 51, 255, 0.8);
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+	font-size: 18px;
+	line-height:50px;
+}
+
+.menu {
+	position: absolute;
+	top: 110px;
+	left: 120px;
+}
+
+#template {
+	vetical-align:middle;
+}
+
+#template:hover a{
+	font-size: 18px;
+	line-height:50px;
+}
+
+#template a {
+	line-height:40px;  
+	font-family: '微软雅黑';
+	font-weight: 100;
+	font-size: 16px;
+	color: #FFFFFF;
+	text-decoration:none;
+}
+
+#template a:hover {
+	font-size: 18px;
+	line-height:50px;
+}
+
+th, td, input {
+	text-align:center;
+}
+
 #addButton {
 	position: relative;
-	left: 1280px;
+	left: 940px;
+	top: 5px;
 }
 
 /*
@@ -208,7 +278,7 @@ text-align: center;
 		<div id="myContent" style="overflow: hidden">
 			<!-- 操作按钮 -->
 			<div id="btn_group" class="btn-group-vertical btn-group-lg"
-				role="group" style="left: 1482px; top: 20px; z-index: 999">
+				role="group" style="left: 1482px; top: 20px; z-index: 999; display:none">
 
 				<button id="btn_addRow" class="btn btn-primary"
 					onclick="javascript:addDataAnalysis()">添加</button>
@@ -226,32 +296,9 @@ text-align: center;
 			</div>
 
 			<!-- 导出文件操作-->
-			<div id="tab_export">
-				<br />
-				<br />
-
-				<form action="${pageContext.request.contextPath}/importDataAnalysis"
-					name="uploadForm" enctype="multipart/form-data" method="post">
-
-					<!-- 	<input type="file" id="upload" name="upload" 
-						style="width:105px;height:30px; "/> -->
-					<input type=file name="upload" id="upload" style="display: none;"
-						onchange="fakeUpload.value=value"> <input type=button
-						class="btn btn-primary" value="选择文件" onclick=upload.click()
-						style="width: 105px; font-size: 18px"><br /> <input
-						id="fakeUpload" name="fakeUpload" type="text"
-						ondblclick=upload.click()
-						style="width: 105px; height: 25px; border: 1px solid #95B8E7;">
-
-					<br />
-					<br /> <input id="btn-import" class="btn btn-primary"
-						style="font-size: 18px; width: 105px;" value="导入"
-						onclick="javascript:import2DB();fakeUpload.value='';" />
-				</form>
-				<br /> <a href="download/DataAnalysis.xls"
-					style="margin: 0; border: 0; font-size: 15px;">点击下载清水池<br />水位计算表模板
-				</a> <input type="hidden" value='${errorMsg}' id="errMsg" />
-			</div>
+			
+			
+			
 			<div id="leftContainer">
 				
 				<div id="treeGuid" style="overflow: scroll">
@@ -260,6 +307,46 @@ text-align: center;
 					<!-- 树形导航菜单 -->
 					<ul id="timeTree" class="easyui-tree"></ul>
 				</div>
+				
+				<div id="chooseIndex">
+					<form id="indexForm">
+						<p style="color:blue; font-weight:bold;font-size:18px">请选择清水池编号：</p>
+						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">清水池01#</label><br />
+						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">清水池02#</label><br />
+						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">清水池03#</label><br />
+					</form>
+				</div>
+				
+				<div class="icon">
+    				<div class="menuBar" id="menu">菜单</div>
+        			<div class="menu" id="add">添加</div>
+        			<div class="menu" id="edit">编辑</div>
+        			<div class="menu" id="delete">删除</div>
+        			<div class="menu" id="search">查询</div>
+        			<div class="menu" id="export">导出</div>
+        			<div class="menu" id="import">导入</div>
+        			<div class="menu" id="template"><a href="download/DataAnalysis.xls" style="height:50px">
+					模板</a>
+				</div>
+					
+					<div id="tab_export" style="display:none">
+				<form action="${pageContext.request.contextPath}/importDataAnalysis"
+					name="uploadForm" enctype="multipart/form-data" method="post">
+					<input type=file name="upload" id="upload" style="display: none;"
+						onchange="fakeUpload.value=value"> 
+					<input id="btn-select" type=button  class="btn btn-primary" value="选择文件" onclick=upload.click()
+						style="width: 134px; font-size: 18px; background-color:#3399FF"><br /> 
+					<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click()
+						style="width: 134px; height: 35px; border: 1px solid #95B8E7;">
+					<br />
+					<input id="btn-import" class="btn btn-primary"
+						style="font-size: 18px; width: 65px;  background-color:#3399FF"" value="确定"
+						onclick="javascript:import2DB();fakeUpload.value='';" />
+					<input id="btn-cancel" class="btn btn-primary"
+						style="font-size: 18px; width: 65px;  background-color:#3399FF"" value="取消"/>
+				</form>	
+			</div>
+    			</div>
 				
 				<!-- <div id="picLegend">
 					<h4 style="color:blue"><strong><span style="color:red;">Zoom</span> 选项说明:</strong></h4>
@@ -293,14 +380,14 @@ text-align: center;
 			</div>
 			<div id="tab_entity">
 				<table id="dataAnalysisbody"
-					style="max-width: 1050px; height: 300px;" class="easyui-datagrid"></table>
-				<br />
-				<div id="imageContainer" style="max-width: 1050px; height: 600px;">
+					style="max-width: 1300px; height: 300px;" class="easyui-datagrid"></table>
+				<div style="height:40px"></div>
+				<div id="imageContainer" style="max-width: 1300px; height: 600px;">
 				</div>
 
 			</div>
 
-
+			
 
 			<!-- 编辑数据的div，默认看不到 -->
 			<center>
@@ -318,13 +405,13 @@ text-align: center;
 									data-options="required:true,showSeconds:false,missingMessage:'请选择时间'"
 									style="width: 200px; height: 25px" /> &nbsp; &nbsp; &nbsp;
 								&nbsp; &nbsp;水 池 编 号 : &nbsp;
-								<select class="easyui-validatebox easyui-combox textbox "
+								<select class="easyui-combobox textbox "
 									id="PoolID" name="dataAnalysis.PoolID"
 									style="width: 200px; height: 25px"
 									data-options="required:true,missingMessage:'请输入水池编号'">
-									<option value="MTG_QingS_SC01" selected>MTG_QingS_SC01</option>
-									<option value="MTG_QingS_SC02">MTG_QingS_SC02</option>
-									<option value="MTG_QingS_SC03">MTG_QingS_SC03</option>
+									<option value="MTG_QingS_SC01" selected>清水池01#</option>
+									<option value="MTG_QingS_SC02">清水池02#</option>
+									<option value="MTG_QingS_SC03">清水池03#</option>
 								</select>
 							</dl>
 							<dl>
@@ -394,97 +481,95 @@ text-align: center;
 						</form>
 					</div>
 					<div id="newEdit" class="easyui-dialog" data-options="closed:true"
-						style="align: center; width: 1500px; height: 540px; padding: 10px 60px 20px 60px">
-						<form id="newfrmEdit">
+						style="align: center; width: 1180px; height: 600px; padding: 10px 60px 10px 60px">
+						<form id="newfrmEdit" style="width:1060px">
 							<br />
 							<!-- <input type="hidden" id="dateTempAdd" name="dateTemp"	/> 
 						<input type="hidden" id="IDAdd" name="dataAnalysis.ID" /> -->
-							<table id="tab">
+							<table id="tab" style="align: center">
 
 
 								<tr>
-									<th></th>
-									<th></th>
-									<th></th>
-									<th>序 号</th>
-									<th>时 间</th>
-									<th>水池编号</th>
-									<th>总进水量</th>
-									<th>出 水 量</th>
-									<th>洗虹吸滤池</th>
-									<th>洗V型滤池</th>
-									<th>碳池反冲洗</th>
-									<th>机加池排泥</th>
-									<th>回流进水</th>
-									<th>蓄 水 量</th>
-									<th>预测水位</th>
+									
+									<th style="width: 1px; height: 26px"></th>
+									<th style="width: 1px; height: 26px"></th>
+									<th style="width: 1px; height: 26px"></th>
+									<th style="width: 40px; height: 26px">序 号</th>
+									<th style="width: 152px; height: 26px">时 间</th>
+									<th style="width: 102px; height: 26px">清水池编号</th>
+									<th style="width: 72px; height: 26px">总进水量</th>
+									<th style="width: 62px; height: 26px">出水量</th>
+									<th style="width: 102px; height: 26px">虹吸滤池反冲洗</th>
+									<th style="width: 102px; height: 26px">V型滤池反冲洗</th>
+									<th style="width: 82px; height: 26px">碳池反冲洗</th>
+									<th style="width: 82px; height: 26px">机加池排泥</th>
+									<th style="width: 72px; height: 26px">回流进水</th>
+									<th style="width: 52px; height: 26px">蓄水量</th>
+									<th style="width: 72px; height: 26px">预测水位</th>
+									
+									
+									
 								</tr>
 
 
 								<tr id="tr1">
-									<td><input type="hidden" id="splitSign" name="split"
-										style="width: 1px; height: 25px" /></td>
-									<td><input type="hidden" id="dateTempAdd" name="dateTemp"
-										style="width: 1px; height: 25px" /></td>
-									<td><input type="hidden" id="IDAdd" name="dataAnalysis.ID"
-										style="width: 1px; height: 25px" /></td>
-									<td id="indexNum1">1</td>
-									<td>
-										<!-- 时间 --> <input name="dataAnalysis.t" id="tAdd1"
-										type="datetime-local" style="width: 200px; height: 25px" />
+									<td style="width: 1px; height: 26px">
+										<input type="hidden" id="splitSign" name="split" style="width: 1px; height: 25px" />
 									</td>
-									<td>
+									<td style="width: 1px; height: 26px">
+										<input type="hidden" id="dateTempAdd" name="dateTemp" style="width: 1px; height: 25px" />
+									</td>
+									<td style="width: 1px; height: 26px">
+										<input type="hidden" id="IDAdd" name="dataAnalysis.ID" style="width: 1px; height: 25px" />
+									</td>
+									<td id="indexNum1" style="text-align:center; width:40px;height:26px">1</td>
+									<td style="width: 152px; height: 26px">
+										<!-- 时间 -->
+										<input name="dataAnalysis.t" id="tAdd1" type="datetime-local" style="width: 150px; height: 25px" />
+									</td>
+									<td style="width: 102px; height: 26px">
 										<!-- 水池编号 -->
-										<select id="PoolIDAdd1" name="dataAnalysis.PoolID"
-										class="easyui-combox" style="width: 200px; height: 25px">
-											<option value="MTG_QingS_SC01" selected>MTG_QingS_SC01</option>
-											<option value="MTG_QingS_SC02">MTG_QingS_SC02</option>
-											<option value="MTG_QingS_SC03">MTG_QingS_SC03</option>
+										<select id="PoolIDAdd1" name="dataAnalysis.PoolID" style="width: 100px; height: 25px">
+											<option value="MTG_QingS_SC01" selected>清水池01#</option>
+											<option value="MTG_QingS_SC02">清水池02#</option>
+											<option value="MTG_QingS_SC03">清水池03#</option>
 									</select>
 									</td>
-									<td>
-										<!-- 总进水量 --> <input id="InVAdd1" name="dataAnalysis.InV"
-										style="width: 100px; height: 25px"
-										data-options="min:0,precision:0," />
+									<td style="width: 72px; height: 26px">
+										<!-- 总进水量 -->
+										<input id="InVAdd1" name="dataAnalysis.InV"	style="width: 70px; height: 25px" data-options="min:0,precision:0," />
 									</td>
-									<td>
-										<!-- 出  水  量 --> <input id="OutVAdd1" name="dataAnalysis.OutV"
-										style="width: 100px; height: 25px"
-										data-options="min:0,precision:0" />
+									<td style="width: 62px; height: 26px">
+										<!-- 出  水  量 -->
+										<input id="OutVAdd1" name="dataAnalysis.OutV" style="width: 60px; height: 25px"	data-options="min:0,precision:0" />
 									</td>
-									<td>
+									<td style="width: 102px; height: 26px">
 										<!-- 洗虹吸滤池 --> <input id="HXOutVAdd1"
-										name="dataAnalysis.HXOutV" style="width: 100px; height: 25px"
-										data-options="min:0,precision:0" />
+										name="dataAnalysis.HXOutV" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
 									</td>
-									<td>
-										<!-- 洗V型滤池 --> <input id="LCOutVAdd1"
-										name="dataAnalysis.LCOutV" style="width: 100px; height: 25px"
-										data-options="min:0,precision:0" />
+									<td style="width: 102px; height: 26px">
+										<!-- 洗V型滤池 --> 
+										<input id="LCOutVAdd1" name="dataAnalysis.LCOutV" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
 									</td>
-									<td>
-										<!-- 炭池反冲洗 --> <input id="TCOutVAdd1"
-										name="dataAnalysis.TCOutV" style="width: 100px; height: 25px"
-										data-options="min:0,precision:0" />
+									<td style="width: 82px; height: 26px">
+										<!-- 炭池反冲洗 -->
+										<input id="TCOutVAdd1" name="dataAnalysis.TCOutV" style="width: 80px; height: 25px"	data-options="min:0,precision:0" />
 									</td>
-									<td>
-										<!-- 机加池排泥 --> <input id="JJOutVAdd1"
-										name="dataAnalysis.JJOutV" style="width: 100px; height: 25px"
-										data-options="min:0,precision:0" />
+									<td style="width: 82px; height: 26px">
+										<!-- 机加池排泥 -->
+										<input id="JJOutVAdd1" name="dataAnalysis.JJOutV" style="width: 80px; height: 25px"	data-options="min:0,precision:0" />
 									</td>
-									<td>
-										<!-- 回流进水 --> <input id="HLInVAdd1" name="dataAnalysis.HLInV"
-										style="width: 100px; height: 25px"
-										data-options="min:0,precision:0" />
+									<td style="width: 72px; height: 26px">
+										<!-- 回流进水 -->
+										<input id="HLInVAdd1" name="dataAnalysis.HLInV"	style="width: 70px; height: 25px" data-options="min:0,precision:0" />
 									</td>
-									<td>
-										<!-- 蓄  水  量 --> <input id="StorageAdd1"
-										name="dataAnalysis.Storage" style="width: 100px; height: 25px"
-										data-options="precision:0" />
+									<td style="width: 52px; height: 26px">
+										<!-- 蓄  水  量 -->
+										<input id="StorageAdd1"	name="dataAnalysis.Storage" style="width: 50px; height: 25px" data-options="precision:0" />
 									</td>
-									<td>
-										<!-- 预测水位 --> <input id="PreHAdd1" name="dataAnalysis.PreH"
-										style="width: 100px; height: 25px" data-options="precision:2" />
+									<td style="width: 72px; height: 26px">
+										<!-- 预测水位 -->
+										<input id="PreHAdd1" name="dataAnalysis.PreH" style="width: 70px; height: 25px" data-options="precision:2" />
 									</td>
 								</tr>
 
@@ -514,22 +599,24 @@ text-align: center;
 					                 size="20px" name="searchPoolID" ></input> -->
 								水池编号:&nbsp;
 								<!--  <input type="text" size="15" id="searchPoolID" name="searchPoolID" /> -->
-								<input class="easyui-combobox" style="width: 150px"
-									id="searchPoolID" name="searchPoolID" type="text"></input>
-
+								<select class="easyui-combobox" style="width: 150px"
+									id="searchPoolID" name="searchPoolID">
+									<option value="MTG_QingS_SC01">清水池01#</option>
+									<option value="MTG_QingS_SC02">清水池02#</option>
+									<option value="MTG_QingS_SC03">清水池03#</option>
+								</select>
+									<!-- <select class="easyui-combobox" id="searchPoolID" name="searchPoolID" style="width: 150px; height: 25px">
+											<option value="MTG_QingS_SC01">MTG_QingS_SC01</option>
+											<option value="MTG_QingS_SC02">MTG_QingS_SC02</option>
+											<option value="MTG_QingS_SC03" selected>MTG_QingS_SC03</option>
+									</select>-->
+									
 							</dl>
 						</form>
 					</div>
 				</div>
 		</div>
 		</center>
-
-
-
-
-
-
-		<script src="js/QS1.js" type="text/javascript" charset="UTF-8"></script>
 	</div>
 
 </body>

@@ -1,39 +1,182 @@
 //JQuery的入口
 $(function() {
-	listPoolEvaluate();
+	dealSearch();
+	//listPoolEvaluate();
 });
-
+var tlist=new Array();
 var strDate = '';
-
+var searchMode = 0;
 $(document).ready(function() {
 	$('#addButton').click(function(event) {
 		event.preventDefault();
-		//++addCount;
 		var _len = $("#tab tr").length;
 		//alert(_len);
 		$('#tab').append(
 			"<tr id='tr" + _len + "'>"
-			+ "<td><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
-			+ "<td><input type='hidden' id='IDAdd' name='poolEvaluate.ID' style='width:1px;height:25px' /></td>"
-			+ "<td id='indexNum" + _len + "'>" + _len + "</td>"
-			+ "<td><input name='poolEvaluate.t' id='tAdd' type='date' style='width:200px;height:25px'/></td>"
-			+ "<td><select name='poolEvaluate.PoolID' id='PoolIDAdd' style='width:200px;height:25px'><option value='MTG_QingS_SC01' selected='selected'>MTG_QingS_SC01</option><option value='MTG_QingS_SC02'>MTG_QingS_SC02</option><option value='MTG_QingS_SC03'>MTG_QingS_SC03</option></select></td>"
-			+ "<td><input style='width:100px;height:25px' id='PAC' name='poolEvaluate.PAC' data-options='min:0,precision:0,' /></td>"
-			+ "<td><input style='width:100px;height:25px' id='FeCl3' name='poolEvaluate.FeCl3' data-options='min:0,precision:0' /></td>"
-			+ "<td><input style='width:100px;height:25px' id='OpenDegree' name='poolEvaluate.OpenDegree' data-options='min:0,precision:0'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='RotationSpeed' name='poolEvaluate.RotationSpeed' data-options='min:0,precision:0'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='SV' name='poolEvaluate.SV' data-options='min:0,precision:0' /></td>"
-			+ "<td><input style='width:100px;height:25px' id='WaterTemp' name='poolEvaluate.WaterTemp' data-options='min:0,precision:0'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='SmallMudFre' name='poolEvaluate.SmallMudFre' data-options='min:0,precision:0'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='BigMudFre' name='poolEvaluate.BigMudFre'  data-options='precision:0'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='NTU' name='poolEvaluate.NTU' data-options='precision:2'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='AlgaeContent' name='poolEvaluate.AlgaeContent' data-options='precision:2'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='OutNTU' name='poolEvaluate.OutNTU' data-options='precision:2'/></td>"
-			+ "<td><input style='width:100px;height:25px' id='CL' name='poolEvaluate.CL' data-options='precision:2'/></td>"
-			+ "<td id='delete" + _len + "'><a href='#' onclick='deltr(" + _len + ",event)'>删除</a></td>"
+			+ "<td style='width:1px;height:26px'><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
+			+ "<td style='width:1px;height:26px'><input type='hidden' id='IDAdd' name='poolEvaluate.ID' style='width:1px;height:25px' /></td>"
+			+ "<td id='indexNum" + _len + "' style='text-align:center; width:40px;height:26px'>" + _len + "</td>"
+			+ "<td style='width:152px;height:26px'><input name='poolEvaluate.t' id='tAdd' type='date' style='width:150px;height:25px'/></td>"
+			+ "<td style='width:102px;height:26px'><select name='poolEvaluate.PoolID' id='PoolIDAdd' style='width:100px;height:25px'><option value='MTG_JJC_SC01' selected='selected'>机加池01#</option><option value='MTG_JJC_SC02'>机加池02#</option><option value='MTG_JJC_SC03'>机加池03#</option></select></td>"
+			+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='PAC' name='poolEvaluate.PAC' data-options='min:0,precision:0,' /></td>"
+			+ "<td style='width:92px;height:26px'><input style='width:90px;height:25px' id='FeCl3' name='poolEvaluate.FeCl3' data-options='min:0,precision:0' /></td>"
+			+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OpenDegree' name='poolEvaluate.OpenDegree' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:52px;height:26px'><input style='width:50px;height:25px' id='RotationSpeed' name='poolEvaluate.RotationSpeed' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='SV' name='poolEvaluate.SV' data-options='min:0,precision:0' /></td>"
+			+ "<td style='width:52px;height:26px'><input style='width:50px;height:25px' id='WaterTemp' name='poolEvaluate.WaterTemp' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:92px;height:26px'><input style='width:90px;height:25px' id='SmallMudFre' name='poolEvaluate.SmallMudFre' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:92px;height:26px'><input style='width:90px;height:25px' id='BigMudFre' name='poolEvaluate.BigMudFre'  data-options='precision:0'/></td>"
+			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='NTU' name='poolEvaluate.NTU' data-options='precision:2'/></td>"
+			+ "<td style='width:92px;height:26px'><input style='width:90px;height:25px' id='AlgaeContent' name='poolEvaluate.AlgaeContent' data-options='precision:2'/></td>"
+			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='OutNTU' name='poolEvaluate.OutNTU' data-options='precision:2'/></td>"
+			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='CL' name='poolEvaluate.CL' data-options='precision:2'/></td>"
+			+ "<td id='delete" + _len + "' style='width:40px;height:26px'><a href='#' onclick='deltr(" + _len + ",event)'>删除</a></td>"
 			+ "</tr>");
 	});
+	
+	$('.radioItem').change(function() {
+		//var $selectedValue = $('input[name="chooseIndexButton"]:checked').val();
+		//alert("$selectedValue = " + $selectedValue);
+		hideImportPanel();
+		searchMode = 0;
+		dealSearch();
+	});
 });
+
+$(document).ready(function() {
+	var count = 0;
+	$('#menu').click(function() {
+		hideImportPanel();
+		count += 1;
+		if(count % 2 == 1) {
+			$('#menu').text("隐藏");
+			$('#add').animate({
+				'left': '120px',
+				'top': '0'
+			},{
+				//duration: 'slow'
+			});
+			$('#edit').animate({
+				'left': '60px',
+				'top': '16px'
+			},{
+				//duration: 'slow'
+			});	
+			$('#delete').animate({
+				'left': '16px',
+				'top': '60px'
+			},{
+				//duration: 'slow'
+			});	
+			$('#search').animate({
+				'left': '0px',
+				'top': '120px'
+			},{
+				//duration: 'slow'
+			});
+			$('#export').animate({
+				'left': '16px',
+				'top': '180px'
+			},{
+				//duration: 'slow'
+			});
+			$('#import').animate({
+				'left': '60px',
+				'top': '224px'
+			},{
+				//duration: 'slow'
+			});
+			$('#template').animate({
+				'left': '120px',
+				'top': '250px'
+			},{
+				//duration: 'slow'
+			});
+
+		} else {
+			$('#menu').text("菜单");
+			$('#add').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});
+			$('#edit').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});	
+			$('#delete').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});	
+			$('#search').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'fast'
+			});
+			$('#export').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});
+			$('#import').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});
+			$('#template').animate({
+				'left': '120px',
+				'top': '110px'
+			},{
+				//duration: 'slow'
+			});
+		}
+		
+	});
+	$('#add').click(function() {
+		hideImportPanel();
+		addPoolEvaluate();
+	});
+	$('#edit').click(function() {
+		hideImportPanel();
+		editPoolEvaluate();
+	});
+	$('#delete').click(function() {
+		hideImportPanel();
+		deletePoolEvaluate();
+	});
+	$('#search').click(function() {
+		hideImportPanel();
+		searchMode = 1;
+		searchPoolEvaluate();
+	});
+	$('#export').click(function() {
+		hideImportPanel();
+		export2excel();
+	});
+	$('#import').click(function() {
+		$('#tab_export').css('display','block');
+	});
+	//$('#template').click(function() {
+	//	$('#download').click();
+	//});
+	$('#btn-cancel').click(function() {
+		$('#tab_export').css('display','none');
+	});
+});
+
+function hideImportPanel() {
+	$('#import').text('导入');
+	$('#tab_export').css('display','none');
+	//alert($('#tab_export').css('display'));
+}
 
 var deltr = function(index, event) {
 	event.preventDefault();
@@ -42,24 +185,26 @@ var deltr = function(index, event) {
 	for(var i = index + 1; i < _len; ++i) {
 		//alert("i = " + i + " _len = " + _len);
 		$("tr[id='tr" + i + "']").replaceWith("<tr id='tr" + (i-1) + "'>"
-				+ "<td><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
-				+ "<td><input type='hidden' id='IDAdd' name='poolEvaluate.ID' style='width:1px;height:25px' /></td>"
-				+ "<td id='indexNum" + (i-1) + "'>" + (i-1) + "</td>"
-				+ "<td><input name='poolEvaluate.t' id='tAdd' type='date' style='width:200px;height:25px'/></td>"
-				+ "<td><select name='poolEvaluate.PoolID' id='PoolIDAdd' style='width:200px;height:25px'><option value='MTG_QingS_SC01' selected='selected'>MTG_QingS_SC01</option><option value='MTG_QingS_SC02'>MTG_QingS_SC02</option><option value='MTG_QingS_SC03'>MTG_QingS_SC03</option></select></td>"
-				+ "<td><input style='width:100px;height:25px' id='PAC' name='poolEvaluate.PAC' data-options='min:0,precision:0,' /></td>"
-				+ "<td><input style='width:100px;height:25px' id='FeCl3' name='poolEvaluate.FeCl3' data-options='min:0,precision:0' /></td>"
-				+ "<td><input style='width:100px;height:25px' id='OpenDegree' name='poolEvaluate.OpenDegree' data-options='min:0,precision:0'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='RotationSpeed' name='poolEvaluate.RotationSpeed' data-options='min:0,precision:0'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='SV' name='poolEvaluate.SV' data-options='min:0,precision:0' /></td>"
-				+ "<td><input style='width:100px;height:25px' id='WaterTemp' name='poolEvaluate.WaterTemp' data-options='min:0,precision:0'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='SmallMudFre' name='poolEvaluate.SmallMudFre' data-options='min:0,precision:0'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='BigMudFre' name='poolEvaluate.BigMudFre'  data-options='precision:0'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='NTU' name='poolEvaluate.NTU' data-options='precision:2'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='AlgaeContent' name='poolEvaluate.AlgaeContent' data-options='precision:2'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='OutNTU' name='poolEvaluate.OutNTU' data-options='precision:2'/></td>"
-				+ "<td><input style='width:100px;height:25px' id='CL' name='poolEvaluate.CL' data-options='precision:2'/></td>"
-				+ "<td id='delete" + (i-1) + "'><a href='#' onclick='deltr(" + (i-1) + ",event)'>删除</a></td>"
+				
+				
+				+ "<td style='width:1px;height:26px'><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
+				+ "<td style='width:1px;height:26px'><input type='hidden' id='IDAdd' name='poolEvaluate.ID' style='width:1px;height:25px' /></td>"
+				+ "<td id='indexNum" + (i-1) + "' style='text-align:center; width:40px;height:26px'>" + (i-1) + "</td>"
+				+ "<td style='width:152px;height:26px'><input name='poolEvaluate.t' id='tAdd' type='date' style='width:150px;height:25px'/></td>"
+				+ "<td style='width:102px;height:26px'><select name='poolEvaluate.PoolID' id='PoolIDAdd' style='width:100px;height:25px'><option value='MTG_JJC_SC01' selected='selected'>机加池01#</option><option value='MTG_JJC_SC02'>机加池02#</option><option value='MTG_JJC_SC03'>机加池03#</option></select></td>"
+				+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='PAC' name='poolEvaluate.PAC' data-options='min:0,precision:0,' /></td>"
+				+ "<td style='width:92px;height:26px'><input style='width:90px;height:25px' id='FeCl3' name='poolEvaluate.FeCl3' data-options='min:0,precision:0' /></td>"
+				+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OpenDegree' name='poolEvaluate.OpenDegree' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:52px;height:26px'><input style='width:50px;height:25px' id='RotationSpeed' name='poolEvaluate.RotationSpeed' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='SV' name='poolEvaluate.SV' data-options='min:0,precision:0' /></td>"
+				+ "<td style='width:52px;height:26px'><input style='width:50px;height:25px' id='WaterTemp' name='poolEvaluate.WaterTemp' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:92px;height:26px'><input style='width:90px;height:25px' id='SmallMudFre' name='poolEvaluate.SmallMudFre' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:92px;height:26px'><input style='width:90px;height:25px' id='BigMudFre' name='poolEvaluate.BigMudFre'  data-options='precision:0'/></td>"
+				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='NTU' name='poolEvaluate.NTU' data-options='precision:2'/></td>"
+				+ "<td style='width:92px;height:26px'><input style='width:90px;height:25px' id='AlgaeContent' name='poolEvaluate.AlgaeContent' data-options='precision:2'/></td>"
+				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='OutNTU' name='poolEvaluate.OutNTU' data-options='precision:2'/></td>"
+				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='CL' name='poolEvaluate.CL' data-options='precision:2'/></td>"
+				+ "<td id='delete" + (i-1) + "' style='width:40px;height:26px'><a href='#' onclick='deltr(" + (i-1) + ",event)'>删除</a></td>"
 				+ "</tr>");
 	}
 }
@@ -67,15 +212,17 @@ var deltr = function(index, event) {
 
 var tburl='searchPoolEvaluate.action'; 
 var datalist = new Array();
-var title= '机加池分析表';
+var title;
 //加载项目列表
-function listPoolEvaluate() {
+function listPoolEvaluate(data) {
+	//alert("多个Tab的情况下只有第一个Tab日期框有效！\n即Tab 2、3中日期框内无法输入时间\n私以为是highStock与easyUI之间的不兼容=。=");
 	$("#poolEvaluatebody").datagrid({
 		title:title,
-		width : "1050",
+		width : "1300",
 		height : "300",
 		//iconCls : 'icon-help', // 表格左上角的图标样式
-		url : tburl, // 访问服务器的地址，要求返回JSON对象
+		//url : tburl, // 访问服务器的地址，要求返回JSON对象
+		data:data,
 		rownumbers : true, // 在最前面显示行号
 		fitColumns : true, // 自动适应列宽
 		striped : true, // 隔行变色
@@ -90,6 +237,7 @@ function listPoolEvaluate() {
 		onLoadSuccess: function(data){
 			if(data.rows!=datalist){		
 				datalist = eval(data).rows;
+				//alert("(data).rows = " + datalist);
 				drawImage(); //作图
 			}
 		},
@@ -98,7 +246,7 @@ function listPoolEvaluate() {
 		            	 field : 't',
 		            	 title : '时间',
 		            	 align : 'center',
-		            	 width : 110,
+		            	 width : 80,
 		            	 formatter : function(value) {
 		            		 return value.substring(0, 10);
 		            	 },
@@ -106,9 +254,9 @@ function listPoolEvaluate() {
 		             },
 		             {
 		            	 field : 'poolID',
-		            	 title : '机加池池编号',
+		            	 title : '机加池编号',
 		            	 align : 'center',
-		            	 width : 125,
+		            	 width : 90,
 		            	 //可以排序，但服务器也完成相应的代码，要加入sort和order属性
 		            	 sortable : true,
 		            	 formatter:function(value){
@@ -126,7 +274,7 @@ function listPoolEvaluate() {
 		            	 sortable : true
 		             },{
 		            	 field : 'feCl3',
-		            	 title : 'FeCl3投加量',
+		            	 title : 'FeCl<sub>3</sub>投加量',
 		            	 align : 'center',
 		            	 width : 85,
 //		            	 formatter : function(value) {
@@ -137,7 +285,7 @@ function listPoolEvaluate() {
 		             {
 		            	 field : 'openDegree',
 		            	 title : '开启度',
-		            	 width : 70,
+		            	 width : 60,
 		            	 align : 'center',
 		            	 formatter : function(value) {
 		            		 return value+"%";
@@ -148,14 +296,14 @@ function listPoolEvaluate() {
 		             {
 		            	 field : 'rotationSpeed',
 		            	 title : '转速',
-		            	 width : 60,
+		            	 width : 50,
 		            	 align : 'center',
 		            	 sortable : true
 		             },
 		             {
 		            	 field : 'SV',
 		            	 title : '沉降比',
-		            	 width : 70,
+		            	 width : 60,
 		            	 align : 'center',
 		            	 /*formatter : function(value) {
 		            		 return value+"%";
@@ -168,12 +316,9 @@ function listPoolEvaluate() {
 		            	 width : 60,
 		            	 align : 'center',
 		            	 formatter : function(value) {
-//		            		 if (value <5){
-//		            		 return '<span style="background-color:DeepSkyBlue;">'+value+'℃</span>';
-//		            		 } else {
 		            		 return value+"℃";
-//		            		 }	
-		            	 }
+		            	 },
+		            	 sortable : true
 		             },
 		             {
 		            	 field : 'smallMudFre',
@@ -209,34 +354,14 @@ function listPoolEvaluate() {
 		             {
 		            	 field : 'outNTU',
 		            	 title : '出水浊度',
-		            	 width : 80,
+		            	 width : 60,
 		            	 align : 'center',
 		            	 sortable : true
-		            	 /*formatter : function(value) {
-				if (value >0.8){
-					return '<span style="background-color:LightCoral;">'+value+'</span>';
-				} else {
-					return '<span style="background-color:LightGreen;">'+value+'</span>';
-					}	
-			}*/
-		             },
-//		             {
-//		             field : 'state',
-//		             title : '状态',
-//		             width : 80,
-//		             align : 'center',
-//		             formatter: function(value,rec){
-//		             if(value==0){
-//		             return '<span style="background-color:LightCoral;">不正常</span>';
-//		             }else{
-//		             return '<span style="background-color:LightGreen;">正常</span>';
-//		             }
-//		             }
-//		             },
+		             },	 
 		             {
 		            	 field : 'CL',
 		            	 title : '预加氯量',
-		            	 width : 80,
+		            	 width : 60,
 		            	 align : 'center',
 		            	 sortable : true
 		             }
@@ -436,7 +561,8 @@ function editPoolEvaluate() {
 	$('#frmEdit').form('clear');
 	// 填充数据
 	$("#ID").val(poolEvaluate.ID);
-	$("#PoolID").val(poolEvaluate.poolID);
+//	$("#PoolID").val(poolEvaluate.poolID);
+	$("#PoolID").combobox( "setValue",poolEvaluate.poolID);
 	$("#t").datebox("setValue",poolEvaluate.t);
 	$("#OpenDegree").numberbox("setValue",poolEvaluate.openDegree);
 	$("#RotationSpeed").numberbox("setValue",poolEvaluate.rotationSpeed);
@@ -521,7 +647,7 @@ function dealAddSave() {
 		//var test = re.test(paramsArray[i]);
 		//alert(test);
 		
-		var re_ID = new RegExp(/poolEvaluate.PoolID=MTG_QingS_SC0\d/);
+		var re_ID = new RegExp(/poolEvaluate.PoolID=MTG_JJC_SC0\d/);
 		var re_t = new RegExp(/poolEvaluate.t=\d{4}-\d{2}\-\d{2}/);
 //		alert("test 1 \n" + re_ID.test(paramsArray[i]));
 //		alert("test 2 \n" + re_t.test(paramsArray[i]));
@@ -622,35 +748,178 @@ function searchPoolEvaluate(){
 
 
 function dealSearch() {
-	// 表单数据序列化成一个字符串用&拼接
-	var params = $("#frmSearch").serialize();
-	console.log(params);
-	//alert(params);
+	var indexButton = $('#indexForm').serialize();
+	var buttonID = indexButton.slice(-6);  //buttonID = 'index3'
 	
-	  
-	var re = new RegExp(/^lowT=\d{4}-\d{2}\-\d{2}/);
-	var test = re.test(params);
-	if(test) {
-		strDate = ' ' + params.substring(5, 15);
-		title = "机加池分析表" + strDate;
-		ImageTitle1 = "浊度分析图 " + strDate;
-		ImageTitle2 = "加药量分析图 " + strDate;
+	var newParams = '';
+	var failAppearence = false;
+
+	if(searchMode == 0) {   //如果是从三个radio进行查询
+		var params = $("#frmSearch").form('clear').serialize(); 
+		// lowT=&highT=&searchPoolID=&lowNTU=0&highNTU=100&lowAlgaeContent=0&highAlgaeContent=100&lowOutNTU=0&highOutNTU=100&lowSV=0.00&highSV=100.00
+		switch(buttonID) {
+		case 'index1':
+			title = '机加池01#  分析表';
+			ImageTitle1 = "机加池01#  浊度分析图 ";
+			ImageTitle2 = "机加池01#  原水藻类/水温/预加氯量分析图 ";
+			ImageTitle3 = "机加池01#  基本运行参数分析图 ";
+			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_JJC_SC01');
+			//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
+			break;
+		case 'index2':
+			title = '机加池02#  分析表';
+			ImageTitle1 = "机加池02#  浊度分析图 ";
+			ImageTitle2 = "机加池02#  原水藻类/水温/预加氯量分析图 ";
+			ImageTitle3 = "机加池02#  基本运行参数分析图 ";
+			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_JJC_SC02');
+			//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
+			break;
+		case 'index3':
+			title = '机加池03#  分析表';
+			ImageTitle1 = "机加池03#  浊度分析图 ";
+			ImageTitle2 = "机加池03#  原水藻类/水温/预加氯量分析图 ";
+			ImageTitle3 = "机加池03#  基本运行参数分析图 ";
+			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_JJC_SC03');
+			//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
+			break;
+		default :
+			title = '机加池分析表';
+			ImageTitle1 = "机加池浊度分析图 ";
+			ImageTitle2 = "机加池原水藻类/水温/预加氯量分析图 ";
+			ImageTitle3 = "机加池基本运行参数分析图 ";
+			newParams = params;
+			//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+		}
+	} else if(searchMode == 1){  //如果是从查询窗口进入
+		var params = $("#frmSearch").serialize(); 
+		/*
+		 * lowT= 或 lowT=XXXX-XX-XX
+		 * highT=(不确定是否有值) 或 highT=XXXX-XX-XX
+		 * searchPoolID=(不确定是否有值) 或 searchPoolID=MTG_JJC_SC0X
+		 */
+		//alert("poolID " + poolID);
+		
+		var reLowTime = new RegExp(/^lowT=\d{4}-\d{2}\-\d{2}/);
+		var testLowTime = reLowTime.test(params);
+		var reHighTime = new RegExp(/highT=\d{4}-\d{2}\-\d{2}/);
+		var testHighTime = reHighTime.test(params);
+		var reID = new RegExp(/searchPoolID=MTG_JJC_SC0\d{1}/);
+		var testID = reID.test(params);
+		
+		if(testLowTime && testHighTime && testID) {  // lowT、highT、searchPoolID均不为空
+			var lowTimeStr = params.substring(5, 15);
+			var highTimeStr = params.substring(22, 32);
+			var index = params.substring(57, 58);
+			if (lowTimeStr != highTimeStr)
+				TimeStr = lowTimeStr + '~' + highTimeStr;
+			else 
+				TimeStr = lowTimeStr;
+			switch(index) {
+				case '1':
+					title = '机加池01#  分析表' + ' ' + TimeStr;
+					ImageTitle1 = "机加池01#  浊度分析图 " + ' ' + TimeStr;
+					ImageTitle2 = "机加池01#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+					ImageTitle3 = "机加池01#  基本运行参数分析图 " + ' ' + TimeStr;
+					newParams = params;
+					//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
+					break;
+				case '2':
+					title = '机加池02#  分析表' + ' ' + TimeStr;
+					ImageTitle1 = "机加池02#  浊度分析图 " + ' ' + TimeStr;
+					ImageTitle2 = "机加池02#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+					ImageTitle3 = "机加池02#  基本运行参数分析图 " + ' ' + TimeStr;
+					newParams = params;
+					//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
+					break;
+				case '3':
+					title = '机加池03#  分析表' + ' ' + TimeStr;
+					ImageTitle1 = "机加池03#  浊度分析图 " + ' ' + TimeStr;
+					ImageTitle2 = "机加池03#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+					ImageTitle3 = "机加池03#  基本运行参数分析图 " + ' ' + TimeStr;
+					newParams = params;
+					//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
+					break;
+				default :
+					title = '机加池分析表' + ' ' + TimeStr;
+					ImageTitle1 = "机加池浊度分析图 " + ' ' + TimeStr;
+					ImageTitle2 = "机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+					ImageTitle3 = "机加池基本运行参数分析图 " + ' ' + TimeStr;
+					newParams = params;
+					//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+				}
+		} else {  // 如果  lowT、highT、searchPoolID均不为空  不满足，退出查询
+			failAppearence = true;
+			$.messager.alert('错误', '查询失败！<br />起始/结束日期、机加池编号不能为空！', 'warning');
+			//设置一个错误的数据，使得查询失败，避免图标刷新，因为即便是数据缺失，SQLServer也会返回特定结果
+			newParams = 'lowT=2015-01-01&highT=2014-01-01&searchPoolID=&lowNTU=0&highNTU=100&lowAlgaeContent=0&highAlgaeContent=100&lowOutNTU=0&highOutNTU=100&lowSV=0.00&highSV=100.00';
+			//closeSearchForm();
+		}
+	} else if(searchMode == 2) {
+		/*
+		 * lowT=XXXX-XX-XX
+		 * highT=XXXX-XX-XX
+		 * searchPoolID=空
+		 * 其余参数也为空
+		 */
+		var params = $("#frmSearch").serialize(); 
+		var lowTimeStr = params.substring(5, 15);
+		var highTimeStr = params.substring(22, 32);
+		var TimeStr = "";
+		if (lowTimeStr != highTimeStr)
+			TimeStr = lowTimeStr + '~' + highTimeStr;
+		else 
+			TimeStr = lowTimeStr;
+		switch(buttonID) {
+			case 'index1':
+				title = '机加池01#  分析表' + ' ' + TimeStr;
+				ImageTitle1 = "机加池01#  浊度分析图 " + ' ' + TimeStr;
+				ImageTitle2 = "机加池01#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+				ImageTitle3 = "机加池01#  基本运行参数分析图 " + ' ' + TimeStr;
+				newParams = params;
+				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
+				break;
+			case 'index2':
+				title = '机加池02#  分析表' + ' ' + TimeStr;
+				ImageTitle1 = "机加池02#  浊度分析图 " + ' ' + TimeStr;
+				ImageTitle2 = "机加池02#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+				ImageTitle3 = "机加池02#  基本运行参数分析图 " + ' ' + TimeStr;
+				newParams = params;
+				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
+				break;
+			case 'index3':
+				title = '机加池03#  分析表' + ' ' + TimeStr;
+				ImageTitle1 = "机加池03#  浊度分析图 " + ' ' + TimeStr;
+				ImageTitle2 = "机加池03#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+				ImageTitle3 = "机加池03#  基本运行参数分析图 " + ' ' + TimeStr;
+				newParams = params;
+				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
+				break;
+			default :
+				title = '机加池分析表' + ' ' + TimeStr;
+				ImageTitle1 = "机加池浊度分析图 " + ' ' + TimeStr;
+				ImageTitle2 = "机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+				ImageTitle3 = "机加池基本运行参数分析图 " + ' ' + TimeStr;
+				newParams = params;
+				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+		}
 	}
-	else {
-		title = "机加池分析表";
-		ImageTitle1 = "浊度分析图 ";
-		ImageTitle2 = "加药量分析图 ";
-	} 
-	 
-	
-	$.post("searchPoolEvaluate.action", params, function(result) {
+
+	//alert("newParams = " + newParams);
+	$.post("searchPoolEvaluate.action", newParams, function(result) {
 		if (result.total!=0) {
 			//$("#poolEvaluatebody").data().datagrid.cache = null;
 			//$('#poolEvaluatebody').datagrid('reload');// 重新加载
-//			$.messager.alert('查询', '查询成功', 'info');
-			listPoolEvaluate();
+			//$.messager.alert('查询', '查询成功', 'info');
+			tlist = result.tlist;
+			listPoolEvaluate(result);
+			if(searchMode != 2) {
+				listTreeNode(tlist);
+			}
 		} else {
-			$.messager.alert('查询', '查询失败,未查找到相关信息', 'warning');
+			if(!failAppearence) {
+				//如果已经出现了查询失败窗口，见mode2，就不必要再出现下面的窗口
+				$.messager.alert('查询', '查询失败,未查找到相关信息', 'warning');
+			}
 		}
 	});
 }
@@ -666,14 +935,14 @@ function showSearchForm() {
 			text : '确认',
 			handler : function() {
 				// 进行表单字段验证，当全部字段都有效时返回true和validatebox一起使用
-				if ($('#frmSearch').form('validate')) {
+				//if ($('#frmSearch').form('validate')) {
 					// 提交到服务器并写入数据库
 					dealSearch();
 					// 关闭窗口
 					closeSearchForm();
-				} else {
-					$.messager.alert('验证', '项目信息有误或不完整', 'error');
-				}
+				//} else {
+				//	$.messager.alert('验证', '项目信息有误或不完整', 'error');
+				//}
 			}
 		}, {
 			text : '取消',
@@ -694,7 +963,6 @@ function closeSearchForm() {
 var url = "listPoolEvaluate.action";
 var poolIDlist  = new Array();
 var alldata = new Array();
-var tlist = new Array();
 //查询下拉框显示的数据
 $.getJSON(url, function(json) {
 	//去除重复项
@@ -706,9 +974,9 @@ $.getJSON(url, function(json) {
 			tempPoolIDlist.push(row.poolID);
 			poolIDlist.push({poolID:row.poolID,text:formPoolID(row.poolID)});
 		}
-		if(jQuery.inArray(row.t, tlist) < 0) {
-			tlist.push(row.t);
-		}
+//		if(jQuery.inArray(row.t, tlist) < 0) {
+//			tlist.push(row.t);
+//		}
 	}//for
 	$('#searchPoolID').combobox({
 		data : poolIDlist.sort(keysrt('poolID',false)),
@@ -718,30 +986,17 @@ $.getJSON(url, function(json) {
 			$(this).combobox('setText', '');
 		}			
 	});
-	listTreeNode(tlist.sort());
+//	listTreeNode(tlist.sort());
+	listTreeNode(tlist);
 });
 
 //水池编号转换
 function formPoolID(value){
 	var strs = new Array();
-	var poolID=null;
+	var poolID;
 	strs=value.split("_");//字符切割
-	for(var i=0;i<strs.length;i++)
-	{
-		switch(strs[i]){
-		case "MTG":
-			poolID="门头沟";break;
-		case "QingS":
-			poolID=poolID+"清水池";break;
-		case "QS":
-			poolID=poolID+"取水泵房";break;
-		case "JJ1":
-			poolID=poolID+"机加池";break;
-		default:
-			poolID=poolID+strs[i].replace("SC","")+"#";
-		}
-	}
-	return poolID;		
+	poolID = strs[2].replace(/SC/,'');
+	return "机加池" + poolID + "#";		
 }
 
 
@@ -803,13 +1058,12 @@ function import2DB(){
 						fileElementId:'upload',
 						dataType:'json',
 						success: function(result){
-							if (result.operateSuccess){	
-								$("#poolEvaluatebody").data().datagrid.cache = null;
-								$('#poolEvaluatebody').datagrid('reload');// 重新加载									
+							if (result.operateSuccess){
 								$.messager.alert('导入', '导入成功', 'info');	
-
+								$("#poolEvaluatebody").data().datagrid.cache = null;
+								$('#poolEvaluatebody').datagrid('reload');// 重新加载
 							} else {
-								$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+								$.messager.alert('导入', '导入失败<br /><br />'+$('#errMsg').val(), 'warning');
 							}
 						},//success
 						error:function(result){
@@ -858,19 +1112,31 @@ function import2DB(){
 
 }
 
-var ImageTitle1="浊度分析图" + strDate;
-var ImageTitle2="加药量分析图" + strDate;
+var ImageTitle1;
+var ImageTitle2;
+var ImageTitle3;
+ImageTitle3
 function drawImage(){
 	//加药量分析图
-	var PACArray=new Array();
-	var FeCl3Array=new Array();
-	var NTUArray=new Array();
-	var OutNTUArray=new Array();
+	var PACArray=new Array();		// PAC
+	var FeCl3Array=new Array();		// FeCl3
+	var NTUArray=new Array();		// 来水浊度
+	var OutNTUArray=new Array();	// 出水浊度
+	
+	var AlgaeContentArray=new Array();		// 原水藻类
+	var WaterTempArray = new Array();		// 水温
+	var CLArray = new Array();				// 预加氯量
+	
+	var OpenDegreeArray = new Array();		// 开启度
+	var RotationSpeedArray = new Array();	// 转速
+	var SVArray = new Array();				// 沉降比
+	var SmallMudFreArray = new Array();		// 小斗排泥
+	var BigMudFreArray = new Array();		// 大斗排泥
+	
 	var poollist = new Array();
-	var chart1;
-	var chart2;
-	var options1;  //浊度分析图
-	var options2;  //加药量分析图
+	var options1;  //加药量/浊度分析图
+	var options2;  //原水藻类/水温/预加滤量分析图
+	var options3;  //基本运行参数分析图
 	if (datalist.length>0){					
 		for (var i=0; i<datalist.length;i++){
 			var row = datalist[i]; 
@@ -878,10 +1144,22 @@ function drawImage(){
 			if(flag_i<0){  //不存在
 				poollist.push(row.poolID);	//添加水池
 				flag_i=poollist.length-1;
+				
 				PACArray[flag_i]=[];	
 				FeCl3Array[flag_i]=[];	
 				NTUArray[flag_i]=[];	
 				OutNTUArray[flag_i]=[];
+				
+				AlgaeContentArray[flag_i]=[];
+				WaterTempArray[flag_i]=[];
+				CLArray[flag_i]=[];
+				
+				OpenDegreeArray[flag_i]=[];
+				RotationSpeedArray[flag_i]=[];
+				SVArray[flag_i]=[];
+				SmallMudFreArray[flag_i]=[];
+				BigMudFreArray[flag_i]=[];
+				
 			}//if flag_i
 			PACArray[flag_i].push([Date.UTC(row.t.substring(0, 4),
 					row.t.substring(5, 7)-1, //highcharts 月份要减一，因为Date.UTC从0-11计数
@@ -903,6 +1181,49 @@ function drawImage(){
 					row.t.substring(8, 10),
 					row.t.substring(11, 13)
 			),row.outNTU]);	//填充数据，出水浊度
+			
+			AlgaeContentArray[flag_i].push([Date.UTC(row.t.substring(0, 4),
+					row.t.substring(5, 7)-1, //highcharts 月份要减一，因为Date.UTC从0-11计数
+					row.t.substring(8, 10),
+					row.t.substring(11, 13)
+			),row.algaeContent]);	//填充数据，原水藻类
+			WaterTempArray[flag_i].push([Date.UTC(row.t.substring(0, 4),
+					row.t.substring(5, 7)-1, //highcharts 月份要减一，因为Date.UTC从0-11计数
+					row.t.substring(8, 10),
+					row.t.substring(11, 13)
+			),row.waterTemp]);	//填充数据，水温	
+			CLArray[flag_i].push([Date.UTC(row.t.substring(0, 4),
+					row.t.substring(5, 7)-1, //highcharts 月份要减一，因为Date.UTC从0-11计数
+					row.t.substring(8, 10),
+					row.t.substring(11, 13)
+			),row.CL]);	//填充数据，预加氯量
+			
+			OpenDegreeArray[flag_i].push([Date.UTC(row.t.substring(0, 4),
+					row.t.substring(5, 7)-1, //highcharts 月份要减一，因为Date.UTC从0-11计数
+					row.t.substring(8, 10),
+					row.t.substring(11, 13)
+			),row.openDegree]);	//填充数据，开启度
+			RotationSpeedArray[flag_i].push([Date.UTC(row.t.substring(0, 4),
+					row.t.substring(5, 7)-1, //highcharts 月份要减一，因为Date.UTC从0-11计数
+					row.t.substring(8, 10),
+					row.t.substring(11, 13)
+			),row.rotationSpeed]);	//填充数据，转速
+			SVArray[flag_i].push([Date.UTC(row.t.substring(0, 4),
+					row.t.substring(5, 7)-1, //highcharts 月份要减一，因为Date.UTC从0-11计数
+					row.t.substring(8, 10),
+					row.t.substring(11, 13)
+			),row.SV]);	//填充数据，沉降比	
+			SmallMudFreArray[flag_i].push([Date.UTC(row.t.substring(0, 4),
+					row.t.substring(5, 7)-1, //highcharts 月份要减一，因为Date.UTC从0-11计数
+					row.t.substring(8, 10),
+					row.t.substring(11, 13)
+			),row.smallMudFre]);	//填充数据，小斗排泥时长
+			BigMudFreArray[flag_i].push([Date.UTC(row.t.substring(0, 4),
+					row.t.substring(5, 7)-1, //highcharts 月份要减一，因为Date.UTC从0-11计数
+					row.t.substring(8, 10),
+					row.t.substring(11, 13)
+			),row.bigMudFre]);	//填充数据，大斗排泥时长
+			
 		} //for
 	} //if datalist.length
 	/**绘图**/
@@ -910,9 +1231,13 @@ function drawImage(){
 		chart: {
 			borderColor: '#FFFFFF',	//边框颜色
 	        selectionMarkerFill: 'rgba(0,0,0, 0.2)',
-	        height: 660,
-	        width:1050,
+	        height: 630,
+	        width:1300,
+	        zoomType: 'y',
 		},
+		colors: ['#000000', '#FF0000', '#0000C6', '#00A600',
+		         '#000000', '#FF0000', '#0000C6', '#00A600',
+		         '#000000', '#FF0000', '#0000C6', '#00A600'],
 	    credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
 			text: '北京市自来水集团',
 		    href: '',
@@ -998,31 +1323,33 @@ function drawImage(){
                 }
             },
             buttons: [{
-    	    	type: 'month',
+            	type: 'day',
+            	count: 1,
+            	text: '1天'
+            },{
+            	type: 'day',
+            	count: 3,
+            	text: '3天'
+            },{
+    	    	type: 'week',
     	    	count: 1,
-    	    	text: '1月'
+    	    	text: '1周'
     			}, {
     			type: 'month',
-    			count: 3,
-    			text: '3月'
-    			}, {
-    			type: 'month',
-    			count: 6,
-    			text: '半年'
-    			}, {
-    			type: 'ytd',
-    			text: '今年'
-    			}, {
-    			type: 'year',
     			count: 1,
-    			text: '1年'
-    			}, {
-    				type: 'all',
-    				text: '全部'
+    			text: '1月'
     			}],
+    		buttonSpacing: 10,
             inputBoxBorderColor: 'gray',
-            inputBoxWidth: 100,
-            inputBoxHeight: 18,
+            inputBoxWidth: 120,
+            //inputBoxHeight: 40,
+            inputEnabled: true,
+            inputEditDateFormat: '%Y-%m-%d',
+            inputDateFormat: '%Y-%m-%d',
+            inputDateParser: function(value) {
+            	value = value.split('-');
+            	return Date.UTC(value[0], (value[1] - 1), value[2]);
+            },
             inputStyle: {
                 color: '#000000',
                 fontWeight: 'bold'
@@ -1088,9 +1415,9 @@ function drawImage(){
 				//rotation: -45 
 			} 
 		},
-		yAxis: [{	//第一个y轴坐标
-			min: 0,
-		    max: 12,
+		yAxis: [{			//第一个y轴坐标   对于双Y轴问题，要想两个Y轴刻度一致，应该让第一个Y轴为数值大的数据
+			min: 0, 		//第二个Y轴为数值小的数据  且linkedTo = 0
+		    //max: 12,		//在后面为series分配Y轴时，先分配第二个Y轴，再分配第一个Y轴，这样可以避免第二个Y轴最后一个刻度不显示的bug
 		    startOnTick: true,
             endOnTick: true,
             minPadding: 0,
@@ -1102,12 +1429,13 @@ function drawImage(){
             tickLength: 10,
             tickWidth: 3,
             tickPosition: 'inside',
+            
 			title: {
-				text: '来水浊度'                  //指定y轴的标题
+				text: '原水/出水浊度'                  //指定y轴的标题
 			},
 		},{	//第二个Y坐标
 			min: 0,
-		    max: 6,
+		    //max: 6,
 		    startOnTick: true,
             endOnTick: true,
             minPadding: 0,
@@ -1118,8 +1446,15 @@ function drawImage(){
             tickLength: 10,
             tickWidth: 3,
             tickPosition: 'inside',
+            linkedTo: 0,
+			labels: {
+                formatter: function () {
+                    return this.value;
+                }
+            },
 			title: {
-				text: '出水浊度'                  //指定y轴的标题
+				enable: true,
+				text: '<b>PAC/FeCl3</b>投加量'                  //指定y轴的标题
 			},
 		},
 		],
@@ -1142,9 +1477,13 @@ function drawImage(){
 		chart: {
 			borderColor: '#FFFFFF',	//边框颜色
 		    selectionMarkerFill: 'rgba(0,0,0, 0.2)',
-		    height: 660,
-		    width:1050,
+		    height: 630,
+		    width:1300,
+		    zoomType: 'y',
 		},
+		colors: ['#FF0000', '#0000C6', '#00A600',
+		         '#FF0000', '#0000C6', '#00A600',
+		         '#FF0000', '#0000C6', '#00A600'],
 		credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
 			text: '北京市自来水集团',
 			href: '',
@@ -1208,63 +1547,65 @@ function drawImage(){
 	    maskFill: 'rgba(102,204,255, 0.5)'
 	},
 	rangeSelector: {
-	    allButtonsEnabled: true,
-	    buttonTheme: { // styles for the buttons
-	    	fill: 'none',
-	        stroke: 'none',
-	        'stroke-width': 0,
-	        r: 3,
-	        style: {
-	        	color: '#039',
-	            fontWeight: 'bold'
-	        },
-	        states: {
-	        	hover: {
-	        	},
-	        	select: {
-	        		fill: '#039',
-	        		style: {
-	        			color: 'white'
-	        		}
-	        	}
-	        }
-	    },
-	    buttons: [{
-	    	type: 'month',
+    	allButtonsEnabled: true,
+        buttonTheme: { // styles for the buttons
+            fill: 'none',
+            stroke: 'none',
+            'stroke-width': 0,
+            r: 3,
+            style: {
+                color: '#039',
+                fontWeight: 'bold'
+            },
+            states: {
+                hover: {
+                },
+                select: {
+                    fill: '#039',
+                    style: {
+                        color: 'white'
+                    }
+                }
+            }
+        },
+        buttons: [{
+        	type: 'day',
+        	count: 1,
+        	text: '1天'
+        },{
+        	type: 'day',
+        	count: 3,
+        	text: '3天'
+        },{
+	    	type: 'week',
 	    	count: 1,
-	    	text: '1月'
+	    	text: '1周'
 			}, {
 			type: 'month',
-			count: 3,
-			text: '3月'
-			}, {
-			type: 'month',
-			count: 6,
-			text: '半年'
-			}, {
-			type: 'ytd',
-			text: '今年'
-			}, {
-			type: 'year',
 			count: 1,
-			text: '1年'
-			}, {
-				type: 'all',
-				text: '全部'
+			text: '1月'
 			}],
-		inputBoxBorderColor: 'gray',
-		inputBoxWidth: 100,
-		inputBoxHeight: 18,
-		inputStyle: {
-			color: '#000000',
-			fontWeight: 'bold'
-		},
-		labelStyle: {
-			color: 'red',
-			fontWeight: 'bold'
-		},
-		selected: 1
-	},
+		buttonSpacing: 10,
+        inputBoxBorderColor: 'gray',
+        inputBoxWidth: 120,
+        //inputBoxHeight: 40,
+        inputEnabled: true,
+        inputEditDateFormat: '%Y-%m-%d',
+        inputDateFormat: '%Y-%m-%d',
+        inputDateParser: function(value) {
+        	value = value.split('-');
+        	return Date.UTC(value[0], (value[1] - 1), value[2]);
+        },
+        inputStyle: {
+            color: '#000000',
+            fontWeight: 'bold'
+        },
+        labelStyle: {
+            color: 'red',
+            fontWeight: 'bold'
+        },
+        selected: 1
+    },
 	scrollbar: {
 		barBackgroundColor: 'gray',
 	    barBorderRadius: 7,
@@ -1320,9 +1661,42 @@ function drawImage(){
 					//rotation: -45 
 				} 
 			},
-	yAxis: [{	//第一个y轴坐标
+	yAxis: [{	//第二个Y坐标
 		min: 0,
-	    max: 1,
+	    //max: 1,
+	    startOnTick: true,
+        endOnTick: true,
+        minPadding: 0,
+        maxPadding: 0,
+	    gridLineColor: 'silver',
+	    showLastLabel: true,
+	    //tickAmount: 5,
+	    tickColor: 'green',
+        tickLength: 10,
+        tickWidth: 3,
+        tickPosition: 'inside',
+        //tickPositions: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+	    
+        //linkedTo: 0,
+		labels: {
+            formatter: function () {
+                return this.value;
+            }
+        },
+		//title: {
+		//	enable: true,
+		//	text: '开启度/转速/沉降比'                  //指定y轴的标题
+		//},
+        
+        
+        
+        title: {
+		        		text: '水温'                  //指定y轴的标题
+		},
+
+	},{	//第一个y轴坐标
+		min: 0,
+	    //max: 1,
 	    startOnTick: true,
         endOnTick: true,
         minPadding: 0,
@@ -1335,34 +1709,16 @@ function drawImage(){
         tickLength: 10,
         tickWidth: 3,
         tickPosition: 'inside',
-        tickPositions: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+        linkedTo: 0,
+        //tickPositions: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
 		title: {
-			text: 'PAC投加量'                  //指定y轴的标题
+			text: '原水藻类含量/预加氯'                  //指定y轴的标题
 		},
 			        	//lebels:{
 			        	//	format: '{value*100}%'
 			        	//},
 			        	//添加标示线
 			        
-		},{	//第二个Y坐标
-			min: 0,
-		    max: 1,
-		    startOnTick: true,
-	        endOnTick: true,
-	        minPadding: 0,
-	        maxPadding: 0,
-		    gridLineColor: 'silver',
-		    showLastLabel: true,
-		    //tickAmount: 5,
-		    tickColor: 'green',
-            tickLength: 10,
-            tickWidth: 3,
-            tickPosition: 'inside',
-            tickPositions: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-		    title: {
-			        		text: 'FeCl3投加量'                  //指定y轴的标题
-			},
-
 		},
 		],
 			       //显示数据
@@ -1381,101 +1737,435 @@ function drawImage(){
 			        series: []
 	};//options2
 	
+	options3 = {
+			chart: {
+				borderColor: '#FFFFFF',	//边框颜色
+			    selectionMarkerFill: 'rgba(0,0,0, 0.2)',
+			    height: 630,
+			    width:1300,
+			    zoomType: 'y',
+			},
+			colors: ['#000000', '#FF0000', '#0000C6', '#00A600', '#F75000',
+			         '#000000', '#FF0000', '#0000C6', '#00A600', '#F75000',
+			         '#000000', '#FF0000', '#0000C6', '#00A600', '#F75000',
+			         '#000000', '#FF0000', '#0000C6', '#00A600', '#F75000',
+			         '#000000', '#FF0000', '#0000C6', '#00A600', '#F75000'],
+			credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
+				text: '北京市自来水集团',
+				href: '',
+				position: {
+				    align: 'right',
+				    x: -10,
+				    verticalAlign: 'bottom',
+				    y: -25
+				},
+				style: {                            // 样式设置
+				    cursor: 'default',
+				    color: 'blue',
+				    fontSize: '12px'
+				}
+			},	//显示图表版权信息
+			exporting : {
+				buttons: {
+				    contextButton: {
+				        text: '导出'
+				    }
+				}
+			},
+			lang:{						
+				printChart: '打印',
+				downloadJPEG: '下载JPEG 图片',
+			    downloadPDF: '下载PDF文档',
+			    downloadPNG: '下载PNG 图片',
+			    downloadSVG: '下载SVG 矢量图',
+			    exportButtonTitle: '导出图片',
+				noData: '没有查询到数据',
+				Zoom: '时间选择',
+			},
+			legend: {  //The legend is a box containing a symbol and name for each series item or point item in the chart.
+		        enabled: true,	//显示图例	
+		        layout:"vertical",
+		        align: 'right', //水平方向位置
+		        verticalAlign: 'top', //垂直方向位置
+		        x:0,
+		        y:100		            	            
+		    },
+		    navigation : {
+		        menuItemStyle: {
+		        fontWeight: 'normal',
+		        background: 'none'
+		    },
+		    menuItemHoverStyle: {
+		        fontWeight: 'bolder',
+		        background: 'none',
+		        color: 'black'
+		    }, 
+		    menuStyle: {
+		        background: '#E0E0E0'
+		    }
+		},
+		navigator: {
+			handles: {
+		    	backgroundColor: '#66CCFF',
+		    	borderColor: '#6650FF'
+		    },
+		    margin: 2,
+		    maskFill: 'rgba(102,204,255, 0.5)'
+		},
+		rangeSelector: {
+        	allButtonsEnabled: true,
+            buttonTheme: { // styles for the buttons
+                fill: 'none',
+                stroke: 'none',
+                'stroke-width': 0,
+                r: 3,
+                style: {
+                    color: '#039',
+                    fontWeight: 'bold'
+                },
+                states: {
+                    hover: {
+                    },
+                    select: {
+                        fill: '#039',
+                        style: {
+                            color: 'white'
+                        }
+                    }
+                }
+            },
+            buttons: [{
+            	type: 'day',
+            	count: 1,
+            	text: '1天'
+            },{
+            	type: 'day',
+            	count: 3,
+            	text: '3天'
+            },{
+    	    	type: 'week',
+    	    	count: 1,
+    	    	text: '1周'
+    			}, {
+    			type: 'month',
+    			count: 1,
+    			text: '1月'
+    			}],
+    		buttonSpacing: 10,
+            inputBoxBorderColor: 'gray',
+            inputBoxWidth: 120,
+            //inputBoxHeight: 40,
+            inputEnabled: true,
+            inputEditDateFormat: '%Y-%m-%d',
+            inputDateFormat: '%Y-%m-%d',
+            inputDateParser: function(value) {
+            	value = value.split('-');
+            	return Date.UTC(value[0], (value[1] - 1), value[2]);
+            },
+            inputStyle: {
+                color: '#000000',
+                fontWeight: 'bold'
+            },
+            labelStyle: {
+                color: 'red',
+                fontWeight: 'bold'
+            },
+            selected: 1
+        },
+		scrollbar: {
+			barBackgroundColor: 'gray',
+		    barBorderRadius: 7,
+		            barBorderWidth: 0,
+		            buttonBackgroundColor: 'gray',
+		            buttonBorderWidth: 0,
+		            buttonArrowColor: 'yellow',
+		            buttonBorderRadius: 7,
+		            rifleColor: 'yellow',
+		            trackBackgroundColor: 'white',
+		            trackBorderWidth: 1,
+		            trackBorderColor: 'silver',
+		            trackBorderRadius: 7
+		},
+				// 按钮样式
+			    title:{
+			    	text: ImageTitle3,
+					style:{
+						font: '18px',
+						color: '#0E2D5F',
+						fontWeight: 'bold',
+					}
+				},
+				tooltip: {
+		            backgroundColor: {
+		                linearGradient: {
+		                    x1: 0,
+		                    y1: 0,
+		                    x2: 0,
+		                    y2: 1
+		                },
+		                stops: [
+		                    [0, 'white'],
+		                    [1, '#EEE']
+		                ]
+		            },
+		            borderColor: 'gray',
+		            borderWidth: 1,
+		        },
+				xAxis: {
+					type: 'datetime',
+					dateTimeLabelFormats: { // don't display the dummy year
+						hours: '%H时',
+						day: "%m-%d",
+						month:'%Y年 %m月',
+						year: '%Y年'
+					},
+					tickColor: 'green',
+		            tickLength: 10,
+		            tickWidth: 3,
+		            tickPosition: 'inside',
+					labels: { 
+						//rotation: -45 
+					} 
+				},
+		yAxis: [{	//第一个y轴坐标
+			min: 0,
+		    //max: 1,
+		    startOnTick: true,
+	        endOnTick: true,
+	        minPadding: 0,
+	        maxPadding: 0,
+		    gridLineColor: 'silver',
+		    opposite:false,
+		    showLastLabel: true,
+		    //tickAmount: 5,
+		    tickColor: 'green',
+	        tickLength: 10,
+	        tickWidth: 3,
+	        tickPosition: 'inside',
+	        //tickPositions: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+	        
+	        
+	        
+	        
+			title: {
+				text: '开启度/转速/沉降比'                  //指定y轴的标题
+			},
+				        	//lebels:{
+				        	//	format: '{value*100}%'
+				        	//},
+				        	//添加标示线
+				        
+			},{	//第二个Y坐标
+				min: 0,
+			    //max: 1,
+			    startOnTick: true,
+		        endOnTick: true,
+		        minPadding: 0,
+		        maxPadding: 0,
+			    gridLineColor: 'silver',
+			    showLastLabel: true,
+			    //tickAmount: 5,
+			    tickColor: 'green',
+	            tickLength: 10,
+	            tickWidth: 3,
+	            tickPosition: 'inside',
+	            //tickPositions: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+			    
+	            linkedTo: 0,
+				labels: {
+	                formatter: function () {
+	                    return this.value;
+	                }
+	            },
+				//title: {
+				//	enable: true,
+				//	text: '开启度/转速/沉降比'                  //指定y轴的标题
+				//},
+	            
+	            
+	            title: {
+				        		text: '小/大斗排泥时长'                  //指定y轴的标题
+				},
+			},
+			],
+				       //显示数据
+			plotOptions: {
+				line: {
+					dataLabels: {
+						enabled: true,
+						formatter: function() {
+							return this.y;
+						} 
+				    },
+				    enableMouseTracking: true,
+				}, 
+			},
+				        //指定数据列
+				        series: []
+		};//options3
+	
 	options1.series = new Array();
 	options2.series = new Array();
+	options3.series = new Array();
 	for(var i=0;i<poollist.length;i++)
 	{	
-		//NTU
+		//options1 PAC
+		options1.series[i+poollist.length*2]= new Object();
+		options1.series[i+poollist.length*2].data=(PACArray[i].sort()); //对PACArray[i]进行排序，否则会造成时间轴上的图错乱
+		options1.series[i+poollist.length*2].name='PAC投加量<br> '+formPoolID(poollist[i]);
+		options1.series[i+poollist.length*2].type="line";
+		options1.series[i+poollist.length*2].yAxis=1;
+
+		//options1 FeCl3
+		options1.series[i+poollist.length*3] = new Object();
+		options1.series[i+poollist.length*3].data=FeCl3Array[i].sort(); //对FeCl3Array[i]进行排序，否则会造成时间轴上的图错乱
+		options1.series[i+poollist.length*3].name='FeCl<sub>3</sub>投加量<br> '+formPoolID(poollist[i]);
+		options1.series[i+poollist.length*3].type="line";
+		options1.series[i+poollist.length*3].yAxis=1;
+		
+		
+		//options1 NTU
 		options1.series[i]= new Object();
 		options1.series[i].data=(NTUArray[i].sort()); //对NTUArray[i]进行排序，否则会造成时间轴上的图错乱
 		options1.series[i].name='原水浊度<br> '+formPoolID(poollist[i]);
 		options1.series[i].type="line";
 		options1.series[i].yAxis=0;
 
-		//OutNTU
+		//options1 OutNTU
 		options1.series[i+poollist.length] = new Object();
 		options1.series[i+poollist.length].data=OutNTUArray[i].sort(); //对OutNTUArray[i]进行排序，否则会造成时间轴上的图错乱
 		options1.series[i+poollist.length].name='出水浊度<br> '+formPoolID(poollist[i]);
-		options1.series[i+poollist.length].type="line";
-		options1.series[i+poollist.length].yAxis=1;
+		options1.series[i+poollist.length].type="line";;
+		options1.series[i+poollist.length].yAxis=0;
 		
-		//PAC
-		options2.series[i]= new Object();
-		options2.series[i].data=(PACArray[i].sort()); //对FeCl3Array[i]进行排序，否则会造成时间轴上的图错乱
-		options2.series[i].name='PAC投加量<br> '+formPoolID(poollist[i]);
+		
+		
+		//options2 AlgaeContent
+		options2.series[i] = new Object();
+		options2.series[i].data=AlgaeContentArray[i].sort(); //对AlgaeContentArray[i]进行排序，否则会造成时间轴上的图错乱
+		options2.series[i].name='原水藻类<br> '+formPoolID(poollist[i]);
 		options2.series[i].type="line";
-		options2.series[i].yAxis=0;
-
-		//FeCl3
+		options2.series[i].yAxis=1;
+		
+		//options2 CL
 		options2.series[i+poollist.length] = new Object();
-		options2.series[i+poollist.length].data=FeCl3Array[i].sort(); //对FeCl3Array[i]进行排序，否则会造成时间轴上的图错乱
-		options2.series[i+poollist.length].name='FeCl3投加量<br> '+formPoolID(poollist[i]);
+		options2.series[i+poollist.length].data=CLArray[i].sort(); //对CLArray[i]进行排序，否则会造成时间轴上的图错乱
+		options2.series[i+poollist.length].name='预加氯量<br> '+formPoolID(poollist[i]);
 		options2.series[i+poollist.length].type="line";
 		options2.series[i+poollist.length].yAxis=1;
+		
+		//options2 WaterTemp
+		options2.series[i+poollist.length*2]= new Object();
+		options2.series[i+poollist.length*2].data=(WaterTempArray[i].sort()); //对WaterTempArray[i]进行排序，否则会造成时间轴上的图错乱
+		options2.series[i+poollist.length*2].name='水温<br> '+formPoolID(poollist[i]);
+		options2.series[i+poollist.length*2].type="line";
+		options2.series[i+poollist.length*2].yAxis=0;
+
+		
+		//options3 SmallMudFre
+		options3.series[i+poollist.length*3] = new Object();
+		options3.series[i+poollist.length*3].data=SmallMudFreArray[i].sort(); //对SmallMudFreArray[i]进行排序，否则会造成时间轴上的图错乱
+		options3.series[i+poollist.length*3].name='小斗排泥时长<br> '+formPoolID(poollist[i]);
+		options3.series[i+poollist.length*3].type="line";
+		options3.series[i+poollist.length*3].yAxis=1;
+		
+		//options3 BigMudFre
+		options3.series[i+poollist.length*4] = new Object();
+		options3.series[i+poollist.length*4].data=BigMudFreArray[i].sort(); //对BigMudFreArray[i]进行排序，否则会造成时间轴上的图错乱
+		options3.series[i+poollist.length*4].name='大斗排泥时长<br> '+formPoolID(poollist[i]);
+		options3.series[i+poollist.length*4].type="line";
+		options3.series[i+poollist.length*4].yAxis=1;
+		
+		//options3 OpenDegree
+		options3.series[i]= new Object();
+		options3.series[i].data=(OpenDegreeArray[i].sort()); //对OpenDegreeArray[i]进行排序，否则会造成时间轴上的图错乱
+		options3.series[i].name='开启度<br> '+formPoolID(poollist[i]);
+		options3.series[i].type="line";
+		options3.series[i].yAxis=0;
+
+		//options3 RotationSpeed
+		options3.series[i+poollist.length] = new Object();
+		options3.series[i+poollist.length].data=RotationSpeedArray[i].sort(); //对RotationSpeedArray[i]进行排序，否则会造成时间轴上的图错乱
+		options3.series[i+poollist.length].name='转速<br> '+formPoolID(poollist[i]);
+		options3.series[i+poollist.length].type="line";
+		options3.series[i+poollist.length].yAxis=0;
+		
+		//options3 SV
+		options3.series[i+poollist.length*2]= new Object();
+		options3.series[i+poollist.length*2].data=(SVArray[i].sort()); //对SVArray[i]进行排序，否则会造成时间轴上的图错乱
+		options3.series[i+poollist.length*2].name='沉降比<br> '+formPoolID(poollist[i]);
+		options3.series[i+poollist.length*2].type="line";
+		options3.series[i+poollist.length*2].yAxis=0;
+
+		
 	}
 	options1.series.sort(keysrt("name",false));
 	options2.series.sort(keysrt("name",false));
+	options3.series.sort(keysrt("name",false));
 	//chart1 = new Highcharts.Chart(options1);
 	//chart2 = new Highcharts.Chart(options2);
 	$('#imageContainer1').highcharts('StockChart',options1);
 	$('#imageContainer2').highcharts('StockChart',options2);
+	$('#imageContainer3').highcharts('StockChart',options3);
 }//preH;
-
 var treeNodeList= [{id:1,name:"时间列表",text:"时间列表",parentId:0}];
 function listTreeNode(tlist){
-	var yearlist = new Array();
-	var monthlist = new Array();
-	var daylist = new Array();
-	var j=1; 
-	for(var i=0;i<tlist.length;i++){
-		var year = tlist[i].substring(0,4);
-		var month = tlist[i].substring(0,7);
-		var day = tlist[i].substring(0,10);
-		var yearIndex=yearlist.indexOf(year);
-		var monthIndex=monthlist.indexOf(month);
-		var dayIndex=daylist.indexOf(day);
-		if(yearIndex<0){	//不存在该年份
-			j=j+1;	
-			yearlist.push(year);
-			treeNodeList.push({id:j,name:year+"年",text:year,parentId:1});	
-			j=j+1;
-			monthlist.push(month);
-			treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,parentId:j-1});
-			j=j+1;
-			daylist.push(day);
-			treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,parentId:j-1});		
-		}
-		else{
-			if(monthIndex<0) //不存在该月份
-			{	
-				j=j+1;
-				monthlist.push(month);
-				treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,
-									parentId:findParentId(treeNodeList, year)});
-				j=j+1;
-				daylist.push(day);
-				treeNodeList.push({id:j,name:day.substring(8,10)+"日",
-								text:day,parentId:j-1});
-			}else{
-				if(dayIndex<0){
-					j=j+1;
-					daylist.push(day);
-					treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,
-									parentId:findParentId(treeNodeList, month)});
-				}
-			}
-		}
-	}
+//	var yearlist = new Array();
+//	var monthlist = new Array();
+//	var daylist = new Array();
+//	var j=1; 
+//	for(var i=0;i<tlist.length;i++){
+//		var year = tlist[i].substring(0,4);
+//		var month = tlist[i].substring(0,7);
+//		var day = tlist[i].substring(0,10);
+//		var yearIndex=yearlist.indexOf(year);
+//		var monthIndex=monthlist.indexOf(month);
+//		var dayIndex=daylist.indexOf(day);
+//		if(yearIndex<0){	//不存在该年份
+//			j=j+1;	
+//			yearlist.push(year);
+//			treeNodeList.push({id:j,name:year+"年",text:year,parentId:1});	
+//			j=j+1;
+//			monthlist.push(month);
+//			treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,parentId:j-1});
+//			j=j+1;
+//			daylist.push(day);
+//			treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,parentId:j-1});		
+//		}
+//		else{
+//			if(monthIndex<0) //不存在该月份
+//			{	
+//				j=j+1;
+//				monthlist.push(month);
+//				treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,
+//									parentId:findParentId(treeNodeList, year)});
+//				j=j+1;
+//				daylist.push(day);
+//				treeNodeList.push({id:j,name:day.substring(8,10)+"日",
+//								text:day,parentId:j-1});
+//			}else{
+//				if(dayIndex<0){
+//					j=j+1;
+//					daylist.push(day);
+//					treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,
+//									parentId:findParentId(treeNodeList, month)});
+//				}
+//			}
+//		}
+//	}
 
 	$('#timeTree').tree({
 //		url: 'tree_data.json',
-		data: treeNodeList,
+//		data: treeNodeList,
+		data:tlist,
 		animate:true,	//动画效果
 		lines:true,
-		loadFilter: function(data){
-			return convert(data);
-		},
+//		loadFilter: function(data){
+//			return convert(data);
+//		},
 		onClick:function(node){
+			hideImportPanel()
+			searchMode = 2;
 			var pnode=$('#timeTree').tree('getParent',node.target);
 			var out=node.text;
 			while(pnode.text!="时间列表"){
@@ -1524,59 +2214,60 @@ function GetNode(type){
 }; 
 
 
-function findParentId(rows, text){
-	for(var i=0; i<rows.length; i++){
-		if (rows[i].text == text) return rows[i].id;
-	}
-	return -1;
-}
-//显示树目录的数据
-function convert(rows){
-	//判断是否存在父节点
-	function exists(rows, parentId){
-		for(var i=0; i<rows.length; i++){
-			if (rows[i].id == parentId) return true;
-		}
-		return false;
-	}
-
-	var nodes = [];
-	// get the top level nodes
-	//遍历查找最高一层节点
-	for(var i=0; i<rows.length; i++){
-		var row = rows[i];
-		//如果不存在父节点，添加节点
-		if (!exists(rows, row.parentId)){
-			nodes.push({
-				id:row.id,
-				text:row.name
-			});
-		}
-	}
-
-//	利用堆栈的结构
-	var toDo = []; //所有的父节点
-	for(var i=0; i<nodes.length; i++){
-		toDo.push(nodes[i]);
-	}
-	while(toDo.length){
-		//	shift从集合中把第一个元素删除，并返回这个元素的值
-		var node = toDo.shift();	// the parent node
-		// get the children nodes
-		//	获得所有父节点各自的子节点
-		for(var i=0; i<rows.length; i++){
-			var row = rows[i];
-			if (row.parentId == node.id){
-				var child = {id:row.id,text:row.name};
-				if (node.children){
-					node.children.push(child);
-				} else {
-					node.children = [child];
-				}
-				toDo.push(child);//添加子节点，以便进一步遍历子节点查看是否有子目录
-			}
-		}
-	}
-	return nodes;
-}
+//function findParentId(rows, text){
+//	for(var i=0; i<rows.length; i++){
+//		if (rows[i].text == text) return rows[i].id;
+//	}
+//	return -1;
+//}
+////显示树目录的数据
+//function convert(rows){
+//	//判断是否存在父节点
+//	function exists(rows, parentId){
+//		for(var i=0; i<rows.length; i++){
+//			if (rows[i].id == parentId) return true;
+//		}
+//		return false;
+//	}
+//
+//	var nodes = [];
+//	// get the top level nodes
+//	//遍历查找最高一层节点
+//	for(var i=0; i<rows.length; i++){
+//		var row = rows[i];
+//		//如果不存在父节点，添加节点
+//		if (!exists(rows, row.parentId)){
+//			nodes.push({
+//				id:row.id,
+//				text:row.name,
+//				state:'closed'
+//			});
+//		}
+//	}
+//
+////	利用堆栈的结构
+//	var toDo = []; //所有的父节点
+//	for(var i=0; i<nodes.length; i++){
+//		toDo.push(nodes[i]);
+//	}
+//	while(toDo.length){
+//		//	shift从集合中把第一个元素删除，并返回这个元素的值
+//		var node = toDo.shift();	// the parent node
+//		// get the children nodes
+//		//	获得所有父节点各自的子节点
+//		for(var i=0; i<rows.length; i++){
+//			var row = rows[i];
+//			if (row.parentId == node.id){
+//				var child = {id:row.id,text:row.name};
+//				if (node.children){
+//					node.children.push(child);
+//				} else {
+//					node.children = [child];
+//				}
+//				toDo.push(child);//添加子节点，以便进一步遍历子节点查看是否有子目录
+//			}
+//		}
+//	}
+//	return nodes;
+//}
 

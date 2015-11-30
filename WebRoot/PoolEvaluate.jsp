@@ -29,7 +29,7 @@
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="highcharts/highstock.js" ></script>
-<script type="text/javascript" src="highcharts/exporting.src.js"></script>
+<script type="text/javascript" src="highcharts/exporting.js"></script>
 <script type="text/javascript" src="highcharts/themes/grid.js"></script>
 
 <script type="text/javascript" src="js/ajaxfileupload.js"></script>
@@ -44,73 +44,174 @@ body {
 	font-family: '微软雅黑','Source Sans Pro';
 	font-size: 15px;
 	width: 1600px;
-	height: 1600px;
+	height: 1100px;
 	margin:0px auto;
-	}
-
-#myNav {
-	background: #f1f3f5;
-	}
-
-#pageHead {
-	height: 50px;
-	font-size: 19px;
-	}
-
-#pageHead .navbar {
-	/*opacity: 0.85;*/
-	z-index: 10;
 	}
 
 #myContent {
 	margin: 0px auto;
 	position: relative;
-	height: 1600px;
 	width: 1600px;
+	height: 1100px;
 	background-position: bottom;
-	}
-
-#btn_group {
-	position:absolute;
-	top: 20px;
 }
 
-#pageFooter {
-	background: #e5e5e5;
-	}
+#tab {
+	cellspacing: 10px;
+	cellpadding: 10px;
+}
 
-#pageFooter p {
-	text-align: center;
-	}
-
-#myNavbar a:hover {
-	color: #d510ff;
-	background: #ffeae4;}
  
 #tab_entity {
 	position: absolute;
-	top:20px; 
-	left:300px;
-	width: 1050px;
-	margin:0;
-	padding:0;
-	boeder:0;
+	top: 50px;
+	left: 50px;
+	width: 1300px;
 }
 
 #leftContainer {
 	position: absolute;
-	top: 20px;
-	left: 20px;
+	top: 50px;
+	left: 1400px;
+	width: 200px;
 }
 
 #treeGuid {
 	position: relative;
 	top: 0px;
-	width: 220px;
-	height: 568px;
+	width: 200px;
+	height: 400px;
 	padding: 5px;
 	border: 1px solid #95B8E7;
 }
+
+#chooseIndex {
+	position: relative;
+	top: 20px;
+	width: 200px;
+	height: 200px;
+	padding: 5px;
+	inline-height: 30px;
+	border: 1px solid #95B87E;
+	
+	border: 0;
+}
+
+
+ 
+
+#tab_export {
+	font-family: '微软雅黑', 'Arial';
+	position: absolute;
+	left: 25px;
+	top: 320px;
+	z-index: 999;
+	font-size: 14px;
+	width: 200px;
+}
+
+.legendTitle {
+	color:blue;
+	font-weight:bolder;
+}
+
+#legendTable tr, #legendTable td {
+	padding: 5px;
+	margin: 5px;
+}
+
+#addButton {
+	position: relative;
+	left: 1642px;
+}
+
+div.icon {
+	position: absolute;
+	top: 520px;
+	left: 0px;
+	width: 180px;
+	height: 180px;
+ 	
+}
+
+div.menuBar {  
+ 	line-height:70px;  
+	font-family: '微软雅黑';
+	font-weight: 100;
+	font-size: 20px;
+	border: 1px solid #CCCCCC;
+	border-radius: 90%;
+	color: #FFFFFF;
+	background-color: #3399FF; 
+	display: block;
+	height: 70px;
+	width: 70px;
+	text-align:center;
+	text-indent:0;
+	position: absolute;
+	left: 110px;
+	top: 110px;
+	z-index:999;
+}
+
+div.menuBar:hover{
+	cursor: pointer;
+}
+
+
+div.menu{   
+ 	line-height:40px;  
+	font-family: '微软雅黑';
+	font-weight: 100;
+	font-size: 16px;
+	border: 1px solid #CCCCCC;
+	border-radius: 90%;
+	color: #FFFFFF;
+	background-color: #3399FF; 
+	display: block;
+	height: 50px;
+	width: 50px;
+	text-align:center;
+	text-indent:0;
+}
+div.menu:hover{
+	background-color: rgba(0, 51, 255, 0.8);
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+	font-size: 18px;
+	line-height:50px;
+}
+
+.menu {
+	position: absolute;
+	top: 110px;
+	left: 120px;
+}
+
+#template {
+	vetical-align:middle;
+}
+
+#template:hover a{
+	font-size: 18px;
+	line-height:50px;
+}
+
+#template a {
+	line-height:40px;  
+	font-family: '微软雅黑';
+	font-weight: 100;
+	font-size: 16px;
+	color: #FFFFFF;
+	text-decoration:none;
+}
+
+#template a:hover {
+	font-size: 18px;
+	line-height:50px;
+}
+
 
 #tab_description {
 	position: relative;
@@ -140,37 +241,30 @@ body {
 	padding:5px;
 	/* margin-top: 100px; */
 }
- 
- #tab_export {
-    font-family: '微软雅黑','Arial';
-    position: absolute;
-    left:1482px;
-   /*  top: 320px; */
-    top:350px;
-    z-index: 999;
-    font-size:14px;
-    width:200px;
-    }
 
-.legendTitle {
-	color:blue;
-	font-weight:bolder;
+#btn_group {
+	position:absolute;
+	top: 20px;
 }
 
-#legendTable tr, #legendTable td {
-	padding: 5px;
-	margin: 5px;
+#addButton {
+	position: relative;
+	left: 1135px;
+	top: 5px;
+}
+
+th, td, input {
+	text-align:center;
 }
 
 </style>
 </head>
 <body>
     <jsp:include page="top.jsp" />
-    
     <div id="myPage">
     	<div id="myContent" style="overflow: hidden">
-    		<!-- 操作按钮 -->
-    		<div id="btn_group" class="btn-group-vertical btn-group-lg" role="group">
+    		<!-- btn_group -->
+    		<div id="btn_group" class="btn-group-vertical btn-group-lg" role="group" style="display:none">
     			<button id="btn_addRow" class="btn btn-primary" 
     				onclick="javascript:addPoolEvaluate()">添加</button>
 				<button id="btn_editRow" class="btn btn-primary"
@@ -184,84 +278,64 @@ body {
 				<button id="btn_export" class="btn btn-primary"
 					onclick="javascript:export2excel()">导出</button>
 			</div> 
-				
-			<!-- 文件导出操作 -->
-			<div id="tab_export"><br /><br />
-				<form action="${pageContext.request.contextPath}/importPoolEvaluate"
-					name="uploadForm" enctype="multipart/form-data" method="post">
-					<input type=file name="upload" id="upload" style="display: none;"
-						onchange="fakeUpload.value=value"> 
-					<input type=button class="btn btn-primary" value="选择文件" 
-						onclick=upload.click() style="width:105px;font-size:18px"><br />
-					<input id="fakeUpload" name="fakeUpload" type="text"
-						ondblclick=upload.click() style="width:105px;height:25px;border:1px solid #95B8E7;">
-					<br /><br />
-					<input id="btn-import" class="btn btn-primary" style="font-size:18px;width:105px;" value="导入"
-						onclick="javascript:import2DB();fakeUpload.value='';" />
-				</form><br />
-				<a href="download/PoolEvaluate.xls"	style="margin:0;border:0;font-size:15px;">点击下载机加池<br /> &nbsp; &nbsp;分析表模板 &nbsp; &nbsp; </a> 
-				<input type="hidden" value='${errorMsg}' id="errMsg" />
-			</div>
-			
-			
+			<!-- leftContainer -->
 			<div id="leftContainer">
+				<!-- treeGuid -->
 				<div id="treeGuid" style="overflow:scroll">
 					<p>选择时间:</p><br/>
 					<!-- 树形导航菜单 -->
 					<ul id="timeTree" class="easyui-tree"></ul>
 				</div>
-				<!-- 特征量说明 -->
-				<div id="tab_description">
-					<h1 style="font-size: 20px">填表说明:</h1>
-					<p style="font-size: 15px">各特征量取值分段为:</p>
-					<img src="image/JJC1.png" alt="" /><br /><br />
-					<img src="image/JJC2.png" alt="" /><br /><br />
-					<img src="image/JJC3.png" alt="" /><br /><br />
-					<img src="image/JJC4.png" alt="" /><br />
+				<!-- chooseIndex -->
+				<div id="chooseIndex">
+					<form id="indexForm">
+						<p style="color:blue; font-weight:bold;font-size:18px">请选择机加池编号：</p>
+						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">机加池01#</label><br />
+						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">机加池02#</label><br />
+						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">机加池03#</label><br />
+					</form>
+				</div>
+				<!-- icon -->
+				<div class="icon">
+    				<div class="menuBar" id="menu">菜单</div>
+        			<div class="menu" id="add">添加</div>
+        			<div class="menu" id="edit">编辑</div>
+        			<div class="menu" id="delete">删除</div>
+        			<div class="menu" id="search">查询</div>
+        			<div class="menu" id="export">导出</div>
+        			<div class="menu" id="import">导入</div>
+        			<div class="menu" id="template"><a href="download/PoolEvaluate.xls" style="height:50px">模板</a></div>
+        			<!-- tab_export -->
+					<div id="tab_export" style="display:none">
+						<form action="${pageContext.request.contextPath}/importDataAnalysis" 
+							name="uploadForm" enctype="multipart/form-data" method="post">
+							<input type=file name="upload" id="upload" style="display: none;" onchange="fakeUpload.value=value" /> 
+							<input id="btn-select" type=button  class="btn btn-primary" value="选择文件" onclick=upload.click() 
+								style="width: 134px; font-size: 18px; background-color:#3399FF" /><br /> 
+							<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click()
+								style="width: 134px; height: 35px; border: 1px solid #95B8E7;"><br />
+							<input id="btn-import" class="btn btn-primary" style="font-size: 18px; width: 65px;
+								background-color:#3399FF"" value="确定" onclick="javascript:import2DB();fakeUpload.value='';" />
+							<input id="btn-cancel" class="btn btn-primary" style="font-size: 18px; width: 65px;
+								background-color:#3399FF"" value="取消"/>
+						</form>	
+					</div>
 				</div>
 				
-				<!-- <div id="picLegend">
-					<h4 style="color:blue"><strong><span style="color:red;">Zoom</span> 选项说明:</strong></h4>
-					<table id="legendTable" style="text-align:left">
-					<tr>
-						<td class="legendTitle">1M</td>
-						<td>:1个月的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">3M</td>
-						<td>:3个月的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">6M</td>
-						<td>:6个月的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">YTD</td>
-						<td>:本年初至今日的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">1Y</td>
-						<td>:1年的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">ALL</td>
-						<td>:所有的数据</td>
-					</tr>
-					</table>
-				</div> -->
-				
 			</div>
 			
-			
-
+			<!-- tab_entity -->
 			<div id="tab_entity">
-				<table id="poolEvaluatebody" class="easyui-datagrid" style="width:1050;height:300px;"></table><br />
-				
-				<div class="easyui-tabs" style="width:1050px;height:690px;">
-					<div title="浊度分析图" id="imageContainer1" style="width:1050px;height:690px;padding:0px;border-width:0px"></div>
-					<div title="加药量分析图" id="imageContainer2" style="width:1050px;height:690px;padding:0px;border-width:0px"></div>
+				<table id="poolEvaluatebody" class="easyui-datagrid" style="width:1300;height:300px;"></table><br />
+				<!-- easyui-tabs -->
+				<div class="easyui-tabs" style="width:1300px;height:690px;">
+					<div title="浊度/加药量分析图" id="imageContainer1" style="width:1300px;height:600px;padding:0px;border-width:0px"></div>
+					<div title="原水藻类/水温/预加氯量分析图" id="imageContainer2" style="width:1300px;height:690px;padding:0px;border-width:0px"></div>
+					<div title="基本运行参数分析图" id="imageContainer3" style="width:1300px;height:690px;padding:0px;border-width:0px"></div>
 				 </div>
 			</div>
+			
+			
 			
 			<!-- 编辑数据的div，默认看不到 -->
 			<div style="display:none">
@@ -273,12 +347,12 @@ body {
 					<input	class="easyui-datebox" id="t" name="poolEvaluate.t"
 						style="width:200px;height:25px" required="required" /> 
 					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 机加池编号 : &nbsp; 
-					<select class="easyui-validatebox easyui-combox textbox" id="PoolID"
+					<select class="easyui-combobox" id="PoolID"
 						name="poolEvaluate.PoolID" style="width:200px;height:25px"
 						data-options="required:true,missingMessage:'请输入机加池编号'" >
-						<option value="MTG_QingS_SC01" selected>MTG_QingS_SC01</option>
-						<option value="MTG_QingS_SC02">MTG_QingS_SC02</option>
-						<option value="MTG_QingS_SC03">MTG_QingS_SC03</option>
+						<option value="MTG_JJ1_SC01" selected>MTG_JJ1_SC01</option>
+						<option value="MTG_JJ1_SC02">MTG_JJ1_SC02</option>
+						<option value="MTG_JJ1_SC03">MTG_JJ1_SC03</option>
 					</select>	<br /><br /> 
 					&nbsp; &nbsp; &nbsp; PAC投加量 : &nbsp; 
 					<input class="easyui-numberbox textbox" style="width:195px;height:25px"
@@ -325,113 +399,113 @@ body {
 				</div>
 				
 			<div id="newEdit" class="easyui-dialog" data-options="closed:true"
-						style="align: center; width: 1800px; height: 540px; padding: 10px 60px 20px 60px">
-						<form id="newfrmEdit">
+						style="align: center; width:1380px; height: 600px; padding: 10px 60px 10px 60px">
+						<form id="newfrmEdit" style="width:1240px">
 							<br />
 							<!-- <input type="hidden" id="dateTempAdd" name="dateTemp"	/> 
 						<input type="hidden" id="IDAdd" name="dataAnalysis.ID" /> -->
-							<table id="tab" style="align: center; width: 1700px">
+							<table id="tab" style="align: center">
 
 
 								<tr>
-									<th></th>
-									<th></th>
-									<th>序 号</th>
-									<th>时 间</th>
-									<th>机加池编号</th>
-									<th>PAC投放量</th>
-									<th>FeCl3投放量</th>
-									<th>开启度</th>
-									<th>转速</th>
-									<th>沉降比</th>
-									<th>水温</th>
-									<th>小斗排泥时长</th>
-									<th>大斗排泥时长</th>
-									<th>原水浊度</th>
+									<th style="width: 1px; height: 26px"></th>
+									<th style="width: 1px; height: 26px"></th>
+									<th style="width: 40px; height: 26px">序 号</th>
+									<th style="width: 152px; height: 26px">时 间</th>
+									<th style="width: 102px; height: 26px">机加池编号</th>
+									<th style="width: 82px; height: 26px">PAC投放量</th>
+									<th style="width: 92px; height: 26px">FeCl<sub>3</sub>投放量</th>
+									<th style="width: 62px; height: 26px">开启度</th>
+									<th style="width: 52px; height: 26px">转速</th>
+									<th style="width: 62px; height: 26px">沉降比</th>
+									<th style="width: 52px; height: 26px">水温</th>
+									<th style="width: 92px; height: 26px">小斗排泥时长</th>
+									<th style="width: 92px; height: 26px">大斗排泥时长</th>
+									<th style="width: 72px; height: 26px">原水浊度</th>
 									
-									<th>原水藻类含量</th>
-									<th>出水浊度</th>
-									<th>预加氯量</th>
+									<th style="width: 92px; height: 26px">原水藻类含量</th>
+									<th style="width: 72px; height: 26px">出水浊度</th>
+									<th style="width: 72px; height: 26px">预加氯量</th>
 									
 								</tr>
 
 
 								<tr id="tr1">
-									<td><input type="hidden" id="splitSign" name="split"
-										style="width: 1px; height: 25px" /></td>
-									<td><input type="hidden" id="IDAdd" name="poolEvaluate.ID"
-										style="width: 1px; height: 25px" /></td>
-									<td id="indexNum1">1</td>
-									<td>
+									<td style="width: 1px; height: 26px">
+										<input type="hidden" id="splitSign" name="split" style="width: 1px; height: 26px" /></td>
+									<td style="width: 1px; height: 26px">
+										<input type="hidden" id="IDAdd" name="poolEvaluate.ID" style="width: 1px; height: 26px" /></td>
+									<td id="indexNum1" style="text-align:center;width: 40px; height: 26px">1</td>
+									<td style="width: 152px; height: 26px" >
 										<!-- 时间 --> <input name="poolEvaluate.t" id="tAdd1"
-										type="date" style="width: 200px; height: 25px" />
+										type="date" style="width: 150px; height: 25px" />
 									</td>
-									<td>
+									<td style="width: 102px; height: 26px" >
 										<!-- 机加池编号 -->
 										<select id="PoolIDAdd1" name="poolEvaluate.PoolID"
-										class="easyui-combox" style="width: 200px; height: 25px">
-											<option value="MTG_QingS_SC01" selected>MTG_QingS_SC01</option>
-											<option value="MTG_QingS_SC02">MTG_QingS_SC02</option>
-											<option value="MTG_QingS_SC03">MTG_QingS_SC03</option>
+										class="easyui-combox" style="width: 100px; height: 25px">
+											<option value="MTG_JJC_SC01" selected>机加池01#</option>
+											<option value="MTG_JJC_SC02">机加池02#</option>
+											<option value="MTG_JJC_SC03">机加池03#</option>
 									</select>
 									</td>
-									<td>
+									<td style="width: 82px; height: 26px" >
 										<!-- PAC投加量 --> <input id="PACAdd1" name="poolEvaluate.PAC"
-										style="width: 100px; height: 25px"
+										style="width: 80px; height: 25px"
 										data-options="min:0,precision:0," />
 									</td>
-									<td>
+									<td style="width: 92px; height: 26px" >
 										<!-- FeCl3投加量 --> <input id="FeCl3Add1" name="poolEvaluate.FeCl3"
-										style="width: 100px; height: 25px"
+										style="width: 90px; height: 25px"
 										data-options="min:0,precision:0" />
 									</td>
-									<td>
+									<td style="width: 62px; height: 26px" >
 										<!-- 开启度 --> <input id="OpenDegreeAdd1"
-										name="poolEvaluate.OpenDegree" style="width: 100px; height: 25px"
+										name="poolEvaluate.OpenDegree" style="width: 60px; height: 25px"
 										data-options="min:0,precision:0" />
 									</td>
-									<td>
+									<td style="width: 52px; height: 26px" >
 										<!-- 转速 --> <input id="RotationSpeedAdd1"
-										name="poolEvaluate.RotationSpeed" style="width: 100px; height: 25px"
+										name="poolEvaluate.RotationSpeed" style="width: 50px; height: 25px"
 										data-options="min:0,precision:0" />
 									</td>
-									<td>
+									<td style="width: 62px; height: 26px" >
 										<!-- 沉降比 --> <input id="SVAdd1"
-										name="poolEvaluate.SV" style="width: 100px; height: 25px"
+										name="poolEvaluate.SV" style="width: 60px; height: 25px"
 										data-options="min:0,precision:0" />
 									</td>
-									<td>
+									<td style="width: 52px; height: 26px" >
 										<!-- 水温 --> <input id="WaterTempAdd1"
-										name="poolEvaluate.WaterTemp" style="width: 100px; height: 25px"
+										name="poolEvaluate.WaterTemp" style="width: 50px; height: 25px"
 										data-options="min:0,precision:0" />
 									</td>
-									<td>
+									<td style="width: 92px; height: 26px" >
 										<!-- 小斗排泥时长 --> <input id="SmallMudFreAdd1"
-										name="poolEvaluate.SmallMudFre" style="width: 100px; height: 25px"
+										name="poolEvaluate.SmallMudFre" style="width: 90px; height: 25px"
 										data-options="min:0,precision:0" />
 									</td>
-									<td>
+									<td style="width: 92px; height: 26px" >
 										<!-- 大斗排泥时长 --> <input id="BigMudFreAdd1" name="poolEvaluate.BigMudFre"
-										style="width: 100px; height: 25px"
+										style="width: 90px; height: 25px"
 										data-options="min:0,precision:0" />
 									</td>
-									<td>
+									<td style="width: 72px; height: 26px" >
 										<!-- 原水浊度 --> <input id="NTUAdd1"
-										name="poolEvaluate.NTU" style="width: 100px; height: 25px"
+										name="poolEvaluate.NTU" style="width: 70px; height: 25px"
 										data-options="precision:0" />
 									</td>
-									<td>
+									<td style="width: 92px; height: 26px" >
 										<!-- 原水藻类含量 --> <input id="AlgaeContentAdd1"
-										name="poolEvaluate.AlgaeContent" style="width: 100px; height: 25px"
+										name="poolEvaluate.AlgaeContent" style="width: 90px; height: 25px"
 										data-options="precision:0" />
 									</td>
-									<td>
+									<td style="width: 72px; height: 26px" >
 										<!-- 出水浊度 --> <input id="OutNTUAdd1" name="poolEvaluate.OutNTU"
-										style="width: 100px; height: 25px" data-options="precision:2" />
+										style="width: 70px; height: 25px" data-options="precision:2" />
 									</td>
-									<td>
+									<td style="width: 72px; height: 26px" >
 										<!-- 预加氯量 --> <input id="CLAdd1" name="poolEvaluate.CL"
-										style="width: 100px; height: 25px" data-options="precision:2" />
+										style="width: 70px; height: 25px" data-options="precision:2" />
 									</td>
 								</tr>
 
@@ -442,85 +516,49 @@ body {
 						</form>
 					</div>	
 				
-			</div>
 			
 			<div style="display:none">
-					<div id="tabSearch" class="easyui-dialog"
-						data-options="closed:true"
-						style="align:center;width:600px;height:400px;padding:10px 60px 20px 60px">
-						<form id="frmSearch">
-
-							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp; <input class="easyui-datebox" style="width:150px"
-								id="lowT" name="lowT"/ ><br/><br/>
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp; <input class="easyui-datebox" style="width:150px"
-								id="highT" name="highT"/ > <br />
-							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水  &nbsp;池 &nbsp; 编  &nbsp;号 : &nbsp; <input
-								class="easyui-combobox" type="text" style="width:150px"
-								id="searchPoolID" name="searchPoolID" /> <br />
-							<br /> <!-- <select  lass="easyui-combobox" type="text"  id="searchPoolID" style="width:120px"
-					                  name="searchPoolID" >
-					                   <option value="" selected="">--请选择--</option>
-					          </select> --> <!-- 
-						<br/>
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-					 状  &nbsp; 态:<select id="searchState" name="searchState" style="width:120px" class="easyui-combobox" >
-                                    <option value="-1" selected="">--请选择--</option>
-                                    <option value="0">不正常</option>
-                                    <option value="1">正常</option>
-                                 </select>
-					 --> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 来  &nbsp;水 &nbsp; 浊  &nbsp;度 : &nbsp; <input
-								class="easyui-numberbox" id="lowNTU" name="lowNTU"
-								style="width:120px" value="0"></input> ~ <input
-								class="easyui-numberbox" id="highNTU" name="highNTU"
-								style="width:120px" value="100"></input> <br />
-							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 来水藻类含量 : &nbsp; <input
-								class="easyui-numberbox" id="lowAlgaeContent"
-								name="lowAlgaeContent" style="width:120px" value="0"></input> ~
-								<input class="easyui-numberbox" id="highAlgaeContent"
-								name="highAlgaeContent" style="width:120px" value="100"></input>
-								<br />
-							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 出  &nbsp;水  &nbsp;浊 &nbsp; 度 : &nbsp; <input
-								class="easyui-numberbox" id="lowOutNTU" name="lowOutNTU"
-								style="width:120px" value="0"></input> ~ <input
-								class="easyui-numberbox" id="highOutNTU" name="highOutNTU"
-								style="width:120px" value="100"></input>
-								<br />
-							<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 沉  &nbsp; &nbsp; 降  &nbsp; &nbsp; 比 : &nbsp; <input
-								class="easyui-numberbox" id="lowSV" name="lowSV"
-								style="width:122px" value="0" data-options="prompt:'',precision:2"></input> ~ <input
-								class="easyui-numberbox" id="highSV" name="highSV"
-								style="width:120px" value="100" data-options="prompt:'',precision:2"></input>
-						</form>
-					</div>
-					
-					<div id="newtabSearch" class="easyui-dialog"
-						data-options="closed:true"
-						style="align: center; width: 400px; height: 270px; padding: 10px 60px 20px 60px">
-						<form id="newfrmSearch">
-							<dl>
-
-								<br /> &nbsp; &nbsp; &nbsp; 时 &nbsp; &nbsp; &nbsp; 间: &nbsp;
-								<input class="easyui-datebox" style="width: 150px" id="searchT"
-									name="searchT" text="" type="text"></input>
-
-								<br />
-								<br />
-								<br /> &nbsp; &nbsp; &nbsp;
-								<!-- 水池编号:  <input  class="easyui-validatebox" type="text" style="width:120px" id="searchPoolID"
-					                 size="20px" name="searchPoolID" ></input> -->
-								
-								机加池编号:&nbsp;
-								<!--  <input type="text" size="15" id="searchPoolID" name="searchPoolID" /> -->
-								<input class="easyui-combobox" style="width: 150px"
-									id="searchPoolID" name="searchPoolID" type="text"></input>
-
-							</dl>
-						</form>
-					</div>
+				<div id="tabSearch" class="easyui-dialog" data-options="closed:true"
+					style="align:center;width:600px;height:400px;padding:10px 60px 20px 60px">
+					<form id="frmSearch"><br />
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp; 
+						<input class="easyui-datebox" style="width:150px" id="lowT" name="lowT"/ ><br/><br/>
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp;
+						<input class="easyui-datebox" style="width:150px" id="highT" name="highT"/ ><br /><br />
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水  &nbsp;池 &nbsp; 编  &nbsp;号 : &nbsp; 
+						<select	class="easyui-combobox" type="text" style="width:150px"	id="searchPoolID" name="searchPoolID" >
+							<option value="MTG_JJC_SC01">机加池01#</option>
+							<option value="MTG_JJC_SC02">机加池01#</option>
+							<option value="MTG_JJC_SC03">机加池01#</option>
+						</select><br /><br />
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 来  &nbsp;水 &nbsp; 浊  &nbsp;度 : &nbsp;
+						<input class="easyui-numberbox" id="lowNTU" name="lowNTU" style="width:120px" value="0"></input> ~ 
+						<input class="easyui-numberbox" id="highNTU" name="highNTU"	style="width:120px" value="100"></input><br /><br />
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 来水藻类含量 : &nbsp;
+						<input	class="easyui-numberbox" id="lowAlgaeContent" name="lowAlgaeContent" style="width:120px" value="0"></input> ~
+						<input class="easyui-numberbox" id="highAlgaeContent" name="highAlgaeContent" style="width:120px" value="100"></input><br /><br />
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 出  &nbsp;水  &nbsp;浊 &nbsp; 度 : &nbsp;
+						<input class="easyui-numberbox" id="lowOutNTU" name="lowOutNTU"	style="width:120px" value="0"></input> ~ 
+						<input class="easyui-numberbox" id="highOutNTU" name="highOutNTU" style="width:120px" value="100"></input><br /><br />
+						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 沉  &nbsp; &nbsp; 降  &nbsp; &nbsp; 比 : &nbsp;
+						<input class="easyui-numberbox" id="lowSV" name="lowSV" style="width:122px" value="0" data-options="prompt:'',precision:2"></input> ~ 
+						<input class="easyui-numberbox" id="highSV" name="highSV" style="width:120px" value="100" data-options="prompt:'',precision:2"></input>
+					</form>
 				</div>
+				<div id="newtabSearch" class="easyui-dialog" data-options="closed:true"
+					style="align: center; width: 400px; height: 270px; padding: 10px 60px 20px 60px">
+					<form id="newfrmSearch">
+						<dl><br />
+							&nbsp; &nbsp; &nbsp; 时 &nbsp; &nbsp; &nbsp; 间: &nbsp;
+							<input class="easyui-datebox" style="width: 150px" id="searchT"	name="searchT" text="" type="text"></input><br /><br /><br /> 
+							&nbsp; &nbsp; &nbsp;机加池编号:&nbsp;
+							<input class="easyui-combobox" style="width: 150px" id="searchPoolID" name="searchPoolID" type="text"></input>
+						</dl>
+					</form>
+				</div>
+			</div>
 		</div>
-
-		<jsp:include page="down.jsp" />
 	</div>
+	<jsp:include page="down.jsp" />
 </body>
 </html>

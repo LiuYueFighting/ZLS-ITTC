@@ -191,5 +191,71 @@
 			<result name="success" type="json">PoolEvaluate.jsp</result>
 			<result name="input" type="json">PoolEvaluate.jsp</result>
 		</action>
+		
+		<!-- 出水水质分析 -->
+		<action name="listOutStat" class="outStatAction"
+			method="list">
+			<!-- 指定的属性作为根元素输出 -->
+			<result name="success" type="json">
+				<param name="root">data</param>
+			</result>
+			<result name="input" type="json">OutStat.jsp</result>
+		</action>
+
+		<!-- 添加项目 -->
+		<action name="addOutStat" class="outStatAction"
+			method="addOutStat">
+			<result name="success" type="json" />
+			<result name="input" type="json">OutStat.jsp</result>
+		</action>
+
+		<!-- 删除项目 -->
+		<action name="deleteOutStat" class="outStatAction"
+			method="deleteOutStat">
+			<result name="success" type="json" />
+			<result name="input" type="json">OutStat.jsp</result>
+		</action>
+
+		<!-- 得到一项记录 -->
+		<action name="findOutStat" class="outStatAction"
+			method="findOutStat">
+			<result name="success" type="json" />
+			<result name="input" type="json">OutStat.jsp</result>
+		</action>
+
+		<!-- 更新项目 -->
+		<action name="updateOutStat" class="outStatAction"
+			method="updateOutStat">
+			<result name="success" type="json" />
+			<result name="input" type="json">OutStat.jsp</result>
+		</action>
+
+		<action name="searchOutStat" class="outStatAction"
+			method="searchOutStat">
+			<result name="success" type="json">
+				<param name="root">data</param>
+			</result>
+			<result name="input" type="json">OutStat.jsp</result>
+		</action>
+
+		<!-- 导出到excel -->
+		<action name="exportOutStat" class="outStatAction"
+			method="export2excel">
+			<result name="success" type="json"/>
+			<result name="input" type="json">OutStat.jsp</result>
+		</action>
+		
+		<!-- 导入excel -->
+		<action name="importOutStat" class="outStatAction" method="import2DB">
+			 <!-- <result name="success" type="json">OutStat.jsp</result> -->
+			<result name="success" type="json"/>			 
+			<result name="input" type="json">OutStat.jsp</result>
+		</action>
+		<!-- 导入检查 -->
+		<action name="importCheckOutStat" class="outStatAction" method="importCheck">
+			<result name="success" type="json">OutStat.jsp</result>						 
+			<result name="input" type="json">OutStat.jsp</result>
+		</action>		
+		
 	</package>
 </struts>

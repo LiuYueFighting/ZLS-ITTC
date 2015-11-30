@@ -31,7 +31,8 @@
                 </li>
                 <li class="nav_bag03"> 设备检修<img src="images/12.png" />
                     <ul class="Secondary_menu">
-                        <li class="Secondary_menu_item"><a href="fix.jsp">维修单元显示</a></li>
+                        <li class="Secondary_menu_item"><a href="fix.jsp">构筑物维修</a></li>
+                        <li class="Secondary_menu_item"><a href="fix_fm.jsp">阀门维修</a></li>
                         <li class="Secondary_menu_item"><a href="fangan.jsp">方案生成</a></li>
                     </ul>
                 </li>

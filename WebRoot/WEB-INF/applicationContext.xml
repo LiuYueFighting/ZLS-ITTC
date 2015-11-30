@@ -44,6 +44,7 @@
 				<value>com/water/beans/PoolEvaluate.hbm.xml</value>
 				<value>com/water/beans/DataAnalysis.hbm.xml</value>
 				<value>com/water/beans/User.hbm.xml</value>
+				<value>com/water/beans/OutStat.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -98,6 +99,24 @@
 	<bean id="dataAnalysisAction" class="com.water.action.DataAnalysisAction">
 		<property name="dataAnalysisService" ref="dataAnalysisService" />
 	</bean>
+	
+	
+	<!-- dao -->
+	<bean id="outStatDao" class="com.water.dao.impl.OutStatDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Service -->
+	<bean id="outStatService" class="com.water.service.impl.OutStatServiceImpl">
+		<property name="outStatDao" ref="outStatDao" />
+	</bean>
+
+	<!-- action -->
+	<bean id="outStatAction" class="com.water.action.OutStatAction">
+		<property name="outStatService" ref="outStatService" />
+	</bean>
+	
+	
 	<!-- 配置事务 -->
 	<bean id="txManager"
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">

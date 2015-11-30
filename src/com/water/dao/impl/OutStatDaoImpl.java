@@ -3,9 +3,6 @@ package com.water.dao.impl;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.water.dao.DataAnalysisDao;
-import com.water.beans.DataAnalysis;
-
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -15,32 +12,30 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
-/**
- * �ӿ�ʵ����
- * 
- * @author miao
- * 
- */
-public class DataAnalysisDaoImpl extends HibernateDaoSupport implements DataAnalysisDao {
+import com.water.beans.OutStat;
+import com.water.beans.PoolEvaluate;
+import com.water.dao.OutStatDao;
 
+/**  
+ * @projectName ZLS-ITTC  
+ * @author chenhua 
+ * @date 2015年11月29日 
+ */
+
+public class OutStatDaoImpl extends HibernateDaoSupport implements OutStatDao{
+
+	@Override
 	@SuppressWarnings("unchecked")
-	public List<DataAnalysis> find() {
-//		List list = null;
-//		String sql="from  DataAnalysis";
-//		try{
-//			list=getHibernateTemplate().find(sql);
-//		} catch (DataAccessException ex) {
-//			ex.printStackTrace();
-//		}
-//		return list;
-		DetachedCriteria criteria = DetachedCriteria.forClass(DataAnalysis.class);
+	public List<OutStat> find() {
+		DetachedCriteria criteria = DetachedCriteria.forClass(OutStat.class);
 		criteria.addOrder(Order.desc("ID"));
 		return super.getHibernateTemplate().findByCriteria(criteria);
 	}
 
-	public int add(DataAnalysis dataAnalysis) {
+	@Override
+	public int add(OutStat outStat) {
 		try{
-			this.getHibernateTemplate().save(dataAnalysis);
+			this.getHibernateTemplate().save(outStat);
 			return 1;
 		}catch (DataAccessException ex){
 			ex.printStackTrace();
@@ -48,6 +43,7 @@ public class DataAnalysisDaoImpl extends HibernateDaoSupport implements DataAnal
 		}
 	}
 
+	@Override
 	public int delete(long id) {
 		try{
 			this.getHibernateTemplate().delete(findById(id));
@@ -58,47 +54,42 @@ public class DataAnalysisDaoImpl extends HibernateDaoSupport implements DataAnal
 		}
 	}
 
-	public DataAnalysis findById(long id) {
+	@Override
+	public OutStat findById(long id) {
 		try{
-			DataAnalysis dataAnalysis=(DataAnalysis) getHibernateTemplate().get(DataAnalysis.class, id);
-			return dataAnalysis;
+			OutStat outStat=(OutStat) getHibernateTemplate().get(OutStat.class, id);
+			return outStat;
 		}catch (DataAccessException ex) {
 			ex.printStackTrace();
 		}
 		return null;
 	}
 
-	public int update(DataAnalysis dataAnalysis) {
+	@Override
+	public int update(OutStat outStat) {
 		try{
-			this.getHibernateTemplate().update(dataAnalysis);
+			this.getHibernateTemplate().update(outStat);
 			return 1;
 		}catch (DataAccessException ex){
 			ex.printStackTrace();
 			return 0;
 		}
-		
+
 	}
 
+	@Override
 	public long findTotal() {
-
 		return this.find().size();
 	}
 
-	/**
-	 * ��ѯһҳ�����
-	 * 
-	 * @param begin ��������ʼ0
-	 * @param end �õ�������
-	 * @param sort �����ֶ�
-	 * @param order ������� desc/asc
-	 */
+	@Override
 	@SuppressWarnings("unchecked")
-	public List<DataAnalysis> findPages(final int begin, final int end, final String sort,
+	public List<OutStat> findPages(final int begin, final int end, final String sort,
 			final String order) {
-		// ��Ҫ�õ�ԭ���Hibernate��Session��ʱ��������������ʹ��Query��Criteria�������ż�����Ự����
+		// TODO Auto-generated method stub
 		return super.getHibernateTemplate().executeFind(new HibernateCallback() {
 			public Object doInHibernate(Session session) throws HibernateException, SQLException {
-				Criteria criteria = session.createCriteria(DataAnalysis.class);
+				Criteria criteria = session.createCriteria(PoolEvaluate.class);
 				if ("desc".equals(order)) {
 					criteria.addOrder(Order.desc(sort));
 				} else {
@@ -109,20 +100,21 @@ public class DataAnalysisDaoImpl extends HibernateDaoSupport implements DataAnal
 			}
 		});
 	}
-	
-	public List<DataAnalysis> findBySql(String sql){
-			List list = null;
-			try{
-				list = getHibernateTemplate().find(sql);
-			} catch (DataAccessException ex) {
-				ex.printStackTrace();
-			}
-			return list;
-			
-			
+
+	@Override
+	public List<OutStat> findBySql(String sql) {
+		List list = null;
+		try{
+			list = getHibernateTemplate().find(sql);
+		} catch (DataAccessException ex) {
+			ex.printStackTrace();
+		}
+		return list;
 	}
-	
-	public int bulkUpdate(String sql){
+
+	@Override
+	public int bulkUpdate(String sql) {
+		//批量更新删除
 		int result=0;
 		try{
 			result= getHibernateTemplate().bulkUpdate(sql);
@@ -131,5 +123,6 @@ public class DataAnalysisDaoImpl extends HibernateDaoSupport implements DataAnal
 		}
 		return result;
 	}
-	
+
+
 }

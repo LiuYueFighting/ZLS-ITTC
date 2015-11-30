@@ -29,6 +29,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.water.beans.PoolEvaluate;
 import com.water.service.PoolEvaluateService;
 import com.water.util.ListSort;
+import com.water.util.TimeTree;
+import com.water.util.TreeNode;
 
 
 @SuppressWarnings("serial")
@@ -278,8 +280,16 @@ public class PoolEvaluateAction extends ActionSupport{
 		if (order == null) {
 			order = "asc";// 默认升序
 		}
+		List<PoolEvaluate> searchList = poolEvaluateService.findAll();
+		List<String> tlist = new ArrayList<String>();
+		DateFormat sdFormat=new SimpleDateFormat("yyyy-MM-dd");
+		for(PoolEvaluate s:searchList){
+			tlist.add(sdFormat.format(s.getT()));
+		}
+		List <TreeNode> timeTree = TimeTree.convert(TimeTree.buildTree(tlist));
+		data.put("tlist", timeTree);
 		data.put("total", poolEvaluateService.findTotal());// 得到所有的记录数
-		data.put("rows", poolEvaluateService.findAll());
+		data.put("rows", searchList);
 //		data.put("rows", poolEvaluateService.findPages(page, size, sort, order));// 得到某一页数据
 		
 		return "success";
@@ -373,6 +383,13 @@ public class PoolEvaluateAction extends ActionSupport{
 		System.out.println(sql);
 		data.clear();//清除数据
 		List<PoolEvaluate> searchList = poolEvaluateService.findBySql(sql);
+		List<String> tlist = new ArrayList<String>();
+		DateFormat sdFormat=new SimpleDateFormat("yyyy-MM-dd");
+		for(PoolEvaluate s:searchList){
+			tlist.add(sdFormat.format(s.getT()));
+		}
+		List <TreeNode> timeTree = TimeTree.convert(TimeTree.buildTree(tlist));
+		data.put("tlist", timeTree);
 		data.put("total", searchList.size());// 查询到的记录总数
 		data.put("rows", searchList);// 查询的结果
 		return "success";
