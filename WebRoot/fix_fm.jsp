@@ -389,8 +389,8 @@
     <a  id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
     <a  id="name_JJC3" style="text-decoration: none" class="name_ob">3#机加池</a>
     <a  id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
-    <a  id="name_TC" class="name_ob" style="text-decoration: none">现有活性炭池</a>
-    <a  id="name_TC1" class="name_ob" style="text-decoration: none">新建活性炭池</a>
+    <a  id="name_TC" class="name_ob" style="text-decoration: none">1#活性炭池</a>
+    <a  id="name_TC1" class="name_ob" style="text-decoration: none">2#活性炭池</a>
     <a  id="name_CY" class="name_ob" style="text-decoration: none">臭氧混合池</a>
     <a  id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
     <a  id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
