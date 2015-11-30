@@ -211,10 +211,10 @@ $(document).ready(function(){
         canvas.addChild(SC09);
 
         var SC10 = canvas.display.SC_show({
-            x: 1497,
-            y: 599,
-            Width: 31,
-            Height: 94,
+            x: 1470,
+            y: 601,
+            Width: 41,
+            Height: 99,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -226,10 +226,10 @@ $(document).ready(function(){
         canvas.addChild(SC10);
 
         var SC11 = canvas.display.SC_show({
-            x: 1444,
-            y: 599,
-            Width: 51,
-            Height: 94,
+            x: 1415,
+            y: 601,
+            Width: 54,
+            Height: 99,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -241,10 +241,10 @@ $(document).ready(function(){
         canvas.addChild(SC11);
 
         var SC12 = canvas.display.SC_show({
-            x: 1366,
-            y: 599,
-            Width: 78,
-            Height: 94,
+            x: 1334,
+            y: 601,
+            Width: 83,
+            Height: 101,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -256,10 +256,10 @@ $(document).ready(function(){
         canvas.addChild(SC12);
 
         var SC13 = canvas.display.SC_show({
-            x: 1316,
-            y: 599,
-            Width: 53,
-            Height: 94,
+            x: 1277,
+            y: 601,
+            Width: 55,
+            Height: 100,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -271,10 +271,10 @@ $(document).ready(function(){
         canvas.addChild(SC13);
 
         var SC14 = canvas.display.SC_show({
-            x: 1276,
-            y: 599,
-            Width: 38,
-            Height: 94,
+            x: 1245,
+            y: 601,
+            Width: 34,
+            Height: 100,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -446,10 +446,10 @@ $(document).ready(function(){
             },
             cells: [
                 {x_cell: 1520, y_cell: 335},
-                {x_cell: 1558, y_cell: 335},
-                {x_cell: 1558, y_cell: 683},
-                {x_cell: 1527, y_cell: 683}
-            ],  //锟秸碉拷锟斤拷锟斤拷
+                {x_cell: 1559, y_cell: 335},
+                {x_cell: 1559, y_cell: 637},
+                {x_cell: 1515, y_cell: 637}
+            ],
             deta: 1,
             deta_x: 1, deta_y: 0,
             flag_x: 1, flag_y: 0,
@@ -472,11 +472,9 @@ $(document).ready(function(){
                 x_d: 0, y_d: 0
             },
             cells: [
-                {x_cell: 1280, y_cell: 630},
-                {x_cell: 1225, y_cell: 630},
-                {x_cell: 1225, y_cell: 692},
+                {x_cell: 1250, y_cell: 692},
                 {x_cell: 1104, y_cell: 692}
-            ],  //锟秸碉拷锟斤拷锟斤拷
+            ],
             deta: 1,
             deta_x: 1, deta_y: 0,
             flag_x: 1, flag_y: 0,

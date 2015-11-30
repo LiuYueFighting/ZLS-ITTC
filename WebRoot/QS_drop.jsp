@@ -6,17 +6,20 @@
         <head>
         <meta charset="UTF-8">
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
+        <meta http-equiv="Pragma" content="no-cache">
+        <Meta http-equiv="Page-Enter" Content="blendTrans(Duration=0.5)">
+        <Meta http-equiv="Page-Exit" Content="blendTrans(Duration=0.5)">
         <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
         <title>北京自来水集团工艺平台</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="icon_btn/iconfont.css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/breadcrumb.css">
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/ocanvas-2.7.4.min.js"></script>
         <script src="js/my_oCanvas.js"></script>
-        <script src="js/hx.js"></script>
+        <script src="js/QS.js"></script>
 
 
         <style>
@@ -46,9 +49,10 @@
         * {
         font-family: '微软雅黑', 'Arial';
         }
+
         #down{
         height:100%;
-        background-color: #f1f3f5;
+        background-color: #eeeeef;
         }
         #left {
         position:relative;
@@ -95,7 +99,7 @@
         margin:0 auto;
         position:absolute;
         top:500px;
-        left:40%;
+        left:43%;
         }
         #btn_group i{
         margin-left:10px;
@@ -111,7 +115,9 @@
         #list_group{
         position:absolute;
         top:25%;
+        font-size:20px;
         }
+
         </style>
         </head>
         <body>
@@ -119,12 +125,12 @@
         <ol class="breadcrumb">
         <li><a href="main.jsp">动态演示</a></li>
         <li><a href="main.jsp">厂平展示</a></li>
-        <li class="active">虹吸滤池</li>
+        <li class="active">取水泵房</li>
         </ol>
-        <div id="myContent" style="overflow: hidden">
-
-        <div id="left" class="col-lg-10" style="height: 753px">
-        <canvas id="canvas_hx" width="1400" height="775"></canvas>
+        <div class="container-fluid">
+        <div id="myContent" class="row" style="overflow: hidden;">
+        <div id="left" class="col-lg-10 col-md-10" style="height: 753px;">
+        <canvas id="canvas_QS_zp" width="1400" height="775"></canvas>
         <div id="btn_group_container">
         <div id="btn_group_both">
         <div id="btn_group_up"></div>
@@ -138,22 +144,34 @@
         </div>
 
         </div>
-        </div>
-        <div id="right" class="col-lg-1" style="height: 753px">
 
+        </div>
+        <div id="right" class="col-lg-1 col-md-1" style="height: 753px;">
         <div id="down">
         <div id="list_group" class="list-group">
-        <button  class="btn btn-info  btn_list" onclick="window.location.href='QS.jsp'" >取水泵房</button>
-        <button  class="btn btn-info  btn_list " onclick="window.location.href='hhj.jsp'" >混合井</button>
-        <button  class="btn btn-info  btn_list" onclick="window.location.href='JJC.jsp'" >机加池</button>
-        <button  class="btn btn-info  btn_list" onclick="window.location.href='VL.jsp'">V型滤池</button>
-        <button  class="btn btn-info  btn_list" onclick="window.location.href='hx.jsp'">虹吸滤池</button>
-        <button  class="btn btn-info  btn_list" onclick="window.location.href='cy.jsp'" >臭氧池</button>
-        <button  class="btn btn-info  btn_list" onclick="window.location.href='hxt.jsp'">活性炭池</button>
-        <button class="btn btn-info  btn_list" onclick="window.location.href='qsc.jsp'">清水池</button>
-        <button class="btn btn-info  btn_list " onclick="window.location.href='main.jsp'">膜车间</button>
+        <select name="server" id="server">
+        <option value="第一水厂">取水泵房</option>
+        <option value="第二水厂">混合井</option>
+        <option value="第三水厂">机加池</option>
+        <option value="第四水厂">V型滤池</option>
+        <option value="第五水厂">虹吸滤池</option>
+        <option value="第六水厂">臭氧池</option>
+        <option value="第七水厂">活性炭池</option>
+        <option value="第八水厂">清水池</option>
+        <option value="第九水厂">膜车间</option>
+        </select>
+        <%--<button  class="btn btn-info  btn_list active" onclick="window.location.href='QS.jsp'" >取水泵房</button>--%>
+        <%--<button  class="btn btn-info  btn_list" onclick="window.location.href='hhj.jsp'">混合井</button>--%>
+        <%--<button  class="btn btn-info  btn_list" onclick="window.location.href='JJC.jsp'">机加池</button>--%>
+        <%--<button  class="btn btn-info  btn_list" onclick="window.location.href='VL.jsp'">V型滤池</button>--%>
+        <%--<button  class="btn btn-info  btn_list" onclick="window.location.href='hx.jsp'">虹吸滤池</button>--%>
+        <%--<button  class="btn btn-info  btn_list" onclick="window.location.href='cy.jsp'" >臭氧池</button>--%>
+        <%--<button  class="btn btn-info  btn_list" onclick="window.location.href='hxt.jsp'">活性炭池</button>--%>
+        <%--<button class="btn btn-info  btn_list" onclick="window.location.href='qsc.jsp'">清水池</button>--%>
+        <%--<button class="btn btn-info  btn_list " onclick="window.location.href='main.jsp'">膜车间</button>--%>
         </div>
 
+        </div>
         </div>
         </div>
         </div>

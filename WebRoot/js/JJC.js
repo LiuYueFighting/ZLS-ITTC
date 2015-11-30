@@ -320,20 +320,23 @@ oCanvas.domReady(function () {
 
         canvas.redraw();
     }).start();
+    GD01.paused=1;
+    canvas.timeline.start();
+    sprite.startAnimation();
     $("#btn_start").click(function(){
         if(this.value==1){
-            this.innerHTML='&#xe626;';
-            this.value=0;
-            canvas.timeline.stop();
-            sprite.stopAnimation();
-        }
-        else{
             GD01.paused=1;
             canvas.redraw();
             this.innerHTML="&#xe608;";
             this.value=1;
             canvas.timeline.start();
             sprite.startAnimation();
+        }
+        else{
+            this.innerHTML='&#xe626;';
+            this.value=0;
+            canvas.timeline.stop();
+            sprite.stopAnimation();
         }
     });
     $("#btn_upS").click(function(){
@@ -350,11 +353,12 @@ oCanvas.domReady(function () {
         spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
-        GD01.init();
-        SC01.init();
-        GD02.init();
-        left_t.init();
-        right_t.init();
-        GD01.paused=1;
+        window.location.reload();
+        //GD01.init();
+        //SC01.init();
+        //GD02.init();
+        //left_t.init();
+        //right_t.init();
+        //GD01.paused=1;
     });
 });

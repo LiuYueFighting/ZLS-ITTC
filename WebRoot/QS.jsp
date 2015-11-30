@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta http-equiv="Pragma" content="no-cache">
+    <Meta http-equiv="Page-Enter" Content="blendTrans(Duration=0.5)">
+    <Meta http-equiv="Page-Exit" Content="blendTrans(Duration=0.5)">
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
     <title>北京自来水集团工艺平台</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -133,7 +135,7 @@
             <div id="btn_group_up"></div>
             <div id="btn_group" class="list-group">
                 <i id="btn_downS" class="icon iconfont iconbtn">&#xe617;</i>
-                <i  id="btn_start" class="icon iconfont iconbtn">&#xe626;</i>
+                <i  id="btn_start" class="icon iconfont iconbtn">&#xe608;</i>
                 <i id="btn_upS" class="icon iconfont iconbtn">&#xe616;</i>
                 <i id="btn_reset" class="icon iconfont iconbtn">&#xe690;</i>
                 <i id="speed" class="icon iconfont icontext">1.0X</i>

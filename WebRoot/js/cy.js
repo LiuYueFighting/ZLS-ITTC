@@ -130,21 +130,21 @@ oCanvas.domReady(function () {
      start:{x:425,y:566},
      container:SC02,
      width:50,
-     offset:2,
+     offset:1,
      speed:5
  }).add();
     var pp2=canvas.display.bubble({
         start:{x:620,y:566},
         container:SC03,
         width:50,
-        offset:2,
+        offset:1,
         speed:5
     }).add();
     var pp3=canvas.display.bubble({
         start:{x:903,y:566},
         container:SC04,
         width:50,
-        offset:2,
+        offset:1.5,
         speed:5
     }).add();
 //设置循环
@@ -194,20 +194,21 @@ oCanvas.domReady(function () {
      canvas.redraw();
  }).start();
 //添加按钮函数
- 
- $("#btn_start").click(function(){
-	 if(this.value==1){
-         this.innerHTML='&#xe626;';
-         this.value=0;
-         canvas.timeline.stop();
-     }
-     else{
-         GD01.paused=1;
+    GD01.paused=1;
+    canvas.timeline.start();
+    $("#btn_start").click(function(){
+	 if(this.value==0){
 
+         GD01.paused=1;
          canvas.redraw();
          this.innerHTML="&#xe608;";
          this.value=1;
          canvas.timeline.start();
+     }
+     else{
+         this.innerHTML='&#xe626;';
+         this.value=0;
+         canvas.timeline.stop();
      }
 	 });
     $("#btn_upS").click(function(){
@@ -224,17 +225,18 @@ oCanvas.domReady(function () {
         spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
-        GD01.init();
-        SC01.init();
-        SC02.init();
-        GD02.init();
-        SC03.init();
-        SC04.init();
-        SC05.init();
-        pp1.init();
-        pp2.init();
-        pp3.init();
-        GD01.paused=1;
+        window.location.reload();
+        //GD01.init();
+        //SC01.init();
+        //SC02.init();
+        //GD02.init();
+        //SC03.init();
+        //SC04.init();
+        //SC05.init();
+        //pp1.init();
+        //pp2.init();
+        //pp3.init();
+        //GD01.paused=1;
     });
 
 });

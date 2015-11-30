@@ -322,7 +322,7 @@ oCanvas.domReady(function () {
         image:"image/main/qs2.png"
     });
     canvas.addChild(img11);
-    img1.bind("click",function(){
+    img11.bind("click",function(){
         window.location.href="QS.jsp";
     });
     img11.bind("mouseenter", function () {
@@ -860,6 +860,10 @@ oCanvas.domReady(function () {
         this.paused=1;
     });
     canvas.addChild(GD15);
+    GD01.paused=1;
+    GD02.paused=1;
+
+
     canvas.setLoop(function () {
         GD01.advance();
         GD02.advance();
@@ -882,7 +886,6 @@ oCanvas.domReady(function () {
         GD19.advance();
         GD20.advance();
         GD21.advance();
-        //GD22.advance();
         GD23.advance();
         GD24.advance();
 
@@ -904,9 +907,7 @@ oCanvas.domReady(function () {
             img5.trigger("flash");
             img3.trigger("flash");
         }
-        //if(GD09.full==1){
-        //    img3.trigger("flash");
-        //}
+
         if(GD15.full==1){
             img9.trigger("flash");
         }
@@ -928,7 +929,7 @@ oCanvas.domReady(function () {
             img62.trigger("flash");
         }
         canvas.redraw();
-    }).start();
+    });
     $("#btn_start").click(function(){
         if(this.value==1){
             this.innerText='开始';
@@ -936,16 +937,239 @@ oCanvas.domReady(function () {
             canvas.timeline.stop();
         }
         else{
-            img1.trigger("flash");
-            img11.trigger("flash");
             this.innerText='暂停';
             this.value=1;
             canvas.timeline.start();
         }
-
     });
-    $("#btn_reset").click(function(){
 
+    $("#btn_reset").click(function(){
+        reset();
+    });
+    $("#btn_upS").click(function(){
+        canvas.settings.fps+=5;
+
+        //txt1.text="当前速度:"+((canvas.settings.fps-50)/50+1)+"倍速";
+        canvas.redraw();
+    });
+    $("#btn_downS").click(function () {
+        if(canvas.settings.fps>=15)
+            canvas.settings.fps-=5;
+
+        //txt1.text="当前速度:"+((canvas.settings.fps-50)/50+1)+"倍速";
+        canvas.redraw();
+    });
+
+    $("#btn_new").change(function () {
+        if($("#btn_new").is(":checked")){
+            if($("#btn_old").is(":checked")){
+                reset();
+            }
+            else{
+                line_new();
+            }
+        }else{
+            if($("#btn_old").is(":checked")){
+                line_old();
+            }
+            else{
+                line_none();
+            }
+        }
+    });
+    $("#btn_old").change(function () {
+        if($("#btn_old").is(":checked")){
+            if($("#btn_new").is(":checked")){
+                reset();
+            }
+            else{
+                line_old();
+            }
+        }else{
+            if($("#btn_new").is(":checked")){
+                line_new();
+            }
+            else{
+                line_none();
+            }
+        }
+    });
+
+    function restart(){
+        canvas.timeline.start();
+    }
+    function reset(){
+        canvas.timeline.stop();
+        canvas.children[3].fill=color_GD;
+        canvas.children[5].fill=color_GD;
+        canvas.children[6].fill=color_GD;
+        canvas.children[8].fill=color_GD;
+        canvas.children[9].fill=color_GD;
+        canvas.children[10].fill=color_GD;
+        canvas.children[11].fill=color_GD;
+        canvas.children[13].fill=color_GD;
+        canvas.children[14].fill=color_GD;
+        canvas.children[17].fill=color_GD;
+        canvas.children[18].fill=color_GD;
+        canvas.children[4].fill=color_GD;
+        canvas.children[7].fill=color_GD;
+        canvas.children[12].fill=color_GD;
+        canvas.children[15].fill=color_GD;
+        canvas.children[16].fill=color_GD;
+        canvas.children[19].fill=color_GD;
+        GD01.init();
+        GD02.init();
+        GD03.init();
+        GD04.init();
+        GD05.init();
+        GD06.init();
+        GD07.init();
+        GD08.init();
+        GD09.init();
+        GD10.init();
+        GD11.init();
+        GD12.init();
+        GD13.init();
+        GD14.init();
+        GD15.init();
+        GD16.init();
+        GD17.init();
+        GD18.init();
+        GD19.init();
+        GD20.init();
+        GD21.init();
+        //GD22.init();
+        GD23.init();
+        GD24.init();
+        img1.bind("flash",function(){
+            $("#name_QS").animate({
+                height:'200px',opacity:'1'},'fast');
+            $("#name_QS").animate({
+                height:'200px',opacity:'0'},'fast');
+            $("#name_QS").animate({
+                height:'200px',opacity:'1'},'fast');
+            $("#name_QS").animate({
+                height:'200px',opacity:'0'},'fast');
+            $("#name_QS").animate({
+                height:'200px',opacity:'1'},'fast');
+            this.unbind("flash");
+            GD01.paused=1;
+            GD02.paused=1;
+        });
+        img11.bind("mouseenter", function () {
+            canvas.mouse.cursor("pointer");
+            this.shadow="0 0 10px #eee";
+            //$("#name_QS2").css("display","inline");
+        }).bind("mouseleave", function () {
+            canvas.mouse.cursor("default");
+            this.shadow="0 0 0px #eee";
+            //$("#name_QS2").css("display","none");
+        }).bind("flash",function(){
+        });
+        img2.bind("flash",function(){
+            GD08.paused=1;
+            GD09.paused=1;
+        });
+
+
+        img21.bind("flash",function(){
+            GD10.paused=1;
+            GD11.paused=1;
+        });
+
+        img22.bind("flash",function(){
+            GD12.paused=1;
+        });
+
+        img3.bind("flash",function(){
+            GD15.paused=1;
+        });
+
+        img4.bind("flash",function(){
+            GD05.paused=1;
+            GD06.paused=1;
+            GD07.paused=1;
+        });
+
+        img5.bind("flash",function(){
+            GD13.paused=1;
+            GD14.paused=1;
+        });
+
+        img6.bind("flash",function(){
+        });
+
+        img61.bind("flash",function(){
+        });
+
+        img62.bind("flash",function(){
+        });
+
+        img63.bind("flash",function(){
+        });
+
+        img8.bind("flash",function(){
+            GD18.paused=1;
+            GD19.paused=1;
+        });
+
+        img9.bind("flash",function(){
+            GD16.paused=1;
+            GD17.paused=1;
+        });
+        GD01.paused=1;
+        GD02.paused=1;
+        canvas.settings.fps=25;
+        $("#btn_start").innerText='暂停';
+        $("#btn_start").value=0;
+        canvas.timeline.start();
+    }
+    function line_new(){
+        canvas.timeline.stop();
+        console.log("new");
+        reset();
+        canvas.children[3].fill="rgba(1,0,0,0)";
+        canvas.children[5].fill="rgba(1,0,0,0)";
+        canvas.children[6].fill="rgba(1,0,0,0)";
+        canvas.children[8].fill="rgba(1,0,0,0)";
+        canvas.children[9].fill="rgba(1,0,0,0)";
+        canvas.children[10].fill="rgba(1,0,0,0)";
+        canvas.children[11].fill="rgba(1,0,0,0)";
+        canvas.children[13].fill="rgba(1,0,0,0)";
+        canvas.children[14].fill="rgba(1,0,0,0)";
+        canvas.children[17].fill="rgba(1,0,0,0)";
+        canvas.children[18].fill="rgba(1,0,0,0)";
+
+    }
+    function line_old(){
+        canvas.timeline.stop();
+        console.log("old");
+        reset();
+        canvas.children[3].fill=color_GD;
+        canvas.children[5].fill=color_GD;
+        canvas.children[6].fill=color_GD;
+        canvas.children[8].fill=color_GD;
+        canvas.children[9].fill=color_GD;
+        canvas.children[10].fill=color_GD;
+        canvas.children[11].fill=color_GD;
+        canvas.children[13].fill=color_GD;
+        canvas.children[14].fill=color_GD;
+        canvas.children[17].fill=color_GD;
+        canvas.children[18].fill=color_GD;
+        canvas.children[4].fill="rgba(1,0,0,0)";
+        canvas.children[7].fill="rgba(1,0,0,0)";
+        canvas.children[12].fill="rgba(1,0,0,0)";
+        canvas.children[15].fill="rgba(1,0,0,0)";
+        canvas.children[16].fill="rgba(1,0,0,0)";
+        canvas.children[19].fill="rgba(1,0,0,0)";
+
+    }
+    function line_none(){
+        canvas.timeline.stop();
+        GD03.color="rgba(0,0,0,0)";
+        reset();
+    }
+    function init(){
         GD01.init();
         GD02.init();
         GD03.init();
@@ -1174,29 +1398,8 @@ oCanvas.domReady(function () {
             GD16.paused=1;
             GD17.paused=1;
         });
-        GD01.paused=1;
-        GD02.paused=1;
-        canvas.settings.fps=50;
-        //txt1.text="当前速度:"+((canvas.settings.fps-50)/50+1)+"倍速";
+        canvas.settings.fps=25;
         $("#btn_start").innerText='暂停';
         $("#btn_start").value=0;
-
-
-    });
-    $("#btn_upS").click(function(){
-        canvas.settings.fps+=5;
-
-        //txt1.text="当前速度:"+((canvas.settings.fps-50)/50+1)+"倍速";
-        canvas.redraw();
-    });
-    $("#btn_downS").click(function () {
-        if(canvas.settings.fps>=25)
-            canvas.settings.fps-=5;
-
-        //txt1.text="当前速度:"+((canvas.settings.fps-50)/50+1)+"倍速";
-        canvas.redraw();
-    });
-    function restart(){
-        canvas.timeline.start();
     }
 });

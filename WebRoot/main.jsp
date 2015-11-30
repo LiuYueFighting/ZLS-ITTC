@@ -51,7 +51,8 @@
     position: absolute;
     left: 1475px;
     top: 150px;
-    }#btn_reset{
+    }
+    #btn_reset{
     position: absolute;
     left: 1475px;
     top: 200px;
@@ -59,6 +60,11 @@
     .btn_main{
     width: 120px;
     background-color: #337ab7;
+    }
+    #check_div{
+        position: absolute;
+        left: 1475px;
+        top: 300px;
     }
 
     .name_ob{
@@ -215,7 +221,22 @@
     <button id="btn_upS" class="btn btn-info btn-lg btn_main">加速</button>
     <button id="btn_downS" class="btn btn-info btn-lg btn_main">减速</button>
     <button id="btn_reset" class="btn btn-info btn-lg btn_main">重新开始</button>
+    <div id="check_div">
+     <div>
+        <input id="btn_new" type="checkbox" name="line" value="1" checked>新工艺线
+    </div>
+    <div>
+        <input id="btn_old" type="checkbox" name="line" value="2" checked>老工艺线
+    </div>
+        <%--<label id="btn_new" class="btn btn-info active" value="1">--%>
+            <%--<input type="checkbox" name="line" value="1" checked>新工艺线--%>
+        <%--</label>--%>
+        <%--<label id="btn_old" class="btn btn-info active" value="1">--%>
+            <%--<input type="checkbox" name="line" value="2" checked>老工艺线--%>
+        <%--</label>--%>
+    </div>
     <canvas id="canvas_main" width="1600" height="757"></canvas>
+
     <a href="QS.jsp"  id="name_QS"    style="text-decoration: none" class="name_ob">取水泵房</a>
      <a href="QS.jsp" id="name_QS2"   style="text-decoration: none" class="name_ob">取水泵房</a>
     <a href="JJC.jsp" id="name_JJC1"  style="text-decoration: none" class="name_ob">机加池<br>#1</a>

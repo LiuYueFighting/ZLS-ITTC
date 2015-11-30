@@ -9,6 +9,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>北京自来水集团工艺平台</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="icon_btn/iconfont.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/breadcrumb.css">
     <script src="js/jquery.min.js"></script>
@@ -24,6 +25,39 @@
     width: 1600px;
     height: 800px;
     margin:0px auto;
+    }
+    #btn_group_container{
+    position:absolute;
+    bottom:5px;
+    width:100%;
+    height:500px;
+    overflow:hidden;
+    }
+    #btn_group_both{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100px;
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+    }
+    #btn_group_both:hover{
+    top:-50px;
+    }
+    #btn_group_up{
+    width:100%;
+    height:500px;
+    }
+    #btn_group{
+    margin:0 auto;
+    position:absolute;
+    top:500px;
+    left:40%;
+    }
+    #btn_group i{
+    margin-left:10px;
     }
     #btn_menu{
     position:absolute;
@@ -72,6 +106,19 @@
         </div>
     	<div id="mainView" style="position: absolute;z-index: 1" >
         	<canvas id="canvas_ZP_new" width="1600" height="757"></canvas>
+            <div id="btn_group_container">
+    <div id="btn_group_both">
+    <div id="btn_group_up"></div>
+    <div id="btn_group" class="list-group">
+    <i id="btn_downS" class="icon iconfont iconbtn">&#xe617;</i>
+    <i  id="btn_start" class="icon iconfont iconbtn">&#xe608;</i>
+    <i id="btn_upS" class="icon iconfont iconbtn">&#xe616;</i>
+    <i id="btn_reset" class="icon iconfont iconbtn">&#xe690;</i>
+    <i id="speed" class="icon iconfont icontext">1.0X</i>
+    </div>
+    </div>
+
+    </div>
     	</div>
     </div>
     <jsp:include page="down.jsp" />

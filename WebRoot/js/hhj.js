@@ -121,19 +121,20 @@ oCanvas.domReady(function () {
      canvas.redraw();
  }).start();
 //添加按钮函数
-
+    GD01.paused=1;
+    canvas.timeline.start();
  $("#btn_start").click(function(){
      if(this.value==1){
-         this.innerHTML='&#xe626;';
-         this.value=0;
-         canvas.timeline.stop();
-     }
-     else{
          GD01.paused=1;
          canvas.redraw();
          this.innerHTML="&#xe608;";
          this.value=1;
          canvas.timeline.start();
+     }
+     else{
+         this.innerHTML='&#xe626;';
+         this.value=0;
+         canvas.timeline.stop();
      }
  });
     $("#btn_upS").click(function(){
@@ -150,11 +151,12 @@ oCanvas.domReady(function () {
         spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
-        GD01.init();
-        SC01.init();
-        SC02.init();
-        GD02.init();
-        GD01.paused=1;
+        window.location.reload();
+        //GD01.init();
+        //SC01.init();
+        //SC02.init();
+        //GD02.init();
+        //GD01.paused=1;
     });
 
 });

@@ -17,6 +17,10 @@ oCanvas.domReady(function () {
      parent:canvas,
      x:570,y:413,height:246,width:418,trail_flag:0,speed:speed_SC,color:color_SC
  });
+    var SC03=createSC({
+        parent:canvas,
+        x:1000,y:396,height:64,width:64,trail_flag:0,speed:speed_SC/2,color:color_SC
+    });
 //添加背景图片
  var bg = canvas.display.image({
      x: 0,
@@ -24,17 +28,27 @@ oCanvas.domReady(function () {
      image: "image/hxt.png"
  }).add();
 //添加箭头
- var arrow_1=canvas.display.sprite({
-     x: 1012,
-     y: 400,
-     image: "image/water-arrow/down.png",
-     generate:false,
-     frames: [
-         {x:20,y:0,w:20,h:60,d:400},
-         {x:0,y:0,w:20,h:60,d:800}
-
-     ]
- }).scale(1.5,1.1).add();
+    var arrow_0=canvas.display.sprite({
+        x: 541,
+        y: 633,
+        image: "image/water-arrow/right.png",
+        generate:false,
+        frames: [
+            {x:60,y:0,w:60,h:40,d:400},
+            {x:0,y:0,w:60,h:40,d:800}
+        ]
+    }).add();
+ //var arrow_1=canvas.display.sprite({
+ //    x: 1012,
+ //    y: 400,
+ //    image: "image/water-arrow/down.png",
+ //    generate:false,
+ //    frames: [
+ //        {x:20,y:0,w:20,h:60,d:400},
+ //        {x:0,y:0,w:20,h:60,d:800}
+ //
+ //    ]
+ //}).scale(1.5,1.1).add();
  var arrow_2=canvas.display.sprite({
      x: 632,
      y: 457,
@@ -98,15 +112,7 @@ oCanvas.domReady(function () {
      GDwidth:width_all,
      color:color_GD
  });
- var GD03=createGD({
-     parent:canvas,
-     cells:[
-         {x_cell: 550,y_cell: 648},
-         {x_cell: 583, y_cell: 648}
-     ],
-     GDwidth:width_all,
-     color:color_GD
- });
+
  var GD04=createGD({
      parent:canvas,
      cells:[
@@ -119,9 +125,9 @@ oCanvas.domReady(function () {
  var GD05=createGD({
      parent:canvas,
      cells:[
-         {x_cell: 1034,y_cell: 458},
-         {x_cell: 1034,y_cell: 567},
-         {x_cell: 1068,y_cell: 597},
+         {x_cell: 1029,y_cell: 458},
+         {x_cell: 1029,y_cell: 570},
+         {x_cell: 1066,y_cell: 597},
          {x_cell: 1146,y_cell: 597}
      ],
      GDwidth:width_all,
@@ -157,30 +163,27 @@ oCanvas.domReady(function () {
  canvas.setLoop(function () {
      GD01.advance();
      GD02.advance();
-     GD03.advance();
      GD04.advance();
      GD05.advance();
      SC01.advance();
      SC02.advance();
+     SC03.advance();
      if(GD01.full==1){
          GD02.paused=1;
          GD01.full=0;
      }
      if(GD02.full==1){
          SC01.start=1;
+         arrow_0.start();
          GD02.full=0;
      }
      if(SC01.full==1){
-         GD03.paused=1;
          SC01.full=0;
-     }
-     if(GD03.full==1){
          SC02.start=1;
          arrow_2.start();
          arrow_3.start();
          arrow_4.start();
          arrow_5.start();
-         GD03.full=0;
      }
      if(SC02.full==1){
          GD04.paused=1;
@@ -188,7 +191,8 @@ oCanvas.domReady(function () {
      }
      if(GD04.full==1){
          GD05.paused=1;
-         arrow_1.start();
+         SC03.start=1;
+         //arrow_1.start();
          GD04.full=0;
      }
      if(GD05.full==1){
@@ -204,20 +208,22 @@ oCanvas.domReady(function () {
      }
      canvas.redraw();
  }).start();
+    GD01.paused=1;
+    canvas.timeline.start();
 //添加按钮函数
 $("#btn_start").click(function(){
 	 if(this.value==1){
-         this.innerHTML='&#xe626;';
-         this.value=0;
-         canvas.timeline.stop();
-     }
-     else{
          GD01.paused=1;
-
          canvas.redraw();
          this.innerHTML="&#xe608;";
          this.value=1;
          canvas.timeline.start();
+     }
+     else{
+         this.innerHTML='&#xe626;';
+         this.value=0;
+         canvas.timeline.stop();
+
      }
  });
     $("#btn_upS").click(function(){
@@ -234,14 +240,15 @@ $("#btn_start").click(function(){
         spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
-        GD01.init();
-        SC01.init();
-        SC02.init();
-        GD02.init();
-        GD03.init();
-        GD04.init();
-        GD05.init();
-        GD01.paused=1;
+        window.location.reload();
+        //GD01.init();
+        //SC01.init();
+        //SC02.init();
+        //SC03.init();
+        //GD02.init();
+        //GD04.init();
+        //GD05.init();
+        //GD01.paused=1;
     });
 
 });
