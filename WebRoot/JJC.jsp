@@ -115,7 +115,7 @@
     <div id="btn_group_up"></div>
     <div id="btn_group" class="list-group">
     <i id="btn_downS" class="icon iconfont iconbtn">&#xe617;</i>
-    <i  id="btn_start" class="icon iconfont iconbtn">&#xe626;</i>
+    <i  id="btn_start" class="icon iconfont iconbtn">&#xe608;</i>
     <i id="btn_upS" class="icon iconfont iconbtn">&#xe616;</i>
     <i id="btn_reset" class="icon iconfont iconbtn">&#xe690;</i>
     <i id="speed" class="icon iconfont icontext">1.0X</i>

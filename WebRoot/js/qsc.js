@@ -16,11 +16,11 @@ var SC01=createSC({
 });
 var SC02=createSC({
     parent:canvas,
-    x:109,y:452,height:95,width:475,trail_flag:0,speed:speed_SC,color:color_SC
+    x:109,y:452,height:95,width:475,trail_flag:0,speed:speed_SC/4,color:color_SC
 });
 var SC03=createSC({
     parent:canvas,
-    x:766,y:451,height:96,width:470,trail_flag:0,speed:speed_SC,color:color_SC
+    x:766,y:451,height:96,width:470,trail_flag:0,speed:speed_SC/4,color:color_SC
 });
 //添加背景图片
 var bg = canvas.display.image({
@@ -207,10 +207,10 @@ canvas.setLoop(function () {
         arrow_11.start();
         arrow_12.start();
     }
-    if(SC02.full==1){
+    if(SC02.height_now>=SC02.Height*0.3){
         GD01.paused=1;
     }
-    if(GD01.full==1){
+    if(SC02.full==1){
         arrow_1.frame=2;
         arrow_2.frame=2;
         arrow_3.frame=2;
@@ -238,20 +238,21 @@ canvas.setLoop(function () {
     }
     canvas.redraw();
 }).start();
+    SC01.start=1;
+    canvas.timeline.start();
 //添加按钮函数
 $("#btn_start").click(function(){
 	if(this.value==1){
-        this.innerHTML='&#xe626;';
-        this.value=0;
-        canvas.timeline.stop();
-    }
-    else{
         SC01.start=1;
-
         canvas.redraw();
         this.innerHTML="&#xe608;";
         this.value=1;
         canvas.timeline.start();
+    }
+    else{
+        this.innerHTML='&#xe626;';
+        this.value=0;
+        canvas.timeline.stop();
     }
  });
     $("#btn_upS").click(function(){
@@ -268,10 +269,13 @@ $("#btn_start").click(function(){
         spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
-        GD01.init();
-        SC01.init();
-        SC02.init();
-        SC03.init();
+        //window.location.reload();
+        //GD01.init();
+        //SC01.init();
+        //SC02.init();
+        //SC03.init();
+        //SC01.start=1;
+        canvas.clear();
         SC01.start=1;
     });
 

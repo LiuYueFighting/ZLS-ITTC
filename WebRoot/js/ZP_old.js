@@ -136,7 +136,7 @@ $(document).ready(function(){
             trail_flag: 0,
             t: 0,
             fill: color_SC,
-            speed:speed_SC,
+            speed:speed_SC/2,
             full:0,
             start:start_all
         });
@@ -151,17 +151,17 @@ $(document).ready(function(){
             trail_flag: 0,
             t: 0,
             fill: color_SC,
-            speed:speed_SC,
+            speed:speed_SC/2,
             full:0,
             start:start_all
         });
         canvas.addChild(SC08);
 
         var SC09 = canvas.display.SC_show({
-            x: 1003,
-            y: 560,
-            Width: 28,
-            Height: 93,
+            x: 1021,
+            y: 562,
+            Width: 38,
+            Height: 92,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -173,10 +173,10 @@ $(document).ready(function(){
         canvas.addChild(SC09);
 
         var SC10 = canvas.display.SC_show({
-            x: 953,
-            y: 560,
-            Width: 49,
-            Height: 93,
+            x: 971,
+            y: 562,
+            Width: 51,
+            Height: 92,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -188,10 +188,10 @@ $(document).ready(function(){
         canvas.addChild(SC10);
 
         var SC11 = canvas.display.SC_show({
-            x: 877,
-            y: 560,
-            Width: 76,
-            Height: 93,
+            x: 895,
+            y: 562,
+            Width: 75,
+            Height: 92,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -203,10 +203,10 @@ $(document).ready(function(){
         canvas.addChild(SC11);
 
         var SC12 = canvas.display.SC_show({
-            x: 826,
-            y: 560,
-            Width: 49,
-            Height: 93,
+            x: 845,
+            y: 562,
+            Width: 52,
+            Height: 92,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -218,10 +218,10 @@ $(document).ready(function(){
         canvas.addChild(SC12);
 
         var SC13 = canvas.display.SC_show({
-            x: 789,
-            y: 560,
-            Width: 35,
-            Height: 93,
+            x: 814,
+            y: 562,
+            Width: 30,
+            Height: 92,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -466,9 +466,9 @@ $(document).ready(function(){
             cells: [
                 {x_cell: 1175, y_cell: 670},
                 {x_cell: 1175, y_cell: 700},
-                {x_cell: 1049, y_cell: 700},
-                {x_cell: 1049, y_cell: 637},
-                {x_cell: 1012, y_cell: 637}
+                {x_cell: 1106, y_cell: 700},
+                {x_cell: 1106, y_cell: 598},
+                {x_cell: 1060, y_cell: 598}
             ],
             deta: 1,
             deta_x: 1, deta_y: 0,
@@ -547,10 +547,8 @@ $(document).ready(function(){
                 x_d: 0, y_d: 0
             },
             cells: [
-                {x_cell: 793, y_cell: 586},
-                {x_cell: 742, y_cell: 586},
-                {x_cell: 742, y_cell: 642},
-                {x_cell: 697, y_cell: 642}
+                {x_cell: 825, y_cell: 643},
+                {x_cell: 697, y_cell: 643}
             ],
             deta: 1,
             deta_x: 1, deta_y: 0,

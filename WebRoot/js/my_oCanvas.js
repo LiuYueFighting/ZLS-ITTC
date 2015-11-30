@@ -760,7 +760,7 @@ var constructor_bubble = function (settings, core) {
             var canvas = this.core.canvas;
 
             canvas.lineJoin = 'round';
-            canvas.lineWidth = this.GDwidth / 2;
+            canvas.lineWidth = this.GDwidth;
             canvas.strokeStyle = "#fff";
             if(this.points.length>0){
                 for(var i=0;i<this.points.length;i++){

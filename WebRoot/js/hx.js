@@ -170,7 +170,7 @@ oCanvas.domReady(function () {
         text:"虹吸滤池工艺展示纵剖图"
     }).add();
     var txt2=canvas.display.text({
-        x:713,
+        x:703,
         y:97,
         origin: { x:"center", y: "top" },
         font: "bold 25px sans-serif",
@@ -179,7 +179,7 @@ oCanvas.domReady(function () {
     }).add();
     var txt3=canvas.display.text({
         x:326,
-        y:408,
+        y:398,
         origin: { x:"center", y: "top" },
         font: "bold 25px sans-serif",
         fill:"#337ab7",
@@ -234,20 +234,21 @@ oCanvas.domReady(function () {
         canvas.redraw();
     }).start();
 //添加按钮函数
-
+    SC01.start=1;
+    canvas.timeline.start();
     $("#btn_start").click(function(){
         if(this.value==1){
-            this.innerHTML='&#xe626;';
-            this.value=0;
-            canvas.timeline.stop();
-        }
-        else{
             SC01.start=1;
-
             canvas.redraw();
             this.innerHTML="&#xe608;";
             this.value=1;
             canvas.timeline.start();
+        }
+        else{
+            this.innerHTML='&#xe626;';
+            this.value=0;
+            canvas.timeline.stop();
+
         }
     });
     $("#btn_upS").click(function(){
@@ -264,15 +265,16 @@ oCanvas.domReady(function () {
         spanText.innerHTML=speed+"X";
     });
     $("#btn_reset").click(function(){
-        GD01.init();
-        SC01.init();
-        SC02.init();
-        SC03.init();
-        SC04.init();
-        SC05.init();
-        SC06.init();
-        GD02.init();
-        SC01.start=1;
+        window.location.reload();
+        //GD01.init();
+        //SC01.init();
+        //SC02.init();
+        //SC03.init();
+        //SC04.init();
+        //SC05.init();
+        //SC06.init();
+        //GD02.init();
+        //SC01.start=1;
     });
 
 });
