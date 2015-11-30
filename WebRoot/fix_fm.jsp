@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/top_down.css">
     <link rel="stylesheet" href="css/breadcrumb.css">
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="css/FM&GZW_name.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
@@ -40,12 +41,6 @@
     color: #283a45;
     background: rgba(255,255,255,0.5);
     border: 1px solid black;
-    }
-    #show_hide{
-    position: absolute;
-    top: 6px;
-    left: 147px;
-    font-size: 13px;
     }
     #export{
     position: absolute;
@@ -80,7 +75,12 @@
     color:#ff4400;
     font-size: 15px;
     font-weight:bold;
-
+    }
+    .panel{
+    height: 529px;
+    width: 175px;
+    background: rgba(255,255,255,0.7);
+    color: black;
     }
     #fix-panel{
     <%--border:1px solid black;--%>
@@ -131,350 +131,6 @@
     left: 1372px;
     z-index:999;
     }
-    .name_ob{
-    font-family: '微软雅黑','Arial';
-    color:#ff4400;
-    font-size: 18px;
-    font-weight:bold;
-    <%--display:none;--%>
-    height: auto;
-    width: auto;
-    z-index: 1000;
-    padding: 4px;
-    }
-    #name_QS{
-    position: absolute;
-    left: 689px;
-    top: 70px;
-    }
-    #name_JJC1{
-    position: absolute;
-    left: 856px;
-    top: 392px;
-    }
-    #name_JJC2{
-    position: absolute;
-    left: 1068px;
-    top: 389px;
-    }
-    #name_JJC3{
-    position: absolute;
-    left:1145px;
-    top: 622px;
-    }
-    #name_VL{
-    position: absolute;
-    left: 877px;
-    top: 688px;
-    }
-    #name_HHJ1{
-    position: absolute;
-    left:975px;
-    top: 353px;
-    }
-    #name_HHJ2{
-    position: absolute;
-    left:1170px;
-    top: 363px;
-    }
-    #name_HX{
-    position: absolute;
-    left:849px;
-    top: 533px;
-    }
-    #name_QSC1{
-    position: absolute;
-    left:295px;
-    top: 489px;
-    }
-    #name_CY{
-    position: absolute;
-    left:604px;
-    top: 670px;
-    }
-    #name_QSC2{
-    position: absolute;
-    left:322px;
-    top: 307px;
-    }
-    #name_QSC3{
-    position: absolute;
-    left:495px;
-    top: 307px;
-    }
-    #name_QSC4{
-    position: absolute;
-    left:447px;
-    top: 489px;
-    }
-    #name_TC{
-    position: absolute;
-    left:368px;
-    top: 666px;
-    }
-    #name_TC1{
-    position: absolute;
-    left:487px;
-    top: 666px;
-    }
-    #name_YC{
-    position: absolute;
-    left:979px;
-    top: 150px;
-    }
-    .panel{
-    height: 529px;
-    width: 175px;
-    background: rgba(255,255,255,0.7);
-    color: black;
-    }
-    #FMhelp{
-    position: absolute;
-    left:1203px;
-    top: 27px;
-    z-index: 999
-    }#FM05{
-    position: absolute;
-    left:695px;
-    top: 106px;
-    z-index:999;
-    }
-    #FM06{
-    position: absolute;
-    left:733px;
-    top: 106px;
-    z-index:999;
-    }
-    #FM05{
-    position: absolute;
-    left:695px;
-    top: 106px;
-    z-index:999;
-    }
-    #FM07{
-    position: absolute;
-    left:713px;
-    top: 172px;
-    z-index:999;
-    }#FM09{
-    position: absolute;
-    left:688px;
-    top: 192px;
-    z-index:999;
-    }#FM010{
-    position: absolute;
-    left:738px;
-    top: 193px;
-    z-index:999;
-    }#FM065{
-    position: absolute;
-    left:1032px;
-    top: 240px;
-    z-index:999;
-    }#FM062{
-    position: absolute;
-    left: 973px;
-    top: 306px;
-    z-index:999;
-    cursor:pointer;
-    }
-    #FM063{
-    position: absolute;
-    left: 1007px;
-    top: 306px;
-    z-index:999;
-    <%--cursor:pointer;--%>
-    }
-    #FM064{
-    position: absolute;
-    left: 990px;
-    top: 270px;
-    z-index:999;
-    <%--cursor:pointer;--%>
-    }
-    #FM045{
-    position: absolute;
-    left:879px;
-    top: 458px;
-    z-index:999;
-    }
-    #FM014{
-    position: absolute;
-    left:826px;
-    top: 475px;
-    z-index:999;
-    }#FM015{
-    position: absolute;
-    left:989px;
-    top: 463px;
-    z-index:999;
-    }#FM069{
-    position: absolute;
-    left:1034px;
-    top: 463px;
-    z-index:999;
-    }#FM066{
-    position: absolute;
-    left:1174px;
-    top: 466px;
-    z-index:999;
-    }#FM016{
-    position: absolute;
-    left:978px;
-    top: 501px;
-    z-index:999;
-    }#FM068{
-    position: absolute;
-    left:1012px;
-    top: 567px;
-    z-index:999;
-    }#FM067{
-    position: absolute;
-    left:1011px;
-    top: 635px;
-    z-index:999;
-    }#FM017{
-    position: absolute;
-    left:834px;
-    top:569px;
-    z-index:999;
-    }#FM018{
-    position: absolute;
-    left:869px;
-    top: 569px;
-    z-index:999;
-    }#FM019{
-    position: absolute;
-    left:867px;
-    top: 605px;
-    z-index:999;
-    cursor:pointer;
-    }#FM020{
-    position: absolute;
-    left:705px;
-    top: 645px;
-    z-index:999;
-    }
-    #FM052{
-    position: absolute;
-    left:756px;
-    top: 693px;
-    z-index:999;
-    }
-    #FM056{
-    position: absolute;
-    left:692px;
-    top: 723px;
-    z-index:999;
-    }#FM053{
-    position: absolute;
-    left:653px;
-    top:634px;
-    z-index:999;
-    }#FM054{
-    position: absolute;
-    left:622px;
-    top: 632px;
-    z-index:999;
-    }#FM057{
-    position: absolute;
-    left:663px;
-    top: 699px;
-    z-index:999;
-    }#FM058{
-    position: absolute;
-    left:633px;
-    top: 703px;
-    z-index:999;
-    }#FM059{
-    position: absolute;
-    left:588px;
-    top: 657px;
-    z-index:999;
-    }
-    #FM021{
-    position: absolute;
-    left:597px;
-    top: 616px;
-    z-index:999;
-    }
-    #FM022{
-    position: absolute;
-    left:611px;
-    top: 578px;
-    z-index:999;
-    }
-    #FM046{
-    position: absolute;
-    left:382px;
-    top: 469px;
-    z-index:999;
-    }
-    #FM024{
-    position: absolute;
-    left:559px;
-    top: 578px;
-    z-index:999;
-    }#FM044{
-    position: absolute;
-    left:402px;
-    top: 627px;
-    z-index:999;
-    }
-    #FM055{
-    position: absolute;
-    left:526px;
-    top: 618px;
-    z-index:999;
-    }
-    #FM026{
-    position: absolute;
-    left:401px;
-    top: 572px;
-    z-index:999;
-    }
-    #FM047{
-    position: absolute;
-    left:347px;
-    top: 394px;
-    z-index:999;
-    }#FM048{
-    position: absolute;
-    left:389px;
-    top: 415px;
-    z-index:999;
-    }#FM049{
-    position: absolute;
-    left:451px;
-    top: 418px;
-    z-index:999;
-    }#FM050{
-    position: absolute;
-    left:485px;
-    top: 392px;
-    z-index:999;
-    }
-    #FM051{
-    position: absolute;
-    left:515px;
-    top: 416px;
-    z-index:999;
-    }
-    #readout_input{
-    position: absolute;
-    left: 665px;
-    top: 24px;
-    z-index: 999;
-    }
-    #setConfig{
-    font-family: '微软雅黑','Arial';
-    position: absolute;
-    left:1472px;
-    top: 315px;
-    z-index: 999;
-    font-size:15px;
-    width:137px;
-    }
     #setConfig h1{
     font-size:20px;
     color:#ff4400;
@@ -485,246 +141,12 @@
     padding:2px;
     font-size:12px;
     }
-    #btn_submit{
-    margin:60px auto auto 30px ;
-    }
-    #FMhelp{
-    position: absolute;
-    left:1203px;
-    top: 27px;
-    z-index: 999
-    }
-    #WFM05{
-    position: absolute;
-    left:695px;
-    top: 106px;
-    z-index:999;
-    }
-    #WFM06{
-    position: absolute;
-    left:733px;
-    top: 106px;
-    z-index:999;
-    }
-    #WFM05{
-    position: absolute;
-    left:695px;
-    top: 106px;
-    z-index:999;
-    }
-    #WFM07{
-    position: absolute;
-    left:713px;
-    top: 172px;
-    z-index:999;
-    }#WFM09{
-    position: absolute;
-    left:688px;
-    top: 192px;
-    z-index:999;
-    }#WFM010{
-    position: absolute;
-    left:738px;
-    top: 193px;
-    z-index:999;
-    }#WFM065{
-    position: absolute;
-    left:1032px;
-    top: 240px;
-    z-index:999;
-    }#WFM062{
-    position: absolute;
-    left: 970px;
-    top: 311px;
-    z-index:999;
-    }
-    #WFM063{
-    position: absolute;
-    left: 1007px;
-    top: 311px;
-    z-index:999;
-    }#WFM064{
-    position: absolute;
-    left: 987px;
-    top: 274px;
-    z-index:999;
-    }#WFM045{
-    position: absolute;
-    left:879px;
-    top: 458px;
-    z-index:999;
-    }
-    #WFM014{
-    position: absolute;
-    left:826px;
-    top: 475px;
-    z-index:999;
-    }#WFM015{
-    position: absolute;
-    left:989px;
-    top: 463px;
-    z-index:999;
-    }#WFM069{
-    position: absolute;
-    left:1034px;
-    top: 463px;
-    z-index:999;
-    }#WFM066{
-    position: absolute;
-    left:1174px;
-    top: 466px;
-    z-index:999;
-    }#WFM016{
-    position: absolute;
-    left:978px;
-    top: 501px;
-    z-index:999;
-    }#WFM068{
-    position: absolute;
-    left:1012px;
-    top: 567px;
-    z-index:999;
-    }#WFM067{
-    position: absolute;
-    left:1011px;
-    top: 635px;
-    z-index:999;
-    }#WFM017{
-    position: absolute;
-    left:834px;
-    top:569px;
-    z-index:999;
-    }#WFM018{
-    position: absolute;
-    left:869px;
-    top: 569px;
-    z-index:999;
-    }#WFM019{
-    position: absolute;
-    left:867px;
-    top: 605px;
-    z-index:999;
-    }#WFM020{
-    position: absolute;
-    left:705px;
-    top: 645px;
-    z-index:999;
-    }
-    #WFM052{
-    position: absolute;
-    left:756px;
-    top: 693px;
-    z-index:999;
-    }
-    #WFM056{
-    position: absolute;
-    left:692px;
-    top: 723px;
-    z-index:999;
-    }#WFM053{
-    position: absolute;
-    left:653px;
-    top:634px;
-    z-index:999;
-    }#WFM054{
-    position: absolute;
-    left:622px;
-    top: 632px;
-    z-index:999;
-    }#WFM057{
-    position: absolute;
-    left:663px;
-    top: 699px;
-    z-index:999;
-    }#WFM058{
-    position: absolute;
-    left:633px;
-    top: 703px;
-    z-index:999;
-    }#WFM059{
-    position: absolute;
-    left:588px;
-    top: 657px;
-    z-index:999;
-    }
-    #WFM021{
-    position: absolute;
-    left:597px;
-    top: 616px;
-    z-index:999;
-    }
-    #WFM022{
-    position: absolute;
-    left:611px;
-    top: 578px;
-    z-index:999;
-    }
-    #WFM046{
-    position: absolute;
-    left:382px;
-    top: 469px;
-    z-index:999;
-    }
-    #WFM024{
-    position: absolute;
-    left:559px;
-    top: 578px;
-    z-index:999;
-    }#WFM044{
-    position: absolute;
-    left:402px;
-    top: 627px;
-    z-index:999;
-    }
-    #WFM055{
-    position: absolute;
-    left:526px;
-    top: 618px;
-    z-index:999;
-    }
-    #WFM026{
-    position: absolute;
-    left:401px;
-    top: 572px;
-    z-index:999;
-    }
-    #WFM047{
-    position: absolute;
-    left:347px;
-    top: 394px;
-    z-index:999;
-    }#WFM048{
-    position: absolute;
-    left:389px;
-    top: 415px;
-    z-index:999;
-    }#WFM049{
-    position: absolute;
-    left:451px;
-    top: 418px;
-    z-index:999;
-    }#WFM050{
-    position: absolute;
-    left:485px;
-    top: 392px;
-    z-index:999;
-    }
-    #WFM051{
-    position: absolute;
-    left:515px;
-    top: 416px;
-    z-index:999;
-    }
     #fix_table{
     font-size:12px
     }
-    #fix-content{
-    }
-    .name_FM{
-    font-family: '微软雅黑','Arial';
-    color:black;
-    font-size: 15px;
-    font-weight:bold;
+    #WFM062,#WFM019{
+    color: #6dceff;
+    background: rgba(255,0,0,0.6);
     }
     </style>
     <script>
@@ -866,36 +288,6 @@
 
     document.getElementById("fix_head").innerHTML="请点击需要维修的阀门";
 
-    <%--document.getElementById("name_QS").style.color="#283a45";--%>
-    <%--document.getElementById("name_JJC1").style.color="#283a45";--%>
-    <%--document.getElementById("name_HHJ1").style.color="#283a45";--%>
-    <%--document.getElementById("name_HHJ2").style.color="#283a45";--%>
-    <%--document.getElementById("name_JJC2").style.color="#283a45";--%>
-    <%--document.getElementById("name_JJC3").style.color="#283a45";--%>
-    <%--document.getElementById("name_HX").style.color="#283a45";--%>
-    <%--document.getElementById("name_VL").style.color="#283a45";--%>
-    <%--document.getElementById("name_CY").style.color="#283a45";--%>
-    <%--document.getElementById("name_TC").style.color="#283a45";--%>
-    <%--document.getElementById("name_TC1").style.color="#283a45";--%>
-    <%--document.getElementById("name_QSC1").style.color="#283a45";--%>
-    <%--document.getElementById("name_QSC2").style.color="#283a45";--%>
-    <%--document.getElementById("name_QSC3").style.color="#283a45";--%>
-    <%--document.getElementById("name_QSC4").style.color=" #283a45";--%>
-    <%--document.getElementById("name_QS").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_JJC1").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_HHJ1").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_HHJ2").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_JJC2").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_JJC3").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_VL").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_CY").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_TC").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_TC1").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_QSC1").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_QSC2").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_QSC3").style.background="rgba(255,255,255,0.5)";--%>
-    <%--document.getElementById("name_QSC4").style.background="rgba(255,255,255,0.5)";--%>
     }
 
 
@@ -992,22 +384,22 @@
         </div>
     <p class="name_Model" id="WShow">显示名称</p>
     <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label>
-    <a href="#" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
-    <a href="#" id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
-    <a href="#" id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
-    <a href="#" id="name_JJC3" style="text-decoration: none" class="name_ob">3#机加池</a>
-    <a href="#" id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
-    <a href="#" id="name_TC" class="name_ob" style="text-decoration: none">现有活性炭池</a>
-    <a href="#" id="name_TC1" class="name_ob" style="text-decoration: none">新建活性炭池</a>
-    <a href="#" id="name_CY" class="name_ob" style="text-decoration: none">臭氧混合池</a>
-    <a href="#" id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
-    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
-    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none">混合井</a>
-    <a href="#" id="name_HX" class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
-    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
-    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
-    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
-    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
+    <a  id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
+    <a  id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
+    <a  id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
+    <a  id="name_JJC3" style="text-decoration: none" class="name_ob">3#机加池</a>
+    <a  id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
+    <a  id="name_TC" class="name_ob" style="text-decoration: none">现有活性炭池</a>
+    <a  id="name_TC1" class="name_ob" style="text-decoration: none">新建活性炭池</a>
+    <a  id="name_CY" class="name_ob" style="text-decoration: none">臭氧混合池</a>
+    <a  id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
+    <a  id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
+    <a  id="name_HHJ2" class="name_ob" style="text-decoration: none">混合井</a>
+    <a  id="name_HX" class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
+    <a  id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
+    <a  id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
+    <a  id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
+    <a  id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
 
     <img id="FM05" src="image/y3.png" >
     <img id="FM06" src="image/y3.png" >
@@ -1040,7 +432,9 @@
     <img id="FM021" src="image/y3.png" >
     <img id="FM022" src="image/y3.png" >
     <img id="FM046" src="image/y3.png" >
+    <img id="FM023" src="image/y3.png" >
     <img id="FM024" src="image/y3.png" >
+    <img id="FM025" src="image/y3.png" >
     <img id="FM044" src="image/y3.png" >
     <img id="FM055" src="image/y3.png" >
     <img id="FM026" src="image/y3.png" >
@@ -1081,7 +475,9 @@
     <p id="WFM021" class="name_FM">021#</p>
     <p id="WFM022" class="name_FM">022#</p>
     <p id="WFM046" class="name_FM">046#</p>
+    <p id="WFM023" class="name_FM">024#</p>
     <p id="WFM024" class="name_FM">024#</p>
+    <p id="WFM025" class="name_FM">024#</p>
     <p id="WFM044" class="name_FM">044#</p>
     <p id="WFM055" class="name_FM">055#</p>
     <p id="WFM026" class="name_FM">026#</p>

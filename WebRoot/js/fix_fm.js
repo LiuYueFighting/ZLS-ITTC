@@ -6,8 +6,8 @@ oCanvas.domReady(function () {
         fps: 15
     });
     var bg = canvas.display.image({
-        x: 0,
-        y: 0,
+        x:130,
+        y: -13,
         image: "image/fix.png"
     });
     canvas.addChild(bg);
