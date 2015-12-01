@@ -241,12 +241,12 @@ oCanvas.domReady(function () {
             SC01.start=1;
             canvas.redraw();
             this.innerHTML="&#xe608;";
-            this.value=1;
+            this.value=0;
             canvas.timeline.start();
         }
         else{
             this.innerHTML='&#xe626;';
-            this.value=0;
+            this.value=1;
             canvas.timeline.stop();
 
         }

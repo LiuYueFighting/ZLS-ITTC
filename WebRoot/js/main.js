@@ -6,7 +6,7 @@ oCanvas.domReady(function () {
     var canvas = oCanvas.create({
         canvas: "#canvas_main",
         background: "#eeeeef",
-        fps: 50
+        fps: 40
     });
     var bg = canvas.display.image({
         x: 0,
@@ -248,15 +248,20 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    //var GD22=createGD({
-    //    parent:canvas,
-    //    cells:[
-    //        {x_cell: 399 ,y_cell: 434},
-    //        {x_cell: 399, y_cell: 400}
-    //    ],
-    //    GDwidth:width_all,
-    //    color:color_GD
-    //});
+    var GD22=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 707 ,y_cell: 96},
+            {x_cell: 707 ,y_cell: 223},
+            {x_cell: 765 ,y_cell: 258},
+            {x_cell: 989 ,y_cell: 258},
+            {x_cell: 989, y_cell: 297},
+            {x_cell: 1018, y_cell: 297},
+            {x_cell: 1018, y_cell: 349}
+        ],
+        GDwidth:width_all,
+        color:"rgba(1,0,0,0)"
+    });
 
     var GD23=createGD({
         parent:canvas,
@@ -312,6 +317,7 @@ oCanvas.domReady(function () {
         this.unbind("flash");
         window.setTimeout(function(){
             GD01.paused=1;
+            GD22.paused=1;
             GD02.paused=1;
         },1200);
 
@@ -614,7 +620,6 @@ oCanvas.domReady(function () {
         this.unbind("flash");
         window.setTimeout(function(){
             GD21.paused=1;
-            //GD22.paused=1;
             GD23.paused=1;
         },1200);
 
@@ -861,6 +866,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(GD15);
     GD01.paused=1;
+    GD22.paused=1;
     GD02.paused=1;
 
 
@@ -886,6 +892,7 @@ oCanvas.domReady(function () {
         GD19.advance();
         GD20.advance();
         GD21.advance();
+        GD22.advance();
         GD23.advance();
         GD24.advance();
 
@@ -1000,6 +1007,8 @@ oCanvas.domReady(function () {
     }
     function reset(){
         canvas.timeline.stop();
+        canvas.children[1].fill=color_GD;
+        canvas.children[2].fill=color_GD;
         canvas.children[3].fill=color_GD;
         canvas.children[5].fill=color_GD;
         canvas.children[6].fill=color_GD;
@@ -1017,6 +1026,7 @@ oCanvas.domReady(function () {
         canvas.children[15].fill=color_GD;
         canvas.children[16].fill=color_GD;
         canvas.children[19].fill=color_GD;
+        canvas.children[22].fill="rgba(1,1,1,0)";
         GD01.init();
         GD02.init();
         GD03.init();
@@ -1038,22 +1048,12 @@ oCanvas.domReady(function () {
         GD19.init();
         GD20.init();
         GD21.init();
-        //GD22.init();
+        GD22.init();
         GD23.init();
         GD24.init();
         img1.bind("flash",function(){
-            $("#name_QS").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QS").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QS").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QS").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QS").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
             GD01.paused=1;
+            GD22.paused=1;
             GD02.paused=1;
         });
         img11.bind("mouseenter", function () {
@@ -1097,6 +1097,8 @@ oCanvas.domReady(function () {
         });
 
         img6.bind("flash",function(){
+            GD21.paused=1;
+            GD23.paused=1;
         });
 
         img61.bind("flash",function(){
@@ -1106,6 +1108,7 @@ oCanvas.domReady(function () {
         });
 
         img63.bind("flash",function(){
+            GD24.paused=1;
         });
 
         img8.bind("flash",function(){
@@ -1118,6 +1121,7 @@ oCanvas.domReady(function () {
             GD17.paused=1;
         });
         GD01.paused=1;
+        GD22.paused=1;
         GD02.paused=1;
         canvas.settings.fps=25;
         $("#btn_start").innerText='暂停';
@@ -1128,6 +1132,8 @@ oCanvas.domReady(function () {
         canvas.timeline.stop();
         console.log("new");
         reset();
+
+        canvas.children[1].fill="rgba(1,0,0,0)";
         canvas.children[3].fill="rgba(1,0,0,0)";
         canvas.children[5].fill="rgba(1,0,0,0)";
         canvas.children[6].fill="rgba(1,0,0,0)";
@@ -1145,24 +1151,15 @@ oCanvas.domReady(function () {
         canvas.timeline.stop();
         console.log("old");
         reset();
-        canvas.children[3].fill=color_GD;
-        canvas.children[5].fill=color_GD;
-        canvas.children[6].fill=color_GD;
-        canvas.children[8].fill=color_GD;
-        canvas.children[9].fill=color_GD;
-        canvas.children[10].fill=color_GD;
-        canvas.children[11].fill=color_GD;
-        canvas.children[13].fill=color_GD;
-        canvas.children[14].fill=color_GD;
-        canvas.children[17].fill=color_GD;
-        canvas.children[18].fill=color_GD;
+        canvas.children[2].fill="rgba(1,0,0,0)";
+        canvas.children[3].fill="rgba(1,0,0,0)";
         canvas.children[4].fill="rgba(1,0,0,0)";
         canvas.children[7].fill="rgba(1,0,0,0)";
         canvas.children[12].fill="rgba(1,0,0,0)";
         canvas.children[15].fill="rgba(1,0,0,0)";
         canvas.children[16].fill="rgba(1,0,0,0)";
         canvas.children[19].fill="rgba(1,0,0,0)";
-
+        canvas.children[22].fill=color_GD;
     }
     function line_none(){
         canvas.timeline.stop();
@@ -1191,7 +1188,7 @@ oCanvas.domReady(function () {
         GD19.init();
         GD20.init();
         GD21.init();
-        //GD22.init();
+        GD22.init();
         GD23.init();
         GD24.init();
         img1.bind("flash",function(){
