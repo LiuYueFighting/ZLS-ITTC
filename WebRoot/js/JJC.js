@@ -155,23 +155,23 @@ oCanvas.domReady(function () {
     }).add();
 
     var arrow_81=canvas.display.sprite({
-        x: 257,
+        x: 256,
         y: 340,
         image: "image/water-arrow/upright_roll5.png",
         generate:false,
         frames: [
             {x:240,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:230,h:50,d:800}
+            {x:0,y:0,w:200,h:50,d:800}
         ]
     }).add();
     var arrow_91=canvas.display.sprite({
-        x: 833,
+        x: 838,
         y: 340,
         image: "image/water-arrow/upleft_roll5.png",
         generate:false,
         frames: [
             {x:240,y:0,w:30,h:50,d:400},
-            {x:0,y:0,w:230,h:50,d:800}
+            {x:0,y:0,w:200,h:50,d:800}
         ]
     }).add();
     var arrow_101=canvas.display.sprite({

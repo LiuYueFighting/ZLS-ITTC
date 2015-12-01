@@ -29,15 +29,15 @@ oCanvas.domReady(function () {
  }).add();
 //添加箭头
     var arrow_0=canvas.display.sprite({
-        x: 541,
-        y: 633,
+        x: 544,
+        y: 637,
         image: "image/water-arrow/right.png",
         generate:false,
         frames: [
             {x:60,y:0,w:60,h:40,d:400},
             {x:0,y:0,w:60,h:40,d:800}
         ]
-    }).add();
+    }).scale(0.8,0.8).add();
  //var arrow_1=canvas.display.sprite({
  //    x: 1012,
  //    y: 400,

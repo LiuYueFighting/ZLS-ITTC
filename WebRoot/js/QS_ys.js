@@ -87,7 +87,7 @@ oCanvas.domReady(function () {
     var arrow_2=canvas.display.sprite({
         x: 910,
         y: 200,
-        image: "image/water-arrow/right_roll.png",
+        image: "image/water-arrow/you.png",
         generate:false,
         frames: [
             {x:60,y:0,w:60,h:60,d:400},

@@ -81,8 +81,8 @@ oCanvas.domReady(function () {
     var GD02=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 416,y_cell: 450},
-            {x_cell: 328, y_cell:450}
+            {x_cell: 416,y_cell: 448},
+            {x_cell: 328, y_cell:448}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -100,8 +100,8 @@ oCanvas.domReady(function () {
     }).scale(1,2).add();
     var arrow_1 = canvas.display.sprite({
         x: 568,
-        y: 453,
-        image: "image/water-arrow/right_roll.png",
+        y: 450,
+        image: "image/water-arrow/you.png",
         generate: false,
         frames: [
             {x: 60, y: 0, w: 60, h: 60, d: 400},

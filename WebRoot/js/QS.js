@@ -137,7 +137,7 @@ oCanvas.domReady(function () {
             arrow_1.start();
             arrow_2.start();
         }
-        if(SC03.full==1) {
+        if(SC03.height_now>=30) {
         	GD03.paused = 1;
         }
         canvas.redraw();
