@@ -9,7 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>北京自来水集团工艺平台</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="icon_btn/iconfont.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/breadcrumb.css">
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -25,7 +26,6 @@
         font-family: '微软雅黑', 'Source Sans Pro';
         font-size: 1px;
         width: 1600px;
-        height: 800px;
         margin: 0px auto;
     }
     a{
@@ -37,26 +37,26 @@
         height: 750px;
         width: 1600px;
     }
-    #btn_start{
-    position: absolute;
-    left: 1475px;
-    top: 50px;
-    }
-    #btn_downS{
-    position: absolute;
-    left: 1475px;
-    top: 100px;
-    }
-    #btn_upS{
-    position: absolute;
-    left: 1475px;
-    top: 150px;
-    }
-    #btn_reset{
-    position: absolute;
-    left: 1475px;
-    top: 200px;
-    }
+    <%--#btn_start{--%>
+    <%--position: absolute;--%>
+    <%--left: 1475px;--%>
+    <%--top: 50px;--%>
+    <%--}--%>
+    <%--#btn_downS{--%>
+    <%--position: absolute;--%>
+    <%--left: 1475px;--%>
+    <%--top: 100px;--%>
+    <%--}--%>
+    <%--#btn_upS{--%>
+    <%--position: absolute;--%>
+    <%--left: 1475px;--%>
+    <%--top: 150px;--%>
+    <%--}--%>
+    <%--#btn_reset{--%>
+    <%--position: absolute;--%>
+    <%--left: 1475px;--%>
+    <%--top: 200px;--%>
+    <%--}--%>
     .btn_main{
     width: 120px;
     background-color: #337ab7;
@@ -204,6 +204,20 @@
     #mainView>a{
     color: #ff4400;
     }
+    #btn_group_container{
+    position:relative;
+    width:100%;
+    height:50px;
+    }
+    #btn_group{
+    margin:0 auto;
+    position:absolute;
+    top:0;
+    left:40%;
+    }
+    #btn_group i{
+    margin-left:10px;
+    }
 </style>
 
 </head>
@@ -217,10 +231,10 @@
 	<div id="myPage">
     <div id="myContent" style="overflow: hidden">
     <div id="mainView" style="position: absolute;z-index: 1" >
-    <button id="btn_start" class="btn btn-info btn-lg btn_main" value="0">开始</button>
-    <button id="btn_upS" class="btn btn-info btn-lg btn_main">加速</button>
-    <button id="btn_downS" class="btn btn-info btn-lg btn_main">减速</button>
-    <button id="btn_reset" class="btn btn-info btn-lg btn_main">重新开始</button>
+    <%--<button id="btn_start" class="btn btn-info btn-lg btn_main" value="0">开始</button>--%>
+    <%--<button id="btn_upS" class="btn btn-info btn-lg btn_main">加速</button>--%>
+    <%--<button id="btn_downS" class="btn btn-info btn-lg btn_main">减速</button>--%>
+    <%--<button id="btn_reset" class="btn btn-info btn-lg btn_main">重新开始</button>--%>
     <div id="check_div">
      <div>
         <input id="btn_new" type="checkbox" name="line" value="1" checked>新工艺线
@@ -250,7 +264,7 @@
     <a href="#"        id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
     <a href="hhj.jsp" id="name_HHJ"  class="name_ob" style="text-decoration: none">旧混合井</a>
     <a href="hhj.jsp" id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
-    <a href="hxt.jsp" id="name_HX"   class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
+    <a href="hx.jsp" id="name_HX"   class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
     <a href="qsc.jsp" id="name_QSC1" class="name_ob" style="text-decoration: none">清水池#3</a>
     <a href="qsc.jsp" id="name_QSC2" class="name_ob" style="text-decoration: none">清水池1#</a>
     <a href="qsc.jsp" id="name_QSC3" class="name_ob" style="text-decoration: none">清水池2#</a>
@@ -258,6 +272,15 @@
     </div>
     </div>
 	</div>
+    <div id="btn_group_container">
+    <div id="btn_group" class="list-group">
+    <i id="btn_downS" class="icon iconfont iconbtn">&#xe617;</i>
+    <i  id="btn_start" class="icon iconfont iconbtn">&#xe608;</i>
+    <i id="btn_upS" class="icon iconfont iconbtn">&#xe616;</i>
+    <i id="btn_reset" class="icon iconfont iconbtn">&#xe690;</i>
+    <i id="speed" class="icon iconfont icontext">1.0X</i>
+    </div>
+    </div>
     <jsp:include page="down.jsp" />
     <script>
     function showName(e){

@@ -562,7 +562,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img5);
     img5.bind("click",function(){
-        window.location.href="hxt.jsp";
+        window.location.href="hx.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -937,16 +937,21 @@ oCanvas.domReady(function () {
         }
         canvas.redraw();
     });
+    GD01.paused=1;
+    GD02.paused=1;
+    GD22.paused=1;
+    canvas.timeline.start();
     $("#btn_start").click(function(){
         if(this.value==1){
-            this.innerText='开始';
+            canvas.redraw();
+            this.innerHTML="&#xe608;";
             this.value=0;
-            canvas.timeline.stop();
+            canvas.timeline.start();
         }
         else{
-            this.innerText='暂停';
+            this.innerHTML='&#xe626;';
             this.value=1;
-            canvas.timeline.start();
+            canvas.timeline.stop();
         }
     });
 
@@ -955,15 +960,17 @@ oCanvas.domReady(function () {
     });
     $("#btn_upS").click(function(){
         canvas.settings.fps+=5;
-
-        //txt1.text="当前速度:"+((canvas.settings.fps-50)/50+1)+"倍速";
+        var spanText=document.getElementById("speed");
+        var speed=(canvas.settings.fps/40).toFixed(1);
+        spanText.innerHTML=speed+"X";
         canvas.redraw();
     });
     $("#btn_downS").click(function () {
-        if(canvas.settings.fps>=15)
+        if(canvas.settings.fps>=25)
             canvas.settings.fps-=5;
-
-        //txt1.text="当前速度:"+((canvas.settings.fps-50)/50+1)+"倍速";
+        var spanText=document.getElementById("speed");
+        var speed=(canvas.settings.fps/40).toFixed(1);
+        spanText.innerHTML=speed+"X";
         canvas.redraw();
     });
 
@@ -1123,8 +1130,8 @@ oCanvas.domReady(function () {
         GD01.paused=1;
         GD22.paused=1;
         GD02.paused=1;
-        canvas.settings.fps=25;
-        $("#btn_start").innerText='暂停';
+        canvas.settings.fps=40;
+        $("#btn_start").innerHTML="&#xe608;";
         $("#btn_start").value=0;
         canvas.timeline.start();
     }
@@ -1395,8 +1402,8 @@ oCanvas.domReady(function () {
             GD16.paused=1;
             GD17.paused=1;
         });
-        canvas.settings.fps=25;
-        $("#btn_start").innerText='暂停';
+        canvas.settings.fps=40;
+        $("#btn_start").innerHTML='&#xe626;';
         $("#btn_start").value=0;
     }
 });

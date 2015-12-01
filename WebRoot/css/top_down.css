@@ -168,7 +168,7 @@ ul li{
     text-decoration: none;
 }
 #footerbox{
-    margin: auto auto;
+    margin: 0 auto;
     width: 1000px;
     height: 100px;
     clear: both;
@@ -176,7 +176,7 @@ ul li{
 }
 #footer {
     background: #eeeeed;
-    padding-top: 18px;
+    padding-top: 13px;
     font-size: 18px;
     border-top: 1px solid #b6b6b6;
     color:#989898;

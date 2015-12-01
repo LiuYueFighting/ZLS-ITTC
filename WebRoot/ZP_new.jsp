@@ -24,36 +24,17 @@
     font-size: 15px;
     width: 1600px;
     height: 800px;
-    margin:0px auto;
+    margin:0 auto;
     }
     #btn_group_container{
-    position:absolute;
-    bottom:5px;
+    position:relative;
     width:100%;
-    height:500px;
-    overflow:hidden;
-    }
-    #btn_group_both{
-    position:absolute;
-    left:0;
-    top:0;
-    width:100%;
-    height:100px;
-    -webkit-transition: all 0.5s ease-out 0s;
-    -moz-transition: all 0.5s ease-out 0s;
-    transition: all 0.5s ease-out 0s;
-    }
-    #btn_group_both:hover{
-    top:-50px;
-    }
-    #btn_group_up{
-    width:100%;
-    height:500px;
+    height:50px;
     }
     #btn_group{
     margin:0 auto;
     position:absolute;
-    top:500px;
+    top:0;
     left:40%;
     }
     #btn_group i{
@@ -97,31 +78,27 @@
     <li class="active">新系列工艺线</li>
     </ol>
     <div id="ZP_New_content">
-    	<div id="btn_menu">
-    		<button id="btn_start" class="btn btn-info">开始</button>
-		    <button id="btn_downS" class="btn btn-info">减速</button>
-		    <span id="txt_speed">1.0X</span>
-		    <button id="btn_upS" class="btn btn-info">加速</button>
-		    <button id="btn_reset" class="btn btn-info">重置</button>
-        </div>
+    	<%--<div id="btn_menu">--%>
+    		<%--<button id="btn_start" class="btn btn-info">开始</button>--%>
+		    <%--<button id="btn_downS" class="btn btn-info">减速</button>--%>
+		    <%--<span id="txt_speed">1.0X</span>--%>
+		    <%--<button id="btn_upS" class="btn btn-info">加速</button>--%>
+		    <%--<button id="btn_reset" class="btn btn-info">重置</button>--%>
+        <%--</div>--%>
     	<div id="mainView" style="position: absolute;z-index: 1" >
         	<canvas id="canvas_ZP_new" width="1600" height="757"></canvas>
-            <div id="btn_group_container">
-    <div id="btn_group_both">
-    <div id="btn_group_up"></div>
-    <div id="btn_group" class="list-group">
-    <i id="btn_downS" class="icon iconfont iconbtn">&#xe617;</i>
-    <i  id="btn_start" class="icon iconfont iconbtn">&#xe608;</i>
-    <i id="btn_upS" class="icon iconfont iconbtn">&#xe616;</i>
-    <i id="btn_reset" class="icon iconfont iconbtn">&#xe690;</i>
-    <i id="speed" class="icon iconfont icontext">1.0X</i>
-    </div>
-    </div>
 
-    </div>
     	</div>
     </div>
+    <div id="btn_group_container">
+            <div id="btn_group" class="list-group">
+                <i id="btn_downS" class="icon iconfont iconbtn">&#xe617;</i>
+                <i  id="btn_start" class="icon iconfont iconbtn">&#xe608;</i>
+                <i id="btn_upS" class="icon iconfont iconbtn">&#xe616;</i>
+                <i id="btn_reset" class="icon iconfont iconbtn">&#xe690;</i>
+                <i id="speed" class="icon iconfont icontext">1.0X</i>
+            </div>
+    </div>
     <jsp:include page="down.jsp" />
-</div>
 </body>
 </html>

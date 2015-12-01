@@ -18,7 +18,7 @@ $(document).ready(function(){
         var canvas = oCanvas.create({
             canvas: "#canvas_ZP_old",
             background: "#ccc",
-            fps: 25
+            fps: 40
         });
         var bg = canvas.display.image({
             x: 0,
@@ -767,20 +767,21 @@ $(document).ready(function(){
             } 
             canvas.redraw();
         }).start();
-
+        GD01.paused=1;
         $("#btn_start").click(function(){
             if(this.value==1){
-                this.innerText='开始';
-                this.value=0;
-                canvas.timeline.stop();
-            }
-            else{
                 GD01.paused=1;
-                this.innerText='暂停';
-                this.value=1;
+                canvas.redraw();
+                this.innerHTML="&#xe608;";
+                this.value=0;
                 canvas.timeline.start();
             }
+            else{
+                this.innerHTML='&#xe626;';
+                this.value=1;
+                canvas.timeline.stop();
 
+            }
         });
         $("#btn_reset").click(function(){
 
@@ -811,22 +812,28 @@ $(document).ready(function(){
             SC14.init();
             SC15.init();
             GD01.paused=1;
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-25)/25+1.0)+'X';
-            $("#btn_start").innerText='暂停';
+            canvas.settings.fps=40;
+            var spanText=document.getElementById("speed");
+            var speed=(canvas.settings.fps/40).toFixed(1);
+            spanText.innerHTML=speed+"X";
+            $("#btn_start").innerHTML="&#xe608;";
             $("#btn_start").value=0;
 
 
         });
         $("#btn_upS").click(function(){
             canvas.settings.fps+=5;
-
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-25)/25+1.0)+'X';
+            var spanText=document.getElementById("speed");
+            var speed=(canvas.settings.fps/40).toFixed(1);
+            spanText.innerHTML=speed+"X";
             canvas.redraw();
         });
         $("#btn_downS").click(function () {
-            if(canvas.settings.fps>=10)
+            if(canvas.settings.fps>=25)
                 canvas.settings.fps-=5;
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-25)/25+1.0)+'X';
+            var spanText=document.getElementById("speed");
+            var speed=(canvas.settings.fps/40).toFixed(1);
+            spanText.innerHTML=speed+"X";
             canvas.redraw();
         });
     });

@@ -19,7 +19,7 @@ $(document).ready(function(){
         var canvas = oCanvas.create({
             canvas: "#canvas_ZP_new",
             background: "#ccc",
-            fps: 25
+            fps: 40
         });
         var bg = canvas.display.image({
             x: 0,
@@ -36,7 +36,7 @@ $(document).ready(function(){
 
         var SC01=createSC({
             parent:canvas,
-            x:99,y:164,height:182,width:260,trail_flag:0,speed:speed_SC,color:color_SC
+            x:96,y:164,height:182,width:260,trail_flag:0,speed:speed_SC,color:color_SC
         });
         var SC02=createSC({
             parent:canvas,
@@ -336,8 +336,8 @@ $(document).ready(function(){
                 x_d: 0, y_d: 0
             },
             cells: [
-                {x_cell: 33 ,y_cell: 324},
-                {x_cell: 105, y_cell: 324}
+                {x_cell: 33 ,y_cell: 325},
+                {x_cell: 105, y_cell: 325}
             ],
             deta: 1,
             deta_x: 1,
@@ -367,8 +367,8 @@ $(document).ready(function(){
             },
             cells: [
                 {x_cell: 356, y_cell: 321},
-                {x_cell: 458, y_cell: 321},
-                {x_cell: 458, y_cell: 294}
+                {x_cell: 457, y_cell: 321},
+                {x_cell: 457, y_cell: 294}
             ],  //锟秸碉拷锟斤拷锟斤拷
             deta: 1,
             deta_x: 1, deta_y: 0,
@@ -714,20 +714,21 @@ $(document).ready(function(){
             }
             canvas.redraw();
         }).start();
-
+        GD01.paused=1;
         $("#btn_start").click(function(){
             if(this.value==1){
-                this.innerText='开始';
-                this.value=0;
-                canvas.timeline.stop();
-            }
-            else{
                 GD01.paused=1;
-                this.innerText='暂停';
-                this.value=1;
+                canvas.redraw();
+                this.innerHTML="&#xe608;";
+                this.value=0;
                 canvas.timeline.start();
             }
+            else{
+                this.innerHTML='&#xe626;';
+                this.value=1;
+                canvas.timeline.stop();
 
+            }
         });
         $("#btn_reset").click(function(){
 
@@ -758,24 +759,28 @@ $(document).ready(function(){
             SC15.init();
             SC16.init();
             GD01.paused=1;
-            canvas.settings.fps=50;
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-25)/25+1.0)+'X';
-            $("#btn_start").innerText='暂停';
+            canvas.settings.fps=40;
+            var spanText=document.getElementById("speed");
+            var speed=(canvas.settings.fps/40).toFixed(1);
+            spanText.innerHTML=speed+"X";
+            $("#btn_start").innerHTML="&#xe608;";
             $("#btn_start").value=0;
 
 
         });
         $("#btn_upS").click(function(){
             canvas.settings.fps+=5;
-
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-25)/25+1.0)+'X';
+            var spanText=document.getElementById("speed");
+            var speed=(canvas.settings.fps/40).toFixed(1);
+            spanText.innerHTML=speed+"X";
             canvas.redraw();
         });
         $("#btn_downS").click(function () {
             if(canvas.settings.fps>=25)
             canvas.settings.fps-=5;
-
-            document.getElementById("txt_speed").innerHTML=((canvas.settings.fps-25)/25+1.0)+'X';
+            var spanText=document.getElementById("speed");
+            var speed=(canvas.settings.fps/40).toFixed(1);
+            spanText.innerHTML=speed+"X";
             canvas.redraw();
         });
     });
