@@ -55,7 +55,7 @@
         font-family: '微软雅黑','Arial';
         <%--color:#ff4400;--%>
         font-size: 16px;
-        font-weight:normal;
+        font-weight:bold;
         <%--display:none;--%>
         }
         #name_QS{
@@ -224,13 +224,13 @@
 
         .flow{
         font-family: '微软雅黑','Arial';
-        color: #e12200;
-        font-size: 19px;
-        <%--font-weight: bold;--%>
-        border: 1px solid red;
-        background: rgba(255,155,215,0.6);
+        color: #0D3C65;
+        font-size: 20px;
+        border: 1px solid #337ab7;
+        background: rgba(255,255,255,0.9);
         /* width: 40px; */
         padding: 1px;
+        font-weight: bold;
         }
         .name_Model{
         font-family: '微软雅黑','Arial';

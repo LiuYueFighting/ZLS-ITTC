@@ -33,7 +33,7 @@
                     <ul class="Secondary_menu">
                         <li class="Secondary_menu_item"><a href="fix.jsp">构筑物维修</a></li>
                         <li class="Secondary_menu_item"><a href="fix_fm.jsp">阀门维修</a></li>
-                        <li class="Secondary_menu_item"><a href="fangan.jsp">方案生成</a></li>
+                        <%--<li class="Secondary_menu_item"><a href="fangan.jsp">方案生成</a></li>--%>
                     </ul>
                 </li>
                 <li class="nav_bag04"> 运行评估
