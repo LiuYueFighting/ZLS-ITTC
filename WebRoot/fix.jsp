@@ -84,12 +84,11 @@
 
     }
     #fix-panel{
-    <%--border:1px solid black;--%>
     height: 604px;
     width: 183px;
     position: absolute;
-    left: 79.6%;
-    top: 2.7%;
+    left: 79.2%;
+    top: 4.7%;
     Z-INDEX: 999;
     }
     #panel_heading{
