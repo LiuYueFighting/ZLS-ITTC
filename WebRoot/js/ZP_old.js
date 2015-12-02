@@ -772,7 +772,7 @@ $(document).ready(function(){
             if(this.value==1){
                 GD01.paused=1;
                 canvas.redraw();
-                this.innerHTML="&#xe608;";
+                this.innerHTML="&#xe61f;";
                 this.value=0;
                 canvas.timeline.start();
             }
@@ -816,7 +816,7 @@ $(document).ready(function(){
             var spanText=document.getElementById("speed");
             var speed=(canvas.settings.fps/40).toFixed(1);
             spanText.innerHTML=speed+"X";
-            $("#btn_start").innerHTML="&#xe608;";
+            $("#btn_start").innerHTML="&#xe61f;";
             $("#btn_start").value=0;
 
 

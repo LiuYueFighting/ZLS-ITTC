@@ -215,7 +215,7 @@ $("#btn_start").click(function(){
 	 if(this.value==1){
          GD01.paused=1;
          canvas.redraw();
-         this.innerHTML="&#xe608;";
+         this.innerHTML="&#xe61f;";
          this.value=0;
          canvas.timeline.start();
      }

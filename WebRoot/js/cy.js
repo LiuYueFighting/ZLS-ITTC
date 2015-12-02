@@ -285,7 +285,7 @@ oCanvas.domReady(function () {
 
          GD01.paused=1;
          canvas.redraw();
-         this.innerHTML="&#xe608;";
+         this.innerHTML="&#xe61f;";
          this.value=1;
          canvas.timeline.start();
      }

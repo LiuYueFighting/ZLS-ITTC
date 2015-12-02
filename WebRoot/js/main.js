@@ -944,7 +944,7 @@ oCanvas.domReady(function () {
     $("#btn_start").click(function(){
         if(this.value==1){
             canvas.redraw();
-            this.innerHTML="&#xe608;";
+            this.innerHTML="&#xe61f;";
             this.value=0;
             canvas.timeline.start();
         }
@@ -957,6 +957,11 @@ oCanvas.domReady(function () {
 
     $("#btn_reset").click(function(){
         reset();
+        $("#btn_new").prop('checked',true);
+        $("#btn_old").prop('checked',true);
+        var btn_start=$("#btn_start");
+        btn_start.innerHTML="&#xe61f;";
+        btn_start.value=0;
     });
     $("#btn_upS").click(function(){
         canvas.settings.fps+=5;
@@ -1134,8 +1139,10 @@ oCanvas.domReady(function () {
         var spanText=document.getElementById("speed");
         var speed=(canvas.settings.fps/40).toFixed(1);
         spanText.innerHTML=speed+"X";
-        $("#btn_start").innerHTML="&#xe608;";
-        $("#btn_start").value=0;
+        var btn_start=$("#btn_start");
+        btn_start.innerHTML="&#xe61f;";
+        btn_start.value=0;
+
         canvas.redraw();
         canvas.timeline.start();
     }
