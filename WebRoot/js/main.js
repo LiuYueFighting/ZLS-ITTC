@@ -1131,8 +1131,12 @@ oCanvas.domReady(function () {
         GD22.paused=1;
         GD02.paused=1;
         canvas.settings.fps=40;
+        var spanText=document.getElementById("speed");
+        var speed=(canvas.settings.fps/40).toFixed(1);
+        spanText.innerHTML=speed+"X";
         $("#btn_start").innerHTML="&#xe608;";
         $("#btn_start").value=0;
+        canvas.redraw();
         canvas.timeline.start();
     }
     function line_new(){

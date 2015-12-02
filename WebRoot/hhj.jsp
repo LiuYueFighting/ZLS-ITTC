@@ -101,17 +101,30 @@
         #btn_group i{
         margin-left:10px;
         }
-        .btn_list{
-        width: 100%;
-        display: block;
-        color:black;
-        background-color: #ffffff;
-        font-size:18px;
-        margin:0 5px;
+        #run_info{
+        margin-bottom:-1px;
+
+        }
+        #run_info,#run_danger{
+        position:relative;
+        top:110px;
         }
         #list_group{
+        width:150px;
         position:absolute;
-        top:25%;
+        top:50%;
+        font-size:20px;
+        }
+        .panel-heading{
+        font-size:18px;
+        }
+        #list_group>select{
+        border: solid 1px #196dff;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+        border-radius: 6px;
+        margin: 0;
+        width: 136px;
         }
         </style>
         </head>
@@ -144,17 +157,53 @@
 
         <div id="down">
 
-        <div id="list_group" class="list-group">
-        <button class="btn btn-info btn_list" onclick="window.location.href='QS.jsp'" >取水泵房</button>
-        <button class="btn btn-info btn_list active" onclick="window.location.href='hhj.jsp'" >混合井</button>
-        <button class="btn btn-info btn_list" onclick="window.location.href='JJC.jsp'" >机加池</button>
-        <button class="btn btn-info btn_list" onclick="window.location.href='VL.jsp'">V型滤池</button>
-        <button class="btn btn-info btn_list" onclick="window.location.href='hx.jsp'">虹吸滤池</button>
-        <button class="btn btn-info btn_list" onclick="window.location.href='cy.jsp'" >臭氧池</button>
-        <button class="btn btn-info btn_list" onclick="window.location.href='hxt.jsp'">活性炭池</button>
-        <button class="btn btn-info btn_list" onclick="window.location.href='qsc.jsp'">清水池</button>
-        <button class="btn btn-info btn_list " onclick="window.location.href='main.jsp'">膜车间</button>
+        <div class="panel panel-info" id="run_info">
+        <div class="panel-heading">运行参数</div>
+        <table class="table">
+        <tr>
+        <td>接触时间</td><td>1min</td>
+        </tr>
+        <tr>
+        <td>来水量</td><td>2000m<sup>3</sup>/h</td>
+        </tr>
+        </table>
         </div>
+        <div>
+
+        <%--<div class="panel panel-info" id="run_danger">--%>
+        <%--<div class="panel-heading">预警值</div>--%>
+        <%--<table class="table">--%>
+        <%--<tr>--%>
+        <%--<td>混度</td><td><0.1</td>--%>
+        <%--</tr>--%>
+        <%--</table>--%>
+        <%--</div>--%>
+        <%--</div>--%>
+
+        <div id="list_group" class="list-group">
+        <select name="server" onchange="self.location.href=options[selectedIndex].value" id="server">
+        <option value="QS.jsp">取水泵房</option>
+        <option value="hhj.jsp" selected>混合井</option>
+        <option value="JJC.jsp">机加池</option>
+        <option value="VL.jsp">V型滤池</option>
+        <option value="hx.jsp">虹吸滤池</option>
+        <option value="cy.jsp">臭氧接触池</option>
+        <option value="hxt.jsp">活性炭池</option>
+        <option value="qsc.jsp">清水池</option>
+        <option value="mc.jsp">膜车间</option>
+        </select>
+        </div>
+        <%--<div id="list_group" class="list-group">--%>
+        <%--<button class="btn btn-info btn_list" onclick="window.location.href='QS.jsp'" >取水泵房</button>--%>
+        <%--<button class="btn btn-info btn_list active" onclick="window.location.href='hhj.jsp'" >混合井</button>--%>
+        <%--<button class="btn btn-info btn_list" onclick="window.location.href='JJC.jsp'" >机加池</button>--%>
+        <%--<button class="btn btn-info btn_list" onclick="window.location.href='VL.jsp'">V型滤池</button>--%>
+        <%--<button class="btn btn-info btn_list" onclick="window.location.href='hx.jsp'">虹吸滤池</button>--%>
+        <%--<button class="btn btn-info btn_list" onclick="window.location.href='cy.jsp'" >臭氧池</button>--%>
+        <%--<button class="btn btn-info btn_list" onclick="window.location.href='hxt.jsp'">活性炭池</button>--%>
+        <%--<button class="btn btn-info btn_list" onclick="window.location.href='qsc.jsp'">清水池</button>--%>
+        <%--<button class="btn btn-info btn_list " onclick="window.location.href='main.jsp'">膜车间</button>--%>
+        <%--</div>--%>
 
         </div>
         </div>
