@@ -587,6 +587,7 @@ function searchDataAnalysis(){
 }
 
 var treeURL; //params = 'searchT=&searchPoolID
+
 //查询处理
 function dealSearch() {
 	var indexButton = $('#indexForm').serialize();
@@ -662,31 +663,36 @@ function dealSearch() {
 		}  //忽略日期，只显示水池，且树形菜单时间与水池数据对应
 		
 		if(!testTime && testID) {  //日期空 ID不空     searchT=&searchPoolID=MTG_QingS_SC0X
-			var index = param.slice(-1);
+			var index = params.slice(-1);
 			switch(index) {
 				case '1':
 					titleTemp = '清水池01#  水位计算表';
 					ImageTitleTemp = "清水池01#  水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 					break;
 				case '2':
 					titleTemp = '清水池02#  水位计算表';
 					ImageTitleTemp = "清水池02#  水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
+					//alert($("input[name='chooseIndexButton'][checked]").val());
 					break;
 				case '3':
 					titleTemp = '清水池03#  水位计算表';
 					ImageTitleTemp = "清水池03#  水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 					break;
 				default :
 					titleTemp = '清水池水位计算表';
 					ImageTitleTemp = "清水池水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 			}//searchT=&searchPoolID=MTG_QingS_SC0X
 			title = titleTemp;
 			ImageTitle = ImageTitleTemp;
@@ -724,31 +730,35 @@ function dealSearch() {
 		}//图标显示日期，显示水池编号，且树形菜单时间与水池数据对应
 		
 		if(testTime && testID) {  //日期不空 ID不空     searchT=XXXX-XX-XX&searchPoolID=MTG_QingS_SC0X
-			var index = param.slice(-1);
+			var index = params.slice(-1);
 			switch(index) {
 				case '1':
 					titleTemp = '清水池01#  水位计算表';
 					ImageTitleTemp = "清水池01#  水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 					break;
 				case '2':
 					titleTemp = '清水池02#  水位计算表';
 					ImageTitleTemp = "清水池02#  水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
 					break;
 				case '3':
 					titleTemp = '清水池03#  水位计算表';
 					ImageTitleTemp = "清水池03#  水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 					break;
 				default :
 					titleTemp = '清水池水位计算表';
 					ImageTitleTemp = "清水池水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 			}//searchT=XXXX-XX-XX&searchPoolID=MTG_QingS_SC0X
 			var strDate = ' ' + params.substring(8, 18);  // XXXX-XX-XX
 			title = titleTemp + strDate;
@@ -785,9 +795,8 @@ function dealSearch() {
 		}
 	}
 	//alert("searchMode = " + searchMode +
-			//"\nindexButton" + indexButton +
-			//"\nbuttonID = " + buttonID + 
-			//"\nnewParams = " + newParams);
+	//		"\nbuttonID = " + buttonID + 
+	//		"\nnewParams = " + newParams);
 	
 	$.post("searchDataAnalysis.action", newParams, function(result) {
 			if (result.total!=0) {
@@ -1089,22 +1098,47 @@ function prehImage(){
 	            },
 	            borderColor: 'gray',
 	            borderWidth: 1,
-	            /*formatter: function () {
-	                var s = '<b>' + Highcharts.dateFormat('%A, %b %e, %Y', this.x) + '</b>';
-
-	                $.each(this.points, function () {
-	                    s += '<br/>1 USD = ' + this.y + ' EUR';
-	                });
-
-	                return s;
-	            }
-	            formatter: function() {
-	        		var s = "水池编号： "+this.series.name
-	        		+' <br> 日期： ' +Highcharts.dateFormat('%Y-%m-%d <br> 时间： %H 点',this.x)
-	        		+' <br> 预测水位：  '
-	        		+ this.y +'米';
-	        		return s;
-	        	}*/
+	            dateTimeLabelFormats: { // don't display the dummy year
+					minute: "%Y-%m-%d %H:%M",
+	            	hour: "%Y-%m-%d %H时",
+	            	day: "%Y-%m-%d",
+				},
+				formatter: function() {
+					var indexButton = $('#indexForm').serialize();
+					var buttonID = indexButton.slice(-6);  //searchID = 'index3'
+					var poolName;
+					var s;
+					switch(buttonID) {
+					case 'index1':
+						poolName = '清水池01#';
+						break;
+					case 'index2':
+						poolName = '清水池02#';
+						break;
+					case 'index3':
+						poolName = '清水池03#';
+						break;
+					default:
+						poolName = '';
+					}
+					if(this.y <= 2.0) {
+						s = Highcharts.dateFormat('%Y-%m-%d %H时', this.x) + 
+							'<br />' + poolName + 
+							'<br />预测水位: ' + 
+							'<span style="color:orange;font-weight:bolder">' + this.y + '</span> 米';
+					} else if(this.y >= 4.9) {
+						s = Highcharts.dateFormat('%Y-%m-%d %H时', this.x) + 
+							'<br />' + poolName + 
+							'<br />预测水位: ' + 
+							'<span style="color:red;font-weight:bolder">' + this.y + '</span> 米';
+					} else {
+						s = Highcharts.dateFormat('%Y-%m-%d %H时', this.x) + 
+							'<br />' + poolName + 
+							'<br />预测水位: ' + 
+							'<span style="color:black;font-weight:bolder">' + this.y + '</span> 米';
+					}
+					return s;
+				},
 	        },
 			xAxis: {
 				//title:{
@@ -1143,36 +1177,30 @@ function prehImage(){
 	            tickWidth: 3,
 	            tickPosition: 'inside',
 			    showLastLabel: true,
-			        	title: {
-			        		text: '预测水位(/m)'                  //指定y轴的标题
-			        	},
-			        	//添加标示线
-			        	plotLines:[
-			        	           {//第一条标示线	
-			        	        	   color:'red',           //线的颜色，定义为红色
-			        	        	   dashStyle:'ShortDash',     //默认值，这里定义为实线
-			        	        	   value:4.9,               //定义在那个值上显示标示线，这里是在y轴上刻度为3的值处垂直化一条线
-			        	        	   width:2,               //标示线的宽度，2px
-			        	        	   label:{
-			        	        		   text:'高预警线 4.9m',     //标签的内容
-//			        	        		   align:'left',                //标签的水平位置，水平居左,默认是水平居中center
-			        	        		   //y:10                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
-			        	        	   },
-			        	        	   zIndex:100, 				//标示线位置，值越大，显示在越前面
-			        	           },
-			        	           {//第二条标示线	
-			        	        	   color:'orange',           //线的颜色，定义为红色
-			        	        	   dashStyle:'ShortDash',     //默认值，这里定义为实线
-			        	        	   value:2,               //定义在那个值上显示标示线，这里是在y轴上刻度为0.5的值处垂直化一条线
-			        	        	   width:2,               //标示线的宽度，2px
-			        	        	   label:{
-			        	        		   text:'低预警线 2m',     //标签的内容
-			        	        	   },
-			        	        	   zIndex:100, 			//标示线位置，值越大，显示在越前面
-			        	           }]
-			        },
-			        
-			        ],
+			    title: {
+			    	text: '预测水位(/m)'                  //指定y轴的标题
+			    },
+			    //添加标示线
+			    plotLines:[{//第一条标示线
+			    	color:'red',
+			    	dashStyle:'ShortDash',     //默认值，这里定义为实线
+			    	value:4.9,               //定义在那个值上显示标示线，这里是在y轴上刻度为3的值处垂直化一条线
+			    	width:2,               //标示线的宽度，2px
+			    	label:{
+			    		text:'高预警线 4.9m',     //标签的内容
+			    	},
+			    	zIndex:100,
+			    },{//第二条标示线
+			    	color:'orange',           //线的颜色，定义为橙色
+			    	dashStyle:'ShortDash',     //默认值，这里定义为实线
+			    	value:2,               //定义在那个值上显示标示线，这里是在y轴上刻度为0.5的值处垂直化一条线
+			    	width:2,               //标示线的宽度，2px
+			    	label:{
+			    		text:'低预警线 2m',     //标签的内容
+			    	},
+			    	zIndex:100,
+			    }]
+			},],
 			        
 			        //显示数据
 			        plotOptions: {
@@ -1196,7 +1224,7 @@ function prehImage(){
 	{	
 		options.series[i] = new Object();
 		options.series[i].data=listArray[i].sort(); //对listArray[i]进行排序，否则会造成时间轴上的图错乱
-		options.series[i].name=formPoolID(poollist[i]);
+		options.series[i].name='预测水位';
 		options.series[i].type="line";
 	}
 	options.series.sort(keysrt("name",false));

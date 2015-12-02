@@ -6,7 +6,7 @@ package com.water.beans;
  */
 import java.util.Date;
 
-public class OutStat {
+public class OutStat implements Comparable<OutStat> {
 	private long ID;		//表的ID
 	private Date t;			//时间
 	private String PoolID; 	//水池编号
@@ -14,11 +14,23 @@ public class OutStat {
 	private double Cl;		//余氯
 	private double Fe;		//铁
 	private double Al;		//铝
+	
+	public int compareTo(OutStat other) {
+		if(this.t == null || other.t == null) {
+			return 0;
+		} else {
+			if(this.t.before(other.t))
+				return -1;
+			else
+				return 1;
+		}
+	}
+	
 	public long getID() {
 		return ID;
 	}
-	public void setID(long iD) {
-		ID = iD;
+	public void setID(long ID) {
+		this.ID = ID;
 	}
 	public Date getT() {
 		return t;
@@ -30,31 +42,31 @@ public class OutStat {
 		return PoolID;
 	}
 	public void setPoolID(String poolID) {
-		PoolID = poolID;
+		this.PoolID = poolID;
 	}
 	public double getNTU() {
 		return NTU;
 	}
 	public void setNTU(double nTU) {
-		NTU = nTU;
+		this.NTU = nTU;
 	}
 	public double getCl() {
 		return Cl;
 	}
 	public void setCl(double cl) {
-		Cl = cl;
+		this.Cl = cl;
 	}
 	public double getFe() {
 		return Fe;
 	}
 	public void setFe(double fe) {
-		Fe = fe;
+		this.Fe = fe;
 	}
 	public double getAl() {
 		return Al;
 	}
 	public void setAl(double al) {
-		Al = al;
+		this.Al = al;
 	}
 	
 	

@@ -29,11 +29,11 @@ import jxl.write.WritableWorkbook;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.water.beans.DataAnalysis;
-import com.water.beans.PoolEvaluate;
+//import com.water.beans.PoolEvaluate;
 import com.water.service.DataAnalysisService;
-import com.water.util.JsonTreeData;
+//import com.water.util.JsonTreeData;
 import com.water.util.ListSort;
-import com.water.util.ListTool;
+//import com.water.util.ListTool;
 import com.water.util.TimeTree;
 import com.water.util.TreeNode;
 
@@ -312,6 +312,8 @@ public class DataAnalysisAction extends ActionSupport{
 		return "success";
 	}
 
+
+	@SuppressWarnings("unchecked")
 	public String export2excel(){
 		List<DataAnalysis> list=(List<DataAnalysis>) data.get("rows");
 		WritableWorkbook book = null;

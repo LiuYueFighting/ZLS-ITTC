@@ -1,6 +1,5 @@
 package com.water.beans;
 
-import java.util.Comparator;
 import java.util.Date;
 
 public class DataAnalysis implements Comparable<DataAnalysis>{
@@ -17,7 +16,7 @@ public class DataAnalysis implements Comparable<DataAnalysis>{
 	private double HLInV;		//��ˮ������ˮ
 	private double PreH;		//Ԥ��ˮλ
 	
-	@Override
+	
 	public int compareTo(DataAnalysis other) {
 		if(this.t == null || other.t == null)
 			return 0;

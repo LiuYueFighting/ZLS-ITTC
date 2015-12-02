@@ -30,7 +30,7 @@
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="highcharts/highstock.js"></script>
-<script type="text/javascript" src="highcharts/exporting.js"></script>
+<script type="text/javascript" src="highcharts/exporting.src.js"></script>
 <script type="text/javascript" src="highcharts/themes/grid.js"></script>
 
 <script type="text/javascript" src="js/ajaxfileupload.js"></script>
@@ -65,14 +65,14 @@ body {
 
 #tab_entity {
 	position: absolute;
-	top: 25px;
+	top: 10px;
 	left: 50px;
 	width: 1300px;
 }
 
-#leftContainer {
+#rightContainer {
 	position: absolute;
-	top: 25px;
+	top: 10px;
 	left: 1400px;
 	width:200px;
 }
@@ -84,6 +84,7 @@ body {
 	height: 400px;
 	padding: 5px;
 	border: 1px solid #95B8E7;
+	overflow: scroll;
 }
 
 #chooseIndex {
@@ -99,11 +100,9 @@ body {
 }
 
 #tab_export {
-	font-family: '微软雅黑', 'Arial';
 	position: absolute;
 	left: 25px;
-	/* top: 320px; */
-	top: 320px;
+	top: 830px;
 	z-index: 999;
 	font-size: 14px;
 	width: 200px;
@@ -275,29 +274,19 @@ text-align: center;
 
 	<div id="myPage">
 		<div id="myContent" style="overflow: hidden">
-			<!-- 操作按钮 -->
-			<div id="btn_group" class="btn-group-vertical btn-group-lg"
-				role="group" style="left: 1482px; top: 20px; z-index: 999; display:none">
-				<button id="btn_addRow" class="btn btn-primary"
-					onclick="javascript:addDataAnalysis()">添加</button>
-				<button id="btn_editRow" class="btn btn-primary"
-					onclick="javascript:editDataAnalysis()">编辑</button>
-				<button id="btn_deleteRow" class="btn btn-primary"
-					onclick="javascript:deleteDataAnalysis()">删除</button>
-				<button id="btn_searchAll" class="btn btn-primary"
-					onclick="javascript:listAllDataAnalysis()">查询全部</button>
-				<button id="btn_search" class="btn btn-primary"
-					onclick="javascript:searchDataAnalysis()">条件查询</button>
-				<button id="btn_export" class="btn btn-primary"
-					onclick="javascript:export2excel()">导出</button>
-			</div>
-			<div id="leftContainer">
+			<div id="tab_entity">
+				<table id="dataAnalysisbody" class="easyui-datagrid"
+					style="max-width: 1300px; height: 300px;" ></table>
+				<div style="height:40px"></div>
+				<div id="imageContainer" style="max-width: 1300px; height: 600px;"></div>
+			</div><!-- "tab_entity" -->
+			<div id="rightContainer">
 				<div id="treeGuid" style="overflow: scroll">
 					<p>选择时间:</p>
 					<br />
 					<!-- 树形导航菜单 -->
 					<ul id="timeTree" class="easyui-tree"></ul>
-				</div>
+				</div><!-- treeGuid -->
 				
 				<div id="chooseIndex">
 					<form id="indexForm">
@@ -306,7 +295,7 @@ text-align: center;
 						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">清水池02#</label><br />
 						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">清水池03#</label><br />
 					</form>
-				</div>
+				</div><!-- chooseIndex -->
 				
 				<div class="icon">
     				<div class="menuBar" id="menu">菜单</div>
@@ -317,7 +306,7 @@ text-align: center;
         			<div class="menu" id="export">导出</div>
         			<div class="menu" id="import">导入</div>
         			<div class="menu" id="template"><a href="download/DataAnalysis.xls" style="height:50px">模板</a></div>
-				</div>
+				</div><!-- icon -->
 					
 				<div id="tab_export" style="display:none">
 					<form action="${pageContext.request.contextPath}/importDataAnalysis"
@@ -335,46 +324,10 @@ text-align: center;
 						<input id="btn-cancel" class="btn btn-primary"
 							style="font-size: 18px; width: 65px;  background-color:#3399FF"" value="取消"/>
 					</form>	
-				</div>
-			</div>
-				<!-- <div id="picLegend">
-					<h4 style="color:blue"><strong><span style="color:red;">Zoom</span> 选项说明:</strong></h4>
-					<table id="legendTable" style="text-align:left">
-					<tr>
-						<td class="legendTitle">1M</td>
-						<td>:1个月的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">3M</td>
-						<td>:3个月的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">6M</td>
-						<td>:6个月的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">YTD</td>
-						<td>:本年初至今日的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">1Y</td>
-						<td>:1年的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">ALL</td>
-						<td>:所有的数据</td>
-					</tr>
-					</table>
-				</div> -->
-			<div id="tab_entity">
-				<table id="dataAnalysisbody"
-					style="max-width: 1300px; height: 300px;" class="easyui-datagrid"></table>
-				<div style="height:40px"></div>
-				<div id="imageContainer" style="max-width: 1300px; height: 600px;"></div>
-			</div>
-				<!-- 编辑数据的div，默认看不到 -->
+				</div><!-- tabexport -->
+			</div><!-- rightContainer -->
 			<center>
-				<div style="display: none; width: 700px" align="center">
+				<div id="editArea" style="display: none; width: 700px" align="center">
 					<div id="tabEdit" class="easyui-dialog" data-options="closed:true"
 						style="align: center; width: 800px; height: 540px; padding: 10px 60px 20px 60px">
 						<form id="frmEdit"><br />
@@ -435,7 +388,7 @@ text-align: center;
 									name="dataAnalysis.PreH" data-options="precision:2" />
 							</dl>
 						</form>
-					</div>
+					</div><!-- tabEdit -->
 					<div id="newEdit" class="easyui-dialog" data-options="closed:true"
 						style="align: center; width: 1180px; height: 600px; padding: 10px 60px 10px 60px">
 						<form id="newfrmEdit" style="width:1060px"><br />
@@ -521,9 +474,9 @@ text-align: center;
 							<a id="addButton" href="#" class="easyui-linkbutton"
 								data-options="iconCls:'icon-add'">添加</a>
 						</form>
-					</div>
-				</div>
-				<div style="display: none; width: 400px">
+					</div><!-- newTabEdit -->
+				</div><!-- editArea -->
+				<div id="searchArea" style="display: none; width: 400px">
 					<div id="tabSearch" class="easyui-dialog"
 						data-options="closed:true"
 						style="align: center; width: 400px; height: 270px; padding: 10px 60px 20px 60px">
@@ -548,10 +501,60 @@ text-align: center;
 							</dl>
 						</form>
 					</div>
-				</div>
-		</center>
-		</div>
-	</div>
+				</div><!-- editArea -->
+			</center>
+		</div><!-- myContent -->
+	</div><!-- myPage -->
+		
+			<!-- 操作按钮 -->
+			<div id="btn_group" class="btn-group-vertical btn-group-lg"
+				role="group" style="left: 1482px; top: 20px; z-index: 999; display:none">
+				<button id="btn_addRow" class="btn btn-primary"
+					onclick="javascript:addDataAnalysis()">添加</button>
+				<button id="btn_editRow" class="btn btn-primary"
+					onclick="javascript:editDataAnalysis()">编辑</button>
+				<button id="btn_deleteRow" class="btn btn-primary"
+					onclick="javascript:deleteDataAnalysis()">删除</button>
+				<button id="btn_searchAll" class="btn btn-primary"
+					onclick="javascript:listAllDataAnalysis()">查询全部</button>
+				<button id="btn_search" class="btn btn-primary"
+					onclick="javascript:searchDataAnalysis()">条件查询</button>
+				<button id="btn_export" class="btn btn-primary"
+					onclick="javascript:export2excel()">导出</button>
+			</div><!-- btn_group -->
+			
+				<!-- <div id="picLegend">
+					<h4 style="color:blue"><strong><span style="color:red;">Zoom</span> 选项说明:</strong></h4>
+					<table id="legendTable" style="text-align:left">
+					<tr>
+						<td class="legendTitle">1M</td>
+						<td>:1个月的数据</td>
+					</tr>
+					<tr>
+						<td class="legendTitle">3M</td>
+						<td>:3个月的数据</td>
+					</tr>
+					<tr>
+						<td class="legendTitle">6M</td>
+						<td>:6个月的数据</td>
+					</tr>
+					<tr>
+						<td class="legendTitle">YTD</td>
+						<td>:本年初至今日的数据</td>
+					</tr>
+					<tr>
+						<td class="legendTitle">1Y</td>
+						<td>:1年的数据</td>
+					</tr>
+					<tr>
+						<td class="legendTitle">ALL</td>
+						<td>:所有的数据</td>
+					</tr>
+					</table>
+				</div> -->
+			
+				<!-- 编辑数据的div，默认看不到 -->
+
 
 </body>
 <jsp:include page="down.jsp" />

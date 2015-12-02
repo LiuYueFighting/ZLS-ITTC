@@ -3,7 +3,7 @@ package com.water.action;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+//import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
@@ -404,6 +404,7 @@ public class PoolEvaluateAction extends ActionSupport{
 		return "success";
 	}
 	
+	@SuppressWarnings("unchecked")
 	public String export2excel(){
 		List<PoolEvaluate> list = (List<PoolEvaluate>) data.get("rows");
 		WritableWorkbook book = null;

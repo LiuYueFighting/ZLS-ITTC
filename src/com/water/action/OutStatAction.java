@@ -18,6 +18,7 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Collections;
 
 import org.apache.struts2.ServletActionContext;
 
@@ -229,7 +230,6 @@ public class OutStatAction extends ActionSupport{
 	 * @throws ParseException 
 	 */
 	public String updateOutStat() throws ParseException {
-		outStat.setT((new SimpleDateFormat( "yyyy-MM-dd")).parse(dateTemp));
 		operateSuccess = (outStatService.updateOutStat(outStat) > 0);
 		return "success";
 	}
@@ -250,6 +250,13 @@ public class OutStatAction extends ActionSupport{
 		return "success";
 	}
 
+	public static final Comparator<OutStat> COMPARATOR = new Comparator<OutStat>() {
+		public int compare(OutStat o1, OutStat o2) {
+			return o1.compareTo(o2);
+		}
+	};
+	
+	
 	/**
 	 * 通过设置查询条件查询
 	 */
@@ -274,6 +281,7 @@ public class OutStatAction extends ActionSupport{
 		System.out.println(sql);
 
 		List<OutStat> searchList = outStatService.findBySql(sql);
+		Collections.sort(searchList, COMPARATOR);
 		List<String> tlist = new ArrayList<String>();
 		DateFormat sdFormat=new SimpleDateFormat("yyyy-MM-dd");
 		for(OutStat s:searchList){
@@ -285,7 +293,7 @@ public class OutStatAction extends ActionSupport{
 		data.put("rows", searchList);// 查询的结果
 		return "success";
 	}
-
+	
 	public String export2excel(){
 		List<OutStat> list=(List<OutStat>) data.get("rows");
 		WritableWorkbook book = null;

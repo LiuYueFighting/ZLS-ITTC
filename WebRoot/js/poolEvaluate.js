@@ -250,28 +250,6 @@ function listPoolEvaluate(data) {
 		            	 formatter : function(value) {
 		            		 return value.substring(0, 10);
 		            	 },
-		            	 /*
-		            	 sorter: function(date1, date2) {
-		            		 date1 = date1.substring(0, 10).split('-');
-		            		 date2 = date2.substring(0, 10).split('-');
-		            		 if(date1[0] > date2[0]) {
-		            			 return 1;
-		            		 } else if(date1[0] < date2[0]){
-		            			 return -1;
-		            		 } else {
-		            			 if(date1[1] > date2[1]) {
-		            				 return 1;
-		            			 } else if(date1[1] < date2[1]) {
-		            				 return -1;
-		            			 } else {
-		            				 if(date1[2] >= date2[2]) {
-		            					 return 1;
-		            				 } else {
-		            					 return -1;
-		            				 }
-		            			 }
-		            		 }
-		            	 },*/
 		            	 sortable : true
 		             },
 		             {
@@ -800,6 +778,7 @@ function dealSearch() {
 					ImageTitle1 = "机加池01#  浊度分析图 " + ' ' + TimeStr;
 					ImageTitle2 = "机加池01#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
 					ImageTitle3 = "机加池01#  基本运行参数分析图 " + ' ' + TimeStr;
+					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 					newParams = params;
 					//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 					break;
@@ -808,6 +787,7 @@ function dealSearch() {
 					ImageTitle1 = "机加池02#  浊度分析图 " + ' ' + TimeStr;
 					ImageTitle2 = "机加池02#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
 					ImageTitle3 = "机加池02#  基本运行参数分析图 " + ' ' + TimeStr;
+					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
 					newParams = params;
 					//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 					break;
@@ -816,6 +796,7 @@ function dealSearch() {
 					ImageTitle1 = "机加池03#  浊度分析图 " + ' ' + TimeStr;
 					ImageTitle2 = "机加池03#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
 					ImageTitle3 = "机加池03#  基本运行参数分析图 " + ' ' + TimeStr;
+					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 					newParams = params;
 					//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
 					break;
@@ -824,13 +805,14 @@ function dealSearch() {
 					ImageTitle1 = "机加池浊度分析图 " + ' ' + TimeStr;
 					ImageTitle2 = "机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
 					ImageTitle3 = "机加池基本运行参数分析图 " + ' ' + TimeStr;
+					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 					newParams = params;
 					//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
 				}
 		} else {  // 如果  lowT、highT、searchPoolID均不为空  不满足，退出查询
 			failAppearence = true;
 			$.messager.alert('错误', '查询失败！<br />起始/结束日期、机加池编号不能为空！', 'warning');
-			//设置一个错误的数据，使得查询失败，避免图标刷新，因为即便是数据缺失，SQLServer也会返回特定结果
+			//设置一个错误的数据，使得查询失败，避免图表刷新，因为即便是数据缺失，SQLServer也会返回特定结果
 			newParams = 'lowT=2015-01-01&highT=2014-01-01&searchPoolID=&lowNTU=0&highNTU=100&lowAlgaeContent=0&highAlgaeContent=100&lowOutNTU=0&highOutNTU=100&lowSV=0.00&highSV=100.00';
 			//closeSearchForm();
 		}
@@ -1095,7 +1077,6 @@ function import2DB(){
 var ImageTitle1;
 var ImageTitle2;
 var ImageTitle3;
-ImageTitle3
 function drawImage(){
 	//加药量分析图
 	var PACArray=new Array();		// PAC
@@ -1378,6 +1359,11 @@ function drawImage(){
             },
             borderColor: 'gray',
             borderWidth: 1,
+            dateTimeLabelFormats: { // don't display the dummy year
+            	minute: "%Y-%m-%d %H:%M",
+            	hour: "%Y-%m-%d %H时",
+            	day: "%Y-%m-%d",
+			},
         },
 		xAxis: {
 			type: 'datetime',
@@ -1411,7 +1397,7 @@ function drawImage(){
             tickPosition: 'inside',
             
 			title: {
-				text: '原水/出水浊度'                  //指定y轴的标题
+				text: '原水/出水浊度(NTU)'                  //指定y轴的标题
 			},
 		},{	//第二个Y坐标
 			min: 0,
@@ -1426,7 +1412,7 @@ function drawImage(){
             tickLength: 10,
             tickWidth: 3,
             tickPosition: 'inside',
-            linkedTo: 0,
+            //linkedTo: 0,
 			labels: {
                 formatter: function () {
                     return this.value;
@@ -1434,7 +1420,7 @@ function drawImage(){
             },
 			title: {
 				enable: true,
-				text: '<b>PAC/FeCl3</b>投加量'                  //指定y轴的标题
+				text: '<b>PAC/FeCl3</b>投加量(mg/L)'                  //指定y轴的标题
 			},
 		},
 		],
@@ -1624,6 +1610,11 @@ function drawImage(){
 	            },
 	            borderColor: 'gray',
 	            borderWidth: 1,
+	            dateTimeLabelFormats: { // don't display the dummy year
+	            	minute: "%Y-%m-%d %H:%M",
+	            	hour: "%Y-%m-%d %H时",
+	            	day: "%Y-%m-%d",
+				},
 	        },
 			xAxis: {
 				type: 'datetime',
@@ -1671,7 +1662,7 @@ function drawImage(){
         
         
         title: {
-		        		text: '水温'                  //指定y轴的标题
+		        		text: '预加氯(mg/L)/水温(℃)'                  //指定y轴的标题
 		},
 
 	},{	//第一个y轴坐标
@@ -1689,10 +1680,10 @@ function drawImage(){
         tickLength: 10,
         tickWidth: 3,
         tickPosition: 'inside',
-        linkedTo: 0,
+        //linkedTo: 0,
         //tickPositions: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
 		title: {
-			text: '原水藻类含量/预加氯'                  //指定y轴的标题
+			text: '原水藻类含量(%)'                  //指定y轴的标题
 		},
 			        	//lebels:{
 			        	//	format: '{value*100}%'
@@ -1890,6 +1881,11 @@ function drawImage(){
 		            },
 		            borderColor: 'gray',
 		            borderWidth: 1,
+		            dateTimeLabelFormats: { // don't display the dummy year
+		            	minute: "%Y-%m-%d %H:%M",
+		            	hour: "%Y-%m-%d %H时",
+		            	day: "%Y-%m-%d",
+					},
 		        },
 				xAxis: {
 					type: 'datetime',
@@ -1928,7 +1924,7 @@ function drawImage(){
 	        
 	        
 			title: {
-				text: '开启度/转速/沉降比'                  //指定y轴的标题
+				text: '开启度(%)'                  //指定y轴的标题
 			},
 				        	//lebels:{
 				        	//	format: '{value*100}%'
@@ -1951,7 +1947,7 @@ function drawImage(){
 	            tickPosition: 'inside',
 	            //tickPositions: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
 			    
-	            linkedTo: 0,
+	            //linkedTo: 0,
 				labels: {
 	                formatter: function () {
 	                    return this.value;
@@ -1964,7 +1960,7 @@ function drawImage(){
 	            
 	            
 	            title: {
-				        		text: '小/大斗排泥时长'                  //指定y轴的标题
+				        		text: '转速/沉降比/小/大斗排泥时长'                  //指定y轴的标题
 				},
 			},
 			],
@@ -1992,14 +1988,14 @@ function drawImage(){
 		//options1 PAC
 		options1.series[i+poollist.length*2]= new Object();
 		options1.series[i+poollist.length*2].data=(PACArray[i].sort()); //对PACArray[i]进行排序，否则会造成时间轴上的图错乱
-		options1.series[i+poollist.length*2].name='PAC投加量<br> '+formPoolID(poollist[i]);
+		options1.series[i+poollist.length*2].name='PAC投加量';
 		options1.series[i+poollist.length*2].type="line";
 		options1.series[i+poollist.length*2].yAxis=1;
 
 		//options1 FeCl3
 		options1.series[i+poollist.length*3] = new Object();
 		options1.series[i+poollist.length*3].data=FeCl3Array[i].sort(); //对FeCl3Array[i]进行排序，否则会造成时间轴上的图错乱
-		options1.series[i+poollist.length*3].name='FeCl<sub>3</sub>投加量<br> '+formPoolID(poollist[i]);
+		options1.series[i+poollist.length*3].name='FeCl<sub>3</sub>投加量';
 		options1.series[i+poollist.length*3].type="line";
 		options1.series[i+poollist.length*3].yAxis=1;
 		
@@ -2007,14 +2003,14 @@ function drawImage(){
 		//options1 NTU
 		options1.series[i]= new Object();
 		options1.series[i].data=(NTUArray[i].sort()); //对NTUArray[i]进行排序，否则会造成时间轴上的图错乱
-		options1.series[i].name='原水浊度<br> '+formPoolID(poollist[i]);
+		options1.series[i].name='原水浊度';
 		options1.series[i].type="line";
 		options1.series[i].yAxis=0;
 
 		//options1 OutNTU
 		options1.series[i+poollist.length] = new Object();
 		options1.series[i+poollist.length].data=OutNTUArray[i].sort(); //对OutNTUArray[i]进行排序，否则会造成时间轴上的图错乱
-		options1.series[i+poollist.length].name='出水浊度<br> '+formPoolID(poollist[i]);
+		options1.series[i+poollist.length].name='出水浊度';
 		options1.series[i+poollist.length].type="line";;
 		options1.series[i+poollist.length].yAxis=0;
 		
@@ -2023,21 +2019,21 @@ function drawImage(){
 		//options2 AlgaeContent
 		options2.series[i] = new Object();
 		options2.series[i].data=AlgaeContentArray[i].sort(); //对AlgaeContentArray[i]进行排序，否则会造成时间轴上的图错乱
-		options2.series[i].name='原水藻类<br> '+formPoolID(poollist[i]);
+		options2.series[i].name='原水藻类';
 		options2.series[i].type="line";
 		options2.series[i].yAxis=1;
 		
 		//options2 CL
 		options2.series[i+poollist.length] = new Object();
 		options2.series[i+poollist.length].data=CLArray[i].sort(); //对CLArray[i]进行排序，否则会造成时间轴上的图错乱
-		options2.series[i+poollist.length].name='预加氯量<br> '+formPoolID(poollist[i]);
+		options2.series[i+poollist.length].name='预加氯量';
 		options2.series[i+poollist.length].type="line";
-		options2.series[i+poollist.length].yAxis=1;
+		options2.series[i+poollist.length].yAxis=0;
 		
 		//options2 WaterTemp
 		options2.series[i+poollist.length*2]= new Object();
 		options2.series[i+poollist.length*2].data=(WaterTempArray[i].sort()); //对WaterTempArray[i]进行排序，否则会造成时间轴上的图错乱
-		options2.series[i+poollist.length*2].name='水温<br> '+formPoolID(poollist[i]);
+		options2.series[i+poollist.length*2].name='水温';
 		options2.series[i+poollist.length*2].type="line";
 		options2.series[i+poollist.length*2].yAxis=0;
 
@@ -2045,37 +2041,37 @@ function drawImage(){
 		//options3 SmallMudFre
 		options3.series[i+poollist.length*3] = new Object();
 		options3.series[i+poollist.length*3].data=SmallMudFreArray[i].sort(); //对SmallMudFreArray[i]进行排序，否则会造成时间轴上的图错乱
-		options3.series[i+poollist.length*3].name='小斗排泥时长<br> '+formPoolID(poollist[i]);
+		options3.series[i+poollist.length*3].name='小斗排泥时长';
 		options3.series[i+poollist.length*3].type="line";
 		options3.series[i+poollist.length*3].yAxis=1;
 		
 		//options3 BigMudFre
 		options3.series[i+poollist.length*4] = new Object();
 		options3.series[i+poollist.length*4].data=BigMudFreArray[i].sort(); //对BigMudFreArray[i]进行排序，否则会造成时间轴上的图错乱
-		options3.series[i+poollist.length*4].name='大斗排泥时长<br> '+formPoolID(poollist[i]);
+		options3.series[i+poollist.length*4].name='大斗排泥时长';
 		options3.series[i+poollist.length*4].type="line";
 		options3.series[i+poollist.length*4].yAxis=1;
 		
 		//options3 OpenDegree
 		options3.series[i]= new Object();
 		options3.series[i].data=(OpenDegreeArray[i].sort()); //对OpenDegreeArray[i]进行排序，否则会造成时间轴上的图错乱
-		options3.series[i].name='开启度<br> '+formPoolID(poollist[i]);
+		options3.series[i].name='开启度';
 		options3.series[i].type="line";
 		options3.series[i].yAxis=0;
 
 		//options3 RotationSpeed
 		options3.series[i+poollist.length] = new Object();
 		options3.series[i+poollist.length].data=RotationSpeedArray[i].sort(); //对RotationSpeedArray[i]进行排序，否则会造成时间轴上的图错乱
-		options3.series[i+poollist.length].name='转速<br> '+formPoolID(poollist[i]);
+		options3.series[i+poollist.length].name='转速';
 		options3.series[i+poollist.length].type="line";
-		options3.series[i+poollist.length].yAxis=0;
+		options3.series[i+poollist.length].yAxis=1;
 		
 		//options3 SV
 		options3.series[i+poollist.length*2]= new Object();
 		options3.series[i+poollist.length*2].data=(SVArray[i].sort()); //对SVArray[i]进行排序，否则会造成时间轴上的图错乱
-		options3.series[i+poollist.length*2].name='沉降比<br> '+formPoolID(poollist[i]);
+		options3.series[i+poollist.length*2].name='沉降比';
 		options3.series[i+poollist.length*2].type="line";
-		options3.series[i+poollist.length*2].yAxis=0;
+		options3.series[i+poollist.length*2].yAxis=1;
 
 		
 	}

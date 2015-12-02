@@ -29,7 +29,7 @@
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="highcharts/highstock.js" ></script>
-<script type="text/javascript" src="highcharts/exporting.js"></script>
+<script type="text/javascript" src="highcharts/exporting.src.js"></script>
 <script type="text/javascript" src="highcharts/themes/grid.js"></script>
 
 <script type="text/javascript" src="js/ajaxfileupload.js"></script>
@@ -64,14 +64,14 @@ body {
  
 #tab_entity {
 	position: absolute;
-	top: 25px;
+	top: 10px;
 	left: 50px;
 	width: 1300px;
 }
 
-#leftContainer {
+#rightContainer {
 	position: absolute;
-	top: 25px;
+	top: 10px;
 	left: 1400px;
 	width: 200px;
 }
@@ -104,7 +104,7 @@ body {
 	font-family: '微软雅黑', 'Arial';
 	position: absolute;
 	left: 25px;
-	top: 320px;
+	top: 830px;
 	z-index: 999;
 	font-size: 14px;
 	width: 200px;
@@ -279,8 +279,8 @@ th, td, input, option {
 				<button id="btn_export" class="btn btn-primary"
 					onclick="javascript:export2excel()">导出</button>
 			</div> 
-			<!-- leftContainer -->
-			<div id="leftContainer">
+			<!-- rightContainer -->
+			<div id="rightContainer">
 				<!-- treeGuid -->
 				<div id="treeGuid" style="overflow:scroll">
 					<p>选择时间:</p><br/>
@@ -402,8 +402,6 @@ th, td, input, option {
 						style="align: center; width:1380px; height: 600px; padding: 10px 60px 10px 60px">
 						<form id="newfrmEdit" style="width:1240px">
 							<br />
-							<!-- <input type="hidden" id="dateTempAdd" name="dateTemp"	/> 
-						<input type="hidden" id="IDAdd" name="dataAnalysis.ID" /> -->
 							<table id="tab" style="align: center">
 
 
@@ -432,10 +430,10 @@ th, td, input, option {
 
 								<tr id="tr1">
 									<td style="width: 1px; height: 26px">
-										<input type="hidden" id="splitSign" name="split" style="width: 1px; height: 26px" /></td>
+										<input type="hidden" id="splitSign" name="split" style="width: 1px; height: 25px" /></td>
 									<td style="width: 1px; height: 26px">
-										<input type="hidden" id="IDAdd" name="poolEvaluate.ID" style="width: 1px; height: 26px" /></td>
-									<td id="indexNum1" style="text-align:center;width: 40px; height: 26px">1</td>
+										<input type="hidden" id="IDAdd" name="poolEvaluate.ID" style="width: 1px; height: 25px" /></td>
+									<td id="indexNum1" style="text-align:center;width: 40px; height: 25px">1</td>
 									<td style="width: 152px; height: 26px" >
 										<!-- 时间 --> <input name="poolEvaluate.t" id="tAdd1"
 										type="date" style="width: 150px; height: 25px" />
@@ -444,9 +442,9 @@ th, td, input, option {
 										<!-- 机加池编号 -->
 										<select id="PoolIDAdd1" name="poolEvaluate.PoolID"
 										class="easyui-combox" style="width: 100px; height: 25px">
-											<option value="MTG_JJC_SC01" selected>机加池01#</option>
+											<option value="MTG_JJC_SC01">机加池01#</option>
 											<option value="MTG_JJC_SC02">机加池02#</option>
-											<option value="MTG_JJC_SC03">机加池03#</option>
+											<option value="MTG_JJC_SC03" selected>机加池03#</option>
 									</select>
 									</td>
 									<td style="width: 82px; height: 26px" >
