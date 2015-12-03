@@ -569,7 +569,7 @@ $(document).ready(function(){
             origin: { x: "center", y: "top" },
             font: "bold 29px Tahoma",
             text:"新工艺流程图",
-            fill:color_txt
+            fill:"#0e406b"
         });
         var txt_HHJ=txt_QS.clone({
             x:470,
