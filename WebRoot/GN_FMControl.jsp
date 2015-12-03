@@ -139,10 +139,11 @@
         top: 150px;
         }
     #readout_input{
-    position: absolute;
-    left: 687px;
-    top: 35px;
-    z-index: 999;
+        position: absolute;
+        left: 687px;
+        top: 35px;
+        z-index: 999;
+        color: #223bb8;
     }
     #setConfig{
     font-family: '微软雅黑','Arial';
@@ -154,10 +155,10 @@
     width:137px;
     }
     #setConfig h1{
-    font-size:20px;
-    color:#ff4400;
-    font-weight:bold;
-    margin-bottom: 20px;
+        font-size: 20px;
+        color: #223bb8;
+        font-weight: bold;
+        margin-bottom: 20px;
     }
     #setConfig h2{
     font-size:17px;
@@ -234,9 +235,9 @@
         }
         .name_Model{
         font-family: '微软雅黑','Arial';
-        color:#ff4400;
-        font-size: 15px;
-        font-weight:bold;
+        color: #223bb8;
+        font-size: 17px;
+        font-weight: bold;
         }
         #chackBox_name{
         position:absolute;

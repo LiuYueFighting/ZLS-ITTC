@@ -166,7 +166,7 @@ var txt1=canvas.display.text({
     y:30,
     origin: { x:"center", y: "top" },
     font: "bold 36px sans-serif",
-    fill:"#337ab7",
+    fill:"#0e406b",
     text:"清水池工艺展示纵剖图"
 }).add();
 var txt2=canvas.display.text({

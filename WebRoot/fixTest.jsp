@@ -18,7 +18,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
     <script src="js/my_oCanvas.js"></script>
-    <script src="js/fix_fm.js"></script>
+    <script src="js/fixTest.js"></script>
+    <script src="js/main.js"></script>
     <style>
         body {
             background: #afd9ee;
@@ -41,6 +42,12 @@
     color: #283a45;
     background: rgba(255,255,255,0.5);
     border: 1px solid black;
+    }
+    #show_hide{
+    position: absolute;
+    top: 6px;
+    left: 147px;
+    font-size: 13px;
     }
     #export{
     position: absolute;
@@ -72,15 +79,10 @@
     }
     .name_Model{
     font-family: '微软雅黑','Arial';
-    color: #223bb8;
-    font-size: 17px;
-    font-weight: bold;
-    }
-    .panel{
-    height: 529px;
-    width: 175px;
-    background: rgba(255,255,255,0.7);
-    color: black;
+    color:#ff4400;
+    font-size: 15px;
+    font-weight:bold;
+
     }
     #fix-panel{
     height: 604px;
@@ -130,6 +132,12 @@
     left: 1372px;
     z-index:999;
     }
+    .panel{
+    height: 529px;
+    width: 175px;
+    background: rgba(255,255,255,0.7);
+    color: black;
+    }
     #setConfig h1{
     font-size:20px;
     color:#ff4400;
@@ -142,10 +150,6 @@
     }
     #fix_table{
     font-size:12px
-    }
-    #WFM062,#WFM019{
-    color: #6dceff;
-    background: rgba(255,0,0,0.6);
     }
     </style>
     <script>
@@ -285,8 +289,37 @@
     document.getElementById("fix_line10").innerHTML="";
     changeHide();
 
-    document.getElementById("fix_head").innerHTML="请点击需要维修的阀门";
-
+    document.getElementById("fix_head").innerHTML="请点击需要维修的构筑物";
+    document.getElementById("name_QS").style.color="#283a45";
+    document.getElementById("name_JJC1").style.color="#283a45";
+    document.getElementById("name_HHJ1").style.color="#283a45";
+    document.getElementById("name_HHJ2").style.color="#283a45";
+    document.getElementById("name_JJC2").style.color="#283a45";
+    document.getElementById("name_JJC3").style.color="#283a45";
+    document.getElementById("name_HX").style.color="#283a45";
+    document.getElementById("name_VL").style.color="#283a45";
+    document.getElementById("name_CY").style.color="#283a45";
+    document.getElementById("name_TC").style.color="#283a45";
+    document.getElementById("name_TC1").style.color="#283a45";
+    document.getElementById("name_QSC1").style.color="#283a45";
+    document.getElementById("name_QSC2").style.color="#283a45";
+    document.getElementById("name_QSC3").style.color="#283a45";
+    document.getElementById("name_QSC4").style.color=" #283a45";
+    document.getElementById("name_QS").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_JJC1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_HHJ1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_HHJ2").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_JJC2").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_JJC3").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_VL").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_CY").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_TC").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_TC1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC1").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC2").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC3").style.background="rgba(255,255,255,0.5)";
+    document.getElementById("name_QSC4").style.background="rgba(255,255,255,0.5)";
     }
 
 
@@ -374,31 +407,45 @@
     <jsp:include page="top.jsp" />
     <ol class="breadcrumb">
     <li><a href="main.jsp">设备检修</a></li>
-    <li class="active">阀门维修</li>
+    <li class="active">构筑物维修</li>
     </ol>
 <div id="myPage">
     <div id="myContent" style="overflow: hidden">
         <div id="mainView" style="position: absolute;z-index: 1" >
+    <div id="check_div">
+    <div>
+    <input id="btn_new" type="checkbox" name="line" value="1" checked>新工艺线
+    </div>
+    <div>
+    <input id="btn_old" type="checkbox" name="line" value="2" checked>老工艺线
+    </div>
+    <%--<label id="btn_new" class="btn btn-info active" value="1">--%>
+    <%--<input type="checkbox" name="line" value="1" checked>新工艺线--%>
+    <%--</label>--%>
+    <%--<label id="btn_old" class="btn btn-info active" value="1">--%>
+    <%--<input type="checkbox" name="line" value="2" checked>老工艺线--%>
+    <%--</label>--%>
+    </div>
             <canvas id="canvas_fix" width="1583" height="757"></canvas>
         </div>
     <p class="name_Model" id="WShow">显示名称</p>
     <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label>
-    <a  id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
-    <a  id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
-    <a  id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
-    <a  id="name_JJC3" style="text-decoration: none" class="name_ob">3#机加池</a>
-    <a  id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
-    <a  id="name_TC" class="name_ob" style="text-decoration: none">1#活性炭池</a>
-    <a  id="name_TC1" class="name_ob" style="text-decoration: none">2#活性炭池</a>
-    <a  id="name_CY" class="name_ob" style="text-decoration: none">臭氧混合池</a>
-    <a  id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
-    <a  id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
-    <a  id="name_HHJ2" class="name_ob" style="text-decoration: none">混合井</a>
-    <a  id="name_HX" class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
-    <a  id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
-    <a  id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
-    <a  id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
-    <a  id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
+    <a href="#" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
+    <a href="#" id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
+    <a href="#" id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
+    <a href="#" id="name_JJC3" style="text-decoration: none" class="name_ob">3#机加池</a>
+    <a href="#" id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
+    <a href="#" id="name_TC" class="name_ob" style="text-decoration: none">1#活性炭池</a>
+    <a href="#" id="name_TC1" class="name_ob" style="text-decoration: none">2#活性炭池</a>
+    <a href="#" id="name_CY" class="name_ob" style="text-decoration: none">臭氧混合池</a>
+    <a href="#" id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
+    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
+    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none">混合井</a>
+    <a href="#" id="name_HX" class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
+    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
+    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
+    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
+    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
 
     <img id="FM05" src="image/y3.png" >
     <img id="FM06" src="image/y3.png" >
@@ -474,9 +521,9 @@
     <p id="WFM021" class="name_FM">021#</p>
     <p id="WFM022" class="name_FM">022#</p>
     <p id="WFM046" class="name_FM">046#</p>
-    <p id="WFM023" class="name_FM">024#</p>
+    <p id="WFM023" class="name_FM">023#</p>
     <p id="WFM024" class="name_FM">024#</p>
-    <p id="WFM025" class="name_FM">024#</p>
+    <p id="WFM025" class="name_FM">025#</p>
     <p id="WFM044" class="name_FM">044#</p>
     <p id="WFM055" class="name_FM">055#</p>
     <p id="WFM026" class="name_FM">026#</p>
@@ -488,7 +535,7 @@
     </div>
     <div id="fix-panel">
     <button type="button" id="panel_heading" onclick="changeHide()">
-    <h2 id="fix_head" >请点击需要维修的阀门</h2>
+    <h2 id="fix_head" >请点击需要维修的构筑物</h2>
     <%--<a href="#" id="show_hide" onclick="changeHide()">显示</a>--%>
 
     </button>

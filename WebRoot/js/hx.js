@@ -165,8 +165,8 @@ oCanvas.domReady(function () {
         x:696,
         y:15,
         origin: { x:"center", y: "top" },
-        font: "bold 36px Tahoma",
-        fill:"#337ab7",
+        font: "bold 36px sans-serif",
+        fill:"#0e406b",
         text:"虹吸滤池工艺展示纵剖图"
     }).add();
     var txt2=canvas.display.text({

@@ -78,9 +78,9 @@
     }
     .name_Model{
     font-family: '微软雅黑','Arial';
-    color:#ff4400;
-    font-size: 15px;
-    font-weight:bold;
+    color: #223bb8;
+    font-size: 17px;
+    font-weight: bold;
 
     }
     #fix-panel{
