@@ -71,10 +71,43 @@ $(document).ready(function(){
             fill: color_SC
         });
         canvas.addChild(SC03);
-
+        var left_t=canvas.display.SC_show({
+            x:1161,
+            y:292,
+            Width:15,
+            Height:15,
+            height_now:0,
+            trail_flag:1,
+            trail:[
+                {x_t:0,y_t:15},
+                {x_t:15,y_t:15},
+                {x_t:15,y_t:0}
+            ],
+            fill: color_SC,
+            speed:speed_SC,
+            full:0,
+            start:start_all
+        }).add();
+        var right_t=canvas.display.SC_show({
+            x:978,
+            y:271,
+            Width:25,
+            Height:25,
+            height_now:0,
+            trail_flag:1,
+            trail:[
+                {x_t:0,y_t:0},
+                {x_t:0,y_t:25},
+                {x_t:25,y_t:25}
+            ],
+            fill: color_SC,
+            speed:speed_SC,
+            full:0,
+            start:start_all
+        }).add();
         var SC04 = canvas.display.SC_show({
-            x: 1026,
-            y: 189,
+            x: 1303,
+            y: 283,
             Width: 431,
             Height: 208,
             height_now: 0,
@@ -233,10 +266,10 @@ $(document).ready(function(){
         canvas.addChild(SC13);
 
         var SC14 = canvas.display.SC_show({
-            x: 539,
-            y: 563,
-            Width: 114,
-            Height: 74,
+            x: 536,
+            y: 590,
+            Width: 113,
+            Height: 65,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -246,7 +279,33 @@ $(document).ready(function(){
             start:start_all
         });
         canvas.addChild(SC14);
-
+        var SC131 = canvas.display.SC_show({
+            x: 649,
+            y: 622,
+            Width: 14,
+            Height: 29,
+            height_now: 0,
+            trail_flag: 0,
+            t: 0,
+            fill: color_SC,
+            speed:speed_SC,
+            full:0,
+            start:start_all
+        });
+        var SC141 = canvas.display.SC_show({
+            x: 516,
+            y: 586,
+            Width: 19,
+            Height: 17,
+            height_now: 0,
+            trail_flag: 0,
+            t: 0,
+            fill: color_SC,
+            speed:speed_SC,
+            full:0,
+            start:start_all
+        });
+        canvas.addChild(SC14);
         var SC15 = canvas.display.SC_show({
             x: 164,
             y: 576,
@@ -498,7 +557,7 @@ $(document).ready(function(){
                 {x_cell: 1312, y_cell: 719},
                 {x_cell: 304, y_cell: 719},
                 {x_cell: 304, y_cell: 650}
-            ],  //锟秸碉拷锟斤拷锟斤拷
+            ],
             deta: 1,
             deta_x: 1, deta_y: 0,
             flag_x: 1, flag_y: 0,
@@ -620,7 +679,7 @@ $(document).ready(function(){
             origin: { x: "center", y: "top" },
             font: "bold 29px Tahoma",
             text:"老工艺流程图",
-            fill:color_txt
+            fill:"#0e406b"
         });
         var txt_HHJ=txt_QS.clone({
             x:780,
@@ -682,6 +741,8 @@ $(document).ready(function(){
             SC01.advance();
             SC02.advance();
             SC03.advance();
+            right_t.advance();
+            left_t.advance();
             SC04.advance();
             SC05.advance();
             SC06.advance();
@@ -692,7 +753,9 @@ $(document).ready(function(){
             SC11.advance();
             SC12.advance();
             SC13.advance();
+            SC131.advance();
             SC14.advance();
+            SC141.advance();
             SC15.advance();
 
 
@@ -711,6 +774,10 @@ $(document).ready(function(){
                 GD03.paused = 1;
             }
             if(GD03.full==1) {
+                left_t.start=1;
+                right_t.start=1;
+            }
+            if(right_t.full==1) {
                 SC04.start = 1;
             }
             if(SC04.full==1) {
@@ -750,12 +817,15 @@ $(document).ready(function(){
             }
             if(SC13.height_now>=SC13.Height*0.2) {
                 GD11.paused = 1;
-                //GD06.paused = 1;
             }
             if( GD11.full==1) {
+                SC131.start=1;
+            }
+            if(SC131.full==1){
                 SC14.start = 1;
             }
             if(SC14.full==1) {
+                SC141.start=1;
                 GD12.paused = 1;
             }
 //            if(GD07.full==1 && GD09.full==1 && GD12.full==1) {
@@ -796,6 +866,8 @@ $(document).ready(function(){
             GD11.init();
             GD12.init();
 
+            left_t.init();
+            right_t.init();
             SC01.init();
             SC02.init();
             SC03.init();
@@ -809,7 +881,9 @@ $(document).ready(function(){
             SC11.init();
             SC12.init();
             SC13.init();
+            SC131.init();
             SC14.init();
+            SC141.init();
             SC15.init();
             GD01.paused=1;
             canvas.settings.fps=40;
