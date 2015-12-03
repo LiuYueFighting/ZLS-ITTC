@@ -748,7 +748,7 @@ $(document).ready(function(){
             if(SC12.full==1) {
                 SC13.start = 1;
             }
-            if(SC13.full==1) {
+            if(SC13.height_now>=SC13.Height*0.2) {
                 GD11.paused = 1;
                 //GD06.paused = 1;
             }

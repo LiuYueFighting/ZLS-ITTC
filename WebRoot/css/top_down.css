@@ -7,7 +7,6 @@ body {
     line-height: 1;
 
     font-family:'微软雅黑';
-    overflow:hidden;
 }
 html {
     -moz-box-sizing: border-box;
@@ -34,6 +33,7 @@ ul li{
     width:100%;
     font-size:18px;
     background:url(../images/09.png) repeat-x;
+    z-index: 999;
 }
 .top_a{
     width:1360px;
