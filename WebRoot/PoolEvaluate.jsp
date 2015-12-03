@@ -114,7 +114,13 @@ body {
 	color:blue;
 	font-weight:bolder;
 }
-
+    #treeGuid p {
+    color: #223bb8;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    }
+    
 #legendTable tr, #legendTable td {
 	padding: 5px;
 	margin: 5px;

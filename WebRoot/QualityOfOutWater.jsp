@@ -105,10 +105,10 @@
 	}
 
 	#treeGuid p {
-		color: blue;
-		font-weight: bold;
-		font-size: 18px;
-		text-align: left;
+    color: #223bb8;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
 	}
 
 	#chooseIndex {

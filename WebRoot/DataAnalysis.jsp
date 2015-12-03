@@ -147,11 +147,12 @@ body {
 	font-weight:bolder;
 }
 
-#treeGuid p {
-	padding: 5px;
-	margin: 0;
-	font-size: 18px"
-}
+    #treeGuid p {
+    color: #223bb8;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    }
 
 
 
