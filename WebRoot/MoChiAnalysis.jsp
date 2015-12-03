@@ -34,7 +34,7 @@
 <script type="text/javascript" src="highcharts/themes/grid.js"></script>
 
 <script type="text/javascript" src="js/ajaxfileupload.js"></script>
-<script type="text/javascript" src="js/dataAnalysis.js"></script>
+<script type="text/javascript" src="js/moChiAnalysis.js"></script>
 
 <style>
 body {
@@ -154,6 +154,8 @@ body {
 	font-weight:bolder;
 }
 
+
+
 div.icon {
 	position: absolute;
 	top: 520px;
@@ -271,8 +273,8 @@ text-align: center;
 <body>
 	<jsp:include page="top.jsp" />
 	<ol class="breadcrumb">
-    <li><a href="main.jsp">水量控制</a></li>
-    <li class="active">数据分析</li>
+    <li><a href="main.jsp">运行评估</a></li>
+    <li class="active">膜池分析</li>
     </ol>
 	<div id="myPage">
 		<div id="myContent" style="overflow: hidden">
@@ -291,10 +293,10 @@ text-align: center;
 				
 				<div id="chooseIndex">
 					<form id="indexForm">
-						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择清水池编号：</p>
-						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">清水池01#</label><br />
-						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">清水池02#</label><br />
-						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">清水池03#</label><br />
+						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择膜池编号：</p>
+						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">膜池01#</label><br />
+						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">膜池02#</label><br />
+						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">膜池03#</label><br />
 					</form>
 				</div><!-- chooseIndex -->
 				
@@ -342,9 +344,9 @@ text-align: center;
 								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;水 池 编 号 : &nbsp;
 								<select class="easyui-combobox textbox " id="PoolID" name="dataAnalysis.PoolID"
 									style="width: 200px; height: 25px" data-options="required:true,missingMessage:'请输入水池编号'">
-									<option value="MTG_QingS_SC01" selected>清水池01#</option>
-									<option value="MTG_QingS_SC02">清水池02#</option>
-									<option value="MTG_QingS_SC03">清水池03#</option>
+									<option value="MTG_QingS_SC01" selected>膜池01#</option>
+									<option value="MTG_QingS_SC02">膜池02#</option>
+									<option value="MTG_QingS_SC03">膜池03#</option>
 								</select>
 							</dl>
 							<dl>
