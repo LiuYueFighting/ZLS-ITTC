@@ -53,6 +53,7 @@ body {
 	position: relative;
 	width: 1600px;
 	height: 1100px;
+	top:15px;
 	background-position: bottom;
 }
 
@@ -85,6 +86,12 @@ body {
 	border: 1px solid #95B8E7;
 }
 
+#treeGuid p {
+	color: #223bb8;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: left;
+}
 #chooseIndex {
 	position: relative;
 	top: 20px;
@@ -268,6 +275,10 @@ th, td, input, option {
 </head>
 <body>
     <jsp:include page="top.jsp" />
+    <ol class="breadcrumb">
+    <li><a href="main.jsp">运行评估</a></li>
+    <li class="active">机加池分析</li>
+    </ol>
     <div id="myPage">
     	<div id="myContent" style="overflow: hidden">
     		<!-- btn_group -->
@@ -289,7 +300,7 @@ th, td, input, option {
 			<div id="rightContainer">
 				<!-- treeGuid -->
 				<div id="treeGuid" style="overflow:scroll">
-					<p>选择时间:</p><br/>
+					<p>选择时间:</p>
 					<!-- 树形导航菜单 -->
 					<ul id="timeTree" class="easyui-tree"></ul>
 				</div>
