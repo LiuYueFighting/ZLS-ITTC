@@ -441,15 +441,15 @@ public class OutStatAction extends ActionSupport{
 			String sheetName = sheet.getName();
 			try{
 				Date day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
-				String poolIDTemp=sheet.getCell(1,2).getContents();
+				String poolIDTemp=sheet.getCell(0,2).getContents();
 				String sql="delete OutStat where PoolID like '%"+poolIDTemp+"'";
-				sql+= " and Convert(varchar,t,120)  like '%"+day+"%'";
+				sql+= " and Convert(varchar,t,120)  like '%"+sheetName+"%'";
+				System.out.println(sql);
 				// 直接覆盖
 				int deleteResult = outStatService.bulkUpadte(sql);
 				System.out.println("受影响结果："+deleteResult);
 				for(int i=2;i<sheet.getRows();i++){ //共11列数据,从第三行开始
-
-					if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
+					if(null==sheet.getCell(0,i).getContents() || ""==sheet.getCell(0,i).getContents())
 					{	
 						continue;
 					}
@@ -513,12 +513,11 @@ public class OutStatAction extends ActionSupport{
 			String sheetName = sheet.getName();
 			try{
 				Date day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
-				String poolIDTemp=sheet.getCell(1,2).getContents();
+				String poolIDTemp=sheet.getCell(0,2).getContents();
 				String sql="from OutStat where 1=1 ";
-				sql+= "and Convert(varchar,t,120) like '%"+day+"%'";
+				sql+= "and Convert(varchar,t,120) like '%"+sheetName+"%'";
 				sql+=" and PoolID like '%"+poolIDTemp+"'";
 				List<OutStat> list = outStatService.findBySql(sql);
-				System.out.println(list.size());
 				if(null == list||list.isEmpty()){
 					errMsg="";
 					operateSuccess=true;

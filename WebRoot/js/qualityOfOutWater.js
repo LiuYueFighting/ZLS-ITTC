@@ -755,8 +755,9 @@ function dealSearch() {
 				//$('#outStatbody').datagrid('reload');// 重新加载
 				tlist = result.tlist;
 				listOutStat(result);
-				listTreeNode(tlist);
-				
+				if(searchMode != 2) {
+					listTreeNode(tlist);
+				}				
 			} else {
 				$.messager.alert('查询', '未查询到相关信息', 'warning');
 			}
