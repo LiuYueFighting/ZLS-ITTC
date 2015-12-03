@@ -38,8 +38,8 @@
         <li class="nav_bag04">运行评估
         <ul class="Secondary_menu">
         <li class="Secondary_menu_item"><a href="PoolEvaluate.jsp">机加池分析</a></li>
-        <li class="Secondary_menu_item"><a href="QualityOfOutWater.jsp">出水水质分析</a></li>
-        <li class="Secondary_menu_item"><a href="MoChiAnalysis.jsp">膜池分析</a></li>
+        <li class="Secondary_menu_item"><a href="QualityOfOutWater.jsp">出水池分析</a></li>
+        <li class="Secondary_menu_item"><a href="#">膜池分析</a></li>
         </ul>
 
         </ul>

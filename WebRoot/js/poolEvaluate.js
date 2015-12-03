@@ -922,35 +922,35 @@ function closeSearchForm() {
 }
 
 
-//var url = "listPoolEvaluate.action";
-//var poolIDlist  = new Array();
-//var alldata = new Array();
-////查询下拉框显示的数据
-//$.getJSON(url, function(json) {
-//	//去除重复项
-//	alldata=eval(json).rows;
-//	var tempPoolIDlist = new Array();
-//	for(var i=0;i<json.total;i++){
-//		var row = alldata[i];
-//		if(jQuery.inArray(row.poolID, tempPoolIDlist)<0){
-//			tempPoolIDlist.push(row.poolID);
-//			poolIDlist.push({poolID:row.poolID,text:formPoolID(row.poolID)});
+var url = "listPoolEvaluate.action";
+var poolIDlist  = new Array();
+var alldata = new Array();
+//查询下拉框显示的数据
+$.getJSON(url, function(json) {
+	//去除重复项
+	alldata=eval(json).rows;
+	var tempPoolIDlist = new Array();
+	for(var i=0;i<json.total;i++){
+		var row = alldata[i];
+		if(jQuery.inArray(row.poolID, tempPoolIDlist)<0){
+			tempPoolIDlist.push(row.poolID);
+			poolIDlist.push({poolID:row.poolID,text:formPoolID(row.poolID)});
+		}
+//		if(jQuery.inArray(row.t, tlist) < 0) {
+//			tlist.push(row.t);
 //		}
-////		if(jQuery.inArray(row.t, tlist) < 0) {
-////			tlist.push(row.t);
-////		}
-//	}//for
-//	$('#searchPoolID').combobox({
-//		data : poolIDlist.sort(keysrt('poolID',false)),
-//		valueField:'poolID',
-//		textField:'text',
-//		onLoadSuccess: function () {
-//			$(this).combobox('setText', '');
-//		}			
-//	});
-////	listTreeNode(tlist.sort());
-//	listTreeNode(tlist);
-//});
+	}//for
+	$('#searchPoolID').combobox({
+		data : poolIDlist.sort(keysrt('poolID',false)),
+		valueField:'poolID',
+		textField:'text',
+		onLoadSuccess: function () {
+			$(this).combobox('setText', '');
+		}			
+	});
+//	listTreeNode(tlist.sort());
+	listTreeNode(tlist);
+});
 
 //水池编号转换
 function formPoolID(value){
@@ -1342,8 +1342,6 @@ function drawImage(){
 				font: '18px',
 				color: '#0E2D5F',
 				fontWeight: 'bold',
-				fontSize:'18px',
-				fontFamily:'微软雅黑'
 			}
 		},
 		tooltip: {
@@ -1595,8 +1593,6 @@ function drawImage(){
 					font: '18px',
 					color: '#0E2D5F',
 					fontWeight: 'bold',
-					fontSize:'18px',
-					fontFamily:'微软雅黑'
 				}
 			},
 			tooltip: {
@@ -1868,8 +1864,6 @@ function drawImage(){
 						font: '18px',
 						color: '#0E2D5F',
 						fontWeight: 'bold',
-						fontSize:'18px',
-						fontFamily:'微软雅黑'
 					}
 				},
 				tooltip: {

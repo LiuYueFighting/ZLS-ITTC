@@ -64,7 +64,6 @@
 		font-family: '微软雅黑', 'Source Sans Pro';
 		width: 1600px;
 		height: 1100px;
-		top:15px;
 		margin: 0px auto;
 		overflow: hidden;
 	}
@@ -106,7 +105,7 @@
 	}
 
 	#treeGuid p {
-		color: #223bb8;
+		color: blue;
 		font-weight: bold;
 		font-size: 18px;
 		text-align: left;
@@ -260,10 +259,6 @@
 </style>
 <body>
 	<jsp:include page="top.jsp" />
-	<ol class="breadcrumb">
-    <li><a href="main.jsp">运行评估</a></li>
-    <li class="active">出水水质分析</li>
-    </ol>
 	<div id="myPage">
 		<div id="myContent">
 			<div id="tab_entity">
@@ -278,7 +273,7 @@
 				</div>
 				<div id="chooseIndex">
 					<form id="indexForm">
-						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择出水池编号：</p>
+						<p style="color:blue; font-weight:bold;font-size:18px">请选择清水池编号：</p>
 						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">出水池01#</label><br />
 						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">出水池02#</label><br />
 						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">出水池03#</label><br />

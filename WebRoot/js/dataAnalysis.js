@@ -1080,8 +1080,6 @@ function prehImage(){
 					font: '18px',
 					color: '#0E2D5F',
 					fontWeight: 'bold',
-					fontSize:'18px',
-					fontFamily:'微软雅黑'
 				}
 			},
 			//鼠标移动时显示的数据
