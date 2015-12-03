@@ -290,7 +290,7 @@ th, td, input, option {
 				<!-- chooseIndex -->
 				<div id="chooseIndex">
 					<form id="indexForm">
-						<p style="color:blue; font-weight:bold;font-size:18px">请选择机加池编号：</p>
+						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择机加池编号：</p>
 						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">机加池01#</label><br />
 						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">机加池02#</label><br />
 						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">机加池03#</label><br />

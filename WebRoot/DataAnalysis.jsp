@@ -290,7 +290,7 @@ text-align: center;
 				
 				<div id="chooseIndex">
 					<form id="indexForm">
-						<p style="color:blue; font-weight:bold;font-size:18px">请选择清水池编号：</p>
+						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择清水池编号：</p>
 						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">清水池01#</label><br />
 						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">清水池02#</label><br />
 						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">清水池03#</label><br />
