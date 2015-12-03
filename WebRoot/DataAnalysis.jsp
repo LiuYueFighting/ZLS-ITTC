@@ -54,6 +54,7 @@ body {
 	margin: 0px auto;
 	position: relative;
 	width: 1600px;
+	top:15px;
 	height: 1100px;
 	background-position: bottom;
 }
@@ -85,6 +86,12 @@ body {
 	padding: 5px;
 	border: 1px solid #95B8E7;
 	overflow: scroll;
+}
+#treeGuid p {
+	color: #223bb8;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: left;
 }
 
 #chooseIndex {
@@ -145,12 +152,6 @@ body {
 .legendTitle {
 	color:blue;
 	font-weight:bolder;
-}
-
-#treeGuid p {
-	padding: 5px;
-	margin: 0;
-	font-size: 18px"
 }
 
 
@@ -271,7 +272,10 @@ text-align: center;
 </head>
 <body>
 	<jsp:include page="top.jsp" />
-
+	<ol class="breadcrumb">
+    <li><a href="main.jsp">水量控制</a></li>
+    <li class="active">数据分析</li>
+    </ol>
 	<div id="myPage">
 		<div id="myContent" style="overflow: hidden">
 			<div id="tab_entity">
@@ -283,14 +287,13 @@ text-align: center;
 			<div id="rightContainer">
 				<div id="treeGuid" style="overflow: scroll">
 					<p>选择时间:</p>
-					<br />
 					<!-- 树形导航菜单 -->
 					<ul id="timeTree" class="easyui-tree"></ul>
 				</div><!-- treeGuid -->
 				
 				<div id="chooseIndex">
 					<form id="indexForm">
-						<p style="color:blue; font-weight:bold;font-size:18px">请选择清水池编号：</p>
+						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择清水池编号：</p>
 						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">清水池01#</label><br />
 						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">清水池02#</label><br />
 						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">清水池03#</label><br />

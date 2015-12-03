@@ -1053,6 +1053,8 @@ function prehImage(){
 						font: '18px',
 						color: '#0E2D5F',
 						fontWeight: 'bold',
+						fontFamily:'微软雅黑',
+						fontSize:'18px',
 					}
 				},
 				tooltip: {
