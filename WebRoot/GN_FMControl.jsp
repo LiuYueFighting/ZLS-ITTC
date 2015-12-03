@@ -142,7 +142,7 @@
         position: absolute;
         left: 687px;
         top: 35px;
-        z-index: 999;
+        z-index: 998;
         color: #223bb8;
     }
     #setConfig{
