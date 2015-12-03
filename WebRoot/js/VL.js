@@ -174,7 +174,7 @@ oCanvas.domReady(function () {
         y:30,
         origin: { x:"center", y: "top" },
         font: "bold 36px sans-serif",
-        fill:"rgba(35, 32, 29, 0.9)",
+        fill:"#0e406b",
         text:"V型滤池工艺展示纵剖图"
     });
     canvas.addChild(txt1);

@@ -29,8 +29,8 @@ oCanvas.domReady(function () {
         x:700,
         y:30,
         origin: { x:"center", y: "top" },
-        font: "bold 36px Tahoma",
-        fill:"#337ab7",
+        font: "bold 36px sans-serif",
+        fill:"#0e406b",
         text:"膜车间工艺展示纵剖图"
     });
     canvas.addChild(txt1);
