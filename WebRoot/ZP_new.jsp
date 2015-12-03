@@ -22,6 +22,7 @@
     font-family: '微软雅黑','Source Sans Pro';
     position:relative;
     font-size: 15px;
+    top:20px;
     width: 1600px;
     height: 800px;
     margin:0 auto;

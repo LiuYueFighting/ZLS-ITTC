@@ -62,10 +62,23 @@
     background-color: #337ab7;
     }
     #check_div{
-        position: absolute;
-        left: 1475px;
-        top: 300px;
+    position: absolute;
+    left: 1475px;
+    top: 300px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: '微软雅黑', 'Arial';
+    width: 142px;
+    text-align: left;
+
     }
+
+    #check_div h1{
+    color: #223bb8;
+    font-weight: bold;
+    font-size: 18px;
+    }
+
 
     .name_ob{
     font-family: '微软雅黑','Arial';
@@ -236,6 +249,7 @@
     <%--<button id="btn_downS" class="btn btn-info btn-lg btn_main">减速</button>--%>
     <%--<button id="btn_reset" class="btn btn-info btn-lg btn_main">重新开始</button>--%>
     <div id="check_div">
+    <h1>请选择工艺线：</h1>
      <div>
         <input id="btn_new" type="checkbox" name="line" value="1" checked>新工艺线
     </div>

@@ -302,9 +302,9 @@ $(document).ready(function(){
         
         var SC15 = canvas.display.SC_show({
             x: 904,
-            y: 600,
-            Width: 150,
-            Height: 65,
+            y: 626,
+            Width: 151,
+            Height: 80,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -314,7 +314,12 @@ $(document).ready(function(){
             start:start_all
         });
         canvas.addChild(SC15);
-        
+
+        var SC151=createSC({
+            parent:canvas,
+            x:877,y:623,height:15,width:25,trail_flag:0,speed:speed_SC,color:color_SC
+        });
+
         var SC16 = canvas.display.SC_show({
             x: 411,
             y: 602,
@@ -564,7 +569,7 @@ $(document).ready(function(){
             origin: { x: "center", y: "top" },
             font: "bold 29px Tahoma",
             text:"新工艺流程图",
-            fill:color_txt
+            fill:"#0e406b"
         });
         var txt_HHJ=txt_QS.clone({
             x:470,
@@ -636,6 +641,7 @@ $(document).ready(function(){
             SC14.advance();
             SC141.advance();
             SC15.advance();
+            SC151.advance();
             SC16.advance();
 
 
@@ -694,7 +700,7 @@ $(document).ready(function(){
             if(SC13.full==1) {
             	SC14.start = 1;
             }
-            if(SC14.full==1) {
+            if(SC14.height_now>=SC14.Height*0.2) {
                 GD06.paused = 1;
             }
             if(GD06.full==1) {
@@ -705,11 +711,12 @@ $(document).ready(function(){
             }
             if(SC15.full==1) {
                 GD07.paused = 1;
+                SC151.start = 1;
             }
             if(GD07.full==1) {
                 SC16.start = 1;
             }
-            if(SC16.full==1) {
+            if(SC16.height_now>=SC16.Height*0.2) {
                 GD08.paused = 1;
             }
             canvas.redraw();
@@ -758,6 +765,7 @@ $(document).ready(function(){
             SC14.init();
             SC141.init();
             SC15.init();
+            SC151.init();
             SC16.init();
             GD01.paused=1;
             canvas.settings.fps=40;

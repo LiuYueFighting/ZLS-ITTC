@@ -199,7 +199,7 @@ oCanvas.domReady(function () {
         y:30,
         origin: { x:"center", y: "top" },
         font: "bold 36px sans-serif",
-        fill:"#337ab7",
+        fill:"#0e406b",
         text:"取水泵房工艺展示纵剖图"
     });
     canvas.addChild(txt1);    

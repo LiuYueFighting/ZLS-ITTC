@@ -57,16 +57,7 @@
     #btn_upS{
     float:left;
     }
-    #txt_speed{
-    float:left;
-    text-align: center;
-    width:50px;
-    height:34px;
-    padding-top:7px;
-    display: inline-block;
-    background-color:#5cc0de;
-    color:#ffffff;
-    }
+
     #btn_downS{
     float:left;
     }
