@@ -204,7 +204,7 @@ div.menuSecond{
 	text-align:center;
 	text-indent:0;
 }
-menuSecond{
+.menuSecond:hover {
 	background-color: rgba(0, 51, 255, 0.8);
 	cursor: pointer;
 	width: 60px;

@@ -177,7 +177,7 @@ div.menuSecond{
 	text-align:center;
 	text-indent:0;
 }
-menuSecond{
+.menuSecond:hover {
 	background-color: rgba(0, 51, 255, 0.8);
 	cursor: pointer;
 	width: 60px;
@@ -293,13 +293,13 @@ menuSecond{
 				</div>
 				<div id="icon">
 					<div class="menuBar" id="menu">菜单</div>
-	        		<div class="menu" id="add">添加</div>
-    	    		<div class="menu" id="edit">编辑</div>
-        			<div class="menu" id="delete">删除</div>
-        			<div class="menu" id="search">查询</div>
-        			<div class="menu" id="export">导出</div>
-	        		<div class="menu" id="import">导入</div>
-    	    		<div class="menu" id="template"><a href="download/OutStat.xls" style="height:50px">模板</a></div>
+	        		<div class="menuSecond" id="add">添加</div>
+    	    		<div class="menuSecond" id="edit">编辑</div>
+        			<div class="menuSecond" id="delete">删除</div>
+        			<div class="menuSecond" id="search">查询</div>
+        			<div class="menuSecond" id="export">导出</div>
+	        		<div class="menuSecond" id="import">导入</div>
+    	    		<div class="menuSecond" id="template"><a href="download/OutStat.xls" style="height:50px">模板</a></div>
 				</div>
 				<div id="tab_export" style="display:none">
 					<form action="${pageContext.request.contextPath}/importDataAnalysis"
