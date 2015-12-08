@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="css/breadcrumb.css" />
 
 <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="easyui/themes/default/datagrid.css" />
 <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 <link rel="stylesheet" type="text/css" href="style/myeasyui.css" />
 <script src="js/bootstrap.min.js"></script>
@@ -163,7 +164,7 @@ div.icon {
  	
 }
 
-div.menuBar {  
+#menu {  
  	line-height:70px;  
 	font-family: '微软雅黑';
 	font-weight: 100;
@@ -183,12 +184,12 @@ div.menuBar {
 	z-index:999;
 }
 
-div.menuBar:hover{
+#menu:hover{
 	cursor: pointer;
 }
 
 
-div.menu{   
+div.menuSecond{   
  	line-height:40px;  
 	font-family: '微软雅黑';
 	font-weight: 100;
@@ -203,7 +204,7 @@ div.menu{
 	text-align:center;
 	text-indent:0;
 }
-div.menu:hover{
+menuSecond{
 	background-color: rgba(0, 51, 255, 0.8);
 	cursor: pointer;
 	width: 60px;
@@ -212,7 +213,7 @@ div.menu:hover{
 	line-height:50px;
 }
 
-.menu {
+.menuSecond {
 	position: absolute;
 	top: 110px;
 	left: 120px;
@@ -251,21 +252,6 @@ th, td, input, option {
 	top: 5px;
 }
 
-/*
-#table {
-	text-align: center;
-	border-width: 1px;
-}
-
-tr, td, th {
-	
-	text-align: center;
-	border-spacing:2px;
-	padding:2px;
-}
-input {
-text-align: center;
-}*/
 </style>
 </head>
 <body>
@@ -300,13 +286,13 @@ text-align: center;
 				
 				<div class="icon">
     				<div class="menuBar" id="menu">菜单</div>
-        			<div class="menu" id="add">添加</div>
-        			<div class="menu" id="edit">编辑</div>
-        			<div class="menu" id="delete">删除</div>
-        			<div class="menu" id="search">查询</div>
-        			<div class="menu" id="export">导出</div>
-        			<div class="menu" id="import">导入</div>
-        			<div class="menu" id="template"><a href="download/DataAnalysis.xls" style="height:50px">模板</a></div>
+        			<div class="menuSecond" id="add">添加</div>
+        			<div class="menuSecond" id="edit">编辑</div>
+        			<div class="menuSecond" id="delete">删除</div>
+        			<div class="menuSecond" id="search">查询</div>
+        			<div class="menuSecond" id="export">导出</div>
+        			<div class="menuSecond" id="import">导入</div>
+        			<div class="menuSecond" id="template"><a href="download/DataAnalysis.xls" style="height:50px">模板</a></div>
 				</div><!-- icon -->
 					
 				<div id="tab_export" style="display:none">
@@ -556,8 +542,8 @@ text-align: center;
 			
 				<!-- 编辑数据的div，默认看不到 -->
 
-
+	<jsp:include page="down.jsp" />
 </body>
-<jsp:include page="down.jsp" />
+
 </html>
 
