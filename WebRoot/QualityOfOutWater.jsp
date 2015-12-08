@@ -137,53 +137,60 @@
 		height: 180px;
  	}
 
- 	.menuBar {  
- 		position: absolute;
-		left: 110px;
-		top: 110px;
-		width: 70px;
-		height: 70px;
- 		line-height:70px;  
-		font-weight: 100;
-		font-size: 20px;
-		border: 1px solid #CCCCCC;
-		border-radius: 90%;
-		color: #FFFFFF;
-		background-color: #3399FF; 
-		display: block;
-		text-align:center;
-		z-index:999;
-	}
+ 	#menu {  
+ 	line-height:70px;  
+	font-family: '微软雅黑';
+	font-weight: 100;
+	font-size: 20px;
+	border: 1px solid #CCCCCC;
+	border-radius: 90%;
+	color: #FFFFFF;
+	background-color: #3399FF; 
+	display: block;
+	height: 70px;
+	width: 70px;
+	text-align:center;
+	text-indent:0;
+	position: absolute;
+	left: 110px;
+	top: 110px;
+	z-index:999;
+}
 
-	.menuBar:hover {
-		cursor: pointer;
-	}
+#menu:hover{
+	cursor: pointer;
+}
 
-	.menu {  
-		position: absolute;
-		top: 110px;
-		left: 120px;
-		width: 50px;
-		height: 50px;
- 		line-height:40px;  
-		font-weight: 100;
-		font-size: 16px;
-		border: 1px solid #CCCCCC;
-		border-radius: 90%;
-		color: #FFFFFF;
-		background-color: #3399FF; 
-		display: block;
-		text-align:center;
-	}
 
-	.menu:hover{
-		background-color: rgba(0, 51, 255, 0.8);
-		cursor: pointer;
-		width: 60px;
-		height: 60px;
-		font-size: 18px;
-		line-height:50px;
-	}
+div.menuSecond{   
+ 	line-height:40px;  
+	font-family: '微软雅黑';
+	font-weight: 100;
+	font-size: 16px;
+	border: 1px solid #CCCCCC;
+	border-radius: 90%;
+	color: #FFFFFF;
+	background-color: #3399FF; 
+	display: block;
+	height: 50px;
+	width: 50px;
+	text-align:center;
+	text-indent:0;
+}
+menuSecond{
+	background-color: rgba(0, 51, 255, 0.8);
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+	font-size: 18px;
+	line-height:50px;
+}
+
+.menuSecond {
+	position: absolute;
+	top: 110px;
+	left: 120px;
+}
 
 	#template {
 		vertical-align: middle;

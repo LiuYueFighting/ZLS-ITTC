@@ -147,7 +147,7 @@ div.icon {
  	
 }
 
-div.menuBar {  
+#menu {  
  	line-height:70px;  
 	font-family: '微软雅黑';
 	font-weight: 100;
@@ -167,12 +167,12 @@ div.menuBar {
 	z-index:999;
 }
 
-div.menuBar:hover{
+#menu:hover{
 	cursor: pointer;
 }
 
 
-div.menu{   
+div.menuSecond{   
  	line-height:40px;  
 	font-family: '微软雅黑';
 	font-weight: 100;
@@ -187,7 +187,7 @@ div.menu{
 	text-align:center;
 	text-indent:0;
 }
-div.menu:hover{
+menuSecond{
 	background-color: rgba(0, 51, 255, 0.8);
 	cursor: pointer;
 	width: 60px;
@@ -196,7 +196,7 @@ div.menu:hover{
 	line-height:50px;
 }
 
-.menu {
+.menuSecond {
 	position: absolute;
 	top: 110px;
 	left: 120px;
