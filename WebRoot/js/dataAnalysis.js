@@ -293,6 +293,7 @@ function listDataAnalysis(data) {
 	});
 }
 
+
 var cmenu;
 function createColumnMenu(){
 	cmenu = $('<div/>').appendTo('body');
@@ -324,6 +325,9 @@ function createColumnMenu(){
 		});
 	}
 }
+
+
+	
 //显示编辑窗口
 function showEditForm() {
 	$("#tabEdit").dialog({
