@@ -290,20 +290,6 @@
     }
 
 
-        oCanvas.domReady(function () {
-            var canvas=oCanvas.create({
-                canvas: "#canvas_main",
-                background: "#ccc",
-                fps: 15
-            });
-            var bg = canvas.display.image({
-                x: 0,
-                y: 0,
-                image: "image/main.jpg"
-            });
-            canvas.addChild(bg);
-        });
-
     function showName(e){
     if(e.checked==true){
     document.getElementById("name_QS" ).style.display="block";
@@ -523,7 +509,7 @@
     <a href="#" id="nextPage">西侧</a>
     <a href="#" id="lastPage">东侧</a>
     <a  href="#" id="export">生成方案</a>
-    <a  href="#" id="reset" onclick="clearAll()">重置</a>
+    <a  href="#" id="reset">重置</a>
     </div>
     </div>
     </div>
