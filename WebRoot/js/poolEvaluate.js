@@ -57,41 +57,41 @@ $(document).ready(function() {
 				//duration: 'slow'
 			});
 			$('#edit').animate({
-				'left': '60px',
-				'top': '16px'
+				'left': '49px',
+				'top': '21px'
 			},{
 				//duration: 'slow'
 			});	
 			$('#delete').animate({
-				'left': '16px',
-				'top': '60px'
+				'left': '6px',
+				'top': '83px'
 			},{
 				//duration: 'slow'
 			});	
 			$('#search').animate({
-				'left': '0px',
-				'top': '120px'
+				'left': '6px',
+				'top': '157px'
 			},{
 				//duration: 'slow'
 			});
 			$('#export').animate({
-				'left': '16px',
-				'top': '180px'
+				'left': '49px',
+				'top': '217px'
 			},{
 				//duration: 'slow'
 			});
 			$('#import').animate({
-				'left': '60px',
-				'top': '224px'
-			},{
-				//duration: 'slow'
-			});
-			$('#template').animate({
 				'left': '120px',
 				'top': '250px'
 			},{
 				//duration: 'slow'
 			});
+//			$('#template').animate({
+//				'left': '120px',
+//				'top': '250px'
+//			},{
+//				//duration: 'slow'
+//			});
 
 		} else {
 			$('#menu').text("菜单");
@@ -131,12 +131,12 @@ $(document).ready(function() {
 			},{
 				//duration: 'slow'
 			});
-			$('#template').animate({
-				'left': '120px',
-				'top': '110px'
-			},{
-				//duration: 'slow'
-			});
+//			$('#template').animate({
+//				'left': '120px',
+//				'top': '110px'
+//			},{
+//				//duration: 'slow'
+//			});
 		}
 		
 	});

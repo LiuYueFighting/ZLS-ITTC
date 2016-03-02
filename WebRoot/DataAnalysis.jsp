@@ -47,7 +47,7 @@ body {
 	font-family: '微软雅黑', 'Source Sans Pro';
 	font-size: 15px;
 	width: 1600px;
-	height: 1100px;
+	height: 1150px;
 	margin: 0px auto;
 }
 
@@ -56,7 +56,7 @@ body {
 	position: relative;
 	width: 1600px;
 	top:15px;
-	height: 1100px;
+	height: 1150px;
 	background-position: bottom;
 }
 
@@ -67,9 +67,20 @@ body {
 
 #tab_entity {
 	position: absolute;
-	top: 10px;
+	top: 160px;
 	left: 50px;
 	width: 1300px;
+}
+
+#gap {
+	position: relative;
+	top: 20px;
+	height: 40px;
+}
+
+#dataBody {
+	position: relative;
+	top: 80px;
 }
 
 #rightContainer {
@@ -97,23 +108,14 @@ body {
 
 #chooseIndex {
 	position: relative;
-	top: 20px;
+	top: 10px;
 	width: 200px;
-	height: 200px;
+	height: 110px;
 	padding: 5px;
 	inline-height: 30px;
 	/* border: 1px solid #95B87E; 
 	border: 0;*/
 	border: 1px solid #95B8E7;
-}
-
-#tab_export {
-	position: absolute;
-	left: 25px;
-	top: 830px;
-	z-index: 999;
-	font-size: 14px;
-	width: 200px;
 }
 
 #dataPreiodContainer {
@@ -156,8 +158,8 @@ body {
 }
 
 div.icon {
-	position: absolute;
-	top: 520px;
+	position: relative;
+	top: 40px;
 	left: 0px;
 	width: 180px;
 	height: 180px;
@@ -219,6 +221,7 @@ div.menuSecond{
 	left: 120px;
 }
 
+/*
 #template {
 	vetical-align:middle;
 }
@@ -241,6 +244,17 @@ div.menuSecond{
 	font-size: 18px;
 	line-height:50px;
 }
+*/
+
+#tab_export {
+	position: relative;
+	left: 25px;
+	top: 170px;
+	z-index: 999;
+	font-size: 14px;
+	width: 200px;
+}
+
 
 th, td, input, option {
 	text-align:center;
@@ -250,6 +264,112 @@ th, td, input, option {
 	position: relative;
 	left: 940px;
 	top: 5px;
+}
+
+
+
+#calculate p, #calculate tr{
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+#calculate {
+	position: absolute;
+width: 1300px;
+height: 120px;
+border: 2px solid rgb(149, 184, 231);
+background-color: #C9ECF3;
+left: 50px;
+top: 10px;
+	}
+#content {
+	position: relative;
+	font-family: "微软雅黑","Source Sans Pro";
+	font-size: 20px;
+	height: 25px;
+	color: blue;
+	font-weight: bold;
+	left: 20px;
+	top: 10px;
+}
+#inputTable{
+	position: relative;
+    left: 0;
+    height: 50px;
+    float: left;
+    border-spacing: 5px 5px;
+    border-collapse: separate;
+    font-size: 17px;
+    top: 10px;
+    left: 25px;
+}
+#outputTable{
+	position: relative;
+    left: 45px;
+    height: 50px;
+    float: left;
+    border-spacing: 5px 5px;
+    border-collapse: separate;
+    font-size: 17px;
+    top: 10px;
+}
+#calculateButton {
+	position: relative;
+    top: 49px;
+    float: left;
+    left: 35px;
+    height: 30px;
+    width: 90px;
+    font-size: 20px;
+}
+#calculate th {
+	width: 156px;
+	height: 30px;
+}
+#calculate input{
+	font-size: 20px;
+	width: 140px;
+	text-align: center;
+	height: 30px;
+}
+
+
+.button {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	text-shaddow: 0 1px 1px rgba(0, 0, 0, 0.3);
+	border-radius: .5em;
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.button:hover {
+	text-decoration: none;
+}
+.button:active {
+	position: relative;
+	top: 1px;
+}
+
+.blue {
+	color: #d9eef7;
+	border: solid 1px #0076a3;
+	background: #0095cd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+}
+
+.blue:hover {
+	background: #007edd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+}
+.blue:active {
+	color: #00bed6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
 }
 
 </style>
@@ -262,11 +382,50 @@ th, td, input, option {
     </ol>
 	<div id="myPage">
 		<div id="myContent" style="overflow: hidden">
+			<div id="calculate">
+				<div id="content">
+					<p id="text">水位预测</p>
+				</div>
+				<table id="inputTable">
+					<tr>
+						<th>原始水位/m</th>
+						<th>蓄水量/m<sup>3</sup></th>
+						<th>虹吸滤池反冲洗/m<sup>3</sup></th>
+						<th>炭池反冲洗/m<sup>3</sup></th>
+						<th>机加池排泥/m<sup>3</sup></th>
+						<th>回流进水/m<sup>3</sup></th>
+					</tr>
+					<tr>
+						<th><input id="yssw" type="text"/></th>
+						<th><input id="xsl" type="text"/></th>
+						<th><input id="hx" type="text"/></th>
+						<th><input id="tc" type="text"/></th>
+						<th><input id="jjc" type="text"/></th>
+						<th><input id="hljs" type="text"/></th>
+					</tr>
+				</table>
+				<button id="calculateButton" type="button" class="blue button">预  测</button>
+				<table id="outputTable">
+					<tr>
+						<th>预测水位/m</th>
+					</tr>
+					<tr>
+						<th><input id="ycsw" type="text" value="0"/></th>
+					</tr>
+				</table>
+			</div>
+			
+			
+			
+			
+			
+			
 			<div id="tab_entity">
+				<div id="imageContainer" style="max-width: 1300px; height: 600px;"></div>
+				<div id="dataBody">
 				<table id="dataAnalysisbody" class="easyui-datagrid"
 					style="max-width: 1300px; height: 300px;" ></table>
-				<div style="height:40px"></div>
-				<div id="imageContainer" style="max-width: 1300px; height: 600px;"></div>
+				</div>
 			</div><!-- "tab_entity" -->
 			<div id="rightContainer">
 				<div id="treeGuid" style="overflow: scroll">

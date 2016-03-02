@@ -46,7 +46,7 @@ body {
 	font-family: '微软雅黑', 'Source Sans Pro';
 	font-size: 15px;
 	width: 1600px;
-	height: 1100px;
+	height: 1150px;
 	margin: 0px auto;
 }
 
@@ -55,7 +55,7 @@ body {
 	position: relative;
 	width: 1600px;
 	top:15px;
-	height: 1100px;
+	height: 1150px;
 	background-position: bottom;
 }
 
@@ -96,9 +96,9 @@ body {
 
 #chooseIndex {
 	position: relative;
-	top: 20px;
+	top: 10px;
 	width: 200px;
-	height: 200px;
+	height: 110px;
 	padding: 5px;
 	inline-height: 30px;
 	/* border: 1px solid #95B87E;
@@ -221,28 +221,6 @@ div.icon {
 	left: 120px;
 }
 
-#template {
-	vetical-align:middle;
-}
-
-#template:hover a{
-	font-size: 18px;
-	line-height:50px;
-}
-
-#template a {
-	line-height:40px;  
-	font-family: '微软雅黑';
-	font-weight: 100;
-	font-size: 16px;
-	color: #FFFFFF;
-	text-decoration:none;
-}
-
-#template a:hover {
-	font-size: 18px;
-	line-height:50px;
-}
 
 th, td, input, option {
 	text-align:center;
