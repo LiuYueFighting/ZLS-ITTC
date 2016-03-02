@@ -101,9 +101,9 @@ body {
 	height: 200px;
 	padding: 5px;
 	inline-height: 30px;
-	border: 1px solid #95B87E;
-	
-	border: 0;
+	/* border: 1px solid #95B87E;
+	border: 0; */
+	border: 1px solid #95B8E7;
 }
 
 #tab_export {
@@ -295,9 +295,9 @@ text-align: center;
 				<div id="chooseIndex">
 					<form id="indexForm">
 						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择膜池编号：</p>
-						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">膜池01#</label><br />
-						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">膜池02#</label><br />
-						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">膜池03#</label><br />
+						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1#膜池</label><br />
+						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">2#膜池</label><br />
+						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">3#膜池</label><br />
 					</form>
 				</div><!-- chooseIndex -->
 				
@@ -309,7 +309,7 @@ text-align: center;
         			<div class="menuSecond" id="search">查询</div>
         			<div class="menuSecond" id="export">导出</div>
         			<div class="menuSecond" id="import">导入</div>
-        			<div class="menuSecond" id="template"><a href="download/DataAnalysis.xls" style="height:50px">模板</a></div>
+        			<!-- <div class="menuSecond" id="template"><a href="download/DataAnalysis.xls" style="height:50px">模板</a></div> -->
 				</div><!-- icon -->
 					
 				<div id="tab_export" style="display:none">
@@ -345,9 +345,9 @@ text-align: center;
 								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;水 池 编 号 : &nbsp;
 								<select class="easyui-combobox textbox " id="PoolID" name="dataAnalysis.PoolID"
 									style="width: 200px; height: 25px" data-options="required:true,missingMessage:'请输入水池编号'">
-									<option value="MTG_QingS_SC01" selected>膜池01#</option>
-									<option value="MTG_QingS_SC02">膜池02#</option>
-									<option value="MTG_QingS_SC03">膜池03#</option>
+									<option value="MTG_QingS_SC01" selected>1#膜池</option>
+									<option value="MTG_QingS_SC02">2#膜池</option>
+									<option value="MTG_QingS_SC03">3#膜池</option>
 								</select>
 							</dl>
 							<dl>

@@ -120,6 +120,7 @@
 		padding: 5px;
 		inline-height: 30px;
 		text-align: left;
+		border: 1px solid #95B8E7;
 	}
 /*
 	#chooseIndex p {
@@ -286,9 +287,9 @@ div.menuSecond{
 				<div id="chooseIndex">
 					<form id="indexForm">
 						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择出水池编号：</p>
-						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">出水池01#</label><br />
-						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">出水池02#</label><br />
-						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">出水池03#</label><br />
+						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1#出水池</label><br />
+						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">2#出水池</label><br />
+						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">3#出水池</label><br />
 					</form>
 				</div>
 				<div id="icon">
@@ -299,7 +300,7 @@ div.menuSecond{
         			<div class="menuSecond" id="search">查询</div>
         			<div class="menuSecond" id="export">导出</div>
 	        		<div class="menuSecond" id="import">导入</div>
-    	    		<div class="menuSecond" id="template"><a href="download/OutStat.xls" style="height:50px">模板</a></div>
+    	    		<!-- <div class="menuSecond" id="template"><a href="download/OutStat.xls" style="height:50px">模板</a></div> -->
 				</div>
 				<div id="tab_export" style="display:none">
 					<form action="${pageContext.request.contextPath}/importDataAnalysis"
@@ -334,9 +335,9 @@ div.menuSecond{
 							<td>编号</td>
 							<td><select id="PoolID" name="outStat.PoolID" type="text" class="easyui-combobox"
 									style="width: 200px; height: 25px">
-									<option value="MTG_JJC_SC01" selected>出水池01#</option>
-									<option value="MTG_JJC_SC02">出水池02#</option>
-									<option value="MTG_JJC_SC03">出水池03#</option>
+									<option value="MTG_JJC_SC01" selected>1#出水池</option>
+									<option value="MTG_JJC_SC02">2#出水池</option>
+									<option value="MTG_JJC_SC03">3#出水池</option>
 								</select>
 							</td>
 						</tr>

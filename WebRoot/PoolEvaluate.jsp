@@ -99,9 +99,9 @@ body {
 	height: 200px;
 	padding: 5px;
 	inline-height: 30px;
-	border: 1px solid #95B87E;
-	
-	border: 0;
+	/* border: 1px solid #95B87E;
+	border: 0; */
+	border: 1px solid #95B8E7;
 }
 
 
@@ -308,9 +308,9 @@ th, td, input, option {
 				<div id="chooseIndex">
 					<form id="indexForm">
 						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择机加池编号：</p>
-						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">机加池01#</label><br />
-						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">机加池02#</label><br />
-						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">机加池03#</label><br />
+						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1#机加池</label><br />
+						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">2#机加池</label><br />
+						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">3#机加池</label><br />
 					</form>
 				</div>
 				<!-- icon -->
@@ -322,7 +322,7 @@ th, td, input, option {
         			<div class="menuSecond" id="search">查询</div>
         			<div class="menuSecond" id="export">导出</div>
         			<div class="menuSecond" id="import">导入</div>
-        			<div class="menuSecond" id="template"><a href="download/PoolEvaluate.xls" style="height:50px">模板</a></div>
+        			<!-- <div class="menuSecond" id="template"><a href="download/PoolEvaluate.xls" style="height:50px">模板</a></div> -->
         		</div>
         		<!-- tab_export -->
 				<div id="tab_export" style="display:none">
@@ -367,9 +367,9 @@ th, td, input, option {
 					<select class="easyui-combobox" id="PoolID"
 						name="poolEvaluate.PoolID" style="width:200px;height:25px"
 						data-options="required:true,missingMessage:'请输入机加池编号'" >
-						<option value="MTG_JJC_SC01" selected>机加池01#</option>
-						<option value="MTG_JJC_SC02">机加池02#</option>
-						<option value="MTG_JJC_SC03">机加池03#</option>
+						<option value="MTG_JJC_SC01" selected>1#机加池</option>
+						<option value="MTG_JJC_SC02">2#机加池</option>
+						<option value="MTG_JJC_SC03">3#机加池</option>
 					</select>	<br /><br /> 
 					&nbsp; &nbsp; &nbsp; PAC投加量 : &nbsp; 
 					<input class="easyui-numberbox textbox" style="width:195px;height:25px"
@@ -459,9 +459,9 @@ th, td, input, option {
 										<!-- 机加池编号 -->
 										<select id="PoolIDAdd1" name="poolEvaluate.PoolID"
 										class="easyui-combox" style="width: 100px; height: 25px">
-											<option value="MTG_JJC_SC01">机加池01#</option>
-											<option value="MTG_JJC_SC02">机加池02#</option>
-											<option value="MTG_JJC_SC03" selected>机加池03#</option>
+											<option value="MTG_JJC_SC01">1#机加池</option>
+											<option value="MTG_JJC_SC02">2#机加池</option>
+											<option value="MTG_JJC_SC03" selected>3#机加池</option>
 									</select>
 									</td>
 									<td style="width: 82px; height: 26px" >
@@ -542,9 +542,9 @@ th, td, input, option {
 						<input class="easyui-datebox" style="width:150px" id="highT" name="highT"/ ><br /><br />
 						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水  &nbsp;池 &nbsp; 编  &nbsp;号 : &nbsp; 
 						<select	class="easyui-combobox" type="text" style="width:150px"	id="searchPoolID" name="searchPoolID" >
-							<option value="MTG_JJC_SC01">机加池01#</option>
-							<option value="MTG_JJC_SC02">机加池01#</option>
-							<option value="MTG_JJC_SC03">机加池01#</option>
+							<option value="MTG_JJC_SC01">1#机加池</option>
+							<option value="MTG_JJC_SC02">2#机加池</option>
+							<option value="MTG_JJC_SC03">3#机加池</option>
 						</select><br /><br />
 						&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 来  &nbsp;水 &nbsp; 浊  &nbsp;度 : &nbsp;
 						<input class="easyui-numberbox" id="lowNTU" name="lowNTU" style="width:120px" value="0"></input> ~ 

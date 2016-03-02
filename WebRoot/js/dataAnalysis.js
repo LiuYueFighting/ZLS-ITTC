@@ -226,7 +226,7 @@ function listDataAnalysis(data) {
 		singleSelect : true, // 每次只选中一行
 		loadMsg : '正在加载项目列表，请稍后...',
 		remoteSort : false, // 排序，true表示从服务器端排序
-		
+		collapsible:true,
 //		pagination : true, // 在底部显示分页工具栏
 //		pageSize : 5, // 指定每页的大小，服务器要加上page属性和total属性
 //		pageList : [ 3,5,10,15,20], // 可以设置每页记录条数的列表，服务器要加上rows属性
@@ -604,20 +604,20 @@ function dealSearch() {
 		var params = $("#frmSearch").form('clear').serialize(); //params = 'searchT=&searchPoolID='
 		switch(buttonID) {
 		case 'index1':
-			title = '清水池01#  水位计算表';
-			ImageTitle = "清水池01#  水位预测图 ";
+			title = '1# 清水池水位计算表';
+			ImageTitle = "1#清水池水位预测图 ";
 			newParams = params + 'MTG_QingS_SC01';
 			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
 			break;
 		case 'index2':
-			title = '清水池02#  水位计算表';
-			ImageTitle = "清水池02#  水位预测图 ";
+			title = '2#清水池水位计算表';
+			ImageTitle = "2#清水池水位预测图 ";
 			newParams = params + 'MTG_QingS_SC02';
 			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
 			break;
 		case 'index3':
-			title = '清水池03#  水位计算表';
-			ImageTitle = "清水池03#  水位预测图 ";
+			title = '3#清水池水位计算表';
+			ImageTitle = "3#清水池水位预测图 ";
 			newParams = params + 'MTG_QingS_SC03';
 			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
 			break;
@@ -639,20 +639,20 @@ function dealSearch() {
 		if(!testTime && !testID) {  //日期空 ID空     searchT=&searchPoolID=
 			switch(buttonID) {
 				case 'index1':
-					titleTemp = '清水池01#  水位计算表';
-					ImageTitleTemp = "清水池01#  水位预测图 ";
+					titleTemp = '1#清水池水位计算表';
+					ImageTitleTemp = "1#清水池水位预测图 ";
 					newParams = params + 'MTG_QingS_SC01';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
 					break;
 				case 'index2':
-					titleTemp = '清水池02#  水位计算表';
-					ImageTitleTemp = "清水池02#  水位预测图 ";
+					titleTemp = '2#清水池水位计算表';
+					ImageTitleTemp = "2#清水池水位预测图 ";
 					newParams = params + 'MTG_QingS_SC02';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
 					break;
 				case 'index3':
-					titleTemp = '清水池03#  水位计算表';
-					ImageTitleTemp = "清水池03#  水位预测图 ";
+					titleTemp = '3#清水池水位计算表';
+					ImageTitleTemp = "3#清水池水位预测图 ";
 					newParams = params + 'MTG_QingS_SC03';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
 					break;
@@ -670,23 +670,23 @@ function dealSearch() {
 			var index = params.slice(-1);
 			switch(index) {
 				case '1':
-					titleTemp = '清水池01#  水位计算表';
-					ImageTitleTemp = "清水池01#  水位预测图 ";
+					titleTemp = '1#清水池水位计算表';
+					ImageTitleTemp = "1#清水池水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 					break;
 				case '2':
-					titleTemp = '清水池02#  水位计算表';
-					ImageTitleTemp = "清水池02#  水位预测图 ";
+					titleTemp = '2#清水池水位计算表';
+					ImageTitleTemp = "2#清水池水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
 					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
 					//alert($("input[name='chooseIndexButton'][checked]").val());
 					break;
 				case '3':
-					titleTemp = '清水池03#  水位计算表';
-					ImageTitleTemp = "清水池03#  水位预测图 ";
+					titleTemp = '3#清水池水位计算表';
+					ImageTitleTemp = "3#清水池水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
@@ -705,20 +705,20 @@ function dealSearch() {
 		if(testTime && !testID) {  //日期不空 ID空     searchT=XXXX-XX-XX&searchPoolID=
 			switch(buttonID) {
 				case 'index1':
-					titleTemp = '清水池01#  水位计算表';
-					ImageTitleTemp = "清水池01#  水位预测图 ";
+					titleTemp = '1#清水池水位计算表';
+					ImageTitleTemp = "1#清水池水位预测图 ";
 					newParams = params + 'MTG_QingS_SC01';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
 					break;
 				case 'index2':
-					titleTemp = '清水池02#  水位计算表';
-					ImageTitleTemp = "清水池02#  水位预测图 ";
+					titleTemp = '2#清水池水位计算表';
+					ImageTitleTemp = "2#清水池水位预测图 ";
 					newParams = params + 'MTG_QingS_SC02';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
 					break;
 				case 'index3':
-					titleTemp = '清水池03#  水位计算表';
-					ImageTitleTemp = "清水池03#  水位预测图 ";
+					titleTemp = '3#清水池水位计算表';
+					ImageTitleTemp = "3#清水池水位预测图 ";
 					newParams = params + 'MTG_QingS_SC03';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
 					break;
@@ -737,22 +737,22 @@ function dealSearch() {
 			var index = params.slice(-1);
 			switch(index) {
 				case '1':
-					titleTemp = '清水池01#  水位计算表';
-					ImageTitleTemp = "清水池01#  水位预测图 ";
+					titleTemp = '1#清水池水位计算表';
+					ImageTitleTemp = "1#清水池水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 					break;
 				case '2':
-					titleTemp = '清水池02#  水位计算表';
-					ImageTitleTemp = "清水池02#  水位预测图 ";
+					titleTemp = '2#清水池水位计算表';
+					ImageTitleTemp = "2#清水池水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
 					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
 					break;
 				case '3':
-					titleTemp = '清水池03#  水位计算表';
-					ImageTitleTemp = "清水池03#  水位预测图 ";
+					titleTemp = '3#清水池水位计算表';
+					ImageTitleTemp = "3#清水池水位预测图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
@@ -774,20 +774,20 @@ function dealSearch() {
 		strDate = params.substring(8, 18);  //'XXXX-XX-XX'
 		switch(buttonID) {  //先查看现在radio的值为多少
 			case 'index1':
-				title = '清水池01#  水位计算表' + '' + strDate;
-				ImageTitle = "清水池01#  水位预测图 " + ' ' + strDate;
+				title = '1#清水池水位计算表' + '' + strDate;
+				ImageTitle = "1#清水池水位预测图 " + ' ' + strDate;
 				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_QingS_SC01';
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
 				break;
 			case 'index2':
-				title = '清水池02#  水位计算表' + '' + strDate;
-				ImageTitle = "清水池02#  水位预测图 " + '' + strDate;
+				title = '2#清水池水位计算表' + '' + strDate;
+				ImageTitle = "2#清水池水位预测图 " + '' + strDate;
 				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_QingS_SC02';
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
 				break;
 			case 'index3':
-				title = '清水池03#  水位计算表' + '' + strDate;
-				ImageTitle = "清水池03#  水位预测图 " + '' + strDate;
+				title = '3#清水池水位计算表' + '' + strDate;
+				ImageTitle = "3#清水池水位预测图 " + '' + strDate;
 				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_QingS_SC03';
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
 				break;

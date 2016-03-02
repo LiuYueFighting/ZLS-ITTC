@@ -717,26 +717,26 @@ function dealSearch() {
 		// lowT=&highT=&searchPoolID=&lowNTU=0&highNTU=100&lowAlgaeContent=0&highAlgaeContent=100&lowOutNTU=0&highOutNTU=100&lowSV=0.00&highSV=100.00
 		switch(buttonID) {
 		case 'index1':
-			title = '机加池01#  分析表';
-			ImageTitle1 = "机加池01#  浊度分析图 ";
-			ImageTitle2 = "机加池01#  原水藻类/水温/预加氯量分析图 ";
-			ImageTitle3 = "机加池01#  基本运行参数分析图 ";
+			title = '1# 机加池分析表';
+			ImageTitle1 = "1# 机加池浊度分析图 ";
+			ImageTitle2 = "1# 机加池原水藻类/水温/预加氯量分析图 ";
+			ImageTitle3 = "1# 机加池基本运行参数分析图 ";
 			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_JJC_SC01');
 			//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 			break;
 		case 'index2':
-			title = '机加池02#  分析表';
-			ImageTitle1 = "机加池02#  浊度分析图 ";
-			ImageTitle2 = "机加池02#  原水藻类/水温/预加氯量分析图 ";
-			ImageTitle3 = "机加池02#  基本运行参数分析图 ";
+			title = '2# 机加池分析表';
+			ImageTitle1 = "2# 机加池浊度分析图 ";
+			ImageTitle2 = "2# 机加池原水藻类/水温/预加氯量分析图 ";
+			ImageTitle3 = "2# 机加池基本运行参数分析图 ";
 			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_JJC_SC02');
 			//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 			break;
 		case 'index3':
-			title = '机加池03#  分析表';
-			ImageTitle1 = "机加池03#  浊度分析图 ";
-			ImageTitle2 = "机加池03#  原水藻类/水温/预加氯量分析图 ";
-			ImageTitle3 = "机加池03#  基本运行参数分析图 ";
+			title = '3# 机加池分析表';
+			ImageTitle1 = "3# 机加池浊度分析图 ";
+			ImageTitle2 = "3# 机加池原水藻类/水温/预加氯量分析图 ";
+			ImageTitle3 = "3# 机加池基本运行参数分析图 ";
 			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_JJC_SC03');
 			//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
 			break;
@@ -774,28 +774,28 @@ function dealSearch() {
 				TimeStr = lowTimeStr;
 			switch(index) {
 				case '1':
-					title = '机加池01#  分析表' + ' ' + TimeStr;
-					ImageTitle1 = "机加池01#  浊度分析图 " + ' ' + TimeStr;
-					ImageTitle2 = "机加池01#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
-					ImageTitle3 = "机加池01#  基本运行参数分析图 " + ' ' + TimeStr;
+					title = '1# 机加池分析表' + ' ' + TimeStr;
+					ImageTitle1 = "1# 机加池浊度分析图 " + ' ' + TimeStr;
+					ImageTitle2 = "1# 机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+					ImageTitle3 = "1# 机加池基本运行参数分析图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 					newParams = params;
 					//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 					break;
 				case '2':
-					title = '机加池02#  分析表' + ' ' + TimeStr;
-					ImageTitle1 = "机加池02#  浊度分析图 " + ' ' + TimeStr;
-					ImageTitle2 = "机加池02#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
-					ImageTitle3 = "机加池02#  基本运行参数分析图 " + ' ' + TimeStr;
+					title = '2# 机加池分析表' + ' ' + TimeStr;
+					ImageTitle1 = "2# 机加池浊度分析图 " + ' ' + TimeStr;
+					ImageTitle2 = "2# 机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+					ImageTitle3 = "2# 机加池基本运行参数分析图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
 					newParams = params;
 					//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 					break;
 				case '3':
-					title = '机加池03#  分析表' + ' ' + TimeStr;
-					ImageTitle1 = "机加池03#  浊度分析图 " + ' ' + TimeStr;
-					ImageTitle2 = "机加池03#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
-					ImageTitle3 = "机加池03#  基本运行参数分析图 " + ' ' + TimeStr;
+					title = '3# 机加池分析表' + ' ' + TimeStr;
+					ImageTitle1 = "3# 机加池浊度分析图 " + ' ' + TimeStr;
+					ImageTitle2 = "3# 机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+					ImageTitle3 = "3# 机加池基本运行参数分析图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 					newParams = params;
 					//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
@@ -833,26 +833,26 @@ function dealSearch() {
 			TimeStr = lowTimeStr;
 		switch(buttonID) {
 			case 'index1':
-				title = '机加池01#  分析表' + ' ' + TimeStr;
-				ImageTitle1 = "机加池01#  浊度分析图 " + ' ' + TimeStr;
-				ImageTitle2 = "机加池01#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
-				ImageTitle3 = "机加池01#  基本运行参数分析图 " + ' ' + TimeStr;
+				title = '1# 机加池分析表' + ' ' + TimeStr;
+				ImageTitle1 = "1# 机加池浊度分析图 " + ' ' + TimeStr;
+				ImageTitle2 = "1# 机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+				ImageTitle3 = "1# 机加池基本运行参数分析图 " + ' ' + TimeStr;
 				newParams = params;
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 				break;
 			case 'index2':
-				title = '机加池02#  分析表' + ' ' + TimeStr;
-				ImageTitle1 = "机加池02#  浊度分析图 " + ' ' + TimeStr;
-				ImageTitle2 = "机加池02#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
-				ImageTitle3 = "机加池02#  基本运行参数分析图 " + ' ' + TimeStr;
+				title = '2# 机加池分析表' + ' ' + TimeStr;
+				ImageTitle1 = "2# 机加池浊度分析图 " + ' ' + TimeStr;
+				ImageTitle2 = "2# 机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+				ImageTitle3 = "2# 机加池基本运行参数分析图 " + ' ' + TimeStr;
 				newParams = params;
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 				break;
 			case 'index3':
-				title = '机加池03#  分析表' + ' ' + TimeStr;
-				ImageTitle1 = "机加池03#  浊度分析图 " + ' ' + TimeStr;
-				ImageTitle2 = "机加池03#  原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
-				ImageTitle3 = "机加池03#  基本运行参数分析图 " + ' ' + TimeStr;
+				title = '3# 机加池分析表' + ' ' + TimeStr;
+				ImageTitle1 = "3# 机加池浊度分析图 " + ' ' + TimeStr;
+				ImageTitle2 = "3# 机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
+				ImageTitle3 = "3# 机加池基本运行参数分析图 " + ' ' + TimeStr;
 				newParams = params;
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
 				break;
