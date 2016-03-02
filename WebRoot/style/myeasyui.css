@@ -8,7 +8,7 @@
 }
 /*表头字体大小*/
 .datagrid-header .datagrid-cell span {
-	font-size: 14px;
+	font-size: 16px;
 }
 /*设置表格行高*/
 .datagrid-row {
@@ -21,7 +21,7 @@
 
 /* 标题设计*/
 .panel-title {
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: bold;
 	color: #0E2D5F;
 	height: 25px;
@@ -140,4 +140,8 @@
     color: #004974;
     text-decoration: none;
 }
-		
+
+/*标签页标题字体大小  */
+.tabs-title {
+  font-size: 18px;
+}

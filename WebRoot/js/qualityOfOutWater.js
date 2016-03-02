@@ -236,11 +236,9 @@ function listOutStat(data) {
 		            },
 		            {field : 'NTU', title : '出水浊度', align :'center', sortable : true, width:100,
 		            	styler: function(value) {
-		            		if(value <= 0.2) {
+		            		if(value> 0.25 && value < 0.3){
 		            			return 'background-color:#FFFF00;font-weight:bolder;border:2px solid #FFFF00';
-		            		} else if(value> 0.2 && value < 0.8) {
-		            			return 'background-color:#66FF33;border:0';
-		            		} else {
+		            		} else if(value> 0.3) {
 		            			return 'background-color:#FF0033;font-weight:bolder;border:2px solid #FF0033' ;
 		            		}
 		            	}
@@ -249,16 +247,36 @@ function listOutStat(data) {
 		            	formatter : function(value) {  //只显示两位小数
 	            			  return value.toFixed(2);
 		            	},
+		            	styler: function(value) {
+		            		if(value < 0.3){
+		            			return 'background-color:#FFFF00;font-weight:bolder;border:2px solid #FFFF00';
+		            		} 
+		            	}
 		            },
 		            {field : 'fe', title : '铁含量', align :'center', sortable : true,width:100,
 		            	formatter : function(value) {  //只显示两位小数
 	            			  return value.toFixed(2);
 		            	},
+		            	styler: function(value) {
+		            		if(value> 0.2 && value < 0.3){
+		            			return 'background-color:#FFFF00;font-weight:bolder;border:2px solid #FFFF00';
+		            		} else if(value> 0.3) {
+		            			return 'background-color:#FF0033;font-weight:bolder;border:2px solid #FF0033' ;
+		            		}
+		            	}
+		            	
 		            },
 		            {field : 'al', title : '铝含量', align : 'center', sortable : true,width:100,
 		            	formatter : function(value) {  //只显示两位小数
 	            			  return value.toFixed(3);
 		            	},
+		            	styler: function(value) {
+		            		if(value> 0.15 && value < 0.2){
+		            			return 'background-color:#FFFF00;font-weight:bolder;border:2px solid #FFFF00';
+		            		} else if(value> 0.2) {
+		            			return 'background-color:#FF0033;font-weight:bolder;border:2px solid #FF0033' ;
+		            		}
+		            	}
 		            },
 		            ]],
 
@@ -550,20 +568,20 @@ function dealSearch() {
 		var params = $("#fromSearch").form('clear').serialize(); //params = 'searchT=&searchPoolID='
 		switch(buttonID) {
 		case 'index1':
-			title = '出水池01#  水质分析表';
-			ImageTitle = "出水池01#  水质分析图 ";
+			title = '1# 出水池水质分析表';
+			ImageTitle = "1# 出水池水质分析图 ";
 			newParams = params + 'MTG_JJC_SC01';
 			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 			break;
 		case 'index2':
-			title = '出水池02#  水质分析表';
-			ImageTitle = "出水池02#  水质分析图 ";
+			title = '2# 出水池水质分析表';
+			ImageTitle = "2# 出水池水质分析图 ";
 			newParams = params + 'MTG_JJC_SC02';
 			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 			break;
 		case 'index3':
-			title = '出水池03#  水质分析表';
-			ImageTitle = "出水池03#  水质分析图 ";
+			title = '3# 出水池水质分析表';
+			ImageTitle = "3# 出水池水质分析图 ";
 			newParams = params + 'MTG_JJC_SC03';
 			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
 			break;
@@ -585,20 +603,20 @@ function dealSearch() {
 		if(!testTime && !testID) {  //日期空 ID空     searchT=&searchPoolID=
 			switch(buttonID) {
 				case 'index1':
-					titleTemp = '出水池01#  水质分析表';
-					ImageTitleTemp = "出水池01#  水质分析图 ";
+					titleTemp = '1# 出水池水质分析表';
+					ImageTitleTemp = "1# 出水池水质分析图 ";
 					newParams = params + 'MTG_JJC_SC01';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 					break;
 				case 'index2':
-					titleTemp = '出水池02#  水质分析表';
-					ImageTitleTemp = "出水池02#  水质分析图 ";
+					titleTemp = '2# 出水池水质分析表';
+					ImageTitleTemp = "2# 出水池水质分析图 ";
 					newParams = params + 'MTG_JJC_SC02';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 					break;
 				case 'index3':
-					titleTemp = '出水池03#  水质分析表';
-					ImageTitleTemp = "出水池03#  水质分析图 ";
+					titleTemp = '3# 出水池水质分析表';
+					ImageTitleTemp = "3# 出水池水质分析图 ";
 					newParams = params + 'MTG_JJC_SC03';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
 					break;
@@ -616,22 +634,22 @@ function dealSearch() {
 			var index = params.slice(-1);
 			switch(index) {
 				case '1':
-					titleTemp = '出水池01#  水质分析表';
-					ImageTitleTemp = "出水池01#  水质分析图 ";
+					titleTemp = '1# 出水池水质分析表';
+					ImageTitleTemp = "1# 出水池水质分析图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 					break;
 				case '2':
-					titleTemp = '出水池02#  水质分析表';
-					ImageTitleTemp = "出水池02#  水质分析图 ";
+					titleTemp = '2# 出水池水质分析表';
+					ImageTitleTemp = "2# 出水池水质分析图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
 					break;
 				case '3':
-					titleTemp = '出水池03#  水质分析表';
-					ImageTitleTemp = "出水池03#  水质分析图 ";
+					titleTemp = '3# 出水池水质分析表';
+					ImageTitleTemp = "3# 出水池水质分析图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
@@ -650,20 +668,20 @@ function dealSearch() {
 		if(testTime && !testID) {  //日期不空 ID空     searchT=XXXX-XX-XX&searchPoolID=
 			switch(buttonID) {
 				case 'index1':
-					titleTemp = '出水池01#  水质分析表';
-					ImageTitleTemp = "出水池01#  水质分析图 ";
+					titleTemp = '1# 出水池水质分析表';
+					ImageTitleTemp = "1# 出水池水质分析图 ";
 					newParams = params + 'MTG_JJC_SC01';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 					break;
 				case 'index2':
-					titleTemp = '出水池02#  水质分析表';
-					ImageTitleTemp = "出水池02#  水质分析图 ";
+					titleTemp = '2# 出水池水质分析表';
+					ImageTitleTemp = "2# 出水池水质分析图 ";
 					newParams = params + 'MTG_JJC_SC02';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 					break;
 				case 'index3':
-					titleTemp = '出水池03#  水质分析表';
-					ImageTitleTemp = "出水池03#  水质分析图 ";
+					titleTemp = '3# 出水池水质分析表';
+					ImageTitleTemp = "3# 出水池水质分析图 ";
 					newParams = params + 'MTG_JJC_SC03';
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
 					break;
@@ -682,22 +700,22 @@ function dealSearch() {
 			var index = params.slice(-1);
 			switch(index) {
 				case '1':
-					titleTemp = '出水池01#  水质分析表';
-					ImageTitleTemp = "出水池01#  水质分析图 ";
+					titleTemp = '1# 出水池水质分析表';
+					ImageTitleTemp = "1# 出水池水质分析图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 					break;
 				case '2':
-					titleTemp = '出水池02#  水质分析表';
-					ImageTitleTemp = "出水池02#  水质分析图 ";
+					titleTemp = '2# 出水池水质分析表';
+					ImageTitleTemp = "2# 出水池水质分析图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
 					break;
 				case '3':
-					titleTemp = '出水池03#  水质分析表';
-					ImageTitleTemp = "出水池03#  水质分析图 ";
+					titleTemp = '3# 出水池水质分析表';
+					ImageTitleTemp = "3# 出水池水质分析图 ";
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
@@ -719,20 +737,20 @@ function dealSearch() {
 		strDate = params.substring(8, 18);  //'XXXX-XX-XX'
 		switch(buttonID) {  //先查看现在radio的值为多少
 			case 'index1':
-				title = '出水池01#  水质分析表' + '' + strDate;
-				ImageTitle = "出水池01#  水质分析图 " + ' ' + strDate;
+				title = '1# 出水池水质分析表' + '' + strDate;
+				ImageTitle = "1# 出水池水质分析图 " + ' ' + strDate;
 				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_JJC_SC01';
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 				break;
 			case 'index2':
-				title = '出水池02#  水质分析表' + '' + strDate;
-				ImageTitle = "出水池02#  水质分析图 " + ' ' + strDate;
+				title = '2# 出水池水质分析表' + '' + strDate;
+				ImageTitle = "2# 出水池水质分析图 " + ' ' + strDate;
 				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_JJC_SC02';
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 				break;
 			case 'index3':
-				title = '出水池03#  水质分析表' + '' + strDate;
-				ImageTitle = "出水池03#  水质分析图 " + ' ' + strDate;
+				title = '3# 出水池水质分析表' + '' + strDate;
+				ImageTitle = "3# 出水池水质分析图 " + ' ' + strDate;
 				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_JJC_SC03';
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
 				break;

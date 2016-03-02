@@ -102,9 +102,9 @@ body {
 	height: 200px;
 	padding: 5px;
 	inline-height: 30px;
-	border: 1px solid #95B87E;
-	
-	border: 0;
+	/* border: 1px solid #95B87E; 
+	border: 0;*/
+	border: 1px solid #95B8E7;
 }
 
 #tab_export {
@@ -278,9 +278,9 @@ th, td, input, option {
 				<div id="chooseIndex">
 					<form id="indexForm">
 						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择清水池编号：</p>
-						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">清水池01#</label><br />
-						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">清水池02#</label><br />
-						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">清水池03#</label><br />
+						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1#清水池</label><br />
+						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">2#清水池</label><br />
+						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">3#清水池</label><br />
 					</form>
 				</div><!-- chooseIndex -->
 				
@@ -292,7 +292,7 @@ th, td, input, option {
         			<div class="menuSecond" id="search">查询</div>
         			<div class="menuSecond" id="export">导出</div>
         			<div class="menuSecond" id="import">导入</div>
-        			<div class="menuSecond" id="template"><a href="download/DataAnalysis.xls" style="height:50px">模板</a></div>
+        			<!-- <div class="menuSecond" id="template"><a href="download/DataAnalysis.xls" style="height:50px">模板</a></div> -->
 				</div><!-- icon -->
 					
 				<div id="tab_export" style="display:none">
@@ -328,9 +328,9 @@ th, td, input, option {
 								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;水 池 编 号 : &nbsp;
 								<select class="easyui-combobox textbox " id="PoolID" name="dataAnalysis.PoolID"
 									style="width: 200px; height: 25px" data-options="required:true,missingMessage:'请输入水池编号'">
-									<option value="MTG_QingS_SC01" selected>清水池01#</option>
-									<option value="MTG_QingS_SC02">清水池02#</option>
-									<option value="MTG_QingS_SC03">清水池03#</option>
+									<option value="MTG_QingS_SC01" selected>1#清水池</option>
+									<option value="MTG_QingS_SC02">2#清水池</option>
+									<option value="MTG_QingS_SC03">3#清水池</option>
 								</select>
 							</dl>
 							<dl>
@@ -415,9 +415,9 @@ th, td, input, option {
 									<td style="width: 102px; height: 26px">
 										<!-- 水池编号 -->
 										<select id="PoolIDAdd1" name="dataAnalysis.PoolID" style="width: 100px; height: 25px">
-											<option value="MTG_QingS_SC01" selected>清水池01#</option>
-											<option value="MTG_QingS_SC02">清水池02#</option>
-											<option value="MTG_QingS_SC03">清水池03#</option>
+											<option value="MTG_QingS_SC01" selected>1#清水池</option>
+											<option value="MTG_QingS_SC02">2#清水池</option>
+											<option value="MTG_QingS_SC03">3#清水池</option>
 										</select>
 									</td>
 									<td style="width: 72px; height: 26px">
@@ -481,9 +481,9 @@ th, td, input, option {
 								<!--  <input type="text" size="15" id="searchPoolID" name="searchPoolID" /> -->
 								<select class="easyui-combobox" style="width: 150px"
 									id="searchPoolID" name="searchPoolID">
-									<option value="MTG_QingS_SC01">清水池01#</option>
-									<option value="MTG_QingS_SC02">清水池02#</option>
-									<option value="MTG_QingS_SC03">清水池03#</option>
+									<option value="MTG_QingS_SC01">1#清水池</option>
+									<option value="MTG_QingS_SC02">2#清水池</option>
+									<option value="MTG_QingS_SC03">3#清水池</option>
 								</select>									
 							</dl>
 						</form>

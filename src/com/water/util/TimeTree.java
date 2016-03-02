@@ -105,9 +105,16 @@ public class TimeTree {
 			for(int i=0;i<treeList.size();i++){
 				JsonTreeData treeTemp = treeList.get(i);
 				if(treeTemp.getPid() == treeNode.getId()){
-					TreeNode childTreeNode = new TreeNode(treeTemp.getId(),treeTemp.getName(),"open", new ArrayList<TreeNode>());
-					treeNode.getChildren().add(childTreeNode);
-					todo.add(childTreeNode);
+//					包含“日”的,即具体日期的，状态为open,其他为closed
+					if(treeTemp.getName().contains("日")){
+						TreeNode childTreeNode = new TreeNode(treeTemp.getId(),treeTemp.getName(),"open", new ArrayList<TreeNode>());
+						treeNode.getChildren().add(childTreeNode);
+						todo.add(childTreeNode);
+					}else{
+						TreeNode childTreeNode = new TreeNode(treeTemp.getId(),treeTemp.getName(),"closed", new ArrayList<TreeNode>());
+						treeNode.getChildren().add(childTreeNode);
+						todo.add(childTreeNode);
+					}
 				}
 			}
 		}
