@@ -1409,7 +1409,7 @@ oCanvas.domReady(function () {
             }
             window.setTimeout(function(){
                 decay(a,b-0.1);
-            },300);
+            },100);
         }
     }
 
