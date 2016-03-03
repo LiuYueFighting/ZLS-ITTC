@@ -92,6 +92,8 @@
     #run_info,#run_danger{
     position:relative;
     top:110px;
+    font-size:15px;
+    font-weight:bolder;
     }
     #list_group{
     width:150px;
@@ -145,7 +147,7 @@
                 <td>上升流度</td><td>1mm</td>
                 </tr>
                 <tr>
-                <td>补药</td><td>FeCl<sub>3</sub></td>
+                <td>加余氯</td><td>FeCl<sub>3</sub></td>
                 </tr>
                 </table>
                 </div>

@@ -96,6 +96,8 @@
     #run_info,#run_danger{
     position:relative;
     top:110px;
+    font-size:15px;
+    font-weight:bolder;
     }
     #list_group{
     width:150px;

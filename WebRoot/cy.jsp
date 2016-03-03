@@ -107,6 +107,8 @@
     #run_info,#run_danger{
     position:relative;
     top:110px;
+    font-size:15px;
+    font-weight:bolder;
     }
     #list_group{
     width:150px;
@@ -159,10 +161,13 @@
                 <div class="panel-heading">运行参数</div>
                 <table class="table">
                 <tr>
-                <td>attr1</td><td>object1</td>
+                <td>一级曝气量</td><td>暂无数据</td>
                 </tr>
                 <tr>
-                <td>attr2</td><td>object2</td>
+                <td>二级曝气量</td><td>暂无数据</td>
+                </tr>
+                <tr>
+                <td>三级曝气量</td><td>暂无数据</td>
                 </tr>
                 </table>
                 </div>
