@@ -155,7 +155,7 @@
                 <div>
 
                 <div class="panel panel-info" id="run_danger">
-                <div class="panel-heading">预警值</div>
+                <div class="panel-heading">水质标准</div>
                 <table class="table">
                 <tr>
                 <td>出水浊度</td><td><0.25NTU</td>

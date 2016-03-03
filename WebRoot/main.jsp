@@ -273,16 +273,16 @@
     <a href="VL.jsp"  id="name_VL"    style="text-decoration: none" class="name_ob">V型滤池</a>
     <a href="hxt.jsp" id="name_TC"   class="name_ob" style="text-decoration: none">活性炭池</a>
     <a href="hxt.jsp" id="name_TC1"  class="name_ob" style="text-decoration: none">活性炭池</a>
-    <a href="cy.jsp"  id="name_CY"   class="name_ob" style="text-decoration: none">臭氧<br>混合池</a>
+    <a href="cy.jsp"  id="name_CY"   class="name_ob" style="text-decoration: none">臭氧<br>接触池</a>
     <a href="cy.jsp"  id="name_CYC"  class="name_ob" style="text-decoration: none">臭氧生产池</a>
     <a href="#"        id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
     <a href="hhj.jsp" id="name_HHJ"  class="name_ob" style="text-decoration: none">旧混合井</a>
     <a href="hhj.jsp" id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
     <a href="hx.jsp" id="name_HX"   class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
-    <a href="qsc.jsp" id="name_QSC1" class="name_ob" style="text-decoration: none">清水池#3</a>
-    <a href="qsc.jsp" id="name_QSC2" class="name_ob" style="text-decoration: none">清水池1#</a>
-    <a href="qsc.jsp" id="name_QSC3" class="name_ob" style="text-decoration: none">清水池2#</a>
-    <a href="qsc.jsp" id="name_QSC4" class="name_ob" style="text-decoration: none">清水池4#</a>
+    <a href="qsc.jsp" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
+    <a href="qsc.jsp" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
+    <a href="qsc.jsp" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
+    <a href="qsc.jsp" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
     </div>
     </div>
 	</div>

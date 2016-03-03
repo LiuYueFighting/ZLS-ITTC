@@ -1829,7 +1829,7 @@ oCanvas.domReady(function () {
             setShow();
         }
     });
-    
+
     function decay(a,b){
         if(b>0){
             canvas.children[a].fill="rgba(26,215,255,b)";

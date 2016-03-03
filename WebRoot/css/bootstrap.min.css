@@ -2548,7 +2548,7 @@ pre code {
     }
 
     .col-lg-1 {
-        width: 8.33333333%
+        width: 11.33333333%
     }
 
     .col-lg-pull-12 {
@@ -5734,7 +5734,8 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-heading {
-    padding: 10px 15px;
+
+    padding: 10px 45px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px

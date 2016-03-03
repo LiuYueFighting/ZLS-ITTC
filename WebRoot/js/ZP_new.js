@@ -590,7 +590,7 @@ $(document).ready(function(){
         var txt_CY=txt_QS.clone({
             x:1390,
             y:726,
-            text:"臭氧混合池"
+            text:"臭氧接触池"
         });
         var txt_TC=txt_QS.clone({
             x:1010,

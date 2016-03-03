@@ -48,7 +48,7 @@
         }
     #down{
     height:100%;
-    background-color: #f1f3f5;
+    background-color: #eeeeef;
     }
     #left {
     position:relative;
@@ -169,7 +169,7 @@
                 <div>
 
                 <div class="panel panel-info" id="run_danger">
-                <div class="panel-heading">预警值</div>
+                <div class="panel-heading">水质标准</div>
                 <table class="table">
                 <tr>
                 <td>混度</td><td><0.1</td>
