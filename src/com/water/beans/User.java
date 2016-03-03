@@ -9,6 +9,28 @@ public class User {
 	private String email;
 	private String cellphone;
 	
+	//default constructors
+	public User() {}
+	
+	
+	//minimal constructors
+	public User(long id, String username, String password) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+	}
+	
+	//full constructors
+	public User(long id, String username, String password, String sex, int age, String email, String cellphone) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.sex = sex;
+		this.age = age;
+		this.email = email;
+		this.cellphone = cellphone;
+	}
+	
 	public long getId() {
 		return id;
 	}
@@ -65,6 +87,5 @@ public class User {
 	public void setCellphone(String cellphone) {
 		this.cellphone = cellphone;
 	}
-	
 
 }

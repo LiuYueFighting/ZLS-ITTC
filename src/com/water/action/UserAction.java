@@ -1,11 +1,18 @@
 package com.water.action;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Iterator;
 
+//import javassist.bytecode.Descriptor.Iterator;
+
+
+
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.water.beans.User;
-
 import com.water.service.UserService;
 
 
@@ -13,51 +20,70 @@ import com.water.service.UserService;
 public class UserAction extends ActionSupport{
 	private UserService userService;
 
-	private User user; // Ò»±¾Êé
-	private int page;// µ±Ç°µÚ¼¸Ò³
-	private Map<String, Object> data = new HashMap<String, Object>();// ·â×°Êý¾Ý
-	private int size;// Ò³Ãæ´óÐ¡£¬Ò³ÃæÊÇrows
-	private String order;// ÅÅÐò·½Ïò£¬descºÍasc
-	private String sort;// ÅÅÐòÊôÐÔÃû£¬Èçprice
+	String username;
+	String password;
+	
+	
+	private User user; // Ò»ï¿½ï¿½ï¿½ï¿½
+	private int page;// ï¿½ï¿½Ç°ï¿½Ú¼ï¿½Ò³
+	private Map<String, Object> data = new HashMap<String, Object>();// ï¿½ï¿½×°ï¿½ï¿½ï¿½
+	private int size;// Ò³ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½rows
+	private String order;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½descï¿½ï¿½asc
+	private String sort;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½price
 
-	// ±êÊ¶²Ù×÷ÊÇ·ñ³É¹¦
+	// ï¿½ï¿½Ê¶ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½É¹ï¿½
 	private boolean operateSuccess;
 
-	// set×¢Èë
+	public String getUsernme() {
+		return username;
+	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	// set×¢ï¿½ï¿½
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
 
 	/*
-	 * ¸øeasyuiÅÅÐòÓÃµÄ£¬±íÊ¾ÅÅÐò·½·¨
+	 * ï¿½ï¿½easyuiï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ£ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ò·½·ï¿½
 	 */
 	public void setOrder(String order) {
 		this.order = order;
 	}
 
 	/*
-	 * ¸øeasyuiÅÅÐòÓÃµÄ£¬±íÊ¾ÅÅÐò×Ö¶Î
+	 * ï¿½ï¿½easyuiï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ£ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ö¶ï¿½
 	 */
 	public void setSort(String sort) {
 		this.sort = sort;
 	}
 
 	/*
-	 * ¸øeasyuiÖ¸¶¨Ò³Ãæ´óÐ¡ÓÃµÄ£¬Èç¹ûÒªÖ¸¶¨Ò³Ãæ´óÐ¡¿É±ä
-	 * Ò³ÃæÊÇrows
+	 * ï¿½ï¿½easyuiÖ¸ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Ð¡ï¿½ÃµÄ£ï¿½ï¿½ï¿½ï¿½ÒªÖ¸ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Ð¡ï¿½É±ï¿½
+	 * Ò³ï¿½ï¿½ï¿½ï¿½rows
 	 */
 	public void setRows(int size) {
 		this.size = size;
 	}
 
 	/*
-	 * ¸øeasyui·ÖÒ³ÓÃµÄ
+	 * ï¿½ï¿½easyuiï¿½ï¿½Ò³ï¿½Ãµï¿½
 	 */
 	public void setPage(int page) {
 		this.page = page;
 	}
 
-	// getter/setter·½·¨
+	// getter/setterï¿½ï¿½ï¿½ï¿½
 
 	public User getUser() {
 		return user;
@@ -100,25 +126,25 @@ public class UserAction extends ActionSupport{
 	}
 
 	/**
-	 * ²éÑ¯Ä³Ò»Ò³µÄÊé¼®
+	 * ï¿½ï¿½Ñ¯Ä³Ò»Ò³ï¿½ï¿½ï¿½é¼®
 	 */
 	public String list() {
-		data.clear();// Çå³ý
+		data.clear();// ï¿½ï¿½ï¿½
 		if (sort == null) {
-			sort = "id";// Ä¬ÈÏ°´ÊéÃûÅÅÐò
+			sort = "id";// Ä¬ï¿½Ï°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		}
 		if (order == null) {
-			order = "asc";// Ä¬ÈÏ°´ÉýÐòÅÅÐò
+			order = "asc";// Ä¬ï¿½Ï°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		}
-			data.put("total", userService.findTotal());// µÃµ½ËùÓÐµÄ¼ÇÂ¼Êý
+			data.put("total", userService.findTotal());// ï¿½Ãµï¿½ï¿½ï¿½ï¿½ÐµÄ¼ï¿½Â¼ï¿½ï¿½
 //		data.put("rows", userService.findAll());
-		data.put("rows", userService.findPages(page, size, sort, order));// µÃµ½Ä³Ò»Ò³µÄÊý¾Ý
+		data.put("rows", userService.findPages(page, size, sort, order));// ï¿½Ãµï¿½Ä³Ò»Ò³ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 		return "success";
 	}
 	
 	/**
-	 * Ìí¼ÓÊé¼®
+	 * ï¿½ï¿½ï¿½ï¿½é¼®
 	 */
 	public String addUser() {
 		operateSuccess = (userService.addUser(user) > 0);
@@ -126,7 +152,7 @@ public class UserAction extends ActionSupport{
 	}
 
 	/**
-	 * ¸üÐÂÊé¼®
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½é¼®
 	 */
 	public String updateUser() {
 		operateSuccess = (userService.updateUser(user) > 0);
@@ -134,7 +160,7 @@ public class UserAction extends ActionSupport{
 	}
 
 	/**
-	 * É¾³ýÊé¼®
+	 * É¾ï¿½ï¿½ï¿½é¼®
 	 */
 	public String deleteUser() {
 		operateSuccess = (userService.deleteUser(user.getId()) > 0);
@@ -142,11 +168,27 @@ public class UserAction extends ActionSupport{
 	}
 
 	/**
-	 * ²éÑ¯Ò»±¾Êé
+	 * ï¿½ï¿½Ñ¯Ò»ï¿½ï¿½ï¿½ï¿½
 	 */
 	public String findUser() {
 		user = userService.findUserById(user.getId());
 		return "success";
 	}
-
+	
+	public String execute() {
+		List<User> list = (List<User>)userService.findAll();
+		User u = new User();
+		Iterator<User> it = list.iterator();
+		while(it.hasNext()) {
+			u = (User)it.next();
+			if(username.trim().equals(u.getUsername()) && password.trim().equals(u.getPassword())) {
+				ActionContext.getContext().getSession().put("user", u);
+				return "success";
+			}
+				
+			else continue;
+		}
+		String state = "failer";
+		return state;
+	}
 }

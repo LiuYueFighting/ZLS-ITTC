@@ -2,6 +2,28 @@
 $(function() {
 	dealSearch();
 });
+
+$(document).ready(function() {
+	$("#calculateButton").click(function(){
+		var flag, yssw, xsl, hx, tc, jjc, hljs;
+		if($("#yssw").val() == "" || $("#xsl").val() == "" || $("#hx").val() == "" ||
+			$("#tc").val() == "" || $("#jjc").val() == "" || $("#hljs").val() == "") {
+			$.messager.alert('错误', '数据字段不能为空', 'error');
+		}
+		else {
+			yssw = parseFloat($("#yssw").val());
+			xsl = parseFloat($("#xsl").val());
+			hx = parseFloat($("#hx").val());
+			tc = parseFloat($("#tc").val());
+			jjc = parseFloat($("#jjc").val());
+			hljs = parseFloat($("#hljs").val());
+		}
+		var ycsw = (xsl - hx - tc - jjc + hljs) / 3312 + yssw;
+		console.log(ycsw);
+		$("#ycsw").attr('value', ycsw.toFixed(2));;
+	});
+});
+
 var tlist = new Array();
 var strDate = '';
 var searchMode = 0;
@@ -55,41 +77,41 @@ $(document).ready(function() {
 				//duration: 'slow'
 			});
 			$('#edit').animate({
-				'left': '60px',
-				'top': '16px'
+				'left': '49px', //60
+				'top': '21px'   //16
 			},{
 				//duration: 'slow'
 			});	
 			$('#delete').animate({
-				'left': '16px',
-				'top': '60px'
+				'left': '6px',	//16
+				'top': '83px'	//60
 			},{
 				//duration: 'slow'
 			});	
 			$('#search').animate({
-				'left': '0px',
-				'top': '120px'
+				'left': '6px',	//0
+				'top': '157px'	//120
 			},{
 				//duration: 'slow'
 			});
 			$('#export').animate({
-				'left': '16px',
-				'top': '180px'
+				'left': '49px',	//16
+				'top': '217px'	//180
 			},{
 				//duration: 'slow'
 			});
 			$('#import').animate({
-				'left': '60px',
-				'top': '224px'
+				'left': '120px',	//60
+				'top': '250px'	//224
 			},{
 				//duration: 'slow'
 			});
-			$('#template').animate({
-				'left': '120px',
-				'top': '250px'
-			},{
-				//duration: 'slow'
-			});
+			//$('#template').animate({
+			//	'left': '120px',
+			//	'top': '250px'
+			//},{
+			//	//duration: 'slow'
+			//});
 
 		} else {
 			$('#menu').text("菜单");
@@ -129,12 +151,12 @@ $(document).ready(function() {
 			},{
 				//duration: 'slow'
 			});
-			$('#template').animate({
-				'left': '120px',
-				'top': '110px'
-			},{
-				//duration: 'slow'
-			});
+			//$('#template').animate({
+			//	'left': '120px',
+			//	'top': '110px'
+			//},{
+			//	//duration: 'slow'
+			//});
 		}
 		
 	});
@@ -264,11 +286,16 @@ function listDataAnalysis(data) {
 		            	styler: function(value) {
 		            		if(value <= 2) {
 		            			return 'background-color:#FFFF00;font-weight:bolder;border:2px solid #FFFF00';
-		            		} else if(value> 2 && value < 4.9) {
-		            			return 'background-color:#66FF33;border:0';
-		            		} else {
+		            		}
+		            		if(value > 4.9) {
 		            			return 'background-color:#FF0033;font-weight:bolder;border:2px solid #FF0033' ;
 		            		}
+		            		//else if(value> 2 && value < 4.9) {
+		            		//	return 'background-color:#66FF33;border:0';
+		            		//} 
+		            		//else {
+		            		//	return 'background-color:#FF0033;font-weight:bolder;border:2px solid #FF0033' ;
+		            		//}
 		            	}
 		            }
 		            ]],
