@@ -48,7 +48,7 @@
         }
         #down{
         height:100%;
-        background-color: #f1f3f5;
+        background-color: #eeeeef;
         }
         #left {
         position:relative;
@@ -107,6 +107,8 @@
         #run_info,#run_danger{
         position:relative;
         top:110px;
+        font-size:15px;
+        font-weight:bolder;
         }
         #list_group{
         width:150px;
@@ -169,7 +171,7 @@
         <div>
 
         <div class="panel panel-info" id="run_danger">
-        <div class="panel-heading">预警值</div>
+        <div class="panel-heading">水质标准</div>
         <table class="table">
         <tr>
         <td>出水浊度</td><td><0.25NTU</td>

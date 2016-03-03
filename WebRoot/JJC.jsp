@@ -92,6 +92,8 @@
     #run_info,#run_danger{
     position:relative;
     top:110px;
+    font-size:15px;
+    font-weight:bolder;
     }
     #list_group{
     width:150px;
@@ -145,14 +147,14 @@
                 <td>上升流度</td><td>1mm</td>
                 </tr>
                 <tr>
-                <td>补药</td><td>FeCl<sub>3</sub></td>
+                <td>加余氯</td><td>FeCl<sub>3</sub></td>
                 </tr>
                 </table>
                 </div>
                 <div>
 
                 <div class="panel panel-info" id="run_danger">
-                <div class="panel-heading">预警值</div>
+                <div class="panel-heading">水质标准</div>
                 <table class="table">
                 <tr>
                 <td>出水浊度</td><td><1.5NTU</td>

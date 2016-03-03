@@ -228,69 +228,7 @@
     }
     }
 
-    function clearAll(){
-    clearOpenDgree("FM05");
-    clearOpenDgree("FM06");
-    clearOpenDgree("FM07");
-    clearOpenDgree("FM09");
-    clearOpenDgree("FM010");
-    clearOpenDgree("FM065");
-    clearOpenDgree("FM062");
-    clearOpenDgree("FM063");
-    clearOpenDgree("FM064");
-    clearOpenDgree("FM066");
-    clearOpenDgree("FM069");
-    clearOpenDgree("FM015");
-    clearOpenDgree("FM045");
-    clearOpenDgree("FM014");
-    clearOpenDgree("FM016");
-    clearOpenDgree("FM068");
-    clearOpenDgree("FM067");
-    clearOpenDgree("FM017");
-    clearOpenDgree("FM018");
-    clearOpenDgree("FM019");
-    clearOpenDgree("FM067");
-    clearOpenDgree("FM052");
-    clearOpenDgree("FM020");
-    clearOpenDgree("FM056");
-    clearOpenDgree("FM057");
-    clearOpenDgree("FM058");
-    clearOpenDgree("FM053");
-    clearOpenDgree("FM054");
-    clearOpenDgree("FM021");
-    clearOpenDgree("FM022");
-    clearOpenDgree("FM024");
 
-    clearOpenDgree("FM059");
-    clearOpenDgree("FM046");
-    clearOpenDgree("FM044");
-    clearOpenDgree("FM055");
-    clearOpenDgree("FM026");
-    clearOpenDgree("FM051");
-    clearOpenDgree("FM055");
-    clearOpenDgree("FM047");
-    clearOpenDgree("FM048");
-    clearOpenDgree("FM049");
-
-    document.getElementById("nextPage").style.display="none";
-    document.getElementById("lastPage").style.display="none";
-
-
-    document.getElementById("fix_line1").innerHTML="";
-    document.getElementById("fix_line2").innerHTML="";
-    document.getElementById("fix_line3").innerHTML="";
-    document.getElementById("fix_line4").innerHTML="";
-    document.getElementById("fix_line5").innerHTML="";
-    document.getElementById("fix_line6").innerHTML="";
-    document.getElementById("fix_line7").innerHTML="";
-    document.getElementById("fix_line8").innerHTML="";
-    document.getElementById("fix_line9").innerHTML="";
-    document.getElementById("fix_line10").innerHTML="";
-    changeHide();
-
-    document.getElementById("fix_head").innerHTML="请点击需要维修的阀门";
-
-    }
 
 
     function showName(e){
@@ -463,9 +401,9 @@
     <p id="WFM021" class="name_FM">021#</p>
     <p id="WFM022" class="name_FM">022#</p>
     <p id="WFM046" class="name_FM">046#</p>
-    <p id="WFM023" class="name_FM">024#</p>
+    <p id="WFM023" class="name_FM">023#</p>
     <p id="WFM024" class="name_FM">024#</p>
-    <p id="WFM025" class="name_FM">024#</p>
+    <p id="WFM025" class="name_FM">025#</p>
     <p id="WFM044" class="name_FM">044#</p>
     <p id="WFM055" class="name_FM">055#</p>
     <p id="WFM026" class="name_FM">026#</p>

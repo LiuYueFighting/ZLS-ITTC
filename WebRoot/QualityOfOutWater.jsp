@@ -59,7 +59,7 @@
 		font-family: '微软雅黑', 'Source Sans Pro';
 		font-size: 15px;
 		width: 1600px;
-		height: 1100px;
+		height: 1150px;
 		margin: 0px auto;
 	}
 
@@ -67,7 +67,7 @@
 		position: relative;
 		font-family: '微软雅黑', 'Source Sans Pro';
 		width: 1600px;
-		height: 1100px;
+		height: 1150px;
 		top:15px;
 		margin: 0px auto;
 		overflow: hidden;
@@ -118,9 +118,9 @@
 
 	#chooseIndex {
 		position: relative;
-		top: 20px;
+		top: 10px;
 		width: 200px;
-		height: 200px;
+		height: 110px;
 		padding: 5px;
 		inline-height: 30px;
 		text-align: left;
@@ -197,27 +197,6 @@ div.menuSecond{
 	left: 120px;
 }
 
-	#template {
-		vertical-align: middle;
-	}
-
-	#template:hover a{
-		font-size: 18px;
-		line-height:50px;
-	}
-
-	#template a {
-		line-height:40px; 
-		font-weight: 100;
-		font-size: 16px;
-		color: #FFFFFF;
-		text-decoration:none;
-	}
-
-	#template a:hover {
-		font-size: 18px;
-		line-height:50px;
-	}
 	
 	#tab_export {
 		position: absolute;

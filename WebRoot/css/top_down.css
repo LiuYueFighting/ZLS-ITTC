@@ -185,7 +185,7 @@ ul li{
 #footerbox{
     margin: auto auto;
     width: 1000px;
-    height: 100px;
+    /*height: 100px;*/
     clear: both;
     padding-top: 40px;
 }

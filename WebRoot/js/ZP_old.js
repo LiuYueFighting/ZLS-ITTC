@@ -89,8 +89,8 @@ $(document).ready(function(){
             start:start_all
         }).add();
         var right_t=canvas.display.SC_show({
-            x:978,
-            y:271,
+            x:1308,
+            y:284,
             Width:25,
             Height:25,
             height_now:0,
@@ -106,8 +106,8 @@ $(document).ready(function(){
             start:start_all
         }).add();
         var SC04 = canvas.display.SC_show({
-            x: 1303,
-            y: 283,
+            x: 1026,
+            y: 185,
             Width: 431,
             Height: 208,
             height_now: 0,
@@ -700,7 +700,7 @@ $(document).ready(function(){
         var txt_CY=txt_QS.clone({
             x:890,
             y:726,
-            text:"臭氧混合池"
+            text:"臭氧接触池"
         });
         var txt_TC=txt_QS.clone({
             x:640,

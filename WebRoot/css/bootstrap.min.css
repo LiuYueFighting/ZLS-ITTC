@@ -259,7 +259,8 @@ td, th {
     }
 
     .table {
-        border-collapse: collapse !important
+        border-collapse: collapse !important;
+        font-weight: bold;
     }
 
     .table td, .table th {
@@ -2548,7 +2549,7 @@ pre code {
     }
 
     .col-lg-1 {
-        width: 8.33333333%
+        width: 11.33333333%
     }
 
     .col-lg-pull-12 {
@@ -2733,7 +2734,7 @@ th {
     padding: 8px;
     line-height: 1.42857143;
     vertical-align: top;
-    border-top: 1px solid #ddd;
+    border-top: 2px solid #ddd;
     text-align: center;
 }
 
@@ -5723,7 +5724,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 .panel {
     margin-bottom: 20px;
     background-color: #fff;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
@@ -5734,7 +5735,8 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-heading {
-    padding: 10px 15px;
+
+    padding: 10px 45px;
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px
