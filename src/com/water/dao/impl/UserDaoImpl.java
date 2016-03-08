@@ -17,7 +17,7 @@ import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 /**
- * ½Ó¿ÚÊµÏÖÀà
+ * ï¿½Ó¿ï¿½Êµï¿½ï¿½ï¿½ï¿½
  * 
  * @author miao
  * 
@@ -26,14 +26,6 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 
 	@SuppressWarnings("unchecked")
 	public List<User> find() {
-//		List list = null;
-//		String sql="from  User";
-//		try{
-//			list=getHibernateTemplate().find(sql);
-//		} catch (DataAccessException ex) {
-//			ex.printStackTrace();
-//		}
-//		return list;
 		DetachedCriteria criteria = DetachedCriteria.forClass(User.class);
 		criteria.addOrder(Order.desc("id"));
 		return super.getHibernateTemplate().findByCriteria(criteria);
@@ -69,6 +61,13 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<User> findAll() {
+		String queryString = "from User";
+		List<User> list = this.getHibernateTemplate().find(queryString);
+		return list;
+	}
+	
 	public int update(User user) {
 		try{
 			this.getHibernateTemplate().update(user);
@@ -85,18 +84,11 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 		return this.find().size();
 	}
 
-	/**
-	 * ²éÑ¯Ò»Ò³µÄÊı¾İ
-	 * 
-	 * @param begin ´ÓÄÄÌõ¿ªÊ¼0
-	 * @param end µÃµ½¶àÉÙÌõ
-	 * @param sort ÅÅĞò×Ö¶Î
-	 * @param order ÉıĞò»ò½µĞò desc/asc
-	 */
+	
 	@SuppressWarnings("unchecked")
 	public List<User> findPages(final int begin, final int end, final String sort,
 			final String order) {
-		// µ±ÒªÓÃµ½Ô­ÉúµÄHibernateµÄSessionµÄÊ±ºò£¬ÕâÖÖ×îÁé»î£¬¿ÉÒÔÊ¹ÓÃQueryºÍCriteria£¬²»ÓÃ×Å¼±¹ÜÀí»á»°ºÍÊÂ
+		// ï¿½ï¿½Òªï¿½Ãµï¿½Ô­ï¿½ï¿½ï¿½Hibernateï¿½ï¿½Sessionï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½Queryï¿½ï¿½Criteriaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¼ï¿½ï¿½ï¿½ï¿½ï¿½á»°ï¿½ï¿½ï¿½ï¿½
 		return super.getHibernateTemplate().executeFind(new HibernateCallback() {
 			public Object doInHibernate(Session session) throws HibernateException, SQLException {
 				Criteria criteria = session.createCriteria(User.class);

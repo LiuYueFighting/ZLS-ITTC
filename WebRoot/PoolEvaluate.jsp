@@ -5,6 +5,10 @@
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":"
 			+ request.getServerPort() + path + "/";
 %>
+<%if(null == request.getSession().getAttribute("user")){
+       response.getWriter().write("<script>window.location.href = 'notSignIn.jsp'</script>");
+     }
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.ddd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
