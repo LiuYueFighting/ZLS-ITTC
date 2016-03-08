@@ -15,7 +15,7 @@ oCanvas.domReady(function () {
  });
  var SC02=createSC({
      parent:canvas,
-     x:570,y:413,height:246,width:418,trail_flag:0,speed:speed_SC,color:color_SC
+     x:570,y:393,height:246,width:418,trail_flag:0,speed:speed_SC,color:color_SC
  });
     var SC03=createSC({
         parent:canvas,

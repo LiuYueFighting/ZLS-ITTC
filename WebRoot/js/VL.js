@@ -33,8 +33,22 @@ oCanvas.domReady(function () {
     //    parent:canvas,
     //    x:359,y:207,height:61,width:39,trail_flag:0,speed:speed_SC,color:color_SC
     //});
+    var SC04 = canvas.display.SC_show_down({
+        x: 310,
+        y: 274,
+        Width: 39,
+        Height: 61,
+        height_now: 0,
+        trail_flag: 0,
+        t: 7540,
+        speed:speed_SC,
+        fill:color_SC,
+        full:0,
+        start:0
+    });
+    canvas.addChild(SC04);
     var SC03 = canvas.display.SC_show_down({
-        x: 359,
+        x: 357,
         y: 342,
         Width: 509,
         Height: 230,
@@ -134,7 +148,7 @@ oCanvas.domReady(function () {
     var GD00=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 40,y_cell: 172},
+            {x_cell: 0,y_cell: 172},
             {x_cell: 164,y_cell: 172},
             {x_cell: 164,y_cell: 249}
         ],
@@ -202,6 +216,7 @@ oCanvas.domReady(function () {
         SC01.advance();
         SC02.advance();
         SC03.advance();
+        SC04.advance();
         if(GD00.full==1){
             SC01.start=1;
             arrow_0.start();
@@ -210,8 +225,11 @@ oCanvas.domReady(function () {
         	SC02.start = 1;
         }
         if(SC02.full==1){
+            SC04.start = 1;
             arrow_1.start();
             arrow_2.start();
+        }
+        if(SC04.full==1){
             arrow_3.start();
             arrow_4.start();
             arrow_5.start();

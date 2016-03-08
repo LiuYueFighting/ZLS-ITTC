@@ -32,6 +32,7 @@ ul li{
 .top{
     width:100%;
     font-size:18px;
+    font-weight: bolder;
     background:url(../images/09.png) repeat-x;
     z-index: 999;
 }
@@ -70,7 +71,7 @@ ul li{
     text-transform: uppercase;
 }
 .nav__menu li{
-    text-shadow :0px 1px 2px #AAA;
+    text-shadow :1px 1px 2px #AAA;
     width:150px;
     padding-right:40px;
     height:35px;
@@ -156,8 +157,8 @@ ul li{
     border-bottom:1px solid #FFF;
     line-height:30px;
     height:30px;
-
-    font-size:14px;
+    font-weight: bolder;
+    font-size:16px;
 }
 .Secondary_menu ul li{
     height:30px;
@@ -193,7 +194,7 @@ ul li{
     background: #eeeeed;
     padding-top: 13px;
     font-size: 18px;
-    border-top: 1px solid #b6b6b6;
+    /*border-top: 1px solid #b6b6b6;*/
     color:#989898;
 }
 .copy{

@@ -20,17 +20,17 @@ oCanvas.domReady(function () {
     });
     var SC03=createSC({
         parent:canvas,
-        x:528,y:473,height:160,width:53,trail_flag:0,speed:speed_SC,color:color_SC
+        x:528,y:537,height:96,width:53,trail_flag:0,speed:speed_SC,color:color_SC
     });
     var SC031=createSC({
         parent:canvas,
-        x:528,y:367,height:123,width:340,trail_flag:0,speed:speed_SC*0.35,color:color_SC
+        x:528,y:367,height:187,width:340,trail_flag:0,speed:speed_SC*0.55,color:color_SC
     });
     var SC04 = canvas.display.SC_show_down({
         x: 600,
-        y: 474,
+        y: 537,
         Width: 265,
-        Height: 158,
+        Height: 94,
         height_now: 0,
         trail_flag: 0,
         t: 0,
@@ -90,7 +90,7 @@ oCanvas.domReady(function () {
 //添加箭头
     var arrow_0 = canvas.display.sprite({
         x: 537,
-        y: 241,
+        y: 271,
         image: "image/water-arrow/down.png",
         generate: false,
         frames: [
@@ -100,7 +100,7 @@ oCanvas.domReady(function () {
     }).scale(1,2).add();
     var arrow_1 = canvas.display.sprite({
         x: 568,
-        y: 450,
+        y: 514,
         image: "image/water-arrow/you.png",
         generate: false,
         frames: [
@@ -111,7 +111,7 @@ oCanvas.domReady(function () {
 
     var arrow_2 = canvas.display.sprite({
         x: 639,
-        y: 495,
+        y: 549,
         image: "image/water-arrow/down.png",
         generate: false,
         frames: [
@@ -121,7 +121,7 @@ oCanvas.domReady(function () {
     }).add();
     var arrow_21=canvas.display.sprite({
         x: 699,
-        y: 495,
+        y: 549,
         image: "image/water-arrow/down.png",
         generate: false,
         frames: [
@@ -131,7 +131,7 @@ oCanvas.domReady(function () {
     }).add();
     var arrow_22=canvas.display.sprite({
         x: 759,
-        y: 495,
+        y: 549,
         image: "image/water-arrow/down.png",
         generate: false,
         frames: [
@@ -141,7 +141,7 @@ oCanvas.domReady(function () {
     }).add();
     var arrow_23=canvas.display.sprite({
         x: 819,
-        y: 495,
+        y: 549,
         image: "image/water-arrow/down.png",
         generate: false,
         frames: [

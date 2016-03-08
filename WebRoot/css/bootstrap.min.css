@@ -5549,7 +5549,8 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
 
 .list-group {
     padding-left: 0;
-    margin-bottom: 20px
+    margin-bottom: 20px ;
+    font-weight: bolder;
 }
 
 .list-group-item {
@@ -5558,7 +5559,7 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
     padding: 10px 15px;
     margin-bottom: -1px;
     background-color: #fff;
-    border: 1px solid #ddd
+    border: 2px solid #ddd
 }
 
 .list-group-item:first-child {

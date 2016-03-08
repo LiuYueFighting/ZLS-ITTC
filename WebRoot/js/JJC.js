@@ -289,8 +289,7 @@ oCanvas.domReady(function () {
             SC01.start=1;
             arrow_1.frame=2;
             arrow_2.frame=2;
-            arrow_3.start();
-            arrow_4.start();
+
             arrow_5.start();
             arrow_6.start();
 
@@ -302,6 +301,8 @@ oCanvas.domReady(function () {
         if(SC01.height_now>=SC01.Height*0.8){
             arrow_81.start();
             arrow_91.start();
+            arrow_3.start();
+            arrow_4.start();
         }
         if(SC01.full==1){
         	GD02.paused = 1;
