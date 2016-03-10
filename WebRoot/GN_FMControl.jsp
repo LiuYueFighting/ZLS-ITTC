@@ -148,30 +148,34 @@
     #setConfig{
     font-family: '微软雅黑','Arial';
     position: absolute;
-    left:1472px;
+    left: 1472px;
     top: -5px;
     z-index: 999;
-    font-size:15px;
-    width:137px;
+    font-size: 18px;
+    width: 137px;
+    font-weight: bold;
     }
+    #setConfig p{
+    margin: -6px 0 22px;
+     }
     #setConfig h1{
-        font-size: 20px;
-        color: #223bb8;
-        font-weight: bold;
-        margin-bottom: 20px;
+    font-size: 27px;
+    color: #223bb8;
+    font-weight: bold;
+    margin-bottom: 28px;
     }
     #setConfig h2{
-    font-size:17px;
-    font-weight:bold;
-    margin-bottom: 20px;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 25px;
     }
     #setConfig input{
-    width:50px;
-    padding:2px;
-    font-size:12px;
+    width: 50px;
+    padding: 2px;
+    font-size: 16px;
     }
     #btn_submit{
-        margin: 20px auto auto 36px;
+        margin: 13px auto auto 28px;
     }
         #jjc1In{
         position: absolute;
@@ -574,7 +578,7 @@
             <p>62#&nbsp;&nbsp;<input id="read_FM62" type="text" size="10px" value="100"/>&nbsp;%</p>
             <p>63#&nbsp;&nbsp;<input id="read_FM63" type="text"size="10px" value="100"/>&nbsp;%</p>
             <p>65#&nbsp;&nbsp;<input id="read_FM65" type="text"size="10px" value="100"/>&nbsp;%</p>
-            <button id="btn_submit" class="btn btn-info btn-sm btn_main" value="0" onclick="changeInput()">提交</button>
+            <button id="btn_submit" class="btn btn-info btn_main" value="0" onclick="changeInput()">预测</button>
         </div>
         <div id="qs1" calss = "waterOut">
         </div>
