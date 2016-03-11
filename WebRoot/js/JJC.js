@@ -41,11 +41,11 @@ oCanvas.domReady(function () {
 
     var SC01=createSC({
         parent:canvas,
-        x:212,y:349,height:230,width:860,trail_flag:1,speed:speed_SC,color:color_SC,
+        x:212,y:349,height:240,width:860,trail_flag:1,speed:speed_SC,color:color_SC,
          trail: [
              {x_t: 0, y_t: 17},
-             {x_t: 0, y_t: 230},
-             {x_t: 860, y_t: 230},
+             {x_t: 0, y_t: 240},
+             {x_t: 860, y_t: 240},
              {x_t: 860, y_t: 17},
              {x_t: 829, y_t: 17},
              {x_t: 829, y_t: 8},

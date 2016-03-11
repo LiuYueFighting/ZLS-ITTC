@@ -270,9 +270,9 @@
 
     <a href="QS.jsp"  id="name_QS"    style="text-decoration: none" class="name_ob">取水泵房</a>
      <a href="QS.jsp" id="name_QS2"   style="text-decoration: none" class="name_ob">取水泵房</a>
-    <a href="JJC.jsp" id="name_JJC1"  style="text-decoration: none" class="name_ob">机加池<br>#1</a>
-    <a href="JJC.jsp" id="name_JJC2"  style="text-decoration: none" class="name_ob">机加池<br>#2</a>
-    <a href="JJC.jsp" id="name_JJC3"  style="text-decoration: none" class="name_ob">机加池<br>#3</a>
+    <a href="JJC.jsp" id="name_JJC1"  style="text-decoration: none" class="name_ob">1#<br>机加池</a>
+    <a href="JJC.jsp" id="name_JJC2"  style="text-decoration: none" class="name_ob">2#<br>机加池</a>
+    <a href="JJC.jsp" id="name_JJC3"  style="text-decoration: none" class="name_ob">3#<br>机加池</a>
     <a href="VL.jsp"  id="name_VL"    style="text-decoration: none" class="name_ob">V型滤池</a>
     <a href="hxt.jsp" id="name_TC"   class="name_ob" style="text-decoration: none">活性炭池</a>
     <a href="hxt.jsp" id="name_TC1"  class="name_ob" style="text-decoration: none">活性炭池</a>

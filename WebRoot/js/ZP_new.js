@@ -4,9 +4,9 @@
 $(document).ready(function(){
     oCanvas.domReady(function () {
 
-        var speed_all=1.5,
+        var speed_all=3,//1.5
              width_all=20,
-            speed_SC=0.9,
+            speed_SC=1.8,//0.9
             color_GD="#007fff",
             color_SC="#43d9f9",
             color_txt="#337ab7";

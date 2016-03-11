@@ -35,6 +35,19 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
+    var GD011=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 707 ,y_cell: 96},
+            {x_cell: 707 ,y_cell: 223},
+            {x_cell: 765 ,y_cell: 258},
+            {x_cell: 989 ,y_cell: 258},
+            {x_cell: 989 ,y_cell: 295},
+            {x_cell: 1020, y_cell: 295}
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });
     var GD02=createGD({
         parent:canvas,
         cells:[
@@ -866,12 +879,14 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(GD15);
     GD01.paused=1;
+    GD011.paused=1;
     GD22.paused=1;
     GD02.paused=1;
 
 
     canvas.setLoop(function () {
         GD01.advance();
+        GD011.advance();
         GD02.advance();
         GD03.advance();
         GD04.advance();
@@ -938,6 +953,7 @@ oCanvas.domReady(function () {
         canvas.redraw();
     });
     GD01.paused=1;
+    GD011.paused=1;
     GD02.paused=1;
     GD22.paused=1;
     canvas.timeline.start();
@@ -1040,6 +1056,7 @@ oCanvas.domReady(function () {
         canvas.children[19].fill=color_GD;
         canvas.children[22].fill="rgba(1,1,1,0)";
         GD01.init();
+        GD011.init();
         GD02.init();
         GD03.init();
         GD04.init();
@@ -1065,6 +1082,7 @@ oCanvas.domReady(function () {
         GD24.init();
         img1.bind("flash",function(){
             GD01.paused=1;
+            GD011.paused=1;
             GD22.paused=1;
             GD02.paused=1;
         });
@@ -1133,6 +1151,7 @@ oCanvas.domReady(function () {
             GD17.paused=1;
         });
         GD01.paused=1;
+        GD011.paused=1;
         GD22.paused=1;
         GD02.paused=1;
         canvas.settings.fps=40;
@@ -1186,6 +1205,7 @@ oCanvas.domReady(function () {
     }
     function init(){
         GD01.init();
+        GD011.init();
         GD02.init();
         GD03.init();
         GD04.init();
