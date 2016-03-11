@@ -1,5 +1,5 @@
 oCanvas.domReady(function () {
-
+//
     var canvas = oCanvas.create({
         canvas: "#canvas_fix",
         background: "#eeeeed",
@@ -1244,7 +1244,20 @@ oCanvas.domReady(function () {
         canvas.settings.fps=40;
         GD01.paused=1;
     }
+    var fmArray = new Array("FM05","FM06","FM07","FM09","FM010","FM065","FM062","FM063","FM064","FM045","FM014","FM015","FM069","FM066","FM016","FM068","FM017","FM018","FM019","FM020","FM052","FM056","FM053","FM054","FM057","FM058","FM059","FM021","FM022","FM046","FM023","FM024","FM025","FM044","FM055","FM026","FM047","FM048","FM049","FM050","FM051");
+    function showFM(e){
+        if(e.checked==true){
+            for(i in fmArray){
+                showFMName(fmArray[i]);
+            }
+        }
 
+        else {
+            for(i in fmArray){
+                notShowFMName(fmArray[i]);
+            }
+        }
+    }
     function clearAll(){
 
         canvas.children[2].fill=color_GD;
@@ -1254,49 +1267,9 @@ oCanvas.domReady(function () {
         canvas.children[18].fill=color_GD;
         canvas.children[19].fill="rgba(1,1,1,0)";
         canvas.redraw();
-
-        clearOpenDgree("FM05");
-        clearOpenDgree("FM06");
-        clearOpenDgree("FM07");
-        clearOpenDgree("FM09");
-        clearOpenDgree("FM010");
-        clearOpenDgree("FM065");
-        clearOpenDgree("FM062");
-        clearOpenDgree("FM063");
-        clearOpenDgree("FM064");
-        clearOpenDgree("FM066");
-        clearOpenDgree("FM069");
-        clearOpenDgree("FM015");
-        clearOpenDgree("FM045");
-        clearOpenDgree("FM014");
-        clearOpenDgree("FM016");
-        clearOpenDgree("FM068");
-        clearOpenDgree("FM067");
-        clearOpenDgree("FM017");
-        clearOpenDgree("FM018");
-        clearOpenDgree("FM019");
-        clearOpenDgree("FM067");
-        clearOpenDgree("FM052");
-        clearOpenDgree("FM020");
-        clearOpenDgree("FM056");
-        clearOpenDgree("FM057");
-        clearOpenDgree("FM058");
-        clearOpenDgree("FM053");
-        clearOpenDgree("FM054");
-        clearOpenDgree("FM021");
-        clearOpenDgree("FM022");
-        clearOpenDgree("FM024");
-
-        clearOpenDgree("FM059");
-        clearOpenDgree("FM046");
-        clearOpenDgree("FM044");
-        clearOpenDgree("FM055");
-        clearOpenDgree("FM026");
-        clearOpenDgree("FM051");
-        clearOpenDgree("FM055");
-        clearOpenDgree("FM047");
-        clearOpenDgree("FM048");
-        clearOpenDgree("FM049");
+        for(i in fmArray){
+            clearOpenDgree(fmArray[i]);
+        }
 
         document.getElementById("nextPage").style.display="none";
         document.getElementById("lastPage").style.display="none";
@@ -1317,12 +1290,19 @@ oCanvas.domReady(function () {
         document.getElementById("fix_head").innerHTML="请点击需要维修的阀门";
 
     }
+    window.onload = clearAll();
     function  fix_fm062(){
         clearAll();
         document.getElementById("fix_head").innerHTML="62#阀门维修配合方案";
         document.getElementById("FM062").src="image/y1.png";
         setOpenDgree("FM09");
         setOpenDgree("FM064");
+        showFMName("FM063");
+        showFMName("FM065");
+        showFMName("FM010");
+        showFMName("FM07");
+        showFMName("FM05");
+        showFMName("FM06");
 
         document.getElementById("fix_line1").innerHTML="打开阀门10#";
         document.getElementById("fix_line2").innerHTML="打开阀门07#";
@@ -1345,6 +1325,7 @@ oCanvas.domReady(function () {
         setOpenDgree("FM021");
 //        setOpenDgree("FM023");
         setOpenDgree("FM054");
+        showFMName("FM017");
 
         document.getElementById("fix_line1").innerHTML="关闭阀门16#";
         document.getElementById("fix_line2").innerHTML="关闭阀门18#";
