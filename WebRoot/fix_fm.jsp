@@ -123,15 +123,26 @@
     border: 2px solid #008fd7;
     }
     #chackBox_name{
-    position:absolute;
-    top: 707px;
-    left: 1369px;
+    position: absolute;
+    top: 701px;
+    left: 1390px;
+    }
+    #chackBox_showFM{
+    position: absolute;
+    top: 725px;
+    left: 1390px;
     }
     #WShow{
-    position:absolute;
-    top: 683px;
-    left: 1372px;
-    z-index:999;
+    position: absolute;
+    top: 704px;
+    left: 1297px;
+    z-index: 999;
+    }
+    #FMShow{
+    position: absolute;
+    top: 729px;
+    left: 1316px;
+    z-index: 999;
     }
     #setConfig h1{
     font-size:20px;
@@ -165,6 +176,7 @@
     var num = id.substr(2);
     <%--var table =document.getElementById(num);--%>
     var image = document.getElementById(id);
+    showFMName(id);
     <%--var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");--%>
     <%--if(openDgree<0||openDgree>100||isNaN(openDgree)){--%>
     <%--alert("输入有误！请重新输入！");--%>
@@ -207,6 +219,7 @@
     <%--else if(openDgree==null){--%>
     <%--return;--%>
     <%--}--%>
+    notShowFMName(id);
     if (openDgree==0){
     <%--table.innerHTML=openDgree+"%";--%>
     image.src = "image/y2.png";
@@ -227,6 +240,18 @@
     return;
     }
     }
+
+    function showFMName(id){
+    document.getElementById(id).style.display="block";
+    document.getElementById("W"+id).style.display="block";
+
+    }
+    function notShowFMName(id){
+    if(id=="FM062"||id=="FM019") return;
+    document.getElementById(id).style.display="none";
+    document.getElementById("W"+id).style.display="none";
+    }
+
 
 
 
@@ -295,6 +320,26 @@
             return;
         }
     }
+
+    <%--function load(){--%>
+    <%--for(i in fmArray){--%>
+    <%--clearOpenDgree(fmArray[i]);--%>
+    <%--}--%>
+    <%--}--%>
+    var fmArray = new Array("FM05","FM06","FM07","FM09","FM010","FM065","FM062","FM063","FM064","FM045","FM014","FM015","FM069","FM066","FM016","FM068","FM017","FM018","FM019","FM020","FM052","FM056","FM053","FM054","FM057","FM058","FM059","FM021","FM022","FM046","FM023","FM024","FM025","FM044","FM055","FM026","FM047","FM048","FM049","FM050","FM051");
+    function showFM(e){
+    if(e.checked==false){
+    for(i in fmArray){
+    showFMName(fmArray[i]);
+    }
+    }
+
+    else {
+    for(i in fmArray){
+    notShowFMName(fmArray[i]);
+    }
+    }
+    }
     </script>
 </head>
 <body>
@@ -308,8 +353,10 @@
         <div id="mainView" style="position: absolute;z-index: 1" >
             <canvas id="canvas_fix" width="1583" height="757"></canvas>
         </div>
-    <p class="name_Model" id="WShow">显示名称</p>
-    <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label>
+    <p class="name_Model" id="WShow">构筑物显示</p>
+    <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="true" onclick="showName(this)"> 默认未选中</label>
+    <p class="name_Model" id="FMShow">阀门显示</p>
+    <label><input id="chackBox_showFM" class="mui-switch mui-switch-anim" type="checkbox" checked="false" onclick="showFM(this)"> 默认未选中</label>
     <a  id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
     <a  id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
     <a  id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
