@@ -10,7 +10,7 @@ oCanvas.domReady(function () {
         y: -13,
         image: "image/fix.png"
     });
-    canvas.addChild(bg);
+    canvas.addChild(bg);//1
     var speed_all=1.5,
         width_all=20,
         color_GD="#007fff",
@@ -25,7 +25,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//1
     var GD0101=createGD({
         parent:canvas,
         cells:[
@@ -33,11 +33,11 @@ oCanvas.domReady(function () {
             {x_cell: 707 ,y_cell: 223},
             {x_cell: 765 ,y_cell: 258},
             {x_cell: 989 ,y_cell: 258},
-            {x_cell: 989, y_cell: 349}
+            {x_cell: 989, y_cell: 348}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//2
     var GD02=createGD({
         parent:canvas,
         cells:[
@@ -49,7 +49,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//3
     var GD03=createGD({
         parent:canvas,
         cells:[
@@ -58,7 +58,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//4
     var GD04=createGD({
         parent:canvas,
         cells:[
@@ -68,7 +68,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//5
     var GD05=createGD({
         parent:canvas,
         cells:[
@@ -78,7 +78,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//6
     var GD06=createGD({
         parent:canvas,
         cells:[
@@ -109,7 +109,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//9
     var GD09=createGD({
         parent:canvas,
         cells:[
@@ -121,7 +121,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//10
     var GD10=createGD({
         parent:canvas,
         cells:[
@@ -131,7 +131,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//11
     var GD1001=createGD({
         parent:canvas,
         cells:[
@@ -1688,6 +1688,12 @@ oCanvas.domReady(function () {
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
             document.getElementById("export").href="download/fix-jjc1.docx";
+            window.setTimeout(function(){
+            	decay(6,1);
+                decay(10,1);
+                decay(9,1);
+                decay(13,1);
+             },100);
             setShow();
         }
     });
@@ -1697,6 +1703,13 @@ oCanvas.domReady(function () {
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
             document.getElementById("export").href="download/fix-jjc2.docx";
+            window.setTimeout(function(){
+                decay(7,1);
+                decay(11,1);
+                decay(12,1);
+                decay(13,1);
+                decay(14,1);
+             },100);
             setShow();
         }
     });
@@ -1829,6 +1842,10 @@ oCanvas.domReady(function () {
             setShow();
         }
     });
+    
+    $("#reset").bind("click", function () {
+        clearAll();
+    });
 
     function decay(a,b){
         if(b>0){
@@ -1873,6 +1890,14 @@ oCanvas.domReady(function () {
         }
     }
     function clearAll(){
+    	canvas.children[6].fill=color_GD;
+    	canvas.children[7].fill=color_GD;
+    	canvas.children[9].fill=color_GD;
+        canvas.children[10].fill=color_GD;
+        canvas.children[11].fill=color_GD;
+        canvas.children[12].fill=color_GD;
+        canvas.children[13].fill=color_GD;
+        canvas.children[14].fill=color_GD;
         clearOpenDgree("FM05");
         clearOpenDgree("FM06");
         clearOpenDgree("FM07");

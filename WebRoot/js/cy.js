@@ -54,47 +54,63 @@ oCanvas.domReady(function () {
  }).add();
 //画箭头
  var arrow_1=canvas.display.sprite({
-     x: 368,
+     x: 367,
      y: 227,
-     image: "image/water-arrow/right_roll.png",
+     loop:false,
+     image: "image/water-arrow/ld.png",
      generate:false,
      frames: [
-         {x:60,y:0,w:60,h:60,d:400},
-         {x:0,y:0,w:60,h:60,d:800}
-
+		{x: 500, y: 0, w: 72, h: 60, d: 100},
+		{x: 0, y: 0, w: 72, h: 60, d: 100},
+		{x: 75, y: 0, w: 72, h: 60, d: 100},
+		{x: 151, y: 0, w: 72, h: 60, d: 200},
+		{x: 227, y: 0, w: 72, h: 60, d: 500},
+		{x: 303, y: 0, w: 72, h: 60, d: 500}
      ]
  }).add();
  var arrow_2=canvas.display.sprite({
-     x: 560,
+     x: 556,
      y: 227,
-     image: "image/water-arrow/right_roll.png",
+     loop:false,
+     image: "image/water-arrow/ld.png",
      generate:false,
      frames: [
-         {x:60,y:0,w:60,h:60,d:400},
-         {x:0,y:0,w:60,h:60,d:800}
-
+		{x: 500, y: 0, w: 72, h: 60, d: 100},
+		{x: 0, y: 0, w: 72, h: 60, d: 100},
+		{x: 75, y: 0, w: 72, h: 60, d: 100},
+		{x: 151, y: 0, w: 72, h: 60, d: 200},
+		{x: 227, y: 0, w: 72, h: 60, d: 500},
+		{x: 303, y: 0, w: 72, h: 60, d: 500}
      ]
  }).add();
  var arrow_3=canvas.display.sprite({
-     x: 843,
+     x: 841,
      y: 227,
-     image: "image/water-arrow/right_roll.png",
+     loop:false,
+     image: "image/water-arrow/ld.png",
      generate:false,
      frames: [
-         {x:60,y:0,w:60,h:60,d:400},
-         {x:0,y:0,w:60,h:60,d:800}
-
+		{x: 500, y: 0, w: 72, h: 60, d: 100},
+		{x: 0, y: 0, w: 72, h: 60, d: 100},
+		{x: 75, y: 0, w: 72, h: 60, d: 100},
+		{x: 151, y: 0, w: 72, h: 60, d: 200},
+		{x: 227, y: 0, w: 72, h: 60, d: 500},
+		{x: 303, y: 0, w: 72, h: 60, d: 500}
      ]
  }).add();
  var arrow_4=canvas.display.sprite({
-     x: 1035,
+     x: 1032,
      y: 227,
-     image: "image/water-arrow/right_roll.png",
+     loop:false,
+     image: "image/water-arrow/ld.png",
      generate:false,
      frames: [
-         {x:60,y:0,w:60,h:60,d:400},
-         {x:0,y:0,w:60,h:60,d:800}
-
+		{x: 500, y: 0, w: 72, h: 60, d: 100},
+		{x: 0, y: 0, w: 72, h: 60, d: 100},
+		{x: 75, y: 0, w: 72, h: 60, d: 100},
+		{x: 151, y: 0, w: 72, h: 60, d: 200},
+		{x: 227, y: 0, w: 72, h: 60, d: 500},
+		{x: 303, y: 0, w: 72, h: 60, d: 500}
      ]
  }).add();
 //绘制两条管道
@@ -143,45 +159,71 @@ oCanvas.domReady(function () {
      text:"臭氧接\n触池出水"
  }).add();
     var arrow_5 = canvas.display.sprite({
-        x: 352,
-        y: 554,
-        image: "image/water-arrow/zuo.png",
+        x: 290,
+        y: 495,
+        loop:false,
+        image: "image/water-arrow/lu.png",
         generate: false,
         frames: [
-            {x: 60, y: 0, w: 60, h: 60, d: 400},
-            {x: 0, y: 0, w: 60, h: 60, d: 800}
+            {x: 500, y: 0, w: 72, h: 60, d: 100},
+            {x: 0, y: 0, w: 72, h: 60, d: 100},
+            {x: 77, y: 0, w: 72, h: 60, d: 100},
+            {x: 152, y: 0, w: 72, h: 60, d: 100},
+            {x: 228, y: 0, w: 72, h: 60, d: 200},
+            {x: 304, y: 0, w: 72, h: 60, d: 500}
+//            {x: 304, y: 0, w: 94, h: 60, d: 200},
+//            {x: 202, y: 0, w: 94, h: 60, d: 100},
+//            {x: 101, y: 0, w: 94, h: 60, d: 100}
         ]
-    }).rotate(180).add();
+    }).add();
     var arrow_6 = canvas.display.sprite({
-        x: 505,
-        y: 554,
-        image: "image/water-arrow/zuo.png",
+        x: 444,
+        y: 495,
+        loop:false,
+        image: "image/water-arrow/lu.png",
         generate: false,
         frames: [
-            {x: 60, y: 0, w: 60, h: 60, d: 400},
-            {x: 0, y: 0, w: 60, h: 60, d: 800}
+			{x: 500, y: 0, w: 72, h: 60, d: 100},
+            {x: 0, y: 0, w: 72, h: 60, d: 100},
+            {x: 77, y: 0, w: 72, h: 60, d: 100},
+            {x: 152, y: 0, w: 72, h: 60, d: 100},
+            {x: 228, y: 0, w: 72, h: 60, d: 200},
+            {x: 304, y: 0, w: 72, h: 60, d: 500}
+
         ]
-    }).rotate(180).add();
+    }).add();
     var arrow_7 = canvas.display.sprite({
-        x: 695,
-        y: 554,
-        image: "image/water-arrow/zuo.png",
+        x: 636,
+        y: 495,
+        loop:false,
+        image: "image/water-arrow/lu.png",
         generate: false,
         frames: [
-            {x: 60, y: 0, w: 60, h: 60, d: 400},
-            {x: 0, y: 0, w: 60, h: 60, d: 800}
+     		{x: 500, y: 0, w: 72, h: 60, d: 100},
+            {x: 0, y: 0, w: 72, h: 60, d: 100},
+            {x: 77, y: 0, w: 72, h: 60, d: 100},
+            {x: 152, y: 0, w: 72, h: 60, d: 100},
+            {x: 228, y: 0, w: 72, h: 60, d: 200},
+            {x: 304, y: 0, w: 72, h: 60, d: 500}
+    		
         ]
-    }).rotate(180).add();
+    }).add();
     var arrow_8 = canvas.display.sprite({
-        x: 979,
-        y: 554,
-        image: "image/water-arrow/zuo.png",
+        x: 920,
+        y: 495,
+        loop:false,
+        image: "image/water-arrow/lu.png",
         generate: false,
         frames: [
-            {x: 60, y: 0, w: 60, h: 60, d: 400},
-            {x: 0, y: 0, w: 60, h: 60, d: 800}
+     		{x: 500, y: 0, w: 72, h: 60, d: 100},
+            {x: 0, y: 0, w: 72, h: 60, d: 100},
+            {x: 77, y: 0, w: 72, h: 60, d: 100},
+            {x: 152, y: 0, w: 72, h: 60, d: 100},
+            {x: 228, y: 0, w: 72, h: 60, d: 200},
+            {x: 304, y: 0, w: 72, h: 60, d: 500}
+    		
         ]
-    }).rotate(180).add();
+    }).add();
  var pp1=canvas.display.bubble({
      start:{x:425,y:566},
      container:SC02,
@@ -234,46 +276,46 @@ oCanvas.domReady(function () {
      if(SC02.height_now>=60){
          SC021.start=1;
          arrow_6.start();
-         arrow_5.frame=2;
+//         arrow_5.frame=2;
          arrow_5.stopAnimation();
      }
      if(SC02.full==1){
          SC03.start=1;
          arrow_2.start();
-         arrow_1.frame=2;
+//         arrow_1.frame=2;
          arrow_1.stopAnimation();
 
      }
      if(SC03.height_now>=60){
          SC031.start=1;
          arrow_7.start();
-         arrow_6.frame=2;
+//         arrow_6.frame=2;
          arrow_6.stopAnimation();
 
      }
      if(SC03.full==1){
          SC04.start=1;
          arrow_3.start();
-         arrow_2.frame=2;
+//         arrow_2.frame=2;
          arrow_2.stopAnimation();
      }
      if(SC04.height_now>=60){
          SC041.start=1;
          arrow_8.start();
-         arrow_7.frame=2;
+//         arrow_7.frame=2;
 
      }
      if(SC04.full==1){
          SC05.start=1;
          arrow_4.start();
-         arrow_3.frame=2;
+//         arrow_3.frame=2;
      }
      if(SC05.height_now>=20){
          GD02.paused=1;
      }
      if(GD02.full==1){
-         arrow_4.frame=2;
-         arrow_8.frame=2;
+//         arrow_4.frame=2;
+//         arrow_8.frame=2;
      }
      canvas.redraw();
  }).start();
