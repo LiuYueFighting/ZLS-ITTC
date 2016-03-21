@@ -35,19 +35,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD011=createGD({
-        parent:canvas,
-        cells:[
-            {x_cell: 707 ,y_cell: 96},
-            {x_cell: 707 ,y_cell: 223},
-            {x_cell: 765 ,y_cell: 258},
-            {x_cell: 989 ,y_cell: 258},
-            {x_cell: 989 ,y_cell: 295},
-            {x_cell: 1020, y_cell: 295}
-        ],
-        GDwidth:width_all,
-        color:color_GD
-    });
+    
     var GD02=createGD({
         parent:canvas,
         cells:[
@@ -294,6 +282,20 @@ oCanvas.domReady(function () {
             {x_cell: 527 ,y_cell: 401},
             {x_cell: 592 ,y_cell: 401},
             {x_cell: 592, y_cell: 375}
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });
+    
+    var GD011=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 707 ,y_cell: 96},
+            {x_cell: 707 ,y_cell: 223},
+            {x_cell: 765 ,y_cell: 258},
+            {x_cell: 989 ,y_cell: 258},
+            {x_cell: 989 ,y_cell: 295},
+            {x_cell: 1020, y_cell: 295}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -1054,6 +1056,7 @@ oCanvas.domReady(function () {
         canvas.children[15].fill=color_GD;
         canvas.children[16].fill=color_GD;
         canvas.children[19].fill=color_GD;
+        canvas.children[25].fill=color_GD;
         canvas.children[22].fill="rgba(1,1,1,0)";
         GD01.init();
         GD011.init();
@@ -1182,6 +1185,7 @@ oCanvas.domReady(function () {
         canvas.children[14].fill="rgba(1,0,0,0)";
         canvas.children[17].fill="rgba(1,0,0,0)";
         canvas.children[18].fill="rgba(1,0,0,0)";
+        canvas.children[25].fill="rgba(1,0,0,0)";
 
     }
     function line_old(){

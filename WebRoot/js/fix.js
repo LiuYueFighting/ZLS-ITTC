@@ -88,7 +88,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//7
     var GD07=createGD({
         parent:canvas,
         cells:[
@@ -97,7 +97,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//8
     var GD08=createGD({
         parent:canvas,
         cells:[
@@ -127,7 +127,8 @@ oCanvas.domReady(function () {
         cells:[
             {x_cell: 1108 ,y_cell: 445},
             {x_cell: 1108 ,y_cell: 482},
-            {x_cell: 990 ,y_cell: 482}
+            {x_cell: 990 ,y_cell: 482},
+            {x_cell: 990 ,y_cell: 527}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -141,7 +142,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//12
     var GD1002=createGD({
         parent:canvas,
         cells:[
@@ -150,7 +151,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//13
     var GD11=createGD({
         parent:canvas,
         cells:[
@@ -160,7 +161,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//14
     var GD12=createGD({
         parent:canvas,
         cells:[
@@ -170,7 +171,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//15
     var GD13=createGD({
         parent:canvas,
         cells:[
@@ -181,7 +182,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//16
 
     //var GD14=createGD({
     //    parent:canvas,
@@ -198,24 +199,26 @@ oCanvas.domReady(function () {
         cells:[
             {x_cell: 879 ,y_cell: 570},
             {x_cell: 879 ,y_cell: 635},
-            {x_cell: 714 ,y_cell: 635}
+            {x_cell: 714 ,y_cell: 633},
+            {x_cell: 636 ,y_cell: 633},
+            {x_cell: 636, y_cell: 646}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//17
 
     var GD15=createGD({
         parent:canvas,
         cells:[
             {x_cell: 807 ,y_cell: 708},
             {x_cell: 715 ,y_cell: 708},
-            {x_cell: 715 ,y_cell: 630},
-            {x_cell: 636 ,y_cell: 630},
+            {x_cell: 715 ,y_cell: 633},
+            {x_cell: 636 ,y_cell: 633},
             {x_cell: 636, y_cell: 646}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//18
     var GD1501=createGD({
         parent:canvas,
         cells:[
@@ -226,7 +229,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//19
     var GD16=createGD({
         parent:canvas,
         cells:[
@@ -235,7 +238,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//20
     var GD17=createGD({
         parent:canvas,
         cells:[
@@ -246,7 +249,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//21
     var GD18=createGD({
         parent:canvas,
         cells:[
@@ -255,7 +258,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//22
     var GD19=createGD({
         parent:canvas,
         cells:[
@@ -266,7 +269,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//23
     var GD20=createGD({
         parent:canvas,
         cells:[
@@ -275,7 +278,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//24
     var GD21=createGD({
         parent:canvas,
         cells:[
@@ -286,7 +289,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//25
     var GD22=createGD({
         parent:canvas,
         cells:[
@@ -300,7 +303,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:"rgba(1,0,0,0)"
-    });
+    });//26
 
     var GD23=createGD({
         parent:canvas,
@@ -312,7 +315,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//27
     var GD24=createGD({
         parent:canvas,
         cells:[
@@ -323,7 +326,17 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//28
+    
+    var GD25=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 748 ,y_cell: 98},
+            {x_cell: 748 ,y_cell: 222},
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });//29
 
     var img1=canvas.display.image({
         x:692,
@@ -753,11 +766,13 @@ oCanvas.domReady(function () {
     GD01.paused=1;
     GD22.paused=1;
     GD02.paused=1;
+    GD25.paused=1;
 
 
     canvas.setLoop(function () {
         GD01.advance();
         GD0101.advance();
+        GD25.advance();
         GD02.advance();
         GD03.advance();
         GD04.advance();
@@ -836,6 +851,7 @@ oCanvas.domReady(function () {
     });
     GD01.paused=1;
     GD02.paused=1;
+    GD25.paused=1;
     GD22.paused=1;
     canvas.timeline.start();
 
@@ -1013,6 +1029,7 @@ oCanvas.domReady(function () {
     function init(){
         GD01.init();
         GD02.init();
+        Gd25.init();
         GD03.init();
         GD04.init();
         GD05.init();
@@ -1679,6 +1696,11 @@ oCanvas.domReady(function () {
                 fix_qs_right();
             };
             document.getElementById("export").href="download/fix-qs.doc";
+            window.setTimeout(function(){              
+            	decay(3,1);//GD04
+            	//decay(8,1);//GD07
+            	//decay(15,1);//GD12
+             },100);
             setShow();
         }
     });
@@ -1714,11 +1736,16 @@ oCanvas.domReady(function () {
         }
     });
     $("#name_JJC3").click(function(){
-        if(confirm("是否将“#3机加池”设置为维修状态？3")){
+        if(confirm("是否将“#3机加池”设置为维修状态？")){
             fix_jjc3();
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
             document.getElementById("export").href="download/fix-jjc3.docx";
+            window.setTimeout(function(){              
+            	decay(5,1);//GD04
+            	decay(8,1);//GD07
+            	decay(15,1);//GD12
+             },100);
             setShow();
         }
     });
@@ -1728,6 +1755,9 @@ oCanvas.domReady(function () {
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
             document.getElementById("export").href="download/fix-vl.docx";
+            window.setTimeout(function(){
+            	decay(18,1);//GD15
+            },100);
             setShow();
         }
     });
@@ -1737,6 +1767,10 @@ oCanvas.domReady(function () {
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
             document.getElementById("export").href="download/fix-tc-old.doc";
+            window.setTimeout(function(){              
+            	decay(21,1);//GD17  
+            	decay(22,1);//GD18
+             },100);
         }
     });
     $("#name_TC1").click(function(){
@@ -1745,6 +1779,10 @@ oCanvas.domReady(function () {
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
             document.getElementById("export").href="download/fix-tc-new.doc";
+            window.setTimeout(function(){              
+            	decay(23,1);//GD19
+            	decay(20,1);//GD16
+             },100);
         }
     });
     $("#name_CY").click(function(){
@@ -1757,6 +1795,9 @@ oCanvas.domReady(function () {
                 fix_cy_right();
             };
             document.getElementById("export").href="download/fix-cy.doc";
+            window.setTimeout(function(){              
+            	decay(21,1);//GD17
+             },100);
             setShow();
         }
     });
@@ -1770,6 +1811,13 @@ oCanvas.domReady(function () {
                 fix_hh_right();
             };
             document.getElementById("export").href="download/fix-hh-old.doc";
+            window.setTimeout(function(){
+                decay(7,1);
+                decay(11,1);
+                decay(12,1);
+                decay(13,1);
+                decay(14,1);
+             },100);
             setShow();
         }
     });
@@ -1779,6 +1827,10 @@ oCanvas.domReady(function () {
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
             document.getElementById("export").href="download/fix-hh-new.docx";
+            window.setTimeout(function(){              
+            	decay(5,1);//GD04
+            	decay(8,1);//GD07
+             },100);
         }
     });
     $("#name_HX").click(function(){
@@ -1792,6 +1844,11 @@ oCanvas.domReady(function () {
                 fix_hx_right();
             };
             document.getElementById("export").href="download/fix-hx.doc";
+            window.setTimeout(function(){              
+            	decay(12,1);//GD04
+            	decay(14,1);//GD07
+            	decay(17,1);//GD141
+             },100);
             setShow();
 
         }
@@ -1805,9 +1862,12 @@ oCanvas.domReady(function () {
             document.getElementById("lastPage").onclick=function(){
             };
             document.getElementById("export").href="download/fix-qsc3.docx";
+            window.setTimeout(function(){              
+            	decay(25,1);//GD21
+             },100);
             setShow();
         }
-    });
+    }); //???
     $("#name_QSC2").click(function(){
         if(confirm("是否将“#2清水池”设置为维修状态？")){
             fix_qsc1();
@@ -1827,7 +1887,7 @@ oCanvas.domReady(function () {
             };
             document.getElementById("lastPage").onclick=function(){
             };
-            document.getElementById("export").href="download/fix-qsc2.doc";
+            document.getElementById("export").href="download/fix-qsc2.doc";         
             setShow();
         }
     });
@@ -1839,6 +1899,9 @@ oCanvas.domReady(function () {
             document.getElementById("lastPage").onclick=function(){
             };
             document.getElementById("export").href="download/fix-qsc4.docx";
+            window.setTimeout(function(){              
+            	decay(28,1);//GD24
+             },100);
             setShow();
         }
     });
@@ -1890,14 +1953,28 @@ oCanvas.domReady(function () {
         }
     }
     function clearAll(){
+    	canvas.children[3].fill=color_GD;
+    	canvas.children[5].fill=color_GD;
     	canvas.children[6].fill=color_GD;
     	canvas.children[7].fill=color_GD;
+    	canvas.children[8].fill=color_GD;
     	canvas.children[9].fill=color_GD;
         canvas.children[10].fill=color_GD;
         canvas.children[11].fill=color_GD;
         canvas.children[12].fill=color_GD;
         canvas.children[13].fill=color_GD;
         canvas.children[14].fill=color_GD;
+        canvas.children[15].fill=color_GD;
+        canvas.children[16].fill=color_GD;
+        canvas.children[17].fill=color_GD;
+        canvas.children[18].fill=color_GD;
+        canvas.children[20].fill=color_GD;
+        canvas.children[21].fill=color_GD;
+        canvas.children[22].fill=color_GD;
+        canvas.children[23].fill=color_GD;
+        canvas.children[24].fill=color_GD;
+        canvas.children[25].fill=color_GD;
+        canvas.children[28].fill=color_GD;
         clearOpenDgree("FM05");
         clearOpenDgree("FM06");
         clearOpenDgree("FM07");
