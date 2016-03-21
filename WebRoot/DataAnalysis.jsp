@@ -279,6 +279,10 @@ th, td, input, option {
 	padding: 0;
 	margin: 0;
 }
+
+#calculate p{
+	color: #223bb8;
+}
 #calculate {
 	position: absolute;
 width: 1300px;
