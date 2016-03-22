@@ -263,7 +263,6 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:"rgba(1,0,0,0)"
     });
-
     var GD23=createGD({
         parent:canvas,
         cells:[
@@ -285,8 +284,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
-    
+    });   
     var GD011=createGD({
         parent:canvas,
         cells:[
