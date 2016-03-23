@@ -21,7 +21,7 @@ oCanvas.domReady(function () {
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 96},
-            {x_cell: 707 ,y_cell: 150}
+            {x_cell: 707 ,y_cell: 150}          
         ],
         GDwidth:width_all,
         color:color_GD
@@ -29,7 +29,7 @@ oCanvas.domReady(function () {
     var GD0101=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 707 ,y_cell: 160},
+            {x_cell: 707 ,y_cell: 160},//160
             {x_cell: 707 ,y_cell: 223},
             {x_cell: 765 ,y_cell: 258},
             {x_cell: 989 ,y_cell: 258},
@@ -337,6 +337,74 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });//29
+    
+    var GD26=createGD({
+        parent:canvas,
+        cells:[
+            //{x_cell: 896 ,y_cell: 445},
+            {x_cell: 896 ,y_cell: 482},
+            {x_cell: 792 ,y_cell: 482},
+            {x_cell: 792 ,y_cell: 539},
+            {x_cell: 819, y_cell: 539}
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });//30
+    var GD27=createGD({
+        parent:canvas,
+        cells:[
+            //{x_cell: 896 ,y_cell: 445},
+            {x_cell: 896 ,y_cell: 482},
+            {x_cell: 792 ,y_cell: 482},
+            {x_cell: 792 ,y_cell: 562},
+            {x_cell: 819, y_cell: 562}
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });//31
+    var GD28=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 707 ,y_cell: 160},//160
+            {x_cell: 707 ,y_cell: 223}
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });//32
+    var GD29=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 896 ,y_cell: 445},
+            {x_cell: 896 ,y_cell: 482},
+            {x_cell: 832 ,y_cell: 482},
+            
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });//33
+    var GD30=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 879 ,y_cell: 570},
+            {x_cell: 879 ,y_cell: 635},
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });//34
+    var GD31=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 707 ,y_cell: 160},//160
+            {x_cell: 707 ,y_cell: 223},
+            {x_cell: 765 ,y_cell: 258},
+            {x_cell: 989 ,y_cell: 258},
+            {x_cell: 989, y_cell: 298},
+            {x_cell: 1020, y_cell: 298},
+            {x_cell: 1020, y_cell: 348}
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });//35
 
     var img1=canvas.display.image({
         x:692,
@@ -450,6 +518,9 @@ oCanvas.domReady(function () {
         window.setTimeout(function(){
             GD08.paused=1;
             GD09.paused=1;
+            GD26.paused=1;
+            GD27.paused=1;
+            GD29.paused=1;
         },100);
     });
 
@@ -682,6 +753,7 @@ oCanvas.domReady(function () {
             GD13.paused=1;
             //GD14.paused=1;
             GD141.paused=1;
+            GD30.paused=1;
         },100);
 
     });
@@ -1004,9 +1076,17 @@ oCanvas.domReady(function () {
         GD22.advance();
         GD23.advance();
         GD24.advance();
+        GD26.advance();
+        GD27.advance();
+        GD28.advance();
+        GD29.advance();
+        GD30.advance();
+        GD31.advance();
 
         if(GD01.full==1){
             GD0101.paused=1;
+            GD28.paused=1;
+            GD31.paused=1;
         }
         if(GD02.full==1){
             GD03.paused=1;
@@ -1256,6 +1336,9 @@ oCanvas.domReady(function () {
         GD22.init();
         GD23.init();
         GD24.init();
+        GD26.init();
+        GD27.init();
+        GD29.init();
         img1.bind("flash",function(){
             $("#name_QS").animate({
                 height:'200px',opacity:'1'},'fast');
@@ -1284,6 +1367,9 @@ oCanvas.domReady(function () {
             this.unbind("flash");
             GD08.paused=1;
             GD09.paused=1;
+            GD26.paused=1;
+            GD27.paused=1;
+            GD29.paused=1;
         });
 
 
@@ -1895,7 +1981,14 @@ oCanvas.domReady(function () {
             fix_qs_right();
             document.getElementById("nextPage").onclick=function(){
                 fix_qs_left();
-                
+                window.setTimeout(function(){              
+                	decay(2,1);//GD0101
+                	decay(6,1);//GD05
+                	decay(9,1);
+                	decay(10,1);
+                	decay(33,1);
+                	decay(35,1);
+                 },100);
             };
             document.getElementById("lastPage").onclick=function(){
                 fix_qs_right();
@@ -1903,12 +1996,12 @@ oCanvas.domReady(function () {
                 	decay(3,1);//GD02
                 	decay(4,1);//GD03
                 	decay(5,1);//GD04
-                	decay(7,1);
+                	//decay(7,1);
                 	decay(8,1);//GD07
-                	decay(11,1);
-                	decay(12,1);
-                	decay(13,1);
-                	decay(14,1);
+                	//decay(11,1);
+                	//decay(12,1);
+                	//decay(13,1);
+                	//decay(14,1);
                 	decay(15,1);//GD12
                 	decay(18,1);
                  },100);
@@ -1918,12 +2011,12 @@ oCanvas.domReady(function () {
             	decay(3,1);//GD02
             	decay(4,1);//GD03
             	decay(5,1);//GD04
-            	decay(7,1);
+            	//decay(7,1);
             	decay(8,1);//GD07
-            	decay(11,1);
-            	decay(12,1);
-            	decay(13,1);
-            	decay(14,1);
+            	//decay(11,1);
+            	//decay(12,1);
+            	//decay(13,1);
+            	//decay(14,1);
             	decay(15,1);//GD12
             	decay(18,1);
              },100);
@@ -1941,6 +2034,9 @@ oCanvas.domReady(function () {
                 decay(10,1);
                 decay(9,1);
                 decay(13,1);
+                decay(30,1);
+                decay(31,1);
+                decay(33,1);
              },100);
             setShow();
         }
@@ -2017,13 +2113,21 @@ oCanvas.domReady(function () {
             fix_cy_right();
             document.getElementById("nextPage").onclick=function(){
                 fix_cy_left();
+                window.setTimeout(function(){              
+                	decay(20,1);//GD17
+                 },100);
             };
             document.getElementById("lastPage").onclick=function(){
                 fix_cy_right();
+                window.setTimeout(function(){              
+                	decay(21,1);//GD17
+                	decay(22,1);
+                 },100);
             };
             document.getElementById("export").href="download/fix-cy.doc";
             window.setTimeout(function(){              
             	decay(21,1);//GD17
+            	decay(22,1);
              },100);
             setShow();
         }
@@ -2033,9 +2137,24 @@ oCanvas.domReady(function () {
             fix_hh_right();
             document.getElementById("nextPage").onclick=function(){
                 fix_hh_left();
+                window.setTimeout(function(){
+                    decay(6,1);
+                    decay(9,1);
+                    decay(10,1);
+                    decay(30,1);
+                    decay(31,1);
+                    decay(33,1);
+                 },100);
             };
             document.getElementById("lastPage").onclick=function(){
                 fix_hh_right();
+                window.setTimeout(function(){
+                    decay(7,1);
+                    decay(11,1);
+                    decay(12,1);
+                    decay(13,1);
+                    decay(14,1);
+                 },100);
             };
             document.getElementById("export").href="download/fix-hh-old.doc";
             window.setTimeout(function(){
@@ -2066,15 +2185,30 @@ oCanvas.domReady(function () {
             fix_hx_right();
             document.getElementById("nextPage").onclick=function(){
                 fix_hx_left();
+                window.setTimeout(function(){              
+                	decay(16,1);//GD04
+                	decay(17,1);//GD07
+                	decay(9,1);//GD141
+                	decay(10,1);
+                	decay(30,1);
+                	decay(31,1);
+                 },100);
             };
             document.getElementById("lastPage").onclick=function(){
                 fix_hx_right();
+                window.setTimeout(function(){              
+                	decay(12,1);//GD04
+                	decay(14,1);//GD07
+                	decay(17,1);//GD141
+                	decay(34,1);
+                 },100);
             };
             document.getElementById("export").href="download/fix-hx.doc";
             window.setTimeout(function(){              
             	decay(12,1);//GD04
             	decay(14,1);//GD07
             	decay(17,1);//GD141
+            	decay(34,1);
              },100);
             setShow();
 
@@ -2180,7 +2314,9 @@ oCanvas.domReady(function () {
         }
     }
     function clearAll(){
+    	canvas.children[2].fill=color_GD;
     	canvas.children[3].fill=color_GD;
+    	canvas.children[4].fill=color_GD;
     	canvas.children[5].fill=color_GD;
     	canvas.children[6].fill=color_GD;
     	canvas.children[7].fill=color_GD;
@@ -2202,6 +2338,10 @@ oCanvas.domReady(function () {
         canvas.children[24].fill=color_GD;
         canvas.children[25].fill=color_GD;
         canvas.children[28].fill=color_GD;
+        canvas.children[30].fill=color_GD;
+        canvas.children[31].fill=color_GD;
+        canvas.children[33].fill=color_GD;
+        canvas.children[34].fill=color_GD;
         clearOpenDgree("FM05");
         clearOpenDgree("FM06");
         clearOpenDgree("FM07");

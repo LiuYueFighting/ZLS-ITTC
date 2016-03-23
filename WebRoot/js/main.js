@@ -399,7 +399,6 @@ oCanvas.domReady(function () {
             GD09.paused=1;
         },1200);
     });
-
     var img21=img2.clone({
         x:1049,
         y:340
