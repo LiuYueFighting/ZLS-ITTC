@@ -346,7 +346,7 @@
         document.getElementById("name_TC" ).style.display="block";
         document.getElementById("name_TC1").style.display="block";
         document.getElementById("name_CY" ).style.display="block";
-        document.getElementById("name_CYC").style.display="block";
+        <%--document.getElementById("name_CYC").style.display="block";--%>
         document.getElementById("name_YC" ).style.display="block";
         document.getElementById("name_HHJ1").style.display="block";
         document.getElementById("name_HHJ2").style.display="block";
@@ -366,7 +366,7 @@
         document.getElementById("name_TC" ).style.display="none";
         document.getElementById("name_TC1").style.display="none";
         document.getElementById("name_CY" ).style.display="none";
-        document.getElementById("name_CYC").style.display="none";
+        <%--document.getElementById("name_CYC").style.display="none";--%>
         document.getElementById("name_YC" ).style.display="none";
         document.getElementById("name_HHJ1").style.display="none";
         document.getElementById("name_HHJ2").style.display="none";
