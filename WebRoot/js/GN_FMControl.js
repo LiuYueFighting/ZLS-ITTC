@@ -83,12 +83,12 @@ oCanvas.domReady(function(){
         image:"./image/FMControl.png"
     });
     canvas.addChild(bg);
-//    var img1=canvas.display.image({
-//        x:692,
-//        y:58,
-//        image:"image/main/qs.png"
-//    });
-//    canvas.addChild(img1);
+    var img1=canvas.display.image({
+        x:692,
+        y:58,
+        image:"image/main/qs.png"
+    });
+    canvas.addChild(img1);
 //    img1.bind("click",function(){
 //        window.location.href="GN_getWater.jsp";
 //    }).bind("mouseenter", function () {
@@ -117,12 +117,12 @@ oCanvas.domReady(function(){
 //        this.shadow="0 0 0px #eee";
 //    });
 //    //????????
-//    var img2=canvas.display.image({
-//        x:839,
-//        y:342,
-//        image:"image/main/5.png"
-//    });
-//    canvas.addChild(img2);
+    var img11=canvas.display.image({
+        x:678,
+        y:141,
+        image:"image/main/qs2.png"
+    });
+    canvas.addChild(img11);
 //    img2.bind("click",function(){
 //        window.location.href="GN_JJ.jsp";
 //    }).bind("mouseenter", function () {
@@ -135,11 +135,12 @@ oCanvas.domReady(function(){
 //        canvas.redraw();
 //    });
 //    //???????????
-//    var img21=img2.clone({
-//        x:1049,
-//        y:340
-//    });
-//    canvas.addChild(img21);
+    var img2=canvas.display.image({
+        x:839,
+        y:342,
+        image:"image/main/5.png"
+    });
+    canvas.addChild(img2);
 //    img21.bind("click",function(){
 //        window.location.href="GN_JJ.jsp";
 //    }).bind("mouseenter", function () {
@@ -151,11 +152,94 @@ oCanvas.domReady(function(){
 //        this.shadow="0 0 0px #eee";
 //        canvas.redraw();
 //    });
-//    var img22=img2.clone({
-//        x:1127,
-//        y:573
-//    });
-//    canvas.addChild(img22);
+    var img21=img2.clone({
+        x:1049,
+        y:340
+    });
+    canvas.addChild(img21);
+    var img22=img2.clone({
+        x:1127,
+        y:573
+    });
+    canvas.addChild(img22);
+    var img3=canvas.display.image({
+        x:847,
+        y:665,
+        image:"image/main/6.png"
+    });
+    canvas.addChild(img3);
+    var img4=canvas.display.image({
+        x:967,
+        y:352,
+        image:"image/main/hhj.png"
+    });
+    var img41=canvas.display.image({
+        x:1179,
+        y:381,
+        image:"image/main/hhj2.png"
+    });
+    canvas.addChild(img41);
+    var img5=canvas.display.image({
+        x:810,
+        y:529,
+        image:"image/main/hx.png"
+    });
+    canvas.addChild(img5);
+    var img6=canvas.display.image({
+        x:284,
+        y:435,
+        image:"image/main/qsc1.png"
+    });
+    canvas.addChild(img6);
+    var img61=canvas.display.image({
+        x:287,
+        y:253,
+        image:"image/main/qsc2.png"
+    });
+    canvas.addChild(img61);
+    var img62=canvas.display.image({
+        x:462,
+        y:251,
+        image:"image/main/qsc2.png"
+    });
+    canvas.addChild(img62);
+    var img63=canvas.display.image({
+        x:432,
+        y:434,
+        image:"image/main/qsc3.png"
+    });
+    canvas.addChild(img63);
+    var img7=canvas.display.image({
+        x:870,
+        y:-7,
+        image:"image/main/1.png"
+    });
+    canvas.addChild(img7);
+    var img8=canvas.display.image({
+        x:379,
+        y:652,
+        image:"image/main/tc.png"
+    });
+    canvas.addChild(img8);
+    var img81=canvas.display.image({
+        x:488,
+        y:652,
+        image:"image/main/tc.png"
+    });
+    canvas.addChild(img81);
+    var img9=canvas.display.image({
+        x:613,
+        y:645,
+        image:"image/main/cy.png"
+    });
+    canvas.addChild(img9);
+    var img10=canvas.display.image({
+        x:623,
+        y:465,
+        image:"image/main/cyc.png"
+    });
+    canvas.addChild(img10);
+
 //    img22.bind("click",function(){
 //        window.location.href="GN_JJ.jsp";
 //    }).bind("mouseenter", function () {
