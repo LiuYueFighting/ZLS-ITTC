@@ -405,6 +405,47 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });//35
+    var GD32=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 1020, y_cell: 298},
+            {x_cell: 1020, y_cell: 258}
+        ],
+        GDwidth:width_all,
+        color:"rgba(26,215,255,0)"
+    });//36
+    var GD33=createGD({
+        parent:canvas,
+        cells:[                       
+            {x_cell: 1020, y_cell: 298},
+            {x_cell: 989, y_cell: 298},
+            {x_cell: 989, y_cell: 348}
+        ],
+        GDwidth:width_all,
+        color:"rgba(26,215,255,0)"
+    });//37
+    var GD34=createGD({
+        parent:canvas,
+        cells:[
+			{x_cell: 1124 ,y_cell: 650},
+			{x_cell: 1023, y_cell: 650},
+            {x_cell: 1023, y_cell: 482}
+            //{x_cell: 1023, y_cell: 650}
+        ],
+        GDwidth:width_all,
+        color:"rgba(26,215,255,0)"
+    });//38
+    var GD35=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 421 ,y_cell: 433},
+            {x_cell: 421, y_cell: 401},
+            {x_cell: 592 ,y_cell: 401},
+            {x_cell: 592, y_cell: 375}
+        ],
+        GDwidth:width_all,
+        color:"rgba(26,215,255,0)"
+    });//39
 
     var img1=canvas.display.image({
         x:692,
@@ -418,15 +459,49 @@ oCanvas.domReady(function () {
             fix_qs_right();
             document.getElementById("nextPage").onclick=function(){
                 fix_qs_left();
+                window.setTimeout(function(){              
+                	decay(2,1);//GD0101
+                	//decay(6,1);//GD05
+                	//decay(9,1);
+                	decay(10,1);
+                	//decay(33,1);
+                	decay(35,1);
+                	canvas.children[37].fill=color_GD;
+                 },100);
             };
             document.getElementById("lastPage").onclick=function(){
                 fix_qs_right();
+                window.setTimeout(function(){  
+                	//GD32.paused=1;
+                	canvas.children[36].fill=color_GD;
+                	decay(3,1);//GD02
+                	decay(4,1);//GD03
+                	//decay(5,1);//GD04
+                	//decay(7,1);
+                	//decay(8,1);//GD07
+                	//decay(11,1);
+                	//decay(12,1);
+                	//decay(13,1);
+                	//decay(14,1);
+                	//decay(15,1);//GD12
+                	//decay(18,1);
+                 },100);
             };
             document.getElementById("export").href="download/fix-qs.doc";
-            window.setTimeout(function(){              
-            	decay(3,1);//GD04
+            window.setTimeout(function(){  
+            	//GD32.paused=1;
+            	canvas.children[36].fill=color_GD;
+            	decay(3,1);//GD02
+            	decay(4,1);//GD03
+            	//decay(5,1);//GD04
+            	//decay(7,1);
             	//decay(8,1);//GD07
+            	//decay(11,1);
+            	//decay(12,1);
+            	//decay(13,1);
+            	//decay(14,1);
             	//decay(15,1);//GD12
+            	//decay(18,1);
              },100);
             setShow();
         }
@@ -459,15 +534,49 @@ oCanvas.domReady(function () {
             fix_qs_right();
             document.getElementById("nextPage").onclick=function(){
                 fix_qs_left();
+                window.setTimeout(function(){              
+                	decay(2,1);//GD0101
+                	//decay(6,1);//GD05
+                	//decay(9,1);
+                	decay(10,1);
+                	//decay(33,1);
+                	decay(35,1);
+                	canvas.children[37].fill=color_GD;
+                 },100);
             };
             document.getElementById("lastPage").onclick=function(){
                 fix_qs_right();
+                window.setTimeout(function(){  
+                	//GD32.paused=1;
+                	canvas.children[36].fill=color_GD;
+                	decay(3,1);//GD02
+                	decay(4,1);//GD03
+                	//decay(5,1);//GD04
+                	//decay(7,1);
+                	//decay(8,1);//GD07
+                	//decay(11,1);
+                	//decay(12,1);
+                	//decay(13,1);
+                	//decay(14,1);
+                	//decay(15,1);//GD12
+                	//decay(18,1);
+                 },100);
             };
             document.getElementById("export").href="download/fix-qs.doc";
-            window.setTimeout(function(){              
-            	decay(3,1);//GD04
+            window.setTimeout(function(){  
+            	//GD32.paused=1;
+            	canvas.children[36].fill=color_GD;
+            	decay(3,1);//GD02
+            	decay(4,1);//GD03
+            	//decay(5,1);//GD04
+            	//decay(7,1);
             	//decay(8,1);//GD07
+            	//decay(11,1);
+            	//decay(12,1);
+            	//decay(13,1);
+            	//decay(14,1);
             	//decay(15,1);//GD12
+            	//decay(18,1);
              },100);
             setShow();
         }
@@ -612,6 +721,8 @@ oCanvas.domReady(function () {
             document.getElementById("export").href="download/fix-vl.docx";
             window.setTimeout(function(){
             	decay(18,1);//GD15
+            	decay(15,1);
+            	canvas.children[38].fill=color_GD;
             },100);
             setShow();
         }
@@ -696,6 +807,8 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(5,1);//GD04
             	decay(8,1);//GD07
+            	decay(15,1);
+            	decay(18,1);
              },100);
         }
     }).bind("mouseenter",function(){
@@ -792,6 +905,7 @@ oCanvas.domReady(function () {
         window.setTimeout(function(){
             GD21.paused=1;
             GD23.paused=1;
+            GD35.paused=1;
         },100);
 
     });
@@ -810,6 +924,9 @@ oCanvas.domReady(function () {
             document.getElementById("lastPage").onclick=function(){
             };
             document.getElementById("export").href="download/fix-qsc1.doc";
+            window.setTimeout(function(){              
+            	decay(25,1);//GD21
+             },100);
             setShow();
 
         }
@@ -840,6 +957,9 @@ oCanvas.domReady(function () {
             document.getElementById("lastPage").onclick=function(){
             };
             document.getElementById("export").href="download/fix-qsc2.doc";         
+            window.setTimeout(function(){              
+            	decay(28,1);//GD24
+             },100);
             setShow();
         }
     }).bind("mouseenter",function(){
@@ -870,7 +990,9 @@ oCanvas.domReady(function () {
             };
             document.getElementById("export").href="download/fix-qsc4.docx";
             window.setTimeout(function(){              
+            	decay(27,1);
             	decay(28,1);//GD24
+            	canvas.children[39].fill=color_GD;
              },100);
             setShow();
         }
@@ -1082,6 +1204,10 @@ oCanvas.domReady(function () {
         GD29.advance();
         GD30.advance();
         GD31.advance();
+        GD32.advance();
+        GD33.advance();
+        GD34.advance();
+        GD35.advance();
 
         if(GD01.full==1){
             GD0101.paused=1;
@@ -1091,6 +1217,8 @@ oCanvas.domReady(function () {
         if(GD02.full==1){
             GD03.paused=1;
             GD04.paused=1;
+            GD32.paused=1;
+            GD33.paused=1;
         }
         if(GD04.full==1){
             img4.trigger("flash");
@@ -1110,6 +1238,7 @@ oCanvas.domReady(function () {
             GD1001.paused=1;
             GD1002.paused=1;
             GD11.paused=1;
+            GD34.paused=1;
         }
         if(GD15.full==1){
             img9.trigger("flash");
@@ -1339,6 +1468,10 @@ oCanvas.domReady(function () {
         GD26.init();
         GD27.init();
         GD29.init();
+        GD32.init();
+        GD33.init();
+        GD34.init();
+        GD35.init();
         img1.bind("flash",function(){
             $("#name_QS").animate({
                 height:'200px',opacity:'1'},'fast');
@@ -1559,6 +1692,7 @@ oCanvas.domReady(function () {
 
         setOpenDgree("FM07");
         setOpenDgree("FM010");
+        setOpenDgree("FM068");
 
 
         document.getElementById("fix_line1").innerHTML="打开阀门64#";
@@ -1583,6 +1717,7 @@ oCanvas.domReady(function () {
 
         setOpenDgree("FM07");
         setOpenDgree("FM09");
+        setOpenDgree("FM068");
 
         document.getElementById("fix_line1").innerHTML="打开阀门64#";
         document.getElementById("fix_line2").innerHTML="关闭阀门03#";
@@ -1735,6 +1870,7 @@ oCanvas.domReady(function () {
         setOpenDgree("FM016");
         setOpenDgree("FM018");
 //            setOpenDgree("FM068");
+        setOpenDgree("FM068");
         setOpenDgree("FM019");
 
         document.getElementById("fix_line1").innerHTML="关闭阀门16#";
@@ -1757,6 +1893,7 @@ oCanvas.domReady(function () {
         setOpenDgree("FM014");
         setOpenDgree("FM017");
         setOpenDgree("FM019");
+        setOpenDgree("FM068");
 
         document.getElementById("fix_line1").innerHTML="关闭阀门14#";
         document.getElementById("fix_line2").innerHTML="关闭阀门1#~8#小虹吸";
@@ -1893,7 +2030,9 @@ oCanvas.domReady(function () {
         document.getElementById("fix_head").innerHTML="1#清水池施工空池倒泵方案";
         document.getElementById("name_QSC2").style.color="#8dd9ff";
         document.getElementById("name_QSC2").style.background="rgba(255,0,0,0.7)";
-
+        setOpenDgree("FM047");
+        setOpenDgree("FM048");
+        
         document.getElementById("fix_line1").innerHTML="关闭东、西池间连通闸27#";
         document.getElementById("fix_line2").innerHTML="关闭清水池出水闸29#";
         document.getElementById("fix_line3").innerHTML="5#配水泵倒成4#";
@@ -1916,7 +2055,8 @@ oCanvas.domReady(function () {
         document.getElementById("fix_head").innerHTML="2#清水池施工空池倒泵方案";
         document.getElementById("name_QSC3").style.color="#8dd9ff";
         document.getElementById("name_QSC3").style.background="rgba(255,0,0,0.7)";
-
+        setOpenDgree("FM051");
+        
         document.getElementById("fix_line1").innerHTML="关闭东、西池间连通闸27#";
         document.getElementById("fix_line2").innerHTML="关闭清水池出水闸30#";
         document.getElementById("fix_line3").innerHTML="__#配水泵倒成__#";
@@ -1980,45 +2120,50 @@ oCanvas.domReady(function () {
         if(confirm("是否将“取水泵房”设置为维修状态？")){
             fix_qs_right();
             document.getElementById("nextPage").onclick=function(){
-                fix_qs_left();
+                fix_qs_left();                
                 window.setTimeout(function(){              
                 	decay(2,1);//GD0101
-                	decay(6,1);//GD05
-                	decay(9,1);
+                	//decay(6,1);//GD05
+                	//decay(9,1);
                 	decay(10,1);
-                	decay(33,1);
+                	//decay(33,1);
                 	decay(35,1);
+                	canvas.children[37].fill=color_GD;
                  },100);
             };
             document.getElementById("lastPage").onclick=function(){
                 fix_qs_right();
-                window.setTimeout(function(){              
+                window.setTimeout(function(){  
+                	//GD32.paused=1;
+                	canvas.children[36].fill=color_GD;
                 	decay(3,1);//GD02
                 	decay(4,1);//GD03
-                	decay(5,1);//GD04
+                	//decay(5,1);//GD04
                 	//decay(7,1);
-                	decay(8,1);//GD07
+                	//decay(8,1);//GD07
                 	//decay(11,1);
                 	//decay(12,1);
                 	//decay(13,1);
                 	//decay(14,1);
-                	decay(15,1);//GD12
-                	decay(18,1);
+                	//decay(15,1);//GD12
+                	//decay(18,1);
                  },100);
             };
             document.getElementById("export").href="download/fix-qs.doc";
             window.setTimeout(function(){              
+            	//GD32.paused=1;
             	decay(3,1);//GD02
             	decay(4,1);//GD03
-            	decay(5,1);//GD04
+            	canvas.children[36].fill=color_GD;
+            	//decay(5,1);//GD04
             	//decay(7,1);
-            	decay(8,1);//GD07
+            	//decay(8,1);//GD07
             	//decay(11,1);
             	//decay(12,1);
             	//decay(13,1);
             	//decay(14,1);
-            	decay(15,1);//GD12
-            	decay(18,1);
+            	//decay(15,1);//GD12
+            	//decay(18,1);
              },100);
             setShow();
         }
@@ -2079,7 +2224,9 @@ oCanvas.domReady(function () {
             document.getElementById("lastPage").onclick="";
             document.getElementById("export").href="download/fix-vl.docx";
             window.setTimeout(function(){
+            	decay(15,1);
             	decay(18,1);//GD15
+            	canvas.children[38].fill=color_GD;
             },100);
             setShow();
         }
@@ -2176,6 +2323,8 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(5,1);//GD04
             	decay(8,1);//GD07
+            	decay(15,1);
+            	decay(18,1);
              },100);
         }
     });
@@ -2237,6 +2386,9 @@ oCanvas.domReady(function () {
             document.getElementById("lastPage").onclick=function(){
             };
             document.getElementById("export").href="download/fix-qsc1.doc";
+            window.setTimeout(function(){              
+            	decay(25,1);//GD21
+             },100);
             setShow();
 
         }
@@ -2249,6 +2401,9 @@ oCanvas.domReady(function () {
             document.getElementById("lastPage").onclick=function(){
             };
             document.getElementById("export").href="download/fix-qsc2.doc";         
+            window.setTimeout(function(){              
+            	decay(28,1);//GD24
+             },100);
             setShow();
         }
     });
@@ -2261,7 +2416,9 @@ oCanvas.domReady(function () {
             };
             document.getElementById("export").href="download/fix-qsc4.docx";
             window.setTimeout(function(){              
+            	decay(27,1);
             	decay(28,1);//GD24
+            	canvas.children[39].fill=color_GD;
              },100);
             setShow();
         }
@@ -2337,11 +2494,18 @@ oCanvas.domReady(function () {
         canvas.children[23].fill=color_GD;
         canvas.children[24].fill=color_GD;
         canvas.children[25].fill=color_GD;
+        canvas.children[27].fill=color_GD;
         canvas.children[28].fill=color_GD;
         canvas.children[30].fill=color_GD;
         canvas.children[31].fill=color_GD;
         canvas.children[33].fill=color_GD;
         canvas.children[34].fill=color_GD;
+        canvas.children[35].fill=color_GD;
+        canvas.children[36].fill="rgba(0,0,0,0)";
+        canvas.children[37].fill="rgba(0,0,0,0)";
+        canvas.children[38].fill="rgba(0,0,0,0)";
+        canvas.children[39].fill="rgba(0,0,0,0)";
+
         clearOpenDgree("FM05");
         clearOpenDgree("FM06");
         clearOpenDgree("FM07");
