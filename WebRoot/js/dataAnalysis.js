@@ -114,7 +114,7 @@ $(document).ready(function() {
 			//});
 
 		} else {
-			$('#menu').text("菜单");
+			$('#menu').text("功能");
 			$('#add').animate({
 				'left': '120px',
 				'top': '110px'
@@ -273,9 +273,9 @@ function listDataAnalysis(data) {
 		            },
 		            {field : 'inV', title : '总来水量', align :'center', sortable : true, width:80},
 		            {field : 'outV', title : '出水量', align : 'center', sortable : true,width:70},
-		            {field : 'HXOutV', title : '虹吸滤池反冲洗', align :'center', sortable : true,width:105},
-		            {field : 'LCOutV', title : 'V型滤池反冲洗', align : 'center', sortable : true,width:105},
-		            {field : 'TCOutV', title : '炭池反冲洗', align :'center', sortable : true,width:90},
+		            {field : 'HXOutV', title : '虹吸反洗水量', align :'center', sortable : true,width:105},
+		            {field : 'LCOutV', title : 'V滤反洗水量', align : 'center', sortable : true,width:105},
+		            {field : 'TCOutV', title : '炭池反洗水量', align :'center', sortable : true,width:90},
 		            {field : 'JJOutV', title : '机加池排泥', align : 'center', sortable : true,width:90},
 		            {field : 'HLInV', title : '回流进水', align : 'center', sortable : true,width:80},
 		            {field : 'storage',	title : '蓄水量',	align : 'center',sortable : true,width:70},

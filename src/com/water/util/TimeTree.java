@@ -130,18 +130,27 @@ public class TimeTree {
 		return false;
 	}
 	
-//	//测试
+	/*打印树*/
+	public static void printTree(List<TreeNode>tree){
+		for(int i=0;i<tree.size();i++){
+			TreeNode tnode = tree.get(i);
+			System.out.println("ID:"+tnode.getId()+" text:"+tnode.getText()+" children: "+tnode.getChildren());
+			if(tnode.getChildren()!=null){
+				printTree(tnode.getChildren());
+			}
+		}
+	}
+	
+//  //测试
 //	public static void main(String[] args){
 //		List<String> tlist = new ArrayList<String>();
-//		tlist.add("2015-09-01");
+//		tlist.add("2014-09-01");
 //		tlist.add("2015-09-02");
 //		tlist.add("2015-09-03");
 //		tlist.add("2015-09-01");
 //		tlist.add("2015-08-01");
-//		tlist.add("2015-08-01");
+//		tlist.add("2015-08-03");
 //		List<TreeNode>tree = convert(buildTree(tlist));
-//		for(TreeNode tnode:tree){
-//			System.out.println("ID:"+tnode.getId()+" text:"+tnode.getText()+" name: "+tnode.getChildren());
-//		}
+//		printTree(tree);
 //	}
 }

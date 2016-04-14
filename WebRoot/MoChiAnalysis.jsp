@@ -284,7 +284,7 @@ text-align: center;
 				</div><!-- chooseIndex -->
 				
 				<div class="icon">
-    				<div class="menuBar" id="menu">菜单</div>
+    				<div class="menuBar" id="menu">功能</div>
         			<div class="menuSecond" id="add">添加</div>
         			<div class="menuSecond" id="edit">编辑</div>
         			<div class="menuSecond" id="delete">删除</div>

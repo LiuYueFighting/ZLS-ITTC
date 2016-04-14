@@ -94,7 +94,7 @@ $(document).ready(function() {
 //			});
 
 		} else {
-			$('#menu').text("菜单");
+			$('#menu').text("功能");
 			$('#add').animate({
 				'left': '120px',
 				'top': '110px'

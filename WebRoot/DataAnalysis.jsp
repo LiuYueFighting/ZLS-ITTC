@@ -400,8 +400,8 @@ top: 10px;
 					<tr>
 						<th>原始水位/m</th>
 						<th>蓄水量/m<sup>3</sup></th>
-						<th>虹吸滤池反冲洗/m<sup>3</sup></th>
-						<th>炭池反冲洗/m<sup>3</sup></th>
+						<th>虹吸反洗水量/m<sup>3</sup></th>
+						<th>炭池反洗水量/m<sup>3</sup></th>
 						<th>机加池排泥/m<sup>3</sup></th>
 						<th>回流进水/m<sup>3</sup></th>
 					</tr>
@@ -454,7 +454,7 @@ top: 10px;
 				</div><!-- chooseIndex -->
 				
 				<div class="icon">
-    				<div class="menuBar" id="menu">菜单</div>
+    				<div class="menuBar" id="menu">功能</div>
         			<div class="menuSecond" id="add">添加</div>
         			<div class="menuSecond" id="edit">编辑</div>
         			<div class="menuSecond" id="delete">删除</div>
@@ -519,7 +519,7 @@ top: 10px;
 									name="dataAnalysis.LCOutV" data-options="min:0,precision:0" />
 							</dl>
 							<dl>
-								&nbsp; &nbsp;炭池反冲洗 : &nbsp;
+								&nbsp; &nbsp;炭池反洗水量 : &nbsp;
 								<input class="easyui-numberbox textbox"
 									style="width: 200px; height: 25px" id="TCOutV"
 									name="dataAnalysis.TCOutV" data-options="min:0,precision:0" />
@@ -558,9 +558,9 @@ top: 10px;
 									<th style="width: 102px; height: 26px">清水池编号</th>
 									<th style="width: 72px; height: 26px">总进水量</th>
 									<th style="width: 62px; height: 26px">出水量</th>
-									<th style="width: 102px; height: 26px">虹吸滤池反冲洗</th>
-									<th style="width: 102px; height: 26px">V型滤池反冲洗</th>
-									<th style="width: 82px; height: 26px">碳池反冲洗</th>
+									<th style="width: 102px; height: 26px">虹吸反洗水量</th>
+									<th style="width: 102px; height: 26px">V滤反洗水量</th>
+									<th style="width: 82px; height: 26px">炭池反洗水量</th>
 									<th style="width: 82px; height: 26px">机加池排泥</th>
 									<th style="width: 72px; height: 26px">回流进水</th>
 									<th style="width: 52px; height: 26px">蓄水量</th>
@@ -606,7 +606,7 @@ top: 10px;
 										<input id="LCOutVAdd1" name="dataAnalysis.LCOutV" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
 									</td>
 									<td style="width: 82px; height: 26px">
-										<!-- 炭池反冲洗 -->
+										<!-- 炭池反洗水量 -->
 										<input id="TCOutVAdd1" name="dataAnalysis.TCOutV" style="width: 80px; height: 25px"	data-options="min:0,precision:0" />
 									</td>
 									<td style="width: 82px; height: 26px">
