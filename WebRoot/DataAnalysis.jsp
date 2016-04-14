@@ -311,13 +311,13 @@ top: 10px;
     border-collapse: separate;
     font-size: 17px;
     top: 10px;
-    left: 25px;
+    left: 5px;
 }
 #outputTable{
 	position: relative;
-    left: 45px;
+    right: 5px;
     height: 50px;
-    float: left;
+    float: right;
     border-spacing: 5px 5px;
     border-collapse: separate;
     font-size: 17px;
@@ -327,13 +327,13 @@ top: 10px;
 	position: relative;
     top: 49px;
     float: left;
-    left: 35px;
+    left: 22px;
     height: 30px;
     width: 90px;
     font-size: 20px;
 }
 #calculate th {
-	width: 156px;
+	width: 130px;
 	height: 30px;
 }
 #calculate input{
@@ -401,17 +401,19 @@ top: 10px;
 						<th>原始水位/m</th>
 						<th>蓄水量/m<sup>3</sup></th>
 						<th>虹吸反洗水量/m<sup>3</sup></th>
+						<th>V滤反洗水量/m<sup>3</sup></th>
 						<th>炭池反洗水量/m<sup>3</sup></th>
 						<th>机加池排泥/m<sup>3</sup></th>
 						<th>回流进水/m<sup>3</sup></th>
 					</tr>
 					<tr>
-						<th><input id="yssw" type="text"/></th>
-						<th><input id="xsl" type="text"/></th>
-						<th><input id="hx" type="text"/></th>
-						<th><input id="tc" type="text"/></th>
-						<th><input id="jjc" type="text"/></th>
-						<th><input id="hljs" type="text"/></th>
+						<th><input id="yssw" type="text" value="3.43"/></th>
+						<th><input id="xsl" type="text"  value="300"/></th>
+						<th><input id="hx" type="text" value="200"/></th>
+						<th><input id="vl" type="text" value="100"/></th>
+						<th><input id="tc" type="text" value="100"/></th>
+						<th><input id="jjc" type="text" value="180"/></th>
+						<th><input id="hljs" type="text" value="150"/></th>
 					</tr>
 				</table>
 				<button id="calculateButton" type="button" class="blue button">预  测</button>
@@ -420,7 +422,7 @@ top: 10px;
 						<th>预测水位/m</th>
 					</tr>
 					<tr>
-						<th><input id="ycsw" type="text" value="0"/></th>
+						<th><input id="ycsw" type="text" value="3.43"/></th>
 					</tr>
 				</table>
 			</div>

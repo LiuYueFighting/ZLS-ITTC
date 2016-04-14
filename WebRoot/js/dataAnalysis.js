@@ -5,7 +5,7 @@ $(function() {
 
 $(document).ready(function() {
 	$("#calculateButton").click(function(){
-		var flag, yssw, xsl, hx, tc, jjc, hljs;
+		var flag, yssw, xsl, hx, vl, tc, jjc, hljs;
 		if($("#yssw").val() == "" || $("#xsl").val() == "" || $("#hx").val() == "" ||
 			$("#tc").val() == "" || $("#jjc").val() == "" || $("#hljs").val() == "") {
 			$.messager.alert('错误', '数据字段不能为空', 'error');
@@ -14,11 +14,12 @@ $(document).ready(function() {
 			yssw = parseFloat($("#yssw").val());
 			xsl = parseFloat($("#xsl").val());
 			hx = parseFloat($("#hx").val());
+			vl = parseFloat($("#vl").val())
 			tc = parseFloat($("#tc").val());
 			jjc = parseFloat($("#jjc").val());
 			hljs = parseFloat($("#hljs").val());
 		}
-		var ycsw = (xsl - hx - tc - jjc + hljs) / 3312 + yssw;
+		var ycsw = (xsl - hx - tc - vl - jjc + hljs) / 3312 + yssw;
 		console.log(ycsw);
 		$("#ycsw").attr('value', ycsw.toFixed(2));;
 	});
