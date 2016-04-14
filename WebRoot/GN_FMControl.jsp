@@ -183,82 +183,92 @@
     }
         #jjc1In{
         position: absolute;
-        left:951px;
-        top: 419px;
+        left:1510px;
+        top: 490px;
         z-index:999;
         }
         #jjc2In{
         position: absolute;
-        left:1010px;
-        top: 419px;
+        left:1510px;
+        top: 538px;
         z-index:999;
         }
         #jjc3In{
         position: absolute;
-        left:1142px;
-        top: 540px;
+        left:1510px;
+        top: 587px;
         z-index:999;
         }
-        #hx1Out{
-        position: absolute;
-        left: 760px;
-        top: 576px;
-        z-index:999;
-        }
-        #hx2Out{
-        position: absolute;
-        left: 760px;
-        top: 643px;
-        z-index:999;
-        }
-        #vlOut{
-        position: absolute;
-        left: 750px;
-        top: 725px;;
-        z-index:999;
-        }
+/*         #hx1Out{ */
+/*         position: absolute; */
+/*         left: 760px; */
+/*         top: 576px; */
+/*         z-index:999; */
+/*         } */
+/*         #hx2Out{ */
+/*         position: absolute; */
+/*         left: 760px; */
+/*         top: 643px; */
+/*         z-index:999; */
+/*         } */
+/*         #vlOut{ */
+/*         position: absolute; */
+/*         left: 750px; */
+/*         top: 725px;; */
+/*         z-index:999; */
+/*         } */
 
-        #qsc3In1{
-        position: absolute;
-        left: 355px;
-        top: 611px;
-        z-index:999;
-        }
-        #qsc3In2{
-        position: absolute;
-        left:484px;
-        top: 613px;
-        z-index:999;
-        }
+/*         #qsc3In1{ */
+/*         position: absolute; */
+/*         left: 355px; */
+/*         top: 611px; */
+/*         z-index:999; */
+/*         } */
+/*         #qsc3In2{ */
+/*         position: absolute; */
+/*         left:484px; */
+/*         top: 613px; */
+/*         z-index:999; */
+/*         } */
 
         .flow{
         font-family: '微软雅黑','Arial';
         color: #0D3C65;
         font-size: 20px;
-        border: 1px solid #337ab7;
-        background: rgba(255,255,255,0.9);
+        border: 0px;
+/*         background: rgba(255,255,255,0.9); */
         /* width: 40px; */
-        padding: 1px;
+        padding: 0px;
         font-weight: bold;
         }
-        .name_Model{
+<%--        .name_Model{
         font-family: '微软雅黑','Arial';
         color: #223bb8;
         font-size: 17px;
         font-weight: bold;
         }
-        #chackBox_name{
+--%>
+<%--        #chackBox_name{
         position:absolute;
         top: 703px;
         left: 1365px;
         }
+--%>
+<%--
         #WShow{
         position:absolute;
         top: 681px;
         left: 1372px;
         z-index:999;
         }
-
+--%>
+   #Prediction_results{
+  
+      position: absolute;
+        left:1472px;
+        top: 413px;
+        z-index:999;
+    }
     </style>
     <script>
     <%--function changeImage(id){--%>
@@ -267,15 +277,87 @@
     <%--image.src = "image/y2.png";--%>
     <%--else image.src = "image/y3.png";--%>
     <%--}--%>
-    var read = 3600;
+    var read = 1800;
     var openDgree_062=100;
     var openDgree_063=100;
     var openDgree_065=100;
-
+    
+/* 提示框 */    
+function sAlert(str){ 
+    var msgw,msgh,bordercolor; 
+    msgw=400;//Width
+    msgh=100;//Height 
+    titleheight=25 //title Height
+    bordercolor="#336699";//boder color
+    titlecolor="#99CCFF";//title color
+   
+    var sWidth,sHeight; 
+    sWidth=document.body.offsetWidth; 
+    sHeight=screen.height; 
+    var bgObj=document.createElement("div"); 
+    bgObj.setAttribute('id','bgDiv'); 
+    bgObj.style.position="absolute"; 
+    bgObj.style.top="0"; 
+    bgObj.style.background="#777"; 
+    bgObj.style.filter="progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=25,finishOpacity=75"; 
+    bgObj.style.opacity="0.6"; 
+    bgObj.style.left="0"; 
+    bgObj.style.width=sWidth + "px"; 
+    bgObj.style.height=sHeight + "px"; 
+    bgObj.style.zIndex = "10000"; 
+    document.body.appendChild(bgObj); 
+     
+    var msgObj=document.createElement("div") 
+    msgObj.setAttribute("id","msgDiv"); 
+    msgObj.setAttribute("align","center"); 
+    msgObj.style.background="white"; 
+    msgObj.style.border="1px solid " + bordercolor; 
+    msgObj.style.position = "fixed"; 
+    msgObj.style.left = "50%"; 
+    msgObj.style.top = "50%"; 
+    msgObj.style.font="24px/1.6em Verdana, Geneva, Arial, Helvetica, sans-serif"; 
+    msgObj.style.marginLeft = "-225px" ; 
+    msgObj.style.marginTop = -75+document.documentElement.scrollTop+"px"; 
+    msgObj.style.width = msgw + "px"; 
+    msgObj.style.height =msgh + "px"; 
+    msgObj.style.textAlign = "center"; 
+    msgObj.style.lineHeight ="25px"; 
+    msgObj.style.zIndex = "10001"; 
+     
+    var title=document.createElement("h4"); 
+    title.setAttribute("id","msgTitle"); 
+    title.setAttribute("align","right"); 
+    title.style.margin="0"; 
+    title.style.padding="3px"; 
+    title.style.background=bordercolor; 
+    title.style.filter="progid:DXImageTransform.Microsoft.Alpha(startX=20, startY=20, finishX=100, finishY=100,style=1,opacity=75,finishOpacity=100);"; 
+    title.style.opacity="0.75"; 
+    title.style.border="1px solid " + bordercolor; 
+    title.style.height="18px"; 
+    title.style.font="12px Verdana, Geneva, Arial, Helvetica, sans-serif"; 
+    title.style.color="white"; 
+    title.style.cursor="pointer"; 
+    title.innerHTML="关闭"; 
+    title.onclick=function(){ 
+           document.body.removeChild(bgObj); 
+           document.getElementById("msgDiv").removeChild(title); 
+           document.body.removeChild(msgObj); 
+         } 
+    document.body.appendChild(msgObj); 
+    document.getElementById("msgDiv").appendChild(title); 
+    var txt=document.createElement("p"); 
+    txt.style.margin="1em 0" 
+    txt.setAttribute("id","msgTxt"); 
+    txt.innerHTML=str; 
+    document.getElementById("msgDiv").appendChild(txt); 
+ } 
+ 
+ 
     function changeInput(){
     read =parseFloat(document.getElementById("read").value);
-        if(read<0||read>4800||isNaN(read)){
-        alert("进厂水量输入有误！请重新输入！");
+        if(read<0||read>1800||isNaN(read)){
+//        alert("进厂水量输入有误！请重新输入！");
+        sAlert("进厂水量输入有误！请重新输入！");
         return;
     }
     var textFeild =document.getElementById("write");
@@ -284,7 +366,7 @@
     var read_063=parseFloat(document.getElementById("read_FM63").value);
     var read_065=parseFloat(document.getElementById("read_FM65").value);
     if(read_062==0&&read_063==0&&read_065==0){
-        alert("开启度不能全部为0，请重新输入！");
+        sAlert("开启度不能全部为0，请重新输入！");
         return;
     }
     setOpenDgree("FM062",read_062);
@@ -299,7 +381,7 @@
         var image = document.getElementById(id);
         <%--var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");--%>
         if(openDgree<0||openDgree>100||isNaN(openDgree)){
-            alert("阀门"+num+"的开启度输入有误！请重新输入！");
+            sAlert("阀门"+num+"的开启度输入有误！请重新输入！");
             return;
         }
     switch(id){
@@ -424,10 +506,19 @@
     function compute1(){
         <%--clearModle1();--%>
         <%--changeModle1(c);--%>
-        qsOut1=qsOut2=read/2;
+<%--        qsOut1=qsOut2=read/2;
         hh1In1=(qsOut1+qsOut2)*(openDgree_062/(openDgree_062+openDgree_063+openDgree_065));
         hh1In2=(qsOut1+qsOut2)*openDgree_063/(openDgree_062+openDgree_063+openDgree_065);
         hh2In=(qsOut1+qsOut2)*openDgree_065/(openDgree_062+openDgree_063+openDgree_065);
+--%>
+if(openDgree_062+openDgree_063 != 0){
+        hh2In=read*4/9*openDgree_065/100;
+        hh1In1=(read-hh2In)*openDgree_062/(openDgree_062+openDgree_063);
+        hh1In2=(read-hh2In)*openDgree_063/(openDgree_062+openDgree_063);
+        }else{
+        	hh2In=read;
+        	hh1In1=hh1In2=0;
+        }
         hh1Out1=hh1In1;
         hh1Out2=hh1In2;
         hh2Out=hh2In;
@@ -572,22 +663,36 @@
         <!--</div>-->
         </div>
         <div id="readout_input" class="name_ob_input">
-           <P >当前进水量：<span id="write" class="flow">3600</span> m3/h</P>
+           <P >当前进水量：<span id="write" class="flow">1800</span> m<sup>3</sup>/h</P>
         </div>
         <div id="setConfig">
             <h1>参数设置：</h1>
              <h2> 1. 进水量</h2>
-            <p><input id="read" type="text"size="10px" autofocus  value="3600"/>&nbsp;m3/h</p>
+            <p><input id="read" type="text"size="10px" autofocus  value="1800"/>&nbsp;m<sup>3</sup>/h</p>
             <h2> 2. 阀门开启度</h2>
             <p>62#&nbsp;&nbsp;<input id="read_FM62" type="text" size="10px" value="100"/>&nbsp;%</p>
             <p>63#&nbsp;&nbsp;<input id="read_FM63" type="text"size="10px" value="100"/>&nbsp;%</p>
             <p>65#&nbsp;&nbsp;<input id="read_FM65" type="text"size="10px" value="100"/>&nbsp;%</p>
             <button id="btn_submit" class="btn btn-info btn_main" value="0" onclick="changeInput()">预测</button>
         </div>
-        <div id="qs1" calss = "waterOut">
-        </div>
-        <p class="name_Model" id="WShow">显示名称</p>
-        <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label>
+        <div class="panel panel-info" id="Prediction_results">
+                <div class="panel-heading">机加池水量</div>
+                <table class="table">
+                <tr>
+                <td><p>1#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</p></td>
+                </tr>
+                <tr>
+                <td><p>2#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</p></td>
+                </tr>
+                 <tr>
+                <td><p>3#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</p></td>
+                </tr>
+                </table>
+                </div>
+                <div>
+
+<!--         <p class="name_Model" id="WShow">显示名称</p> -->
+<!--         <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label> -->
 
     <%--<a href="#" id="name_QS"  class="name_ob" style="text-decoration: none" class="name_ob">取水泵房</a>--%>
     <%--<a href="#" id="name_JJC1" class="name_ob" style="text-decoration: none " class="name_ob">1#机加池</a>--%>
@@ -624,48 +729,48 @@
         <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
         <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
 
-    <img id="FM05" src="image/y3.png" >
-    <img id="FM06" src="image/y3.png" >
-    <img id="FM07" src="image/y3.png" >
-    <img id="FM09" src="image/y3.png" >
-    <img id="FM010" src="image/y3.png" >
+<!--     <img id="FM05" src="image/y3.png" > -->
+<!--     <img id="FM06" src="image/y3.png" > -->
+<!--     <img id="FM07" src="image/y3.png" > -->
+<!--     <img id="FM09" src="image/y3.png" > -->
+<!--     <img id="FM010" src="image/y3.png" > -->
     <img id="FM065" src="image/y3.png" >
     <img id="FM062" src="image/y3.png" >
     <img id="FM063" src="image/y3.png" >
-    <img id="FM064" src="image/y3.png" >
-    <img id="FM045" src="image/y3.png" >
-    <img id="FM014" src="image/y3.png" >
-    <img id="FM015" src="image/y3.png" >
-    <img id="FM069" src="image/y3.png" >
-    <img id="FM066" src="image/y3.png" >
-    <img id="FM016" src="image/y3.png" >
-    <img id="FM068" src="image/y3.png" >
-    <img id="FM067" src="image/y3.png" >
-    <img id="FM017" src="image/y3.png" >
-    <img id="FM018" src="image/y3.png" >
-    <img id="FM019" src="image/y3.png" >
-    <img id="FM020" src="image/y3.png" >
-    <img id="FM052" src="image/y3.png" >
-    <img id="FM056" src="image/y3.png" >
-    <img id="FM053" src="image/y3.png" >
-    <img id="FM054" src="image/y3.png" >
-    <img id="FM057" src="image/y3.png" >
-    <img id="FM058" src="image/y3.png" >
-    <img id="FM059" src="image/y3.png" >
-    <img id="FM021" src="image/y3.png" >
-    <img id="FM022" src="image/y3.png" >
-    <img id="FM046" src="image/y3.png" >
-    <img id="FM023" src="image/y3.png" >
-    <img id="FM024" src="image/y3.png" >
-    <img id="FM025" src="image/y3.png" >
-    <img id="FM044" src="image/y3.png" >
-    <img id="FM055" src="image/y3.png" >
-    <img id="FM026" src="image/y3.png" >
-    <img id="FM047" src="image/y3.png" >
-    <img id="FM048" src="image/y3.png" >
-    <img id="FM049" src="image/y3.png" >
-    <img id="FM050" src="image/y3.png" >
-    <img id="FM051" src="image/y3.png" >
+<!--     <img id="FM064" src="image/y3.png" > -->
+<!--     <img id="FM045" src="image/y3.png" > -->
+<!--     <img id="FM014" src="image/y3.png" > -->
+<!--     <img id="FM015" src="image/y3.png" > -->
+<!--     <img id="FM069" src="image/y3.png" > -->
+<!--     <img id="FM066" src="image/y3.png" > -->
+<!--     <img id="FM016" src="image/y3.png" > -->
+<!--     <img id="FM068" src="image/y3.png" > -->
+<!--     <img id="FM067" src="image/y3.png" > -->
+<!--     <img id="FM017" src="image/y3.png" > -->
+<!--     <img id="FM018" src="image/y3.png" > -->
+<!--     <img id="FM019" src="image/y3.png" > -->
+<!--     <img id="FM020" src="image/y3.png" > -->
+<!--     <img id="FM052" src="image/y3.png" > -->
+<!--     <img id="FM056" src="image/y3.png" > -->
+<!--     <img id="FM053" src="image/y3.png" > -->
+<!--     <img id="FM054" src="image/y3.png" > -->
+<!--     <img id="FM057" src="image/y3.png" > -->
+<!--     <img id="FM058" src="image/y3.png" > -->
+<!--     <img id="FM059" src="image/y3.png" > -->
+<!--     <img id="FM021" src="image/y3.png" > -->
+<!--     <img id="FM022" src="image/y3.png" > -->
+<!--     <img id="FM046" src="image/y3.png" > -->
+<!--     <img id="FM023" src="image/y3.png" > -->
+<!--     <img id="FM024" src="image/y3.png" > -->
+<!--     <img id="FM025" src="image/y3.png" > -->
+<!--     <img id="FM044" src="image/y3.png" > -->
+<!--     <img id="FM055" src="image/y3.png" > -->
+<!--     <img id="FM026" src="image/y3.png" > -->
+<!--     <img id="FM047" src="image/y3.png" > -->
+<!--     <img id="FM048" src="image/y3.png" > -->
+<!--     <img id="FM049" src="image/y3.png" > -->
+<!--     <img id="FM050" src="image/y3.png" > -->
+<!--     <img id="FM051" src="image/y3.png" > -->
 
     <%--<p id="WFM05" class="name_FM">05#</p>--%>
     <%--<p id="WFM06" class="name_FM">06#</p>--%>
@@ -712,7 +817,7 @@
         <%--<p id="hh1In1" class="flow"></p>--%>
         <%--<p id="hh1In2" class="flow"></p>--%>
         <%--<p id="hh2In" class="flow"></p>--%>
-        <p id="jjc1In" class="flow"></p>
+        <p id="jjc1In" class="flow"></p>        
         <p id="jjc2In" class="flow"></p>
         <p id="jjc3In" class="flow"></p>
         <p id="hx1Out" class="flow"></p>
