@@ -417,7 +417,7 @@
     <img id="FM050" src="image/y3.png" >
     <img id="FM051" src="image/y3.png" >
 
-    <p id="WFM05" class="name_FM">05#</p>
+    <p id="WFM05" class="name_FM" >05#</p>
     <p id="WFM06" class="name_FM">06#</p>
     <p id="WFM07" class="name_FM">07#</p>
     <p id="WFM09" class="name_FM">09#</p>

@@ -90,7 +90,7 @@
     height: 604px;
     width: 183px;
     position: absolute;
-    left: 79.2%;
+    left: 91.2%;
     top: 4.7%;
     Z-INDEX: 999;
     }

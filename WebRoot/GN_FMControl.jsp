@@ -459,49 +459,49 @@ function sAlert(str){
         document.getElementById("name_QSC4").style.display="none";
         }
         }
-        var qsOut1;
-        var qsOut2;
-        var hh1In1;
-        var hh1In2;
-        var hh2In;
-        var hh1Out1;
-        var hh1Out2;
-        var hh2Out;
+        <%--var qsOut1;--%>
+        <%--var qsOut2;--%>
+        <%--var hh1In1;--%>
+        <%--var hh1In2;--%>
+        <%--var hh2In;--%>
+        <%--var hh1Out1;--%>
+        <%--var hh1Out2;--%>
+        <%--var hh2Out;--%>
         var jjc1In;
         var jjc2In;
         var jjc3In;
-        var jjc1Out;
-        var jjc2Out;
-        var jjc3Out;
-        var hx1In;
-        var hx2In;
-        var hx1Out;
-        var hx2Out;
-        var vlIn;
-        var vlOut;
-        var cy1In;
-        var cy2In;
-        var cy1Out;
-        var cy2Out;
-        var tc1In;
-        var tc1Out;
-        var tc2In;
-        var tc2Out;
-        var qsc1In;
-        var qsc1Out;
-        var qsc2In1;
-        var qsc2In2;
-        var qsc2Out;
-        var qsc3In;
-        var qsc3In1;
-        var qsc3In2;
-        var qsc3In3;
-        var qsc3Out;
-        var qsc4In;
-        var qsc4Out;
+        <%--var jjc1Out;--%>
+        <%--var jjc2Out;--%>
+        <%--var jjc3Out;--%>
+        <%--var hx1In;--%>
+        <%--var hx2In;--%>
+        <%--var hx1Out;--%>
+        <%--var hx2Out;--%>
+        <%--var vlIn;--%>
+        <%--var vlOut;--%>
+        <%--var cy1In;--%>
+        <%--var cy2In;--%>
+        <%--var cy1Out;--%>
+        <%--var cy2Out;--%>
+        <%--var tc1In;--%>
+        <%--var tc1Out;--%>
+        <%--var tc2In;--%>
+        <%--var tc2Out;--%>
+        <%--var qsc1In;--%>
+        <%--var qsc1Out;--%>
+        <%--var qsc2In1;--%>
+        <%--var qsc2In2;--%>
+        <%--var qsc2Out;--%>
+        <%--var qsc3In;--%>
+        <%--var qsc3In1;--%>
+        <%--var qsc3In2;--%>
+        <%--var qsc3In3;--%>
+        <%--var qsc3Out;--%>
+        <%--var qsc4In;--%>
+        <%--var qsc4Out;--%>
     function computeAll(){
         compute1();
-        compute2();
+        <%--compute2();--%>
     }
     function compute1(){
         <%--clearModle1();--%>
@@ -534,19 +534,19 @@ if(openDgree_062+openDgree_063 != 0){
         hx2Out=hx2In;
         vlOut=vlIn;
     }
-    function compute2(){
-        cy1In=vlOut+hx2Out;
-        cy2In=hx1Out;
-        qsc3In3=0;
-        qsc2In2=0;
-        cy1Out=cy2Out=(cy1In+cy2In)/2;
-        tc1In=cy1Out;
-        tc2In=cy2Out;
-        tc1Out=tc1In;
-        tc2Out=tc2In;
-        qsc3In1=tc1Out;
-        qsc3In2=tc2Out;
-        }
+    <%--function compute2(){--%>
+        <%--cy1In=vlOut+hx2Out;--%>
+        <%--cy2In=hx1Out;--%>
+        <%--qsc3In3=0;--%>
+        <%--qsc2In2=0;--%>
+        <%--cy1Out=cy2Out=(cy1In+cy2In)/2;--%>
+        <%--tc1In=cy1Out;--%>
+        <%--tc2In=cy2Out;--%>
+        <%--tc1Out=tc1In;--%>
+        <%--tc2Out=tc2In;--%>
+        <%--qsc3In1=tc1Out;--%>
+        <%--qsc3In2=tc2Out;--%>
+        <%--}--%>
 
     function write(){
         <%--document.getElementById("qsOut1").innerHTML=qsOut1.toFixed(0);--%>
@@ -557,16 +557,16 @@ if(openDgree_062+openDgree_063 != 0){
         document.getElementById("jjc1In").innerHTML=jjc1In.toFixed(0);
         document.getElementById("jjc2In").innerHTML=jjc2In.toFixed(0);
         document.getElementById("jjc3In").innerHTML=jjc3In.toFixed(0);
-        document.getElementById("hx1Out").innerHTML=hx1Out.toFixed(0);
-        document.getElementById("hx2Out").innerHTML=hx2Out.toFixed(0);
-        document.getElementById("vlOut").innerHTML=vlOut.toFixed(0);
+        <%--document.getElementById("hx1Out").innerHTML=hx1Out.toFixed(0);--%>
+        <%--document.getElementById("hx2Out").innerHTML=hx2Out.toFixed(0);--%>
+        <%--document.getElementById("vlOut").innerHTML=vlOut.toFixed(0);--%>
         <%--document.getElementById("cy1In").innerHTML=cy1In.toFixed(0);--%>
         <%--document.getElementById("cy2In").innerHTML=cy2In.toFixed(0);--%>
         <%--document.getElementById("tc1In").innerHTML=tc1In.toFixed(0);--%>
         <%--document.getElementById("tc2In").innerHTML=tc2In.toFixed(0);--%>
         <%--document.getElementById("qsc2In2").innerHTML=qsc2In2.toFixed(0);--%>
-        document.getElementById("qsc3In1").innerHTML=qsc3In1.toFixed(0);
-        document.getElementById("qsc3In2").innerHTML=qsc3In2.toFixed(0);
+        <%--document.getElementById("qsc3In1").innerHTML=qsc3In1.toFixed(0);--%>
+        <%--document.getElementById("qsc3In2").innerHTML=qsc3In2.toFixed(0);--%>
         <%--document.getElementById("qsc3In3").innerHTML=qsc3In3.toFixed(0);--%>
         }
     <%--function clearModle1(){--%>
@@ -663,12 +663,16 @@ if(openDgree_062+openDgree_063 != 0){
         <!--</div>-->
         </div>
         <div id="readout_input" class="name_ob_input">
+
            <P >当前进水量：<span id="write" class="flow">1800</span> m<sup>3</sup>/h</P>
+
         </div>
         <div id="setConfig">
             <h1>参数设置：</h1>
              <h2> 1. 进水量</h2>
+
             <p><input id="read" type="text"size="10px" autofocus  value="1800"/>&nbsp;m<sup>3</sup>/h</p>
+
             <h2> 2. 阀门开启度</h2>
             <p>62#&nbsp;&nbsp;<input id="read_FM62" type="text" size="10px" value="100"/>&nbsp;%</p>
             <p>63#&nbsp;&nbsp;<input id="read_FM63" type="text"size="10px" value="100"/>&nbsp;%</p>
