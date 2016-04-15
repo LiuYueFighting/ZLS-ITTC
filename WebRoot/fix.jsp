@@ -64,7 +64,7 @@
     #reset{
     position: absolute;
     left: 81px;
-    top: 541px;
+    top: 527px;
     /* background: rgba(290,140,110,0.5); */
     font-size: 14px;
     }
@@ -283,22 +283,22 @@
     	var FMGroup = [/* color green */
     				   "FM05",  "FM06",  "FM07",  "FM09",  "FM010", "FM014", 
                        "FM015", "FM016", "FM017", "FM018", "FM019", "FM020", 
-                       "FM021", "FM024", "FM026", "FM044", "FM045", "FM046", 
-                       "FM047", "FM048", "FM049", "FM051", "FM052", "FM053", 
-                       "FM054", "FM055", "FM057", "FM058", "FM059", "FM062", 
-                       "FM063", "FM064", "FM065", "FM066", "FM067", "FM069", 
+                       "FM021", "FM024", "FM025", "FM026", "FM044", "FM045", 
+                       "FM046", "FM047", "FM048", "FM049", "FM051", "FM052", 
+                       "FM053", "FM054", "FM055", "FM057", "FM058", "FM059", 
+                       "FM062", "FM063", "FM064", "FM065", "FM066", "FM067", "FM069", 
                        /* color red */
                        "FM022", "FM023", "FM050", "FM056", "FM068",
                        /* FM tag */
                        "WFM05",  "WFM06",  "WFM07",  "WFM09",  "WFM010", "WFM014", 
                        "WFM015", "WFM016", "WFM017", "WFM018", "WFM019", "WFM020", 
-                       "WFM021", "WFM024", "WFM026", "WFM044", "WFM045", "WFM046", 
-                       "WFM047", "WFM048", "WFM049", "WFM051", "WFM052", "WFM053", 
-                       "WFM054", "WFM055", "WFM057", "WFM058", "WFM059", "WFM062", 
-                       "WFM063", "WFM064", "WFM065", "WFM066", "WFM067", "WFM069", 
+                       "WFM021", "WFM024", "WFM025", "WFM026", "WFM044", "WFM045", 
+                       "WFM046", "WFM047", "WFM048", "WFM049", "WFM051", "WFM052", 
+                       "WFM053", "WFM054", "WFM055", "WFM057", "WFM058", "WFM059", 
+                       "WFM062", "WFM063", "WFM064", "WFM065", "WFM066", "WFM067", "WFM069", 
                        /* color red tag */
                        "WFM022", "WFM023", "WFM050", "WFM056", "WFM068"
-                       ]
+                       ];
         for (i=0; i<FMGroup.length; i++){
         	document.getElementById(FMGroup[i]).style.display="none";
 		}
@@ -468,8 +468,7 @@
     <!-- Table -->
     <table id="fix_table" class="table" >
     <thead>
-    <tr id="init_stage">初始状态</tr><br>
-    <tr id="init_stage">全场正常运行</tr>
+    <tr>初始状态</tr>
     </thead>
     <tbody>
     <td>#</td><td>操作</td>

@@ -1684,6 +1684,7 @@ oCanvas.domReady(function () {
     }
     function fix_qs_right(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="取水泵房东侧配合方案";
         document.getElementById("name_QS").style.color="#8dd9ff";
         document.getElementById("name_QS").style.background="rgba(255,0,0,0.7)";
@@ -1709,6 +1710,7 @@ oCanvas.domReady(function () {
 
     function fix_qs_left(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="取水泵房西侧配合方案";
         document.getElementById("name_QS").style.color="#8dd9ff";
         document.getElementById("name_QS").style.background="rgba(255,0,0,0.7)";
@@ -1728,6 +1730,7 @@ oCanvas.domReady(function () {
 
     function  fix_hh_right(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="现有混合井东侧配合方案";
         document.getElementById("name_HHJ1").style.color="#8dd9ff";
         document.getElementById("name_HHJ1").style.background="rgba(255,0,0,0.7)";
@@ -1752,6 +1755,7 @@ oCanvas.domReady(function () {
 
     function  fix_hh_left(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="现有混合井西侧配合方案";
         document.getElementById("name_HHJ1").style.color="#8dd9ff";
         document.getElementById("name_HHJ1").style.background="rgba(255,0,0,0.7)";
@@ -1774,6 +1778,7 @@ oCanvas.domReady(function () {
 
     function fix_hh_new(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="#新建混合井维修配合方案";
         document.getElementById("name_HHJ2").style.color="#8dd9ff";
         document.getElementById("name_HHJ2").style.background="rgba(255,0,0,0.7)";
@@ -1916,6 +1921,7 @@ oCanvas.domReady(function () {
     }
     function fix_cy_right(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="东侧臭氧池闸门配合方案";
         document.getElementById("name_CY").style.color="#8dd9ff";
         document.getElementById("name_CY").style.background="rgba(255,0,0,0.7)";
@@ -1940,6 +1946,7 @@ oCanvas.domReady(function () {
     }
     function  fix_cy_left(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="西侧臭氧池闸门配合方案";
         document.getElementById("name_CY").style.color="#8dd9ff";
         document.getElementById("name_CY").style.background="rgba(255,0,0,0.7)";
@@ -1963,6 +1970,7 @@ oCanvas.domReady(function () {
     }
     function fix_tc_old(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="现有碳池闸门配合方案";
         document.getElementById("name_TC").style.color="#8dd9ff";
         document.getElementById("name_TC").style.background="rgba(255,0,0,0.7)";
@@ -1989,6 +1997,7 @@ oCanvas.domReady(function () {
     }
     function fix_tc_new(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="新建碳池闸门配合方案";
         document.getElementById("name_TC1").style.color="#8dd9ff";
         document.getElementById("name_TC1").style.background="rgba(255,0,0,0.7)";
@@ -2016,6 +2025,7 @@ oCanvas.domReady(function () {
 
     function fix_qsc1(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="1#清水池施工空池倒泵方案";
         document.getElementById("name_QSC2").style.color="#8dd9ff";
         document.getElementById("name_QSC2").style.background="rgba(255,0,0,0.7)";
@@ -2041,6 +2051,7 @@ oCanvas.domReady(function () {
 
     function fix_qsc2(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="2#清水池施工空池倒泵方案";
         document.getElementById("name_QSC3").style.color="#8dd9ff";
         document.getElementById("name_QSC3").style.background="rgba(255,0,0,0.7)";
@@ -2063,6 +2074,7 @@ oCanvas.domReady(function () {
 
     function  fix_qsc3(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="#3清水池维修闸门配合方案";
         document.getElementById("name_QSC1").style.color="#8dd9ff";
         document.getElementById("name_QSC1").style.background="rgba(255,0,0,0.7)";
@@ -2081,6 +2093,7 @@ oCanvas.domReady(function () {
 
     function  fix_qsc4(){
         clearAll();
+        hideAllFM();
         document.getElementById("fix_head").innerHTML="#4清水池维修闸门配合方案";
         document.getElementById("name_QSC4").style.color="#8dd9ff";
         document.getElementById("name_QSC4").style.background="rgba(255,0,0,0.7)";
@@ -2497,10 +2510,11 @@ oCanvas.domReady(function () {
 
         var defaultFMColorGreen = ["FM05",  "FM06",  "FM07",  "FM09",  "FM010", "FM014", 
                                    "FM015", "FM016", "FM017", "FM018", "FM019", "FM020", 
-                                   "FM021", "FM024", "FM026", "FM044", "FM045", "FM046", 
-                                   "FM047", "FM048", "FM049", "FM051", "FM052", "FM053", 
-                                   "FM054", "FM055", "FM057", "FM058", "FM059", "FM062", 
-                                   "FM063", "FM064", "FM065", "FM066", "FM067", "FM069", ]
+                                   "FM044", "FM045", "FM052", "FM055", "FM057", "FM059", 
+                                   "FM062", "FM063", "FM064", "FM065", "FM066", "FM067", "FM069", 
+//        						   "FM021", "FM024", "FM025", "FM026", "FM046", "FM047", 
+//        						   "FM048", "FM049", "FM051", "FM053", "FM054", "FM058"
+        						   ]
         for (i=0;i<defaultFMColorGreen.length;i++){
         	setFMColorGreen(defaultFMColorGreen[i])
 		}
