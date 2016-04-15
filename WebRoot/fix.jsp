@@ -165,83 +165,95 @@
        else image.src = "image/y3-35x37.png";
     }
 
-    function setOpenDgree(id){
+<%--     function setOpenDgree(id){
 	    var openDgree = 0;
 	    var num = id.substr(2);
-	    <%--var table =document.getElementById(num);--%>
+	    var table =document.getElementById(num);
 	    var image = document.getElementById(id);
-	    <%--var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");--%>
-	    <%--if(openDgree<0||openDgree>100||isNaN(openDgree)){--%>
-	    <%--alert("输入有误！请重新输入！");--%>
-	    <%--return;--%>
-	    <%--}--%>
-	    <%--else if(openDgree==null){--%>
-	    <%--return;--%>
-	    <%--}--%>
+	    var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");
+	    if(openDgree<0||openDgree>100||isNaN(openDgree)){
+	    alert("输入有误！请重新输入！");
+	    return;
+	    }
+	    else if(openDgree==null){
+	    return;
+	    }
 	    if (openDgree==0){
-	    	<%--table.innerHTML=openDgree+"%";--%>
+	    	table.innerHTML=openDgree+"%";
 	    	image.src = "image/y2.png";
-	    	<%--$('#'+num).toggleClass('danger');--%>
+	    	$('#'+num).toggleClass('danger');
 	    	return;
 	    }
 	    else if(openDgree==100)
 	    {
-	    	<%--table.innerHTML=openDgree+"%";--%>
+	    	table.innerHTML=openDgree+"%";
 	    	image.src = "image/y3.png";
-	    	<%--$('#'+num).toggleClass('info');--%>
+	    	$('#'+num).toggleClass('info');
 	    	return;
 	    }
 	    else{
-	    	<%--table.innerHTML=openDgree+"%";--%>
+	    	table.innerHTML=openDgree+"%";
 	    	image.src = "image/y1.png";
-	    	<%--$('#'+num).toggleClass('warning');--%>
+	    	$('#'+num).toggleClass('warning');
 	    	return;
 	    }
-    }
+    } --%>
+<%--     function clearOpenDgree(id){
+	    var openDgree = 100;
+	    var num = id.substr(2);
+	    var table =document.getElementById(num);
+	    var image =document.getElementById(id);
+	    var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");
+	    if(openDgree<0||openDgree>100||isNaN(openDgree)){
+	    alert("输入有误！请重新输入！");
+	    return;
+	    }
+	    else if(openDgree==null){
+	    return;
+	    }
+	    if (openDgree==0){
+		    table.innerHTML=openDgree+"%";
+		    image.src = "image/y2.png";
+		    $('#'+num).toggleClass('danger');
+		    return;
+	    }
+	    else if(openDgree==100)
+	    {
+		    table.innerHTML=openDgree+"%";
+		    image.src = "image/y3.png";
+		    $('#'+num).toggleClass('info');
+		    return;
+	    }
+	    else{
+		    table.innerHTML=openDgree+"%";
+		    image.src = "image/y1.png";
+		    $('#'+num).toggleClass('warning');
+		    return;
+	    }
+    } --%>
     
     function setFMColorRed(id){
     	var image = document.getElementById(id);
+    	var FMTagId = "W" + id;
+    	var tag = document.getElementById(FMTagId);
+		if( image.style.display == "none")
+    		image.style.display = "block"
+		if( tag.style.display == "none")
+    		tag.style.display = "block"
     	image.src = "image/y2-35x37.png";
     }
   
     function setFMColorGreen(id){
     	var image = document.getElementById(id);
+    	var FMTagId = "W" + id;
+    	var tag = document.getElementById(FMTagId);
+		if( image.style.display == "none")
+    		image.style.display = "block"
+		if( tag.style.display == "none")
+    		tag.style.display = "block"
     	image.src = "image/y3-35x37.png";
     }    
 
-    function clearOpenDgree(id){
-	    var openDgree = 100;
-	    var num = id.substr(2);
-	    <%--var table =document.getElementById(num);--%>
-	    var image =document.getElementById(id);
-	    <%--var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");--%>
-	    <%--if(openDgree<0||openDgree>100||isNaN(openDgree)){--%>
-	    <%--alert("输入有误！请重新输入！");--%>
-	    <%--return;--%>
-	    <%--}--%>
-	    <%--else if(openDgree==null){--%>
-	    <%--return;--%>
-	    <%--}--%>
-	    if (openDgree==0){
-		    <%--table.innerHTML=openDgree+"%";--%>
-		    image.src = "image/y2.png";
-		    <%--$('#'+num).toggleClass('danger');--%>
-		    return;
-	    }
-	    else if(openDgree==100)
-	    {
-		    <%--table.innerHTML=openDgree+"%";--%>
-		    image.src = "image/y3.png";
-		    <%--$('#'+num).toggleClass('info');--%>
-		    return;
-	    }
-	    else{
-		    <%--table.innerHTML=openDgree+"%";--%>
-		    image.src = "image/y1.png";
-		    <%--$('#'+num).toggleClass('warning');--%>
-		    return;
-	    }
-    }
 
     function showName(e){
     	var structureNameGroup = ["name_QS", "name_JJC1", "name_JJC2", "name_JJC3", 
@@ -267,7 +279,30 @@
     function showList(){
     	document.getElementById("fix").style.display="block";
     }
-    
+    function hideAllFM(){
+    	var FMGroup = [/* color green */
+    				   "FM05",  "FM06",  "FM07",  "FM09",  "FM010", "FM014", 
+                       "FM015", "FM016", "FM017", "FM018", "FM019", "FM020", 
+                       "FM021", "FM024", "FM026", "FM044", "FM045", "FM046", 
+                       "FM047", "FM048", "FM049", "FM051", "FM052", "FM053", 
+                       "FM054", "FM055", "FM057", "FM058", "FM059", "FM062", 
+                       "FM063", "FM064", "FM065", "FM066", "FM067", "FM069", 
+                       /* color red */
+                       "FM022", "FM023", "FM050", "FM056", "FM068",
+                       /* FM tag */
+                       "WFM05",  "WFM06",  "WFM07",  "WFM09",  "WFM010", "WFM014", 
+                       "WFM015", "WFM016", "WFM017", "WFM018", "WFM019", "WFM020", 
+                       "WFM021", "WFM024", "WFM026", "WFM044", "WFM045", "WFM046", 
+                       "WFM047", "WFM048", "WFM049", "WFM051", "WFM052", "WFM053", 
+                       "WFM054", "WFM055", "WFM057", "WFM058", "WFM059", "WFM062", 
+                       "WFM063", "WFM064", "WFM065", "WFM066", "WFM067", "WFM069", 
+                       /* color red tag */
+                       "WFM022", "WFM023", "WFM050", "WFM056", "WFM068"
+                       ]
+        for (i=0; i<FMGroup.length; i++){
+        	document.getElementById(FMGroup[i]).style.display="none";
+		}
+	}
     function setShow(){
     	showList();
     	<%--document.getElementById("show_hide").innerHTML='隐藏';--%>
@@ -302,11 +337,11 @@
             <canvas id="canvas_fix" width="1583" height="757"></canvas>
         </div>
 	
-	<!-- 显示名称模块对方不需要 -->      
-	<!-- 
+
+   	<!-- 
    	<p class="name_Model" id="WShow">显示名称</p>
     <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label> 
-    -->
+ 	-->
     <a href="#" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
     <a href="#" id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
     <a href="#" id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
@@ -450,8 +485,8 @@
     </tbody>
     </table>
     <div id="panel_button">
-    <a href="#" id="nextPage">方案1</a>
-    <a href="#" id="lastPage">方案2</a>
+    <a href="#" id="nextPage" style="display:none;">方案1</a>
+    <a href="#" id="lastPage" style="display:none;">方案2</a>
     <a href="#" id="export">生成方案</a>
     <a href="#" id="reset" onclick="clearAll()">重置</a>
     </div>
