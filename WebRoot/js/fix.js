@@ -1692,7 +1692,7 @@ oCanvas.domReady(function () {
 
         setOpenDgree("FM07");
         setOpenDgree("FM010");
-        setOpenDgree("FM068");
+        
 
 
         document.getElementById("fix_line1").innerHTML="打开阀门64#";
@@ -1717,13 +1717,11 @@ oCanvas.domReady(function () {
 
         setOpenDgree("FM07");
         setOpenDgree("FM09");
-        setOpenDgree("FM068");
-
-        document.getElementById("fix_line1").innerHTML="打开阀门64#";
-        document.getElementById("fix_line2").innerHTML="关闭阀门03#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门07#";
-        document.getElementById("fix_line4").innerHTML="关闭阀门09#";
-        document.getElementById("fix_line5").innerHTML="打开西侧池排空泵#";
+        
+        document.getElementById("fix_line1").innerHTML="关闭阀门03#";
+        document.getElementById("fix_line2").innerHTML="关闭阀门07#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门09#";
+        document.getElementById("fix_line4").innerHTML="打开西侧池排空泵#";
 
         setShow();
     }
@@ -1739,7 +1737,7 @@ oCanvas.domReady(function () {
         setOpenDgree("FM015");
         setOpenDgree("FM063");
         setOpenDgree("FM069");
-        setOpenDgree("FM068");
+        
 
         document.getElementById("fix_line1").innerHTML="打开阀门62#";
         document.getElementById("fix_line2").innerHTML="打开阀门65#";
@@ -1762,7 +1760,6 @@ oCanvas.domReady(function () {
 
         setOpenDgree("FM062");
         setOpenDgree("FM045");
-        setOpenDgree("FM068");
 
         document.getElementById("fix_line1").innerHTML="关闭阀门62#";
         document.getElementById("fix_line2").innerHTML="打开阀门63#";
@@ -1782,7 +1779,6 @@ oCanvas.domReady(function () {
         document.getElementById("name_HHJ2").style.background="rgba(255,0,0,0.7)";
         setOpenDgree("FM065");
         setOpenDgree("FM066");
-        setOpenDgree("FM068");
 
         document.getElementById("fix_line1").innerHTML="打开阀门62#";
         document.getElementById("fix_line2").innerHTML="打开阀门63#";
@@ -1794,15 +1790,14 @@ oCanvas.domReady(function () {
 
     function fix_jjc1(){
         clearAll();
-        document.getElementById("fix_head").innerHTML="#1机加池维修闸门配合方案";
+        document.getElementById("fix_head").innerHTML = "1#机加池停池检修<br>方案";
         document.getElementById("name_JJC1").style.color="#8dd9ff";
         document.getElementById("name_JJC1").style.background="rgba(255,0,0,0.7)";
 
 
-        setOpenDgree("FM062");
-        setOpenDgree("FM045");
-        setOpenDgree("FM068");
-        setOpenDgree("FM014");
+        setFMColorRed("FM062");
+        setFMColorRed("FM045");
+        setFMColorRed("FM014");
 
         document.getElementById("fix_line1").innerHTML="缓慢关闭阀门62#";
         document.getElementById("fix_line2").innerHTML="适量调整阀门65#";
@@ -1816,47 +1811,36 @@ oCanvas.domReady(function () {
 
     function fix_jjc2(){
         clearAll();
-        document.getElementById("fix_head").innerHTML="#2机加池维修闸门配合方案";
+        document.getElementById("fix_head").innerHTML="2#机加池停池检修<br>方案";
         document.getElementById("name_JJC2").style.color="#8dd9ff";
         document.getElementById("name_JJC2").style.background="rgba(255,0,0,0.7)";
 
-        setOpenDgree("FM015");
-        setOpenDgree("FM069");
-        setOpenDgree("FM068");
-        setOpenDgree("FM063");
-//        setOpenDgree("FM014");
+        setFMColorRed("FM015");
+        setFMColorRed("FM069");
+        setFMColorRed("FM063");
 
-        document.getElementById("fix_line1").innerHTML="打开阀门65#";
-        document.getElementById("fix_line2").innerHTML="打开阀门62#";
-        document.getElementById("fix_line3").innerHTML="打开阀门45#";
-        document.getElementById("fix_line4").innerHTML="打开阀门66#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门63#";
-        document.getElementById("fix_line6").innerHTML="关闭阀门69#";
-        document.getElementById("fix_line7").innerHTML="关闭阀门15#";
-        document.getElementById("fix_line8").innerHTML="打开2#机加池排水泵";
+        document.getElementById("fix_line1").innerHTML="关闭阀门63#";
+        document.getElementById("fix_line2").innerHTML="关闭阀门69#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门15#";
+        document.getElementById("fix_line4").innerHTML="打开2#机加池排水泵";
 
         setShow();
     }
 
     function fix_jjc3(){
         clearAll();
-        document.getElementById("fix_head").innerHTML="#3机加池维修闸门配合方案";
+        document.getElementById("fix_head").innerHTML="3#机加池停池检修<br>方案";
         document.getElementById("name_JJC3").style.color="#8dd9ff";
         document.getElementById("name_JJC3").style.background="rgba(255,0,0,0.7)";
-        setOpenDgree("FM065");
-        setOpenDgree("FM066");
-        setOpenDgree("FM068");
-        setOpenDgree("FM067");
-//        setOpenDgree("FM014");
+        
+        setFMColorRed("FM065");
+        setFMColorRed("FM066");
+        setFMColorRed("FM067");
 
-        document.getElementById("fix_line1").innerHTML="打开阀门63#";
-        document.getElementById("fix_line2").innerHTML="打开阀门62#";
-        document.getElementById("fix_line3").innerHTML="打开阀门45#";
-        document.getElementById("fix_line4").innerHTML="打开阀门69#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门65#";
-        document.getElementById("fix_line6").innerHTML="关闭阀门66#";
-        document.getElementById("fix_line7").innerHTML="关闭阀门67#";
-        document.getElementById("fix_line8").innerHTML="打开3#机加池排水泵";
+        document.getElementById("fix_line1").innerHTML="关闭阀门65#";
+        document.getElementById("fix_line2").innerHTML="关闭阀门66#";
+        document.getElementById("fix_line3").innerHTML="关闭阀门67#";
+        document.getElementById("fix_line4").innerHTML="打开3#机加池排水泵";
 
         setShow();
     }
@@ -1869,8 +1853,8 @@ oCanvas.domReady(function () {
         document.getElementById("lastPage").style.display="block";
         setOpenDgree("FM016");
         setOpenDgree("FM018");
-//            setOpenDgree("FM068");
-        setOpenDgree("FM068");
+            
+        
         setOpenDgree("FM019");
 
         document.getElementById("fix_line1").innerHTML="关闭阀门16#";
@@ -1893,7 +1877,7 @@ oCanvas.domReady(function () {
         setOpenDgree("FM014");
         setOpenDgree("FM017");
         setOpenDgree("FM019");
-        setOpenDgree("FM068");
+        
 
         document.getElementById("fix_line1").innerHTML="关闭阀门14#";
         document.getElementById("fix_line2").innerHTML="关闭阀门1#~8#小虹吸";
@@ -1914,7 +1898,7 @@ oCanvas.domReady(function () {
 
         setOpenDgree("FM052");
         setOpenDgree("FM020");
-         setOpenDgree("FM056");
+         
 //        setOpenDgree("FM014");
 
         document.getElementById("fix_line1").innerHTML="打开阀门68#";
@@ -1934,7 +1918,7 @@ oCanvas.domReady(function () {
         document.getElementById("lastPage").style.display="block";
         setOpenDgree("FM053");
         setOpenDgree("FM058");
-        setOpenDgree("FM056");
+        
         setOpenDgree("FM057");
 //        setOpenDgree("FM023");
         setOpenDgree("FM021");
@@ -1956,11 +1940,11 @@ oCanvas.domReady(function () {
         document.getElementById("name_CY").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
-        setOpenDgree("FM022");
+        
         setOpenDgree("FM054");
         setOpenDgree("FM058");
         setOpenDgree("FM059");
-        setOpenDgree("FM056");
+        
 
         document.getElementById("fix_line1").innerHTML="打开阀门21#";
         document.getElementById("fix_line2").innerHTML="打开阀门23#";
@@ -1977,10 +1961,10 @@ oCanvas.domReady(function () {
         document.getElementById("fix_head").innerHTML="现有碳池闸门配合方案";
         document.getElementById("name_TC").style.color="#8dd9ff";
         document.getElementById("name_TC").style.background="rgba(255,0,0,0.7)";
-        setOpenDgree("FM056");
+        
         setOpenDgree("FM057");
         setOpenDgree("FM044");
-        setOpenDgree("FM022");
+        
         setOpenDgree("FM024");
         setOpenDgree("FM021");
 
@@ -2003,10 +1987,10 @@ oCanvas.domReady(function () {
         document.getElementById("fix_head").innerHTML="新建碳池闸门配合方案";
         document.getElementById("name_TC1").style.color="#8dd9ff";
         document.getElementById("name_TC1").style.background="rgba(255,0,0,0.7)";
-        setOpenDgree("FM056");
+        
         setOpenDgree("FM059");
         setOpenDgree("FM055");
-        setOpenDgree("FM022");
+        
         setOpenDgree("FM024");
         setOpenDgree("FM021");
 
@@ -2506,52 +2490,23 @@ oCanvas.domReady(function () {
         canvas.children[38].fill="rgba(0,0,0,0)";
         canvas.children[39].fill="rgba(0,0,0,0)";
 
-        clearOpenDgree("FM05");
-        clearOpenDgree("FM06");
-        clearOpenDgree("FM07");
-        clearOpenDgree("FM09");
-        clearOpenDgree("FM010");
-        clearOpenDgree("FM065");
-        clearOpenDgree("FM062");
-        clearOpenDgree("FM063");
-        clearOpenDgree("FM064");
-        clearOpenDgree("FM066");
-        clearOpenDgree("FM069");
-        clearOpenDgree("FM015");
-        clearOpenDgree("FM045");
-        clearOpenDgree("FM014");
-        clearOpenDgree("FM016");
-        clearOpenDgree("FM068");
-        clearOpenDgree("FM067");
-        clearOpenDgree("FM017");
-        clearOpenDgree("FM018");
-        clearOpenDgree("FM019");
-        clearOpenDgree("FM067");
-        clearOpenDgree("FM052");
-        clearOpenDgree("FM020");
-        clearOpenDgree("FM056");
-        clearOpenDgree("FM057");
-        clearOpenDgree("FM058");
-        clearOpenDgree("FM053");
-        clearOpenDgree("FM054");
-        clearOpenDgree("FM021");
-        clearOpenDgree("FM022");
-        clearOpenDgree("FM024");
-
-        clearOpenDgree("FM059");
-        clearOpenDgree("FM046");
-        clearOpenDgree("FM044");
-        clearOpenDgree("FM055");
-        clearOpenDgree("FM026");
-        clearOpenDgree("FM051");
-        clearOpenDgree("FM055");
-        clearOpenDgree("FM047");
-        clearOpenDgree("FM048");
-        clearOpenDgree("FM049");
+        var defaultFMColorGreen = ["FM05",  "FM06",  "FM07",  "FM09",  "FM010", "FM014", 
+                                   "FM015", "FM016", "FM017", "FM018", "FM019", "FM020", 
+                                   "FM021", "FM024", "FM026", "FM044", "FM045", "FM046", 
+                                   "FM047", "FM048", "FM049", "FM051", "FM052", "FM053", 
+                                   "FM054", "FM055", "FM057", "FM058", "FM059", "FM062", 
+                                   "FM063", "FM064", "FM065", "FM066", "FM067", "FM069", ]
+        for (i=0;i<defaultFMColorGreen.length;i++){
+        	setFMColorGreen(defaultFMColorGreen[i])
+		}
+        
+        var defaultFMColorRed =	["FM022","FM023","FM050","FM056","FM068"]
+        for (i=0;i<defaultFMColorRed.length;i++){
+        	setFMColorRed(defaultFMColorRed[i])
+		}
 
         document.getElementById("nextPage").style.display="none";
         document.getElementById("lastPage").style.display="none";
-
 
         document.getElementById("fix_line1").innerHTML="";
         document.getElementById("fix_line2").innerHTML="";
