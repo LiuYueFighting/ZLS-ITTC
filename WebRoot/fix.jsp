@@ -301,10 +301,12 @@
         <div id="mainView" style="position: absolute;z-index: 1" >
             <canvas id="canvas_fix" width="1583" height="757"></canvas>
         </div>
-      
+	
+	<!-- 显示名称模块对方不需要 -->      
+	<!-- 
    	<p class="name_Model" id="WShow">显示名称</p>
     <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label> 
-    
+    -->
     <a href="#" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
     <a href="#" id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
     <a href="#" id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
@@ -450,7 +452,8 @@
     <div id="panel_button">
     <a href="#" id="nextPage">方案1</a>
     <a href="#" id="lastPage">方案2</a>
-    <a  href="#" id="reset" onclick="clearAll()">重置</a>
+    <a href="#" id="export">生成方案</a>
+    <a href="#" id="reset" onclick="clearAll()">重置</a>
     </div>
     </div>
     </div>
