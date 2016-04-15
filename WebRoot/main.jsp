@@ -299,50 +299,6 @@
     </div>
     </div>
     <jsp:include page="down.jsp" />
-    <script>
-    function showName(e){
-        if(e.checked){
-            document.getElementById("name_QS").style.display="block";
-            document.getElementById("name_QS2").style.display="block";
-            document.getElementById("name_JJC1").style.display="block";
-            document.getElementById("name_JJC2").style.display="block";
-            document.getElementById("name_JJC3").style.display="block";
-            document.getElementById("name_VL").style.display="block";
-            document.getElementById("name_TC" ).style.display="block";
-            document.getElementById("name_TC1").style.display="block";
-            document.getElementById("name_CY").style.display="block";
-            document.getElementById("name_CYC").style.display="block";
-            document.getElementById("name_YC").style.display="block";
-            document.getElementById("name_HHJ").style.display="block";
-            document.getElementById("name_HHJ2").style.display="block";
-            document.getElementById("name_HX").style.display="block";
-            document.getElementById("name_QSC1").style.display="block";
-            document.getElementById("name_QSC2").style.display="block";
-            document.getElementById("name_QSC3").style.display="block";
-            document.getElementById("name_QSC4").style.display="block";
-            }
-        else{
-            document.getElementById("name_QS").style.display="none";
-            document.getElementById("name_QS2").style.display="none";
-            document.getElementById("name_JJC1").style.display="none";
-            document.getElementById("name_JJC2").style.display="none";
-            document.getElementById("name_JJC3").style.display="none";
-            document.getElementById("name_VL").style.display="none";
-            document.getElementById("name_TC").style.display="none";
-            document.getElementById("name_TC1").style.display="none";
-            document.getElementById("name_CY").style.display="none";
-            document.getElementById("name_CYC").style.display="none";
-            document.getElementById("name_YC").style.display="none";
-            document.getElementById("name_HHJ").style.display="none";
-            document.getElementById("name_HHJ2").style.display="none";
-            document.getElementById("name_HX").style.display="none";
-            document.getElementById("name_QSC1").style.display="none";
-            document.getElementById("name_QSC2").style.display="none";
-            document.getElementById("name_QSC3").style.display="none";
-            document.getElementById("name_QSC4").style.display="none";
-            }
-        }
-    </script>
 </div>
 </body>
 </html>

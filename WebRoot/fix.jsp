@@ -13,6 +13,7 @@
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
     <title>北京自来水集团工艺平台</title>
+    <link rel="stylesheet" href="icon_btn/iconfont.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/top_down.css">
@@ -260,13 +261,12 @@
    								  "name_VL", "name_TC", "name_TC1", "name_CY", 
    								  "name_YC", "name_HHJ1", "name_HHJ2", "name_HX", 
    								  "name_QSC1", "name_QSC2", "name_QSC3", "name_QSC4"]
-	    
+	
 	    if(e.checked == true){
 	    	for (i=0;i<structureNameGroup.length;i++){
 				document.getElementById(structureNameGroup[i]).style.display="block";
 			}
-	    }
-    	if(e.checked == false){
+	    }else if(e.checked == false){
     		for (i=0;i<structureNameGroup.length;i++){
 				document.getElementById(structureNameGroup[i]).style.display="none";
 			}
@@ -464,31 +464,33 @@
     <%--<div class="panel-body" id="fix-content">--%>
     <%--<p><h3>配合开关闸门顺序表</h3></p>--%>
     <%--</div>--%>
-
+	
     <!-- Table -->
     <table id="fix_table" class="table" >
     <thead>
-    <td>#</td>
-    <td>操作</td>
+    <tr id="init_stage">初始状态</tr><br>
+    <tr id="init_stage">全场正常运行</tr>
     </thead>
     <tbody>
+    <td>#</td><td>操作</td>
     <tr><td>1</td><td id="fix_line1"></td></tr>
-    <tr><td>2</td><td id="fix_line2"></td></tr>
-    <tr><td>3</td><td id="fix_line3"></td></tr>
-    <tr><td>4</td><td id="fix_line4"></td></tr>
-    <tr><td>5</td><td id="fix_line5"></td></tr>
-    <tr><td>6</td><td id="fix_line6"></td></tr>
-    <tr><td>7</td><td id="fix_line7"></td></tr>
-    <tr><td>8</td><td id="fix_line8"> </td></tr>
-    <tr><td>9</td><td id="fix_line9"></td></tr>
-    <tr><td>10</td><td id="fix_line10"></td></tr>
+    <tr><td> </td><td id="fix_line2"></td></tr>
+    <tr><td>2</td><td id="fix_line3"></td></tr>
+    <tr><td> </td><td id="fix_line4"></td></tr>
+    <tr><td>3</td><td id="fix_line5"></td></tr>
+    <tr><td> </td><td id="fix_line6"></td></tr>
+    <tr><td>4</td><td id="fix_line7"></td></tr>
+    <tr><td> </td><td id="fix_line8"> </td></tr>
+    <tr><td>5</td><td id="fix_line9"></td></tr>
+    <tr><td> </td><td id="fix_line10"></td></tr>
     </tbody>
     </table>
     <div id="panel_button">
     <a href="#" id="nextPage" style="display:none;">方案1</a>
     <a href="#" id="lastPage" style="display:none;">方案2</a>
     <a href="#" id="export">生成方案</a>
-    <a href="#" id="reset" onclick="clearAll()">重置</a>
+    <i id="reset" class="icon iconfont iconbtn">&#xe67c;</i>
+    <!-- <a href="#" id="reset" onclick="clearAll()">重置</a> -->
     </div>
     </div>
     </div>

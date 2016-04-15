@@ -1795,7 +1795,6 @@ oCanvas.domReady(function () {
         document.getElementById("name_JJC1").style.color="#8dd9ff";
         document.getElementById("name_JJC1").style.background="rgba(255,0,0,0.7)";
 
-        
         setFMColorRed("FM062");
         setFMColorRed("FM045");
         setFMColorRed("FM014");
