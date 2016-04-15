@@ -149,6 +149,14 @@
         z-index: 998;
         color: #223bb8;
     }
+    #panelHeading{
+        width: 117px;
+    text-align: center;
+    /* font-size: 19px; */
+    font-size: 19px;
+    font-weight: bold;
+
+    }
     #setConfig{
     font-family: '微软雅黑','Arial';
     position: absolute;
@@ -183,20 +191,20 @@
     }
         #jjc1In{
         position: absolute;
-        left:1510px;
-        top: 490px;
+        left:1507px;
+        top: 464px;
         z-index:999;
         }
         #jjc2In{
         position: absolute;
-        left:1510px;
-        top: 538px;
+        left:1507px;
+        top: 513px;
         z-index:999;
         }
         #jjc3In{
         position: absolute;
-        left:1510px;
-        top: 587px;
+        left:1507px;
+        top: 561px;
         z-index:999;
         }
 /*         #hx1Out{ */
@@ -269,6 +277,9 @@
         top: 413px;
         z-index:999;
     }
+    .panel-heading {
+    padding: 9px 1px;
+	}
     </style>
     <script>
     <%--function changeImage(id){--%>
@@ -680,7 +691,7 @@ if(openDgree_062+openDgree_063 != 0){
             <button id="btn_submit" class="btn btn-info btn_main" value="0" onclick="changeInput()">预测</button>
         </div>
         <div class="panel panel-info" id="Prediction_results">
-                <div class="panel-heading">机加池水量</div>
+                <div class="panel-heading" id="panelHeading">机加池水量</div>
                 <table class="table">
                 <tr>
                 <td><p>1#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</p></td>
