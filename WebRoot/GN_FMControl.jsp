@@ -19,11 +19,13 @@
     <%--<link rel="stylesheet" href="css/normalize.css">--%>
     <link rel="stylesheet" href="css/FM&GZW_name.css">
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="css/default/zebra_dialog.css" type="text/css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
     <script src="js/GN_FMControl.js"></script>
-
+	<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="js/zebra_dialog.js"></script> 
 
     <style>
         #myContent {
@@ -281,6 +283,7 @@
     padding: 9px 1px;
 	}
     </style>
+    
     <script>
     <%--function changeImage(id){--%>
     <%--var image = document.getElementById(id);--%>
@@ -367,8 +370,12 @@ function sAlert(str){
     function changeInput(){
     read =parseFloat(document.getElementById("read").value);
         if(read<0||read>1800||isNaN(read)){
-//        alert("进厂水量输入有误！请重新输入！");
-        sAlert("进厂水量输入有误！请重新输入！");
+//        alert("进厂水量输入有误！请重新输入！"); 
+//        sAlert("进厂水量输入有误！请重新输入！");
+$.Zebra_Dialog('<strong>进厂水量输入有误！</strong> 进厂水量范围为0-1800m<sup>3</sup>/h', {
+    'type':     'warning',
+    'title':    '错误'
+});
         return;
     }
     var textFeild =document.getElementById("write");
@@ -377,7 +384,11 @@ function sAlert(str){
     var read_063=parseFloat(document.getElementById("read_FM63").value);
     var read_065=parseFloat(document.getElementById("read_FM65").value);
     if(read_062==0&&read_063==0&&read_065==0){
-        sAlert("开启度不能全部为0，请重新输入！");
+//        sAlert("开启度不能全部为0，请重新输入！");
+$.Zebra_Dialog('<strong>开启度不能全部为0!</strong> 请重新输入！', {
+    'type':     'warning',
+    'title':    '错误'
+});
         return;
     }
     setOpenDgree("FM062",read_062);
@@ -392,7 +403,11 @@ function sAlert(str){
         var image = document.getElementById(id);
         <%--var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");--%>
         if(openDgree<0||openDgree>100||isNaN(openDgree)){
-            sAlert("阀门"+num+"的开启度输入有误！请重新输入！");
+//            sAlert("阀门"+num+"的开启度输入有误！请重新输入！");
+				$.Zebra_Dialog("阀门"+num+"的开启度输入有误！请重新输入！", {
+    			'type':     'warning',
+    			'title':    '错误'
+				});
             return;
         }
     switch(id){
@@ -832,9 +847,9 @@ if(openDgree_062+openDgree_063 != 0){
         <%--<p id="hh1In1" class="flow"></p>--%>
         <%--<p id="hh1In2" class="flow"></p>--%>
         <%--<p id="hh2In" class="flow"></p>--%>
-        <p id="jjc1In" class="flow"></p>        
-        <p id="jjc2In" class="flow"></p>
-        <p id="jjc3In" class="flow"></p>
+        <p id="jjc1In" class="flow">500</p>        
+        <p id="jjc2In" class="flow">500</p>
+        <p id="jjc3In" class="flow">800</p>
         <p id="hx1Out" class="flow"></p>
         <p id="hx2Out" class="flow"></p>
         <p id="vlOut" class="flow"></p>
