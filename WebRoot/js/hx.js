@@ -71,7 +71,7 @@ oCanvas.domReady(function () {
             {x_cell: 600,y_cell: 155},
             {x_cell: 600,y_cell: 102},
             {x_cell: 584,y_cell: 86},
-            {x_cell: 560,y_cell: 86},
+            {x_cell: 566,y_cell: 86},
             {x_cell: 551,y_cell: 101},
             {x_cell: 551,y_cell: 155}
         ],
@@ -97,10 +97,10 @@ oCanvas.domReady(function () {
             {x: 60, y: 0, w: 60, h: 60, d: 400},
             {x: 0, y: 0, w: 60, h: 60, d: 800}
         ]
-    }).scale(1,2).add();
+    }).add();//.scale(1,2)
     var arrow_1 = canvas.display.sprite({
         x: 568,
-        y: 514,
+        y: 504,
         image: "image/water-arrow/you.png",
         generate: false,
         frames: [
@@ -150,16 +150,26 @@ oCanvas.domReady(function () {
         ]
     }).add();
     var arrow_3=canvas.display.sprite({
-        x: 439,
-        y: 389,
-        image: "image/water-arrow/left_roll.png",
+        x: 423,//439
+        y: 370,//389
+        image: "image/water-arrow/zuo.png",
         generate:false,
         frames: [
             {x:60,y:0,w:60,h:60,d:400},
             {x:0,y:0,w:60,h:60,d:800}
 
         ]
-    }).scale(0.5).add();
+    }).add();//.scale(0.5)
+    var arrow_4 = canvas.display.sprite({
+        x: 600,
+        y: 100,
+        image: "image/water-arrow/up.png",
+        generate: false,
+        frames: [
+            {x: 60, y: 0, w: 60, h: 60, d: 400},
+            {x: 0, y: 0, w: 60, h: 60, d: 800}
+        ]
+    }).add();//.scale(1,2)
 //添加文字标注
     var txt1=canvas.display.text({
         x:696,
@@ -198,6 +208,7 @@ oCanvas.domReady(function () {
         SC06.advance();
         if(SC01.height_now>=SC01.Height*0.75){
             GD01.paused=1;
+            arrow_4.start();
         }
         if(GD01.full==1){
             SC02.start=1;
@@ -205,6 +216,7 @@ oCanvas.domReady(function () {
         }
         if(SC02.full==1){
             SC03.start=1;
+            arrow_4.frame=2;
         }
         if(SC03.full==1){
             arrow_1.start();

@@ -555,8 +555,8 @@ $(document).ready(function(){
        
 
         var txt_QS=canvas.display.text({
-            x:240,
-            y:400,
+            x:215,
+            y:440,
             origin: { x: "center", y: "top" },
             font: "bold 22px sans-serif",
             text: "取水泵房",
@@ -572,7 +572,8 @@ $(document).ready(function(){
             fill:"#0e406b"
         });
         var txt_HHJ=txt_QS.clone({
-            x:470,
+            x:480,
+            y:440,
             text:"混合井"
         });
 
@@ -584,7 +585,7 @@ $(document).ready(function(){
 
         var txt_HX=txt_QS.clone({
             x:1350,
-            y:426,
+            y:440,
             text:"V型滤池"
         });
         var txt_CY=txt_QS.clone({
@@ -598,9 +599,14 @@ $(document).ready(function(){
             text:"活性炭池"
         });
         var txt_QSC=txt_QS.clone({
-            x:640,
+            x:600,
             y:726,
             text:"清水池"
+        });
+        var txt_PS=txt_QS.clone({
+            x:332,
+            y:726,
+            text:"配水"
         });
 
   
@@ -612,6 +618,7 @@ $(document).ready(function(){
         canvas.addChild(txt_CY);
         canvas.addChild(txt_TC);
         canvas.addChild(txt_QSC);
+        canvas.addChild(txt_PS);
 
         canvas.setLoop(function () {
             GD01.advance();

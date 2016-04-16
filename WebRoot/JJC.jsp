@@ -144,10 +144,10 @@
                 <div class="panel-heading">运行参数</div>
                 <table class="table">
                 <tr>
-                <td>上升流度</td><td>1mm</td>
+                <td>上升流度</td><td>1mm/s</td>
                 </tr>
                 <tr>
-                <td>加余氯</td><td>FeCl<sub>3</sub></td>
+                <td>FeCl<sub>3</sub></td><td>&lt;mg/L</td>
                 </tr>
                 </table>
                 </div>
@@ -158,6 +158,9 @@
                 <table class="table">
                 <tr>
                 <td>出水浊度</td><td><1.5NTU</td>
+                </tr>
+                <tr>
+                <td>出水余氯</td><td>&lt;mg/L</td>
                 </tr>
                 </table>
                 </div>

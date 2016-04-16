@@ -114,7 +114,7 @@
         #list_group{
         width:150px;
         position:absolute;
-        top:50%;
+        top:38%;
         font-size:20px;
         }
         .panel-heading{

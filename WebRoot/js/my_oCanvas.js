@@ -628,8 +628,7 @@ var constructor_gd = function (settings, core) {
     }, settings);
 };
 oCanvas.registerDisplayObject("GD", constructor_gd, "init");
-
-var constructor_gd1 = function (settings, core) {
+var constructor_gd2 = function (settings, core) {
 
     return oCanvas.extend({
         core: core,
@@ -710,6 +709,154 @@ var constructor_gd1 = function (settings, core) {
         }
     }, settings);
 };
+oCanvas.registerDisplayObject("GD2", constructor_gd2, "init");
+
+
+//state{0:empty;1:full;2:empty it;3:charge it}
+var constructor_gd1 = function (settings, core) {
+
+    return oCanvas.extend({
+        core: core,
+        shapeType: "rectangular",
+
+        init: function () {
+            this.startIndex = 0;
+            this.endIndex=this.cells.length-1;
+
+            this.startPoint.x=this.cells[0].x_cell;
+            this.startPoint.y=this.cells[0].y_cell;
+            this.endPoint.x=this.cells[this.endIndex].x_cell;
+            this.endPoint.y=this.cells[this.endIndex].y_cell;
+            this.state=1;
+            this.endHeight = -1;
+            this.speed=2;
+        },
+        
+        advance: function () {
+        	if(this.state==2){
+        		if(this.endHeight>=0){
+        			this.startIndex+=1;
+        		}
+        		if(this.startIndex==this.endIndex){
+        			this.state=0;
+        			this.endPoint.x=this.cells[0].x_cell;
+        			this.endPoint.y=this.cells[0].y_cell;
+        			this.startIndex=0;
+        			this.endIndex=0;
+        			this.startPoint.x=this.endPoint.x;
+        			this.startPoint.y=this.endPoint.y;
+        			this.endHeight=-1;
+        		}
+        		else{
+        			 this.deta_x = this.cells[this.startIndex + 1].x_cell - this.cells[this.startIndex].x_cell;
+                     this.deta_y = this.cells[this.startIndex + 1].y_cell - this.cells[this.startIndex].y_cell;
+                     this.deta = Math.sqrt(this.deta_x * this.deta_x + this.deta_y * this.deta_y);
+                     this.flag_x = this.deta_x / this.deta;
+                     this.flag_y = this.deta_y / this.deta;
+                     
+                     if (this.endHeight >= 0) {
+                             this.startPoint.x = this.cells[this.startIndex].x_cell + this.flag_x * this.endHeight;
+                             this.startPoint.y = this.cells[this.startIndex].y_cell + this.flag_y * this.endHeight;
+                             if (Math.abs(this.startPoint.x - this.cells[this.startIndex + 1].x_cell) > this.speed * Math.abs(this.flag_x) || Math.abs(this.startPoint.y - this.cells[this.startIndex + 1].y_cell) > this.speed * Math.abs(this.flag_y)) {
+                                 this.endHeight = -1;
+                             }
+                             else {
+                                 if (this.flag_x == 0) {
+                                     this.endHeight = this.speed - Math.abs(this.startPoint.y - this.cells[this.startIndex + 1].y_cell) / Math.abs(this.flag_y);
+                                 }
+                                 else {
+                                     this.endHeight = this.speed - Math.abs(this.startPoint.x - this.cells[this.startIndex + 1].x_cell) / Math.abs(this.flag_x);
+                                 }
+                             }
+                     }
+                     else {
+                         this.startPoint.x += this.flag_x * this.speed;
+                         this.startPoint.y += this.flag_y * this.speed;
+                         if (Math.abs(this.startPoint.x - this.cells[this.startIndex + 1].x_cell) >= this.speed * Math.abs(this.flag_x) && Math.abs(this.startPoint.y  - this.cells[this.startIndex + 1].y_cell) >= this.speed * Math.abs(this.flag_y)) {
+                             this.endHeight = -1;
+                         }
+                         else {
+                        	 if (this.flag_x == 0) {
+                                 this.endHeight = this.speed - Math.abs(this.startPoint.y - this.cells[this.startIndex + 1].y_cell) / Math.abs(this.flag_y);
+                             }
+                             else {
+                                 this.endHeight = this.speed - Math.abs(this.startPoint.x - this.cells[this.startIndex + 1].x_cell) / Math.abs(this.flag_x);
+                             }
+                         }
+                     }
+        		}    			        		
+        	}else if(this.state==3){
+        		
+        		
+        		if(this.endHeight>=0){
+        			this.endIndex+=1;
+        		}
+        		if(this.endIndex==this.cells.length-1){
+        			this.state=1;
+        			this.endHeight=-1;
+        		}
+        		else{
+        			 this.deta_x = this.cells[this.endIndex + 1].x_cell - this.cells[this.endIndex].x_cell;
+                     this.deta_y = this.cells[this.endIndex + 1].y_cell - this.cells[this.endIndex].y_cell;
+                     this.deta = Math.sqrt(this.deta_x * this.deta_x + this.deta_y * this.deta_y);
+                     this.flag_x = this.deta_x / this.deta;
+                     this.flag_y = this.deta_y / this.deta;
+                     
+                     if (this.endHeight >= 0) {
+                             this.endPoint.x = this.cells[this.endIndex].x_cell + this.flag_x * this.endHeight;
+                             this.endPoint.y = this.cells[this.endIndex].y_cell + this.flag_y * this.endHeight;
+                             if (Math.abs(this.endPoint.x - this.cells[this.endIndex + 1].x_cell) > this.speed * Math.abs(this.flag_x) || Math.abs(this.endPoint.y - this.cells[this.endIndex + 1].y_cell) > this.speed * Math.abs(this.flag_y)) {
+                                 this.endHeight = -1;
+                             }
+                             else {
+                                 if (this.flag_x == 0) {
+                                     this.endHeight = this.speed - Math.abs(this.endPoint.y - this.cells[this.endIndex + 1].y_cell) / Math.abs(this.flag_y);
+                                 }
+                                 else {
+                                     this.endHeight = this.speed - Math.abs(this.endPoint.x - this.cells[this.endIndex + 1].x_cell) / Math.abs(this.flag_x);
+                                 }
+                             }
+                     }
+                     else {
+                         this.endPoint.x += this.flag_x * this.speed;
+                         this.endPoint.y += this.flag_y * this.speed;
+                         if (Math.abs(this.endPoint.x - this.cells[this.endIndex + 1].x_cell) >= this.speed * Math.abs(this.flag_x) && Math.abs(this.endPoint.y  - this.cells[this.endIndex + 1].y_cell) >= this.speed * Math.abs(this.flag_y)) {
+                             this.endHeight = -1;
+                         }
+                         else {
+                        	 if (this.flag_x == 0) {
+                                 this.endHeight = this.speed - Math.abs(this.endPoint.y - this.cells[this.endIndex + 1].y_cell) / Math.abs(this.flag_y);
+                             }
+                             else {
+                                 this.endHeight = this.speed - Math.abs(this.endPoint.x - this.cells[this.endIndex + 1].x_cell) / Math.abs(this.flag_x);
+                             }
+                         }
+                     }
+        		}    			        	      		
+        		
+        	}
+        	
+        },
+        draw: function () {
+            var canvas = this.core.canvas;
+            canvas.beginPath();
+            canvas.lineJoin = 'round';
+            canvas.lineWidth = this.GDwidth / 2;
+            canvas.strokeStyle = this.fill;
+  
+            
+            
+            canvas.moveTo(this.startPoint.x, this.startPoint.y);
+            for (var i = this.startIndex+1; i <= this.endIndex; i++) {
+                canvas.lineTo(this.cells[i].x_cell, this.cells[i].y_cell);
+            }
+            canvas.lineTo(this.endPoint.x, this.endPoint.y);
+
+            canvas.stroke();
+            canvas.closePath();
+        }
+    }, settings);
+};
 oCanvas.registerDisplayObject("GD1", constructor_gd1, "init");
 //随机气泡模型
 //
@@ -776,6 +923,30 @@ var constructor_bubble = function (settings, core) {
     }, settings);
 };
 oCanvas.registerDisplayObject("bubble", constructor_bubble, "init");
+//画实线管道函数，参数：
+//cells数组,parent,GDwidth,color
+function createGD1(options){
+	var GD02 = options.parent.display.GD1({
+		cells:options.cells,
+	        startPoint: {
+	            x: 0, y: 0
+	        },
+	       endPoint: {
+	            x: 0, y: 0
+	        },
+	        speed:2,
+	        startIndex: 0,
+	        endIndex:0,
+	        GDwidth:options.GDwidth,
+	        fill:options.color,
+	        endHeight: 0,
+	        state:1
+	});
+	options.parent.addChild(GD02);
+    return GD02;
+}
+
+
 //画管道函数,参数：
 //parent,cells,GDwidth,color
 function createGD(options){

@@ -113,7 +113,7 @@
     #list_group{
     width:150px;
     position:absolute;
-    top:50%;
+    top:58%;
     font-size:20px;
     }
     .panel-heading{
@@ -175,6 +175,12 @@
                 <table class="table">
                 <tr>
                 <td>出水浊度</td><td><0.25NTU</td>
+                </tr>
+                <tr>
+                <td>铁</td><td>&lt;0.15mg/L</td>
+                </tr>
+                <tr>
+                <td>铝</td><td>&lt;0.1mg/L</td>
                 </tr>
                 </table>
                 </div>
