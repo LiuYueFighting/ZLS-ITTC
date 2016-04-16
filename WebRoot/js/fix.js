@@ -2508,21 +2508,19 @@ oCanvas.domReady(function () {
         canvas.children[38].fill="rgba(0,0,0,0)";
         canvas.children[39].fill="rgba(0,0,0,0)";
 
-        var defaultFMColorGreen = ["FM05",  "FM06",  "FM07",  "FM09",  "FM010", "FM014", 
-                                   "FM015", "FM016", "FM017", "FM018", "FM019", "FM020", 
-                                   "FM044", "FM045", "FM052", "FM055", "FM057", "FM059", 
-                                   "FM062", "FM063", "FM064", "FM065", "FM066", "FM067", "FM069", 
-//        						   "FM021", "FM024", "FM025", "FM026", "FM046", "FM047", 
-//        						   "FM048", "FM049", "FM051", "FM053", "FM054", "FM058"
-        						   ]
-        for (i=0;i<defaultFMColorGreen.length;i++){
-        	setFMColorGreen(defaultFMColorGreen[i])
-		}
-        
-        var defaultFMColorRed =	["FM022","FM023","FM050","FM056","FM068"]
-        for (i=0;i<defaultFMColorRed.length;i++){
-        	setFMColorRed(defaultFMColorRed[i])
-		}
+//      defaultFMColorGreen = ["FM05",  "FM06",  "FM07",  "FM09",  "FM010", "FM014", 
+//                             "FM015", "FM016", "FM017", "FM018", "FM019", "FM020", 
+//                             "FM044", "FM045", "FM052", "FM055", "FM057", "FM059", 
+//                             "FM062", "FM063", "FM064", "FM065", "FM066", "FM067", "FM069", 
+////        					   "FM021", "FM024", "FM025", "FM026", "FM046", "FM047", 
+////        					   "FM048", "FM049", "FM051", "FM053", "FM054", "FM058"
+//        				       ]
+//      defaultFMColorRed   = ["FM022","FM023","FM050","FM056","FM068"]
+
+        $("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
+        $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
+        $("div#FM_group .fm_default_green").attr("style","display:block;");
+        $("div#FM_group .fm_default_red").attr("style","display:block;");
 
         document.getElementById("nextPage").style.display="none";
         document.getElementById("lastPage").style.display="none";
@@ -2540,36 +2538,8 @@ oCanvas.domReady(function () {
         changeHide();
 
         document.getElementById("fix_head").innerHTML="请点击需要维修的构筑物";
-        document.getElementById("name_QS").style.color="#283a45";
-        document.getElementById("name_JJC1").style.color="#283a45";
-        document.getElementById("name_HHJ1").style.color="#283a45";
-        document.getElementById("name_HHJ2").style.color="#283a45";
-        document.getElementById("name_JJC2").style.color="#283a45";
-        document.getElementById("name_JJC3").style.color="#283a45";
-        document.getElementById("name_HX").style.color="#283a45";
-        document.getElementById("name_VL").style.color="#283a45";
-        document.getElementById("name_CY").style.color="#283a45";
-        document.getElementById("name_TC").style.color="#283a45";
-        document.getElementById("name_TC1").style.color="#283a45";
-        document.getElementById("name_QSC1").style.color="#283a45";
-        document.getElementById("name_QSC2").style.color="#283a45";
-        document.getElementById("name_QSC3").style.color="#283a45";
-        document.getElementById("name_QSC4").style.color=" #283a45";
-        document.getElementById("name_QS").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_JJC1").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_HHJ1").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_HHJ2").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_JJC2").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_JJC3").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_VL").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_CY").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_TC").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_TC1").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_QSC1").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_QSC2").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_QSC3").style.background="rgba(255,255,255,0.5)";
-        document.getElementById("name_QSC4").style.background="rgba(255,255,255,0.5)";
+        $("div#name_gzw .name_ob").attr("style","color:#283a45");
+        $("div#name_gzw .name_ob").attr("style","background:rgba(255,255,255,0.5)");
     }
 
 });

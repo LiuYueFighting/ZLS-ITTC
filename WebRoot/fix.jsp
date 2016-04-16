@@ -166,73 +166,6 @@
        else image.src = "image/y3-35x37.png";
     }
 
-<%--     function setOpenDgree(id){
-	    var openDgree = 0;
-	    var num = id.substr(2);
-	    var table =document.getElementById(num);
-	    var image = document.getElementById(id);
-	    var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");
-	    if(openDgree<0||openDgree>100||isNaN(openDgree)){
-	    alert("输入有误！请重新输入！");
-	    return;
-	    }
-	    else if(openDgree==null){
-	    return;
-	    }
-	    if (openDgree==0){
-	    	table.innerHTML=openDgree+"%";
-	    	image.src = "image/y2.png";
-	    	$('#'+num).toggleClass('danger');
-	    	return;
-	    }
-	    else if(openDgree==100)
-	    {
-	    	table.innerHTML=openDgree+"%";
-	    	image.src = "image/y3.png";
-	    	$('#'+num).toggleClass('info');
-	    	return;
-	    }
-	    else{
-	    	table.innerHTML=openDgree+"%";
-	    	image.src = "image/y1.png";
-	    	$('#'+num).toggleClass('warning');
-	    	return;
-	    }
-    } --%>
-<%--     function clearOpenDgree(id){
-	    var openDgree = 100;
-	    var num = id.substr(2);
-	    var table =document.getElementById(num);
-	    var image =document.getElementById(id);
-	    var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");
-	    if(openDgree<0||openDgree>100||isNaN(openDgree)){
-	    alert("输入有误！请重新输入！");
-	    return;
-	    }
-	    else if(openDgree==null){
-	    return;
-	    }
-	    if (openDgree==0){
-		    table.innerHTML=openDgree+"%";
-		    image.src = "image/y2.png";
-		    $('#'+num).toggleClass('danger');
-		    return;
-	    }
-	    else if(openDgree==100)
-	    {
-		    table.innerHTML=openDgree+"%";
-		    image.src = "image/y3.png";
-		    $('#'+num).toggleClass('info');
-		    return;
-	    }
-	    else{
-		    table.innerHTML=openDgree+"%";
-		    image.src = "image/y1.png";
-		    $('#'+num).toggleClass('warning');
-		    return;
-	    }
-    } --%>
-    
     function setFMColorRed(id){
     	var image = document.getElementById(id);
     	var FMTagId = "W" + id;
@@ -261,7 +194,9 @@
    								  "name_VL", "name_TC", "name_TC1", "name_CY", 
    								  "name_YC", "name_HHJ1", "name_HHJ2", "name_HX", 
    								  "name_QSC1", "name_QSC2", "name_QSC3", "name_QSC4"]
-	
+		//Update to jQuery
+		//$("div#name_gzw .name_ob").attr("style","display:block;");
+		//$("div#name_gzw .name_ob").attr("style","display:none;");
 	    if(e.checked == true){
 	    	for (i=0;i<structureNameGroup.length;i++){
 				document.getElementById(structureNameGroup[i]).style.display="block";
@@ -337,120 +272,124 @@
             <canvas id="canvas_fix" width="1583" height="757"></canvas>
         </div>
 	
-
    	<!-- 
-   	<p class="name_Model" id="WShow">显示名称</p>
-    <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label> 
+	<div id="show_name">
+   		<p class="name_Model" id="WShow">显示名称</p>
+    	<label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label> 
+ 	</div>
  	-->
-    <a href="#" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
-    <a href="#" id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
-    <a href="#" id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
-    <a href="#" id="name_JJC3" style="text-decoration: none" class="name_ob">3#机加池</a>
-    <a href="#" id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
-    <a href="#" id="name_TC" class="name_ob" style="text-decoration: none">1#活性炭池</a>
-    <a href="#" id="name_TC1" class="name_ob" style="text-decoration: none">2#活性炭池</a>
-    <a href="#" id="name_CY" class="name_ob" style="text-decoration: none">臭氧混合池</a>
-    <a href="#" id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
-    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
-    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none">混合井</a>
-    <a href="#" id="name_HX" class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
-    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
-    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
-    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
-    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
-
-	<!-- 阀门显示为红色 -->
-    <img id="FM022" src="image/y2-35x37.png" class="fm_default_red">
-    <img id="FM050" src="image/y2-35x37.png" class="fm_default_red">
-    <img id="FM056" src="image/y2-35x37.png" class="fm_default_red">
-    <img id="FM068" src="image/y2-35x37.png" class="fm_default_red">
-    <img id="FM023" src="image/y2-35x37.png" class="fm_default_red">
-    <!-- 阀门显示为绿色 -->
-	<img id="FM05" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM06" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM07" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM09" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM010" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM014" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM015" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM016" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM017" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM018" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM019" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM020" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM044" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM045" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM052" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM055" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM057" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM059" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM062" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM063" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM064" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM065" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM066" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM067" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM069" src="image/y3-35x37.png" class="fm_default_green">
-	<!-- 不显示多余的阀门     -->
-    <img id="FM021" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM024" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM025" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM026" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM046" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM047" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM048" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM049" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM051" src="image/y3-35x37.png" class="fm_default_green" style="display:none;"> 
-    <img id="FM053" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM054" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM058" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-
-
-    <p id="WFM05" class="name_FM">05#</p>
-    <p id="WFM06" class="name_FM">06#</p>
-    <p id="WFM07" class="name_FM">07#</p>
-    <p id="WFM09" class="name_FM">09#</p>
-    <p id="WFM010" class="name_FM">010#</p>
-    <p id="WFM065" class="name_FM">065#</p>
-    <p id="WFM062" class="name_FM">062#</p>
-    <p id="WFM063" class="name_FM">063#</p>
-    <p id="WFM064" class="name_FM">064#</p>
-    <p id="WFM045" class="name_FM">045#</p>
-    <p id="WFM014" class="name_FM">014#</p>
-    <p id="WFM015" class="name_FM">015#</p>
-    <p id="WFM069" class="name_FM">069#</p>
-    <p id="WFM066" class="name_FM">066#</p>
-    <p id="WFM016" class="name_FM">016#</p>
-    <p id="WFM068" class="name_FM">068#</p>
-    <p id="WFM067" class="name_FM">067#</p>
-    <p id="WFM017" class="name_FM">017#</p>
-    <p id="WFM018" class="name_FM">018#</p>
-    <p id="WFM019" class="name_FM">019#</p>
-    <p id="WFM020" class="name_FM">020#</p>
-    <p id="WFM052" class="name_FM">052#</p>
-    <p id="WFM056" class="name_FM">056#</p>
-    <p id="WFM057" class="name_FM">057#</p>
-    <p id="WFM059" class="name_FM">059#</p>
-    <p id="WFM022" class="name_FM">022#</p>
-    <p id="WFM023" class="name_FM">023#</p>
-    <p id="WFM044" class="name_FM">044#</p>
-    <p id="WFM055" class="name_FM">055#</p>
-    <p id="WFM050" class="name_FM">050#</p>
-    <!-- 不显示多余阀门下方标号 -->
-    <p id="WFM021" class="name_FM" style="display:none;">021#</p>
-    <p id="WFM024" class="name_FM" style="display:none;">024#</p>
-    <p id="WFM025" class="name_FM" style="display:none;">025#</p>
-    <p id="WFM026" class="name_FM" style="display:none;">026#</p>
-    <p id="WFM046" class="name_FM" style="display:none;">046#</p>
-    <p id="WFM047" class="name_FM" style="display:none;">047#</p>
-    <p id="WFM048" class="name_FM" style="display:none;">048#</p>
-    <p id="WFM049" class="name_FM" style="display:none;">049#</p>
-    <p id="WFM051" class="name_FM" style="display:none;">051#</p>
-    <p id="WFM053" class="name_FM" style="display:none;">053#</p>
-    <p id="WFM054" class="name_FM" style="display:none;">054#</p>
-    <p id="WFM058" class="name_FM" style="display:none;">058#</p>
-    
+		<div id="name_gzw">
+		    <a href="#" id="name_QS"   class="name_ob" style="text-decoration: none">取水泵房</a>
+		    <a href="#" id="name_JJC1" class="name_ob" style="text-decoration: none">1#机加池</a>
+		    <a href="#" id="name_JJC2" class="name_ob" style="text-decoration: none" >2#机加池</a>
+		    <a href="#" id="name_JJC3" class="name_ob" style="text-decoration: none" >3#机加池</a>
+		    <a href="#" id="name_VL"   class="name_ob" style="text-decoration: none" >V型滤池</a>
+		    <a href="#" id="name_TC"   class="name_ob" style="text-decoration: none">1#活性炭池</a>
+		    <a href="#" id="name_TC1"  class="name_ob" style="text-decoration: none">2#活性炭池</a>
+		    <a href="#" id="name_CY"   class="name_ob" style="text-decoration: none">臭氧混合池</a>
+		    <a href="#" id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
+		    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
+		    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none">混合井</a>
+		    <a href="#" id="name_HX"   class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
+		    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
+		    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
+		    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
+		    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
+		</div>
+		<div id="FM_group">
+			<!-- 阀门显示为红色 -->
+		    <img id="FM022" src="image/y2-35x37.png" class="fm_default_red">
+		    <img id="FM023" src="image/y2-35x37.png" class="fm_default_red">
+		    <img id="FM050" src="image/y2-35x37.png" class="fm_default_red">
+		    <img id="FM056" src="image/y2-35x37.png" class="fm_default_red">
+		    <img id="FM068" src="image/y2-35x37.png" class="fm_default_red">
+		    <!-- 阀门显示为绿色 -->
+			<img id="FM05" src="image/y3-35x37.png"  class="fm_default_green">
+		    <img id="FM06" src="image/y3-35x37.png"  class="fm_default_green">
+		    <img id="FM07" src="image/y3-35x37.png"  class="fm_default_green">
+		    <img id="FM09" src="image/y3-35x37.png"  class="fm_default_green">
+		    <img id="FM010" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM014" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM015" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM016" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM017" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM018" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM019" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM020" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM044" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM045" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM052" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM055" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM057" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM059" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM062" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM063" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM064" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM065" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM066" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM067" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM069" src="image/y3-35x37.png" class="fm_default_green">
+			<!-- 不显示多余的阀门     -->
+		    <img id="FM021" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM024" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM025" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM026" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM046" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM047" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM048" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM049" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM051" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;"> 
+		    <img id="FM053" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM054" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM058" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		
+			<!-- class="name_FM" -->
+		    <p id="WFM05"  class="fm_default_green">05#</p>
+		    <p id="WFM06"  class="fm_default_green">06#</p>
+		    <p id="WFM07"  class="fm_default_green">07#</p>
+		    <p id="WFM09"  class="fm_default_green">09#</p>
+		    <p id="WFM010" class="fm_default_green">010#</p>
+		    <p id="WFM065" class="fm_default_green">065#</p>
+		    <p id="WFM062" class="fm_default_green">062#</p>
+		    <p id="WFM063" class="fm_default_green">063#</p>
+		    <p id="WFM064" class="fm_default_green">064#</p>
+		    <p id="WFM045" class="fm_default_green">045#</p>
+		    <p id="WFM014" class="fm_default_green">014#</p>
+		    <p id="WFM015" class="fm_default_green">015#</p>
+		    <p id="WFM069" class="fm_default_green">069#</p>
+		    <p id="WFM066" class="fm_default_green">066#</p>
+		    <p id="WFM016" class="fm_default_green">016#</p>
+		    <p id="WFM067" class="fm_default_green">067#</p>
+		    <p id="WFM017" class="fm_default_green">017#</p>
+		    <p id="WFM018" class="fm_default_green">018#</p>
+		    <p id="WFM019" class="fm_default_green">019#</p>
+		    <p id="WFM020" class="fm_default_green">020#</p>
+		    <p id="WFM052" class="fm_default_green">052#</p>
+		    <p id="WFM057" class="fm_default_green">057#</p>
+		    <p id="WFM059" class="fm_default_green">059#</p>
+		    <p id="WFM044" class="fm_default_green">044#</p>
+		    <p id="WFM055" class="fm_default_green">055#</p>
+		    <p id="WFM022" class="fm_default_red">022#</p>
+		    <p id="WFM023" class="fm_default_red">023#</p>
+		    <p id="WFM050" class="fm_default_red">050#</p>
+		    <p id="WFM056" class="fm_default_red">056#</p>
+		    <p id="WFM068" class="fm_default_red">068#</p>
+		    <!-- 不显示多余阀门下方标号 class="name_FM"-->
+		    <p id="WFM021" class="fm_default_hide" style="display:none;">021#</p>
+		    <p id="WFM024" class="fm_default_hide" style="display:none;">024#</p>
+		    <p id="WFM025" class="fm_default_hide" style="display:none;">025#</p>
+		    <p id="WFM026" class="fm_default_hide" style="display:none;">026#</p>
+		    <p id="WFM046" class="fm_default_hide" style="display:none;">046#</p>
+		    <p id="WFM047" class="fm_default_hide" style="display:none;">047#</p>
+		    <p id="WFM048" class="fm_default_hide" style="display:none;">048#</p>
+		    <p id="WFM049" class="fm_default_hide" style="display:none;">049#</p>
+		    <p id="WFM051" class="fm_default_hide" style="display:none;">051#</p>
+		    <p id="WFM053" class="fm_default_hide" style="display:none;">053#</p>
+		    <p id="WFM054" class="fm_default_hide" style="display:none;">054#</p>
+		    <p id="WFM058" class="fm_default_hide" style="display:none;">058#</p>
+	    </div>
     </div>
+    
     <div id="fix-panel">
     <button type="button" id="panel_heading" onclick="changeHide()">
     <h2 id="fix_head" >请点击需要维修的构筑物</h2>
@@ -467,21 +406,20 @@
 	
     <!-- Table -->
     <table id="fix_table" class="table" >
-    <thead>
-    <tr>初始状态</tr>
-    </thead>
     <tbody>
-    <td>#</td><td>操作</td>
-    <tr><td>1</td><td id="fix_line1"></td></tr>
-    <tr><td> </td><td id="fix_line2"></td></tr>
-    <tr><td>2</td><td id="fix_line3"></td></tr>
-    <tr><td> </td><td id="fix_line4"></td></tr>
-    <tr><td>3</td><td id="fix_line5"></td></tr>
-    <tr><td> </td><td id="fix_line6"></td></tr>
-    <tr><td>4</td><td id="fix_line7"></td></tr>
-    <tr><td> </td><td id="fix_line8"> </td></tr>
-    <tr><td>5</td><td id="fix_line9"></td></tr>
-    <tr><td> </td><td id="fix_line10"></td></tr>
+	<tr><td>&nbsp</td><td>初始状态</td></tr>
+    <tr><td>&nbsp</td><td>全场正常运行</td></tr>
+    <td>#</td><td>操作步骤</td>
+    <tr><td>&nbsp</td><td id="fix_line1"></td></tr>
+    <tr><td>&nbsp</td><td id="fix_line2"></td></tr>
+    <tr><td>&nbsp</td><td id="fix_line3"></td></tr>
+    <tr><td>&nbsp</td><td id="fix_line4"></td></tr>
+    <tr><td>&nbsp</td><td id="fix_line5"></td></tr>
+    <tr><td>&nbsp</td><td id="fix_line6"></td></tr>
+    <tr><td>&nbsp</td><td id="fix_line7"></td></tr>
+    <tr><td>&nbsp</td><td id="fix_line8"> </td></tr>
+    <tr><td>&nbsp</td><td id="fix_line9"></td></tr>
+    <tr><td>&nbsp</td><td id="fix_line10"></td></tr>
     </tbody>
     </table>
     <div id="panel_button">
