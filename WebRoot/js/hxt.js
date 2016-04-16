@@ -11,11 +11,11 @@ oCanvas.domReady(function () {
 //绘制两个水池
  var SC01=createSC({
      parent:canvas,
-     x:512,y:538,height:120,width:39,trail_flag:0,speed:speed_SC,color:color_SC
+     x:508,y:538,height:120,width:73,trail_flag:0,speed:speed_SC,color:color_SC
  });
  var SC02=createSC({
      parent:canvas,
-     x:570,y:393,height:246,width:418,trail_flag:0,speed:speed_SC,color:color_SC
+     x:568,y:393,height:266,width:418,trail_flag:0,speed:speed_SC,color:color_SC
  });
     var SC03=createSC({
         parent:canvas,

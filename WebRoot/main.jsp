@@ -106,21 +106,21 @@
     #name_JJC1{
     position: absolute;
     left: 859px;
-    top: 386px;
+    top: 373px;
     height: 50px;
     width: auto;
     }
     #name_JJC2{
     position: absolute;
     left: 1069px;
-    top: 386px;
+    top: 373px;
     height: 50px;
     width: auto;
     }
     #name_JJC3{
     position: absolute;
     left:1147px;
-    top: 616px;
+    top: 603px;
     height: 50px;
     width: auto;
     }
@@ -199,14 +199,14 @@
     #name_TC{
     position: absolute;
     left:378px;
-    top: 665px;
+    top: 652px;
     height: 50px;
     width: auto;
     }
     #name_TC1{
     position: absolute;
     left:485px;
-    top: 665px;
+    top: 652px;
     height: 50px;
     width: auto;
     }

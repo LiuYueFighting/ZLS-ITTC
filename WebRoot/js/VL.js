@@ -5,7 +5,7 @@ oCanvas.domReady(function () {
 
     var canvas = oCanvas.create({
         canvas: "#canvas_VL",
-        background: "#eeeeef",
+        background: "#ccc",//#eeeeef
         fps: 25
     });
     var bg = canvas.display.image({

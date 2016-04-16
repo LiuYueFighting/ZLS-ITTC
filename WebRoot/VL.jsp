@@ -102,7 +102,7 @@
     #list_group{
     width:150px;
     position:absolute;
-    top:50%;
+    top:74%;
     font-size:20px;
     }
     .panel-heading{
@@ -115,6 +115,9 @@
     border-radius: 6px;
     margin: 0;
     width: 136px;
+    }
+    #second{
+    border: 0px;
     }
     </style>
 </head>
@@ -147,11 +150,21 @@
                 <div class="panel-heading">运行参数</div>
                 <table class="table">
                 <tr>
-                <td>滤速</td><td>8m/s</td>
+                <td>滤速</td><td>8m/h</td>
                 </tr>
                 <tr>
-                <td>周期</td><td>48h</td>
+                <td>滤程</td><td>48h</td>
                 </tr>
+                <tr>
+                <tr><td>反冲强度</td><td></td></tr>
+                <tr>
+                <td  id="second">&nbsp;&nbsp;气冲</td><td id="second">L/s&middot;m&sup2;</td>
+                </tr>
+                <tr>
+                <td id="second">&nbsp;&nbsp;水冲</td><td id="second">L/s&middot;m&sup2;</td>
+                </tr>
+                </tr>
+                
                 </table>
                 </div>
                 <div>
@@ -161,6 +174,12 @@
                 <table class="table">
                 <tr>
                 <td>出水浊度</td><td><0.25NTU</td>
+                </tr>
+                <tr>
+                <td>铁</td><td>&lt;0.15mg/L</td>
+                </tr>
+                <tr>
+                <td>铝</td><td>&lt;0.1mg/L</td>
                 </tr>
                 </table>
                 </div>

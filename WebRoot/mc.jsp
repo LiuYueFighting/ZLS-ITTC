@@ -117,7 +117,7 @@
         #list_group{
             width:150px;
             position:absolute;
-            top:50%;
+            top:65%;
             font-size:20px;
         }
         .panel-heading{
@@ -169,10 +169,10 @@
         <div class="panel-heading">运行参数</div>
         <table class="table">
         <tr>
-            <td>attr1</td><td>object1</td>
+            <td>水冲周期</td><td>90min</td>
         </tr>
         <tr>
-        <td>attr2</td><td>object2</td>
+        <td>维护性清洗周期</td><td>40水冲周期</td>
         </tr>
         </table>
         </div>
@@ -182,7 +182,13 @@
         <div class="panel-heading">水质标准</div>
         <table class="table">
         <tr>
-        <td>混度</td><td><0.1</td>
+        <td>出水浊度</td><td><0.1 NTU</td>
+        </tr>
+        <tr>
+        <td>膜通量</td><td>&le;60L/h&middot;m<sup>2</sup></td>
+        </tr>
+        <tr>
+        <td>跨膜压差</td><td>&le;150kPa</td>
         </tr>
         </table>
         </div>
