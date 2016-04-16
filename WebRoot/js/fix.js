@@ -503,7 +503,7 @@ oCanvas.domReady(function () {
             	//decay(15,1);//GD12
             	//decay(18,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     });
     img1.bind("mouseenter", function () {
@@ -578,7 +578,7 @@ oCanvas.domReady(function () {
             	//decay(15,1);//GD12
             	//decay(18,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     });
     img11.bind("mouseenter", function () {
@@ -611,7 +611,7 @@ oCanvas.domReady(function () {
                 decay(9,1);
                 decay(13,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
@@ -652,7 +652,7 @@ oCanvas.domReady(function () {
                 decay(13,1);
                 decay(14,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
@@ -687,7 +687,7 @@ oCanvas.domReady(function () {
             	decay(8,1);//GD07
             	decay(15,1);//GD12
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
@@ -724,7 +724,7 @@ oCanvas.domReady(function () {
             	decay(15,1);
             	canvas.children[38].fill=color_GD;
             },100);
-            setShow();
+            $("div#panel_body").show();
         }
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
@@ -771,7 +771,7 @@ oCanvas.domReady(function () {
                 decay(13,1);
                 decay(14,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
@@ -848,7 +848,7 @@ oCanvas.domReady(function () {
             	decay(14,1);//GD07
             	decay(17,1);//GD141
              },100);
-            setShow();
+            $("div#panel_body").show();
 
         }
     }).bind("mouseenter",function(){
@@ -889,7 +889,7 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(25,1);//GD21
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
@@ -927,7 +927,7 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(25,1);//GD21
              },100);
-            setShow();
+            $("div#panel_body").show();
 
         }
     }).bind("mouseenter",function(){
@@ -960,7 +960,7 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(28,1);//GD24
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
@@ -994,7 +994,7 @@ oCanvas.domReady(function () {
             	decay(28,1);//GD24
             	canvas.children[39].fill=color_GD;
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
@@ -1116,7 +1116,7 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(21,1);//GD17
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
 
     }).bind("mouseenter",function(){
@@ -1682,6 +1682,11 @@ oCanvas.domReady(function () {
         canvas.settings.fps=40;
         GD01.paused=1;
     }
+    
+    $("#panel_heading").click(function(){
+    	$("div#panel_body").toggle();
+    	}); 
+    
     function fix_qs_right(){
         clearAll();
         hideAllFM();
@@ -1696,16 +1701,16 @@ oCanvas.domReady(function () {
         
 
 
-        document.getElementById("fix_line1").innerHTML="打开阀门64#";
-        document.getElementById("fix_line2").innerHTML="关闭阀门04#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门07#";
-        document.getElementById("fix_line4").innerHTML="关闭阀门10#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门08#";
-        document.getElementById("fix_line6").innerHTML="打开东侧池排空泵#";
-//        document.getElementById("fix_line6").innerHTML="关闭阀门68#";
-//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+        document.getElementById("step_1").innerHTML="打开阀门64#";
+        document.getElementById("step_1_result").innerHTML="关闭阀门04#";
+        document.getElementById("step_2").innerHTML="关闭阀门07#";
+        document.getElementById("step_2_result").innerHTML="关闭阀门10#";
+        document.getElementById("step_3").innerHTML="关闭阀门08#";
+        document.getElementById("step_3_result").innerHTML="打开东侧池排空泵#";
+//        document.getElementById("step_3_result").innerHTML="关闭阀门68#";
+//            document.getElementById("step_4").innerHTML="打开阀门45#";
 
-        setShow();
+        $("div#panel_body").show();
     }
 
     function fix_qs_left(){
@@ -1720,12 +1725,12 @@ oCanvas.domReady(function () {
         setFMColorRed("FM07");
         setFMColorRed("FM09");
         
-        document.getElementById("fix_line1").innerHTML="关闭阀门03#";
-        document.getElementById("fix_line2").innerHTML="关闭阀门07#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门09#";
-        document.getElementById("fix_line4").innerHTML="打开西侧池排空泵#";
+        document.getElementById("step_1").innerHTML="关闭阀门03#";
+        document.getElementById("step_1_result").innerHTML="关闭阀门07#";
+        document.getElementById("step_2").innerHTML="关闭阀门09#";
+        document.getElementById("step_2_result").innerHTML="打开西侧池排空泵#";
 
-        setShow();
+        $("div#panel_body").show();
     }
 
     function  fix_hh_right(){
@@ -1742,14 +1747,14 @@ oCanvas.domReady(function () {
         setFMColorRed("FM069");
         
 
-        document.getElementById("fix_line1").innerHTML="打开阀门62#";
-        document.getElementById("fix_line2").innerHTML="打开阀门65#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门63#";
-        document.getElementById("fix_line4").innerHTML="关闭阀门15#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门69#";
-        document.getElementById("fix_line6").innerHTML="打开东侧池排水泵";
+        document.getElementById("step_1").innerHTML="打开阀门62#";
+        document.getElementById("step_1_result").innerHTML="打开阀门65#";
+        document.getElementById("step_2").innerHTML="关闭阀门63#";
+        document.getElementById("step_2_result").innerHTML="关闭阀门15#";
+        document.getElementById("step_3").innerHTML="关闭阀门69#";
+        document.getElementById("step_3_result").innerHTML="打开东侧池排水泵";
 
-        setShow();
+        $("div#panel_body").show();
 
     }
 
@@ -1765,14 +1770,14 @@ oCanvas.domReady(function () {
         setFMColorRed("FM062");
         setFMColorRed("FM045");
 
-        document.getElementById("fix_line1").innerHTML="关闭阀门62#";
-        document.getElementById("fix_line2").innerHTML="打开阀门63#";
-        document.getElementById("fix_line3").innerHTML="打开阀门15#";
-        document.getElementById("fix_line4").innerHTML="打开阀门69#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门45#";
-        document.getElementById("fix_line6").innerHTML="打开西侧池排水泵";
+        document.getElementById("step_1").innerHTML="关闭阀门62#";
+        document.getElementById("step_1_result").innerHTML="打开阀门63#";
+        document.getElementById("step_2").innerHTML="打开阀门15#";
+        document.getElementById("step_2_result").innerHTML="打开阀门69#";
+        document.getElementById("step_3").innerHTML="关闭阀门45#";
+        document.getElementById("step_3_result").innerHTML="打开西侧池排水泵";
 
-        setShow();
+        $("div#panel_body").show();
 
     }
 
@@ -1785,12 +1790,12 @@ oCanvas.domReady(function () {
         setFMColorRed("FM065");
         setFMColorRed("FM066");
 
-        document.getElementById("fix_line1").innerHTML="打开阀门62#";
-        document.getElementById("fix_line2").innerHTML="打开阀门63#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门65#";
-        document.getElementById("fix_line4").innerHTML="关闭阀门66#";
-        document.getElementById("fix_line5").innerHTML="打开新建混合井排水泵";
-        setShow();
+        document.getElementById("step_1").innerHTML="打开阀门62#";
+        document.getElementById("step_1_result").innerHTML="打开阀门63#";
+        document.getElementById("step_2").innerHTML="关闭阀门65#";
+        document.getElementById("step_2_result").innerHTML="关闭阀门66#";
+        document.getElementById("step_3").innerHTML="打开新建混合井排水泵";
+        $("div#panel_body").show();
     }
 
     function fix_jjc1(){
@@ -1804,14 +1809,14 @@ oCanvas.domReady(function () {
         setFMColorRed("FM045");
         setFMColorRed("FM014");
 
-        document.getElementById("fix_line1").innerHTML="缓慢关闭阀门62#";
-        document.getElementById("fix_line2").innerHTML="适量调整阀门65#";
-        document.getElementById("fix_line3").innerHTML="适量调整阀门63#";
-        document.getElementById("fix_line4").innerHTML="关闭阀门45#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门14#";
-        document.getElementById("fix_line6").innerHTML="打开1#机加池排水泵";
+        document.getElementById("step_1").innerHTML="缓慢关闭阀门62#";
+        document.getElementById("step_1_result").innerHTML="适量调整阀门65#";
+        document.getElementById("step_2").innerHTML="适量调整阀门63#";
+        document.getElementById("step_2_result").innerHTML="关闭阀门45#";
+        document.getElementById("step_3").innerHTML="关闭阀门14#";
+        document.getElementById("step_3_result").innerHTML="打开1#机加池排水泵";
 
-        setShow();
+        $("div#panel_body").show();
     }
 
     function fix_jjc2(){
@@ -1825,12 +1830,12 @@ oCanvas.domReady(function () {
         setFMColorRed("FM069");
         setFMColorRed("FM063");
 
-        document.getElementById("fix_line1").innerHTML="关闭阀门63#";
-        document.getElementById("fix_line2").innerHTML="关闭阀门69#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门15#";
-        document.getElementById("fix_line4").innerHTML="打开2#机加池排水泵";
+        document.getElementById("step_1").innerHTML="关闭阀门63#";
+        document.getElementById("step_1_result").innerHTML="关闭阀门69#";
+        document.getElementById("step_2").innerHTML="关闭阀门15#";
+        document.getElementById("step_2_result").innerHTML="打开2#机加池排水泵";
 
-        setShow();
+        $("div#panel_body").show();
     }
 
     function fix_jjc3(){
@@ -1844,41 +1849,106 @@ oCanvas.domReady(function () {
         setFMColorRed("FM066");
         setFMColorRed("FM067");
 
-        document.getElementById("fix_line1").innerHTML="关闭阀门65#";
-        document.getElementById("fix_line2").innerHTML="关闭阀门66#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门67#";
-        document.getElementById("fix_line4").innerHTML="打开3#机加池排水泵";
+        document.getElementById("step_1").innerHTML="关闭阀门65#";
+        document.getElementById("step_1_result").innerHTML="关闭阀门66#";
+        document.getElementById("step_2").innerHTML="关闭阀门67#";
+        document.getElementById("step_2_result").innerHTML="打开3#机加池排水泵";
 
-        setShow();
+        $("div#panel_body").show();
     }
     function fix_hx_right(){
         clearAll();
         hideAllFM();
-        document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门配合方案";
+        document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#8dd9ff";
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
         document.getElementById("lastPage").style.display="block";
+        
         setFMColorRed("FM016");
         setFMColorRed("FM018");
-            
-        
         setFMColorRed("FM019");
 
-        document.getElementById("fix_line1").innerHTML="关闭阀门16#";
-        document.getElementById("fix_line2").innerHTML="关闭阀门9#~14#小虹吸";
-        document.getElementById("fix_line3").innerHTML="关闭阀门18#";
-        document.getElementById("fix_line4").innerHTML="打开9#~14#滤池排空闸";
-        document.getElementById("fix_line5").innerHTML="断开东西滤池清水联通闸";
-        document.getElementById("fix_line6").innerHTML="关闭阀门19#";
-//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+        var todolist = [
+			{ "index":"1" , "content":"关闭阀门16#", "result":"停止东侧虹吸进水" },
+			{ "index":"2" , "content":"关闭阀门9#~14#小虹吸", "result":"停止东侧进水" },
+			{ "index":"3" , "content":"关闭阀门18#", "result":"防止西侧反水" },
+			{ "index":"4" , "content":"打开9#~14#滤池排空闸", "result":"9#~14#滤格排空" },
+			{ "index":"5" , "content":"断开东西滤池清水联通闸", "result":"断开联通" },
+			{ "index":"6" , "content":"关闭阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
+		];
 
-        setShow();
+		for (i=0;i<todolist.length;i++){
+			var offset = i+1
+	        document.getElementById("index_"+ offset).innerHTML=todolist[i].index;
+	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
+	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
+		}
+		
+        $("div#panel_body").show();
     }
+    
+    function restore_hx_right(){
+        document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门改造配合<br>方案";
+        document.getElementById("name_HX").style.color="#283a45";
+        document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
+        document.getElementById("nextPage").style.display="none";
+        document.getElementById("lastPage").style.display="none";
+        
+        setFMColorGreen("FM016");
+        setFMColorGreen("FM018");
+        setFMColorGreen("FM019");
+        
+        var todolist = [
+			{ "index":"1" , "content":"打开阀门16#", "result":"恢复东侧虹吸进水" },
+			{ "index":"2" , "content":"打开阀门9#~14#小虹吸", "result":"逐格滤料冲洗合格后可以恢复" },
+			{ "index":"3" , "content":"打开阀门18#", "result":"恢复正常出水" },
+			{ "index":"4" , "content":"关闭9#~14#滤池排空闸", "result":"恢复正常出水" },
+			{ "index":"5" , "content":"开启东西滤池清水联通闸", "result":"平衡东西两侧水量" },
+			{ "index":"6" , "content":"打开阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
+		];
+
+		for (i=0;i<todolist.length;i++){
+			var offset = i+1
+	        document.getElementById("index_"+ offset).innerHTML=todolist[i].index;
+	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
+	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
+		}
+        
+    }
+    
+    function restore_hx_right(){
+        document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
+        document.getElementById("name_HX").style.color="#283a45";
+        document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
+        document.getElementById("nextPage").style.display="none";
+        document.getElementById("lastPage").style.display="none";
+        
+        setFMColorGreen("FM014");
+        setFMColorGreen("FM017");
+        setFMColorGreen("FM019");
+        
+        var todolist = [
+			{ "index":"1" , "content":"打开阀门14#", "result":"恢复西侧虹吸进水" },
+			{ "index":"2" , "content":"打开阀门1#~8#小虹吸", "result":"逐格滤料冲洗合格后可以恢复" },
+			{ "index":"3" , "content":"打开阀门17#", "result":"恢复正常出水" },
+			{ "index":"4" , "content":"关闭1#~8#滤池排空闸", "result":"恢复正常出水" },
+			{ "index":"5" , "content":"开启东西滤池清水联通闸", "result":"平衡东西两侧水量" },
+			{ "index":"6" , "content":"打开阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
+		];
+
+		for (i=0;i<todolist.length;i++){
+			var offset = i+1
+	        document.getElementById("index_"+ offset).innerHTML=todolist[i].index;
+	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
+	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
+		}
+    }
+    
     function  fix_hx_left(){
         clearAll();
         hideAllFM();
-        document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门配合方案";
+        document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#8dd9ff";
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         document.getElementById("nextPage").style.display="block";
@@ -1887,16 +1957,23 @@ oCanvas.domReady(function () {
         setFMColorRed("FM017");
         setFMColorRed("FM019");
         
+        var todolist = [
+		{ "index":"1" , "content":"关闭阀门14#", "result":"停止西侧虹吸进水" },
+		{ "index":"2" , "content":"关闭阀门1#~8#小虹吸", "result":"停止西侧进水" },
+		{ "index":"3" , "content":"关闭阀门17#", "result":"防止东侧反水" },
+		{ "index":"4" , "content":"打开1#~8#滤池排空闸", "result":"1#~8#滤格排空" },
+		{ "index":"5" , "content":"断开东西滤池清水联通闸", "result":"断开联通" },
+		{ "index":"6" , "content":"关闭阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
+		];
 
-        document.getElementById("fix_line1").innerHTML="关闭阀门14#";
-        document.getElementById("fix_line2").innerHTML="关闭阀门1#~8#小虹吸";
-        document.getElementById("fix_line3").innerHTML="关闭阀门17#";
-        document.getElementById("fix_line4").innerHTML="打开1#~8#滤池排空闸";
-        document.getElementById("fix_line5").innerHTML="断开东西滤池清水联通闸";
-        document.getElementById("fix_line6").innerHTML="关闭阀门19#";
+		for (i=0;i<todolist.length;i++){
+			var offset = i+1
+	        document.getElementById("index_"+ offset).innerHTML=todolist[i].index;
+	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
+	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
+		}
 
-        setShow();
-
+        $("div#panel_body").show();
     }
 
     function fix_vl(){
@@ -1911,14 +1988,15 @@ oCanvas.domReady(function () {
          
 //        setFMColorRed("FM014");
 
-        document.getElementById("fix_line1").innerHTML="打开阀门68#";
-        document.getElementById("fix_line2").innerHTML="关闭1#~5#滤格控制阀";
-        document.getElementById("fix_line3").innerHTML="关闭阀门52#";
-        document.getElementById("fix_line4").innerHTML="关闭阀门20#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门56#";
+        document.getElementById("step_1").innerHTML="打开阀门68#";
+        document.getElementById("step_1_result").innerHTML="关闭1#~5#滤格控制阀";
+        document.getElementById("step_2").innerHTML="关闭阀门52#";
+        document.getElementById("step_2_result").innerHTML="关闭阀门20#";
+        document.getElementById("step_3").innerHTML="关闭阀门56#";
 
-        setShow();
+        $("div#panel_body").show();
     }
+    
     function fix_cy_right(){
         clearAll();
         hideAllFM();
@@ -1934,16 +2012,17 @@ oCanvas.domReady(function () {
 //        setFMColorRed("FM023");
         setFMColorRed("FM021");
 
-        document.getElementById("fix_line1").innerHTML="打开阀门22#";
-        document.getElementById("fix_line2").innerHTML="打开阀门24#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门53#";
-        document.getElementById("fix_line4").innerHTML="关闭阀门58#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门57#";
-        document.getElementById("fix_line6").innerHTML="关闭阀门56#";
-//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+        document.getElementById("step_1").innerHTML="打开阀门22#";
+        document.getElementById("step_1_result").innerHTML="打开阀门24#";
+        document.getElementById("step_2").innerHTML="关闭阀门53#";
+        document.getElementById("step_2_result").innerHTML="关闭阀门58#";
+        document.getElementById("step_3").innerHTML="关闭阀门57#";
+        document.getElementById("step_3_result").innerHTML="关闭阀门56#";
+//            document.getElementById("step_4").innerHTML="打开阀门45#";
 
-        setShow();
+        $("div#panel_body").show();
     }
+    
     function  fix_cy_left(){
         clearAll();
         hideAllFM();
@@ -1958,16 +2037,17 @@ oCanvas.domReady(function () {
         setFMColorRed("FM059");
         
 
-        document.getElementById("fix_line1").innerHTML="打开阀门21#";
-        document.getElementById("fix_line2").innerHTML="打开阀门23#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门54#";
-        document.getElementById("fix_line4").innerHTML="关闭阀门58#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门59#";
-        document.getElementById("fix_line6").innerHTML="关闭阀门56#";
+        document.getElementById("step_1").innerHTML="打开阀门21#";
+        document.getElementById("step_1_result").innerHTML="打开阀门23#";
+        document.getElementById("step_2").innerHTML="关闭阀门54#";
+        document.getElementById("step_2_result").innerHTML="关闭阀门58#";
+        document.getElementById("step_3").innerHTML="关闭阀门59#";
+        document.getElementById("step_3_result").innerHTML="关闭阀门56#";
 
-        setShow();
+        $("div#panel_body").show();
 
     }
+    
     function fix_tc_old(){
         clearAll();
         hideAllFM();
@@ -1977,24 +2057,39 @@ oCanvas.domReady(function () {
         
         setFMColorRed("FM057");
         setFMColorRed("FM044");
-        
         setFMColorRed("FM024");
         setFMColorRed("FM021");
 
+/*        var todolist = [
+			{ "index":"1" , "content":"关闭阀门19#", "result":"防止20#不严" },
+			{ "index":"2" , "content":"关闭阀门20#", "result":"必须关闭" },
+			{ "index":"3" , "content":"关闭阀门21#", "result":"为防止20#不严" },
+			{ "index":"4" , "content":"关闭阀门25#", "result":"必须关闭" },
+			{ "index":"5" , "content":"关闭阀门44#", "result":"必须关闭" },
+			{ "index":"6" , "content":"关闭炭池6个进水阀", "result":"防止炭池反水" },
+			{ "index":"7" , "content":"打开阀门22#", "result":"为跨越炭池" },
+			{ "index":"8" , "content":"打开阀门23#", "result":"为跨越炭池" }
+		];
 
-        document.getElementById("fix_line1").innerHTML="打开阀门20#";
-        document.getElementById("fix_line2").innerHTML="打开阀门52#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门56#";
-        document.getElementById("fix_line4").innerHTML="关闭阀门57#";
-        document.getElementById("fix_line5").innerHTML="打开阀门58#";
-        document.getElementById("fix_line6").innerHTML="打开阀门59#";
-        document.getElementById("fix_line7").innerHTML="打开阀门55#";
-        document.getElementById("fix_line8").innerHTML="关闭阀门44#";
+		for (i=0;i<todolist.length;i++){
+			var offset = i+1
+	        document.getElementById("index_"+ offset).innerHTML=todolist[i].index;
+	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
+	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
+		}*/
 
-        setShow();
-
-//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+        document.getElementById("step_1").innerHTML="打开阀门20#";
+        document.getElementById("step_1_result").innerHTML="打开阀门52#";
+        document.getElementById("step_2").innerHTML="关闭阀门56#";
+        document.getElementById("step_2_result").innerHTML="关闭阀门57#";
+        document.getElementById("step_3").innerHTML="打开阀门58#";
+        document.getElementById("step_3_result").innerHTML="打开阀门59#";
+        document.getElementById("step_4").innerHTML="打开阀门55#";
+        document.getElementById("step_4_result").innerHTML="关闭阀门44#";
+//      document.getElementById("step_4").innerHTML="打开阀门45#";
+        $("div#panel_body").show();
     }
+    
     function fix_tc_new(){
         clearAll();
         hideAllFM();
@@ -2009,18 +2104,18 @@ oCanvas.domReady(function () {
         setFMColorRed("FM021");
 
 
-        document.getElementById("fix_line1").innerHTML="打开阀门20#";
-        document.getElementById("fix_line2").innerHTML="打开阀门52#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门56#";
-        document.getElementById("fix_line4").innerHTML="打开阀门57#";
-        document.getElementById("fix_line5").innerHTML="打开阀门58#";
-        document.getElementById("fix_line6").innerHTML="关闭阀门59#";
-        document.getElementById("fix_line7").innerHTML="关闭阀门55#";
-        document.getElementById("fix_line8").innerHTML="打开阀门44#";
+        document.getElementById("step_1").innerHTML="打开阀门20#";
+        document.getElementById("step_1_result").innerHTML="打开阀门52#";
+        document.getElementById("step_2").innerHTML="关闭阀门56#";
+        document.getElementById("step_2_result").innerHTML="打开阀门57#";
+        document.getElementById("step_3").innerHTML="打开阀门58#";
+        document.getElementById("step_3_result").innerHTML="关闭阀门59#";
+        document.getElementById("step_4").innerHTML="关闭阀门55#";
+        document.getElementById("step_4_result").innerHTML="打开阀门44#";
 
-        setShow();
+        $("div#panel_body").show();
 
-//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+//            document.getElementById("step_4").innerHTML="打开阀门45#";
     }
 
     function fix_qsc1(){
@@ -2032,22 +2127,21 @@ oCanvas.domReady(function () {
         setFMColorRed("FM047");
         setFMColorRed("FM048");
         
-        document.getElementById("fix_line1").innerHTML="关闭东、西池间连通闸27#";
-        document.getElementById("fix_line2").innerHTML="关闭清水池出水闸29#";
-        document.getElementById("fix_line3").innerHTML="5#配水泵倒成4#";
-        document.getElementById("fix_line4").innerHTML="7#配水泵倒成2#";
-        document.getElementById("fix_line5").innerHTML="断管施工";
-        document.getElementById("fix_line6").innerHTML="开启1/连通闸27#";
-        document.getElementById("fix_line7").innerHTML="来水降至1800m3/h";
-        document.getElementById("fix_line8").innerHTML="开启连通闸27#";
-        document.getElementById("fix_line9").innerHTML="开启清水池出水闸29#";
-        document.getElementById("fix_line10").innerHTML="来水涨至1950m3/h";
+        document.getElementById("step_1").innerHTML="关闭东、西池间连通闸27#";
+        document.getElementById("step_1_result").innerHTML="关闭清水池出水闸29#";
+        document.getElementById("step_2").innerHTML="5#配水泵倒成4#";
+        document.getElementById("step_2_result").innerHTML="7#配水泵倒成2#";
+        document.getElementById("step_3").innerHTML="断管施工";
+        document.getElementById("step_3_result").innerHTML="开启1/连通闸27#";
+        document.getElementById("step_4").innerHTML="来水降至1800m3/h";
+        document.getElementById("step_4_result").innerHTML="开启连通闸27#";
+        document.getElementById("step_5").innerHTML="开启清水池出水闸29#";
+        document.getElementById("step_5_result").innerHTML="来水涨至1950m3/h";
 
-        setShow();
+        $("div#panel_body").show();
 
-//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
+//            document.getElementById("step_4").innerHTML="打开阀门45#";
     }
-
 
     function fix_qsc2(){
         clearAll();
@@ -2057,19 +2151,19 @@ oCanvas.domReady(function () {
         document.getElementById("name_QSC3").style.background="rgba(255,0,0,0.7)";
         setFMColorRed("FM051");
         
-        document.getElementById("fix_line1").innerHTML="关闭东、西池间连通闸27#";
-        document.getElementById("fix_line2").innerHTML="关闭清水池出水闸30#";
-        document.getElementById("fix_line3").innerHTML="__#配水泵倒成__#";
-        document.getElementById("fix_line4").innerHTML="断管施工";
-        document.getElementById("fix_line5").innerHTML="开启1/连通闸27#";
-        document.getElementById("fix_line6").innerHTML="来水降至__m3/h";
-        document.getElementById("fix_line7").innerHTML="开启连通闸27";
-        document.getElementById("fix_line8").innerHTML="开启清水池出水闸30#";
-        document.getElementById("fix_line9").innerHTML="来水涨至__m3/h";
+        document.getElementById("step_1").innerHTML="关闭东、西池间连通闸27#";
+        document.getElementById("step_1_result").innerHTML="关闭清水池出水闸30#";
+        document.getElementById("step_2").innerHTML="__#配水泵倒成__#";
+        document.getElementById("step_2_result").innerHTML="断管施工";
+        document.getElementById("step_3").innerHTML="开启1/连通闸27#";
+        document.getElementById("step_3_result").innerHTML="来水降至__m3/h";
+        document.getElementById("step_4").innerHTML="开启连通闸27";
+        document.getElementById("step_4_result").innerHTML="开启清水池出水闸30#";
+        document.getElementById("step_5").innerHTML="来水涨至__m3/h";
+//      document.getElementById("step_4").innerHTML="打开阀门45#";
 
-        setShow();
+        $("div#panel_body").show();
 
-//            document.getElementById("fix_line7").innerHTML="打开阀门45#";
     }
 
     function  fix_qsc3(){
@@ -2082,12 +2176,12 @@ oCanvas.domReady(function () {
         setFMColorRed("FM047");
         setFMColorRed("FM048");
 
-        document.getElementById("fix_line1").innerHTML="关闭阀门46#";
-        document.getElementById("fix_line2").innerHTML="关闭阀门47#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门48#";
-        document.getElementById("fix_line4").innerHTML="打开3#清水池抽水泵";
+        document.getElementById("step_1").innerHTML="关闭阀门46#";
+        document.getElementById("step_1_result").innerHTML="关闭阀门47#";
+        document.getElementById("step_2").innerHTML="关闭阀门48#";
+        document.getElementById("step_2_result").innerHTML="打开3#清水池抽水泵";
 
-        setShow();
+        $("div#panel_body").show();
 
     }
 
@@ -2100,11 +2194,11 @@ oCanvas.domReady(function () {
         setFMColorRed("FM049");
         setFMColorRed("FM051");
 
-        document.getElementById("fix_line1").innerHTML="关闭阀门49#";
-        document.getElementById("fix_line2").innerHTML="关闭阀门51#";
-        document.getElementById("fix_line3").innerHTML="打开4#清水池抽水泵";
+        document.getElementById("step_1").innerHTML="关闭阀门49#";
+        document.getElementById("step_1_result").innerHTML="关闭阀门51#";
+        document.getElementById("step_2").innerHTML="打开4#清水池抽水泵";
 
-        setShow();
+        $("div#panel_body").show();
 
     }
 
@@ -2167,7 +2261,7 @@ oCanvas.domReady(function () {
             	//decay(15,1);//GD12
             	//decay(18,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     });
     $("#name_JJC1").click(function(){
@@ -2185,7 +2279,7 @@ oCanvas.domReady(function () {
                 decay(31,1);
                 decay(33,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     });
     $("#name_JJC2").click(function(){
@@ -2201,7 +2295,7 @@ oCanvas.domReady(function () {
                 decay(13,1);
                 decay(14,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     });
     $("#name_JJC3").click(function(){
@@ -2216,7 +2310,7 @@ oCanvas.domReady(function () {
             	decay(15,1);//GD12
             	decay(18,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     });
     $("#name_VL").click(function(){
@@ -2230,7 +2324,7 @@ oCanvas.domReady(function () {
             	decay(18,1);//GD15
             	canvas.children[38].fill=color_GD;
             },100);
-            setShow();
+            $("div#panel_body").show();
         }
     });
     $("#name_TC").click(function(){
@@ -2278,7 +2372,7 @@ oCanvas.domReady(function () {
             	decay(21,1);//GD17
             	decay(22,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     });
     $("#name_HHJ1").click(function(){
@@ -2313,7 +2407,7 @@ oCanvas.domReady(function () {
                 decay(13,1);
                 decay(14,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     });
     $("#name_HHJ2").click(function(){
@@ -2361,7 +2455,7 @@ oCanvas.domReady(function () {
             	decay(17,1);//GD141
             	decay(34,1);
              },100);
-            setShow();
+            $("div#panel_body").show();
 
         }
     });
@@ -2377,7 +2471,7 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(25,1);//GD21
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     }); //???
     $("#name_QSC2").click(function(){
@@ -2391,7 +2485,7 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(25,1);//GD21
              },100);
-            setShow();
+            $("div#panel_body").show();
 
         }
     });
@@ -2406,7 +2500,7 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(28,1);//GD24
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     });
     $("#name_QSC4").click(function(){
@@ -2422,7 +2516,7 @@ oCanvas.domReady(function () {
             	decay(28,1);//GD24
             	canvas.children[39].fill=color_GD;
              },100);
-            setShow();
+            $("div#panel_body").show();
         }
     });
     
@@ -2472,6 +2566,8 @@ oCanvas.domReady(function () {
             },100);
         }
     }
+    
+    
     function clearAll(){
     	canvas.children[2].fill=color_GD;
     	canvas.children[3].fill=color_GD;
@@ -2525,17 +2621,13 @@ oCanvas.domReady(function () {
         document.getElementById("nextPage").style.display="none";
         document.getElementById("lastPage").style.display="none";
 
-        document.getElementById("fix_line1").innerHTML="";
-        document.getElementById("fix_line2").innerHTML="";
-        document.getElementById("fix_line3").innerHTML="";
-        document.getElementById("fix_line4").innerHTML="";
-        document.getElementById("fix_line5").innerHTML="";
-        document.getElementById("fix_line6").innerHTML="";
-        document.getElementById("fix_line7").innerHTML="";
-        document.getElementById("fix_line8").innerHTML="";
-        document.getElementById("fix_line9").innerHTML="";
-        document.getElementById("fix_line10").innerHTML="";
-        changeHide();
+		for (i=1;i<7;i++){
+	        document.getElementById("index_"+ i).innerHTML="&nbsp;";
+	        document.getElementById("step_" + i).innerHTML="&nbsp;";
+	        document.getElementById("step_" + i + "_result").innerHTML="&nbsp;";
+		}
+
+        $("div#panel_body").hide();
 
         document.getElementById("fix_head").innerHTML="请点击需要维修的构筑物";
         $("div#name_gzw .name_ob").attr("style","color:#283a45");

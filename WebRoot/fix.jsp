@@ -48,37 +48,37 @@
     background: rgba(255,255,255,0.5);
     border: 1px solid black;
     }
-    #show_hide{
+/*     #show_hide{
     position: absolute;
     top: 6px;
     left: 147px;
     font-size: 13px;
-    }
+    } */
     #export{
     position: absolute;
     left: 70px;
-    top: 580px;
+    top: 666px;
     /* background: rgba(290,140,110,0.5); */
     font-size: 14px;
     }
     #reset{
     position: absolute;
     left: 81px;
-    top: 527px;
+    top: 620px;
     /* background: rgba(290,140,110,0.5); */
     font-size: 14px;
     }
     #nextPage{
     position: absolute;
     left: 15px;
-    top: 540px;
+    top: 633px;
     /* background: rgba(290,140,110,0.5); */
     font-size: 14px;
     }
     #lastPage{
     position: absolute;
-    right: 15px;
-    top: 540px;
+    right: 26px;
+    top: 633px;
     /* background: rgba(290,140,110,0.5); */
     font-size: 14px;
     }
@@ -105,7 +105,7 @@
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     height: 85px;
-    width: 181px;
+    width: 245px;
     Z-INDEX: 999;
     /* border: 1px solid; */
     background: rgba(255,255,255,0.5);
@@ -119,13 +119,13 @@
     color: #283a45;
     font-weight: bolder;
     }
-    #fix{
+/*     #fix{
     height: 535px;
     width: 181px;
     Z-INDEX: 999;
     display: none;
     border: 2px solid #008fd7;
-    }
+    } */
     #chackBox_name{
     position:absolute;
     top: 707px;
@@ -138,8 +138,8 @@
     z-index:999;
     }
     .panel{
-    height: 529px;
-    width: 175px;
+    height: 651px;
+    width: 245px;
     background: rgba(255,255,255,0.7);
     color: black;
     }
@@ -156,10 +156,16 @@
     #fix_table{
     font-size:12px
     }
+    .table_td_left{
+    text-align: left;
+    }
+
+	.progressBar{width:200px;height:8px;border:1px solid #98AFB7;border-radius:5px;margin-top:10px;}
+	#bar{width:0px;height:8px;border-radius:5px;background:#5EC4EA;}
+
     </style>
     <script>
-    var hide=1;
-    function changeImage(id){
+ 	function changeImage(id){
        var image = document.getElementById(id);
        if(image.src.match("image/y3-35x37.png"))
 	      image.src = "image/y2-35x37.png";
@@ -188,7 +194,6 @@
     	image.src = "image/y3-35x37.png";
     }    
 
-
     function showName(e){
     	var structureNameGroup = ["name_QS", "name_JJC1", "name_JJC2", "name_JJC3", 
    								  "name_VL", "name_TC", "name_TC1", "name_CY", 
@@ -207,13 +212,7 @@
 			}
     	}
     }
-    
-    function hideList(){
-    	document.getElementById("fix").style.display="none";
-    }
-    function showList(){
-    	document.getElementById("fix").style.display="block";
-    }
+
     function hideAllFM(){
     	var FMGroup = [/* color green */
     				   "FM05",  "FM06",  "FM07",  "FM09",  "FM010", "FM014", 
@@ -238,26 +237,24 @@
         	document.getElementById(FMGroup[i]).style.display="none";
 		}
 	}
-    function setShow(){
-    	showList();
-    	<%--document.getElementById("show_hide").innerHTML='隐藏';--%>
-    	hide=0;
-    }
-    
-    function changeHide(){
-        if(hide==1){
-            showList();
-            <%--document.getElementById("show_hide").innerHTML='隐藏';--%>
-            hide=0;
-            return;
-        }
-        else if(hide==0){
-            hideList();
-            <%--document.getElementById("show_hide").innerHTML='显示';--%>
-            hide=1;
-            return;
-        }
-    }
+	function progressBar(){
+	  	//初始化js进度条
+	  	$("#bar").css("width","0px");
+	  	//进度条的速度，越小越快
+		var speed = 20;
+		
+		bar = setInterval(function(){
+		nowWidth = parseInt($("#bar").width());
+		//宽度要不能大于进度条的总宽度
+		if(nowWidth<=200){
+			barWidth = (nowWidth + 1)+"px";
+			$("#bar").css("width",barWidth);
+		}else{
+			//进度条读满后，停止
+			clearInterval(bar);
+		}
+	},speed);
+ 	}
     </script>
 </head>
 <body>
@@ -391,46 +388,44 @@
     </div>
     
     <div id="fix-panel">
-    <button type="button" id="panel_heading" onclick="changeHide()">
-    <h2 id="fix_head" >请点击需要维修的构筑物</h2>
-    <%--<a href="#" id="show_hide" onclick="changeHide()">显示</a>--%>
-
-    </button>
-    <div id="fix">
-    <div class="panel panel-default">
-    <!-- Default panel contents -->
-
-    <%--<div class="panel-body" id="fix-content">--%>
-    <%--<p><h3>配合开关闸门顺序表</h3></p>--%>
-    <%--</div>--%>
-	
-    <!-- Table -->
-    <table id="fix_table" class="table" >
-    <tbody>
-	<tr><td>&nbsp</td><td>初始状态</td></tr>
-    <tr><td>&nbsp</td><td>全场正常运行</td></tr>
-    <td>#</td><td>操作步骤</td>
-    <tr><td>&nbsp</td><td id="fix_line1"></td></tr>
-    <tr><td>&nbsp</td><td id="fix_line2"></td></tr>
-    <tr><td>&nbsp</td><td id="fix_line3"></td></tr>
-    <tr><td>&nbsp</td><td id="fix_line4"></td></tr>
-    <tr><td>&nbsp</td><td id="fix_line5"></td></tr>
-    <tr><td>&nbsp</td><td id="fix_line6"></td></tr>
-    <tr><td>&nbsp</td><td id="fix_line7"></td></tr>
-    <tr><td>&nbsp</td><td id="fix_line8"> </td></tr>
-    <tr><td>&nbsp</td><td id="fix_line9"></td></tr>
-    <tr><td>&nbsp</td><td id="fix_line10"></td></tr>
-    </tbody>
-    </table>
-    <div id="panel_button">
-    <a href="#" id="nextPage" style="display:none;">方案1</a>
-    <a href="#" id="lastPage" style="display:none;">方案2</a>
-    <a href="#" id="export">生成方案</a>
-    <i id="reset" class="icon iconfont iconbtn">&#xe67c;</i>
-    <!-- <a href="#" id="reset" onclick="clearAll()">重置</a> -->
-    </div>
-    </div>
-    </div>
+    	<div>
+	    	<button type="button" id="panel_heading">
+	    		<h2 id="fix_head" >请点击需要维修的构筑物</h2>
+	    	</button>
+	    </div>
+    	<div id="panel_body">
+	   		<div class="panel panel-default">
+	   			<!-- Default panel contents -->
+			    <table id="fix_table" class="table" >
+				    <tbody>
+						<tr id="init_stage">初始状态</tr>
+					    <tr id="init_stage">全场正常运行</tr>
+					    <tr><th>#</th><th>操作步骤</th></tr>
+					    <tr><td id="index_1">&nbsp;</td><td id="step_1" class="table_td_left"><div class="progressBar"><div id="bar">ttttttt</div></div></td></tr>
+					    <tr><td>&nbsp;</td><td id="step_1_result" class="table_td_left"></td></tr>
+					    <tr><td id="index_2">&nbsp;</td><td id="step_2" class="table_td_left"></td></tr>
+					    <tr><td>&nbsp;</td><td id="step_2_result" class="table_td_left"></td></tr>
+					    <tr><td id="index_3">&nbsp;</td><td id="step_3" class="table_td_left"></td></tr>
+					    <tr><td>&nbsp;</td><td id="step_3_result" class="table_td_left"></td></tr>
+					    <tr><td id="index_4">&nbsp;</td><td id="step_4" class="table_td_left"></td></tr>
+					    <tr><td>&nbsp;</td><td id="step_4_result" class="table_td_left"> </td></tr>
+					    <tr><td id="index_5">&nbsp;</td><td id="step_5" class="table_td_left"></td></tr>
+					    <tr><td>&nbsp;</td><td id="step_5_result" class="table_td_left"></td></tr>
+					    <tr><td id="index_6">&nbsp;</td><td id="step_6" class="table_td_left"></td></tr>
+					    <tr><td>&nbsp;</td><td id="step_6_result" class="table_td_left"></td></tr>
+				    </tbody>
+			    </table>
+	   		</div>
+			    
+		    <div id="panel_button">
+			    <a href="#" id="nextPage" style="display:none;">方案1</a>
+			    <a href="#" id="lastPage" style="display:none;">方案2</a>
+			    <a href="#" id="export">生成方案</a>
+			    <i id="reset" class="icon iconfont iconbtn">&#xe67c;</i>
+			    <!-- demo -->
+			    <input type="button" value="开始" onclick="progressBar()" />
+		    </div>
+	    </div>
     </div>
 
     <jsp:include page="down.jsp" />
