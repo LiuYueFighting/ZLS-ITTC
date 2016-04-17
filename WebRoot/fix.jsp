@@ -54,13 +54,20 @@
     left: 147px;
     font-size: 13px;
     } */
-    #export{
+/*     #export{
     position: absolute;
     left: 70px;
     top: 666px;
     /* background: rgba(290,140,110,0.5); */
     font-size: 14px;
-    }
+    } */
+/*     #restore{
+    position: absolute;
+    left: 70px;
+    top: 777px;
+    /* background: rgba(290,140,110,0.5); */
+    font-size: 14px;
+    } */
     #reset{
     position: absolute;
     left: 81px;
@@ -68,20 +75,20 @@
     /* background: rgba(290,140,110,0.5); */
     font-size: 14px;
     }
-    #nextPage{
+/*     #nextPage{
     position: absolute;
     left: 15px;
     top: 633px;
     /* background: rgba(290,140,110,0.5); */
     font-size: 14px;
-    }
-    #lastPage{
+    } */
+/*     #lastPage{
     position: absolute;
     right: 26px;
     top: 633px;
     /* background: rgba(290,140,110,0.5); */
     font-size: 14px;
-    }
+    } */
     .name_Model{
     font-family: '微软雅黑','Arial';
     color: #223bb8;
@@ -90,8 +97,8 @@
 
     }
     #fix-panel{
-    height: 604px;
-    width: 183px;
+  /*   height: 604px; */
+/*     width: 183px; */
     position: absolute;
     left: 91.2%;
     top: 4.7%;
@@ -107,6 +114,9 @@
     height: 85px;
     width: 245px;
     Z-INDEX: 999;
+    -webkit-transition-property:background-color;
+    -webkit-transition-duration:1s;
+    -webkit-transition-timing-function:ease;
     /* border: 1px solid; */
     background: rgba(255,255,255,0.5);
     border: 2px solid #008fd7;
@@ -126,24 +136,17 @@
     display: none;
     border: 2px solid #008fd7;
     } */
-    #chackBox_name{
-    position:absolute;
-    top: 707px;
-    left: 1369px;
-    }
-    #WShow{
-    position:absolute;
-    top: 683px;
-    left: 1372px;
-    z-index:999;
-    }
     .panel{
-    height: 651px;
+    /* height: 651px; */
     width: 245px;
     background: rgba(255,255,255,0.7);
     color: black;
+    margin-bottom:0px;
     }
-    #setConfig h1{
+    .panel-heading{
+    text-align: center;
+    }
+/*     #setConfig h1{
     font-size:20px;
     color:#ff4400;
     font-weight:bold;
@@ -152,34 +155,34 @@
     width:50px;
     padding:2px;
     font-size:12px;
-    }
+    } */
     #fix_table{
     font-size:12px
     }
     .table_td_left{
     text-align: left;
+    } 
+    .trans{
+    background: rgba(194,215,245,0.5);
+    -webkit-transition-property:background-color;
+    -webkit-transition-duration:10s;
+    -webkit-transition-timing-function:ease;
     }
+/*     #init_stage,#fix_table,#panel_button{
+    position:relative;
+    } */
 
-	.progressBar{width:200px;height:8px;border:1px solid #98AFB7;border-radius:5px;margin-top:10px;}
-	#bar{width:0px;height:8px;border-radius:5px;background:#5EC4EA;}
-
+/* 	.progressBar{width:200px;height:8px;border:1px solid #98AFB7;border-radius:5px;margin-top:10px;}
+	#bar{width:0px;height:8px;border-radius:5px;background:#5EC4EA;} */
     </style>
     <script>
- 	function changeImage(id){
-       var image = document.getElementById(id);
-       if(image.src.match("image/y3-35x37.png"))
-	      image.src = "image/y2-35x37.png";
-       else image.src = "image/y3-35x37.png";
-    }
-
     function setFMColorRed(id){
     	var image = document.getElementById(id);
     	var FMTagId = "W" + id;
     	var tag = document.getElementById(FMTagId);
-		if( image.style.display == "none")
-    		image.style.display = "block"
-		if( tag.style.display == "none")
-    		tag.style.display = "block"
+
+   		image.style.display = "block"
+   		tag.style.display = "block"
     	image.src = "image/y2-35x37.png";
     }
   
@@ -187,10 +190,9 @@
     	var image = document.getElementById(id);
     	var FMTagId = "W" + id;
     	var tag = document.getElementById(FMTagId);
-		if( image.style.display == "none")
-    		image.style.display = "block"
-		if( tag.style.display == "none")
-    		tag.style.display = "block"
+
+   		image.style.display = "block"
+   		tag.style.display = "block"
     	image.src = "image/y3-35x37.png";
     }    
 
@@ -203,41 +205,22 @@
 		//$("div#name_gzw .name_ob").attr("style","display:block;");
 		//$("div#name_gzw .name_ob").attr("style","display:none;");
 	    if(e.checked == true){
-	    	for (i=0;i<structureNameGroup.length;i++){
-				document.getElementById(structureNameGroup[i]).style.display="block";
-			}
-	    }else if(e.checked == false){
-    		for (i=0;i<structureNameGroup.length;i++){
-				document.getElementById(structureNameGroup[i]).style.display="none";
-			}
+			$("div#name_gzw .name_ob").attr("style","display:block;");
+	    }else{
+    		$("div#name_gzw .name_ob").attr("style","display:none;");
     	}
     }
 
     function hideAllFM(){
-    	var FMGroup = [/* color green */
-    				   "FM05",  "FM06",  "FM07",  "FM09",  "FM010", "FM014", 
-                       "FM015", "FM016", "FM017", "FM018", "FM019", "FM020", 
-                       "FM021", "FM024", "FM025", "FM026", "FM044", "FM045", 
-                       "FM046", "FM047", "FM048", "FM049", "FM051", "FM052", 
-                       "FM053", "FM054", "FM055", "FM057", "FM058", "FM059", 
-                       "FM062", "FM063", "FM064", "FM065", "FM066", "FM067", "FM069", 
-                       /* color red */
-                       "FM022", "FM023", "FM050", "FM056", "FM068",
-                       /* FM tag */
-                       "WFM05",  "WFM06",  "WFM07",  "WFM09",  "WFM010", "WFM014", 
-                       "WFM015", "WFM016", "WFM017", "WFM018", "WFM019", "WFM020", 
-                       "WFM021", "WFM024", "WFM025", "WFM026", "WFM044", "WFM045", 
-                       "WFM046", "WFM047", "WFM048", "WFM049", "WFM051", "WFM052", 
-                       "WFM053", "WFM054", "WFM055", "WFM057", "WFM058", "WFM059", 
-                       "WFM062", "WFM063", "WFM064", "WFM065", "WFM066", "WFM067", "WFM069", 
-                       /* color red tag */
-                       "WFM022", "WFM023", "WFM050", "WFM056", "WFM068"
-                       ];
-        for (i=0; i<FMGroup.length; i++){
-        	document.getElementById(FMGroup[i]).style.display="none";
-		}
+		$(".fm_default_green").attr("style","display:none;");
+		$(".fm_default_red").attr("style","display:none;");
+		$(".fm_default_hide").attr("style","display:none;");
 	}
-	function progressBar(){
+	
+/* 	function changeLineColor(id){
+		document.getElementById(id).style.background = "blue" ; 
+	} */
+/* 	function progressBar(){
 	  	//初始化js进度条
 	  	$("#bar").css("width","0px");
 	  	//进度条的速度，越小越快
@@ -254,7 +237,7 @@
 			clearInterval(bar);
 		}
 	},speed);
- 	}
+ 	} */
     </script>
 </head>
 <body>
@@ -393,41 +376,73 @@
 	    		<h2 id="fix_head" >请点击需要维修的构筑物</h2>
 	    	</button>
 	    </div>
-    	<div id="panel_body">
+<!--     	<div id="panel_body">
 	   		<div class="panel panel-default">
-	   			<!-- Default panel contents -->
-			    <table id="fix_table" class="table" >
-				    <tbody>
-						<tr id="init_stage">初始状态</tr>
-					    <tr id="init_stage">全场正常运行</tr>
-					    <tr><th>#</th><th>操作步骤</th></tr>
-					    <tr><td id="index_1">&nbsp;</td><td id="step_1" class="table_td_left"><div class="progressBar"><div id="bar">ttttttt</div></div></td></tr>
-					    <tr><td>&nbsp;</td><td id="step_1_result" class="table_td_left"></td></tr>
-					    <tr><td id="index_2">&nbsp;</td><td id="step_2" class="table_td_left"></td></tr>
-					    <tr><td>&nbsp;</td><td id="step_2_result" class="table_td_left"></td></tr>
-					    <tr><td id="index_3">&nbsp;</td><td id="step_3" class="table_td_left"></td></tr>
-					    <tr><td>&nbsp;</td><td id="step_3_result" class="table_td_left"></td></tr>
-					    <tr><td id="index_4">&nbsp;</td><td id="step_4" class="table_td_left"></td></tr>
-					    <tr><td>&nbsp;</td><td id="step_4_result" class="table_td_left"> </td></tr>
-					    <tr><td id="index_5">&nbsp;</td><td id="step_5" class="table_td_left"></td></tr>
-					    <tr><td>&nbsp;</td><td id="step_5_result" class="table_td_left"></td></tr>
-					    <tr><td id="index_6">&nbsp;</td><td id="step_6" class="table_td_left"></td></tr>
-					    <tr><td>&nbsp;</td><td id="step_6_result" class="table_td_left"></td></tr>
-				    </tbody>
-			    </table>
+	   			Default panel contents
+			    <div id="fix_table" class="table" >
+				    
+						<div id="init_stage">初始状态</div>
+					    <div id="init_stage">全场正常运行</div>
+					    <div><div>#</div><div>操作步骤</div></div>
+					    <div><div id="index_1">&nbsp;</div><div id="step_1" class="table_td_left"><div class="progressBar"><div id="bar">ttttttt</div></div></div></div>
+					    <div><div>&nbsp;</div><div id="step_1_result" class="table_td_left"></div></div>
+					    <div><div id="index_2">&nbsp;</div><div id="step_2" class="table_td_left"></div></div>
+					    <div><div>&nbsp;</div><div id="step_2_result" class="table_td_left"></div></div>
+					    <div><div id="index_3">&nbsp;</div><div id="step_3" class="table_td_left"></div></div>
+					    <div><div>&nbsp;</div><div id="step_3_result" class="table_td_left"></div></div>
+					    <div><div id="index_4">&nbsp;</div><div id="step_4" class="table_td_left"></div></div>
+					    <div><div>&nbsp;</div><div id="step_4_result" class="table_td_left"> </div></div>
+					    <div><div id="index_5">&nbsp;</div><div id="step_5" class="table_td_left"></div></div>
+					    <div><div>&nbsp;</div><div id="step_5_result" class="table_td_left"></div></div>
+					    <div><div id="index_6">&nbsp;</div><div id="step_6" class="table_td_left"></div></div>
+					    <div><div>&nbsp;</div><div id="step_6_result" class="table_td_left"></div></div>
+				    
+			    </div>
 	   		</div>
 			    
 		    <div id="panel_button">
 			    <a href="#" id="nextPage" style="display:none;">方案1</a>
 			    <a href="#" id="lastPage" style="display:none;">方案2</a>
 			    <a href="#" id="export">生成方案</a>
+			    <a href="#" id="restore">恢复运行</a>
 			    <i id="reset" class="icon iconfont iconbtn">&#xe67c;</i>
-			    <!-- demo -->
+			    demo
 			    <input type="button" value="开始" onclick="progressBar()" />
-		    </div>
-	    </div>
-    </div>
+		    </div> -->
+		<div class="panel panel-info" id="init_stage">
+			<div class="panel-heading">初始状态</div>
+			<table class="table">
+				<tr><td>全场正常运行</td></tr>
+			</table>
+		</div>
 
+		<div class="panel panel-info" id="fix_table">
+			<div class="panel-heading">操作步骤</div>
+			<table class="table">
+				<tr><td id="index_1">&nbsp;</td><td id="step_1" class="table_td_left" style="text-align: left">&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td id="step_1_result" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td id="index_2">&nbsp;</td><td id="step_2" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td>&nbsp;</td><td id="step_2_result" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td id="index_3">&nbsp;</td><td id="step_3" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td>&nbsp;</td><td id="step_3_result" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td id="index_4">&nbsp;</td><td id="step_4" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td>&nbsp;</td><td id="step_4_result" class="table_td_left" style="text-align: left"> </td></tr>
+				<tr><td id="index_5">&nbsp;</td><td id="step_5" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td>&nbsp;</td><td id="step_5_result" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td id="index_6">&nbsp;</td><td id="step_6" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td>&nbsp;</td><td id="step_6_result" class="table_td_left" style="text-align: left"></td></tr>
+			</table>
+		</div>
+
+		<div class="panel panel-info" id="panel_button">
+			<div class="panel-heading">功能</div>
+			<table class="table">
+				<tr><td id="scheme">方案二</td><td id="restore">恢复运行</td></tr>
+				<tr><td id="export">生成方案</td><td id="reset">重置</td></tr>
+			</table>
+		</div>
+	    
+    </div>
     <jsp:include page="down.jsp" />
 </div>
 
