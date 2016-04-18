@@ -2424,7 +2424,8 @@ oCanvas.domReady(function () {
                 	decay(17,1);//GD141
                 	decay(34,1);
                  },100);
-            };
+            }
+        });
         }
     });
 
