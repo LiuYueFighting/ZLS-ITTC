@@ -832,104 +832,114 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img5);
     img5.bind("click",function(){
-        //window.location.href="hx.jsp";
-    	if(confirm("是否将“虹吸滤池”设置为维修状态？")){
-    		//静态配置
-    		hideAllFM();
-    		setDefaultFMColor();
-    		setFMColorGreen("FM016");
-            setFMColorGreen("FM018");
-            setFMColorGreen("FM019");
-        	fix_hx_right();
-    		document.getElementById("export").href="download/fix-hx.doc";
-            $("div.panel").show();
-        	$("#scheme").text("方案二");
-        	
-        	//动态效果
-            setFMColorRed("FM016");  
-    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-        	//管道退水
-    		GD11.state=2;
-        	GD1001.state=2;
-    		
-        	//函数绑定
-/*          document.getElementById("restore").onclick = function(){
-            	window.setTimeout(function(){              
-            		setFMColorGreen("FM019");
-                 },300);
-                window.setTimeout(function(){              
-                	setFMColorGreen("FM018");
-                 },1000);
-                window.setTimeout(function(){              
-                	setFMColorGreen("FM016");
-//                	GD1001.state=3;
-//                	GD11.state=3;
+    //window.location.href="hx.jsp";  	
+    //弹窗提示样式    	
+    	
+	$.Zebra_Dialog('是否将<strong>虹吸滤池</strong>设置为维修状态？', {
+    		    'type':     'question',
+    		    'title':    '维修提示',
+    		    'buttons':  [
+                {caption: '确定', callback: function() { 
 
-                 },1700);
-                window.setTimeout(function(){              
-                	clearAll();
-                 },10000);
-            };*/
-            
-        	//手动实现一个toggle
-        	var flag = 1;
-            $("#scheme").click(function(){
-                if(flag == 1){
-                	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
-                	fix_hx_left();
-	    			$("#scheme").text("方案一");
-
-	    			window.setTimeout(function(){              
-		            	decay(16,1);//GD04
-		            	decay(17,1);//GD07
-		            	decay(9,1);//GD141
-		            	decay(10,1);
-		            	decay(30,1);
-		            	decay(31,1);
-		             },100);
-                    flag = 0;
-                }else{
-                	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
-                	fix_hx_right(); 
-            		$("#scheme").text("方案二");
+            		//静态配置
+            		hideAllFM();
+            		setFMColorGreen("FM016");
+                    setFMColorGreen("FM018");
+                    setFMColorGreen("FM019");
+                	fix_hx_right();
+            		document.getElementById("export").href="download/fix-hx.doc";
+                    $("div.panel").show();
+                	$("#scheme").text("方案二");
                 	
-                	window.setTimeout(function(){              
-                	decay(12,1);//GD04
-                	decay(14,1);//GD07
-                	decay(17,1);//GD141
-                	decay(34,1);
-            	 	},100);
-                    flag = 1;
-                }
-    		});
+                	//动态效果
+                    setFMColorRed("FM016");  
+            		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+            		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+            		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+            		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+                	//管道退水
+            		GD11.state=2;
+                	GD1001.state=2;
+            		
+/*        	       //函数绑定
+                   document.getElementById("restore").onclick = function(){
+                    	window.setTimeout(function(){              
+                    		setFMColorGreen("FM019");
+                         },300);
+                        window.setTimeout(function(){              
+                        	setFMColorGreen("FM018");
+                         },1000);
+                        window.setTimeout(function(){              
+                        	setFMColorGreen("FM016");
+//    		        GD1001.state=3;
+//    		        GD11.state=3;
+
+                         },1700);
+                        window.setTimeout(function(){              
+                        	clearAll();
+                         },10000);
+                    };*/
+                    
+                	//手动实现一个toggle
+                	var flag = 1;
+                    $("#scheme").click(function(){
+                        if(flag == 1){
+                        	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+                        	fix_hx_left();
+        	    			$("#scheme").text("方案一");
+
+        	    			window.setTimeout(function(){              
+        		            	decay(16,1);//GD04
+        		            	decay(17,1);//GD07
+        		            	decay(9,1);//GD141
+        		            	decay(10,1);
+        		            	decay(30,1);
+        		            	decay(31,1);
+        		             },100);
+                            flag = 0;
+                        }else{
+                        	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+                        	fix_hx_right(); 
+                    		$("#scheme").text("方案二");
+                        	
+                        	window.setTimeout(function(){              
+                        	decay(12,1);//GD04
+                        	decay(14,1);//GD07
+                        	decay(17,1);//GD141
+                        	decay(34,1);
+                    	 	},100);
+                            flag = 1;
+                        }
+            		});
+                        
+        /*    		$("#scheme").toggle(function(){
+            			fix_hx_left();
+            			$("#scheme").text("方案一");
+            			$("#scheme").text("bbbbbbbbbbbbb");
+            			window.setTimeout(function(){              
+        	            	decay(16,1);//GD04
+        	            	decay(17,1);//GD07
+        	            	decay(9,1);//GD141
+        	            	decay(10,1);
+        	            	decay(30,1);
+        	            	decay(31,1);
+        	             },100);},
+        	             function(){
+                    	 fix_hx_right(); 
+                    	 $("#scheme").text("方案二");
+                    	 $("#scheme").text("cccccccc");
+                    	 window.setTimeout(function(){              
+                        	decay(12,1);//GD04
+                        	decay(14,1);//GD07
+                        	decay(17,1);//GD141
+                        	decay(34,1);
+                    	 	},100);}
+        	        );*/
                 
-/*    		$("#scheme").toggle(function(){
-    			fix_hx_left();
-    			$("#scheme").text("方案一");
-    			$("#scheme").text("bbbbbbbbbbbbb");
-    			window.setTimeout(function(){              
-	            	decay(16,1);//GD04
-	            	decay(17,1);//GD07
-	            	decay(9,1);//GD141
-	            	decay(10,1);
-	            	decay(30,1);
-	            	decay(31,1);
-	             },100);},
-	             function(){
-            	 fix_hx_right(); 
-            	 $("#scheme").text("方案二");
-            	 $("#scheme").text("cccccccc");
-            	 window.setTimeout(function(){              
-                	decay(12,1);//GD04
-                	decay(14,1);//GD07
-                	decay(17,1);//GD141
-                	decay(34,1);
-            	 	},100);}
-	        );*/
-        }
+                }},
+                {caption: '取消', callback: function() {window.close()}}
+            ]
+    		});                     	
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -2371,8 +2381,12 @@ oCanvas.domReady(function () {
         }
     });
     
-    $("#name_HX").click(function(){
-        if(confirm("是否将“虹吸滤池”设置为维修状态？")){
+	$("#name_HX").click(function(){$.Zebra_Dialog('是否将<strong>虹吸滤池</strong>设置为维修状态？', {
+		'type':     'question',
+		'title':    '维修提示',
+		'buttons':  [
+        {caption: '确定', callback: function() { 
+                        
         	//静态配置
     		hideAllFM();
     		setDefaultFMColor();
@@ -2423,10 +2437,17 @@ oCanvas.domReady(function () {
                 	decay(14,1);//GD07
                 	decay(17,1);//GD141
                 	decay(34,1);
-                 },100);
-            }
-        });
-        }
+                	},100);
+                    flag = 1;
+                }
+        		});
+	                            
+	                  
+	                    }},
+	                    {caption: '取消', callback: function() {window.close()}}
+	                ]
+	});
+
     });
 
     $("#name_QSC1").click(function(){
