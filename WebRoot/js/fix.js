@@ -12,12 +12,12 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(bg);//1
     var speed_all=1.5,
-        width_all=20,
+        width_all=16,
         color_GD="#007fff",
         color_GD_new="blue",
         lineHeight_all=10;
 
-    var GD01=createGD({
+    var GD01=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 96},
@@ -26,50 +26,50 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });//1
-    var GD0101=createGD({
+    var GD0101=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 160},//160
             {x_cell: 707 ,y_cell: 223},
-            {x_cell: 765 ,y_cell: 258},
-            {x_cell: 989 ,y_cell: 258},
+            {x_cell: 769 ,y_cell: 261},
+            {x_cell: 989 ,y_cell: 261},
             {x_cell: 989, y_cell: 348}
         ],
         GDwidth:width_all,
         color:color_GD
     });//2
-    var GD02=createGD({
+    var GD02=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 748 ,y_cell: 98},
-            {x_cell: 748 ,y_cell: 222},
+            {x_cell: 747 ,y_cell: 98},
+            {x_cell: 747 ,y_cell: 222},
             {x_cell: 775 ,y_cell: 240},
-            {x_cell: 1020 ,y_cell: 240},
-            {x_cell: 1020, y_cell: 256}
+            {x_cell: 1019 ,y_cell: 240},
+            {x_cell: 1019 , y_cell: 256}
         ],
         GDwidth:width_all,
         color:color_GD
     });//3
-    var GD03=createGD({
+    var GD03=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1020 ,y_cell: 256},
-            {x_cell: 1020, y_cell: 348}
+            {x_cell: 1019 ,y_cell: 256},
+            {x_cell: 1019, y_cell: 348}
         ],
         GDwidth:width_all,
         color:color_GD
     });//4
-    var GD04=createGD({
+    var GD04=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1026,y_cell: 256},
-            {x_cell: 1188 ,y_cell: 256},
+            {x_cell: 1023,y_cell: 261},
+            {x_cell: 1188 ,y_cell: 261},
             {x_cell: 1188, y_cell: 374}
         ],
         GDwidth:width_all,
         color:color_GD
     });//5
-    var GD05=createGD({
+    var GD05=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 989 ,y_cell: 365},
@@ -79,7 +79,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });//6
-    var GD06=createGD({
+    var GD06=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 1019 ,y_cell: 360},
@@ -89,96 +89,96 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });//7
-    var GD07=createGD({
+    var GD07=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1188,y_cell: 412},
-            {x_cell: 1188,y_cell: 567}
+            {x_cell: 1187,y_cell: 412},
+            {x_cell: 1187,y_cell: 573}
         ],
         GDwidth:width_all,
         color:color_GD
     });//8
-    var GD08=createGD({
+    var GD08=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 896 ,y_cell: 445},
-            {x_cell: 896 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 539},
-            {x_cell: 819, y_cell: 539}
+            {x_cell: 897 ,y_cell: 445},
+            {x_cell: 897 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 542},
+            {x_cell: 818, y_cell: 542}
         ],
         GDwidth:width_all,
         color:color_GD
     });//9
-    var GD09=createGD({
+    var GD09=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 896 ,y_cell: 445},
-            {x_cell: 896 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 562},
-            {x_cell: 819, y_cell: 562}
+            {x_cell: 897 ,y_cell: 445},
+            {x_cell: 897 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 562},
+            {x_cell: 818, y_cell: 562}
         ],
         GDwidth:width_all,
         color:color_GD
     });//10
-    var GD10=createGD({
+    var GD10=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1108 ,y_cell: 445},
-            {x_cell: 1108 ,y_cell: 482},
-            {x_cell: 990 ,y_cell: 482},
+            {x_cell: 1109 ,y_cell: 445},
+            {x_cell: 1109 ,y_cell: 485},
+            {x_cell: 990 ,y_cell: 485},
             {x_cell: 990 ,y_cell: 527}
         ],
         GDwidth:width_all,
         color:color_GD
     });//11
-    var GD1001=createGD({
+    var GD1001=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 990 ,y_cell: 482},
-            {x_cell: 990 ,y_cell: 542},
-            {x_cell: 970, y_cell: 542}
+            {x_cell: 990 ,y_cell: 485},
+            {x_cell: 990 ,y_cell: 543},
+            {x_cell: 970, y_cell: 543}
         ],
         GDwidth:width_all,
         color:color_GD
     });//12
-    var GD1002=createGD({
+    var GD1002=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 990 ,y_cell: 482},
-            {x_cell: 900 ,y_cell: 482}
+            {x_cell: 990 ,y_cell: 485},
+            {x_cell: 900 ,y_cell: 485}
         ],
         GDwidth:width_all,
         color:color_GD
     });//13
-    var GD11=createGD({
+    var GD11=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 990 ,y_cell: 482},
-            {x_cell: 990 ,y_cell: 562},
-            {x_cell: 970, y_cell: 562}
+            {x_cell: 990 ,y_cell: 485},
+            {x_cell: 990 ,y_cell: 563},
+            {x_cell: 970, y_cell: 563}
         ],
         GDwidth:width_all,
         color:color_GD
     });//14
-    var GD12=createGD({
+    var GD12=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1124 ,y_cell: 650},
-            {x_cell: 962, y_cell: 650},
+            {x_cell: 1129 ,y_cell: 653},
+            {x_cell: 962, y_cell: 653},
             {x_cell: 962, y_cell: 667}
         ],
         GDwidth:width_all,
         color:color_GD
     });//15
-    var GD13=createGD({
+    var GD13=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 848 ,y_cell: 570},
             {x_cell: 848 ,y_cell: 605},
-            {x_cell: 660 ,y_cell: 605},
-            {x_cell:660, y_cell: 641}
+            {x_cell: 659 ,y_cell: 605},
+            {x_cell:659, y_cell: 646}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -194,32 +194,32 @@ oCanvas.domReady(function () {
     //    GDwidth:width_all,
     //    color:color_GD
     //});
-    var GD141=createGD({
+    var GD141=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 879 ,y_cell: 570},
-            {x_cell: 879 ,y_cell: 635},
-            {x_cell: 714 ,y_cell: 633},
-            {x_cell: 636 ,y_cell: 633},
-            {x_cell: 636, y_cell: 646}
+            //{x_cell: 879 ,y_cell: 570},
+            {x_cell: 879 ,y_cell: 633},
+            {x_cell: 714 ,y_cell: 633}
+            //{x_cell: 636 ,y_cell: 633}
+            //{x_cell: 636, y_cell: 646}
         ],
         GDwidth:width_all,
         color:color_GD
     });//17
 
-    var GD15=createGD({
+    var GD15=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 807 ,y_cell: 708},
-            {x_cell: 715 ,y_cell: 708},
-            {x_cell: 715 ,y_cell: 633},
-            {x_cell: 636 ,y_cell: 633},
-            {x_cell: 636, y_cell: 646}
+            {x_cell: 808 ,y_cell: 711},
+            {x_cell: 717 ,y_cell: 711},
+            {x_cell: 717 ,y_cell: 633},
+            {x_cell: 633 ,y_cell: 633},
+            {x_cell: 633, y_cell: 646}
         ],
         GDwidth:width_all,
         color:color_GD
     });//18
-    var GD1501=createGD({
+    var GD1501=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 807 ,y_cell: 708},
@@ -228,9 +228,9 @@ oCanvas.domReady(function () {
             {x_cell: 673, y_cell: 735}
         ],
         GDwidth:width_all,
-        color:color_GD
+        color:"rgba(1,0,0,0)"
     });//19
-    var GD16=createGD({
+    var GD16=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 615 ,y_cell: 673},
@@ -239,64 +239,64 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });//20
-    var GD17=createGD({
+    var GD17=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 675 ,y_cell: 697},
-            {x_cell: 675 ,y_cell: 734},
-            {x_cell: 436 ,y_cell: 734},
-            {x_cell: 436, y_cell: 691}
+            {x_cell: 676 ,y_cell: 697},
+            {x_cell: 676 ,y_cell: 736},
+            {x_cell: 435 ,y_cell: 736},
+            {x_cell: 435, y_cell: 691}
         ],
         GDwidth:width_all,
         color:color_GD
     });//21
-    var GD18=createGD({
+    var GD18=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 415 ,y_cell: 657},
-            {x_cell: 415, y_cell: 568}
+            {x_cell: 414 ,y_cell: 657},
+            {x_cell: 414, y_cell: 568}
         ],
         GDwidth:width_all,
         color:color_GD
     });//22
-    var GD19=createGD({
+    var GD19=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 539 ,y_cell: 654},
-            {x_cell: 539 ,y_cell: 603},
-            {x_cell: 415 ,y_cell: 603},
-            {x_cell: 415, y_cell: 563}
+            {x_cell: 540 ,y_cell: 654},
+            {x_cell: 540 ,y_cell: 605},
+            {x_cell: 414 ,y_cell: 605},
+            {x_cell: 414, y_cell: 563}
         ],
         GDwidth:width_all,
         color:color_GD
     });//23
-    var GD20=createGD({
+    var GD20=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 403 ,y_cell: 482},
-            {x_cell: 372 ,y_cell: 482}
+            {x_cell: 403 ,y_cell: 485},
+            {x_cell: 372 ,y_cell: 485}
         ],
         GDwidth:width_all,
         color:color_GD
     });//24
-    var GD21=createGD({
+    var GD21=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 309 ,y_cell: 431},
-            {x_cell: 309, y_cell: 401},
-            {x_cell: 405, y_cell: 401},
-            {x_cell: 405, y_cell: 376}
+            {x_cell: 308 ,y_cell: 435},
+            {x_cell: 308, y_cell: 403},
+            {x_cell: 407, y_cell: 403},
+            {x_cell: 407, y_cell: 376}
         ],
         GDwidth:width_all,
         color:color_GD
     });//25
-    var GD22=createGD({
+    var GD22=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 96},
             {x_cell: 707 ,y_cell: 223},
-            {x_cell: 765 ,y_cell: 258},
-            {x_cell: 989 ,y_cell: 258},
+            {x_cell: 769 ,y_cell: 261},
+            {x_cell: 989 ,y_cell: 261},
             {x_cell: 989, y_cell: 297},
             {x_cell: 1018, y_cell: 297},
             {x_cell: 1018, y_cell: 349}
@@ -305,64 +305,64 @@ oCanvas.domReady(function () {
         color:"rgba(1,0,0,0)"
     });//26
 
-    var GD23=createGD({
+    var GD23=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 421 ,y_cell: 433},
-            {x_cell: 421, y_cell: 401},
-            {x_cell: 465, y_cell: 401},
-            {x_cell: 465, y_cell: 435}
+            {x_cell: 422 ,y_cell: 435},
+            {x_cell: 422, y_cell: 403},
+            {x_cell: 464, y_cell: 403},
+            {x_cell: 464, y_cell: 435}
         ],
         GDwidth:width_all,
         color:color_GD
     });//27
-    var GD24=createGD({
+    var GD24=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 527 ,y_cell: 439},
-            {x_cell: 527 ,y_cell: 401},
-            {x_cell: 592 ,y_cell: 401},
-            {x_cell: 592, y_cell: 375}
+            {x_cell: 527 ,y_cell: 403},
+            {x_cell: 593 ,y_cell: 403},
+            {x_cell: 593, y_cell: 375}
         ],
         GDwidth:width_all,
         color:color_GD
     });//28
     
-    var GD25=createGD({
+    var GD25=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 748 ,y_cell: 98},
-            {x_cell: 748 ,y_cell: 222},
+            {x_cell: 747 ,y_cell: 98},
+            {x_cell: 747 ,y_cell: 222},
         ],
         GDwidth:width_all,
         color:color_GD
     });//29
     
-    var GD26=createGD({
+    var GD26=createGD1({
         parent:canvas,
         cells:[
             //{x_cell: 896 ,y_cell: 445},
-            {x_cell: 896 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 539},
-            {x_cell: 819, y_cell: 539}
+            {x_cell: 896 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 541},
+            {x_cell: 818, y_cell: 541}
         ],
         GDwidth:width_all,
         color:color_GD
     });//30
-    var GD27=createGD({
+    var GD27=createGD1({
         parent:canvas,
         cells:[
             //{x_cell: 896 ,y_cell: 445},
-            {x_cell: 896 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 562},
-            {x_cell: 819, y_cell: 562}
+            {x_cell: 896 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 562},
+            {x_cell: 818, y_cell: 562}
         ],
         GDwidth:width_all,
         color:color_GD
     });//31
-    var GD28=createGD({
+    var GD28=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 160},//160
@@ -371,27 +371,27 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });//32
-    var GD29=createGD({
+    var GD29=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 896 ,y_cell: 445},
-            {x_cell: 896 ,y_cell: 482},
-            {x_cell: 832 ,y_cell: 482},
+            {x_cell: 897 ,y_cell: 445},
+            {x_cell: 897 ,y_cell: 485},
+            {x_cell: 832 ,y_cell: 485},
             
         ],
         GDwidth:width_all,
         color:color_GD
     });//33
-    var GD30=createGD({
+    var GD30=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 879 ,y_cell: 570},
-            {x_cell: 879 ,y_cell: 635},
+            {x_cell: 881 ,y_cell: 570},
+            {x_cell: 881 ,y_cell: 635},
         ],
         GDwidth:width_all,
         color:color_GD
     });//34
-    var GD31=createGD({
+    var GD31=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 160},//160
@@ -399,32 +399,32 @@ oCanvas.domReady(function () {
             {x_cell: 765 ,y_cell: 258},
             {x_cell: 989 ,y_cell: 258},
             {x_cell: 989, y_cell: 298},
-            {x_cell: 1020, y_cell: 298},
-            {x_cell: 1020, y_cell: 348}
+            {x_cell: 1019, y_cell: 298},
+            {x_cell: 1019, y_cell: 348}
         ],
         GDwidth:width_all,
         color:color_GD
     });//35
-    var GD32=createGD({
+    var GD32=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1020, y_cell: 298},
-            {x_cell: 1020, y_cell: 258}
+            {x_cell: 1019, y_cell: 298},
+            {x_cell: 1019, y_cell: 258}
         ],
         GDwidth:width_all,
         color:"rgba(26,215,255,0)"
     });//36
-    var GD33=createGD({
+    var GD33=createGD1({
         parent:canvas,
         cells:[                       
-            {x_cell: 1020, y_cell: 298},
+            {x_cell: 1019, y_cell: 298},
             {x_cell: 989, y_cell: 298},
             {x_cell: 989, y_cell: 348}
         ],
         GDwidth:width_all,
         color:"rgba(26,215,255,0)"
     });//37
-    var GD34=createGD({
+    var GD34=createGD1({
         parent:canvas,
         cells:[
 			{x_cell: 1124 ,y_cell: 650},
@@ -435,7 +435,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:"rgba(26,215,255,0)"
     });//38
-    var GD35=createGD({
+    var GD35=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 421 ,y_cell: 433},
@@ -834,14 +834,100 @@ oCanvas.domReady(function () {
     img5.bind("click",function(){
         //window.location.href="hx.jsp";
     	if(confirm("是否将“虹吸滤池”设置为维修状态？")){
-            fix_hx_right();            
-            document.getElementById("export").href="download/fix-hx.doc";
-            window.setTimeout(function(){              
-            	decay(12,1);//GD04
-            	decay(14,1);//GD07
-            	decay(17,1);//GD141
-             },100);
+           
+    		//静态配置
+    		hideAllFM();
+    		setFMColorGreen("FM016");
+            setFMColorGreen("FM018");
+            setFMColorGreen("FM019");
+        	fix_hx_right();
+    		document.getElementById("export").href="download/fix-hx.doc";
             $("div.panel").show();
+        	$("#scheme").text("方案二");
+        	
+        	//动态效果
+            setFMColorRed("FM016");  
+    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+        	//管道退水
+    		GD11.state=2;
+        	GD1001.state=2;
+    		
+/*        	//函数绑定
+            document.getElementById("restore").onclick = function(){
+            	window.setTimeout(function(){              
+            		setFMColorGreen("FM019");
+                 },300);
+                window.setTimeout(function(){              
+                	setFMColorGreen("FM018");
+                 },1000);
+                window.setTimeout(function(){              
+                	setFMColorGreen("FM016");
+//                	GD1001.state=3;
+//                	GD11.state=3;
+                 },1700);
+                window.setTimeout(function(){              
+                	clearAll();
+                 },10000);
+            };*/
+            
+        	//手动实现一个toggle
+        	var flag = 1;
+            $("#scheme").click(function(){
+                if(flag == 1){
+                	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+                	fix_hx_left();
+	    			$("#scheme").text("方案一");
+
+	    			window.setTimeout(function(){              
+		            	decay(16,1);//GD04
+		            	decay(17,1);//GD07
+		            	decay(9,1);//GD141
+		            	decay(10,1);
+		            	decay(30,1);
+		            	decay(31,1);
+		             },100);
+                    flag = 0;
+                }else{
+                	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+                	fix_hx_right(); 
+            		$("#scheme").text("方案二");
+                	
+                	window.setTimeout(function(){              
+                	decay(12,1);//GD04
+                	decay(14,1);//GD07
+                	decay(17,1);//GD141
+                	decay(34,1);
+            	 	},100);
+                    flag = 1;
+                }
+    		});
+                
+/*    		$("#scheme").toggle(function(){
+    			fix_hx_left();
+    			$("#scheme").text("方案一");
+    			$("#scheme").text("bbbbbbbbbbbbb");
+    			window.setTimeout(function(){              
+	            	decay(16,1);//GD04
+	            	decay(17,1);//GD07
+	            	decay(9,1);//GD141
+	            	decay(10,1);
+	            	decay(30,1);
+	            	decay(31,1);
+	             },100);},
+	             function(){
+            	 fix_hx_right(); 
+            	 $("#scheme").text("方案二");
+            	 $("#scheme").text("cccccccc");
+            	 window.setTimeout(function(){              
+                	decay(12,1);//GD04
+                	decay(14,1);//GD07
+                	decay(17,1);//GD141
+                	decay(34,1);
+            	 	},100);}
+	        );*/
 
         }
     }).bind("mouseenter",function(){
@@ -1196,57 +1282,44 @@ oCanvas.domReady(function () {
         GD34.advance();
         GD35.advance();
 
-        if(GD01.full==1){
-            GD0101.paused=1;
-            GD28.paused=1;
-            GD31.paused=1;
-        }
-        if(GD02.full==1){
-            GD03.paused=1;
-            GD04.paused=1;
-            GD32.paused=1;
-            GD33.paused=1;
-        }
-        if(GD04.full==1){
-            img4.trigger("flash");
-            img41.trigger("flash");
-        }
-        if(GD07.full==1){
-            img2.trigger("flash");
-            img21.trigger("flash");
-            img22.trigger("flash");
-        }
-        if(GD09.full==1)
-        {
-            img5.trigger("flash");
-            img3.trigger("flash");
-        }
-        if(GD10.full==1){
-            GD1001.paused=1;
-            GD1002.paused=1;
-            GD11.paused=1;
-            GD34.paused=1;
-        }
-        if(GD15.full==1){
-            img9.trigger("flash");
-        }
-        if(GD17.full==1){
-            img8.trigger("flash");
-            img81.trigger("flash");
-        }
-        if(GD19.full==1){
-            img6.trigger("flash");
-
-        }
-        if(GD21.full==1){
-            img61.trigger("flash");
-        }
-        if(GD23.full==1){
-            img63.trigger("flash");
-        }
-        if(GD24.full==1){
-            img62.trigger("flash");
-        }
+        if((GD11.state==0)&&(GD1001.state==0)){
+    		
+    		if(GD30.state!=0){
+    		GD30.state=2;
+    		setFMColorRed("FM018");
+    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+    		}
+    		
+    		//console.log("GD30:");
+    		//console.log(GD30.state);
+    	}
+        if((GD30.state!=2)&&(GD30.state!=1)&&(GD141.state==1)){
+        	//console.log(GD1001.state);
+        	if(GD141.state!=0){
+        		GD141.state=2;
+        		}
+        	setFMColorRed("FM019");
+    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+    		GD141.state=2;
+    	}
+        if((GD11.state==1)&&(GD1001.state==1)){    		
+    		if(GD30.state!=1)
+    		GD30.state=3;
+    		//console.log("GD30:");
+    		//console.log(GD30.state);
+    	}
+        if(GD30.state==1){    		
+    		if(GD141.state!=1)
+    		GD141.state=3;
+    		//console.log("GD30:");
+    		//console.log(GD30.state);
+    	}
         canvas.redraw();
     });
     GD01.paused=1;
@@ -1259,173 +1332,7 @@ oCanvas.domReady(function () {
     function restart(){
         canvas.timeline.start();
     }
-    //function reset(){
-    //    canvas.timeline.stop();
-    //    canvas.children[1].fill=color_GD;
-    //    canvas.children[2].fill=color_GD;
-    //    canvas.children[3].fill=color_GD;
-    //    canvas.children[5].fill=color_GD;
-    //    canvas.children[6].fill=color_GD;
-    //    canvas.children[8].fill=color_GD;
-    //    canvas.children[9].fill=color_GD;
-    //    canvas.children[10].fill=color_GD;
-    //    canvas.children[11].fill=color_GD;
-    //    canvas.children[13].fill=color_GD;
-    //    canvas.children[14].fill=color_GD;
-    //    canvas.children[17].fill=color_GD;
-    //    canvas.children[18].fill=color_GD;
-    //    canvas.children[4].fill=color_GD;
-    //    canvas.children[7].fill=color_GD;
-    //    canvas.children[12].fill=color_GD;
-    //    canvas.children[15].fill=color_GD;
-    //    canvas.children[16].fill=color_GD;
-    //    canvas.children[19].fill=color_GD;
-    //    canvas.children[22].fill="rgba(1,1,1,0)";
-    //    GD01.init();
-    //    GD02.init();
-    //    GD03.init();
-    //    GD04.init();
-    //    GD05.init();
-    //    GD06.init();
-    //    GD07.init();
-    //    GD08.init();
-    //    GD09.init();
-    //    GD10.init();
-    //    GD11.init();
-    //    GD12.init();
-    //    GD13.init();
-    //    GD14.init();
-    //    GD15.init();
-    //    GD16.init();
-    //    GD17.init();
-    //    GD18.init();
-    //    GD19.init();
-    //    GD20.init();
-    //    GD21.init();
-    //    GD22.init();
-    //    GD23.init();
-    //    GD24.init();
-    //    img1.bind("flash",function(){
-    //        GD01.paused=1;
-    //        GD22.paused=1;
-    //        GD02.paused=1;
-    //    });
-    //    img11.bind("mouseenter", function () {
-    //        canvas.mouse.cursor("pointer");
-    //        this.shadow="0 0 10px #eee";
-    //        //$("#name_QS2").css("display","inline");
-    //    }).bind("mouseleave", function () {
-    //        canvas.mouse.cursor("default");
-    //        this.shadow="0 0 0px #eee";
-    //        //$("#name_QS2").css("display","none");
-    //    }).bind("flash",function(){
-    //    });
-    //    img2.bind("flash",function(){
-    //        GD08.paused=1;
-    //        GD09.paused=1;
-    //    });
-    //
-    //
-    //    img21.bind("flash",function(){
-    //        GD10.paused=1;
-    //        GD11.paused=1;
-    //    });
-    //
-    //    img22.bind("flash",function(){
-    //        GD12.paused=1;
-    //    });
-    //
-    //    img3.bind("flash",function(){
-    //        GD15.paused=1;
-    //    });
-    //
-    //    img4.bind("flash",function(){
-    //        GD05.paused=1;
-    //        GD06.paused=1;
-    //        GD07.paused=1;
-    //    });
-    //
-    //    img5.bind("flash",function(){
-    //        GD13.paused=1;
-    //        GD14.paused=1;
-    //    });
-    //
-    //    img6.bind("flash",function(){
-    //        GD21.paused=1;
-    //        GD23.paused=1;
-    //    });
-    //
-    //    img61.bind("flash",function(){
-    //    });
-    //
-    //    img62.bind("flash",function(){
-    //    });
-    //
-    //    img63.bind("flash",function(){
-    //        GD24.paused=1;
-    //    });
-    //
-    //    img8.bind("flash",function(){
-    //        GD18.paused=1;
-    //        GD19.paused=1;
-    //    });
-    //
-    //    img9.bind("flash",function(){
-    //        GD16.paused=1;
-    //        GD17.paused=1;
-    //    });
-    //    GD01.paused=1;
-    //    GD22.paused=1;
-    //    GD02.paused=1;
-    //    canvas.settings.fps=40;
-    //    var spanText=document.getElementById("speed");
-    //    var speed=(canvas.settings.fps/40).toFixed(1);
-    //    spanText.innerHTML=speed+"X";
-    //    var btn_start=$("#btn_start");
-    //    btn_start.innerHTML="&#xe61f;";
-    //    btn_start.value=0;
-    //
-    //    canvas.redraw();
-    //    canvas.timeline.start();
-    //}
-    //function line_new(){
-    //    canvas.timeline.stop();
-    //    console.log("new");
-    //    reset();
-    //
-    //    canvas.children[1].fill="rgba(1,0,0,0)";
-    //    canvas.children[3].fill="rgba(1,0,0,0)";
-    //    canvas.children[5].fill="rgba(1,0,0,0)";
-    //    canvas.children[6].fill="rgba(1,0,0,0)";
-    //    canvas.children[8].fill="rgba(1,0,0,0)";
-    //    canvas.children[9].fill="rgba(1,0,0,0)";
-    //    canvas.children[10].fill="rgba(1,0,0,0)";
-    //    canvas.children[11].fill="rgba(1,0,0,0)";
-    //    canvas.children[13].fill="rgba(1,0,0,0)";
-    //    canvas.children[14].fill="rgba(1,0,0,0)";
-    //    canvas.children[17].fill="rgba(1,0,0,0)";
-    //    canvas.children[18].fill="rgba(1,0,0,0)";
-    //
-    //}
-    //function line_old(){
-    //    canvas.timeline.stop();
-    //    console.log("old");
-    //    reset();
-    //    canvas.children[2].fill="rgba(1,0,0,0)";
-    //    canvas.children[3].fill="rgba(1,0,0,0)";
-    //    canvas.children[4].fill="rgba(1,0,0,0)";
-    //    canvas.children[7].fill="rgba(1,0,0,0)";
-    //    canvas.children[12].fill="rgba(1,0,0,0)";
-    //    canvas.children[15].fill="rgba(1,0,0,0)";
-    //    canvas.children[16].fill="rgba(1,0,0,0)";
-    //    canvas.children[19].fill="rgba(1,0,0,0)";
-    //    canvas.children[22].fill=color_GD;
-    //}
-    //function line_none(){
-    //    canvas.timeline.stop();
-    //    GD03.color="rgba(0,0,0,0)";
-    //    reset();
-    //}
+
     function init(){
         GD01.init();
         GD02.init();
@@ -1841,23 +1748,16 @@ oCanvas.domReady(function () {
     }
     function fix_hx_right(){
     	
-        window.setTimeout(function(){              
-        	decay(12,1);//GD04
-        	decay(14,1);//GD07
-        	decay(17,1);//GD141
-        	decay(34,1);
-        },100);
-        
-        clearAll();
-        hideAllFM();
+        //clearAll();
+        //hideAllFM();
         document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#8dd9ff";
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         document.getElementById("scheme").style.display="block";
         
-        setFMColorRed("FM016");
+/*        setFMColorRed("FM016");
         setFMColorRed("FM018");
-        setFMColorRed("FM019");
+        setFMColorRed("FM019");*/
 
         var todolist = [
 			{ "index":"1" , "content":"关闭阀门16#", "result":"停止东侧虹吸进水" },
@@ -1876,33 +1776,59 @@ oCanvas.domReady(function () {
 		}
 		
 		
-/*		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";*/
+/*		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
 		$("#step_1").addClass("trans");
+		$("#step_1").addClass("table_td_left");
 		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-/*		document.getElementById("step_1").style.transitionProperty= "background-color";
+		document.getElementById("step_1").style.transitionProperty= "background-color";
 		document.getElementById("step_1").style.transitionDuration= "1.5s";
 		document.getElementById("step_1").style.transitionTimingFunction= "ease";*/
-
-		
+	
+        document.getElementById("restore").onclick=function(){
+        	restore_hx_right();
+        	
+        	window.setTimeout(function(){              
+        		setFMColorGreen("FM019");
+        		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+             },300);
+            window.setTimeout(function(){              
+            	setFMColorGreen("FM018");
+        		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+             },1000);
+            window.setTimeout(function(){              
+            	setFMColorGreen("FM016");
+        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+//            	GD1001.state=3;
+//            	GD11.state=3;
+             },1700);
+            window.setTimeout(function(){              
+            	clearAll();
+             },10000);
+        }
+        
         $("div.panel").show();
         
-        document.getElementById("scheme").onclick=function(){
-            fix_hx_left();
-	        document.getElementById("scheme").innerHTML="方案一";
-        }
-        document.getElementById("restore").onclick=function(){
-            restore_hx_right();
-        }
     }
     
     function restore_hx_right(){
+        //恢复表格中单元格的颜色
+        $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
         document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#283a45";
         document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
         
-        setFMColorGreen("FM016");
+/*        setFMColorGreen("FM016");
         setFMColorGreen("FM018");
-        setFMColorGreen("FM019");
+        setFMColorGreen("FM019");*/
         
         var todolist = [
 			{ "index":"1" , "content":"打开阀门16#", "result":"恢复东侧虹吸进水" },
@@ -1912,6 +1838,15 @@ oCanvas.domReady(function () {
 			{ "index":"5" , "content":"开启东西滤池清水联通闸", "result":"平衡东西两侧水量" },
 			{ "index":"6" , "content":"打开阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
 		];
+        
+        var todolist = [
+			{ "index":"1" , "content":"打开阀门16#", "result":"恢复东侧虹吸进水" },
+			{ "index":"2" , "content":"打开阀门9#~14#小虹吸", "result":"逐格滤料冲洗合格后可以恢复" },
+			{ "index":"3" , "content":"打开阀门18#", "result":"恢复正常出水" },
+			{ "index":"4" , "content":"关闭9#~14#滤池排空闸", "result":"恢复正常出水" },
+			{ "index":"5" , "content":"开启东西滤池清水联通闸", "result":"平衡东西两侧水量" },
+			{ "index":"6" , "content":"打开阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
+        ];
 
 		for (i=0;i<todolist.length;i++){
 			var offset = i+1
@@ -1920,16 +1855,19 @@ oCanvas.domReady(function () {
 	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
 		}
         
+		document.getElementById("restore").onclick=function(){/**/};
     }
     
     function restore_hx_left(){
+        //恢复表格中单元格的颜色
+        $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
         document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#283a45";
         document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
         
-        setFMColorGreen("FM014");
+/*        setFMColorGreen("FM014");
         setFMColorGreen("FM017");
-        setFMColorGreen("FM019");
+        setFMColorGreen("FM019");*/
         
         var todolist = [
 			{ "index":"1" , "content":"打开阀门14#", "result":"恢复西侧虹吸进水" },
@@ -1946,28 +1884,25 @@ oCanvas.domReady(function () {
 	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
 	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
 		}
+		
+		//执行完恢复运行后解除恢复运行绑定的函数
+		document.getElementById("restore").onclick=function(){/**/};
+		
+		
     }
     
     function  fix_hx_left(){
-        window.setTimeout(function(){              
-        	decay(16,1);//GD04
-        	decay(17,1);//GD07
-        	decay(9,1);//GD141
-        	decay(10,1);
-        	decay(30,1);
-        	decay(31,1);
-         },100);
-        
-        clearAll();
+
+        //clearAll();
         hideAllFM();
         document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#8dd9ff";
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         document.getElementById("scheme").style.display="block";
 
-        setFMColorRed("FM014");
+/*        setFMColorRed("FM014");
         setFMColorRed("FM017");
-        setFMColorRed("FM019");
+        setFMColorRed("FM019");*/
         
         var todolist = [
 		{ "index":"1" , "content":"关闭阀门14#", "result":"停止西侧虹吸进水" },
@@ -1987,10 +1922,7 @@ oCanvas.domReady(function () {
 
         $("div.panel").show();
         
-        document.getElementById("scheme").onclick=function(){
-            fix_hx_right();
-	        document.getElementById("scheme").innerHTML="方案二";
-        }
+      
         document.getElementById("restore").onclick=function(){
             restore_hx_left();
         }
@@ -2430,6 +2362,7 @@ oCanvas.domReady(function () {
             $("div.panel").show();
         }
     });
+    
     $("#name_HHJ2").click(function(){
         if(confirm("是否将“新混合井”设置为维修状态？")){
             fix_hh_new();
@@ -2444,20 +2377,78 @@ oCanvas.domReady(function () {
              },100);
         }
     });
+    
     $("#name_HX").click(function(){
         if(confirm("是否将“虹吸滤池”设置为维修状态？")){
-        	      
-            fix_hx_right();            
-            
-            document.getElementById("export").href="download/fix-hx.doc";
-            window.setTimeout(function(){              
-            	decay(12,1);//GD04
-            	decay(14,1);//GD07
-            	decay(17,1);//GD141
-            	decay(34,1);
-             },100);
+        	//静态配置
+    		hideAllFM();
+    		setFMColorGreen("FM016");
+            setFMColorGreen("FM018");
+            setFMColorGreen("FM019");
+        	fix_hx_right();
+    		document.getElementById("export").href="download/fix-hx.doc";
             $("div.panel").show();
+        	$("#scheme").text("方案二");
+        	
+        	//动态效果
+            setFMColorRed("FM016");  
+    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+        	//管道退水
+    		GD11.state=2;
+        	GD1001.state=2;
+    		
+        	//函数绑定
+/*            document.getElementById("restore").onclick = function(){
+            	window.setTimeout(function(){              
+            		setFMColorGreen("FM019");
+                 },300);
+                window.setTimeout(function(){              
+                	setFMColorGreen("FM018");
+                 },1000);
+                window.setTimeout(function(){              
+                	setFMColorGreen("FM016");
+//                	GD1001.state=3;
+//                	GD11.state=3;
+                 },1700);
+                window.setTimeout(function(){              
+                	clearAll();
+                 },10000);
+            };*/
+            
+        	//手动实现一个toggle
+        	var flag = 1;
+            $("#scheme").click(function(){
+                if(flag == 1){
+                	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+                	fix_hx_left();
+	    			$("#scheme").text("方案一");
 
+	    			window.setTimeout(function(){              
+		            	decay(16,1);//GD04
+		            	decay(17,1);//GD07
+		            	decay(9,1);//GD141
+		            	decay(10,1);
+		            	decay(30,1);
+		            	decay(31,1);
+		             },100);
+                    flag = 0;
+                }else{
+                	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+                	fix_hx_right(); 
+            		$("#scheme").text("方案二");
+                	
+                	window.setTimeout(function(){              
+                	decay(12,1);//GD04
+                	decay(14,1);//GD07
+                	decay(17,1);//GD141
+                	decay(34,1);
+            	 	},100);
+                    flag = 1;
+                }
+    		});
         }
     });
 
@@ -2519,7 +2510,7 @@ oCanvas.domReady(function () {
             $("div.panel").show();
         }
     });
-    
+
     $("#reset").bind("click", function () {
         clearAll();
     });
@@ -2569,6 +2560,8 @@ oCanvas.domReady(function () {
     
     
     function clearAll(){
+    	GD1001.state=3;
+    	GD11.state=3;
     	canvas.children[2].fill=color_GD;
     	canvas.children[3].fill=color_GD;
     	canvas.children[4].fill=color_GD;
@@ -2603,36 +2596,48 @@ oCanvas.domReady(function () {
         canvas.children[37].fill="rgba(0,0,0,0)";
         canvas.children[38].fill="rgba(0,0,0,0)";
         canvas.children[39].fill="rgba(0,0,0,0)";
-
-//      defaultFMColorGreen = ["FM05",  "FM06",  "FM07",  "FM09",  "FM010", "FM014", 
-//                             "FM015", "FM016", "FM017", "FM018", "FM019", "FM020", 
-//                             "FM044", "FM045", "FM052", "FM055", "FM057", "FM059", 
-//                             "FM062", "FM063", "FM064", "FM065", "FM066", "FM067", "FM069", 
-////        					   "FM021", "FM024", "FM025", "FM026", "FM046", "FM047", 
-////        					   "FM048", "FM049", "FM051", "FM053", "FM054", "FM058"
-//        				       ]
-//      defaultFMColorRed   = ["FM022","FM023","FM050","FM056","FM068"]
         
-        //重置阀门及其标号颜色并且显示
+        
+		/*
+		 * cheatsheet
+		 * 默认颜色为绿色的阀门
+		 * ["FM05",  "FM06",  "FM07",  "FM09",  "FM010", "FM014", 
+		 *  "FM015", "FM016", "FM017", "FM018", "FM019", "FM020", 
+		 *  "FM044", "FM045", "FM052", "FM055", "FM057", "FM059", 
+		 *  "FM062", "FM063", "FM064", "FM065", "FM066", "FM067", "FM069"]
+		 * 默认颜色为红色的阀门
+		 * ["FM022","FM023","FM050","FM056","FM068"]
+		 * 默认颜色为绿色但是不显示的阀门
+		 * ["FM021", "FM024", "FM025", "FM026", "FM046", "FM047", 
+		 *  "FM048", "FM049", "FM051", "FM053", "FM054", "FM058"]
+		 */
+        
+        //重置阀门及其标号恢复颜色并且显示
         $("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
         $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
         $("div#FM_group .fm_default_green").attr("style","display:block;");
         $("div#FM_group .fm_default_red").attr("style","display:block;");
 
-        document.getElementById("panel_button").style.display="none";
-        document.getElementById("fix_table").style.display="none";
-
+        //清空单元格的内容
 		for (i=1;i<7;i++){
 	        document.getElementById("index_"+ i).innerHTML="&nbsp;";
 	        document.getElementById("step_" + i).innerHTML="&nbsp;";
 	        document.getElementById("step_" + i + "_result").innerHTML="&nbsp;";
 		}
 
-        $("div.panel").hide();
-
+		//重置面板提示的内容
         $("#fix_head").text("请点击需要维修的构筑物");
+        //恢复构筑物及其标签的颜色
         $("div#name_gzw .name_ob").attr("style","color:#283a45");
         $("div#name_gzw .name_ob").attr("style","background:rgba(255,255,255,0.5)");
+        //恢复表格中单元格的颜色
+        $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+        //解除功能面板的函数绑定
+/*        document.getElementById("scheme").onclick = function(){提示};
+        document.getElementById("restore").onclick = function(){提示};
+        document.getElementById("export").onclick = function(){提示};*/
+        //隐藏表格面板
+        //$("div.panel").hide();
     }
 
 });

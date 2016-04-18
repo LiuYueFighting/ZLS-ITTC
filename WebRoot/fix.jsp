@@ -125,6 +125,26 @@
     #panel_heading:hover{
     background: rgba(194,215,245,0.5);
     }
+    
+    .hcc{
+   	-webkit-transition-property:background-color;
+    -webkit-transition-duration:0.5s;
+    -webkit-transition-timing-function:ease;
+    cursor: pointer;
+    }
+    .hcc:hover{
+    background: rgba(194,215,245,0.5);
+    }
+    
+    #step_1{
+    -webkit-transition-property:background-color;
+    -webkit-transition-duration:0.5s;
+    -webkit-transition-timing-function:ease;
+    }
+    #step_1:hover{
+    background: rgba(194,215,245,0.5);
+    }
+    
     #panel_heading h2{
     color: #283a45;
     font-weight: bolder;
@@ -162,12 +182,6 @@
     .table_td_left{
     text-align: left;
     } 
-    .trans{
-    background: rgba(194,215,245,0.5);
-    -webkit-transition-property:background-color;
-    -webkit-transition-duration:10s;
-    -webkit-transition-timing-function:ease;
-    }
 /*     #init_stage,#fix_table,#panel_button{
     position:relative;
     } */
@@ -372,7 +386,7 @@
     
     <div id="fix-panel">
     	<div>
-	    	<button type="button" id="panel_heading">
+	    	<button type="button" id="panel_heading" class="hcc">
 	    		<h2 id="fix_head" >请点击需要维修的构筑物</h2>
 	    	</button>
 	    </div>
@@ -437,8 +451,8 @@
 		<div class="panel panel-info" id="panel_button">
 			<div class="panel-heading">功能</div>
 			<table class="table">
-				<tr><td id="scheme">方案二</td><td id="restore">恢复运行</td></tr>
-				<tr><td id="export">生成方案</td><td id="reset">重置</td></tr>
+				<tr><td id="scheme" class="hcc">方案二</td><td id="restore" class="hcc">恢复运行</td></tr>
+				<tr><td id="export" class="hcc">生成方案</td><td id="reset" class="hcc">重置</td></tr>
 			</table>
 		</div>
 	    
