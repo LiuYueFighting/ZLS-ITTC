@@ -1,6 +1,6 @@
 oCanvas.domReady(function () {
 
-    var canvas = oCanvas.create({
+	var canvas = oCanvas.create({
         canvas: "#canvas_fix",
         background: "#eeeeed",
         fps: 35
@@ -834,6 +834,7 @@ oCanvas.domReady(function () {
     img5.bind("click",function(){
         //window.location.href="hx.jsp";
     	if(confirm("是否将“虹吸滤池”设置为维修状态？")){
+
            
     		//静态配置
     		hideAllFM();
@@ -867,6 +868,7 @@ oCanvas.domReady(function () {
                 	setFMColorGreen("FM016");
 //                	GD1001.state=3;
 //                	GD11.state=3;
+
                  },1700);
                 window.setTimeout(function(){              
                 	clearAll();
@@ -928,7 +930,6 @@ oCanvas.domReady(function () {
                 	decay(34,1);
             	 	},100);}
 	        );*/
-
         }
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
@@ -1287,12 +1288,14 @@ oCanvas.domReady(function () {
     		if(GD30.state!=0){
     		GD30.state=2;
     		setFMColorRed("FM018");
+
     		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+
     		}
     		
     		//console.log("GD30:");
@@ -1304,8 +1307,10 @@ oCanvas.domReady(function () {
         		GD141.state=2;
         		}
         	setFMColorRed("FM019");
+
     		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+
     		GD141.state=2;
     	}
         if((GD11.state==1)&&(GD1001.state==1)){    		
@@ -1839,15 +1844,6 @@ oCanvas.domReady(function () {
 			{ "index":"6" , "content":"打开阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
 		];
         
-        var todolist = [
-			{ "index":"1" , "content":"打开阀门16#", "result":"恢复东侧虹吸进水" },
-			{ "index":"2" , "content":"打开阀门9#~14#小虹吸", "result":"逐格滤料冲洗合格后可以恢复" },
-			{ "index":"3" , "content":"打开阀门18#", "result":"恢复正常出水" },
-			{ "index":"4" , "content":"关闭9#~14#滤池排空闸", "result":"恢复正常出水" },
-			{ "index":"5" , "content":"开启东西滤池清水联通闸", "result":"平衡东西两侧水量" },
-			{ "index":"6" , "content":"打开阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
-        ];
-
 		for (i=0;i<todolist.length;i++){
 			var offset = i+1
 	        document.getElementById("index_"+ offset).innerHTML=todolist[i].index;
@@ -1887,8 +1883,6 @@ oCanvas.domReady(function () {
 		
 		//执行完恢复运行后解除恢复运行绑定的函数
 		document.getElementById("restore").onclick=function(){/**/};
-		
-		
     }
     
     function  fix_hx_left(){
@@ -2401,22 +2395,6 @@ oCanvas.domReady(function () {
         	GD1001.state=2;
     		
         	//函数绑定
-/*            document.getElementById("restore").onclick = function(){
-            	window.setTimeout(function(){              
-            		setFMColorGreen("FM019");
-                 },300);
-                window.setTimeout(function(){              
-                	setFMColorGreen("FM018");
-                 },1000);
-                window.setTimeout(function(){              
-                	setFMColorGreen("FM016");
-//                	GD1001.state=3;
-//                	GD11.state=3;
-                 },1700);
-                window.setTimeout(function(){              
-                	clearAll();
-                 },10000);
-            };*/
             
         	//手动实现一个toggle
         	var flag = 1;
@@ -2445,10 +2423,8 @@ oCanvas.domReady(function () {
                 	decay(14,1);//GD07
                 	decay(17,1);//GD141
                 	decay(34,1);
-            	 	},100);
-                    flag = 1;
-                }
-    		});
+                 },100);
+            };
         }
     });
 
@@ -2511,9 +2487,11 @@ oCanvas.domReady(function () {
         }
     });
 
+
     $("#reset").bind("click", function () {
         clearAll();
     });
+
 
     function decay(a,b){
         if(b>0){
@@ -2596,8 +2574,7 @@ oCanvas.domReady(function () {
         canvas.children[37].fill="rgba(0,0,0,0)";
         canvas.children[38].fill="rgba(0,0,0,0)";
         canvas.children[39].fill="rgba(0,0,0,0)";
-        
-        
+          
 		/*
 		 * cheatsheet
 		 * 默认颜色为绿色的阀门
@@ -2625,6 +2602,7 @@ oCanvas.domReady(function () {
 	        document.getElementById("step_" + i + "_result").innerHTML="&nbsp;";
 		}
 
+
 		//重置面板提示的内容
         $("#fix_head").text("请点击需要维修的构筑物");
         //恢复构筑物及其标签的颜色
@@ -2633,7 +2611,7 @@ oCanvas.domReady(function () {
         //恢复表格中单元格的颜色
         $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
         //解除功能面板的函数绑定
-/*        document.getElementById("scheme").onclick = function(){提示};
+/*      document.getElementById("scheme").onclick = function(){提示};
         document.getElementById("restore").onclick = function(){提示};
         document.getElementById("export").onclick = function(){提示};*/
         //隐藏表格面板

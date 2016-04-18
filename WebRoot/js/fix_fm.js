@@ -19,16 +19,16 @@ oCanvas.domReady(function () {
         color_GD_new="blue",
         lineHeight_all=10;
 
-    var GD01=createGD({
+    var GD01=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 96},
-            {x_cell: 707 ,y_cell: 150}
+            {x_cell: 707 ,y_cell: 220}
         ],
         GDwidth:width_all,
         color:color_GD
     });
-    var GD0101=createGD({
+    var GD0101=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 160},
@@ -40,7 +40,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD02=createGD({
+    var GD02=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 748 ,y_cell: 98},
@@ -52,7 +52,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD03=createGD({
+    var GD03=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 1020 ,y_cell: 256},
@@ -61,7 +61,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD04=createGD({
+    var GD04=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 1026,y_cell: 256},
@@ -71,7 +71,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD05=createGD({
+    var GD05=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 989 ,y_cell: 365},
@@ -81,7 +81,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD06=createGD({
+    var GD06=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 1019 ,y_cell: 360},
@@ -91,7 +91,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD07=createGD({
+    var GD07=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 1188,y_cell: 412},
@@ -100,7 +100,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD08=createGD({
+    var GD08=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 896 ,y_cell: 445},
@@ -112,7 +112,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD09=createGD({
+    var GD09=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 896 ,y_cell: 445},
@@ -124,7 +124,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD10=createGD({
+    var GD10=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 1108 ,y_cell: 445},
@@ -134,7 +134,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD1001=createGD({
+    var GD1001=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 990 ,y_cell: 482},
@@ -144,7 +144,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD1002=createGD({
+    var GD1002=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 990 ,y_cell: 482},
@@ -153,7 +153,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD11=createGD({
+    var GD11=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 990 ,y_cell: 482},
@@ -163,7 +163,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD12=createGD({
+    var GD12=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 1124 ,y_cell: 650},
@@ -173,7 +173,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD13=createGD({
+    var GD13=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 848 ,y_cell: 570},
@@ -195,7 +195,7 @@ oCanvas.domReady(function () {
     //    GDwidth:width_all,
     //    color:color_GD
     //});
-    var GD141=createGD({
+    var GD141=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 879 ,y_cell: 570},
@@ -206,7 +206,7 @@ oCanvas.domReady(function () {
         color:color_GD
     });
 
-    var GD15=createGD({
+    var GD15=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 807 ,y_cell: 708},
@@ -218,7 +218,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD1501=createGD({
+    var GD1501=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 807 ,y_cell: 708},
@@ -229,7 +229,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD16=createGD({
+    var GD16=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 615 ,y_cell: 673},
@@ -238,7 +238,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD17=createGD({
+    var GD17=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 675 ,y_cell: 697},
@@ -249,7 +249,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD18=createGD({
+    var GD18=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 415 ,y_cell: 657},
@@ -258,7 +258,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD19=createGD({
+    var GD19=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 539 ,y_cell: 654},
@@ -269,7 +269,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD20=createGD({
+    var GD20=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 403 ,y_cell: 482},
@@ -278,7 +278,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD21=createGD({
+    var GD21=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 309 ,y_cell: 431},
@@ -289,7 +289,7 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD22=createGD({
+    var GD22=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 96},
@@ -304,7 +304,7 @@ oCanvas.domReady(function () {
         color:"rgba(1,0,0,0)"
     });
 
-    var GD23=createGD({
+    var GD23=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 421 ,y_cell: 433},
@@ -315,13 +315,22 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
-    var GD24=createGD({
+    var GD24=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 527 ,y_cell: 439},
             {x_cell: 527 ,y_cell: 401},
             {x_cell: 592 ,y_cell: 401},
             {x_cell: 592, y_cell: 375}
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });
+    var GD25=createGD1({
+        parent:canvas,
+        cells:[
+            {x_cell: 993 ,y_cell: 296},
+            {x_cell: 1018 ,y_cell: 296}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -787,231 +796,71 @@ oCanvas.domReady(function () {
         GD22.advance();
         GD23.advance();
         GD24.advance();
+        GD25.advance();
+        
+        if(GD0101.state==0){
+        	setOpenDgree("FM064");
+        	GD25.state=2;
+        }
 
-        if(GD01.full==1){
-            GD0101.paused=1;
-        }
-        if(GD02.full==1){
-            GD03.paused=1;
-            GD04.paused=1;
-        }
-        if(GD04.full==1){
-            img4.trigger("flash");
-            img41.trigger("flash");
-        }
-        if(GD07.full==1){
-            img2.trigger("flash");
-            img21.trigger("flash");
-            img22.trigger("flash");
-        }
-        if(GD09.full==1)
-        {
-            img5.trigger("flash");
-            img3.trigger("flash");
-        }
-        if(GD10.full==1){
-            GD1001.paused=1;
-            GD1002.paused=1;
-            GD11.paused=1;
-        }
-        if(GD15.full==1){
-            img9.trigger("flash");
-        }
-        if(GD17.full==1){
-            img8.trigger("flash");
-            img81.trigger("flash");
-        }
-        if(GD19.full==1){
-            img6.trigger("flash");
-
-        }
-        if(GD21.full==1){
-            img61.trigger("flash");
-        }
-        if(GD23.full==1){
-            img63.trigger("flash");
-        }
-        if(GD24.full==1){
-            img62.trigger("flash");
-        }
+//        if(GD01.full==1){
+//            GD0101.paused=1;
+//        }
+//        if(GD02.full==1){
+//            GD03.paused=1;
+//            GD04.paused=1;
+//        }
+//        if(GD04.full==1){
+//            img4.trigger("flash");
+//            img41.trigger("flash");
+//        }
+//        if(GD07.full==1){
+//            img2.trigger("flash");
+//            img21.trigger("flash");
+//            img22.trigger("flash");
+//        }
+//        if(GD09.full==1)
+//        {
+//            img5.trigger("flash");
+//            img3.trigger("flash");
+//        }
+//        if(GD10.full==1){
+//            GD1001.paused=1;
+//            GD1002.paused=1;
+//            GD11.paused=1;
+//        }
+//        if(GD15.full==1){
+//            img9.trigger("flash");
+//        }
+//        if(GD17.full==1){
+//            img8.trigger("flash");
+//            img81.trigger("flash");
+//        }
+//        if(GD19.full==1){
+//            img6.trigger("flash");
+//
+//        }
+//        if(GD21.full==1){
+//            img61.trigger("flash");
+//        }
+//        if(GD23.full==1){
+//            img63.trigger("flash");
+//        }
+//        if(GD24.full==1){
+//            img62.trigger("flash");
+//        }
         canvas.redraw();
     });
-    GD01.paused=1;
-    GD02.paused=1;
-    GD22.paused=1;
+//    GD01.paused=1;
+//    GD02.paused=1;
+//    GD22.paused=1;
     canvas.timeline.start();
 
 
     function restart(){
         canvas.timeline.start();
     }
-    //function reset(){
-    //    canvas.timeline.stop();
-    //    canvas.children[1].fill=color_GD;
-    //    canvas.children[2].fill=color_GD;
-    //    canvas.children[3].fill=color_GD;
-    //    canvas.children[5].fill=color_GD;
-    //    canvas.children[6].fill=color_GD;
-    //    canvas.children[8].fill=color_GD;
-    //    canvas.children[9].fill=color_GD;
-    //    canvas.children[10].fill=color_GD;
-    //    canvas.children[11].fill=color_GD;
-    //    canvas.children[13].fill=color_GD;
-    //    canvas.children[14].fill=color_GD;
-    //    canvas.children[17].fill=color_GD;
-    //    canvas.children[18].fill=color_GD;
-    //    canvas.children[4].fill=color_GD;
-    //    canvas.children[7].fill=color_GD;
-    //    canvas.children[12].fill=color_GD;
-    //    canvas.children[15].fill=color_GD;
-    //    canvas.children[16].fill=color_GD;
-    //    canvas.children[19].fill=color_GD;
-    //    canvas.children[22].fill="rgba(1,1,1,0)";
-    //    GD01.init();
-    //    GD02.init();
-    //    GD03.init();
-    //    GD04.init();
-    //    GD05.init();
-    //    GD06.init();
-    //    GD07.init();
-    //    GD08.init();
-    //    GD09.init();
-    //    GD10.init();
-    //    GD11.init();
-    //    GD12.init();
-    //    GD13.init();
-    //    GD14.init();
-    //    GD15.init();
-    //    GD16.init();
-    //    GD17.init();
-    //    GD18.init();
-    //    GD19.init();
-    //    GD20.init();
-    //    GD21.init();
-    //    GD22.init();
-    //    GD23.init();
-    //    GD24.init();
-    //    img1.bind("flash",function(){
-    //        GD01.paused=1;
-    //        GD22.paused=1;
-    //        GD02.paused=1;
-    //    });
-    //    img11.bind("mouseenter", function () {
-    //        canvas.mouse.cursor("pointer");
-    //        this.shadow="0 0 10px #eee";
-    //        //$("#name_QS2").css("display","inline");
-    //    }).bind("mouseleave", function () {
-    //        canvas.mouse.cursor("default");
-    //        this.shadow="0 0 0px #eee";
-    //        //$("#name_QS2").css("display","none");
-    //    }).bind("flash",function(){
-    //    });
-    //    img2.bind("flash",function(){
-    //        GD08.paused=1;
-    //        GD09.paused=1;
-    //    });
-    //
-    //
-    //    img21.bind("flash",function(){
-    //        GD10.paused=1;
-    //        GD11.paused=1;
-    //    });
-    //
-    //    img22.bind("flash",function(){
-    //        GD12.paused=1;
-    //    });
-    //
-    //    img3.bind("flash",function(){
-    //        GD15.paused=1;
-    //    });
-    //
-    //    img4.bind("flash",function(){
-    //        GD05.paused=1;
-    //        GD06.paused=1;
-    //        GD07.paused=1;
-    //    });
-    //
-    //    img5.bind("flash",function(){
-    //        GD13.paused=1;
-    //        GD14.paused=1;
-    //    });
-    //
-    //    img6.bind("flash",function(){
-    //        GD21.paused=1;
-    //        GD23.paused=1;
-    //    });
-    //
-    //    img61.bind("flash",function(){
-    //    });
-    //
-    //    img62.bind("flash",function(){
-    //    });
-    //
-    //    img63.bind("flash",function(){
-    //        GD24.paused=1;
-    //    });
-    //
-    //    img8.bind("flash",function(){
-    //        GD18.paused=1;
-    //        GD19.paused=1;
-    //    });
-    //
-    //    img9.bind("flash",function(){
-    //        GD16.paused=1;
-    //        GD17.paused=1;
-    //    });
-    //    GD01.paused=1;
-    //    GD22.paused=1;
-    //    GD02.paused=1;
-    //    canvas.settings.fps=40;
-    //    var spanText=document.getElementById("speed");
-    //    var speed=(canvas.settings.fps/40).toFixed(1);
-    //    spanText.innerHTML=speed+"X";
-    //    var btn_start=$("#btn_start");
-    //    btn_start.innerHTML="&#xe61f;";
-    //    btn_start.value=0;
-    //
-    //    canvas.redraw();
-    //    canvas.timeline.start();
-    //}
-    //function line_new(){
-    //    canvas.timeline.stop();
-    //    console.log("new");
-    //    reset();
-    //
-    //    canvas.children[1].fill="rgba(1,0,0,0)";
-    //    canvas.children[3].fill="rgba(1,0,0,0)";
-    //    canvas.children[5].fill="rgba(1,0,0,0)";
-    //    canvas.children[6].fill="rgba(1,0,0,0)";
-    //    canvas.children[8].fill="rgba(1,0,0,0)";
-    //    canvas.children[9].fill="rgba(1,0,0,0)";
-    //    canvas.children[10].fill="rgba(1,0,0,0)";
-    //    canvas.children[11].fill="rgba(1,0,0,0)";
-    //    canvas.children[13].fill="rgba(1,0,0,0)";
-    //    canvas.children[14].fill="rgba(1,0,0,0)";
-    //    canvas.children[17].fill="rgba(1,0,0,0)";
-    //    canvas.children[18].fill="rgba(1,0,0,0)";
-    //
-    //}
-    //function line_old(){
-    //    canvas.timeline.stop();
-    //    console.log("old");
-    //    reset();
-    //    canvas.children[2].fill="rgba(1,0,0,0)";
-    //    canvas.children[3].fill="rgba(1,0,0,0)";
-    //    canvas.children[4].fill="rgba(1,0,0,0)";
-    //    canvas.children[7].fill="rgba(1,0,0,0)";
-    //    canvas.children[12].fill="rgba(1,0,0,0)";
-    //    canvas.children[15].fill="rgba(1,0,0,0)";
-    //    canvas.children[16].fill="rgba(1,0,0,0)";
-    //    canvas.children[19].fill="rgba(1,0,0,0)";
-    //    canvas.children[22].fill=color_GD;
-    //}
-    //function line_none(){
-    //    canvas.timeline.stop();
-    //    GD03.color="rgba(0,0,0,0)";
-    //    reset();
-    //}
+    
     function init(){
         GD01.init();
         GD02.init();
@@ -1037,6 +886,7 @@ oCanvas.domReady(function () {
         GD22.init();
         GD23.init();
         GD24.init();
+        GD25.init();
         img1.bind("flash",function(){
             $("#name_QS").animate({
                 height:'200px',opacity:'1'},'fast');
@@ -1319,10 +1169,11 @@ oCanvas.domReady(function () {
     }
     function  fix_fm062(){
         clearAll();
+        //clearOpenDgree("FM064");
         document.getElementById("fix_head").innerHTML="62#阀门维修配合方案";
         document.getElementById("FM062").src="image/y1.png";
         setOpenDgree("FM09");
-        setOpenDgree("FM064");
+        
 
         document.getElementById("fix_line1").innerHTML="打开阀门10#";
         document.getElementById("fix_line2").innerHTML="打开阀门07#";
@@ -1363,10 +1214,29 @@ oCanvas.domReady(function () {
             fix_fm062();
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
+            document.getElementById("reset").onclick=function(){
+            	window.setTimeout(function(){              
+            		clearOpenDgree("FM09");
+                 },300);
+                window.setTimeout(function(){              
+                	clearOpenDgree("FM064");
+                	clearAll();
+                 },1000);
+//                window.setTimeout(function(){              
+//                	clearOpenDgree("FM016");
+//                	GD1001.state=3;
+//                	GD11.state=3;
+//                	clearAll();
+//                 },1700);                    
+            };
+            
             document.getElementById("export").href="download/fix-fm062.docx";
-            window.setTimeout(function(){
-               decay(2,1);
-            },100);
+            setOpenDgree("FM09");
+            clearOpenDgree("FM064");
+            GD0101.state=2;
+//            window.setTimeout(function(){
+//               decay(2,1);
+//            },100);
             setShow();
         }
     });
