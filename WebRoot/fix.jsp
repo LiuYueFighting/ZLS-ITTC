@@ -20,11 +20,14 @@
     <link rel="stylesheet" href="css/breadcrumb.css">
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <link rel="stylesheet" href="css/FM&GZW_name.css">
+    <link rel="stylesheet" href="css/flat/zebra_dialog.css" type="text/css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
     <script src="js/my_oCanvas.js"></script>
     <script src="js/fix.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="js/zebra_dialog.js"></script> 
     <style>
         body {
             background: #afd9ee;
