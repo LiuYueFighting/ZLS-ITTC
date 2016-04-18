@@ -170,7 +170,7 @@
         image.src = "image/y2.png";
         else image.src = "image/y3.png";
         }
-
+                   
     function setOpenDgree(id){
     var openDgree = 0;
     var num = id.substr(2);

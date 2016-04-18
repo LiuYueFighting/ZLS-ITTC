@@ -23,54 +23,54 @@ oCanvas.domReady(function () {
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 96},
-            {x_cell: 707 ,y_cell: 150}          
+            {x_cell: 707 ,y_cell: 220}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//1
+    });
     var GD0101=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 707 ,y_cell: 160},//160
+            {x_cell: 707 ,y_cell: 160},
             {x_cell: 707 ,y_cell: 223},
-            {x_cell: 769 ,y_cell: 261},
-            {x_cell: 989 ,y_cell: 261},
-            {x_cell: 989, y_cell: 348}
+            {x_cell: 765 ,y_cell: 258},
+            {x_cell: 989 ,y_cell: 258},
+            {x_cell: 989, y_cell: 349}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//2
+    });
     var GD02=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 747 ,y_cell: 98},
-            {x_cell: 747 ,y_cell: 222},
+            {x_cell: 748 ,y_cell: 98},
+            {x_cell: 748 ,y_cell: 222},
             {x_cell: 775 ,y_cell: 240},
-            {x_cell: 1019 ,y_cell: 240},
-            {x_cell: 1019 , y_cell: 256}
+            {x_cell: 1020 ,y_cell: 240},
+            {x_cell: 1020, y_cell: 256}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//3
+    });
     var GD03=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1019 ,y_cell: 256},
-            {x_cell: 1019, y_cell: 348}
+            {x_cell: 1020 ,y_cell: 256},
+            {x_cell: 1020, y_cell: 348}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//4
+    });
     var GD04=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1023,y_cell: 261},
-            {x_cell: 1188 ,y_cell: 261},
+            {x_cell: 1026,y_cell: 256},
+            {x_cell: 1188 ,y_cell: 256},
             {x_cell: 1188, y_cell: 374}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//5
+    });
     var GD05=createGD1({
         parent:canvas,
         cells:[
@@ -80,7 +80,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });//6
+    });
     var GD06=createGD1({
         parent:canvas,
         cells:[
@@ -90,101 +90,100 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });//7
+    });
     var GD07=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1187,y_cell: 412},
-            {x_cell: 1187,y_cell: 573}
+            {x_cell: 1188,y_cell: 412},
+            {x_cell: 1188,y_cell: 567}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//8
+    });
     var GD08=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 897 ,y_cell: 445},
-            {x_cell: 897 ,y_cell: 485},
-            {x_cell: 793 ,y_cell: 485},
-            {x_cell: 793 ,y_cell: 542},
-            {x_cell: 818, y_cell: 542}
+            {x_cell: 896 ,y_cell: 445},
+            {x_cell: 896 ,y_cell: 482},
+            {x_cell: 792 ,y_cell: 482},
+            {x_cell: 792 ,y_cell: 539},
+            {x_cell: 819, y_cell: 539}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//9
+    });
     var GD09=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 897 ,y_cell: 445},
-            {x_cell: 897 ,y_cell: 485},
-            {x_cell: 793 ,y_cell: 485},
-            {x_cell: 793 ,y_cell: 562},
-            {x_cell: 818, y_cell: 562}
+            {x_cell: 896 ,y_cell: 445},
+            {x_cell: 896 ,y_cell: 482},
+            {x_cell: 792 ,y_cell: 482},
+            {x_cell: 792 ,y_cell: 562},
+            {x_cell: 819, y_cell: 562}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//10
+    });
     var GD10=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1109 ,y_cell: 445},
-            {x_cell: 1109 ,y_cell: 485},
-            {x_cell: 990 ,y_cell: 485},
-            {x_cell: 990 ,y_cell: 527}
+            {x_cell: 1108 ,y_cell: 445},
+            {x_cell: 1108 ,y_cell: 482},
+            {x_cell: 990 ,y_cell: 482}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//11
+    });
     var GD1001=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 990 ,y_cell: 485},
-            {x_cell: 990 ,y_cell: 543},
-            {x_cell: 970, y_cell: 543}
+            {x_cell: 990 ,y_cell: 482},
+            {x_cell: 990 ,y_cell: 542},
+            {x_cell: 970, y_cell: 542}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//12
+    });
     var GD1002=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 990 ,y_cell: 485},
-            {x_cell: 900 ,y_cell: 485}
+            {x_cell: 990 ,y_cell: 482},
+            {x_cell: 900 ,y_cell: 482}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//13
+    });
     var GD11=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 990 ,y_cell: 485},
-            {x_cell: 990 ,y_cell: 563},
-            {x_cell: 970, y_cell: 563}
+            {x_cell: 990 ,y_cell: 482},
+            {x_cell: 990 ,y_cell: 562},
+            {x_cell: 970, y_cell: 562}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//14
+    });
     var GD12=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1129 ,y_cell: 653},
-            {x_cell: 962, y_cell: 653},
+            {x_cell: 1124 ,y_cell: 650},
+            {x_cell: 962, y_cell: 650},
             {x_cell: 962, y_cell: 667}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//15
+    });
     var GD13=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 848 ,y_cell: 570},
             {x_cell: 848 ,y_cell: 605},
-            {x_cell: 659 ,y_cell: 605},
-            {x_cell:659, y_cell: 646}
+            {x_cell: 660 ,y_cell: 605},
+            {x_cell:660, y_cell: 641}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//16
+    });
 
     //var GD14=createGD({
     //    parent:canvas,
@@ -199,28 +198,26 @@ oCanvas.domReady(function () {
     var GD141=createGD1({
         parent:canvas,
         cells:[
-            //{x_cell: 879 ,y_cell: 570},
-            {x_cell: 879 ,y_cell: 633},
-            {x_cell: 714 ,y_cell: 633}
-            //{x_cell: 636 ,y_cell: 633}
-            //{x_cell: 636, y_cell: 646}
+            {x_cell: 879 ,y_cell: 570},
+            {x_cell: 879 ,y_cell: 635},
+            {x_cell: 714 ,y_cell: 635}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//17
+    });
 
     var GD15=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 808 ,y_cell: 711},
-            {x_cell: 717 ,y_cell: 711},
-            {x_cell: 717 ,y_cell: 633},
-            {x_cell: 633 ,y_cell: 633},
-            {x_cell: 633, y_cell: 646}
+            {x_cell: 807 ,y_cell: 708},
+            {x_cell: 715 ,y_cell: 708},
+            {x_cell: 715 ,y_cell: 630},
+            {x_cell: 636 ,y_cell: 630},
+            {x_cell: 636, y_cell: 646}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//18
+    });
     var GD1501=createGD1({
         parent:canvas,
         cells:[
@@ -230,8 +227,8 @@ oCanvas.domReady(function () {
             {x_cell: 673, y_cell: 735}
         ],
         GDwidth:width_all,
-        color:"rgba(1,0,0,0)"
-    });//19
+        color:color_GD
+    });
     var GD16=createGD1({
         parent:canvas,
         cells:[
@@ -240,95 +237,95 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });//20
+    });
     var GD17=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 676 ,y_cell: 697},
-            {x_cell: 676 ,y_cell: 736},
-            {x_cell: 435 ,y_cell: 736},
-            {x_cell: 435, y_cell: 691}
+            {x_cell: 675 ,y_cell: 697},
+            {x_cell: 675 ,y_cell: 734},
+            {x_cell: 436 ,y_cell: 734},
+            {x_cell: 436, y_cell: 691}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//21
+    });
     var GD18=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 414 ,y_cell: 657},
-            {x_cell: 414, y_cell: 568}
+            {x_cell: 415 ,y_cell: 657},
+            {x_cell: 415, y_cell: 568}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//22
+    });
     var GD19=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 540 ,y_cell: 654},
-            {x_cell: 540 ,y_cell: 605},
-            {x_cell: 414 ,y_cell: 605},
-            {x_cell: 414, y_cell: 563}
+            {x_cell: 539 ,y_cell: 654},
+            {x_cell: 539 ,y_cell: 603},
+            {x_cell: 415 ,y_cell: 603},
+            {x_cell: 415, y_cell: 563}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//23
+    });
     var GD20=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 403 ,y_cell: 485},
-            {x_cell: 372 ,y_cell: 485}
+            {x_cell: 403 ,y_cell: 482},
+            {x_cell: 372 ,y_cell: 482}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//24
+    });
     var GD21=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 308 ,y_cell: 435},
-            {x_cell: 308, y_cell: 403},
-            {x_cell: 407, y_cell: 403},
-            {x_cell: 407, y_cell: 376}
+            {x_cell: 309 ,y_cell: 431},
+            {x_cell: 309, y_cell: 401},
+            {x_cell: 405, y_cell: 401},
+            {x_cell: 405, y_cell: 376}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//25
+    });
     var GD22=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 96},
             {x_cell: 707 ,y_cell: 223},
-            {x_cell: 769 ,y_cell: 261},
-            {x_cell: 989 ,y_cell: 261},
+            {x_cell: 765 ,y_cell: 258},
+            {x_cell: 989 ,y_cell: 258},
             {x_cell: 989, y_cell: 297},
             {x_cell: 1018, y_cell: 297},
             {x_cell: 1018, y_cell: 349}
         ],
         GDwidth:width_all,
         color:"rgba(1,0,0,0)"
-    });//26
+    });
 
     var GD23=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 422 ,y_cell: 435},
-            {x_cell: 422, y_cell: 403},
-            {x_cell: 464, y_cell: 403},
-            {x_cell: 464, y_cell: 435}
+            {x_cell: 421 ,y_cell: 433},
+            {x_cell: 421, y_cell: 401},
+            {x_cell: 465, y_cell: 401},
+            {x_cell: 465, y_cell: 435}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//27
+    });
     var GD24=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 527 ,y_cell: 439},
-            {x_cell: 527 ,y_cell: 403},
-            {x_cell: 593 ,y_cell: 403},
-            {x_cell: 593, y_cell: 375}
+            {x_cell: 527 ,y_cell: 401},
+            {x_cell: 592 ,y_cell: 401},
+            {x_cell: 592, y_cell: 375}
         ],
         GDwidth:width_all,
         color:color_GD
-    });//28
+    });
     var GD25=createGD1({
         parent:canvas,
         cells:[
@@ -800,189 +797,70 @@ oCanvas.domReady(function () {
         GD23.advance();
         GD24.advance();
         GD25.advance();
-
+        
         if(GD0101.state==0){
-        	setFMColorRed("FM064");
+        	setOpenDgree("FM064");
         	GD25.state=2;
         }
+
+//        if(GD01.full==1){
+//            GD0101.paused=1;
+//        }
+//        if(GD02.full==1){
+//            GD03.paused=1;
+//            GD04.paused=1;
+//        }
+//        if(GD04.full==1){
+//            img4.trigger("flash");
+//            img41.trigger("flash");
+//        }
+//        if(GD07.full==1){
+//            img2.trigger("flash");
+//            img21.trigger("flash");
+//            img22.trigger("flash");
+//        }
+//        if(GD09.full==1)
+//        {
+//            img5.trigger("flash");
+//            img3.trigger("flash");
+//        }
+//        if(GD10.full==1){
+//            GD1001.paused=1;
+//            GD1002.paused=1;
+//            GD11.paused=1;
+//        }
+//        if(GD15.full==1){
+//            img9.trigger("flash");
+//        }
+//        if(GD17.full==1){
+//            img8.trigger("flash");
+//            img81.trigger("flash");
+//        }
+//        if(GD19.full==1){
+//            img6.trigger("flash");
+//
+//        }
+//        if(GD21.full==1){
+//            img61.trigger("flash");
+//        }
+//        if(GD23.full==1){
+//            img63.trigger("flash");
+//        }
+//        if(GD24.full==1){
+//            img62.trigger("flash");
+//        }
         canvas.redraw();
     });
-    GD01.paused=1;
-    GD02.paused=1;
-    GD22.paused=1;
+//    GD01.paused=1;
+//    GD02.paused=1;
+//    GD22.paused=1;
     canvas.timeline.start();
 
 
     function restart(){
         canvas.timeline.start();
     }
-    //function reset(){
-    //    canvas.timeline.stop();
-    //    canvas.children[1].fill=color_GD;
-    //    canvas.children[2].fill=color_GD;
-    //    canvas.children[3].fill=color_GD;
-    //    canvas.children[5].fill=color_GD;
-    //    canvas.children[6].fill=color_GD;
-    //    canvas.children[8].fill=color_GD;
-    //    canvas.children[9].fill=color_GD;
-    //    canvas.children[10].fill=color_GD;
-    //    canvas.children[11].fill=color_GD;
-    //    canvas.children[13].fill=color_GD;
-    //    canvas.children[14].fill=color_GD;
-    //    canvas.children[17].fill=color_GD;
-    //    canvas.children[18].fill=color_GD;
-    //    canvas.children[4].fill=color_GD;
-    //    canvas.children[7].fill=color_GD;
-    //    canvas.children[12].fill=color_GD;
-    //    canvas.children[15].fill=color_GD;
-    //    canvas.children[16].fill=color_GD;
-    //    canvas.children[19].fill=color_GD;
-    //    canvas.children[22].fill="rgba(1,1,1,0)";
-    //    GD01.init();
-    //    GD02.init();
-    //    GD03.init();
-    //    GD04.init();
-    //    GD05.init();
-    //    GD06.init();
-    //    GD07.init();
-    //    GD08.init();
-    //    GD09.init();
-    //    GD10.init();
-    //    GD11.init();
-    //    GD12.init();
-    //    GD13.init();
-    //    GD14.init();
-    //    GD15.init();
-    //    GD16.init();
-    //    GD17.init();
-    //    GD18.init();
-    //    GD19.init();
-    //    GD20.init();
-    //    GD21.init();
-    //    GD22.init();
-    //    GD23.init();
-    //    GD24.init();
-    //    img1.bind("flash",function(){
-    //        GD01.paused=1;
-    //        GD22.paused=1;
-    //        GD02.paused=1;
-    //    });
-    //    img11.bind("mouseenter", function () {
-    //        canvas.mouse.cursor("pointer");
-    //        this.shadow="0 0 10px #eee";
-    //        //$("#name_QS2").css("display","inline");
-    //    }).bind("mouseleave", function () {
-    //        canvas.mouse.cursor("default");
-    //        this.shadow="0 0 0px #eee";
-    //        //$("#name_QS2").css("display","none");
-    //    }).bind("flash",function(){
-    //    });
-    //    img2.bind("flash",function(){
-    //        GD08.paused=1;
-    //        GD09.paused=1;
-    //    });
-    //
-    //
-    //    img21.bind("flash",function(){
-    //        GD10.paused=1;
-    //        GD11.paused=1;
-    //    });
-    //
-    //    img22.bind("flash",function(){
-    //        GD12.paused=1;
-    //    });
-    //
-    //    img3.bind("flash",function(){
-    //        GD15.paused=1;
-    //    });
-    //
-    //    img4.bind("flash",function(){
-    //        GD05.paused=1;
-    //        GD06.paused=1;
-    //        GD07.paused=1;
-    //    });
-    //
-    //    img5.bind("flash",function(){
-    //        GD13.paused=1;
-    //        GD14.paused=1;
-    //    });
-    //
-    //    img6.bind("flash",function(){
-    //        GD21.paused=1;
-    //        GD23.paused=1;
-    //    });
-    //
-    //    img61.bind("flash",function(){
-    //    });
-    //
-    //    img62.bind("flash",function(){
-    //    });
-    //
-    //    img63.bind("flash",function(){
-    //        GD24.paused=1;
-    //    });
-    //
-    //    img8.bind("flash",function(){
-    //        GD18.paused=1;
-    //        GD19.paused=1;
-    //    });
-    //
-    //    img9.bind("flash",function(){
-    //        GD16.paused=1;
-    //        GD17.paused=1;
-    //    });
-    //    GD01.paused=1;
-    //    GD22.paused=1;
-    //    GD02.paused=1;
-    //    canvas.settings.fps=40;
-    //    var spanText=document.getElementById("speed");
-    //    var speed=(canvas.settings.fps/40).toFixed(1);
-    //    spanText.innerHTML=speed+"X";
-    //    var btn_start=$("#btn_start");
-    //    btn_start.innerHTML="&#xe61f;";
-    //    btn_start.value=0;
-    //
-    //    canvas.redraw();
-    //    canvas.timeline.start();
-    //}
-    //function line_new(){
-    //    canvas.timeline.stop();
-    //    console.log("new");
-    //    reset();
-    //
-    //    canvas.children[1].fill="rgba(1,0,0,0)";
-    //    canvas.children[3].fill="rgba(1,0,0,0)";
-    //    canvas.children[5].fill="rgba(1,0,0,0)";
-    //    canvas.children[6].fill="rgba(1,0,0,0)";
-    //    canvas.children[8].fill="rgba(1,0,0,0)";
-    //    canvas.children[9].fill="rgba(1,0,0,0)";
-    //    canvas.children[10].fill="rgba(1,0,0,0)";
-    //    canvas.children[11].fill="rgba(1,0,0,0)";
-    //    canvas.children[13].fill="rgba(1,0,0,0)";
-    //    canvas.children[14].fill="rgba(1,0,0,0)";
-    //    canvas.children[17].fill="rgba(1,0,0,0)";
-    //    canvas.children[18].fill="rgba(1,0,0,0)";
-    //
-    //}
-    //function line_old(){
-    //    canvas.timeline.stop();
-    //    console.log("old");
-    //    reset();
-    //    canvas.children[2].fill="rgba(1,0,0,0)";
-    //    canvas.children[3].fill="rgba(1,0,0,0)";
-    //    canvas.children[4].fill="rgba(1,0,0,0)";
-    //    canvas.children[7].fill="rgba(1,0,0,0)";
-    //    canvas.children[12].fill="rgba(1,0,0,0)";
-    //    canvas.children[15].fill="rgba(1,0,0,0)";
-    //    canvas.children[16].fill="rgba(1,0,0,0)";
-    //    canvas.children[19].fill="rgba(1,0,0,0)";
-    //    canvas.children[22].fill=color_GD;
-    //}
-    //function line_none(){
-    //    canvas.timeline.stop();
-    //    GD03.color="rgba(0,0,0,0)";
-    //    reset();
-    //}
+    
     function init(){
         GD01.init();
         GD02.init();
@@ -1291,9 +1169,11 @@ oCanvas.domReady(function () {
     }
     function  fix_fm062(){
         clearAll();
+        //clearOpenDgree("FM064");
         document.getElementById("fix_head").innerHTML="62#阀门维修配合方案";
         document.getElementById("FM062").src="image/y1.png";
-        setFMColorRed("FM064");
+        setOpenDgree("FM09");
+        
 
         document.getElementById("fix_line1").innerHTML="打开阀门10#";
         document.getElementById("fix_line2").innerHTML="打开阀门07#";
@@ -1334,9 +1214,29 @@ oCanvas.domReady(function () {
             fix_fm062();
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
+            document.getElementById("reset").onclick=function(){
+            	window.setTimeout(function(){              
+            		clearOpenDgree("FM09");
+                 },300);
+                window.setTimeout(function(){              
+                	clearOpenDgree("FM064");
+                	clearAll();
+                 },1000);
+//                window.setTimeout(function(){              
+//                	clearOpenDgree("FM016");
+//                	GD1001.state=3;
+//                	GD11.state=3;
+//                	clearAll();
+//                 },1700);                    
+            };
+            
             document.getElementById("export").href="download/fix-fm062.docx";
-            setFMColorRed("FM09");
+            setOpenDgree("FM09");
+            clearOpenDgree("FM064");
             GD0101.state=2;
+//            window.setTimeout(function(){
+//               decay(2,1);
+//            },100);
             setShow();
         }
     });
@@ -1409,9 +1309,9 @@ oCanvas.domReady(function () {
 //        this.shadow="0 0 0px #eee";
 //        canvas.redraw();
     });
-//    $("#reset").bind("click", function () {
-//        clearAll();
-//    });
+    $("#reset").bind("click", function () {
+        clearAll();
+    });
 
 //    $("#name_QS").click(function(){
 //        if(confirm("是否将“取水泵房”设置为维修状态？")){
