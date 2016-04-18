@@ -834,10 +834,9 @@ oCanvas.domReady(function () {
     img5.bind("click",function(){
         //window.location.href="hx.jsp";
     	if(confirm("是否将“虹吸滤池”设置为维修状态？")){
-
-           
     		//静态配置
     		hideAllFM();
+    		setDefaultFMColor();
     		setFMColorGreen("FM016");
             setFMColorGreen("FM018");
             setFMColorGreen("FM019");
@@ -856,8 +855,8 @@ oCanvas.domReady(function () {
     		GD11.state=2;
         	GD1001.state=2;
     		
-/*        	//函数绑定
-            document.getElementById("restore").onclick = function(){
+        	//函数绑定
+/*          document.getElementById("restore").onclick = function(){
             	window.setTimeout(function(){              
             		setFMColorGreen("FM019");
                  },300);
@@ -2376,6 +2375,7 @@ oCanvas.domReady(function () {
         if(confirm("是否将“虹吸滤池”设置为维修状态？")){
         	//静态配置
     		hideAllFM();
+    		setDefaultFMColor();
     		setFMColorGreen("FM016");
             setFMColorGreen("FM018");
             setFMColorGreen("FM019");

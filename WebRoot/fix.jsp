@@ -42,199 +42,141 @@
             position: relative;
             height: 750px;
             width: 1600px;
-       }
-         #myContent a{
-    color: #283a45;
-    background: rgba(255,255,255,0.5);
-    border: 1px solid black;
-    }
-/*     #show_hide{
-    position: absolute;
-    top: 6px;
-    left: 147px;
-    font-size: 13px;
-    } */
-/*     #export{
-    position: absolute;
-    left: 70px;
-    top: 666px;
-    /* background: rgba(290,140,110,0.5); */
-    font-size: 14px;
-    } */
-/*     #restore{
-    position: absolute;
-    left: 70px;
-    top: 777px;
-    /* background: rgba(290,140,110,0.5); */
-    font-size: 14px;
-    } */
-    #reset{
-    position: absolute;
-    left: 81px;
-    top: 620px;
-    /* background: rgba(290,140,110,0.5); */
-    font-size: 14px;
-    }
-/*     #nextPage{
-    position: absolute;
-    left: 15px;
-    top: 633px;
-    /* background: rgba(290,140,110,0.5); */
-    font-size: 14px;
-    } */
-/*     #lastPage{
-    position: absolute;
-    right: 26px;
-    top: 633px;
-    /* background: rgba(290,140,110,0.5); */
-    font-size: 14px;
-    } */
-    .name_Model{
-    font-family: '微软雅黑','Arial';
-    color: #223bb8;
-    font-size: 17px;
-    font-weight: bold;
-
-    }
-    #fix-panel{
-  /*   height: 604px; */
-/*     width: 183px; */
-    position: absolute;
-    left: 91.2%;
-    top: 4.7%;
-    Z-INDEX: 999;
-    }
-    #panel_heading{
-    cursor: pointer;
-    vertical-align: middle;
-    padding: 5px 5px;
-    border-bottom: 1px solid transparent;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    height: 85px;
-    width: 245px;
-    Z-INDEX: 999;
-    -webkit-transition-property:background-color;
-    -webkit-transition-duration:1s;
-    -webkit-transition-timing-function:ease;
-    /* border: 1px solid; */
-    background: rgba(255,255,255,0.5);
-    border: 2px solid #008fd7;
-    text-align: center;
-    }
-    #panel_heading:hover{
-    background: rgba(194,215,245,0.5);
-    }
-    
-    .hcc{
-   	-webkit-transition-property:background-color;
-    -webkit-transition-duration:0.5s;
-    -webkit-transition-timing-function:ease;
-    cursor: pointer;
-    }
-    .hcc:hover{
-    background: rgba(194,215,245,0.5);
-    }
-    
-    #step_1{
-    -webkit-transition-property:background-color;
-    -webkit-transition-duration:0.5s;
-    -webkit-transition-timing-function:ease;
-    }
-    #step_1:hover{
-    background: rgba(194,215,245,0.5);
-    }
-    
-    #panel_heading h2{
-    color: #283a45;
-    font-weight: bolder;
-    }
-/*     #fix{
-    height: 535px;
-    width: 181px;
-    Z-INDEX: 999;
-    display: none;
-    border: 2px solid #008fd7;
-    } */
-    .panel{
-    /* height: 651px; */
-    width: 245px;
-    background: rgba(255,255,255,0.7);
-    color: black;
-    margin-bottom:0px;
-    }
-    .panel-heading{
-    text-align: center;
-    }
-/*     #setConfig h1{
-    font-size:20px;
-    color:#ff4400;
-    font-weight:bold;
-    }
-    #setConfig input{
-    width:50px;
-    padding:2px;
-    font-size:12px;
-    } */
-    #fix_table{
-    font-size:12px
-    }
-    .table_td_left{
-    text-align: left;
-    } 
-/*     #init_stage,#fix_table,#panel_button{
-    position:relative;
-    } */
-
-/* 	.progressBar{width:200px;height:8px;border:1px solid #98AFB7;border-radius:5px;margin-top:10px;}
-	#bar{width:0px;height:8px;border-radius:5px;background:#5EC4EA;} */
+        }
+        #myContent a{
+	    color: #283a45;
+	    background: rgba(255,255,255,0.5);
+	    border: 1px solid black;
+	    } 
+	    .name_Model{
+	    font-family: '微软雅黑','Arial';
+	    color: #223bb8;
+	    font-size: 17px;
+	    font-weight: bold;
+	    }
+	    #fix-panel{
+	    position: absolute;
+	    left: 91.2%;
+	    top: 4.7%;
+	    Z-INDEX: 999;
+	    }
+	    #panel_heading{
+	    cursor: pointer;
+	    vertical-align: middle;
+	    padding: 5px 5px;
+	    border-bottom: 1px solid transparent;
+	    border-top-left-radius: 3px;
+	    border-top-right-radius: 3px;
+	    height: 85px;
+	    width: 245px;
+	    Z-INDEX: 999;
+	    -webkit-transition-property:background-color;
+	    -webkit-transition-duration:1s;
+	    -webkit-transition-timing-function:ease;
+	    /* border: 1px solid; */
+	    background: rgba(255,255,255,0.5);
+	    border: 2px solid #008fd7;
+	    text-align: center;
+	    }
+	    #panel_heading:hover{
+	    background: rgba(194,215,245,0.5);
+	    }
+	    /* hcc:hover change color */
+	    .hcc{
+	   	-webkit-transition-property:background-color;
+	    -webkit-transition-duration:0.5s;
+	    -webkit-transition-timing-function:ease;
+	    cursor: pointer;
+	    }
+	    .hcc:hover{
+	    background: rgba(194,215,245,0.5);
+	    }
+	    
+		/* demo  	    
+		#step_1{
+	    -webkit-transition-property:background-color;
+	    -webkit-transition-duration:0.5s;
+	    -webkit-transition-timing-function:ease;
+	    }
+	    #step_1:hover{
+	    background: rgba(194,215,245,0.5);
+	    } */
+	    
+	    #panel_heading h2{
+	    color: #283a45;
+	    font-weight: bolder;
+	    }
+	    .panel{
+	    /* height: 651px; */
+	    width: 245px;
+	    background: rgba(255,255,255,0.7);
+	    color: black;
+	    margin-bottom:0px;
+	    }
+	    .panel-heading{
+	    text-align: center;
+	    }
+	    #fix_table{
+	    font-size:12px
+	    }
+	    .table_td_left{
+	    text-align: left;
+	    } 
+	/* 	.progressBar{width:200px;height:8px;border:1px solid #98AFB7;border-radius:5px;margin-top:10px;}
+		#bar{width:0px;height:8px;border-radius:5px;background:#5EC4EA;} */
     </style>
     <script>
     function setFMColorRed(id){
+    	//获取阀门及对应标签的对象
     	var image = document.getElementById(id);
     	var FMTagId = "W" + id;
     	var tag = document.getElementById(FMTagId);
-
+		//强制显示阀门及对应标签
    		image.style.display = "block"
    		tag.style.display = "block"
     	image.src = "image/y2-35x37.png";
     }
   
     function setFMColorGreen(id){
+    	//获取阀门及对应标签的对象
     	var image = document.getElementById(id);
     	var FMTagId = "W" + id;
     	var tag = document.getElementById(FMTagId);
-
+		//强制显示阀门及对应标签
    		image.style.display = "block"
    		tag.style.display = "block"
     	image.src = "image/y3-35x37.png";
     }    
-
+/*
+ *  批量显示、隐藏标签模块；考虑使用toggle	
     function showName(e){
     	var structureNameGroup = ["name_QS", "name_JJC1", "name_JJC2", "name_JJC3", 
    								  "name_VL", "name_TC", "name_TC1", "name_CY", 
    								  "name_YC", "name_HHJ1", "name_HHJ2", "name_HX", 
    								  "name_QSC1", "name_QSC2", "name_QSC3", "name_QSC4"]
-		//Update to jQuery
-		//$("div#name_gzw .name_ob").attr("style","display:block;");
-		//$("div#name_gzw .name_ob").attr("style","display:none;");
 	    if(e.checked == true){
 			$("div#name_gzw .name_ob").attr("style","display:block;");
 	    }else{
     		$("div#name_gzw .name_ob").attr("style","display:none;");
     	}
     }
-
+*/
+	/* 重置阀门颜色 */
+	function setDefaultFMColor(){
+		$("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
+        $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
+	}
+	
     function hideAllFM(){
+    	//隐藏所有阀门（包括阀门对应的标签）
 		$(".fm_default_green").attr("style","display:none;");
 		$(".fm_default_red").attr("style","display:none;");
 		$(".fm_default_hide").attr("style","display:none;");
 	}
 	
-/* 	function changeLineColor(id){
-		document.getElementById(id).style.background = "blue" ; 
-	} */
-/* 	function progressBar(){
+/* 
+ *  用进度条的形式动态显示构筑物维修的操作步骤执行情况
+	function progressBar(){
 	  	//初始化js进度条
 	  	$("#bar").css("width","0px");
 	  	//进度条的速度，越小越快
@@ -266,7 +208,7 @@
             <canvas id="canvas_fix" width="1583" height="757"></canvas>
         </div>
 	
-   	<!-- 
+   	<!-- 显示名称模块
 	<div id="show_name">
    		<p class="name_Model" id="WShow">显示名称</p>
     	<label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label> 
@@ -337,7 +279,7 @@
 		    <img id="FM054" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
 		    <img id="FM058" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
 		
-			<!-- class="name_FM" -->
+			<!-- 阀门对应的标签 -->
 		    <p id="WFM05"  class="fm_default_green">05#</p>
 		    <p id="WFM06"  class="fm_default_green">06#</p>
 		    <p id="WFM07"  class="fm_default_green">07#</p>
@@ -368,7 +310,7 @@
 		    <p id="WFM050" class="fm_default_red">050#</p>
 		    <p id="WFM056" class="fm_default_red">056#</p>
 		    <p id="WFM068" class="fm_default_red">068#</p>
-		    <!-- 不显示多余阀门下方标号 class="name_FM"-->
+		    <!-- 不显示多余阀门下方标号 -->
 		    <p id="WFM021" class="fm_default_hide" style="display:none;">021#</p>
 		    <p id="WFM024" class="fm_default_hide" style="display:none;">024#</p>
 		    <p id="WFM025" class="fm_default_hide" style="display:none;">025#</p>
@@ -384,45 +326,14 @@
 	    </div>
     </div>
     
+    <!-- 页面右侧面板 -->
     <div id="fix-panel">
     	<div>
 	    	<button type="button" id="panel_heading" class="hcc">
 	    		<h2 id="fix_head" >请点击需要维修的构筑物</h2>
 	    	</button>
 	    </div>
-<!--     	<div id="panel_body">
-	   		<div class="panel panel-default">
-	   			Default panel contents
-			    <div id="fix_table" class="table" >
-				    
-						<div id="init_stage">初始状态</div>
-					    <div id="init_stage">全场正常运行</div>
-					    <div><div>#</div><div>操作步骤</div></div>
-					    <div><div id="index_1">&nbsp;</div><div id="step_1" class="table_td_left"><div class="progressBar"><div id="bar">ttttttt</div></div></div></div>
-					    <div><div>&nbsp;</div><div id="step_1_result" class="table_td_left"></div></div>
-					    <div><div id="index_2">&nbsp;</div><div id="step_2" class="table_td_left"></div></div>
-					    <div><div>&nbsp;</div><div id="step_2_result" class="table_td_left"></div></div>
-					    <div><div id="index_3">&nbsp;</div><div id="step_3" class="table_td_left"></div></div>
-					    <div><div>&nbsp;</div><div id="step_3_result" class="table_td_left"></div></div>
-					    <div><div id="index_4">&nbsp;</div><div id="step_4" class="table_td_left"></div></div>
-					    <div><div>&nbsp;</div><div id="step_4_result" class="table_td_left"> </div></div>
-					    <div><div id="index_5">&nbsp;</div><div id="step_5" class="table_td_left"></div></div>
-					    <div><div>&nbsp;</div><div id="step_5_result" class="table_td_left"></div></div>
-					    <div><div id="index_6">&nbsp;</div><div id="step_6" class="table_td_left"></div></div>
-					    <div><div>&nbsp;</div><div id="step_6_result" class="table_td_left"></div></div>
-				    
-			    </div>
-	   		</div>
-			    
-		    <div id="panel_button">
-			    <a href="#" id="nextPage" style="display:none;">方案1</a>
-			    <a href="#" id="lastPage" style="display:none;">方案2</a>
-			    <a href="#" id="export">生成方案</a>
-			    <a href="#" id="restore">恢复运行</a>
-			    <i id="reset" class="icon iconfont iconbtn">&#xe67c;</i>
-			    demo
-			    <input type="button" value="开始" onclick="progressBar()" />
-		    </div> -->
+
 		<div class="panel panel-info" id="init_stage">
 			<div class="panel-heading">初始状态</div>
 			<table class="table">
