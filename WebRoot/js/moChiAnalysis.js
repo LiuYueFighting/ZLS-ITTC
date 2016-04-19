@@ -17,16 +17,12 @@ $(document).ready(function() {
 			+ "<td style='width:1px;height:26px'><input type='hidden' id='IDAdd' name='moChiAnalysis.ID' style='width:1px;height:25px' /></td>"
 			+ "<td id='indexNum" + _len + "'style='text-align:center; width:40px;height:26px'>" + _len + "</td>"
 			+ "<td style='width:152px;height:26px'><input name='moChiAnalysis.t' id='tAdd' type='datetime-local' style='width:150px;height:25px'/></td>"
-			+ "<td style='width:102px;height:26px'><select name='moChiAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'><option value='MTG_MoChi_SC01' selected='selected'>膜池01#</option><option value='MTG_MoChi_SC02'>膜池02#</option><option value='MTG_MoChi_SC03'>膜池03#</option></select></td>"
-			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='InV' name='moChiAnalysis.InV' data-options='min:0,precision:0,' /></td>"
-			+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OutV' name='moChiAnalysis.OutV' data-options='min:0,precision:0' /></td>"
-			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='HXOutV' name='moChiAnalysis.HXOutV' data-options='min:0,precision:0'/></td>"
-			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='LCOutV' name='moChiAnalysis.LCOutV' data-options='min:0,precision:0'/></td>"
-			+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='TCOutV' name='moChiAnalysis.TCOutV' data-options='min:0,precision:0' /></td>"
-			+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='JJOutV' name='moChiAnalysis.JJOutV' data-options='min:0,precision:0'/></td>"
-			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='HLInV' name='moChiAnalysis.HLInV' data-options='min:0,precision:0'/></td>"
-			+ "<td style='width:52px;height:26px'><input style='width:50px;height:25px' id='Storage' name='moChiAnalysis.Storage'  data-options='precision:0'/></td>"
-			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='PreH' name='moChiAnalysis.PreH' data-options='precision:2'/></td>"
+			+ "<td style='width:102px;height:26px'><select name='moChiAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'>"
+				+"<option value='MTG_MoChi_SC01' selected='selected'>膜池01#</option><option value='MTG_MoChi_SC02'>膜池02#</option><option value='MTG_MoChi_SC03'>膜池03#</option><option value='MTG_MoChi_SC04'>膜池04#</option><option value='MTG_MoChi_SC05'>膜池05#</option></select><option value='MTG_MoChi_SC06'>膜池06#</option></td>"
+			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='InPress' name='moChiAnalysis.InPress' data-options='min:0,precision:0,' /></td>"
+			+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OutPress' name='moChiAnalysis.OutPress' data-options='min:0,precision:0' /></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='DiffPress' name='moChiAnalysis.DiffPress' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InFlow' name='moChiAnalysis.InFlow' data-options='min:0,precision:0'/></td>"
 			+ "<td id='delete" + _len + "'style='width:40px;height:26px'><a href='#' onclick='deltr(" + _len + ",event)'>删除</a></td>"
 			+ "</tr>");
 	});
@@ -129,12 +125,6 @@ $(document).ready(function() {
 			},{
 				//duration: 'slow'
 			});
-//			$('#template').animate({
-//				'left': '120px',
-//				'top': '110px'
-//			},{
-//				//duration: 'slow'
-//			});
 		}
 		
 	});
@@ -236,9 +226,9 @@ function listMoChiAnalysis(data) {
 			            		    return formPoolID(value);
 			            	  }
 		            },
-		            {field : 'inPress', title : '进膜压力Mpa', align :'center', sortable : true, width:80},
-		            {field : 'outPress', title : '出水压力Mpa', align : 'center', sortable : true,width:70},
-		            {field : 'diffPress', title : '跨膜压差Mpa', align :'center', sortable : true,width:105},
+		            {field : 'inPress', title : '进膜压力 (Mpa)', align :'center', sortable : true, width:80},
+		            {field : 'outPress', title : '出水压力 (Mpa)', align : 'center', sortable : true,width:70},
+		            {field : 'diffPress', title : '跨膜压差 (Mpa)', align :'center', sortable : true,width:105},
 		            {field : 'inFlow', title : '进水流量(m³)', align : 'center', sortable : true,width:105},
 		            ]],
 		onLoadError: function () {
@@ -565,7 +555,7 @@ function dealSearch() {
 		var params = $("#frmSearch").form('clear').serialize(); //params = 'searchT=&searchPoolID='
 		switch(buttonID) {
 		case 'index1':
-			title = ' 运行工况记录';
+			title = ' 1#膜池 运行工况记录';
 			ImageTitle = "1#膜池 运行工况记录图";
 			newParams = params + 'MTG_MoChi_SC01';
 			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
@@ -582,11 +572,34 @@ function dealSearch() {
 			newParams = params + 'MTG_MoChi_SC03';
 			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
 			break;
+		case 'index4':
+			title = ' 运行工况记录';
+			ImageTitle = "4#膜池 运行工况记录图";
+			newParams = params + 'MTG_MoChi_SC04';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
+			break;
+		case 'index5':
+			title = '5#膜池 运行工况记录';
+			ImageTitle = "5#膜池 运行工况记录图";
+			newParams = params + 'MTG_MoChi_SC05';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
+			break;
+		case 'index6':
+			title = '6#膜池 运行工况记录';
+			ImageTitle = "6#膜池 运行工况记录图";
+			newParams = params + 'MTG_MoChi_SC06';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
+			break;
 		default :
-			title = '超 滤 膜 系 统 运 行 工 况 记 录';
-			ImageTitle = "膜池运行工况记录图";
-			newParams = params;
-			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
+			title = ' 1#膜池 运行工况记录';
+			ImageTitle = "1#膜池 运行工况记录图";
+			newParams = params + 'MTG_MoChi_SC01';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
+		
+//			title = '超 滤 膜 系 统 运 行 工 况 记 录';
+//			ImageTitle = "膜池运行工况记录图";
+//			newParams = params;
+//			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
 		}
 	} else if(searchMode == 1){  //如果是从查询窗口进入
 		var params = $("#frmSearch").serialize(); //params = 'searchT=不确定是否为空&searchPoolID=不确定是否为空'
@@ -616,6 +629,24 @@ function dealSearch() {
 					ImageTitleTemp = "3#膜池 运行工况记录图";
 					newParams = params + 'MTG_MoChi_SC03';
 					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
+					break;
+				case 'index4':
+					titleTemp = '4#膜池 运行工况记录';
+					ImageTitleTemp = "4#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC04';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
+					break;
+				case 'index5':
+					titleTemp = '5#膜池 运行工况记录';
+					ImageTitleTemp = "5#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC05';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
+					break;
+				case 'index6':
+					titleTemp = '6#膜池 运行工况记录';
+					ImageTitleTemp = "6#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC06';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
 					break;
 				default :
 					titleTemp = '超 滤 膜 系 统 运 行 工 况 记 录';
@@ -652,6 +683,28 @@ function dealSearch() {
 					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 					break;
+				case '4':
+					titleTemp = '4#膜池 运行工况记录';
+					ImageTitleTemp = "4#膜池 运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
+					$('input[name="chooseIndexButton"][value="index4"]').attr("checked", true);
+					break;
+				case '5':
+					titleTemp = '5#膜池 运行工况记录';
+					ImageTitleTemp = "5#膜池 运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
+					$('input[name="chooseIndexButton"][value="index5"]').attr("checked", true);
+					//alert($("input[name='chooseIndexButton'][checked]").val());
+					break;
+				case '6':
+					titleTemp = '6#膜池 运行工况记录';
+					ImageTitleTemp = "6#膜池 运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
+					$('input[name="chooseIndexButton"][value="index6"]').attr("checked", true);
+					break;
 				default :
 					titleTemp = '超 滤 膜 系 统 运 行 工 况 记 录';
 					ImageTitleTemp = "膜池运行工况记录图";
@@ -682,6 +735,24 @@ function dealSearch() {
 					ImageTitleTemp = "3#膜池 运行工况记录图";
 					newParams = params + 'MTG_MoChi_SC03';
 					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
+					break;
+				case 'index4':
+					titleTemp = '4#膜池 运行工况记录';
+					ImageTitleTemp = "4#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC04';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
+					break;
+				case 'index5':
+					titleTemp = '5#膜池 运行工况记录';
+					ImageTitleTemp = "5#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC05';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
+					break;
+				case 'index6':
+					titleTemp = '6#膜池 运行工况记录';
+					ImageTitleTemp = "6#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC06';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
 					break;
 				default :
 					titleTemp = '超 滤 膜 系 统 运 行 工 况 记 录';
@@ -717,6 +788,27 @@ function dealSearch() {
 					newParams = params;
 					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
+					break;
+				case '4':
+					titleTemp = '4#膜池 运行工况记录';
+					ImageTitleTemp = "4#膜池 运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
+					$('input[name="chooseIndexButton"][value="index4"]').attr("checked", true);
+					break;
+				case '5':
+					titleTemp = '5#膜池 运行工况记录';
+					ImageTitleTemp = "5#膜池 运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
+					$('input[name="chooseIndexButton"][value="index5"]').attr("checked", true);
+					break;
+				case '6':
+					titleTemp = '6#膜池 运行工况记录';
+					ImageTitleTemp = "6#膜池 运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
+					$('input[name="chooseIndexButton"][value="index6"]').attr("checked", true);
 					break;
 				default :
 					titleTemp = '超 滤 膜 系 统 运 行 工 况 记 录';
@@ -856,10 +948,14 @@ function keysrt(key,desc) {
 	}
 }
 
-//预测水位分析图
-var ImageTitle="膜池水位预测图" + strDate;
+//膜池运行工况记录图
+var ImageTitle="膜池运行工况记录图" + strDate;
 function prehImage(){
-	var listArray=new Array();
+	var inPressArray = new Array(); //进膜压力
+	var outPressArray = new Array(); //出水压力
+	var diffPressArray = new Array(); //跨膜压差
+	var inFlowArray = new Array(); //进水流量
+	
 	var poollist = new Array();
 	var options;
 	if (datalist.length>0){					
@@ -869,13 +965,25 @@ function prehImage(){
 			if(flag_i<0){  //不存在
 				poollist.push(row.poolID);	//添加水池
 				flag_i=poollist.length-1;
-				listArray[flag_i]=[];							
+				
+				inPressArray[flag_i]=[];
+				outPressArray[flag_i]=[];
+				diffPressArray[flag_i]=[];
+				inFlowArray[flag_i]=[];
+				
 			}//if flag_i
-			listArray[flag_i].push([Date.UTC(row.t.substring(0, 4),
+			
+			var tempTime = Date.UTC(row.t.substring(0, 4),
 					row.t.substring(5, 7)-1, //highcharts 月份要减一，因为Date.UTC从0-11计数
 					row.t.substring(8, 10),
-					row.t.substring(11, 13)
-			),row.inPress]);	//填充数据，预测高度
+					row.t.substring(11, 13));
+			
+			inPressArray[flag_i].push([tempTime,row.inPress]);	//填充数据，进膜压力
+			outPressArray[flag_i].push([tempTime,row.outPress]);	//填充数据，出水压力
+			diffPressArray[flag_i].push([tempTime,row.diffPress]);	//填充数据，跨膜压差
+			inFlowArray[flag_i].push([tempTime,row.inFlow]);	//填充数据，进水流量
+			
+			
 		} //for
 	} //if datalist.length
 	//var data=listArray[0].sort();
@@ -1055,42 +1163,6 @@ function prehImage(){
 	            	hour: "%Y-%m-%d %H时",
 	            	day: "%Y-%m-%d",
 				},
-				formatter: function() {
-					var indexButton = $('#indexForm').serialize();
-					var buttonID = indexButton.slice(-6);  //searchID = 'index3'
-					var poolName;
-					var s;
-					switch(buttonID) {
-					case 'index1':
-						poolName = '膜池01#';
-						break;
-					case 'index2':
-						poolName = '膜池02#';
-						break;
-					case 'index3':
-						poolName = '膜池03#';
-						break;
-					default:
-						poolName = '';
-					}
-					if(this.y <= 2.0) {
-						s = Highcharts.dateFormat('%Y-%m-%d %H时', this.x) + 
-							'<br />' + poolName + 
-							'<br />预测水位: ' + 
-							'<span style="color:orange;font-weight:bolder">' + this.y + '</span> 米';
-					} else if(this.y >= 4.9) {
-						s = Highcharts.dateFormat('%Y-%m-%d %H时', this.x) + 
-							'<br />' + poolName + 
-							'<br />预测水位: ' + 
-							'<span style="color:red;font-weight:bolder">' + this.y + '</span> 米';
-					} else {
-						s = Highcharts.dateFormat('%Y-%m-%d %H时', this.x) + 
-							'<br />' + poolName + 
-							'<br />预测水位: ' + 
-							'<span style="color:black;font-weight:bolder">' + this.y + '</span> 米';
-					}
-					return s;
-				},
 	        },
 			xAxis: {
 				//title:{
@@ -1117,7 +1189,7 @@ function prehImage(){
 	            	overflow: 'justify'
 	            },
 				min: 0,
-			    max: 5,
+			    //max: 150,
 			    startOnTick: true,
 	            endOnTick: true,
 	            minPadding: 0,
@@ -1130,44 +1202,38 @@ function prehImage(){
 	            tickPosition: 'inside',
 			    showLastLabel: true,
 			    title: {
-			    	text: '预测水位(/m)'                  //指定y轴的标题
+			    	text: '压力(Mpa)'                  //指定y轴的标题
 			    },
-			    //添加标示线
-			    plotLines:[{//第一条标示线
-			    	color:'red',
-			    	dashStyle:'ShortDash',     //默认值，这里定义为实线
-			    	value:4.9,               //定义在那个值上显示标示线，这里是在y轴上刻度为3的值处垂直化一条线
-			    	width:2,               //标示线的宽度，2px
-			    	label:{
-			    		text:'高预警线 4.9m',     //标签的内容
-			    	},
-			    	zIndex:100,
-			    },{//第二条标示线
-			    	color:'orange',           //线的颜色，定义为橙色
-			    	dashStyle:'ShortDash',     //默认值，这里定义为实线
-			    	value:2,               //定义在那个值上显示标示线，这里是在y轴上刻度为0.5的值处垂直化一条线
-			    	width:2,               //标示线的宽度，2px
-			    	label:{
-			    		text:'低预警线 2m',     //标签的内容
-			    	},
-			    	zIndex:100,
-			    }]
-			},],
+			  
+			},
+			{
+				//第二个y坐标
+				labels: {
+	            	overflow: 'justify'
+	            },
+			    startOnTick: true,
+	            endOnTick: true,
+	            minPadding: 0,
+	            maxPadding: 0,
+			    gridLineColor: 'silver',
+			    opposite:true,
+			    tickColor: 'green',
+	            tickLength: 10,
+	            tickWidth: 3,
+	            tickPosition: 'inside',
+			    showLastLabel: true,
+			    title: {
+			    	text: '进水量(m3)'                  //指定y轴的标题
+			    },
+			}],
 			        
 			        //显示数据
 			        plotOptions: {
 			        	line: {
-			        		dataLabels: {
-			        			enabled: true,
-			        			formatter: function() {
-			        				return this.y;
-			        			} 
-			        		},
 			        		enableMouseTracking: true,
 			        	}, 
 			        },
-			        
-			       
+			        		       
 			        //指定数据列
 			        series: []
 	};//options
@@ -1175,9 +1241,28 @@ function prehImage(){
 	for(var i=0;i<poollist.length;i++)
 	{	
 		options.series[i] = new Object();
-		options.series[i].data=listArray[i].sort(); //对listArray[i]进行排序，否则会造成时间轴上的图错乱
-		options.series[i].name='预测水位';
+		options.series[i].data=inPressArray[i].sort(); //对listArray[i]进行排序，否则会造成时间轴上的图错乱
+		options.series[i].name='进膜压力';
 		options.series[i].type="line";
+		options.series[i].yAxis = 0;
+		
+		options.series[i+poollist.length] = new Object();
+		options.series[i+poollist.length].data=outPressArray[i].sort(); 
+		options.series[i+poollist.length].name='出水压力';
+		options.series[i+poollist.length].type="line";
+		options.series[i+poollist.length].yAxis = 0;
+		
+		options.series[i+poollist.length*2] = new Object();
+		options.series[i+poollist.length*2].data=diffPressArray[i].sort(); 
+		options.series[i+poollist.length*2].name='跨膜压差';
+		options.series[i+poollist.length*2].type="line";
+		options.series[i+poollist.length*2].yAxis = 0;
+		
+		options.series[i+poollist.length*3] = new Object();
+		options.series[i+poollist.length*3].data=inFlowArray[i].sort(); 
+		options.series[i+poollist.length*3].name='进水流量';
+		options.series[i+poollist.length*3].type="line";
+		options.series[i+poollist.length*3].yAxis = 1;
 	}
 	options.series.sort(keysrt("name",false));
 	//chart = new Highcharts.Chart(options);

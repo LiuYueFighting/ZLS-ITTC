@@ -341,6 +341,9 @@ text-align: center;
 									<option value="MTG_MoChi_SC01" selected>1#膜池</option>
 									<option value="MTG_MoChi_SC02">2#膜池</option>
 									<option value="MTG_MoChi_SC03">3#膜池</option>
+									<option value="MTG_MoChi_SC04">4#膜池</option>
+									<option value="MTG_MoChi_SC05">5#膜池</option>
+									<option value="MTG_MoChi_SC06">6#膜池</option>
 								</select>
 							</dl>
 							<dl>
@@ -400,24 +403,27 @@ text-align: center;
 										<select id="PoolIDAdd1" name="moChiAnalysis.PoolID" style="width: 100px; height: 25px">
 											<option value="MTG_MoChi_SC01" selected>膜池01#</option>
 											<option value="MTG_MoChi_SC02">膜池02#</option>
-											<option value="MTG_MoChi_SC03">膜池03#</option>
+											<option value="MTG_MoChi_SC03">膜池02#</option>
+											<option value="MTG_MoChi_SC04">膜池04#</option>
+											<option value="MTG_MoChi_SC05">膜池05#</option>
+											<option value="MTG_MoChi_SC06">膜池06#</option>
 										</select>
 									</td>
 									<td style="width: 72px; height: 26px">
 										<!-- 总进水量 -->
-										<input id="InVAdd1" name="moChiAnalysis.InPress"	style="width: 70px; height: 25px" data-options="min:0,precision:0," />
+										<input id="InPress1" name="moChiAnalysis.InPress"	style="width: 70px; height: 25px" data-options="min:0,precision:0," />
 									</td>
 									<td style="width: 62px; height: 26px">
 										<!-- 出  水  量 -->
-										<input id="OutVAdd1" name="moChiAnalysis.OutPress" style="width: 60px; height: 25px"	data-options="min:0,precision:0" />
+										<input id="OutPress1" name="moChiAnalysis.OutPress" style="width: 60px; height: 25px"	data-options="min:0,precision:0" />
 									</td>
 									<td style="width: 102px; height: 26px">
-										<!-- 洗虹吸滤池 --> <input id="HXOutVAdd1"
+										 <input id="DiffRess1"
 										name="moChiAnalysis.DiffPress" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
 									</td>
 									<td style="width: 102px; height: 26px">
 										<!-- 洗V型滤池 --> 
-										<input id="LCOutVAdd1" name="moChiAnalysis.InFlow" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
+										<input id="InFlow1" name="moChiAnalysis.InFlow" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
 									</td>
 									
 									
@@ -446,9 +452,12 @@ text-align: center;
 								<!--  <input type="text" size="15" id="searchPoolID" name="searchPoolID" /> -->
 								<select class="easyui-combobox" style="width: 150px"
 									id="searchPoolID" name="searchPoolID">
-									<option value="MTG_MoChi_SC01">膜池01#</option>
+									<option value="MTG_MoChi_SC01" selected>膜池01#</option>
 									<option value="MTG_MoChi_SC02">膜池02#</option>
 									<option value="MTG_MoChi_SC03">膜池03#</option>
+									<option value="MTG_MoChi_SC04">膜池04#</option>
+									<option value="MTG_MoChi_SC05">膜池05#</option>
+									<option value="MTG_MoChi_SC06">膜池06#</option>
 								</select>									
 							</dl>
 						</form>
