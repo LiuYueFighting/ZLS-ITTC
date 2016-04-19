@@ -200,13 +200,13 @@
         #jjc2In{
         position: absolute;
         left:1507px;
-        top: 502px;
+        top: 511px;
         z-index:999;
         }
         #jjc3In{
         position: absolute;
         left:1507px;
-        top: 540px;
+        top: 560px;
         z-index:999;
         }
 /*         #hx1Out{ */
@@ -709,13 +709,13 @@ if(openDgree_062+openDgree_063 != 0){
                 <div class="panel-heading" id="panelHeading">机加池水量</div>
                 <table class="table">
                 <tr>
-                <td>1#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</td>
+                <td><p>1#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</p></td>
                 </tr>
                 <tr>
-                <td>2#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</td>
+                <td><p>2#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</p></td>
                 </tr>
                  <tr>
-                <td>3#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</td>
+                <td><p>3#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</p></td>
                 </tr>
                 </table>
                 </div>
