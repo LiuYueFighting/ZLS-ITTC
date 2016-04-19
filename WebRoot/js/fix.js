@@ -841,52 +841,14 @@ oCanvas.domReady(function () {
     		    'buttons':  [
                 {caption: '确定', callback: function() { 
 
-            		//静态配置
-            		hideAllFM();
-            		setFMColorGreen("FM016");
-                    setFMColorGreen("FM018");
-                    setFMColorGreen("FM019");
                 	fix_hx_right();
-            		document.getElementById("export").href="download/fix-hx.doc";
-                    $("div.panel").show();
-                	$("#scheme").text("方案二");
-                	
-                	//动态效果
-                    setFMColorRed("FM016");  
-            		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-            		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-            		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-            		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-                	//管道退水
-            		GD11.state=2;
-                	GD1001.state=2;
-            		
-/*        	       //函数绑定
-                   document.getElementById("restore").onclick = function(){
-                    	window.setTimeout(function(){              
-                    		setFMColorGreen("FM019");
-                         },300);
-                        window.setTimeout(function(){              
-                        	setFMColorGreen("FM018");
-                         },1000);
-                        window.setTimeout(function(){              
-                        	setFMColorGreen("FM016");
-//    		        GD1001.state=3;
-//    		        GD11.state=3;
-
-                         },1700);
-                        window.setTimeout(function(){              
-                        	clearAll();
-                         },10000);
-                    };*/
                     
                 	//手动实现一个toggle
                 	var flag = 1;
                     $("#scheme").click(function(){
                         if(flag == 1){
-                        	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+
                         	fix_hx_left();
-        	    			$("#scheme").text("方案一");
 
         	    			window.setTimeout(function(){              
         		            	decay(16,1);//GD04
@@ -898,9 +860,8 @@ oCanvas.domReady(function () {
         		             },100);
                             flag = 0;
                         }else{
-                        	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+
                         	fix_hx_right(); 
-                    		$("#scheme").text("方案二");
                         	
                         	window.setTimeout(function(){              
                         	decay(12,1);//GD04
@@ -1762,8 +1723,13 @@ oCanvas.domReady(function () {
     }
     function fix_hx_right(){
     	
-        //clearAll();
+        clearAll();
         //hideAllFM();
+		hideAllFM();
+		setDefaultFMColor();
+		setFMColorGreen("FM016");
+        setFMColorGreen("FM018");
+        setFMColorGreen("FM019");
         document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#8dd9ff";
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
@@ -1789,6 +1755,18 @@ oCanvas.domReady(function () {
 	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
 		}
 		
+		document.getElementById("export").href="download/fix-hx.doc";
+    	$("#scheme").text("方案二");
+    	
+    	//动态效果
+        setFMColorRed("FM016");  
+		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+    	//管道退水
+		GD11.state=2;
+    	GD1001.state=2;
 		
 /*		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
 		$("#step_1").addClass("trans");
@@ -1824,9 +1802,6 @@ oCanvas.domReady(function () {
 //            	GD1001.state=3;
 //            	GD11.state=3;
              },1700);
-            window.setTimeout(function(){              
-            	clearAll();
-             },10000);
         }
         
         $("div.panel").show();
@@ -1834,8 +1809,7 @@ oCanvas.domReady(function () {
     }
     
     function restore_hx_right(){
-        //恢复表格中单元格的颜色
-        $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+
         document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#283a45";
         document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
@@ -1864,8 +1838,7 @@ oCanvas.domReady(function () {
     }
     
     function restore_hx_left(){
-        //恢复表格中单元格的颜色
-        $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+
         document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#283a45";
         document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
@@ -1896,8 +1869,13 @@ oCanvas.domReady(function () {
     
     function  fix_hx_left(){
 
-        //clearAll();
-        hideAllFM();
+        clearAll();
+        //hideAllFM();
+		hideAllFM();
+		setDefaultFMColor();
+		setFMColorRed("FM014");
+        setFMColorRed("FM017");
+        setFMColorRed("FM019");
         document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#8dd9ff";
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
@@ -1922,12 +1900,40 @@ oCanvas.domReady(function () {
 	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
 	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
 		}
-
+		
+		document.getElementById("export").href="download/fix-hx.doc";
+    	$("#scheme").text("方案一");
+    	
+    	
         $("div.panel").show();
         
       
         document.getElementById("restore").onclick=function(){
-            restore_hx_left();
+        	restore_hx_left();
+        	
+        	window.setTimeout(function(){              
+        		setFMColorGreen("FM019");
+        		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+             },300);
+            window.setTimeout(function(){              
+            	setFMColorGreen("FM017");
+        		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+             },1000);
+            window.setTimeout(function(){              
+            	setFMColorGreen("FM014");
+        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+//            	GD1001.state=3;
+//            	GD11.state=3;
+             },1700);
         }
     }
 
@@ -2386,37 +2392,15 @@ oCanvas.domReady(function () {
 		'title':    '维修提示',
 		'buttons':  [
         {caption: '确定', callback: function() { 
-                        
-        	//静态配置
-    		hideAllFM();
-    		setDefaultFMColor();
-    		setFMColorGreen("FM016");
-            setFMColorGreen("FM018");
-            setFMColorGreen("FM019");
+
         	fix_hx_right();
-    		document.getElementById("export").href="download/fix-hx.doc";
-            $("div.panel").show();
-        	$("#scheme").text("方案二");
-        	
-        	//动态效果
-            setFMColorRed("FM016");  
-    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-        	//管道退水
-    		GD11.state=2;
-        	GD1001.state=2;
-    		
-        	//函数绑定
             
         	//手动实现一个toggle
         	var flag = 1;
             $("#scheme").click(function(){
                 if(flag == 1){
-                	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+
                 	fix_hx_left();
-	    			$("#scheme").text("方案一");
 
 	    			window.setTimeout(function(){              
 		            	decay(16,1);//GD04
@@ -2428,9 +2412,8 @@ oCanvas.domReady(function () {
 		             },100);
                     flag = 0;
                 }else{
-                	$(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+                	
                 	fix_hx_right(); 
-            		$("#scheme").text("方案二");
                 	
                 	window.setTimeout(function(){              
                 	decay(12,1);//GD04
@@ -2632,12 +2615,13 @@ oCanvas.domReady(function () {
         $("div#name_gzw .name_ob").attr("style","background:rgba(255,255,255,0.5)");
         //恢复表格中单元格的颜色
         $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+        $(".table_td_left").attr("style","text-align:left");
         //解除功能面板的函数绑定
 /*      document.getElementById("scheme").onclick = function(){提示};
         document.getElementById("restore").onclick = function(){提示};
         document.getElementById("export").onclick = function(){提示};*/
         //隐藏表格面板
-        //$("div.panel").hide();
+        $("div.panel").hide();
     }
 
 });

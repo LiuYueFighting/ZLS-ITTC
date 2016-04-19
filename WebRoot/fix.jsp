@@ -115,6 +115,7 @@
 	    background: rgba(255,255,255,0.7);
 	    color: black;
 	    margin-bottom:0px;
+	    display:none;
 	    }
 	    .panel-heading{
 	    text-align: center;
