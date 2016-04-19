@@ -11,7 +11,6 @@
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
     <title>北京自来水集团工艺平台</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/normal.css">
     <link rel="stylesheet" href="css/top_down.css">
@@ -20,13 +19,24 @@
     <link rel="stylesheet" href="css/FM&GZW_name.css">
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <link rel="stylesheet" href="css/flat/zebra_dialog.css" type="text/css">
+    
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+    
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+	<link rel="stylesheet" type="text/css" href="style/myeasyui.css" />    
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
     <script src="js/GN_FMControl.js"></script>
 	<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-    <script type="text/javascript" src="js/zebra_dialog.js"></script> 
-
+    <script type="text/javascript" src="js/zebra_dialog.js"></script>
+    
+    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script> 
+    
     <style>
         #myContent {
 	    margin: 0px 0px 0px 0px;
@@ -200,13 +210,13 @@
         #jjc2In{
         position: absolute;
         left:1507px;
-        top: 511px;
+        top: 501px;
         z-index:999;
         }
         #jjc3In{
         position: absolute;
         left:1507px;
-        top: 560px;
+        top: 540px;
         z-index:999;
         }
 /*         #hx1Out{ */
@@ -372,10 +382,11 @@ function sAlert(str){
         if(read<0||read>1800||isNaN(read)){
 //        alert("进厂水量输入有误！请重新输入！"); 
 //        sAlert("进厂水量输入有误！请重新输入！");
-$.Zebra_Dialog('<strong>进厂水量输入有误！</strong> </br>进厂水量范围为0-1800m<sup>3</sup>/h', {
-    'type':     'warning',
-    'title':    '错误'
-});
+//$.Zebra_Dialog('<strong>进厂水量输入有误！</strong> </br>进厂水量范围为0-1800m<sup>3</sup>/h', {
+//    'type':     'warning',
+//    'title':    '错误'
+//});
+			$.messager.alert('错误', '<strong>进厂水量输入有误！</strong> </br>进厂水量范围为0-1800m<sup>3</sup>/h', 'info');
         return;
     }
     var textFeild =document.getElementById("write");
@@ -385,10 +396,11 @@ $.Zebra_Dialog('<strong>进厂水量输入有误！</strong> </br>进厂水量�
     var read_065=parseFloat(document.getElementById("read_FM65").value);
     if(read_062==0&&read_063==0&&read_065==0){
 //        sAlert("开启度不能全部为0，请重新输入！");
-$.Zebra_Dialog('<strong>开启度不能全部为0!</strong> </br>请重新输入！', {
-    'type':     'warning',
-    'title':    '错误'
-});
+//		$.Zebra_Dialog('<strong>开启度不能全部为0!</strong> </br>请重新输入！', {
+//	    'type':     'warning',
+//	    'title':    '错误'
+//		});
+		$.messager.alert('错误', '<strong>开启度不能全部为0!</strong> </br>请重新输入！', 'info');
         return;
     }
     setOpenDgree("FM062",read_062);
@@ -404,10 +416,11 @@ $.Zebra_Dialog('<strong>开启度不能全部为0!</strong> </br>请重新输入
         <%--var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");--%>
         if(openDgree<0||openDgree>100||isNaN(openDgree)){
 //            sAlert("阀门"+num+"的开启度输入有误！请重新输入！");
-				$.Zebra_Dialog('<strong>阀门</strong>'+num+'<strong>的开启度输入有误！</br>请重新输入！</strong>', {
-    			'type':     'warning',
-    			'title':    '错误'
-				});
+//				$.Zebra_Dialog('<strong>阀门</strong>'+num+'<strong>的开启度输入有误！</br>请重新输入！</strong>', {
+//    			'type':     'warning',
+//    			'title':    '错误'
+//				});
+				$.messager.alert('错误', '<strong>阀门</strong>'+num+'<strong>的开启度输入有误！</br>请重新输入！</strong>', 'info');
             return;
         }
     switch(id){
@@ -709,13 +722,13 @@ if(openDgree_062+openDgree_063 != 0){
                 <div class="panel-heading" id="panelHeading">机加池水量</div>
                 <table class="table">
                 <tr>
-                <td><p>1#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</p></td>
+                <td>1#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</td>
                 </tr>
                 <tr>
-                <td><p>2#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</p></td>
+                <td>2#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</td>
                 </tr>
                  <tr>
-                <td><p>3#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</p></td>
+                <td>3#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m<sup>3</sup>/h</td>
                 </tr>
                 </table>
                 </div>
