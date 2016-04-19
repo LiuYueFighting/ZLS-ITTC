@@ -1112,49 +1112,8 @@ oCanvas.domReady(function () {
         canvas.children[19].fill="rgba(1,1,1,0)";
         canvas.redraw();
 
-        setFMColorGreen("FM05");
-        setFMColorGreen("FM06");
-        setFMColorGreen("FM07");
-        setFMColorGreen("FM09");
-        setFMColorGreen("FM010");
-        setFMColorGreen("FM065");
-        setFMColorGreen("FM062");
-        setFMColorGreen("FM063");
-        setFMColorGreen("FM064");
-        setFMColorGreen("FM066");
-        setFMColorGreen("FM069");
-        setFMColorGreen("FM015");
-        setFMColorGreen("FM045");
-        setFMColorGreen("FM014");
-        setFMColorGreen("FM016");
-        setFMColorGreen("FM068");
-        setFMColorGreen("FM067");
-        setFMColorGreen("FM017");
-        setFMColorGreen("FM018");
-        setFMColorGreen("FM019");
-        setFMColorGreen("FM067");
-        setFMColorGreen("FM052");
-        setFMColorGreen("FM020");
-        setFMColorGreen("FM056");
-        setFMColorGreen("FM057");
-        setFMColorGreen("FM058");
-        setFMColorGreen("FM053");
-        setFMColorGreen("FM054");
-        setFMColorGreen("FM021");
-        setFMColorGreen("FM022");
-        setFMColorGreen("FM024");
-
-        setFMColorGreen("FM059");
-        setFMColorGreen("FM046");
-        setFMColorGreen("FM044");
-        setFMColorGreen("FM055");
-        setFMColorGreen("FM026");
-        setFMColorGreen("FM051");
-        setFMColorGreen("FM055");
-        setFMColorGreen("FM047");
-        setFMColorGreen("FM048");
-        setFMColorGreen("FM049");
-
+        $(".fm_default_green").attr("src","image/y3-35x37.png");
+       
         document.getElementById("scheme").style.display="none";        
 
         //清空单元格的内容

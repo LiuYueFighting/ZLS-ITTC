@@ -81,11 +81,15 @@
     font-weight: bold;
     font-size: 18px;
     }
-
+/*     #myContent a{
+    color: #283a45;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid black;
+    } */ 
 
     .name_ob{
     font-family: '微软雅黑','Arial';
-    color:#006699;
+    color: #283a45;
     font-size: 20px;
     font-weight:bold;
     }
@@ -217,9 +221,9 @@
     height: 50px;
     width: auto;
     }
-    #mainView>a{
+/*  #mainView>a{
     color: #ff4400;
-    }
+    } */
     #btn_group_container{
     position:relative;
     width:100%;
@@ -269,7 +273,7 @@
     <canvas id="canvas_main" width="1600" height="757"></canvas>
 
     <a href="QS.jsp"  id="name_QS"    style="text-decoration: none" class="name_ob">取水泵房</a>
-     <a href="QS.jsp" id="name_QS2"   style="text-decoration: none" class="name_ob">取水泵房</a>
+    <a href="QS.jsp"  id="name_QS2"    style="text-decoration: none" class="name_ob">取水泵房</a>
     <a href="JJC.jsp" id="name_JJC1"  style="text-decoration: none" class="name_ob">1#<br>机加池</a>
     <a href="JJC.jsp" id="name_JJC2"  style="text-decoration: none" class="name_ob">2#<br>机加池</a>
     <a href="JJC.jsp" id="name_JJC3"  style="text-decoration: none" class="name_ob">3#<br>机加池</a>
@@ -278,10 +282,10 @@
     <a href="hxt.jsp" id="name_TC1"  class="name_ob" style="text-decoration: none">2#炭滤池</a>
     <a href="cy.jsp"  id="name_CY"   class="name_ob" style="text-decoration: none">臭氧<br>接触池</a>
     <a href="cy.jsp"  id="name_CYC"  class="name_ob" style="text-decoration: none">臭氧生产车间</a>
-    <a href="#"        id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
+    <a href="#"       id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
     <a href="hhj.jsp" id="name_HHJ"  class="name_ob" style="text-decoration: none">旧混合井</a>
     <a href="hhj.jsp" id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
-    <a href="hx.jsp" id="name_HX"   class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
+    <a href="hx.jsp"  id="name_HX"   class="name_ob" style="text-decoration: none">虹吸滤池</a>
     <a href="qsc.jsp" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
     <a href="qsc.jsp" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
     <a href="qsc.jsp" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
