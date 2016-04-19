@@ -102,7 +102,7 @@
     #list_group{
     width:150px;
     position:absolute;
-    top:74%;
+    top:83%;
     font-size:20px;
     }
     .panel-heading{
@@ -117,7 +117,27 @@
     width: 136px;
     }
     #second{
+    border:0px;
+    height:20px;
+    text-align:left;
+    font-size:13px;
+    }
+    #third{
     border: 0px;
+    height:20px;
+    text-align:left;
+    font-size:10px;
+    }
+    #dash1{
+    border:dashed 1px #999;
+    border-left:0px;
+    border-right:0px;
+    }
+    #dash2{
+    border:dashed 1px #999;
+    border-left:0px;
+    border-right:0px;
+    border-bottom:0px;
     }
     </style>
 </head>
@@ -150,18 +170,27 @@
                 <div class="panel-heading">运行参数</div>
                 <table class="table">
                 <tr>
-                <td>滤速</td><td>8m/h</td>
+                <td>滤速</td><td>8.07m/h</td>
                 </tr>
                 <tr>
                 <td>滤程</td><td>48h</td>
                 </tr>
                 <tr>
                 <tr><td>反冲强度</td><td></td></tr>
-                <tr>
-                <td  id="second">&nbsp;&nbsp;气冲</td><td id="second">L/s&middot;m&sup2;</td>
+                <tr id="dash1" height="20">
+                <td  id="second">&nbsp;&nbsp;<b>单独气洗</b></td><td id="second">15L/m&sup2;&middot;s</td>
                 </tr>
-                <tr>
-                <td id="second">&nbsp;&nbsp;水冲</td><td id="second">L/s&middot;m&sup2;</td>
+                <tr height="20">
+                <td  id="second" colspan="2" >&nbsp;&nbsp;<b>气水同时反冲洗</b></td>
+                </tr>
+                <tr height="20">
+                <td  id="third">&nbsp;&nbsp;&nbsp;&nbsp;气洗</td><td id="third">15L/m&sup2;&middot;s</td>
+                </tr>
+                <tr height="20">
+                <td  id="third">&nbsp;&nbsp;&nbsp;&nbsp;水洗</td><td id="third">2.5-3L/m&sup2;&middot;s</td>
+                </tr>
+                <tr id="dash2" height="20">
+                <td id="second" >&nbsp;&nbsp;<b>清水漂洗</b></td><td id="second">5-6L/&sup2;&middot;s</td>
                 </tr>
                 </tr>
                 
@@ -176,10 +205,10 @@
                 <td>出水浊度</td><td><0.25NTU</td>
                 </tr>
                 <tr>
-                <td>铁</td><td>&lt;0.15mg/L</td>
+                <td>铁</td><td>&lt;0.3mg/L</td>
                 </tr>
                 <tr>
-                <td>铝</td><td>&lt;0.1mg/L</td>
+                <td>铝</td><td>&lt;0.2mg/L</td>
                 </tr>
                 </table>
                 </div>

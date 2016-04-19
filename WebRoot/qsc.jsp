@@ -177,10 +177,10 @@
                 <td>出水浊度</td><td><0.25NTU</td>
                 </tr>
                 <tr>
-                <td>铁</td><td>&lt;0.15mg/L</td>
+                <td>铁</td><td>&lt;0.3mg/L</td>
                 </tr>
                 <tr>
-                <td>铝</td><td>&lt;0.1mg/L</td>
+                <td>铝</td><td>&lt;0.2mg/L</td>
                 </tr>
                 </table>
                 </div>

@@ -892,7 +892,7 @@ oCanvas.domReady(function () {
         GD23.init();
         GD24.init();
         GD25.init();
-        //GD26.int();
+   
         img1.bind("flash",function(){
             $("#name_QS").animate({
                 height:'200px',opacity:'1'},'fast');
