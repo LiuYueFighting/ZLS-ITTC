@@ -503,7 +503,7 @@ public class DataAnalysisAction extends ActionSupport{
 					operateSuccess = false;
 				}
 				String poolIDTemp=sheet.getCell(1,2).getContents();
-				String sql="delete DataAnalysis where PoolID like '%"+poolIDTemp+"'";
+				String sql="delete from DataAnalysis where PoolID like '%"+poolIDTemp+"'";
 				sql+= " and Convert(varchar,t,120)  like '%"+day+"%'";
 				// 直接覆盖
 				int deleteResult = dataAnalysisService.bulkUpadte(sql);

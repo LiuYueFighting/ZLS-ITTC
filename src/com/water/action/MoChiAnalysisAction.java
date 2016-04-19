@@ -401,7 +401,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getInPress()),formatBody));
 						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOutPress()),formatBody));
 						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getDiffPress()),formatBody));
-						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getInFlow()),formatBody));
+						sheet.addCell(new Label(5,j,Long.toString(list.get(i).getInFlow()),formatBody));
 						j=j+1;
 					}
 				}
@@ -472,7 +472,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 					operateSuccess = false;
 				}
 				String poolIDTemp=sheet.getCell(1,2).getContents();
-				String sql="delete MoChiAnalysis where PoolID like '%"+poolIDTemp+"'";
+				String sql="delete from MoChiAnalysis where PoolID like '%"+poolIDTemp+"'";
 				sql+= " and Convert(varchar,t,120)  like '%"+day+"%'";
 				// 直接覆盖
 				int deleteResult = moChiAnalysisService.bulkUpadte(sql);
@@ -497,7 +497,8 @@ public class MoChiAnalysisAction extends ActionSupport{
 						dataTemp.setPoolID(sheet.getCell(1,i).getContents());						
 						dataTemp.setInPress(Double.parseDouble(sheet.getCell(2,i).getContents()));
 						dataTemp.setOutPress(Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setInFlow(Long.parseLong(sheet.getCell(4,i).getContents()));
+						dataTemp.setDiffPress(Double.parseDouble(sheet.getCell(4,i).getContents()));
+						dataTemp.setInFlow(Long.parseLong(sheet.getCell(5,i).getContents()));
 						operateSuccess=(moChiAnalysisService.addMoChiAnalysis(dataTemp)>0);	//添加到数据库
 					}
 				} //for
