@@ -1735,7 +1735,7 @@ oCanvas.domReady(function () {
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         document.getElementById("scheme").style.display="block";
         
-/*        setFMColorRed("FM016");
+/*      setFMColorRed("FM016");
         setFMColorRed("FM018");
         setFMColorRed("FM019");*/
 
@@ -1781,30 +1781,6 @@ oCanvas.domReady(function () {
 	
         document.getElementById("restore").onclick=function(){
         	restore_hx_right();
-        	
-        	window.setTimeout(function(){              
-        		setFMColorGreen("FM019");
-        		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-             },300);
-            window.setTimeout(function(){              
-            	setFMColorGreen("FM018");
-        		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-             },1000);
-            window.setTimeout(function(){              
-            	setFMColorGreen("FM016");
-        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-//            	GD1001.state=3;
-//            	GD11.state=3;
-             },1700);
         }
         
         $("div.panel").show();
@@ -1812,12 +1788,16 @@ oCanvas.domReady(function () {
     }
     
     function restore_hx_right(){
-
+    	
+    	//静态部分
+    	$("#init_state").text("阀门维修中...");
+        $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+        $(".table_td_left").attr("style","text-align:left");
         document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#283a45";
         document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
         
-/*        setFMColorGreen("FM016");
+/*      setFMColorGreen("FM016");
         setFMColorGreen("FM018");
         setFMColorGreen("FM019");*/
         
@@ -1838,15 +1818,48 @@ oCanvas.domReady(function () {
 		}
         
 		document.getElementById("restore").onclick=function(){/**/};
+		
+		//动态部分
+    	//计时器控制阀门颜色和对应维修步骤变化情况
+    	window.setTimeout(function(){              
+    		setFMColorGreen("FM019");
+    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+         },300);
+        window.setTimeout(function(){              
+        	setFMColorGreen("FM018");
+    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+         },1000);
+        window.setTimeout(function(){              
+        	setFMColorGreen("FM016");
+    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+//        	GD1001.state=3;
+//        	GD11.state=3;
+         },1700);
+        window.setTimeout(function(){              
+        	clearAll();
+         },4700);
+        
     }
     
     function restore_hx_left(){
-
+    	//静态部分
+    	$("#init_state").text("阀门维修中...");
+        $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
+        $(".table_td_left").attr("style","text-align:left");
         document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#283a45";
         document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
         
-/*        setFMColorGreen("FM014");
+/*      setFMColorGreen("FM014");
         setFMColorGreen("FM017");
         setFMColorGreen("FM019");*/
         
@@ -1868,12 +1881,42 @@ oCanvas.domReady(function () {
 		
 		//执行完恢复运行后解除恢复运行绑定的函数
 		document.getElementById("restore").onclick=function(){/**/};
+		
+		//动态部分
+    	//计时器控制阀门颜色和对应维修步骤变化情况
+    	window.setTimeout(function(){              
+    		setFMColorGreen("FM019");
+    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+         },300);
+        window.setTimeout(function(){              
+        	setFMColorGreen("FM017");
+    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+         },1000);
+        window.setTimeout(function(){              
+        	setFMColorGreen("FM014");
+    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+//        	GD1001.state=3;
+//        	GD11.state=3;
+         },1700);
+        window.setTimeout(function(){              
+        	clearAll();
+         },4700);
+		
     }
     
     function  fix_hx_left(){
 
         clearAll();
-        //hideAllFM();
+        
 		hideAllFM();
 		setDefaultFMColor();
 		setFMColorRed("FM014");
@@ -1913,30 +1956,6 @@ oCanvas.domReady(function () {
       
         document.getElementById("restore").onclick=function(){
         	restore_hx_left();
-        	
-        	window.setTimeout(function(){              
-        		setFMColorGreen("FM019");
-        		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-             },300);
-            window.setTimeout(function(){              
-            	setFMColorGreen("FM017");
-        		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-             },1000);
-            window.setTimeout(function(){              
-            	setFMColorGreen("FM014");
-        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-//            	GD1001.state=3;
-//            	GD11.state=3;
-             },1700);
         }
     }
 
@@ -2597,6 +2616,7 @@ oCanvas.domReady(function () {
 		 *  "FM048", "FM049", "FM051", "FM053", "FM054", "FM058"]
 		 */
         
+
         //恢复阀门的默认颜色
         $("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
         $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
@@ -2614,7 +2634,7 @@ oCanvas.domReady(function () {
 		
 		//重置面板提示的内容
         $("#fix_head").text("请点击需要维修的构筑物");
-        
+        $("#init_state").text("全场正常运行");
         //恢复构筑物及其标签的颜色
         $("div#name_gzw .name_ob").attr("style","color:#283a45");
         $("div#name_gzw .name_ob").attr("style","background:rgba(255,255,255,0.5)");

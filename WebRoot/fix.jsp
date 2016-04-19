@@ -341,7 +341,7 @@
 		<div class="panel panel-info" id="init_stage">
 			<div class="panel-heading">初始状态</div>
 			<table class="table">
-				<tr><td>全场正常运行</td></tr>
+				<tr><td id="init_state">全场正常运行</td></tr>
 			</table>
 		</div>
 
