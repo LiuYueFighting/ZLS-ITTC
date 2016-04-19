@@ -523,7 +523,7 @@ top: 10px;
 							<dl>
 								&nbsp; &nbsp;炭池反洗水量 : &nbsp;
 								<input class="easyui-numberbox textbox"
-									style="width: 200px; height: 25px" id="TCOutV"
+									style="width: 190px; height: 25px" id="TCOutV"
 									name="dataAnalysis.TCOutV" data-options="min:0,precision:0" />
 								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;机加池排泥 : &nbsp;
 								<input class="easyui-numberbox textbox"

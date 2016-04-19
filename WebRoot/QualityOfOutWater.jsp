@@ -247,7 +247,7 @@ div.menuSecond{
 	th, td, input, option {
 	text-align:center;
 	}
-	
+
 </style>
 <body>
 	<jsp:include page="top.jsp" />
@@ -306,48 +306,45 @@ div.menuSecond{
 		</div>
 		<center>
 			<div id="tableEdit" class="easyui-dialog" data-options="closed:true">
-				<form id="formEdit">
-					<table>
-						<tr>
-							<td><input id="ID" name="outStat.ID" type="hidden" /></td>
-						</tr>
-						<tr>
-							<td>时间</td>
-							<td><input id="t" name="outStat.t" type="text" class="easyui-datebox"
-									style="width: 200px; height: 25px"/></td>
-							<td>编号</td>
-							<td><select id="PoolID" name="outStat.PoolID" type="text" class="easyui-combobox"
+				<form id="formEdit"><br />
+						<input id="ID" name="outStat.ID" type="hidden" />
+						<dl>
+							&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; 时   间 : &nbsp;
+							<input id="t" name="outStat.t" type="text" class="easyui-datebox"
+									style="width: 200px; height: 25px"/>
+							
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水池编号 : &nbsp; 
+							<select id="PoolID" name="outStat.PoolID" type="text" class="easyui-combobox"
 									style="width: 200px; height: 25px">
 									<option value="MTG_JJC_SC01" selected>1#出水池</option>
 									<option value="MTG_JJC_SC02">2#出水池</option>
 									<option value="MTG_JJC_SC03">3#出水池</option>
 								</select>
-							</td>
-						</tr>
-						<tr>
-							<td>浊度</td>
-							<td>
+							
+						</dl>
+						<dl>
+							&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; 浊   度 : &nbsp;							
 								<input id="NTU" name="outStat.NTU" type="text" class="easyui-numberbox"
 									style="width: 200px; height: 25px" data-options="prompt:'',precision:3"/></td>
-							</td>
-							<td>余氯</td>
-							<td>
+							
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  余  &nbsp;  &nbsp; &nbsp; 氯 : &nbsp;
+							
 								<input id="CL" name="outStat.Cl" type="text" class="easyui-numberbox"
 									style="width: 200px; height: 25px" data-options="prompt:'',precision:3"/></td>
-							</td>
-						</tr>
-						<tr>
-							<td>铁</td>
-							<td>
+							
+						</dl>
+						<dl>
+							&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; 铁 : &nbsp; &nbsp; &nbsp; 
+							
 								<input id="Fe" name="outStat.Fe" type="text" class="easyui-numberbox"
 									style="width: 200px; height: 25px" data-options="prompt:'',precision:3"/></td>
-							</td>
-							<td>铝</td>
-							<td>
+							
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  铝 : &nbsp; &nbsp; &nbsp;
+							
 								<input id="AL" name="outStat.Al" type="text" class="easyui-numberbox"
 									style="width: 200px; height: 25px" data-options="prompt:'',precision:3"/></td>
-							</td>
-						</tr>
+							
+						</dl>
 					</table>
 				</form>
 			</div>

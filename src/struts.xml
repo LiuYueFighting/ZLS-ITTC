@@ -340,5 +340,89 @@
 			<result name="notSignIn">/notSignIn.jsp</result>
 		</action>		
 		
+		
+		<!-- 出水水质分析 -->
+		<action name="listMoChiAnalysis" class="moChiAnalysisAction"
+			method="list">
+			<!-- 指定的属性作为根元素输出 -->
+			<result name="success" type="json">
+				<param name="root">data</param>
+			</result>
+			<result name="input" type="json">MoChiAnalysis.jsp</result>
+			<interceptor-ref name="loginStack" />
+			<result name="notSignIn">/notSignIn.jsp</result>
+		</action>
+
+		<!-- 添加项目 -->
+		<action name="addMoChiAnalysis" class="moChiAnalysisAction"
+			method="addMoChiAnalysis">
+			<result name="success" type="json" />
+			<result name="input" type="json">MoChiAnalysis.jsp</result>
+			<interceptor-ref name="loginStack" />
+			<result name="notSignIn">/notSignIn.jsp</result>
+		</action>
+
+		<!-- 删除项目 -->
+		<action name="deleteMoChiAnalysis" class="moChiAnalysisAction"
+			method="deleteMoChiAnalysis">
+			<result name="success" type="json" />
+			<result name="input" type="json">MoChiAnalysis.jsp</result>
+			<interceptor-ref name="loginStack" />
+			<result name="notSignIn">/notSignIn.jsp</result>
+		</action>
+
+		<!-- 得到一项记录 -->
+		<action name="findMoChiAnalysis" class="moChiAnalysisAction"
+			method="findMoChiAnalysis">
+			<result name="success" type="json" />
+			<result name="input" type="json">MoChiAnalysis.jsp</result>
+			<interceptor-ref name="loginStack" />
+			<result name="notSignIn">/notSignIn.jsp</result>
+		</action>
+
+		<!-- 更新项目 -->
+		<action name="updateMoChiAnalysis" class="moChiAnalysisAction"
+			method="updateMoChiAnalysis">
+			<result name="success" type="json" />
+			<result name="input" type="json">MoChiAnalysis.jsp</result>
+			<interceptor-ref name="loginStack" />
+			<result name="notSignIn">/notSignIn.jsp</result>
+		</action>
+
+		<action name="searchMoChiAnalysis" class="moChiAnalysisAction"
+			method="searchMoChiAnalysis">
+			<result name="success" type="json">
+				<param name="root">data</param>
+			</result>
+			<result name="input" type="json">MoChiAnalysis.jsp</result>
+			<interceptor-ref name="loginStack" />
+			<result name="notSignIn">/notSignIn.jsp</result>
+		</action>
+
+		<!-- 导出到excel -->
+		<action name="exportMoChiAnalysis" class="moChiAnalysisAction"
+			method="export2excel">
+			<result name="success" type="json"/>
+			<result name="input" type="json">MoChiAnalysis.jsp</result>
+			<interceptor-ref name="loginStack" />
+			<result name="notSignIn">/notSignIn.jsp</result>
+		</action>
+		
+		<!-- 导入excel -->
+		<action name="importMoChiAnalysis" class="moChiAnalysisAction" method="import2DB">
+			 <!-- <result name="success" type="json">MoChiAnalysis.jsp</result> -->
+			<result name="success" type="json"/>			 
+			<result name="input" type="json">MoChiAnalysis.jsp</result>
+			<interceptor-ref name="loginStack" />
+			<result name="notSignIn">/notSignIn.jsp</result>
+		</action>
+		<!-- 导入检查 -->
+		<action name="importCheckMoChiAnalysis" class="moChiAnalysisAction" method="importCheck">
+			<result name="success" type="json">MoChiAnalysis.jsp</result>						 
+			<result name="input" type="json">MoChiAnalysis.jsp</result>
+			<interceptor-ref name="loginStack" />
+			<result name="notSignIn">/notSignIn.jsp</result>
+		</action>	
+		
 	</package>
 </struts>

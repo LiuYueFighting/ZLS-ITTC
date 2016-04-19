@@ -482,9 +482,9 @@ function dealAddSave() {
 		var re_ID = new RegExp(/outStat.PoolID=MTG_JJC_SC0\d/);
 		var re_t = new RegExp(/outStat.t=\d{4}-\d{2}\-\d{2}/);
 		var test = re_t.test(paramsArray[i]) && re_ID.test(paramsArray[i]);
-		alert("paramsArray[" + i +"] = " + paramsArray[i] +
-				"\nre_t" + re_t +
-				"\nre_ID" + re_ID);
+//		alert("paramsArray[" + i +"] = " + paramsArray[i] +
+//				"\nre_t" + re_t +
+//				"\nre_ID" + re_ID);
 		
 		if(!test) {
 			if(i == 1)

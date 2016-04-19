@@ -525,6 +525,7 @@ function dealAddSave() {
 	}
 	//strTAddalert('Form表单' + params);
 	//alert('Form表单Array' + paramsArray);
+
 	var errorMessage = '';
 	var flag = true;
 	for(var i = 1; i < paramsArray.length; ++i) {

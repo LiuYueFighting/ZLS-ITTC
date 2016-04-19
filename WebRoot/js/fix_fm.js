@@ -1155,21 +1155,16 @@ oCanvas.domReady(function () {
         setFMColorGreen("FM048");
         setFMColorGreen("FM049");
 
-        document.getElementById("nextPage").style.display="none";
-        document.getElementById("lastPage").style.display="none";
+        document.getElementById("scheme").style.display="none";        
 
-
-        document.getElementById("fix_line1").innerHTML="";
-        document.getElementById("fix_line2").innerHTML="";
-        document.getElementById("fix_line3").innerHTML="";
-        document.getElementById("fix_line4").innerHTML="";
-        document.getElementById("fix_line5").innerHTML="";
-        document.getElementById("fix_line6").innerHTML="";
-        document.getElementById("fix_line7").innerHTML="";
-        document.getElementById("fix_line8").innerHTML="";
-        document.getElementById("fix_line9").innerHTML="";
-        document.getElementById("fix_line10").innerHTML="";
-        changeHide();
+        //清空单元格的内容
+		for (i=1;i<7;i++){
+	        document.getElementById("index_"+ i).innerHTML="&nbsp;";
+	        document.getElementById("step_" + i).innerHTML="&nbsp;";
+	        document.getElementById("step_" + i + "_result").innerHTML="&nbsp;";
+		}
+		
+        //changeHide();
 
         document.getElementById("fix_head").innerHTML="请点击需要维修的阀门";
 
@@ -1182,13 +1177,13 @@ oCanvas.domReady(function () {
         setFMColorRed("FM09");
 
 
-        document.getElementById("fix_line1").innerHTML="打开阀门10#";
-        document.getElementById("fix_line2").innerHTML="打开阀门07#";
-        document.getElementById("fix_line3").innerHTML="打开阀门65#";
-        document.getElementById("fix_line4").innerHTML="打开阀门63#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门09#";
-        document.getElementById("fix_line6").innerHTML="关闭阀门64#";
-        document.getElementById("fix_line7").innerHTML="堵塞62#阀门下侧管道";
+        document.getElementById("step_1").innerHTML="打开阀门10#";
+        document.getElementById("step_2").innerHTML="打开阀门07#";
+        document.getElementById("step_3").innerHTML="打开阀门65#";
+        document.getElementById("step_4").innerHTML="打开阀门63#";
+        document.getElementById("step_5").innerHTML="关闭阀门09#";
+        document.getElementById("step_6").innerHTML="关闭阀门64#";
+        document.getElementById("step_1_result").innerHTML="堵塞62#阀门下侧管道";
 
         setShow();
     }
@@ -1203,13 +1198,13 @@ oCanvas.domReady(function () {
 //        setFMColorRed("FM023");
         setFMColorRed("FM054");
 
-        document.getElementById("fix_line1").innerHTML="关闭阀门16#";
-        document.getElementById("fix_line2").innerHTML="关闭阀门18#";
-        document.getElementById("fix_line3").innerHTML="关闭阀门20#";
-        document.getElementById("fix_line4").innerHTML="关闭阀门21#";
-        document.getElementById("fix_line5").innerHTML="关闭阀门23#";
-        document.getElementById("fix_line6").innerHTML="关闭阀门54#";
-        document.getElementById("fix_line7").innerHTML="对19#进行施工";
+        document.getElementById("step_1").innerHTML="关闭阀门16#";
+        document.getElementById("step_2").innerHTML="关闭阀门18#";
+        document.getElementById("step_3").innerHTML="关闭阀门20#";
+        document.getElementById("step_4").innerHTML="关闭阀门21#";
+        document.getElementById("step_5").innerHTML="关闭阀门23#";
+        document.getElementById("step_6").innerHTML="关闭阀门54#";
+        document.getElementById("step_1_result").innerHTML="对19#进行施工";
 
         setShow();
 
@@ -1218,8 +1213,8 @@ oCanvas.domReady(function () {
     $("#FM062").click(function(){
         if(confirm("是否将“62#阀门”设置为维修状态？")){
             fix_fm062();
-            document.getElementById("nextPage").onclick="";
-            document.getElementById("lastPage").onclick="";
+            document.getElementById("scheme").onclick="";
+            
             document.getElementById("reset").onclick=function(){
             	window.setTimeout(function(){
             		setFMColorGreen("FM09");
@@ -1292,8 +1287,8 @@ oCanvas.domReady(function () {
     $("#FM019").click(function(){
         if(confirm("是否将“19#阀门”设置为维修状态？")){
             fix_fm019();
-            document.getElementById("nextPage").onclick="";
-            document.getElementById("lastPage").onclick="";
+            document.getElementById("scheme").onclick="";
+            
             document.getElementById("export").href="download/fix-fm019.docx";
             window.setTimeout(function(){
                 canvas.children[19].fill=color_GD;
@@ -1315,6 +1310,7 @@ oCanvas.domReady(function () {
 //        this.shadow="0 0 0px #eee";
 //        canvas.redraw();
     });
+    
     $("#reset").bind("click", function () {
         clearAll();
     });
@@ -1322,7 +1318,7 @@ oCanvas.domReady(function () {
 //    $("#name_QS").click(function(){
 //        if(confirm("是否将“取水泵房”设置为维修状态？")){
 //            fix_qs_right();
-//            document.getElementById("nextPage").onclick=function(){
+//            document.getElementById("scheme").onclick=function(){
 //                fix_qs_left();
 //            };
 //            document.getElementById("lastPage").onclick=function(){
@@ -1335,7 +1331,7 @@ oCanvas.domReady(function () {
 //    $("#name_JJC1").click(function(){
 //        if(confirm("是否将“#1机加池”设置为维修状态？")){
 //            fix_jjc1();
-//            document.getElementById("nextPage").onclick="";
+//            document.getElementById("scheme").onclick="";
 //            document.getElementById("lastPage").onclick="";
 //            document.getElementById("export").href="download/fix-jjc1.docx";
 //            setShow();
@@ -1344,7 +1340,7 @@ oCanvas.domReady(function () {
 //    $("#name_JJC2").click(function(){
 //        if(confirm("是否将“#2机加池”设置为维修状态？")){
 //            fix_jjc2();
-//            document.getElementById("nextPage").onclick="";
+//            document.getElementById("scheme").onclick="";
 //            document.getElementById("lastPage").onclick="";
 //            document.getElementById("export").href="download/fix-jjc2.docx";
 //            setShow();
@@ -1353,7 +1349,7 @@ oCanvas.domReady(function () {
 //    $("#name_JJC3").click(function(){
 //        if(confirm("是否将“#3机加池”设置为维修状态？3")){
 //            fix_jjc3();
-//            document.getElementById("nextPage").onclick="";
+//            document.getElementById("scheme").onclick="";
 //            document.getElementById("lastPage").onclick="";
 //            document.getElementById("export").href="download/fix-jjc3.docx";
 //            setShow();
@@ -1362,7 +1358,7 @@ oCanvas.domReady(function () {
 //    $("#name_VL").click(function(){
 //        if(confirm("是否将“V型滤池设置为维修状态？”")){
 //            fix_vl();
-//            document.getElementById("nextPage").onclick="";
+//            document.getElementById("scheme").onclick="";
 //            document.getElementById("lastPage").onclick="";
 //            document.getElementById("export").href="download/fix-vl.docx";
 //            setShow();
@@ -1371,7 +1367,7 @@ oCanvas.domReady(function () {
 //    $("#name_TC").click(function(){
 //        if(confirm("是否将“现有活性炭池”设置为维修状态？")){
 //            fix_tc_old();
-//            document.getElementById("nextPage").onclick="";
+//            document.getElementById("scheme").onclick="";
 //            document.getElementById("lastPage").onclick="";
 //            document.getElementById("export").href="download/fix-tc-old.doc";
 //        }
@@ -1379,7 +1375,7 @@ oCanvas.domReady(function () {
 //    $("#name_TC1").click(function(){
 //        if(confirm("是否将“新建活性炭池”设置为维修状态？")){
 //            fix_tc_new();
-//            document.getElementById("nextPage").onclick="";
+//            document.getElementById("scheme").onclick="";
 //            document.getElementById("lastPage").onclick="";
 //            document.getElementById("export").href="download/fix-tc-new.doc";
 //        }
@@ -1387,7 +1383,7 @@ oCanvas.domReady(function () {
 //    $("#name_CY").click(function(){
 //        if(confirm("是否将“臭氧接触池”设置为维修状态？")){
 //            fix_cy_right();
-//            document.getElementById("nextPage").onclick=function(){
+//            document.getElementById("scheme").onclick=function(){
 //                fix_cy_left();
 //            };
 //            document.getElementById("lastPage").onclick=function(){
@@ -1400,7 +1396,7 @@ oCanvas.domReady(function () {
 //    $("#name_HHJ1").click(function(){
 //        if(confirm("是否将“旧混合井”设置为维修状态？")){
 //            fix_hh_right();
-//            document.getElementById("nextPage").onclick=function(){
+//            document.getElementById("scheme").onclick=function(){
 //                fix_hh_left();
 //            };
 //            document.getElementById("lastPage").onclick=function(){
@@ -1413,7 +1409,7 @@ oCanvas.domReady(function () {
 //    $("#name_HHJ2").click(function(){
 //        if(confirm("是否将“新混合井”设置为维修状态？")){
 //            fix_hh_new();
-//            document.getElementById("nextPage").onclick="";
+//            document.getElementById("scheme").onclick="";
 //            document.getElementById("lastPage").onclick="";
 //            document.getElementById("export").href="download/fix-hh-new.docx";
 //        }
@@ -1422,7 +1418,7 @@ oCanvas.domReady(function () {
 //        if(confirm("是否将“虹吸滤池”设置为维修状态？")){
 //
 //            fix_hx_right();
-//            document.getElementById("nextPage").onclick=function(){
+//            document.getElementById("scheme").onclick=function(){
 //                fix_hx_left();
 //            };
 //            document.getElementById("lastPage").onclick=function(){
@@ -1437,7 +1433,7 @@ oCanvas.domReady(function () {
 //    $("#name_QSC1").click(function(){
 //        if(confirm("是否将“#1清水池”设置为维修状态？")){
 //            fix_qsc3();
-//            document.getElementById("nextPage").onclick=function(){
+//            document.getElementById("scheme").onclick=function(){
 //            };
 //            document.getElementById("lastPage").onclick=function(){
 //            };
@@ -1448,7 +1444,7 @@ oCanvas.domReady(function () {
 //    $("#name_QSC2").click(function(){
 //        if(confirm("是否将“#2清水池”设置为维修状态？")){
 //            fix_qsc1();
-//            document.getElementById("nextPage").onclick=function(){
+//            document.getElementById("scheme").onclick=function(){
 //            };
 //            document.getElementById("lastPage").onclick=function(){
 //            };
@@ -1460,7 +1456,7 @@ oCanvas.domReady(function () {
 //    $("#name_QSC3").click(function(){
 //        if(confirm("是否将“#3清水池”设置为维修状态？")){
 //            fix_qsc2();
-//            document.getElementById("nextPage").onclick=function(){
+//            document.getElementById("scheme").onclick=function(){
 //            };
 //            document.getElementById("lastPage").onclick=function(){
 //            };
@@ -1471,7 +1467,7 @@ oCanvas.domReady(function () {
 //    $("#name_QSC4").click(function(){
 //        if(confirm("是否将“#4清水池”设置为维修状态？")){
 //            fix_qsc4();
-//            document.getElementById("nextPage").onclick=function(){
+//            document.getElementById("scheme").onclick=function(){
 //            };
 //            document.getElementById("lastPage").onclick=function(){
 //            };
