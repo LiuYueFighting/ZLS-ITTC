@@ -147,7 +147,7 @@
                 <td>上升流度</td><td>1mm/s</td>
                 </tr>
                 <tr>
-                <td>FeCl<sub>3</sub></td><td>&lt;mg/L</td>
+                <td>FeCl<sub>3</sub></td><td>20-25mg/L</td>
                 </tr>
                 </table>
                 </div>
@@ -160,7 +160,7 @@
                 <td>出水浊度</td><td><1.5NTU</td>
                 </tr>
                 <tr>
-                <td>出水余氯</td><td>&lt;mg/L</td>
+                <td>出水余氯</td><td>&gt;0.2mg/L</td>
                 </tr>
                 </table>
                 </div>

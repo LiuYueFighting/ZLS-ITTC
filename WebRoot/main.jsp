@@ -170,8 +170,8 @@
     }
     #name_CYC{
     position: absolute;
-    left:620px;
-    top: 464px;
+    left:626px;
+    top: 452px;
     height: auto;
     width: 30px;
     }
@@ -274,10 +274,10 @@
     <a href="JJC.jsp" id="name_JJC2"  style="text-decoration: none" class="name_ob">2#<br>机加池</a>
     <a href="JJC.jsp" id="name_JJC3"  style="text-decoration: none" class="name_ob">3#<br>机加池</a>
     <a href="VL.jsp"  id="name_VL"    style="text-decoration: none" class="name_ob">V型滤池</a>
-    <a href="hxt.jsp" id="name_TC"   class="name_ob" style="text-decoration: none">活性炭池</a>
-    <a href="hxt.jsp" id="name_TC1"  class="name_ob" style="text-decoration: none">活性炭池</a>
+    <a href="hxt.jsp" id="name_TC"   class="name_ob" style="text-decoration: none">1#炭滤池</a>
+    <a href="hxt.jsp" id="name_TC1"  class="name_ob" style="text-decoration: none">2#炭滤池</a>
     <a href="cy.jsp"  id="name_CY"   class="name_ob" style="text-decoration: none">臭氧<br>接触池</a>
-    <a href="cy.jsp"  id="name_CYC"  class="name_ob" style="text-decoration: none">臭氧生产池</a>
+    <a href="cy.jsp"  id="name_CYC"  class="name_ob" style="text-decoration: none">臭氧生产车间</a>
     <a href="#"        id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
     <a href="hhj.jsp" id="name_HHJ"  class="name_ob" style="text-decoration: none">旧混合井</a>
     <a href="hhj.jsp" id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>

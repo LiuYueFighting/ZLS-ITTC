@@ -21,21 +21,21 @@ oCanvas.domReady(function () {
 
     var left_t=createSC({
         parent:canvas,
-        x:468,y:429,height:38,width:45,trail_flag:1,speed:speed_SC,color:color_SC,
+        x:465,y:426,height:34,width:45,trail_flag:1,speed:speed_SC,color:color_SC,
         trail: [
-            {x_t: 0, y_t: 38},
-            {x_t: 35, y_t: 38},
-            {x_t: 35, y_t: 0}
+            {x_t: 0, y_t: 34},
+            {x_t: 37, y_t: 34},
+            {x_t: 37, y_t: 0}
         ]
     });
 
     var right_t=createSC({
         parent:canvas,
-        x:792,y:429,height:38,width:45,trail_flag:1,speed:speed_SC,color:color_SC,
+        x:788,y:426,height:34,width:45,trail_flag:1,speed:speed_SC,color:color_SC,
         trail: [
             {x_t: 0, y_t: 0},
-            {x_t: 0, y_t: 38},
-            {x_t: 35, y_t: 38}
+            {x_t: 0, y_t: 34},
+            {x_t: 37, y_t: 34}
         ]
     });
 
@@ -247,7 +247,7 @@ oCanvas.domReady(function () {
         origin: { x:"center", y: "top" },
         font: "bold 36px sans-serif",
         fill:"#0e406b",
-        text:"机加池工艺展示纵剖图"
+        text:"鏈哄姞姹犲伐鑹哄睍绀虹旱鍓栧浘"
     });
     canvas.addChild(txt1);
     var txt2=canvas.display.text({
@@ -256,7 +256,7 @@ oCanvas.domReady(function () {
         origin: { x:"center", y: "top" },
         font: "bold 25px sans-serif",
         fill:"#337ab7",
-        text:"混合井来水"
+        text:"娣峰悎浜曟潵姘�
     });
     canvas.addChild(txt2);
     var txt3=canvas.display.text({
@@ -265,7 +265,7 @@ oCanvas.domReady(function () {
         origin: { x:"center", y: "top" },
         font: "bold 25px sans-serif",
         fill:"#337ab7",
-        text:"机加池出水"
+        text:"鏈哄姞姹犲嚭姘�
     });
     canvas.addChild(txt3);
 
