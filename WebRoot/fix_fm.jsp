@@ -170,75 +170,25 @@
         image.src = "image/y2.png";
         else image.src = "image/y3.png";
         }
-                   
-    function setOpenDgree(id){
-    var openDgree = 0;
-    var num = id.substr(2);
-    <%--var table =document.getElementById(num);--%>
-    var image = document.getElementById(id);
-    showFMName(id);
-    <%--var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");--%>
-    <%--if(openDgree<0||openDgree>100||isNaN(openDgree)){--%>
-    <%--alert("输入有误！请重新输入！");--%>
-    <%--return;--%>
-    <%--}--%>
-    <%--else if(openDgree==null){--%>
-    <%--return;--%>
-    <%--}--%>
-    if (openDgree==0){
-    <%--table.innerHTML=openDgree+"%";--%>
-    image.src = "image/y2.png";
-    <%--$('#'+num).toggleClass('danger');--%>
-    return;
-    }
-    else if(openDgree==100)
-    {
-    <%--table.innerHTML=openDgree+"%";--%>
-    image.src = "image/y3.png";
-    <%--$('#'+num).toggleClass('info');--%>
-    return;
-    }
-    else{
-    <%--table.innerHTML=openDgree+"%";--%>
-    image.src = "image/y1.png";
-    <%--$('#'+num).toggleClass('warning');--%>
-    return;
-    }
-    }
 
-    function clearOpenDgree(id){
-    var openDgree = 100;
-    var num = id.substr(2);
-    <%--var table =document.getElementById(num);--%>
-    var image =document.getElementById(id);
-    <%--var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");--%>
-    <%--if(openDgree<0||openDgree>100||isNaN(openDgree)){--%>
-    <%--alert("输入有误！请重新输入！");--%>
-    <%--return;--%>
-    <%--}--%>
-    <%--else if(openDgree==null){--%>
-    <%--return;--%>
-    <%--}--%>
-    notShowFMName(id);
-    if (openDgree==0){
-    <%--table.innerHTML=openDgree+"%";--%>
-    image.src = "image/y2.png";
-    <%--$('#'+num).toggleClass('danger');--%>
-    return;
+	function setFMColorRed(id){
+    	var image = document.getElementById(id);
+    	var FMTagId = "W" + id;
+    	var tag = document.getElementById(FMTagId);
+
+   		image.style.display = "block"
+   		tag.style.display = "block"
+    	image.src = "image/y2-35x37.png";
     }
-    else if(openDgree==100)
-    {
-    <%--table.innerHTML=openDgree+"%";--%>
-    image.src = "image/y3.png";
-    <%--$('#'+num).toggleClass('info');--%>
-    return;
-    }
-    else{
-    <%--table.innerHTML=openDgree+"%";--%>
-    image.src = "image/y1.png";
-    <%--$('#'+num).toggleClass('warning');--%>
-    return;
-    }
+  
+    function setFMColorGreen(id){
+    	var image = document.getElementById(id);
+    	var FMTagId = "W" + id;
+    	var tag = document.getElementById(FMTagId);
+
+   		image.style.display = "block"
+   		tag.style.display = "block"
+    	image.src = "image/y3-35x37.png";
     }
 
     function showFMName(id){

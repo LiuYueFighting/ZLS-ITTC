@@ -797,9 +797,9 @@ oCanvas.domReady(function () {
         GD23.advance();
         GD24.advance();
         GD25.advance();
-        
+
         if(GD0101.state==0){
-        	setOpenDgree("FM064");
+        	setFMColorRed("FM064");
         	GD25.state=2;
         }
 
@@ -860,7 +860,7 @@ oCanvas.domReady(function () {
     function restart(){
         canvas.timeline.start();
     }
-    
+
     function init(){
         GD01.init();
         GD02.init();
@@ -1105,48 +1105,48 @@ oCanvas.domReady(function () {
         canvas.children[19].fill="rgba(1,1,1,0)";
         canvas.redraw();
 
-        clearOpenDgree("FM05");
-        clearOpenDgree("FM06");
-        clearOpenDgree("FM07");
-        clearOpenDgree("FM09");
-        clearOpenDgree("FM010");
-        clearOpenDgree("FM065");
-        clearOpenDgree("FM062");
-        clearOpenDgree("FM063");
-        clearOpenDgree("FM064");
-        clearOpenDgree("FM066");
-        clearOpenDgree("FM069");
-        clearOpenDgree("FM015");
-        clearOpenDgree("FM045");
-        clearOpenDgree("FM014");
-        clearOpenDgree("FM016");
-        clearOpenDgree("FM068");
-        clearOpenDgree("FM067");
-        clearOpenDgree("FM017");
-        clearOpenDgree("FM018");
-        clearOpenDgree("FM019");
-        clearOpenDgree("FM067");
-        clearOpenDgree("FM052");
-        clearOpenDgree("FM020");
-        clearOpenDgree("FM056");
-        clearOpenDgree("FM057");
-        clearOpenDgree("FM058");
-        clearOpenDgree("FM053");
-        clearOpenDgree("FM054");
-        clearOpenDgree("FM021");
-        clearOpenDgree("FM022");
-        clearOpenDgree("FM024");
+        setFMColorGreen("FM05");
+        setFMColorGreen("FM06");
+        setFMColorGreen("FM07");
+        setFMColorGreen("FM09");
+        setFMColorGreen("FM010");
+        setFMColorGreen("FM065");
+        setFMColorGreen("FM062");
+        setFMColorGreen("FM063");
+        setFMColorGreen("FM064");
+        setFMColorGreen("FM066");
+        setFMColorGreen("FM069");
+        setFMColorGreen("FM015");
+        setFMColorGreen("FM045");
+        setFMColorGreen("FM014");
+        setFMColorGreen("FM016");
+        setFMColorGreen("FM068");
+        setFMColorGreen("FM067");
+        setFMColorGreen("FM017");
+        setFMColorGreen("FM018");
+        setFMColorGreen("FM019");
+        setFMColorGreen("FM067");
+        setFMColorGreen("FM052");
+        setFMColorGreen("FM020");
+        setFMColorGreen("FM056");
+        setFMColorGreen("FM057");
+        setFMColorGreen("FM058");
+        setFMColorGreen("FM053");
+        setFMColorGreen("FM054");
+        setFMColorGreen("FM021");
+        setFMColorGreen("FM022");
+        setFMColorGreen("FM024");
 
-        clearOpenDgree("FM059");
-        clearOpenDgree("FM046");
-        clearOpenDgree("FM044");
-        clearOpenDgree("FM055");
-        clearOpenDgree("FM026");
-        clearOpenDgree("FM051");
-        clearOpenDgree("FM055");
-        clearOpenDgree("FM047");
-        clearOpenDgree("FM048");
-        clearOpenDgree("FM049");
+        setFMColorGreen("FM059");
+        setFMColorGreen("FM046");
+        setFMColorGreen("FM044");
+        setFMColorGreen("FM055");
+        setFMColorGreen("FM026");
+        setFMColorGreen("FM051");
+        setFMColorGreen("FM055");
+        setFMColorGreen("FM047");
+        setFMColorGreen("FM048");
+        setFMColorGreen("FM049");
 
         document.getElementById("nextPage").style.display="none";
         document.getElementById("lastPage").style.display="none";
@@ -1169,11 +1169,11 @@ oCanvas.domReady(function () {
     }
     function  fix_fm062(){
         clearAll();
-        //clearOpenDgree("FM064");
+        //setFMColorGreen("FM064");
         document.getElementById("fix_head").innerHTML="62#阀门维修配合方案";
         document.getElementById("FM062").src="image/y1.png";
-        setOpenDgree("FM09");
-        
+        setFMColorRed("FM09");
+
 
         document.getElementById("fix_line1").innerHTML="打开阀门10#";
         document.getElementById("fix_line2").innerHTML="打开阀门07#";
@@ -1190,12 +1190,12 @@ oCanvas.domReady(function () {
         clearAll();
         document.getElementById("fix_head").innerHTML="19#阀门维修配合方案";
         document.getElementById("FM019").src="image/y1.png";
-        setOpenDgree("FM016");
-        setOpenDgree("FM018");
-        setOpenDgree("FM020");
-        setOpenDgree("FM021");
-//        setOpenDgree("FM023");
-        setOpenDgree("FM054");
+        setFMColorRed("FM016");
+        setFMColorRed("FM018");
+        setFMColorRed("FM020");
+        setFMColorRed("FM021");
+//        setFMColorRed("FM023");
+        setFMColorRed("FM054");
 
         document.getElementById("fix_line1").innerHTML="关闭阀门16#";
         document.getElementById("fix_line2").innerHTML="关闭阀门18#";
@@ -1215,24 +1215,24 @@ oCanvas.domReady(function () {
             document.getElementById("nextPage").onclick="";
             document.getElementById("lastPage").onclick="";
             document.getElementById("reset").onclick=function(){
-            	window.setTimeout(function(){              
-            		clearOpenDgree("FM09");
+            	window.setTimeout(function(){
+            		setFMColorGreen("FM09");
                  },300);
-                window.setTimeout(function(){              
-                	clearOpenDgree("FM064");
+                window.setTimeout(function(){
+                	setFMColorGreen("FM064");
                 	clearAll();
                  },1000);
-//                window.setTimeout(function(){              
-//                	clearOpenDgree("FM016");
+//                window.setTimeout(function(){
+//                	setFMColorGreen("FM016");
 //                	GD1001.state=3;
 //                	GD11.state=3;
 //                	clearAll();
-//                 },1700);                    
+//                 },1700);
             };
-            
+
             document.getElementById("export").href="download/fix-fm062.docx";
-            setOpenDgree("FM09");
-            clearOpenDgree("FM064");
+            setFMColorRed("FM09");
+            setFMColorGreen("FM064");
             GD0101.state=2;
 //            window.setTimeout(function(){
 //               decay(2,1);
@@ -1475,3 +1475,4 @@ oCanvas.domReady(function () {
 //    });
 
 });
+
