@@ -19,7 +19,7 @@
     <%--<link rel="stylesheet" href="css/normalize.css">--%>
     <link rel="stylesheet" href="css/FM&GZW_name.css">
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
-    <link rel="stylesheet" href="css/default/zebra_dialog.css" type="text/css">
+    <link rel="stylesheet" href="css/flat/zebra_dialog.css" type="text/css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
@@ -194,19 +194,19 @@
         #jjc1In{
         position: absolute;
         left:1507px;
-        top: 464px;
+        top: 462px;
         z-index:999;
         }
         #jjc2In{
         position: absolute;
         left:1507px;
-        top: 513px;
+        top: 511px;
         z-index:999;
         }
         #jjc3In{
         position: absolute;
         left:1507px;
-        top: 561px;
+        top: 560px;
         z-index:999;
         }
 /*         #hx1Out{ */
@@ -372,7 +372,7 @@ function sAlert(str){
         if(read<0||read>1800||isNaN(read)){
 //        alert("进厂水量输入有误！请重新输入！"); 
 //        sAlert("进厂水量输入有误！请重新输入！");
-$.Zebra_Dialog('<strong>进厂水量输入有误！</strong> 进厂水量范围为0-1800m<sup>3</sup>/h', {
+$.Zebra_Dialog('<strong>进厂水量输入有误！</strong> </br>进厂水量范围为0-1800m<sup>3</sup>/h', {
     'type':     'warning',
     'title':    '错误'
 });
@@ -385,7 +385,7 @@ $.Zebra_Dialog('<strong>进厂水量输入有误！</strong> 进厂水量范围�
     var read_065=parseFloat(document.getElementById("read_FM65").value);
     if(read_062==0&&read_063==0&&read_065==0){
 //        sAlert("开启度不能全部为0，请重新输入！");
-$.Zebra_Dialog('<strong>开启度不能全部为0!</strong> 请重新输入！', {
+$.Zebra_Dialog('<strong>开启度不能全部为0!</strong> </br>请重新输入！', {
     'type':     'warning',
     'title':    '错误'
 });
@@ -404,7 +404,7 @@ $.Zebra_Dialog('<strong>开启度不能全部为0!</strong> 请重新输入！',
         <%--var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");--%>
         if(openDgree<0||openDgree>100||isNaN(openDgree)){
 //            sAlert("阀门"+num+"的开启度输入有误！请重新输入！");
-				$.Zebra_Dialog("阀门"+num+"的开启度输入有误！请重新输入！", {
+				$.Zebra_Dialog('<strong>阀门</strong>'+num+'<strong>的开启度输入有误！</br>请重新输入！</strong>', {
     			'type':     'warning',
     			'title':    '错误'
 				});

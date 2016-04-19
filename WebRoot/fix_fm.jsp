@@ -171,11 +171,19 @@
         else image.src = "image/y3.png";
         }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ef3f7af9318851b571fcaca2f1bb3fbae7205949
 	function setFMColorRed(id){
     	var image = document.getElementById(id);
     	var FMTagId = "W" + id;
     	var tag = document.getElementById(FMTagId);
+<<<<<<< HEAD
 
+=======
+    	
+>>>>>>> ef3f7af9318851b571fcaca2f1bb3fbae7205949
    		image.style.display = "block"
    		tag.style.display = "block"
     	image.src = "image/y2-35x37.png";

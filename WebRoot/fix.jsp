@@ -20,11 +20,14 @@
     <link rel="stylesheet" href="css/breadcrumb.css">
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <link rel="stylesheet" href="css/FM&GZW_name.css">
+    <link rel="stylesheet" href="css/flat/zebra_dialog.css" type="text/css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
     <script src="js/my_oCanvas.js"></script>
     <script src="js/fix.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="js/zebra_dialog.js"></script> 
     <style>
         body {
             background: #afd9ee;
@@ -42,287 +45,158 @@
             position: relative;
             height: 750px;
             width: 1600px;
-       }
-         #myContent a{
-    color: #283a45;
-    background: rgba(255,255,255,0.5);
-    border: 1px solid black;
-    }
-    #show_hide{
-    position: absolute;
-    top: 6px;
-    left: 147px;
-    font-size: 13px;
-    }
-    #export{
-    position: absolute;
-    left: 70px;
-    top: 580px;
-    /* background: rgba(290,140,110,0.5); */
-    font-size: 14px;
-    }
-    #reset{
-    position: absolute;
-    left: 81px;
-    top: 541px;
-    /* background: rgba(290,140,110,0.5); */
-    font-size: 14px;
-    }
-    #nextPage{
-    position: absolute;
-    left: 15px;
-    top: 540px;
-    /* background: rgba(290,140,110,0.5); */
-    font-size: 14px;
-    }
-    #lastPage{
-    position: absolute;
-    right: 15px;
-    top: 540px;
-    /* background: rgba(290,140,110,0.5); */
-    font-size: 14px;
-    }
-    .name_Model{
-    font-family: '微软雅黑','Arial';
-    color: #223bb8;
-    font-size: 17px;
-    font-weight: bold;
-
-    }
-    #fix-panel{
-    height: 604px;
-    width: 183px;
-    position: absolute;
-    left: 91.2%;
-    top: 4.7%;
-    Z-INDEX: 999;
-    }
-    #panel_heading{
-    cursor: pointer;
-    vertical-align: middle;
-    padding: 5px 5px;
-    border-bottom: 1px solid transparent;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    height: 85px;
-    width: 181px;
-    Z-INDEX: 999;
-    /* border: 1px solid; */
-    background: rgba(255,255,255,0.5);
-    border: 2px solid #008fd7;
-    text-align: center;
-    }
-    #panel_heading:hover{
-    background: rgba(194,215,245,0.5);
-    }
-    #panel_heading h2{
-    color: #283a45;
-    font-weight: bolder;
-    }
-    #fix{
-    height: 535px;
-    width: 181px;
-    Z-INDEX: 999;
-    display: none;
-    border: 2px solid #008fd7;
-    }
-    #chackBox_name{
-    position:absolute;
-    top: 707px;
-    left: 1369px;
-    }
-    #WShow{
-    position:absolute;
-    top: 683px;
-    left: 1372px;
-    z-index:999;
-    }
-    .panel{
-    height: 529px;
-    width: 175px;
-    background: rgba(255,255,255,0.7);
-    color: black;
-    }
-    #setConfig h1{
-    font-size:20px;
-    color:#ff4400;
-    font-weight:bold;
-    }
-    #setConfig input{
-    width:50px;
-    padding:2px;
-    font-size:12px;
-    }
-    #fix_table{
-    font-size:12px
-    }
+        }
+        #myContent a{
+	    color: #283a45;
+	    background: rgba(255,255,255,0.5);
+	    border: 1px solid black;
+	    } 
+	    .name_Model{
+	    font-family: '微软雅黑','Arial';
+	    color: #223bb8;
+	    font-size: 17px;
+	    font-weight: bold;
+	    }
+	    #fix-panel{
+	    position: absolute;
+	    left: 91.2%;
+	    top: 4.7%;
+	    Z-INDEX: 999;
+	    }
+	    #panel_heading{
+	    cursor: pointer;
+	    vertical-align: middle;
+	    padding: 5px 5px;
+	    border-bottom: 1px solid transparent;
+	    border-top-left-radius: 3px;
+	    border-top-right-radius: 3px;
+	    height: 85px;
+	    width: 245px;
+	    Z-INDEX: 999;
+	    -webkit-transition-property:background-color;
+	    -webkit-transition-duration:1s;
+	    -webkit-transition-timing-function:ease;
+	    /* border: 1px solid; */
+	    background: rgba(255,255,255,0.5);
+	    border: 2px solid #008fd7;
+	    text-align: center;
+	    }
+	    #panel_heading:hover{
+	    background: rgba(194,215,245,0.5);
+	    }
+	    /* hcc:hover change color */
+	    .hcc{
+	   	-webkit-transition-property:background-color;
+	    -webkit-transition-duration:0.5s;
+	    -webkit-transition-timing-function:ease;
+	    cursor: pointer;
+	    }
+	    .hcc:hover{
+	    background: rgba(194,215,245,0.5);
+	    }
+	    
+		/* demo  	    
+		#step_1{
+	    -webkit-transition-property:background-color;
+	    -webkit-transition-duration:0.5s;
+	    -webkit-transition-timing-function:ease;
+	    }
+	    #step_1:hover{
+	    background: rgba(194,215,245,0.5);
+	    } */
+	    
+	    #panel_heading h2{
+	    color: #283a45;
+	    font-weight: bolder;
+	    }
+	    .panel{
+	    /* height: 651px; */
+	    width: 245px;
+	    background: rgba(255,255,255,0.7);
+	    color: black;
+	    margin-bottom:0px;
+	    }
+	    .panel-heading{
+	    text-align: center;
+	    }
+	    #fix_table{
+	    font-size:12px
+	    }
+	    .table_td_left{
+	    text-align: left;
+	    } 
+	/* 	.progressBar{width:200px;height:8px;border:1px solid #98AFB7;border-radius:5px;margin-top:10px;}
+		#bar{width:0px;height:8px;border-radius:5px;background:#5EC4EA;} */
     </style>
     <script>
-    var hide=1;
-    function changeImage(id){
-       var image = document.getElementById(id);
-       if(image.src.match("image/y3-35x37.png"))
-	      image.src = "image/y2-35x37.png";
-       else image.src = "image/y3-35x37.png";
-    }
-
-<%--     function setOpenDgree(id){
-	    var openDgree = 0;
-	    var num = id.substr(2);
-	    var table =document.getElementById(num);
-	    var image = document.getElementById(id);
-	    var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");
-	    if(openDgree<0||openDgree>100||isNaN(openDgree)){
-	    alert("输入有误！请重新输入！");
-	    return;
-	    }
-	    else if(openDgree==null){
-	    return;
-	    }
-	    if (openDgree==0){
-	    	table.innerHTML=openDgree+"%";
-	    	image.src = "image/y2.png";
-	    	$('#'+num).toggleClass('danger');
-	    	return;
-	    }
-	    else if(openDgree==100)
-	    {
-	    	table.innerHTML=openDgree+"%";
-	    	image.src = "image/y3.png";
-	    	$('#'+num).toggleClass('info');
-	    	return;
-	    }
-	    else{
-	    	table.innerHTML=openDgree+"%";
-	    	image.src = "image/y1.png";
-	    	$('#'+num).toggleClass('warning');
-	    	return;
-	    }
-    } --%>
-<%--     function clearOpenDgree(id){
-	    var openDgree = 100;
-	    var num = id.substr(2);
-	    var table =document.getElementById(num);
-	    var image =document.getElementById(id);
-	    var openDgree = prompt("请输入"+id+"开启度   (输入范围0-100的整数：0为关闭，1为完全开启):","0");
-	    if(openDgree<0||openDgree>100||isNaN(openDgree)){
-	    alert("输入有误！请重新输入！");
-	    return;
-	    }
-	    else if(openDgree==null){
-	    return;
-	    }
-	    if (openDgree==0){
-		    table.innerHTML=openDgree+"%";
-		    image.src = "image/y2.png";
-		    $('#'+num).toggleClass('danger');
-		    return;
-	    }
-	    else if(openDgree==100)
-	    {
-		    table.innerHTML=openDgree+"%";
-		    image.src = "image/y3.png";
-		    $('#'+num).toggleClass('info');
-		    return;
-	    }
-	    else{
-		    table.innerHTML=openDgree+"%";
-		    image.src = "image/y1.png";
-		    $('#'+num).toggleClass('warning');
-		    return;
-	    }
-    } --%>
-    
     function setFMColorRed(id){
+    	//获取阀门及对应标签的对象
     	var image = document.getElementById(id);
     	var FMTagId = "W" + id;
     	var tag = document.getElementById(FMTagId);
-		if( image.style.display == "none")
-    		image.style.display = "block"
-		if( tag.style.display == "none")
-    		tag.style.display = "block"
+		//强制显示阀门及对应标签
+   		image.style.display = "block"
+   		tag.style.display = "block"
     	image.src = "image/y2-35x37.png";
     }
   
     function setFMColorGreen(id){
+    	//获取阀门及对应标签的对象
     	var image = document.getElementById(id);
     	var FMTagId = "W" + id;
     	var tag = document.getElementById(FMTagId);
-		if( image.style.display == "none")
-    		image.style.display = "block"
-		if( tag.style.display == "none")
-    		tag.style.display = "block"
+		//强制显示阀门及对应标签
+   		image.style.display = "block"
+   		tag.style.display = "block"
     	image.src = "image/y3-35x37.png";
     }    
-
-
+/*
+ *  批量显示、隐藏标签模块；考虑使用toggle	
     function showName(e){
     	var structureNameGroup = ["name_QS", "name_JJC1", "name_JJC2", "name_JJC3", 
    								  "name_VL", "name_TC", "name_TC1", "name_CY", 
    								  "name_YC", "name_HHJ1", "name_HHJ2", "name_HX", 
    								  "name_QSC1", "name_QSC2", "name_QSC3", "name_QSC4"]
-	
 	    if(e.checked == true){
-	    	for (i=0;i<structureNameGroup.length;i++){
-				document.getElementById(structureNameGroup[i]).style.display="block";
-			}
-	    }else if(e.checked == false){
-    		for (i=0;i<structureNameGroup.length;i++){
-				document.getElementById(structureNameGroup[i]).style.display="none";
-			}
+			$("div#name_gzw .name_ob").attr("style","display:block;");
+	    }else{
+    		$("div#name_gzw .name_ob").attr("style","display:none;");
     	}
     }
-    
-    function hideList(){
-    	document.getElementById("fix").style.display="none";
-    }
-    function showList(){
-    	document.getElementById("fix").style.display="block";
-    }
-    function hideAllFM(){
-    	var FMGroup = [/* color green */
-    				   "FM05",  "FM06",  "FM07",  "FM09",  "FM010", "FM014", 
-                       "FM015", "FM016", "FM017", "FM018", "FM019", "FM020", 
-                       "FM021", "FM024", "FM026", "FM044", "FM045", "FM046", 
-                       "FM047", "FM048", "FM049", "FM051", "FM052", "FM053", 
-                       "FM054", "FM055", "FM057", "FM058", "FM059", "FM062", 
-                       "FM063", "FM064", "FM065", "FM066", "FM067", "FM069", 
-                       /* color red */
-                       "FM022", "FM023", "FM050", "FM056", "FM068",
-                       /* FM tag */
-                       "WFM05",  "WFM06",  "WFM07",  "WFM09",  "WFM010", "WFM014", 
-                       "WFM015", "WFM016", "WFM017", "WFM018", "WFM019", "WFM020", 
-                       "WFM021", "WFM024", "WFM026", "WFM044", "WFM045", "WFM046", 
-                       "WFM047", "WFM048", "WFM049", "WFM051", "WFM052", "WFM053", 
-                       "WFM054", "WFM055", "WFM057", "WFM058", "WFM059", "WFM062", 
-                       "WFM063", "WFM064", "WFM065", "WFM066", "WFM067", "WFM069", 
-                       /* color red tag */
-                       "WFM022", "WFM023", "WFM050", "WFM056", "WFM068"
-                       ]
-        for (i=0; i<FMGroup.length; i++){
-        	document.getElementById(FMGroup[i]).style.display="none";
-		}
+*/
+	/* 重置阀门颜色 */
+	function setDefaultFMColor(){
+		$("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
+        $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
 	}
-    function setShow(){
-    	showList();
-    	<%--document.getElementById("show_hide").innerHTML='隐藏';--%>
-    	hide=0;
-    }
-    
-    function changeHide(){
-        if(hide==1){
-            showList();
-            <%--document.getElementById("show_hide").innerHTML='隐藏';--%>
-            hide=0;
-            return;
-        }
-        else if(hide==0){
-            hideList();
-            <%--document.getElementById("show_hide").innerHTML='显示';--%>
-            hide=1;
-            return;
-        }
-    }
+	
+    function hideAllFM(){
+    	//隐藏所有阀门（包括阀门对应的标签）
+		$(".fm_default_green").attr("style","display:none;");
+		$(".fm_default_red").attr("style","display:none;");
+		$(".fm_default_hide").attr("style","display:none;");
+	}
+	
+/* 
+ *  用进度条的形式动态显示构筑物维修的操作步骤执行情况
+	function progressBar(){
+	  	//初始化js进度条
+	  	$("#bar").css("width","0px");
+	  	//进度条的速度，越小越快
+		var speed = 20;
+		
+		bar = setInterval(function(){
+		nowWidth = parseInt($("#bar").width());
+		//宽度要不能大于进度条的总宽度
+		if(nowWidth<=200){
+			barWidth = (nowWidth + 1)+"px";
+			$("#bar").css("width",barWidth);
+		}else{
+			//进度条读满后，停止
+			clearInterval(bar);
+		}
+	},speed);
+ 	} */
     </script>
 </head>
 <body>
@@ -337,165 +211,166 @@
             <canvas id="canvas_fix" width="1583" height="757"></canvas>
         </div>
 	
-
-   	<!-- 
-   	<p class="name_Model" id="WShow">显示名称</p>
-    <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label> 
+   	<!-- 显示名称模块
+	<div id="show_name">
+   		<p class="name_Model" id="WShow">显示名称</p>
+    	<label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label> 
+ 	</div>
  	-->
-    <a href="#" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a>
-    <a href="#" id="name_JJC1" style="text-decoration: none" class="name_ob">1#机加池</a>
-    <a href="#" id="name_JJC2" style="text-decoration: none" class="name_ob">2#机加池</a>
-    <a href="#" id="name_JJC3" style="text-decoration: none" class="name_ob">3#机加池</a>
-    <a href="#" id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
-    <a href="#" id="name_TC" class="name_ob" style="text-decoration: none">1#活性炭池</a>
-    <a href="#" id="name_TC1" class="name_ob" style="text-decoration: none">2#活性炭池</a>
-    <a href="#" id="name_CY" class="name_ob" style="text-decoration: none">臭氧混合池</a>
-    <a href="#" id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
-    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
-    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none">混合井</a>
-    <a href="#" id="name_HX" class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
-    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
-    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
-    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
-    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
-
-	<!-- 阀门显示为红色 -->
-    <img id="FM022" src="image/y2-35x37.png" class="fm_default_red">
-    <img id="FM050" src="image/y2-35x37.png" class="fm_default_red">
-    <img id="FM056" src="image/y2-35x37.png" class="fm_default_red">
-    <img id="FM068" src="image/y2-35x37.png" class="fm_default_red">
-    <img id="FM023" src="image/y2-35x37.png" class="fm_default_red">
-    <!-- 阀门显示为绿色 -->
-	<img id="FM05" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM06" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM07" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM09" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM010" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM014" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM015" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM016" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM017" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM018" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM019" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM020" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM044" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM045" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM052" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM055" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM057" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM059" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM062" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM063" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM064" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM065" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM066" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM067" src="image/y3-35x37.png" class="fm_default_green">
-    <img id="FM069" src="image/y3-35x37.png" class="fm_default_green">
-	<!-- 不显示多余的阀门     -->
-    <img id="FM021" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM024" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM025" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM026" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM046" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM047" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM048" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM049" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM051" src="image/y3-35x37.png" class="fm_default_green" style="display:none;"> 
-    <img id="FM053" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM054" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-    <img id="FM058" src="image/y3-35x37.png" class="fm_default_green" style="display:none;">
-
-
-    <p id="WFM05" class="name_FM">05#</p>
-    <p id="WFM06" class="name_FM">06#</p>
-    <p id="WFM07" class="name_FM">07#</p>
-    <p id="WFM09" class="name_FM">09#</p>
-    <p id="WFM010" class="name_FM">010#</p>
-    <p id="WFM065" class="name_FM">065#</p>
-    <p id="WFM062" class="name_FM">062#</p>
-    <p id="WFM063" class="name_FM">063#</p>
-    <p id="WFM064" class="name_FM">064#</p>
-    <p id="WFM045" class="name_FM">045#</p>
-    <p id="WFM014" class="name_FM">014#</p>
-    <p id="WFM015" class="name_FM">015#</p>
-    <p id="WFM069" class="name_FM">069#</p>
-    <p id="WFM066" class="name_FM">066#</p>
-    <p id="WFM016" class="name_FM">016#</p>
-    <p id="WFM068" class="name_FM">068#</p>
-    <p id="WFM067" class="name_FM">067#</p>
-    <p id="WFM017" class="name_FM">017#</p>
-    <p id="WFM018" class="name_FM">018#</p>
-    <p id="WFM019" class="name_FM">019#</p>
-    <p id="WFM020" class="name_FM">020#</p>
-    <p id="WFM052" class="name_FM">052#</p>
-    <p id="WFM056" class="name_FM">056#</p>
-    <p id="WFM057" class="name_FM">057#</p>
-    <p id="WFM059" class="name_FM">059#</p>
-    <p id="WFM022" class="name_FM">022#</p>
-    <p id="WFM023" class="name_FM">023#</p>
-    <p id="WFM044" class="name_FM">044#</p>
-    <p id="WFM055" class="name_FM">055#</p>
-    <p id="WFM050" class="name_FM">050#</p>
-    <!-- 不显示多余阀门下方标号 -->
-    <p id="WFM021" class="name_FM" style="display:none;">021#</p>
-    <p id="WFM024" class="name_FM" style="display:none;">024#</p>
-    <p id="WFM025" class="name_FM" style="display:none;">025#</p>
-    <p id="WFM026" class="name_FM" style="display:none;">026#</p>
-    <p id="WFM046" class="name_FM" style="display:none;">046#</p>
-    <p id="WFM047" class="name_FM" style="display:none;">047#</p>
-    <p id="WFM048" class="name_FM" style="display:none;">048#</p>
-    <p id="WFM049" class="name_FM" style="display:none;">049#</p>
-    <p id="WFM051" class="name_FM" style="display:none;">051#</p>
-    <p id="WFM053" class="name_FM" style="display:none;">053#</p>
-    <p id="WFM054" class="name_FM" style="display:none;">054#</p>
-    <p id="WFM058" class="name_FM" style="display:none;">058#</p>
+		<div id="name_gzw">
+		    <a href="#" id="name_QS"   class="name_ob" style="text-decoration: none">取水泵房</a>
+		    <a href="#" id="name_JJC1" class="name_ob" style="text-decoration: none">1#机加池</a>
+		    <a href="#" id="name_JJC2" class="name_ob" style="text-decoration: none" >2#机加池</a>
+		    <a href="#" id="name_JJC3" class="name_ob" style="text-decoration: none" >3#机加池</a>
+		    <a href="#" id="name_VL"   class="name_ob" style="text-decoration: none" >V型滤池</a>
+		    <a href="#" id="name_TC"   class="name_ob" style="text-decoration: none">1#活性炭池</a>
+		    <a href="#" id="name_TC1"  class="name_ob" style="text-decoration: none">2#活性炭池</a>
+		    <a href="#" id="name_CY"   class="name_ob" style="text-decoration: none">臭氧混合池</a>
+		    <a href="#" id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
+		    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
+		    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none">混合井</a>
+		    <a href="#" id="name_HX"   class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
+		    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
+		    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
+		    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
+		    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
+		</div>
+		<div id="FM_group">
+			<!-- 阀门显示为红色 -->
+		    <img id="FM022" src="image/y2-35x37.png" class="fm_default_red">
+		    <img id="FM023" src="image/y2-35x37.png" class="fm_default_red">
+		    <img id="FM050" src="image/y2-35x37.png" class="fm_default_red">
+		    <img id="FM056" src="image/y2-35x37.png" class="fm_default_red">
+		    <img id="FM068" src="image/y2-35x37.png" class="fm_default_red">
+		    <!-- 阀门显示为绿色 -->
+			<img id="FM05" src="image/y3-35x37.png"  class="fm_default_green">
+		    <img id="FM06" src="image/y3-35x37.png"  class="fm_default_green">
+		    <img id="FM07" src="image/y3-35x37.png"  class="fm_default_green">
+		    <img id="FM09" src="image/y3-35x37.png"  class="fm_default_green">
+		    <img id="FM010" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM014" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM015" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM016" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM017" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM018" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM019" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM020" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM044" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM045" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM052" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM055" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM057" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM059" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM062" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM063" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM064" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM065" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM066" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM067" src="image/y3-35x37.png" class="fm_default_green">
+		    <img id="FM069" src="image/y3-35x37.png" class="fm_default_green">
+			<!-- 不显示多余的阀门     -->
+		    <img id="FM021" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM024" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM025" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM026" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM046" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM047" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM048" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM049" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM051" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;"> 
+		    <img id="FM053" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM054" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		    <img id="FM058" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+		
+			<!-- 阀门对应的标签 -->
+		    <p id="WFM05"  class="fm_default_green">05#</p>
+		    <p id="WFM06"  class="fm_default_green">06#</p>
+		    <p id="WFM07"  class="fm_default_green">07#</p>
+		    <p id="WFM09"  class="fm_default_green">09#</p>
+		    <p id="WFM010" class="fm_default_green">010#</p>
+		    <p id="WFM065" class="fm_default_green">065#</p>
+		    <p id="WFM062" class="fm_default_green">062#</p>
+		    <p id="WFM063" class="fm_default_green">063#</p>
+		    <p id="WFM064" class="fm_default_green">064#</p>
+		    <p id="WFM045" class="fm_default_green">045#</p>
+		    <p id="WFM014" class="fm_default_green">014#</p>
+		    <p id="WFM015" class="fm_default_green">015#</p>
+		    <p id="WFM069" class="fm_default_green">069#</p>
+		    <p id="WFM066" class="fm_default_green">066#</p>
+		    <p id="WFM016" class="fm_default_green">016#</p>
+		    <p id="WFM067" class="fm_default_green">067#</p>
+		    <p id="WFM017" class="fm_default_green">017#</p>
+		    <p id="WFM018" class="fm_default_green">018#</p>
+		    <p id="WFM019" class="fm_default_green">019#</p>
+		    <p id="WFM020" class="fm_default_green">020#</p>
+		    <p id="WFM052" class="fm_default_green">052#</p>
+		    <p id="WFM057" class="fm_default_green">057#</p>
+		    <p id="WFM059" class="fm_default_green">059#</p>
+		    <p id="WFM044" class="fm_default_green">044#</p>
+		    <p id="WFM055" class="fm_default_green">055#</p>
+		    <p id="WFM022" class="fm_default_red">022#</p>
+		    <p id="WFM023" class="fm_default_red">023#</p>
+		    <p id="WFM050" class="fm_default_red">050#</p>
+		    <p id="WFM056" class="fm_default_red">056#</p>
+		    <p id="WFM068" class="fm_default_red">068#</p>
+		    <!-- 不显示多余阀门下方标号 -->
+		    <p id="WFM021" class="fm_default_hide" style="display:none;">021#</p>
+		    <p id="WFM024" class="fm_default_hide" style="display:none;">024#</p>
+		    <p id="WFM025" class="fm_default_hide" style="display:none;">025#</p>
+		    <p id="WFM026" class="fm_default_hide" style="display:none;">026#</p>
+		    <p id="WFM046" class="fm_default_hide" style="display:none;">046#</p>
+		    <p id="WFM047" class="fm_default_hide" style="display:none;">047#</p>
+		    <p id="WFM048" class="fm_default_hide" style="display:none;">048#</p>
+		    <p id="WFM049" class="fm_default_hide" style="display:none;">049#</p>
+		    <p id="WFM051" class="fm_default_hide" style="display:none;">051#</p>
+		    <p id="WFM053" class="fm_default_hide" style="display:none;">053#</p>
+		    <p id="WFM054" class="fm_default_hide" style="display:none;">054#</p>
+		    <p id="WFM058" class="fm_default_hide" style="display:none;">058#</p>
+	    </div>
+    </div>
     
-    </div>
+    <!-- 页面右侧面板 -->
     <div id="fix-panel">
-    <button type="button" id="panel_heading" onclick="changeHide()">
-    <h2 id="fix_head" >请点击需要维修的构筑物</h2>
-    <%--<a href="#" id="show_hide" onclick="changeHide()">显示</a>--%>
+    	<div>
+	    	<button type="button" id="panel_heading" class="hcc">
+	    		<h2 id="fix_head" >请点击需要维修的构筑物</h2>
+	    	</button>
+	    </div>
 
-    </button>
-    <div id="fix">
-    <div class="panel panel-default">
-    <!-- Default panel contents -->
+		<div class="panel panel-info" id="init_stage">
+			<div class="panel-heading">初始状态</div>
+			<table class="table">
+				<tr><td>全场正常运行</td></tr>
+			</table>
+		</div>
 
-    <%--<div class="panel-body" id="fix-content">--%>
-    <%--<p><h3>配合开关闸门顺序表</h3></p>--%>
-    <%--</div>--%>
-	
-    <!-- Table -->
-    <table id="fix_table" class="table" >
-    <thead>
-    <tr id="init_stage">初始状态</tr><br>
-    <tr id="init_stage">全场正常运行</tr>
-    </thead>
-    <tbody>
-    <td>#</td><td>操作</td>
-    <tr><td>1</td><td id="fix_line1"></td></tr>
-    <tr><td> </td><td id="fix_line2"></td></tr>
-    <tr><td>2</td><td id="fix_line3"></td></tr>
-    <tr><td> </td><td id="fix_line4"></td></tr>
-    <tr><td>3</td><td id="fix_line5"></td></tr>
-    <tr><td> </td><td id="fix_line6"></td></tr>
-    <tr><td>4</td><td id="fix_line7"></td></tr>
-    <tr><td> </td><td id="fix_line8"> </td></tr>
-    <tr><td>5</td><td id="fix_line9"></td></tr>
-    <tr><td> </td><td id="fix_line10"></td></tr>
-    </tbody>
-    </table>
-    <div id="panel_button">
-    <a href="#" id="nextPage" style="display:none;">方案1</a>
-    <a href="#" id="lastPage" style="display:none;">方案2</a>
-    <a href="#" id="export">生成方案</a>
-    <i id="reset" class="icon iconfont iconbtn">&#xe67c;</i>
-    <!-- <a href="#" id="reset" onclick="clearAll()">重置</a> -->
-    </div>
-    </div>
-    </div>
-    </div>
+		<div class="panel panel-info" id="fix_table">
+			<div class="panel-heading">操作步骤</div>
+			<table class="table">
+				<tr><td id="index_1">&nbsp;</td><td id="step_1" class="table_td_left" style="text-align: left">&nbsp;</td></tr>
+				<tr><td>&nbsp;</td><td id="step_1_result" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td id="index_2">&nbsp;</td><td id="step_2" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td>&nbsp;</td><td id="step_2_result" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td id="index_3">&nbsp;</td><td id="step_3" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td>&nbsp;</td><td id="step_3_result" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td id="index_4">&nbsp;</td><td id="step_4" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td>&nbsp;</td><td id="step_4_result" class="table_td_left" style="text-align: left"> </td></tr>
+				<tr><td id="index_5">&nbsp;</td><td id="step_5" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td>&nbsp;</td><td id="step_5_result" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td id="index_6">&nbsp;</td><td id="step_6" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td>&nbsp;</td><td id="step_6_result" class="table_td_left" style="text-align: left"></td></tr>
+			</table>
+		</div>
 
+		<div class="panel panel-info" id="panel_button">
+			<div class="panel-heading">功能</div>
+			<table class="table">
+				<tr><td id="scheme" class="hcc">方案二</td><td id="restore" class="hcc">恢复运行</td></tr>
+				<tr><td id="export" class="hcc">生成方案</td><td id="reset" class="hcc">重置</td></tr>
+			</table>
+		</div>
+	    
+    </div>
     <jsp:include page="down.jsp" />
 </div>
 
