@@ -1764,6 +1764,9 @@ oCanvas.domReady(function () {
 		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+		
+		//$("#step_1").animate({opacity:'1'},'fast');
+		
     	//管道退水
 		GD11.state=2;
     	GD1001.state=2;
@@ -2594,28 +2597,31 @@ oCanvas.domReady(function () {
 		 *  "FM048", "FM049", "FM051", "FM053", "FM054", "FM058"]
 		 */
         
-        //重置阀门及其标号恢复颜色并且显示
+        //恢复阀门的默认颜色
         $("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
         $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
+        //只显示重要的阀门
         $("div#FM_group .fm_default_green").attr("style","display:block;");
         $("div#FM_group .fm_default_red").attr("style","display:block;");
 
+        //右侧
         //清空单元格的内容
 		for (i=1;i<7;i++){
 	        document.getElementById("index_"+ i).innerHTML="&nbsp;";
 	        document.getElementById("step_" + i).innerHTML="&nbsp;";
 	        document.getElementById("step_" + i + "_result").innerHTML="&nbsp;";
 		}
-
-
+		
 		//重置面板提示的内容
         $("#fix_head").text("请点击需要维修的构筑物");
+        
         //恢复构筑物及其标签的颜色
         $("div#name_gzw .name_ob").attr("style","color:#283a45");
         $("div#name_gzw .name_ob").attr("style","background:rgba(255,255,255,0.5)");
         //恢复表格中单元格的颜色
         $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
         $(".table_td_left").attr("style","text-align:left");
+        
         //解除功能面板的函数绑定
 /*      document.getElementById("scheme").onclick = function(){提示};
         document.getElementById("restore").onclick = function(){提示};
