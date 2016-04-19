@@ -23,7 +23,7 @@ oCanvas.domReady(function () {
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 96},
-            {x_cell: 707 ,y_cell: 220}          
+            {x_cell: 707 ,y_cell: 225}          
         ],
         GDwidth:width_all,
         color:color_GD
@@ -805,9 +805,9 @@ oCanvas.domReady(function () {
         	setFMColorRed("FM064");
         	GD25.state=2;
         }
+     
         if(GD0101.state==1)
         	GD25.state=3;
-
 //        if(GD01.full==1){
 //            GD0101.paused=1;
 //        }
@@ -892,7 +892,7 @@ oCanvas.domReady(function () {
         GD23.init();
         GD24.init();
         GD25.init();
-   
+        
         img1.bind("flash",function(){
             $("#name_QS").animate({
                 height:'200px',opacity:'1'},'fast');
