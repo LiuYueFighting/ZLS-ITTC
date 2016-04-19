@@ -23,54 +23,54 @@ oCanvas.domReady(function () {
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 96},
-            {x_cell: 707 ,y_cell: 220}
+            {x_cell: 707 ,y_cell: 220}          
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//1
     var GD0101=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 707 ,y_cell: 160},
+            {x_cell: 707 ,y_cell: 160},//160
             {x_cell: 707 ,y_cell: 223},
-            {x_cell: 765 ,y_cell: 258},
-            {x_cell: 989 ,y_cell: 258},
-            {x_cell: 989, y_cell: 349}
+            {x_cell: 769 ,y_cell: 261},
+            {x_cell: 989 ,y_cell: 261},
+            {x_cell: 989, y_cell: 348}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//2
     var GD02=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 748 ,y_cell: 98},
-            {x_cell: 748 ,y_cell: 222},
+            {x_cell: 747 ,y_cell: 98},
+            {x_cell: 747 ,y_cell: 222},
             {x_cell: 775 ,y_cell: 240},
-            {x_cell: 1020 ,y_cell: 240},
-            {x_cell: 1020, y_cell: 256}
+            {x_cell: 1019 ,y_cell: 240},
+            {x_cell: 1019 , y_cell: 256}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//3
     var GD03=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1020 ,y_cell: 256},
-            {x_cell: 1020, y_cell: 348}
+            {x_cell: 1019 ,y_cell: 256},
+            {x_cell: 1019, y_cell: 348}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//4
     var GD04=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1026,y_cell: 256},
-            {x_cell: 1188 ,y_cell: 256},
+            {x_cell: 1023,y_cell: 261},
+            {x_cell: 1188 ,y_cell: 261},
             {x_cell: 1188, y_cell: 374}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//5
     var GD05=createGD1({
         parent:canvas,
         cells:[
@@ -80,7 +80,7 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//6
     var GD06=createGD1({
         parent:canvas,
         cells:[
@@ -90,100 +90,101 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//7
     var GD07=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1188,y_cell: 412},
-            {x_cell: 1188,y_cell: 567}
+            {x_cell: 1187,y_cell: 412},
+            {x_cell: 1187,y_cell: 573}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//8
     var GD08=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 896 ,y_cell: 445},
-            {x_cell: 896 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 539},
-            {x_cell: 819, y_cell: 539}
+            {x_cell: 897 ,y_cell: 445},
+            {x_cell: 897 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 542},
+            {x_cell: 818, y_cell: 542}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//9
     var GD09=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 896 ,y_cell: 445},
-            {x_cell: 896 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 482},
-            {x_cell: 792 ,y_cell: 562},
-            {x_cell: 819, y_cell: 562}
+            {x_cell: 897 ,y_cell: 445},
+            {x_cell: 897 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 485},
+            {x_cell: 793 ,y_cell: 562},
+            {x_cell: 818, y_cell: 562}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//10
     var GD10=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1108 ,y_cell: 445},
-            {x_cell: 1108 ,y_cell: 482},
-            {x_cell: 990 ,y_cell: 482}
+            {x_cell: 1109 ,y_cell: 445},
+            {x_cell: 1109 ,y_cell: 485},
+            {x_cell: 990 ,y_cell: 485},
+            {x_cell: 990 ,y_cell: 527}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//11
     var GD1001=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 990 ,y_cell: 482},
-            {x_cell: 990 ,y_cell: 542},
-            {x_cell: 970, y_cell: 542}
+            {x_cell: 990 ,y_cell: 485},
+            {x_cell: 990 ,y_cell: 543},
+            {x_cell: 970, y_cell: 543}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//12
     var GD1002=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 990 ,y_cell: 482},
-            {x_cell: 900 ,y_cell: 482}
+            {x_cell: 990 ,y_cell: 485},
+            {x_cell: 900 ,y_cell: 485}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//13
     var GD11=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 990 ,y_cell: 482},
-            {x_cell: 990 ,y_cell: 562},
-            {x_cell: 970, y_cell: 562}
+            {x_cell: 990 ,y_cell: 485},
+            {x_cell: 990 ,y_cell: 563},
+            {x_cell: 970, y_cell: 563}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//14
     var GD12=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 1124 ,y_cell: 650},
-            {x_cell: 962, y_cell: 650},
+            {x_cell: 1129 ,y_cell: 653},
+            {x_cell: 962, y_cell: 653},
             {x_cell: 962, y_cell: 667}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//15
     var GD13=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 848 ,y_cell: 570},
             {x_cell: 848 ,y_cell: 605},
-            {x_cell: 660 ,y_cell: 605},
-            {x_cell:660, y_cell: 641}
+            {x_cell: 659 ,y_cell: 605},
+            {x_cell:659, y_cell: 646}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//16
 
     //var GD14=createGD({
     //    parent:canvas,
@@ -198,26 +199,28 @@ oCanvas.domReady(function () {
     var GD141=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 879 ,y_cell: 570},
-            {x_cell: 879 ,y_cell: 635},
-            {x_cell: 714 ,y_cell: 635}
+            //{x_cell: 879 ,y_cell: 570},
+            {x_cell: 879 ,y_cell: 633},
+            {x_cell: 714 ,y_cell: 633}
+            //{x_cell: 636 ,y_cell: 633}
+            //{x_cell: 636, y_cell: 646}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//17
 
     var GD15=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 807 ,y_cell: 708},
-            {x_cell: 715 ,y_cell: 708},
-            {x_cell: 715 ,y_cell: 630},
-            {x_cell: 636 ,y_cell: 630},
-            {x_cell: 636, y_cell: 646}
+            {x_cell: 808 ,y_cell: 711},
+            {x_cell: 717 ,y_cell: 711},
+            {x_cell: 717 ,y_cell: 633},
+            {x_cell: 633 ,y_cell: 633},
+            {x_cell: 633, y_cell: 646}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//18
     var GD1501=createGD1({
         parent:canvas,
         cells:[
@@ -227,8 +230,8 @@ oCanvas.domReady(function () {
             {x_cell: 673, y_cell: 735}
         ],
         GDwidth:width_all,
-        color:color_GD
-    });
+        color:"rgba(1,0,0,0)"
+    });//19
     var GD16=createGD1({
         parent:canvas,
         cells:[
@@ -237,95 +240,95 @@ oCanvas.domReady(function () {
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//20
     var GD17=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 675 ,y_cell: 697},
-            {x_cell: 675 ,y_cell: 734},
-            {x_cell: 436 ,y_cell: 734},
-            {x_cell: 436, y_cell: 691}
+            {x_cell: 676 ,y_cell: 697},
+            {x_cell: 676 ,y_cell: 736},
+            {x_cell: 435 ,y_cell: 736},
+            {x_cell: 435, y_cell: 691}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//21
     var GD18=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 415 ,y_cell: 657},
-            {x_cell: 415, y_cell: 568}
+            {x_cell: 414 ,y_cell: 657},
+            {x_cell: 414, y_cell: 568}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//22
     var GD19=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 539 ,y_cell: 654},
-            {x_cell: 539 ,y_cell: 603},
-            {x_cell: 415 ,y_cell: 603},
-            {x_cell: 415, y_cell: 563}
+            {x_cell: 540 ,y_cell: 654},
+            {x_cell: 540 ,y_cell: 605},
+            {x_cell: 414 ,y_cell: 605},
+            {x_cell: 414, y_cell: 563}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//23
     var GD20=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 403 ,y_cell: 482},
-            {x_cell: 372 ,y_cell: 482}
+            {x_cell: 403 ,y_cell: 485},
+            {x_cell: 372 ,y_cell: 485}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//24
     var GD21=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 309 ,y_cell: 431},
-            {x_cell: 309, y_cell: 401},
-            {x_cell: 405, y_cell: 401},
-            {x_cell: 405, y_cell: 376}
+            {x_cell: 308 ,y_cell: 435},
+            {x_cell: 308, y_cell: 403},
+            {x_cell: 407, y_cell: 403},
+            {x_cell: 407, y_cell: 376}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//25
     var GD22=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 707 ,y_cell: 96},
             {x_cell: 707 ,y_cell: 223},
-            {x_cell: 765 ,y_cell: 258},
-            {x_cell: 989 ,y_cell: 258},
+            {x_cell: 769 ,y_cell: 261},
+            {x_cell: 989 ,y_cell: 261},
             {x_cell: 989, y_cell: 297},
             {x_cell: 1018, y_cell: 297},
             {x_cell: 1018, y_cell: 349}
         ],
         GDwidth:width_all,
         color:"rgba(1,0,0,0)"
-    });
+    });//26
 
     var GD23=createGD1({
         parent:canvas,
         cells:[
-            {x_cell: 421 ,y_cell: 433},
-            {x_cell: 421, y_cell: 401},
-            {x_cell: 465, y_cell: 401},
-            {x_cell: 465, y_cell: 435}
+            {x_cell: 422 ,y_cell: 435},
+            {x_cell: 422, y_cell: 403},
+            {x_cell: 464, y_cell: 403},
+            {x_cell: 464, y_cell: 435}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//27
     var GD24=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 527 ,y_cell: 439},
-            {x_cell: 527 ,y_cell: 401},
-            {x_cell: 592 ,y_cell: 401},
-            {x_cell: 592, y_cell: 375}
+            {x_cell: 527 ,y_cell: 403},
+            {x_cell: 593 ,y_cell: 403},
+            {x_cell: 593, y_cell: 375}
         ],
         GDwidth:width_all,
         color:color_GD
-    });
+    });//28
     var GD25=createGD1({
         parent:canvas,
         cells:[
@@ -802,6 +805,8 @@ oCanvas.domReady(function () {
         	setFMColorRed("FM064");
         	GD25.state=2;
         }
+        if(GD0101.state==1)
+        	GD25.state=3;
 
 //        if(GD01.full==1){
 //            GD0101.paused=1;
@@ -1096,6 +1101,7 @@ oCanvas.domReady(function () {
     }
 
     function clearAll(){
+    	GD0101.state=3;
 
         canvas.children[2].fill=color_GD;
         canvas.children[14].fill=color_GD;
@@ -1232,7 +1238,7 @@ oCanvas.domReady(function () {
 
             document.getElementById("export").href="download/fix-fm062.docx";
             setFMColorRed("FM09");
-            setFMColorGreen("FM064");
+           // setFMColorGreen("FM064");
             GD0101.state=2;
 //            window.setTimeout(function(){
 //               decay(2,1);
