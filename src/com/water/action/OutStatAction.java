@@ -295,15 +295,16 @@ public class OutStatAction extends ActionSupport{
 	}
 	
 	public String export2excel(){
+		@SuppressWarnings("unchecked")
 		List<OutStat> list=(List<OutStat>) data.get("rows");
 		WritableWorkbook book = null;
-		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTemp"));
+		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTempForOut"));
 		//判断上述路径是否存在，如果不存在则创建该路径
 		if (!uploadFile.exists()) {
 			uploadFile.mkdir();
 		}
 		try{
-			String path=ServletActionContext.getServletContext().getRealPath("//downloadTemp")+"//OutStat.xls";
+			String path=ServletActionContext.getServletContext().getRealPath("//downloadTempForOut")+"//OutStat.xls";
 			book = Workbook.createWorkbook(new File(path));
 			//设置格式
 			//标题

@@ -14,19 +14,16 @@ $(document).ready(function() {
 			"<tr id='tr" + _len + "'>"
 			+ "<td style='width:1px;height:26px'><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
 			+ "<td style='width:1px;height:26px'><input type='hidden' id='dateTempAdd' name='dateTemp' style='width:1px;height:25px' /></td>"
-			+ "<td style='width:1px;height:26px'><input type='hidden' id='IDAdd' name='dataAnalysis.ID' style='width:1px;height:25px' /></td>"
+			+ "<td style='width:1px;height:26px'><input type='hidden' id='IDAdd' name='moChiAnalysis.ID' style='width:1px;height:25px' /></td>"
 			+ "<td id='indexNum" + _len + "'style='text-align:center; width:40px;height:26px'>" + _len + "</td>"
-			+ "<td style='width:152px;height:26px'><input name='dataAnalysis.t' id='tAdd' type='datetime-local' style='width:150px;height:25px'/></td>"
-			+ "<td style='width:102px;height:26px'><select name='dataAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'><option value='MTG_QingS_SC01' selected='selected'>膜池01#</option><option value='MTG_QingS_SC02'>膜池02#</option><option value='MTG_QingS_SC03'>膜池03#</option></select></td>"
-			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='InV' name='dataAnalysis.InV' data-options='min:0,precision:0,' /></td>"
-			+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OutV' name='dataAnalysis.OutV' data-options='min:0,precision:0' /></td>"
-			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='HXOutV' name='dataAnalysis.HXOutV' data-options='min:0,precision:0'/></td>"
-			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='LCOutV' name='dataAnalysis.LCOutV' data-options='min:0,precision:0'/></td>"
-			+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='TCOutV' name='dataAnalysis.TCOutV' data-options='min:0,precision:0' /></td>"
-			+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='JJOutV' name='dataAnalysis.JJOutV' data-options='min:0,precision:0'/></td>"
-			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='HLInV' name='dataAnalysis.HLInV' data-options='min:0,precision:0'/></td>"
-			+ "<td style='width:52px;height:26px'><input style='width:50px;height:25px' id='Storage' name='dataAnalysis.Storage'  data-options='precision:0'/></td>"
-			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='PreH' name='dataAnalysis.PreH' data-options='precision:2'/></td>"
+			+ "<td style='width:152px;height:26px'><input name='moChiAnalysis.t' id='tAdd' type='datetime-local' style='width:150px;height:25px'/></td>"
+			+ "<td style='width:102px;height:26px'><select name='moChiAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'>"
+						+"<option value='MTG_MoChi_SC01' selected='selected'>1#膜池#</option><option value='MTG_MoChi_SC02'>2#膜池#</option><option value='MTG_MoChi_SC03'>3#膜池#</option>" 
+						+"<option value='MTG_MoChi_SC04'>4#膜池#</option><option value='MTG_MoChi_SC05'>5#膜池#</option><option value='MTG_MoChi_SC06'>6#膜池</option></select></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InPress' name='moChiAnalysis.InPress' data-options='min:0,precision:0,' /></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='OutPress' name='moChiAnalysis.OutPress' data-options='min:0,precision:0' /></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='DiffPress' name='moChiAnalysis.DiffPress' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InFlow' name='moChiAnalysis.InFlow' data-options='min:0,precision:0'/></td>"
 			+ "<td id='delete" + _len + "'style='width:40px;height:26px'><a href='#' onclick='deltr(" + _len + ",event)'>删除</a></td>"
 			+ "</tr>");
 	});
@@ -129,31 +126,25 @@ $(document).ready(function() {
 			},{
 				//duration: 'slow'
 			});
-//			$('#template').animate({
-//				'left': '120px',
-//				'top': '110px'
-//			},{
-//				//duration: 'slow'
-//			});
 		}
 		
 	});
 	$('#add').click(function() {
 		hideImportPanel();
-		addDataAnalysis();
+		addMoChiAnalysis();
 	});
 	$('#edit').click(function() {
 		hideImportPanel();
-		editDataAnalysis();
+		editMoChiAnalysis();
 	});
 	$('#delete').click(function() {
 		hideImportPanel();
-		deleteDataAnalysis();
+		deleteMoChiAnalysis();
 	});
 	$('#search').click(function() {
 		hideImportPanel();
 		searchMode = 1;
-		searchDataAnalysis();
+		searchMoChiAnalysis();
 	});
 	$('#export').click(function() {
 		hideImportPanel();
@@ -181,23 +172,19 @@ var deltr = function(index, event) {
 	var _len = $("#tab tr").length;
 	$("tr[id='tr" + index + "']").remove();
 	for(var i = index + 1; i < _len; ++i) {
-		//alert("i = " + i + " _len = " + _len);
 		$("tr[id='tr" + i + "']").replaceWith("<tr id='tr" + (i-1) + "'>"
 				+ "<td style='width:1px;height:26px'><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
 				+ "<td style='width:1px;height:26px'><input type='hidden' id='dateTempAdd' name='dateTemp' style='width:1px;height:25px' /></td>"
-				+ "<td style='width:1px;height:26px'><input type='hidden' id='IDAdd' name='dataAnalysis.ID' style='width:1px;height:25px' /></td>"
+				+ "<td style='width:1px;height:26px'><input type='hidden' id='IDAdd' name='moChiAnalysis.ID' style='width:1px;height:25px' /></td>"
 				+ "<td id='indexNum" + (i-1) + "'style='text-align:center; width:40px;height:26px'>" + (i-1) + "</td>"
-				+ "<td style='width:152px;height:26px'><input name='dataAnalysis.t' id='tAdd' type='datetime-local' style='width:150px;height:25px'/></td>"
-				+ "<td style='width:102px;height:26px'><select name='dataAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'><option value='MTG_QingS_SC01' selected='selected'>膜池01#</option><option value='MTG_QingS_SC02'>膜池02#</option><option value='MTG_QingS_SC03'>膜池03#</option></select></td>"
-				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='InV' name='dataAnalysis.InV' data-options='min:0,precision:0,' /></td>"
-				+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OutV' name='dataAnalysis.OutV' data-options='min:0,precision:0' /></td>"
-				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='HXOutV' name='dataAnalysis.HXOutV' data-options='min:0,precision:0'/></td>"
-				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='LCOutV' name='dataAnalysis.LCOutV' data-options='min:0,precision:0'/></td>"
-				+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='TCOutV' name='dataAnalysis.TCOutV' data-options='min:0,precision:0' /></td>"
-				+ "<td style='width:82px;height:26px'><input style='width:80px;height:25px' id='JJOutV' name='dataAnalysis.JJOutV' data-options='min:0,precision:0'/></td>"
-				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='HLInV' name='dataAnalysis.HLInV' data-options='min:0,precision:0'/></td>"
-				+ "<td style='width:52px;height:26px'><input style='width:50px;height:25px' id='Storage' name='dataAnalysis.Storage'  data-options='precision:0'/></td>"
-				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='PreH' name='dataAnalysis.PreH' data-options='precision:2'/></td>"
+				+ "<td style='width:152px;height:26px'><input name='moChiAnalysis.t' id='tAdd' type='datetime-local' style='width:150px;height:25px'/></td>"
+				+ "<td style='width:102px;height:26px'><select name='moChiAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'>" +
+						"<option value='MTG_MoChi_SC01' selected='selected'>1#膜池</option><option value='MTG_MoChi_SC02'>2#膜池</option><option value='MTG_MoChi_SC03'>3#膜池</option>" +
+						"<option value='MTG_MoChi_SC04'>4#膜池</option><option value='MTG_MoChi_SC05'>5#膜池</option><option value='MTG_MoChi_SC06'>6#膜池</option></select></td>"
+				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='InPress' name='moChiAnalysis.InPress' data-options='min:0,precision:0,' /></td>"
+				+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OutPress' name='moChiAnalysis.OutPress' data-options='min:0,precision:0' /></td>"
+				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='DiffPress' name='moChiAnalysis.DiffPress' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InFlow' name='moChiAnalysis.InFlow' data-options='min:0,precision:0'/></td>"
 				+ "<td id='delete" + (i-1) + "'style='width:40px;height:26px'><a href='#' onclick='deltr(" + (i-1) + ",event)'>删除</a></td>"
 				+ "</tr>");
 	}
@@ -207,18 +194,15 @@ var deltr = function(index, event) {
 
 
 
-var tburl = 'searchDataAnalysis.action';
+var tburl = 'searchMoChiAnalysis.action';
 var datalist = new Array();
-var title="膜池水位计算表" + strDate;
+var title="超 滤 膜 系 统 运 行 工 况 记 录" + strDate;
 //加载项目列表
-function listDataAnalysis(data) {
-	$("#dataAnalysisbody").datagrid({
+function listMoChiAnalysis(data) {
+	$("#moChiAnalysisbody").datagrid({
 		title: title,
 		width : "1300",
 		height : "300",
-//		iconCls : 'icon-save', // 表格左上角的图标样式
-		/*url : 'listDataAnalysis.action', // 访问服务器的地址，要求返回JSON对象*/
-		//url:tburl,
 		data:data,//加载
 		rownumbers : true, // 在最前面显示行号
 		fitColumns : true, // 自动适应列宽
@@ -226,11 +210,6 @@ function listDataAnalysis(data) {
 		singleSelect : true, // 每次只选中一行
 		loadMsg : '正在加载项目列表，请稍后...',
 		remoteSort : false, // 排序，true表示从服务器端排序
-		
-//		pagination : true, // 在底部显示分页工具栏
-//		pageSize : 5, // 指定每页的大小，服务器要加上page属性和total属性
-//		pageList : [ 3,5,10,15,20], // 可以设置每页记录条数的列表，服务器要加上rows属性
-		
 		idField : 'ID', // 主键属性
 		onLoadSuccess: function(data){
 			if(data.rows!=datalist){		
@@ -244,38 +223,22 @@ function listDataAnalysis(data) {
 		            		  return value.substring(0, 10)+" "+value.substring(11,13)+"时";
 		            	  }
 		            },
-		            {field : 'poolID', title : '水池编号', align : 'center', sortable : true,width:80,
+		            {field : 'poolID', title : '膜池编号', align : 'center', sortable : true,width:80,
 			            	  formatter:function(value){
 			            		    return formPoolID(value);
 			            	  }
 		            },
-		            {field : 'inV', title : '总来水量', align :'center', sortable : true, width:80},
-		            {field : 'outV', title : '出水量', align : 'center', sortable : true,width:70},
-		            {field : 'HXOutV', title : '虹吸滤池反冲洗', align :'center', sortable : true,width:105},
-		            {field : 'LCOutV', title : 'V型滤池反冲洗', align : 'center', sortable : true,width:105},
-		            {field : 'TCOutV', title : '炭池反冲洗', align :'center', sortable : true,width:90},
-		            {field : 'JJOutV', title : '机加池排泥', align : 'center', sortable : true,width:90},
-		            {field : 'HLInV', title : '回流进水', align : 'center', sortable : true,width:80},
-		            {field : 'storage',	title : '蓄水量',	align : 'center',sortable : true,width:70},
-		            {field : 'preH', title : '预测水位', align :'center', sortable : true,width:80,
-		            	formatter : function(value) {  //只显示两位小数
-		            			  return value.toFixed(2);
-		            	},
-		            	styler: function(value) {
-		            		if(value <= 2) {
-		            			return 'background-color:#FFFF00;font-weight:bolder;border:2px solid #FFFF00';
-		            		} else if(value > 4.9) {
-		            			return 'background-color:#FF0033;font-weight:bolder;border:2px solid #FF0033' ;
-		            		}
-		            	}
-		            }
+		            {field : 'inPress', title : '进膜压力 (Mpa)', align :'center', sortable : true, width:80},
+		            {field : 'outPress', title : '出水压力 (Mpa)', align : 'center', sortable : true,width:70},
+		            {field : 'diffPress', title : '跨膜压差 (Mpa)', align :'center', sortable : true,width:105},
+		            {field : 'inFlow', title : '进水流量(m³)', align : 'center', sortable : true,width:105},
 		            ]],
 		onLoadError: function () {
 			 $.messager.alert("提示", "服务器忙，请稍后再试！", "warning");
 		},
 		            	  
 		onDblClickRow: function (rowIndex,rowData){
-			editDataAnalysis();
+			editMoChiAnalysis();
 		},
 		
 		onHeaderContextMenu: function(e, field){
@@ -297,13 +260,13 @@ function createColumnMenu(){
 	cmenu.menu({
 		onClick: function(item){
 			if (item.iconCls == 'icon-ok'){
-				$('#dataAnalysisbody').datagrid('hideColumn', item.name);
+				$('#moChiAnalysisbody').datagrid('hideColumn', item.name);
 				cmenu.menu('setIcon', {
 					target: item.target,
 					iconCls: 'icon-empty'
 				});
 			} else {
-				$('#dataAnalysisbody').datagrid('showColumn', item.name);
+				$('#moChiAnalysisbody').datagrid('showColumn', item.name);
 				cmenu.menu('setIcon', {
 					target: item.target,
 					iconCls: 'icon-ok'
@@ -311,10 +274,10 @@ function createColumnMenu(){
 			}
 		}
 	});
-	var fields = $('#dataAnalysisbody').datagrid('getColumnFields');
+	var fields = $('#moChiAnalysisbody').datagrid('getColumnFields');
 	for(var i=0; i<fields.length; i++){
 		var field = fields[i];
-		var col = $('#dataAnalysisbody').datagrid('getColumnOption', field);
+		var col = $('#moChiAnalysisbody').datagrid('getColumnOption', field);
 		cmenu.menu('appendItem', {
 			text: col.title,
 			name: field,
@@ -367,7 +330,7 @@ function closeAddForm() {
 }
 
 //添加的函数
-function addDataAnalysis() {
+function addMoChiAnalysis() {
 
 	// 清空原有的数据
 	$('#newfrmEdit').form('clear');
@@ -410,28 +373,24 @@ function showAddForm() {
 }
 
 //编辑按钮的操作
-function editDataAnalysis() {
-	var dataAnalysis = $('#dataAnalysisbody').datagrid('getSelected');// 得到选中的一行数据
+function editMoChiAnalysis() {
+	var moChiAnalysis = $('#moChiAnalysisbody').datagrid('getSelected');// 得到选中的一行数据
 	// 如果没有选中记录
-	if (dataAnalysis == null) {
+	if (moChiAnalysis == null) {
 		$.messager.alert('项目', '请先选中要编辑的项目', 'info');
 		return;
 	}
 	$('#frmEdit').form('clear');
 
 	// 填充数据 填充的是json数据
-	$("#ID").val(dataAnalysis.ID);
-	$("#PoolID").combobox('setValue',dataAnalysis.poolID);
-	$("#t").datetimebox("setValue",(dataAnalysis.t).replace('T',' '));
-	$("#InV").numberbox('setValue',dataAnalysis.inV);
-	$("#OutV").numberbox('setValue',dataAnalysis.outV);
-	$("#HLInV").numberbox('setValue',dataAnalysis.HLInV);
-	$("#HXOutV").numberbox('setValue',dataAnalysis.HXOutV);
-	$("#LCOutV").numberbox('setValue',dataAnalysis.LCOutV);
-	$("#TCOutV").numberbox('setValue',dataAnalysis.TCOutV);
-	$("#JJOutV").numberbox('setValue',dataAnalysis.JJOutV);
-	$("#Storage").numberbox('setValue',dataAnalysis.storage);
-	$("#PreH").numberbox('setValue',dataAnalysis.preH);
+	$("#ID").val(moChiAnalysis.ID);
+	$("#PoolID").combobox('setValue',moChiAnalysis.poolID);
+	$("#t").datetimebox("setValue",(moChiAnalysis.t).replace('T',' '));
+	$("#InPress").numberbox('setValue',moChiAnalysis.inPress);
+	$("#OutPress").numberbox('setValue',moChiAnalysis.outPress);
+	$("#DiffPress").numberbox('setValue',moChiAnalysis.diffPress);
+	$("#InFlow").numberbox('setValue',moChiAnalysis.inFlow);
+
 	// 显示编辑页面
 	showEditForm();
 }
@@ -444,10 +403,10 @@ function dealSave() {
 	//alert('edit form' + $("#frmEdit").serialize());
 	// 得到id的值，为空串表示添加
 	if ($("#ID").val() == "") {
-		$.post("addDataAnalysis.action", params, function(result) {
+		$.post("addMoChiAnalysis.action", params, function(result) {
 			if (result.operateSuccess){
 				location.reload();
-//				$('#dataAnalysisbody').datagrid('reload');// 重新加载
+//				$('#moChiAnalysisbody').datagrid('reload');// 重新加载
 				$.messager.alert('添加', '添加成功', 'info');
 			} else {
 				$.messager.alert('添加', '添加失败', 'warning');
@@ -455,10 +414,10 @@ function dealSave() {
 		});
 	} else {
 		// 表示更新
-		$.post("updateDataAnalysis.action", params, function(result) {
+		$.post("updateMoChiAnalysis.action", params, function(result) {
 			if (result.operateSuccess) {
 				location.reload();
-//				$('#dataAnalysisbody').datagrid('reload');// 重新加载
+//				$('#moChiAnalysisbody').datagrid('reload');// 重新加载
 				$.messager.alert('更新', '更新成功', 'info');
 			} else {
 				$.messager.alert('更新', '更新失败', 'warning');
@@ -470,25 +429,24 @@ function dealSave() {
 function dealAddSave() {
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#newfrmEdit").serialize();
-	//alert("prams is " + params);
+	alert("params = " + params);
 	var paramsArray = params.split("split=&");
-	//alert("paramsArray.length is " + paramsArray.length);
-	//alert("pramsArray is " + paramsArray);
 	var strLength;
 	var tempStr;
 	var newStr;
 	for(var i = 1; i < paramsArray.length; ++i) {
-		//alert("Into for loop!");
+		alert("paramsArray[i] = " + paramsArray[i]);
 		strLength = paramsArray[i].length;
-		tempStr = paramsArray[i].substring(42, 60);
+		tempStr = paramsArray[i].substring(44, 62);
 		//alert("old tempStr" + tempStr);
 		newtempStr = tempStr.substring(0, 10) + '+' + tempStr.substring(11, tempStr.length);
 		//alert("new temStr" + newtempStr);
-		newStr = paramsArray[i].substring(0, 9) + newtempStr + paramsArray[i].substring(9, 42)
-					+ newtempStr + paramsArray[i].substring(60, strLength);
+		newStr = paramsArray[i].substring(0, 9) + newtempStr + paramsArray[i].substring(9, 44)
+					+ newtempStr + paramsArray[i].substring(62, strLength);
 		paramsArray[i] = newStr;
 		
 	}
+	
 	//strTAddalert('Form表单' + params);
 	//alert('Form表单Array' + paramsArray);
 	var errorMessage = '';
@@ -498,8 +456,7 @@ function dealAddSave() {
 		// 得到id的值，为空串表示添加
 		var re = new RegExp(/^dateTemp=\d{4}-\d{2}\-\d{2}\+\d{2}%3A\d{2}/);
 		var test = re.test(paramsArray[i]);
-		//alert(test);
-		
+	
 		if(!test) {
 			var errorMessageTemp = '';
 			if(i == 1)
@@ -513,11 +470,11 @@ function dealAddSave() {
 		else {
 			if ($("#IDAdd").val() == "") {
 				//alert('Add POST test');
-				$.post("addDataAnalysis.action", paramsArray[i], function(result) {
+				$.post("addMoChiAnalysis.action", paramsArray[i], function(result) {
 					//alert('test' + result.operateSuccess);
 					if (result.operateSuccess){
 						location.reload();
-//						$('#dataAnalysisbody').datagrid('reload');// 重新加载
+//						$('#moChiAnalysisbody').datagrid('reload');// 重新加载
 						$.messager.alert('添加', '添加成功', 'info');
 					} else {
 						$.messager.alert('添加', '添加失败', 'warning');
@@ -526,10 +483,10 @@ function dealAddSave() {
 			}//添加if
 			else {
 				// 表示更新
-				$.post("updateDataAnalysis.action", params, function(result) {
+				$.post("updateMoChiAnalysis.action", params, function(result) {
 					if (result.operateSuccess) {
 						location.reload();
-//						$('#dataAnalysisbody').datagrid('reload');// 重新加载
+//						$('#moChiAnalysisbody').datagrid('reload');// 重新加载
 						$.messager.alert('更新', '更新成功', 'info');
 					} else {
 						$.messager.alert('更新', '更新失败', 'warning');
@@ -546,23 +503,23 @@ function dealAddSave() {
 
 
 //删除项目
-function deleteDataAnalysis() {
-	var dataAnalysis = $('#dataAnalysisbody').datagrid('getSelected');// 得到选中的一行数据
+function deleteMoChiAnalysis() {
+	var moChiAnalysis = $('#moChiAnalysisbody').datagrid('getSelected');// 得到选中的一行数据
 	// 如果没有选中记录
-	if (dataAnalysis == null) {
+	if (moChiAnalysis == null) {
 		$.messager.alert('删除', '请先选中要删除的项目', 'info');
 		return;
 	}
 	$.messager.confirm('确认', '真的要删除选中的记录吗？', function(r) {
 		if (r) {
-			var url = "deleteDataAnalysis.action?dataAnalysis.ID=" + dataAnalysis.ID;
+			var url = "deleteMoChiAnalysis.action?moChiAnalysis.ID=" + moChiAnalysis.ID;
 			// 试一下get方法（地址，回调函数）
 			$.get(url, function(result) {
 				if (result.operateSuccess) {
 					location.reload();
 //					$.messager.alert('删除', '选中的项目成功删除！', 'info');
 					// 重新加载
-					$("#dataAnalysisbody").datagrid('reload');
+					$("#moChiAnalysisbody").datagrid('reload');
 				} else {
 					$.messager.alert('删除', '删除失败！', 'warning');
 				}
@@ -572,13 +529,13 @@ function deleteDataAnalysis() {
 }
 
 //查询全部
-function listAllDataAnalysis(){
+function listAllMoChiAnalysis(){
 	$('#frmSearch').form('clear');
 	dealSearch();
 }
 
 //条件查询
-function searchDataAnalysis(){
+function searchMoChiAnalysis(){
 	//$("#searchT").val(searchT);
 	//$("#searchPoolID").val(searchPoolID);
 	showSearchForm();
@@ -598,28 +555,51 @@ function dealSearch() {
 		var params = $("#frmSearch").form('clear').serialize(); //params = 'searchT=&searchPoolID='
 		switch(buttonID) {
 		case 'index1':
-			title = ' 水位计算表';
-			ImageTitle = "1#膜池 水位预测图 ";
-			newParams = params + 'MTG_QingS_SC01';
-			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+			title = ' 1#膜池 运行工况记录';
+			ImageTitle = "1#膜池 运行工况记录图";
+			newParams = params + 'MTG_MoChi_SC01';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
 			break;
 		case 'index2':
-			title = '2#膜池 水位计算表';
-			ImageTitle = "2#膜池 水位预测图 ";
-			newParams = params + 'MTG_QingS_SC02';
-			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+			title = '2#膜池 运行工况记录';
+			ImageTitle = "2#膜池 运行工况记录图";
+			newParams = params + 'MTG_MoChi_SC02';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
 			break;
 		case 'index3':
-			title = '3#膜池 水位计算表';
-			ImageTitle = "3#膜池 水位预测图 ";
-			newParams = params + 'MTG_QingS_SC03';
-			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+			title = '3#膜池 运行工况记录';
+			ImageTitle = "3#膜池 运行工况记录图";
+			newParams = params + 'MTG_MoChi_SC03';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
+			break;
+		case 'index4':
+			title = ' 运行工况记录';
+			ImageTitle = "4#膜池 运行工况记录图";
+			newParams = params + 'MTG_MoChi_SC04';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
+			break;
+		case 'index5':
+			title = '5#膜池 运行工况记录';
+			ImageTitle = "5#膜池 运行工况记录图";
+			newParams = params + 'MTG_MoChi_SC05';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
+			break;
+		case 'index6':
+			title = '6#膜池 运行工况记录';
+			ImageTitle = "6#膜池 运行工况记录图";
+			newParams = params + 'MTG_MoChi_SC06';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
 			break;
 		default :
-			title = '膜池水位计算表';
-			ImageTitle = "膜池水位预测图 ";
+			title = ' 1#膜池 运行工况记录';
+			ImageTitle = "1#膜池 运行工况记录图";
+			newParams = params + 'MTG_MoChi_SC01';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
+		
+			title = '超 滤 膜 系 统 运 行 工 况 记 录';
+			ImageTitle = "膜池运行工况记录图";
 			newParams = params;
-			treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
 		}
 	} else if(searchMode == 1){  //如果是从查询窗口进入
 		var params = $("#frmSearch").serialize(); //params = 'searchT=不确定是否为空&searchPoolID=不确定是否为空'
@@ -627,180 +607,274 @@ function dealSearch() {
 		
 		var reTime = new RegExp(/^searchT=\d{4}-\d{2}\-\d{2}/);
 		var testTime = reTime.test(params);
-		var reID = new RegExp(/searchPoolID=MTG_QingS_SC0\d{1}/);
+		var reID = new RegExp(/searchPoolID=MTG_MoChi_SC0\d{1}/);
 		var testID = reID.test(params);
 		
 		if(!testTime && !testID) {  //日期空 ID空     searchT=&searchPoolID=
 			switch(buttonID) {
 				case 'index1':
-					titleTemp = '1#膜池 水位计算表';
-					ImageTitleTemp = "1#膜池 水位预测图 ";
-					newParams = params + 'MTG_QingS_SC01';
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+					titleTemp = '1#膜池 运行工况记录';
+					ImageTitleTemp = "1#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC01';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
 					break;
 				case 'index2':
-					titleTemp = '2#膜池 水位计算表';
-					ImageTitleTemp = "2#膜池 水位预测图 ";
-					newParams = params + 'MTG_QingS_SC02';
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+					titleTemp = '2#膜池 运行工况记录';
+					ImageTitleTemp = "2#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC02';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
 					break;
 				case 'index3':
-					titleTemp = '3#膜池 水位计算表';
-					ImageTitleTemp = "3#膜池 水位预测图 ";
-					newParams = params + 'MTG_QingS_SC03';
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+					titleTemp = '3#膜池 运行工况记录';
+					ImageTitleTemp = "3#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC03';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
+					break;
+				case 'index4':
+					titleTemp = '4#膜池 运行工况记录';
+					ImageTitleTemp = "4#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC04';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
+					break;
+				case 'index5':
+					titleTemp = '5#膜池 运行工况记录';
+					ImageTitleTemp = "5#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC05';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
+					break;
+				case 'index6':
+					titleTemp = '6#膜池 运行工况记录';
+					ImageTitleTemp = "6#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC06';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
 					break;
 				default :
-					titleTemp = '膜池水位计算表';
-					ImageTitleTemp = "膜池水位预测图 ";
+					titleTemp = '超 滤 膜 系 统 运 行 工 况 记 录';
+					ImageTitleTemp = "膜池运行工况记录图";
 					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
-			}   //searchT=&searchPoolID=MTG_QingS_SC0X
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
+			}   //searchT=&searchPoolID=MTG_MoChi_SC0X
 			title = titleTemp;
 			ImageTitle = ImageTitleTemp;
-		}  //忽略日期，只显示水池，且树形菜单时间与水池数据对应
+		}  //忽略日期，只显示膜池，且树形菜单时间与膜池数据对应
 		
-		if(!testTime && testID) {  //日期空 ID不空     searchT=&searchPoolID=MTG_QingS_SC0X
+		if(!testTime && testID) {  //日期空 ID不空     searchT=&searchPoolID=MTG_MoChi_SC0X
 			var index = params.slice(-1);
 			switch(index) {
 				case '1':
-					titleTemp = '1#膜池 水位计算表';
-					ImageTitleTemp = "1#膜池 水位预测图 ";
+					titleTemp = '1#膜池 运行工况记录';
+					ImageTitleTemp = "1#膜池 运行工况记录图";
 					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 					break;
 				case '2':
-					titleTemp = '2#膜池 水位计算表';
-					ImageTitleTemp = "2#膜池 水位预测图 ";
+					titleTemp = '2#膜池 运行工况记录';
+					ImageTitleTemp = "2#膜池 运行工况记录图";
 					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
 					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
 					//alert($("input[name='chooseIndexButton'][checked]").val());
 					break;
 				case '3':
-					titleTemp = '3#膜池 水位计算表';
-					ImageTitleTemp = "3#膜池 水位预测图 ";
+					titleTemp = '3#膜池 运行工况记录';
+					ImageTitleTemp = "3#膜池 运行工况记录图";
 					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 					break;
-				default :
-					titleTemp = '膜池水位计算表';
-					ImageTitleTemp = "膜池水位预测图 ";
+				case '4':
+					titleTemp = '4#膜池 运行工况记录';
+					ImageTitleTemp = "4#膜池 运行工况记录图";
 					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
+					$('input[name="chooseIndexButton"][value="index4"]').attr("checked", true);
+					break;
+				case '5':
+					titleTemp = '5#膜池 运行工况记录';
+					ImageTitleTemp = "5#膜池 运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
+					$('input[name="chooseIndexButton"][value="index5"]').attr("checked", true);
+					//alert($("input[name='chooseIndexButton'][checked]").val());
+					break;
+				case '6':
+					titleTemp = '6#膜池 运行工况记录';
+					ImageTitleTemp = "6#膜池 运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
+					$('input[name="chooseIndexButton"][value="index6"]').attr("checked", true);
+					break;
+				default :
+					titleTemp = '超 滤 膜 系 统 运 行 工 况 记 录';
+					ImageTitleTemp = "膜池运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
-			}//searchT=&searchPoolID=MTG_QingS_SC0X
+			}//searchT=&searchPoolID=MTG_MoChi_SC0X
 			title = titleTemp;
 			ImageTitle = ImageTitleTemp;
-		}//忽略日期，只显示水池，且树形菜单时间与水池数据对应
+		}//忽略日期，只显示膜池，且树形菜单时间与膜池数据对应
 		
 		if(testTime && !testID) {  //日期不空 ID空     searchT=XXXX-XX-XX&searchPoolID=
 			switch(buttonID) {
 				case 'index1':
-					titleTemp = '1#膜池 水位计算表';
-					ImageTitleTemp = "1#膜池 水位预测图 ";
-					newParams = params + 'MTG_QingS_SC01';
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+					titleTemp = '1#膜池 运行工况记录';
+					ImageTitleTemp = "1#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC01';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
 					break;
 				case 'index2':
-					titleTemp = '2#膜池 水位计算表';
-					ImageTitleTemp = "2#膜池 水位预测图 ";
-					newParams = params + 'MTG_QingS_SC02';
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+					titleTemp = '2#膜池 运行工况记录';
+					ImageTitleTemp = "2#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC02';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
 					break;
 				case 'index3':
-					titleTemp = '3#膜池 水位计算表';
-					ImageTitleTemp = "3#膜池 水位预测图 ";
-					newParams = params + 'MTG_QingS_SC03';
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+					titleTemp = '3#膜池 运行工况记录';
+					ImageTitleTemp = "3#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC03';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
+					break;
+				case 'index4':
+					titleTemp = '4#膜池 运行工况记录';
+					ImageTitleTemp = "4#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC04';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
+					break;
+				case 'index5':
+					titleTemp = '5#膜池 运行工况记录';
+					ImageTitleTemp = "5#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC05';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
+					break;
+				case 'index6':
+					titleTemp = '6#膜池 运行工况记录';
+					ImageTitleTemp = "6#膜池 运行工况记录图";
+					newParams = params + 'MTG_MoChi_SC06';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
 					break;
 				default :
-					titleTemp = '膜池水位计算表';
-					ImageTitleTemp = "膜池水位预测图 ";
+					titleTemp = '超 滤 膜 系 统 运 行 工 况 记 录';
+					ImageTitleTemp = "膜池运行工况记录图";
 					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
-			} //searchT=XXXX-XX-XX&searchPoolID=MTG_QingS_SC0X
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
+			} //searchT=XXXX-XX-XX&searchPoolID=MTG_MoChi_SC0X
 			var strDate = ' ' + params.substring(8, 18);  // XXXX-XX-XX
 			title = titleTemp + strDate;
 			ImageTitle = ImageTitleTemp + strDate;
-		}//图标显示日期，显示水池编号，且树形菜单时间与水池数据对应
+		}//图标显示日期，显示膜池编号，且树形菜单时间与膜池数据对应
 		
-		if(testTime && testID) {  //日期不空 ID不空     searchT=XXXX-XX-XX&searchPoolID=MTG_QingS_SC0X
+		if(testTime && testID) {  //日期不空 ID不空     searchT=XXXX-XX-XX&searchPoolID=MTG_MoChi_SC0X
 			var index = params.slice(-1);
 			switch(index) {
 				case '1':
-					titleTemp = '1#膜池 水位计算表';
-					ImageTitleTemp = "1#膜池 水位预测图 ";
+					titleTemp = '1#膜池 运行工况记录';
+					ImageTitleTemp = "1#膜池 运行工况记录图";
 					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 					break;
 				case '2':
-					titleTemp = '2#膜池 水位计算表';
-					ImageTitleTemp = "2#膜池 水位预测图 ";
+					titleTemp = '2#膜池 运行工况记录';
+					ImageTitleTemp = "2#膜池 运行工况记录图";
 					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
 					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
 					break;
 				case '3':
-					titleTemp = '3#膜池 水位计算表';
-					ImageTitleTemp = "3#膜池 水位预测图 ";
+					titleTemp = '3#膜池 运行工况记录';
+					ImageTitleTemp = "3#膜池 运行工况记录图";
 					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 					break;
-				default :
-					titleTemp = '膜池水位计算表';
-					ImageTitleTemp = "膜池水位预测图 ";
+				case '4':
+					titleTemp = '4#膜池 运行工况记录';
+					ImageTitleTemp = "4#膜池 运行工况记录图";
 					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
+					$('input[name="chooseIndexButton"][value="index4"]').attr("checked", true);
+					break;
+				case '5':
+					titleTemp = '5#膜池 运行工况记录';
+					ImageTitleTemp = "5#膜池 运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
+					$('input[name="chooseIndexButton"][value="index5"]').attr("checked", true);
+					break;
+				case '6':
+					titleTemp = '6#膜池 运行工况记录';
+					ImageTitleTemp = "6#膜池 运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
+					$('input[name="chooseIndexButton"][value="index6"]').attr("checked", true);
+					break;
+				default :
+					titleTemp = '超 滤 膜 系 统 运 行 工 况 记 录';
+					ImageTitleTemp = "膜池运行工况记录图";
+					newParams = params;
+					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
-			}//searchT=XXXX-XX-XX&searchPoolID=MTG_QingS_SC0X
+			}//searchT=XXXX-XX-XX&searchPoolID=MTG_MoChi_SC0X
 			var strDate = ' ' + params.substring(8, 18);  // XXXX-XX-XX
 			title = titleTemp + strDate;
 			ImageTitle = ImageTitleTemp + strDate;
-		}//图标显示日期，只显示水池，且树形菜单时间与水池数据对应
+		}//图标显示日期，只显示膜池，且树形菜单时间与膜池数据对应
 	} else if(searchMode == 2) {  //如果是从树形菜单进入  
 		var params = $("#frmSearch").serialize();  //params = 'searchT=XXXX-XX-XX&searchPoolID=不关心有没有'
 //		alert(params);
 		strDate = params.substring(8, 18);  //'XXXX-XX-XX'
 		switch(buttonID) {  //先查看现在radio的值为多少
 			case 'index1':
-				title = '1#膜池 水位计算表' + '' + strDate;
-				ImageTitle = "1#膜池 水位预测图 " + ' ' + strDate;
-				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_QingS_SC01';
-				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
+				title = '1#膜池 运行工况记录' + '' + strDate;
+				ImageTitle = "1#膜池 运行工况记录图" + ' ' + strDate;
+				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC01';
+				//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
 				break;
 			case 'index2':
-				title = '2#膜池 水位计算表' + '' + strDate;
-				ImageTitle = "2#膜池 水位预测图 " + '' + strDate;
-				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_QingS_SC02';
-				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC02';
+				title = '2#膜池 运行工况记录' + '' + strDate;
+				ImageTitle = "2#膜池 运行工况记录图" + '' + strDate;
+				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC02';
+				//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
 				break;
 			case 'index3':
-				title = '3#膜池 水位计算表' + '' + strDate;
-				ImageTitle = "3#膜池 水位预测图 " + '' + strDate;
-				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_QingS_SC03';
-				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC03';
+				title = '3#膜池 运行工况记录' + '' + strDate;
+				ImageTitle = "3#膜池 运行工况记录图" + '' + strDate;
+				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC03';
+				//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
+				break;
+			case 'index4':
+				title = '4#膜池 运行工况记录' + '' + strDate;
+				ImageTitle = "4#膜池 运行工况记录图" + '' + strDate;
+				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC04';
+				break;
+			case 'index5':
+				title = '5#膜池 运行工况记录' + '' + strDate;
+				ImageTitle = "5#膜池 运行工况记录图" + '' + strDate;
+				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC05';
+				break;
+			case 'index6':
+				title = '6#膜池 运行工况记录' + '' + strDate;
+				ImageTitle = "6#膜池 运行工况记录图" + '' + strDate;
+				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC06';
 				break;
 			default :
-				title = '膜池水位计算表';
-				ImageTitle = "膜池水位预测图 ";
+				title = '超 滤 膜 系 统 运 行 工 况 记 录';
+				ImageTitle = "膜池运行工况记录图";
 				newParams = params;
-				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
+				//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
 		}
 	}
 	//alert("searchMode = " + searchMode +
 	//		"\nbuttonID = " + buttonID + 
 	//		"\nnewParams = " + newParams);
 	
-	$.post("searchDataAnalysis.action", newParams, function(result) {
+	$.post("searchMoChiAnalysis.action", newParams, function(result) {
 			if (result.total!=0) {
-				//$('#dataAnalysisbody').datagrid('reload');// 重新加载
+				//$('#moChiAnalysisbody').datagrid('reload');// 重新加载
 				tlist = result.tlist;
-				listDataAnalysis(result);
+				listMoChiAnalysis(result);
 				if(searchMode != 2) {
 					listTreeNode(tlist);
 				}
@@ -808,37 +882,7 @@ function dealSearch() {
 				$.messager.alert('查询', '未查询到相关信息', 'warning');
 			}
 	});
-	
-	//alert("treeURL = " +  treeURL);
-	
-	/*
-	if(searchMode != 2) {
-		//tlist = [];
-		$.getJSON(treeURL, function(json) {
-			//去除重复项
-			//alert("json<br />" + json);
-			//alert("eval(json)<br />" + eval(json));
-			var datalist = eval(json).rows;
-			//alert("datalist<br />" + datalist);
-			var tempPoolIDlist = new Array();
-			for(var i=0;i<json.total;i++){
-				var row = datalist[i];
-				if(jQuery.inArray(row.poolID, tempPoolIDlist)<0){
-					tempPoolIDlist.push(row.poolID);
-					poolIDlist.push({poolID:row.poolID,text:formPoolID(row.poolID)});
-				}
-//				if(jQuery.inArray(row.t, tlist)<0){
-//					tlist.push(row.t);
-//				}
-			}//for
-			
-//			listTreeNode(tlist.sort());
-			listTreeNode(tlist);
-		});
-	}
-	*/
-	
-	
+		
 }
 
 
@@ -884,16 +928,17 @@ var poolIDlist  = new Array();
 
 
 
-//var url = "${pageContext.request.contextPath}/searchDataAnalysis.action";
+//var url = "${pageContext.request.contextPath}/searchMoChiAnalysis.action";
 
 
-//水池编号转换
+//膜池编号转换
 function formPoolID(value){
 	var strs = new Array();
 	var poolID;
 	strs=value.split("_");//字符切割
-	poolID = strs[2].replace(/SC/,'');
-	return 	"膜池" + poolID + "#";
+	poolID = strs[2].replace(/SC0/,'');
+	poolID = poolID.replace(/SC/,'');
+	return 	poolID + "#"+"膜池" ;
 }
 
 
@@ -904,26 +949,42 @@ function keysrt(key,desc) {
 	}
 }
 
-//预测水位分析图
-var ImageTitle="膜池水位预测图" + strDate;
+//膜池运行工况记录图
+var ImageTitle="膜池运行工况记录图" + strDate;
 function prehImage(){
-	var listArray=new Array();
+	var inPressArray = new Array(); //进膜压力
+	var outPressArray = new Array(); //出水压力
+	var diffPressArray = new Array(); //跨膜压差
+	var inFlowArray = new Array(); //进水流量
+	
 	var poollist = new Array();
 	var options;
 	if (datalist.length>0){					
 		for (var i=0; i<datalist.length;i++){
 			var row = datalist[i]; 
-			var flag_i = jQuery.inArray(row.poolID, poollist); //判断水池是否存在
+			var flag_i = jQuery.inArray(row.poolID, poollist); //判断膜池是否存在
 			if(flag_i<0){  //不存在
-				poollist.push(row.poolID);	//添加水池
+				poollist.push(row.poolID);	//添加膜池
 				flag_i=poollist.length-1;
-				listArray[flag_i]=[];							
+				
+				inPressArray[flag_i]=[];
+				outPressArray[flag_i]=[];
+				diffPressArray[flag_i]=[];
+				inFlowArray[flag_i]=[];
+				
 			}//if flag_i
-			listArray[flag_i].push([Date.UTC(row.t.substring(0, 4),
+			
+			var tempTime = Date.UTC(row.t.substring(0, 4),
 					row.t.substring(5, 7)-1, //highcharts 月份要减一，因为Date.UTC从0-11计数
 					row.t.substring(8, 10),
-					row.t.substring(11, 13)
-			),row.preH]);	//填充数据，预测高度
+					row.t.substring(11, 13));
+			
+			inPressArray[flag_i].push([tempTime,row.inPress]);	//填充数据，进膜压力
+			outPressArray[flag_i].push([tempTime,row.outPress]);	//填充数据，出水压力
+			diffPressArray[flag_i].push([tempTime,row.diffPress]);	//填充数据，跨膜压差
+			inFlowArray[flag_i].push([tempTime,row.inFlow/10000]);	//填充数据，进水流量
+			
+			
 		} //for
 	} //if datalist.length
 	//var data=listArray[0].sort();
@@ -1103,42 +1164,6 @@ function prehImage(){
 	            	hour: "%Y-%m-%d %H时",
 	            	day: "%Y-%m-%d",
 				},
-				formatter: function() {
-					var indexButton = $('#indexForm').serialize();
-					var buttonID = indexButton.slice(-6);  //searchID = 'index3'
-					var poolName;
-					var s;
-					switch(buttonID) {
-					case 'index1':
-						poolName = '膜池01#';
-						break;
-					case 'index2':
-						poolName = '膜池02#';
-						break;
-					case 'index3':
-						poolName = '膜池03#';
-						break;
-					default:
-						poolName = '';
-					}
-					if(this.y <= 2.0) {
-						s = Highcharts.dateFormat('%Y-%m-%d %H时', this.x) + 
-							'<br />' + poolName + 
-							'<br />预测水位: ' + 
-							'<span style="color:orange;font-weight:bolder">' + this.y + '</span> 米';
-					} else if(this.y >= 4.9) {
-						s = Highcharts.dateFormat('%Y-%m-%d %H时', this.x) + 
-							'<br />' + poolName + 
-							'<br />预测水位: ' + 
-							'<span style="color:red;font-weight:bolder">' + this.y + '</span> 米';
-					} else {
-						s = Highcharts.dateFormat('%Y-%m-%d %H时', this.x) + 
-							'<br />' + poolName + 
-							'<br />预测水位: ' + 
-							'<span style="color:black;font-weight:bolder">' + this.y + '</span> 米';
-					}
-					return s;
-				},
 	        },
 			xAxis: {
 				//title:{
@@ -1165,7 +1190,7 @@ function prehImage(){
 	            	overflow: 'justify'
 	            },
 				min: 0,
-			    max: 5,
+			    //max: 150,
 			    startOnTick: true,
 	            endOnTick: true,
 	            minPadding: 0,
@@ -1178,44 +1203,48 @@ function prehImage(){
 	            tickPosition: 'inside',
 			    showLastLabel: true,
 			    title: {
-			    	text: '预测水位(/m)'                  //指定y轴的标题
+			    	text: '压力(Mpa)'                  //指定y轴的标题
 			    },
-			    //添加标示线
-			    plotLines:[{//第一条标示线
-			    	color:'red',
-			    	dashStyle:'ShortDash',     //默认值，这里定义为实线
-			    	value:4.9,               //定义在那个值上显示标示线，这里是在y轴上刻度为3的值处垂直化一条线
-			    	width:2,               //标示线的宽度，2px
-			    	label:{
-			    		text:'高预警线 4.9m',     //标签的内容
-			    	},
-			    	zIndex:100,
-			    },{//第二条标示线
-			    	color:'orange',           //线的颜色，定义为橙色
-			    	dashStyle:'ShortDash',     //默认值，这里定义为实线
-			    	value:2,               //定义在那个值上显示标示线，这里是在y轴上刻度为0.5的值处垂直化一条线
-			    	width:2,               //标示线的宽度，2px
-			    	label:{
-			    		text:'低预警线 2m',     //标签的内容
-			    	},
-			    	zIndex:100,
-			    }]
-			},],
+			  
+			},
+			{
+				//第二个y坐标
+				labels: {
+	            	overflow: 'justify'
+	            },
+			    startOnTick: true,
+	            endOnTick: true,
+	            minPadding: 0,
+	            maxPadding: 0,
+			    gridLineColor: 'silver',
+			    opposite:true,
+			    tickColor: 'green',
+	            tickLength: 10,
+	            tickWidth: 3,
+	            tickPosition: 'inside',
+			    showLastLabel: true,
+			    title: {
+			    	text: '进水量(万立方米)'                  //指定y轴的标题
+			    },
+			}],
 			        
 			        //显示数据
 			        plotOptions: {
 			        	line: {
 			        		dataLabels: {
-			        			enabled: true,
-			        			formatter: function() {
-			        				return this.y;
-			        			} 
-			        		},
+								enabled: true,
+								formatter: function() {
+									var r= /^[+-]?[1-9]?[0-9]*\.[0-9]*$/;
+									if(r.test(this.y))
+										return (this.y).toFixed(2);
+									else
+										return this.y;
+								} 
+						    },
 			        		enableMouseTracking: true,
 			        	}, 
 			        },
-			        
-			       
+			        		       
 			        //指定数据列
 			        series: []
 	};//options
@@ -1223,9 +1252,28 @@ function prehImage(){
 	for(var i=0;i<poollist.length;i++)
 	{	
 		options.series[i] = new Object();
-		options.series[i].data=listArray[i].sort(); //对listArray[i]进行排序，否则会造成时间轴上的图错乱
-		options.series[i].name='预测水位';
+		options.series[i].data=inPressArray[i].sort(); //对listArray[i]进行排序，否则会造成时间轴上的图错乱
+		options.series[i].name='进膜压力';
 		options.series[i].type="line";
+		options.series[i].yAxis = 0;
+		
+		options.series[i+poollist.length] = new Object();
+		options.series[i+poollist.length].data=outPressArray[i].sort(); 
+		options.series[i+poollist.length].name='出水压力';
+		options.series[i+poollist.length].type="line";
+		options.series[i+poollist.length].yAxis = 0;
+		
+		options.series[i+poollist.length*2] = new Object();
+		options.series[i+poollist.length*2].data=diffPressArray[i].sort(); 
+		options.series[i+poollist.length*2].name='跨膜压差';
+		options.series[i+poollist.length*2].type="line";
+		options.series[i+poollist.length*2].yAxis = 0;
+		
+		options.series[i+poollist.length*3] = new Object();
+		options.series[i+poollist.length*3].data=inFlowArray[i].sort(); 
+		options.series[i+poollist.length*3].name='进水流量';
+		options.series[i+poollist.length*3].type="line";
+		options.series[i+poollist.length*3].yAxis = 1;
 	}
 	options.series.sort(keysrt("name",false));
 	//chart = new Highcharts.Chart(options);
@@ -1236,59 +1284,10 @@ function prehImage(){
 //左侧时间列表显示
 var treeNodeList= [{id:1,name:"时间列表",text:"时间列表",parentId:0}];
 function listTreeNode(tlist){
-//	var yearlist = new Array();
-//	var monthlist = new Array();
-//	var daylist = new Array();
-//	var j=1; 
-//	for(var i=0;i<tlist.length;i++){
-//		var year = tlist[i].substring(0,4);
-//		var month = tlist[i].substring(0,7);
-//		var day = tlist[i].substring(0,10);
-//		var yearIndex=yearlist.indexOf(year);
-//		var monthIndex=monthlist.indexOf(month);
-//		var dayIndex=daylist.indexOf(day);
-//		if(yearIndex<0){	//不存在该年份
-//			j=j+1;	
-//			yearlist.push(year);
-//			treeNodeList.push({id:j,name:year+"年",text:year,parentId:1});	
-//			j=j+1;
-//			monthlist.push(month);
-//			treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,parentId:j-1});
-//			j=j+1;
-//			daylist.push(day);
-//			treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,parentId:j-1});		
-//		}
-//		else{
-//			if(monthIndex<0) //不存在该月份
-//			{	
-//				j=j+1;
-//				monthlist.push(month);
-//				treeNodeList.push({id:j,name:month.substring(5,7)+"月",text:month,
-//									parentId:findParentId(treeNodeList, year)});
-//				j=j+1;
-//				daylist.push(day);
-//				treeNodeList.push({id:j,name:day.substring(8,10)+"日",
-//								text:day,parentId:j-1});
-//			}else{
-//				if(dayIndex<0){
-//					j=j+1;
-//					daylist.push(day);
-//					treeNodeList.push({id:j,name:day.substring(8,10)+"日",text:day,
-//									parentId:findParentId(treeNodeList, month)});
-//				}
-//			}
-//		}
-//	}
-
 	$('#timeTree').tree({
-//		url: 'tree_data.json',
-//		data: treeNodeList,
 		data: tlist,
 		animate:true,	//动画效果
 		lines:true,
-//		loadFilter: function(data){
-//			return convert(data);
-//		},
 		onClick:function(node){
 			hideImportPanel()
 			searchMode = 2;
@@ -1339,69 +1338,11 @@ function GetNode(type){
     };  
 }; 
 
-//
-//function findParentId(rows, text){
-//	for(var i=0; i<rows.length; i++){
-//		if (rows[i].text == text) return rows[i].id;
-//	}
-//	return -1;
-//}
-////显示树目录的数据
-//function convert(rows){
-//	//判断是否存在父节点
-//	function exists(rows, parentId){
-//		for(var i=0; i<rows.length; i++){
-//			if (rows[i].id == parentId) return true;
-//		}
-//		return false;
-//	}
-//
-//	var nodes = [];
-//	// get the top level nodes
-//	//遍历查找最高一层节点
-//	for(var i=0; i<rows.length; i++){
-//		var row = rows[i];
-//		//如果不存在父节点，添加节点
-//		if (!exists(rows, row.parentId)){
-//			nodes.push({
-//				id:row.id,
-//				text:row.name,
-//				state:'closed'
-//			});
-//		}
-//	}
-//
-////	利用堆栈的结构
-//	var toDo = []; //所有的父节点
-//	for(var i=0; i<nodes.length; i++){
-//		toDo.push(nodes[i]);
-//	}
-//	while(toDo.length){
-//		//	shift从集合中把第一个元素删除，并返回这个元素的值
-//		var node = toDo.shift();	// the parent node
-//		// get the children nodes
-//		//	获得所有父节点各自的子节点
-//		for(var i=0; i<rows.length; i++){
-//			var row = rows[i];
-//			if (row.parentId == node.id){
-//				var child = {id:row.id,text:row.name};
-//				if (node.children){
-//					node.children.push(child);
-//				} else {
-//					node.children = [child];
-//				}
-//				toDo.push(child);//添加子节点，以便进一步遍历子节点查看是否有子目录
-//			}
-//		}
-//	}
-//	return nodes;
-//}
-
 
 //导出到excel
 function export2excel(){
-	var downloadPath = "downloadTemp/DataAnalysis.xls";
-	$.post("exportDataAnalysis.action", function(result) {
+	var downloadPath = "downloadTempForMochi/MoChiAnalysis.xls";
+	$.post("exportMoChiAnalysis.action", function(result) {
 		if (result.operateSuccess){
 			window.location.href=downloadPath;
 //			$.messager.alert('导出', '导出成功,请在浏览器下载路径中查看', 'info');		
@@ -1419,21 +1360,21 @@ function import2DB(){
 	}
 	else{
 		$.ajaxFileUpload({
-			url : "importCheckDataAnalysis.action",
-//			url :'uploadDataAnalysis.action',
+			url : "importCheckMoChiAnalysis.action",
+//			url :'uploadMoChiAnalysis.action',
 			fileElementId:'upload',
 			dataType:'json',
 			success: function(data, status){
 				if (data.operateSuccess){ //没有冲突
 					$.ajaxFileUpload({
-						url : "importDataAnalysis.action",
+						url : "importMoChiAnalysis.action",
 						fileElementId:'upload',
 						dataType:'json',
 						success: function(result){
 							$.messager.alert('导入', '导入成功', 'info');
 							if (result.operateSuccess){	
 								
-								$('#dataAnalysisbody').datagrid('reload');// 重新加载									
+								$('#moChiAnalysisbody').datagrid('reload');// 重新加载									
 							} else {
 								$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
 							}
@@ -1448,14 +1389,14 @@ function import2DB(){
 					$.messager.confirm("导入提示",'已存在相关日期的数据，是否继续覆盖导入？',function(r){
 						if (r) { //上传文件
 							$.ajaxFileUpload({
-								url : "importDataAnalysis.action",
+								url : "importMoChiAnalysis.action",
 								fileElementId:'upload',
 								dataType:'json',
 								success: function(data, status){
 									$.messager.alert('导入', '导入成功', 'info');
 									if (data.operateSuccess){
 										
-										$('#dataAnalysisbody').datagrid('reload');// 重新加载/
+										$('#moChiAnalysisbody').datagrid('reload');// 重新加载/
 										
 										$('#import').text('导入');
 										$('#tab_export').css('display','none');

@@ -232,7 +232,7 @@ th, td, input, option {
 
 #addButton {
 	position: relative;
-	left: 940px;
+	left: 650px;
 	top: 5px;
 }
 
@@ -262,7 +262,7 @@ text-align: center;
 	<div id="myPage">
 		<div id="myContent" style="overflow: hidden">
 			<div id="tab_entity">
-				<table id="dataAnalysisbody" class="easyui-datagrid"
+				<table id="moChiAnalysisbody" class="easyui-datagrid"
 					style="max-width: 1300px; height: 300px;" ></table>
 				<div style="height:40px"></div>
 				<div id="imageContainer" style="max-width: 1300px; height: 600px;"></div>
@@ -277,9 +277,20 @@ text-align: center;
 				<div id="chooseIndex">
 					<form id="indexForm">
 						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择膜池编号：</p>
-						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1#膜池</label><br />
-						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">2#膜池</label><br />
-						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">3#膜池</label><br />
+						<table>
+							<tr>
+								<td><input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" checked="checked" /><label for="index1">1#膜池</label></td>
+								<td><input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">2#膜池</label></td>
+							</tr>
+							<tr>
+								<td><input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" /><label for="index3">3#膜池</label></td>
+								<td><input type="radio" id="index4" class="radioItem" name="chooseIndexButton" value="index4" /><label for="index4">4#膜池</label></td>
+							</tr>
+							<tr>
+								<td><input type="radio" id="index5" class="radioItem" name="chooseIndexButton" value="index5" /><label for="index5">5#膜池</label></td>
+								<td><input type="radio" id="index6" class="radioItem" name="chooseIndexButton" value="index6" /><label for="index6">6#膜池</label></td>
+							</tr>
+						</table>
 					</form>
 				</div><!-- chooseIndex -->
 				
@@ -291,11 +302,11 @@ text-align: center;
         			<div class="menuSecond" id="search">查询</div>
         			<div class="menuSecond" id="export">导出</div>
         			<div class="menuSecond" id="import">导入</div>
-        			<!-- <div class="menuSecond" id="template"><a href="download/DataAnalysis.xls" style="height:50px">模板</a></div> -->
+        			<!-- <div class="menuSecond" id="template"><a href="download/MoChiAnalysis.xls" style="height:50px">模板</a></div> -->
 				</div><!-- icon -->
 					
 				<div id="tab_export" style="display:none">
-					<form action="${pageContext.request.contextPath}/importDataAnalysis"
+					<form action="${pageContext.request.contextPath}/importMoChiAnalysis"
 						name="uploadForm" enctype="multipart/form-data" method="post">
 						<input type=file name="upload" id="upload" style="display: none;"
 							onchange="fakeUpload.value=value" /> 
@@ -318,66 +329,47 @@ text-align: center;
 						style="align: center; width: 800px; height: 540px; padding: 10px 60px 20px 60px">
 						<form id="frmEdit"><br />
 							<input type="hidden" id="dateTemp" name="dateTemp" /> <input
-								type="hidden" id="ID" name="dataAnalysis.ID" /> <br />
+								type="hidden" id="ID" name="moChiAnalysis.ID" /> <br />
 							<dl>
 								&nbsp; &nbsp;时 &nbsp; &nbsp; &nbsp; &nbsp; 间 : &nbsp;
-								<input class="easyui-datetimebox" name="dataAnalysis.t" id="t"
+								<input class="easyui-datetimebox" name="moChiAnalysis.t" id="t"
 									type="text"	data-options="required:true,showSeconds:false,missingMessage:'请选择时间'"
 									style="width: 200px; height: 25px" />
 								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;水 池 编 号 : &nbsp;
-								<select class="easyui-combobox textbox " id="PoolID" name="dataAnalysis.PoolID"
-									style="width: 200px; height: 25px" data-options="required:true,missingMessage:'请输入水池编号'">
-									<option value="MTG_QingS_SC01" selected>1#膜池</option>
-									<option value="MTG_QingS_SC02">2#膜池</option>
-									<option value="MTG_QingS_SC03">3#膜池</option>
+								<select class="easyui-combobox textbox " id="PoolID" name="moChiAnalysis.PoolID"
+									style="width: 200px; height: 25px" data-options="required:true,missingMessage:'请输入膜池编号'">
+									<option value="MTG_MoChi_SC01" selected>1#膜池</option>
+									<option value="MTG_MoChi_SC02">2#膜池</option>
+									<option value="MTG_MoChi_SC03">3#膜池</option>
+									<option value="MTG_MoChi_SC04">4#膜池</option>
+									<option value="MTG_MoChi_SC05">5#膜池</option>
+									<option value="MTG_MoChi_SC06">6#膜池</option>
 								</select>
 							</dl>
 							<dl>
-								&nbsp; &nbsp;总 进 水 量 : &nbsp;
-								<input class="easyui-numberbox textbox" name="dataAnalysis.InV"
-									style="width: 200px; height: 25px" id="InV" data-options="min:0,precision:0," />
-								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;出 &nbsp;水 &nbsp; 量 : &nbsp;
-								<input class="easyui-numberbox" name="dataAnalysis.OutV"
-								style="width: 200px; height: 25px" id="OutV" data-options="min:0,precision:0" />
+								&nbsp; &nbsp;进 膜 压 力: &nbsp;
+								<input class="easyui-numberbox textbox" name="moChiAnalysis.InPress"
+									style="width: 200px; height: 25px" id="InPress" data-options="min:0,precision:0," />
+								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;出 水 压 力 : &nbsp;
+								<input class="easyui-numberbox" name="moChiAnalysis.OutPress"
+								style="width: 200px; height: 25px" id="OutPress" data-options="min:0,precision:0" />
 							</dl>
 							<dl>
-								&nbsp; &nbsp;洗虹吸滤池 : &nbsp;
-								<input class="easyui-numberbox textbox" style="width: 200px; height: 25px" id="HXOutV"
-									name="dataAnalysis.HXOutV" data-options="min:0,precision:0" />
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;洗V型滤池 : &nbsp;
-								<input class="easyui-numberbox textbox" style="width: 200px; height: 25px" id="LCOutV"
-									name="dataAnalysis.LCOutV" data-options="min:0,precision:0" />
-							</dl>
-							<dl>
-								&nbsp; &nbsp;炭池反冲洗 : &nbsp;
+								&nbsp; &nbsp;跨 膜 压 差 : &nbsp;
+								<input class="easyui-numberbox textbox" style="width: 200px; height: 25px" id="DiffPress"
+									name="moChiAnalysis.DiffPress" data-options="min:0,precision:0" />
+									
+								&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;进 水 流 量 : &nbsp;
 								<input class="easyui-numberbox textbox"
-									style="width: 200px; height: 25px" id="TCOutV"
-									name="dataAnalysis.TCOutV" data-options="min:0,precision:0" />
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;机加池排泥 : &nbsp;
-								<input class="easyui-numberbox textbox"
-									style="width: 200px; height: 25px" id="JJOutV"
-									name="dataAnalysis.JJOutV" data-options="min:0,precision:0" />
+									style="width: 200px; height: 25px" id="InFlow"
+									name="moChiAnalysis.InFlow" data-options="min:0,precision:0" />
 							</dl>
-							<dl>
-								&nbsp; &nbsp;回 流 进 水: &nbsp; &nbsp;
-								<input class="easyui-numberbox textbox"
-									style="width: 200px; height: 25px" id="HLInV"
-									name="dataAnalysis.HLInV" data-options="min:0,precision:0" />
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;蓄 &nbsp;水 &nbsp; 量 : &nbsp;
-								<input class="easyui-numberbox textbox" style="width: 200px; height: 25px" id="Storage"
-									name="dataAnalysis.Storage" data-options="precision:0" />
-							</dl>
-							<dl>
-								&nbsp; &nbsp;预 测 水 位: &nbsp; &nbsp;
-								<input class="easyui-numberbox textbox"
-									style="width: 200px; height: 25px" id="PreH"
-									name="dataAnalysis.PreH" data-options="precision:2" />
-							</dl>
+							
 						</form>
 					</div><!-- tabEdit -->
 					<div id="newEdit" class="easyui-dialog" data-options="closed:true"
-						style="align: center; width: 1180px; height: 600px; padding: 10px 60px 10px 60px">
-						<form id="newfrmEdit" style="width:1060px"><br />
+						style="align: center; width: 860px; height: 600px; padding: 10px 60px 10px 60px">
+						<form id="newfrmEdit" style="width:740px"><br />
 							<table id="tab" style="align: center">
 								<tr>
 									<th style="width: 1px; height: 26px"></th>
@@ -385,16 +377,11 @@ text-align: center;
 									<th style="width: 1px; height: 26px"></th>
 									<th style="width: 40px; height: 26px">序 号</th>
 									<th style="width: 152px; height: 26px">时 间</th>
-									<th style="width: 102px; height: 26px">清水池编号</th>
-									<th style="width: 72px; height: 26px">总进水量</th>
-									<th style="width: 62px; height: 26px">出水量</th>
-									<th style="width: 102px; height: 26px">虹吸滤池反冲洗</th>
-									<th style="width: 102px; height: 26px">V型滤池反冲洗</th>
-									<th style="width: 82px; height: 26px">碳池反冲洗</th>
-									<th style="width: 82px; height: 26px">机加池排泥</th>
-									<th style="width: 72px; height: 26px">回流进水</th>
-									<th style="width: 52px; height: 26px">蓄水量</th>
-									<th style="width: 72px; height: 26px">预测水位</th>
+									<th style="width: 102px; height: 26px">膜池编号</th>
+									<th style="width: 102px; height: 26px">进膜压力</th>
+									<th style="width: 102px; height: 26px">出水压力</th>
+									<th style="width: 102px; height: 26px">跨膜压差</th>
+									<th style="width: 102px; height: 26px">进水流量</th>
 								</tr>
 								<tr id="tr1">
 									<td style="width: 1px; height: 26px">
@@ -404,57 +391,42 @@ text-align: center;
 										<input type="hidden" id="dateTempAdd" name="dateTemp" style="width: 1px; height: 25px" />
 									</td>
 									<td style="width: 1px; height: 26px">
-										<input type="hidden" id="IDAdd" name="dataAnalysis.ID" style="width: 1px; height: 25px" />
+										<input type="hidden" id="IDAdd" name="moChiAnalysis.ID" style="width: 1px; height: 25px" />
 									</td>
 									<td id="indexNum1" style="text-align:center; width:40px;height:26px">1</td>
 									<td style="width: 152px; height: 26px">
 										<!-- 时间 -->
-										<input name="dataAnalysis.t" id="tAdd1" type="datetime-local" style="width: 150px; height: 25px" />
+										<input name="moChiAnalysis.t" id="tAdd1" type="datetime-local" style="width: 150px; height: 25px" />
 									</td>
 									<td style="width: 102px; height: 26px">
-										<!-- 水池编号 -->
-										<select id="PoolIDAdd1" name="dataAnalysis.PoolID" style="width: 100px; height: 25px">
-											<option value="MTG_QingS_SC01" selected>清水池01#</option>
-											<option value="MTG_QingS_SC02">清水池02#</option>
-											<option value="MTG_QingS_SC03">清水池03#</option>
+										<!-- 膜池编号 -->
+										<select id="PoolIDAdd1" name="moChiAnalysis.PoolID" style="width: 100px; height: 25px">
+											<option value="MTG_MoChi_SC01" selected>1#膜池</option>
+											<option value="MTG_MoChi_SC02">2#膜池</option>
+											<option value="MTG_MoChi_SC03">3#膜池</option>
+											<option value="MTG_MoChi_SC04">4#膜池</option>
+											<option value="MTG_MoChi_SC05">5#膜池</option>
+											<option value="MTG_MoChi_SC06">6#膜池</option>
 										</select>
 									</td>
-									<td style="width: 72px; height: 26px">
-										<!-- 总进水量 -->
-										<input id="InVAdd1" name="dataAnalysis.InV"	style="width: 70px; height: 25px" data-options="min:0,precision:0," />
-									</td>
-									<td style="width: 62px; height: 26px">
-										<!-- 出  水  量 -->
-										<input id="OutVAdd1" name="dataAnalysis.OutV" style="width: 60px; height: 25px"	data-options="min:0,precision:0" />
+									<td style="width: 102px; height: 26px">
+										
+										<input id="InPress1" name="moChiAnalysis.InPress"	style="width: 100px; height: 25px" data-options="min:0,precision:0," />
 									</td>
 									<td style="width: 102px; height: 26px">
-										<!-- 洗虹吸滤池 --> <input id="HXOutVAdd1"
-										name="dataAnalysis.HXOutV" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
+										
+										<input id="OutPress1" name="moChiAnalysis.OutPress" style="width: 100px; height: 25px"	data-options="min:0,precision:0" />
 									</td>
 									<td style="width: 102px; height: 26px">
-										<!-- 洗V型滤池 --> 
-										<input id="LCOutVAdd1" name="dataAnalysis.LCOutV" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
+										 <input id="DiffRess1"
+										name="moChiAnalysis.DiffPress" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
 									</td>
-									<td style="width: 82px; height: 26px">
-										<!-- 炭池反冲洗 -->
-										<input id="TCOutVAdd1" name="dataAnalysis.TCOutV" style="width: 80px; height: 25px"	data-options="min:0,precision:0" />
+									<td style="width: 102px; height: 26px">
+										
+										<input id="InFlow1" name="moChiAnalysis.InFlow" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
 									</td>
-									<td style="width: 82px; height: 26px">
-										<!-- 机加池排泥 -->
-										<input id="JJOutVAdd1" name="dataAnalysis.JJOutV" style="width: 80px; height: 25px"	data-options="min:0,precision:0" />
-									</td>
-									<td style="width: 72px; height: 26px">
-										<!-- 回流进水 -->
-										<input id="HLInVAdd1" name="dataAnalysis.HLInV"	style="width: 70px; height: 25px" data-options="min:0,precision:0" />
-									</td>
-									<td style="width: 52px; height: 26px">
-										<!-- 蓄  水  量 -->
-										<input id="StorageAdd1"	name="dataAnalysis.Storage" style="width: 50px; height: 25px" data-options="precision:0" />
-									</td>
-									<td style="width: 72px; height: 26px">
-										<!-- 预测水位 -->
-										<input id="PreHAdd1" name="dataAnalysis.PreH" style="width: 70px; height: 25px" data-options="precision:2" />
-									</td>
+									
+									
 								</tr>
 							</table>
 							<a id="addButton" href="#" class="easyui-linkbutton"
@@ -474,15 +446,18 @@ text-align: center;
 								<br />
 								<br />
 								<br /> &nbsp; &nbsp; &nbsp;
-								<!-- 水池编号:  <input  class="easyui-validatebox" type="text" style="width:120px" id="searchPoolID"
+								<!-- 膜池编号:  <input  class="easyui-validatebox" type="text" style="width:120px" id="searchPoolID"
 				            	     size="20px" name="searchPoolID" ></input> -->
-								水池编号:&nbsp;
+								膜池编号:&nbsp;
 								<!--  <input type="text" size="15" id="searchPoolID" name="searchPoolID" /> -->
 								<select class="easyui-combobox" style="width: 150px"
 									id="searchPoolID" name="searchPoolID">
-									<option value="MTG_QingS_SC01">清水池01#</option>
-									<option value="MTG_QingS_SC02">清水池02#</option>
-									<option value="MTG_QingS_SC03">清水池03#</option>
+									<option value="MTG_MoChi_SC01" selected>1#膜池</option>
+									<option value="MTG_MoChi_SC02">2#膜池</option>
+									<option value="MTG_MoChi_SC03">3#膜池</option>
+									<option value="MTG_MoChi_SC04">4#膜池</option>
+									<option value="MTG_MoChi_SC05">5#膜池</option>
+									<option value="MTG_MoChi_SC06">6#膜池#</option>
 								</select>									
 							</dl>
 						</form>
@@ -496,51 +471,19 @@ text-align: center;
 			<div id="btn_group" class="btn-group-vertical btn-group-lg"
 				role="group" style="left: 1482px; top: 20px; z-index: 999; display:none">
 				<button id="btn_addRow" class="btn btn-primary"
-					onclick="javascript:addDataAnalysis()">添加</button>
+					onclick="javascript:addMoChiAnalysis()">添加</button>
 				<button id="btn_editRow" class="btn btn-primary"
-					onclick="javascript:editDataAnalysis()">编辑</button>
+					onclick="javascript:editMoChiAnalysis()">编辑</button>
 				<button id="btn_deleteRow" class="btn btn-primary"
-					onclick="javascript:deleteDataAnalysis()">删除</button>
+					onclick="javascript:deleteMoChiAnalysis()">删除</button>
 				<button id="btn_searchAll" class="btn btn-primary"
-					onclick="javascript:listAllDataAnalysis()">查询全部</button>
+					onclick="javascript:listAllMoChiAnalysis()">查询全部</button>
 				<button id="btn_search" class="btn btn-primary"
-					onclick="javascript:searchDataAnalysis()">条件查询</button>
+					onclick="javascript:searchMoChiAnalysis()">条件查询</button>
 				<button id="btn_export" class="btn btn-primary"
 					onclick="javascript:export2excel()">导出</button>
 			</div><!-- btn_group -->
 			
-				<!-- <div id="picLegend">
-					<h4 style="color:blue"><strong><span style="color:red;">Zoom</span> 选项说明:</strong></h4>
-					<table id="legendTable" style="text-align:left">
-					<tr>
-						<td class="legendTitle">1M</td>
-						<td>:1个月的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">3M</td>
-						<td>:3个月的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">6M</td>
-						<td>:6个月的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">YTD</td>
-						<td>:本年初至今日的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">1Y</td>
-						<td>:1年的数据</td>
-					</tr>
-					<tr>
-						<td class="legendTitle">ALL</td>
-						<td>:所有的数据</td>
-					</tr>
-					</table>
-				</div> -->
-			
-				<!-- 编辑数据的div，默认看不到 -->
-
 
 </body>
 <jsp:include page="down.jsp" />

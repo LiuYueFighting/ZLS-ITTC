@@ -8,10 +8,15 @@
     z-index: 999;
     padding: 4px;
 }
-#name_QS{
+#name_QS1{
     position: absolute;
     left: 689px;
     top: 70px;
+}
+#name_QS2{
+    position: absolute;
+    left: 689px;
+    top: 145px;
 }
 #name_JJC1{
     position: absolute;
@@ -75,13 +80,13 @@
 }
 #name_TC{
     position: absolute;
-    left:368px;
-    top: 666px;
+    left:380px;
+    top: 655px;
 }
 #name_TC1{
     position: absolute;
-    left:487px;
-    top: 666px;
+    left:491px;
+    top: 655px;
 }
 #name_YC{
     position: absolute;

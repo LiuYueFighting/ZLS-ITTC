@@ -44,6 +44,7 @@
 				<value>com/water/beans/DataAnalysis.hbm.xml</value>
 				<value>com/water/beans/User.hbm.xml</value>
 				<value>com/water/beans/OutStat.hbm.xml</value>
+				<value>com/water/beans/MoChiAnalysis.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -117,6 +118,22 @@
 	<!-- action -->
 	<bean id="outStatAction" class="com.water.action.OutStatAction">
 		<property name="outStatService" ref="outStatService" />
+	</bean>
+	
+	
+		<!--MoChi dao -->
+	<bean id="moChiAnalysisDao" class="com.water.dao.impl.MoChiAnalysisDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Service -->
+	<bean id="moChiAnalysisService" class="com.water.service.impl.MoChiAnalysisServiceImpl">
+		<property name="moChiAnalysisDao" ref="moChiAnalysisDao" />
+	</bean>
+
+	<!-- action -->
+	<bean id="moChiAnalysisAction" class="com.water.action.MoChiAnalysisAction">
+		<property name="moChiAnalysisService" ref="moChiAnalysisService" />
 	</bean>
 	
 	
