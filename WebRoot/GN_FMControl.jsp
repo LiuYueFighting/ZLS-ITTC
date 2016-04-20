@@ -222,7 +222,7 @@
         font-size: 17px;
         border: 0px;
 
-        padding: 0px;
+        padding: 3px;
         font-weight: bold;
         }
 
@@ -238,10 +238,12 @@
 	}
 	p {
 		margin:0;
+		 white-space:nowrap;
 	}
 	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
-		vertical-align: bottom;
 		padding: 0px;
+		line-height: 3.5;
+		text-align: left;
 	}
 	
     </style>
@@ -442,13 +444,13 @@ if(openDgree_062+openDgree_063 != 0){
                 <div class="panel-heading" id="panelHeading">机加池水量</div>
                 <table class="table">
                 <tr>
-                <td><p class="flow">1#</p><p id="jjc1In" class="flow">500</p></td><td><p class="flow">m<sup>3</sup>/h</p></td>
+                <td><span class="flow">1#</span><span id="jjc1In" class="flow">500</span></td><td><span class="flow">m<sup>3</sup>/h</span></td>
                 </tr>
                 <tr>
-                <td><p class="flow">2#</p><p id="jjc2In" class="flow">500</p></td><td><p class="flow">m<sup>3</sup>/h</p></td>
+                <td><span class="flow">2#</span><span id="jjc2In" class="flow">500</span></td><td><span class="flow">m<sup>3</sup>/h</span></td>
                 </tr>
                  <tr>
-                <td><p class="flow">3#</p><p id="jjc3In" class="flow">800</p></td><td><p class="flow">m<sup>3</sup>/h</p></td>
+                <td><span class="flow">3#</span><span id="jjc3In" class="flow">800</span></td><td><span class="flow">m<sup>3</sup>/h</span></td>
                 </tr>
                 </table>
                 </div>
