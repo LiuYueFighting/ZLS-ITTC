@@ -1145,7 +1145,6 @@ oCanvas.domReady(function () {
         document.getElementById("step_1_result").innerHTML="堵塞62#阀门下侧管道";
 
         setShow();
-////
     }
     function  fix_fm019(){
         clearAll();

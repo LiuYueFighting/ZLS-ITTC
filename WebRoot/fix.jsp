@@ -230,7 +230,8 @@
  	</div>
  	-->
 		<div id="name_gzw">
-		    <a href="#" id="name_QS"   class="name_ob">取水泵房</a>
+		    <a href="#" id="name_QS1"   class="name_ob">取水泵房</a>
+		    <a href="#" id="name_QS2"   class="name_ob">取水泵房</a>
 		    <a href="#" id="name_JJC1" class="name_ob">1#机加池</a>
 		    <a href="#" id="name_JJC2" class="name_ob">2#机加池</a>
 		    <a href="#" id="name_JJC3" class="name_ob">3#机加池</a>
@@ -239,8 +240,8 @@
 		    <a href="#" id="name_TC1"  class="name_ob">2#炭滤池</a>
 		    <a href="#" id="name_CY"   class="name_ob">臭氧混合池</a>
 		    <a href="#" id="name_YC"   class="name_ob">预沉池</a>
-		    <a href="#" id="name_HHJ1" class="name_ob">混合井</a>
-		    <a href="#" id="name_HHJ2" class="name_ob">混合井</a>
+		    <a href="#" id="name_HHJ1" class="name_ob">旧混合井</a>
+		    <a href="#" id="name_HHJ2" class="name_ob">新混合井</a>
 		    <a href="#" id="name_HX"   class="name_ob"> 虹吸滤池</a>
 		    <a href="#" id="name_QSC1" class="name_ob">3#清水池</a>
 		    <a href="#" id="name_QSC2" class="name_ob">1#清水池</a>
