@@ -45,8 +45,10 @@
 }
 #name_HHJ2{
     position: absolute;
-    left:1170px;
+    left:1180px;
     top: 363px;
+    height: auto;
+    width: 30px;
 }
 #name_HX{
     position: absolute;
