@@ -1340,10 +1340,10 @@ function drawImage(){
 	    title:{
 	    	text: ImageTitle1,
 			style:{
-				font: '18px',
+				font: '20px',
 				color: '#0E2D5F',
 				fontWeight: 'bold',
-				fontSize:'18px',
+				fontSize:'20px',
 				fontFamily:'微软雅黑'
 			}
 		},
@@ -1593,10 +1593,10 @@ function drawImage(){
 		    title:{
 		    	text: ImageTitle2,
 				style:{
-					font: '18px',
+					font: '20px',
 					color: '#0E2D5F',
 					fontWeight: 'bold',
-					fontSize:'18px',
+					fontSize:'20px',
 					fontFamily:'微软雅黑'
 				}
 			},
@@ -1866,10 +1866,10 @@ function drawImage(){
 			    title:{
 			    	text: ImageTitle3,
 					style:{
-						font: '18px',
+						font: '20px',
 						color: '#0E2D5F',
 						fontWeight: 'bold',
-						fontSize:'18px',
+						fontSize:'20px',
 						fontFamily:'微软雅黑'
 					}
 				},

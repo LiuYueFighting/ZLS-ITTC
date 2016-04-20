@@ -1231,19 +1231,19 @@ oCanvas.domReady(function () {
     		setFMColorRed("FM018");
 //    		console.log(document.getElementById("FM018").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png');
 
-    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+/*    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";*/
     		
-    		blinTwice("#step_3");
+/*    		blinTwice("#step_3");
     		blinTwice("#step_3_result");
     		blinTwice("#step_4");
     		blinTwice("#step_4_result");
     		blinTwice("#step_5");
-    		blinTwice("#step_5_result");
+    		blinTwice("#step_5_result");*/
     		}
     		
     		//console.log("GD30:");
@@ -1260,7 +1260,12 @@ oCanvas.domReady(function () {
         		}
         	setFMColorRed("FM019");
 
-    		
+
+/*    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+    		blinTwice("#step_6");
+    		blinTwice("#step_6_result");*/
+
 
     		//GD141.state=2;
     	}
@@ -1769,17 +1774,16 @@ oCanvas.domReady(function () {
         setFMColorRed("FM019");*/
 
         var todolist = [
-			{ "index":"1" , "content":"关闭阀门16#", "result":"停止东侧虹吸进水" },
-			{ "index":"2" , "content":"关闭阀门9#~14#小虹吸", "result":"停止东侧进水" },
-			{ "index":"3" , "content":"关闭阀门18#", "result":"防止西侧反水" },
-			{ "index":"4" , "content":"打开9#~14#滤池排空闸", "result":"9#~14#滤格排空" },
-			{ "index":"5" , "content":"断开东西滤池清水联通闸", "result":"断开联通" },
-			{ "index":"6" , "content":"关闭阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
+			{ "content":"1&nbsp;&nbsp;关闭阀门16#", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧虹吸进水" },
+			{ "content":"2&nbsp;&nbsp;关闭阀门9#~14#小虹吸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧进水" },
+			{ "content":"3&nbsp;&nbsp;关闭阀门18#", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;防止西侧反水" },
+			{ "content":"4&nbsp;&nbsp;打开9#~14#滤池排空闸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;9#~14#滤格排空" },
+			{ "content":"5&nbsp;&nbsp;断开东西滤池清水联通闸",  "result":"&nbsp;&nbsp;&nbsp;&nbsp;断开联通" },
+			{ "content":"6&nbsp;&nbsp;关闭阀门19#", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
 		];
 
 		for (i=0;i<todolist.length;i++){
-			var offset = i+1
-	        document.getElementById("index_"+ offset).innerHTML=todolist[i].index;
+			var offset = i+1;
 	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
 	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
 		}
@@ -1789,42 +1793,23 @@ oCanvas.domReady(function () {
     	
     	//动态效果
         setFMColorRed("FM016");  
-		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+		/*document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";*/
 		/* js版blinblin
 		 * var demo = document.getElementById("step_1");
 		   blinTwice(demo);
 		 */
-		blinTwice("#step_1");
+		progressBar(".bar_group_1",blinTwice);
+/*		blinTwice("#step_1");
 		blinTwice("#step_1_result");
 		blinTwice("#step_2");
-		blinTwice("#step_2_result");
-		
-/*        $("#step_1").animate({
-            opacity:'1'},'fast');
-        $("#step_1").animate({
-            opacity:'0'},'fast');
-        $("#step_1").animate({
-            opacity:'1'},'fast');
-        $("#step_1").animate({
-            opacity:'0'},'fast');
-        $("#step_1").animate({
-            opacity:'1'},'fast');*/
-		//$("#step_1").animate({opacity:'1'},'fast');
+		blinTwice("#step_2_result");*/
 		
     	//管道退水
 		GD11.state=2;
     	GD1001.state=2;
-		
-/*		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-		$("#step_1").addClass("trans");
-		$("#step_1").addClass("table_td_left");
-		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-		document.getElementById("step_1").style.transitionProperty= "background-color";
-		document.getElementById("step_1").style.transitionDuration= "1.5s";
-		document.getElementById("step_1").style.transitionTimingFunction= "ease";*/
 	
         document.getElementById("restore").onclick=function(){
         	restore_hx_right();
@@ -1838,8 +1823,9 @@ oCanvas.domReady(function () {
     	
     	//静态部分
     	$("#init_state").text("阀门维修中...");
-        $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
-        $(".table_td_left").attr("style","text-align:left");
+        $(".table_line").attr("style","background:rgba(255,255,255,0.5)");
+        $(".table_line").attr("style","text-align:left");
+        $(".progress-bar").css("width","0px");
         document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#283a45";
         document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
@@ -1849,17 +1835,16 @@ oCanvas.domReady(function () {
         setFMColorGreen("FM019");*/
         
         var todolist = [
-			{ "index":"1" , "content":"打开阀门16#", "result":"恢复东侧虹吸进水" },
-			{ "index":"2" , "content":"打开阀门9#~14#小虹吸", "result":"逐格滤料冲洗合格后可以恢复" },
-			{ "index":"3" , "content":"打开阀门18#", "result":"恢复正常出水" },
-			{ "index":"4" , "content":"关闭9#~14#滤池排空闸", "result":"恢复正常出水" },
-			{ "index":"5" , "content":"开启东西滤池清水联通闸", "result":"平衡东西两侧水量" },
-			{ "index":"6" , "content":"打开阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
+			{"content":"打开阀门16#", "result":"恢复东侧虹吸进水" },
+			{"content":"打开阀门9#~14#小虹吸", "result":"逐格滤料冲洗合格后可以恢复" },
+			{"content":"打开阀门18#", "result":"恢复正常出水" },
+			{"content":"关闭9#~14#滤池排空闸", "result":"恢复正常出水" },
+			{"content":"开启东西滤池清水联通闸", "result":"平衡东西两侧水量" },
+			{"content":"打开阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
 		];
         
 		for (i=0;i<todolist.length;i++){
-			var offset = i+1
-	        document.getElementById("index_"+ offset).innerHTML=todolist[i].index;
+			var offset = i+1;
 	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
 	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
 		}
@@ -1891,18 +1876,22 @@ oCanvas.domReady(function () {
     		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
 //        	GD1001.state=3;
 //        	GD11.state=3;
+    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+        	GD1001.state=3;
+        	GD11.state=3;
          },1700);
-        window.setTimeout(function(){              
-        	clearAll();
-         },2700);
         
     }
     
     function restore_hx_left(){
     	//静态部分
     	$("#init_state").text("阀门维修中...");
-        $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
-        $(".table_td_left").attr("style","text-align:left");
+        $(".table_line").attr("style","background:rgba(255,255,255,0.5)");
+        $(".table_line").attr("style","text-align:left");
+        $(".progress-bar").css("width","0px");
         document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#283a45";
         document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
@@ -1912,17 +1901,17 @@ oCanvas.domReady(function () {
         setFMColorGreen("FM019");*/
         
         var todolist = [
-			{ "index":"1" , "content":"打开阀门14#", "result":"恢复西侧虹吸进水" },
-			{ "index":"2" , "content":"打开阀门1#~8#小虹吸", "result":"逐格滤料冲洗合格后可以恢复" },
-			{ "index":"3" , "content":"打开阀门17#", "result":"恢复正常出水" },
-			{ "index":"4" , "content":"关闭1#~8#滤池排空闸", "result":"恢复正常出水" },
-			{ "index":"5" , "content":"开启东西滤池清水联通闸", "result":"平衡东西两侧水量" },
-			{ "index":"6" , "content":"打开阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
+			{ "content":"打开阀门14#", "result":"恢复西侧虹吸进水" },
+			{ "content":"打开阀门1#~8#小虹吸", "result":"逐格滤料冲洗合格后可以恢复" },
+			{ "content":"打开阀门17#", "result":"恢复正常出水" },
+			{ "content":"关闭1#~8#滤池排空闸", "result":"恢复正常出水" },
+			{ "content":"开启东西滤池清水联通闸", "result":"平衡东西两侧水量" },
+			{ "content":"打开阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
 		];
 
 		for (i=0;i<todolist.length;i++){
-			var offset = i+1
-	        document.getElementById("index_"+ offset).innerHTML=todolist[i].index;
+			var offset = i+1;
+	  
 	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
 	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
 		}
@@ -1964,8 +1953,12 @@ oCanvas.domReady(function () {
          },2500);
         window.setTimeout(function(){              
         	clearAll();
-         },4700);
-		
+         },4700);		
+        
+		progressBar(".bar_group_1");
+	/*	progressBar("#bar_2");
+		progressBar("#bar_3");
+		progressBar("#bar_4");*/
     }
     
     function  fix_hx_left(){
@@ -1981,21 +1974,19 @@ oCanvas.domReady(function () {
         document.getElementById("name_HX").style.color="#8dd9ff";
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         document.getElementById("scheme").style.display="block";
-
-
         
         var todolist = [
-		{ "index":"1" , "content":"关闭阀门14#", "result":"停止西侧虹吸进水" },
-		{ "index":"2" , "content":"关闭阀门1#~8#小虹吸", "result":"停止西侧进水" },
-		{ "index":"3" , "content":"关闭阀门17#", "result":"防止东侧反水" },
-		{ "index":"4" , "content":"打开1#~8#滤池排空闸", "result":"1#~8#滤格排空" },
-		{ "index":"5" , "content":"断开东西滤池清水联通闸", "result":"断开联通" },
-		{ "index":"6" , "content":"关闭阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
+		{ "content":"关闭阀门14#", "result":"停止西侧虹吸进水" },
+		{ "content":"关闭阀门1#~8#小虹吸", "result":"停止西侧进水" },
+		{ "content":"关闭阀门17#", "result":"防止东侧反水" },
+		{ "content":"打开1#~8#滤池排空闸", "result":"1#~8#滤格排空" },
+		{ "content":"断开东西滤池清水联通闸", "result":"断开联通" },
+		{ "content":"关闭阀门19#", "result":"保持滤池出水进东侧臭氧接触池" }
 		];
 
 		for (i=0;i<todolist.length;i++){
-			var offset = i+1
-	        document.getElementById("index_"+ offset).innerHTML=todolist[i].index;
+			var offset = i+1;
+	        
 	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
 	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
 		}
@@ -2011,10 +2002,9 @@ oCanvas.domReady(function () {
 		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
     	GD26.state=2;
     	GD27.state=2;
-    	
+
         $("div.panel").show();
         
-      
         document.getElementById("restore").onclick=function(){
         	restore_hx_left();
         }
@@ -2643,7 +2633,7 @@ oCanvas.domReady(function () {
     	canvas.children[7].fill=color_GD;
     	canvas.children[8].fill=color_GD;
 //    	canvas.children[9].fill=color_GD;
-//        canvas.children[10].fill=color_GD;
+//      canvas.children[10].fill=color_GD;
         canvas.children[11].fill=color_GD;
         canvas.children[12].fill=color_GD;
         canvas.children[13].fill=color_GD;
@@ -2688,14 +2678,14 @@ oCanvas.domReady(function () {
         //恢复阀门的默认颜色
         $("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
         $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
-        //只显示重要的阀门
+        //只显示重要的阀门和标签
+        $(".fm_default_hide").attr("style","display:none;");
         $("div#FM_group .fm_default_green").attr("style","display:block;");
         $("div#FM_group .fm_default_red").attr("style","display:block;");
 
         //右侧
         //清空单元格的内容
 		for (i=1;i<7;i++){
-	        document.getElementById("index_"+ i).innerHTML="&nbsp;";
 	        document.getElementById("step_" + i).innerHTML="&nbsp;";
 	        document.getElementById("step_" + i + "_result").innerHTML="&nbsp;";
 		}
@@ -2704,11 +2694,13 @@ oCanvas.domReady(function () {
         $("#fix_head").text("请点击需要维修的构筑物");
         $("#init_state").text("全场正常运行");
         //恢复构筑物及其标签的颜色
-        $("div#name_gzw .name_ob").attr("style","color:#283a45");
-        $("div#name_gzw .name_ob").attr("style","background:rgba(255,255,255,0.5)");
+        $("div#name_gzw .name_ob").attr("style","color:#283a45;");
+        $("div#name_gzw .name_ob").attr("style","background:rgba(255,255,255,0.5);");
         //恢复表格中单元格的颜色
-        $(".table_td_left").attr("style","background:rgba(255,255,255,0.5)");
-        $(".table_td_left").attr("style","text-align:left");
+        $(".table_line").attr("style","background:rgba(255,255,255,0.5);");
+        $(".table_line").attr("style","text-align:left;");
+        //重置进度条的进度
+        $(".progress-bar").attr("style","width:0%;");
         
         //解除功能面板的函数绑定
 //      document.getElementById("scheme").onclick = function(){提示};
