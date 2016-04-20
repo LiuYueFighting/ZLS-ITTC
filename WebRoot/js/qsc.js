@@ -26,7 +26,7 @@ var SC03=createSC({
 var bg = canvas.display.image({
     x: 0,
     y: 0,
-    image: "image/qsc.png"
+    image: "image/qsc_v1.png"
 }).add();
 //绘制管道
 var GD01=createGD({

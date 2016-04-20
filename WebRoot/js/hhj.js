@@ -16,13 +16,13 @@ oCanvas.domReady(function () {
  });
  var SC02=createSC({
      parent:canvas,
-     x:703,y:307,height:347,width:85,trail_flag:0,speed:speed_SC,color:color_SC
+     x:700,y:307,height:347,width:85,trail_flag:0,speed:speed_SC,color:color_SC
  });
 //添加背景图片
  var bg = canvas.display.image({
      x: 0,
      y: 0,
-     image: "image/hhj.png"
+     image: "image/hhj_v1.png"
  }).add();
 //绘制两条管道
  var GD01=createGD({
@@ -38,8 +38,8 @@ oCanvas.domReady(function () {
  var GD02=createGD({
      parent:canvas,
      cells:[
-         {x_cell: 785,y_cell: 628},
-         {x_cell: 1027, y_cell: 628}
+         {x_cell: 780,y_cell: 628},
+         {x_cell: 908, y_cell: 628}
      ],
      GDwidth:width_all,
      color:color_GD

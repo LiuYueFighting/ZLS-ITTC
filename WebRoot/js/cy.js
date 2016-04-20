@@ -50,7 +50,7 @@ oCanvas.domReady(function () {
  var bg = canvas.display.image({
      x: 0,
      y: 0,
-     image: "image/cy.png"
+     image: "image/cy_v1.png"
  }).add();
 //画箭头
  var arrow_1=canvas.display.sprite({

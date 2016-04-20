@@ -16,7 +16,7 @@ oCanvas.domReady(function () {
     var bg = canvas.display.image({
         x: 0,
         y: 0,
-        image: "image/JJC_bg1.png"
+        image: "image/jjc_v1.png"
     });
 
     var left_t=createSC({

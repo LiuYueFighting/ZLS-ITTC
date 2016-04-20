@@ -1224,10 +1224,12 @@ oCanvas.domReady(function () {
         GD35.advance();
 
         if((GD11.state==0)&&(GD1001.state==0)){
-    		
+//            console.log("GD30:");
+//    		console.log(GD30.state);
     		if(GD30.state!=0){
     		GD30.state=2;
     		setFMColorRed("FM018");
+//    		console.log(document.getElementById("FM018").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png');
 
     		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
@@ -1251,13 +1253,14 @@ oCanvas.domReady(function () {
         	//console.log(GD1001.state);
         	if(GD141.state!=0){
         		GD141.state=2;
+        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+        		blinTwice("#step_6");
+        		blinTwice("#step_6_result");
         		}
         	setFMColorRed("FM019");
 
-    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-    		blinTwice("#step_6");
-    		blinTwice("#step_6_result");
+    		
 
     		//GD141.state=2;
     	}
@@ -1276,7 +1279,7 @@ oCanvas.domReady(function () {
         
         if((GD26.state==0)&&(GD27.state==0)){
     		
-    		if(GD13.state!=0){
+    		if(GD13.state==1){
     		GD13.state=2;
     		setFMColorRed("FM017");
 
@@ -1292,34 +1295,35 @@ oCanvas.domReady(function () {
     		//console.log("GD30:");
     		//console.log(GD30.state);
     	}
-        if((GD13.state!=2)&&(GD13.state!=1)){
+        if((GD13.state==0)){//(GD13.state!=2)&&(GD13.state!=1)
         	//console.log(GD1001.state);
-        	if(GD141.state==1){
+        	if((GD141.state==1)){
         		setFMColorRed("FM019");
         		}
-        	if((GD141.state!=0)){
+        	if(document.getElementById("FM019").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png'){
         		GD141.state=2;
         		}
-        	
-        	
+//        	console.log("GD141:");
+//    		console.log(GD141.state);
 
     		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
 
     		//GD141.state=2;
     	}
-        if((GD26.state==1)&&(GD27.state==1)){    		
-    		if(GD13.state!=1)
-    		GD13.state=3;
-    		//console.log("GD30:");
-    		//console.log(GD30.state);
-    	}
-        if((GD13.state==1)&&(GD11.state==1)&&(GD30.state==1)){    		
-    		if(GD141.state!=1)
-    		GD141.state=3;
-    		//console.log("GD30:");
-    		//console.log(GD30.state);
-    	}
+//        if((GD26.state==1)&&(GD27.state==1)){    		
+//    		if(GD13.state!=1)
+//    		GD13.state=3;
+//    		//console.log("GD30:");
+//    		//console.log(GD30.state);
+//    	}
+//        if((GD13.state==1)&&(GD11.state==1)&&(GD30.state==1)){    		
+//    		if(GD141.state!=1)
+//    		GD141.state=3;
+//    		//console.log("GD30:");
+//    		//console.log(GD30.state);
+//    	}
+
         canvas.redraw();
     });
     GD01.paused=1;
@@ -1866,10 +1870,11 @@ oCanvas.domReady(function () {
     	//计时器控制阀门颜色和对应维修步骤变化情况
     	window.setTimeout(function(){              
     		setFMColorGreen("FM019");
-    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+    		
          },300);
         window.setTimeout(function(){              
         	setFMColorGreen("FM018");
@@ -1880,10 +1885,10 @@ oCanvas.domReady(function () {
          },1000);
         window.setTimeout(function(){              
         	setFMColorGreen("FM016");
-    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+        	document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
 //        	GD1001.state=3;
 //        	GD11.state=3;
          },1700);
@@ -1929,36 +1934,37 @@ oCanvas.domReady(function () {
     	//计时器控制阀门颜色和对应维修步骤变化情况
     	window.setTimeout(function(){              
     		setFMColorGreen("FM019");
-//    		GD141.state=3;
+    		GD141.state=3;
 //    		console.log("GD141:");
 //    		console.log(GD141.state);
-    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-         },300);
-        window.setTimeout(function(){              
-        	setFMColorGreen("FM017");
-//        	GD13.state=3;
-    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-         },1000);
-        window.setTimeout(function(){              
-        	setFMColorGreen("FM014");
-//        	GD26.state=3;
-//        	GD27.state=3;
     		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+         },300);
+        window.setTimeout(function(){              
+        	setFMColorGreen("FM017");
+        	GD13.state=3;
+    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+         },1500);
+        window.setTimeout(function(){              
+        	setFMColorGreen("FM014");
+        	GD26.state=3;
+        	GD27.state=3;
+        	document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+    		
 //        	GD1001.state=3;
 //        	GD11.state=3;
-         },1700);
+         },2500);
         window.setTimeout(function(){              
         	clearAll();
-         },2700);
+         },4700);
 		
     }
     
@@ -2626,6 +2632,7 @@ oCanvas.domReady(function () {
     function clearAll(){
     	GD1001.state=3;
     	GD11.state=3;
+    	GD13.state=3;
     	GD26.state=3;
     	GD27.state=3;
     	canvas.children[2].fill=color_GD;

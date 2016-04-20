@@ -62,7 +62,7 @@ oCanvas.domReady(function () {
     var bg = canvas.display.image({
         x: 0,
         y: 0,
-        image: "image/hx_v.png"
+        image: "image/hx_v1.png"
     }).add();
 //绘制两条管道
     var GD01=createGD({

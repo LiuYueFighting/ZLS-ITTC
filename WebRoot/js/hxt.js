@@ -25,7 +25,7 @@ oCanvas.domReady(function () {
  var bg = canvas.display.image({
      x: 0,
      y: 0,
-     image: "image/hxt.png"
+     image: "image/hxt_v1.png"
  }).add();
 //添加箭头
     var arrow_0=canvas.display.sprite({

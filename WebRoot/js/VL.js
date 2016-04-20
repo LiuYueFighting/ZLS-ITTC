@@ -11,7 +11,7 @@ oCanvas.domReady(function () {
     var bg = canvas.display.image({
         x: 0,
         y: 0,
-        image: "image/vl.png"
+        image: "image/vl_v1.png"
     });
     canvas.addChild(bg);
     var speed_all=1.5,
@@ -65,7 +65,7 @@ oCanvas.domReady(function () {
     var fg = canvas.display.image({
         x: 0,
         y: 0,
-        image: "image/vl.png"
+        image: "image/vl_v1.png"
     });
     canvas.addChild(fg);
     var arrow_0=canvas.display.sprite({

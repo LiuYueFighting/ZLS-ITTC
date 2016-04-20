@@ -30,7 +30,7 @@ oCanvas.domReady(function () {
     var fg = canvas.display.image({
         x: 0,
         y: 0,
-        image: "image/QS_v.png"
+        image: "image/qs_v1.png"
     });
     canvas.addChild(fg);
 
