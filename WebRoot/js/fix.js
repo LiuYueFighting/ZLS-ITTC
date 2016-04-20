@@ -1867,10 +1867,6 @@ oCanvas.domReady(function () {
         	GD1001.state=3;
         	GD11.state=3;
          },1700);
-        window.setTimeout(function(){              
-        	clearAll();
-         },2700);
-
         
     }
     
@@ -1938,9 +1934,6 @@ oCanvas.domReady(function () {
         	GD1001.state=3;
         	GD11.state=3;
          },1700);
-        window.setTimeout(function(){              
-        	clearAll();
-         },9000);
         
 		progressBar(".bar_group_1");
 	/*	progressBar("#bar_2");
@@ -2619,7 +2612,7 @@ oCanvas.domReady(function () {
     	canvas.children[7].fill=color_GD;
     	canvas.children[8].fill=color_GD;
 //    	canvas.children[9].fill=color_GD;
-//        canvas.children[10].fill=color_GD;
+//      canvas.children[10].fill=color_GD;
         canvas.children[11].fill=color_GD;
         canvas.children[12].fill=color_GD;
         canvas.children[13].fill=color_GD;
@@ -2664,14 +2657,14 @@ oCanvas.domReady(function () {
         //恢复阀门的默认颜色
         $("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
         $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
-        //只显示重要的阀门
+        //只显示重要的阀门和标签
+        $(".fm_default_hide").attr("style","display:none;");
         $("div#FM_group .fm_default_green").attr("style","display:block;");
         $("div#FM_group .fm_default_red").attr("style","display:block;");
 
         //右侧
         //清空单元格的内容
 		for (i=1;i<7;i++){
-	        
 	        document.getElementById("step_" + i).innerHTML="&nbsp;";
 	        document.getElementById("step_" + i + "_result").innerHTML="&nbsp;";
 		}

@@ -236,8 +236,8 @@
  	</div>
  	-->
 		<div id="name_gzw">
-		    <a href="#" id="name_QS1"   class="name_ob">取水泵房</a>
-		    <a href="#" id="name_QS2"   class="name_ob">取水泵房</a>
+		    <a href="#" id="name_QS1"  class="name_ob">取水泵房</a>
+		    <a href="#" id="name_QS2"  class="name_ob">取水泵房</a>
 		    <a href="#" id="name_JJC1" class="name_ob">1#机加池</a>
 		    <a href="#" id="name_JJC2" class="name_ob">2#机加池</a>
 		    <a href="#" id="name_JJC3" class="name_ob">3#机加池</a>

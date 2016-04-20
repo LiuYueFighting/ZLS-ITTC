@@ -1125,8 +1125,15 @@ oCanvas.domReady(function () {
 
 //        $(".fm_default_green").attr("src","image/y3-35x37.png");
        
-        document.getElementById("scheme").style.display="none";        
-
+        /*document.getElementById("scheme").style.display="none";*/        
+        //恢复阀门的默认颜色
+        $("img.fm_default_green").attr("src","image/y3-35x37.png");
+        $("img.fm_default_red").attr("src","image/y2-35x37.png");
+        //只显示重要的阀门和标签
+        hideAllFM();
+        $(".fm_default_green").attr("style","display:block;");
+        $(".fm_default_red").attr("style","display:block;");
+        
         //清空单元格的内容
 		for (i=1;i<7;i++){
 	        document.getElementById("index_"+ i).innerHTML="&nbsp;";
@@ -1135,24 +1142,28 @@ oCanvas.domReady(function () {
 		}
 		
         //changeHide();
-
-        document.getElementById("fix_head").innerHTML="请点击需要维修的阀门";
-
+		//重置面板提示的内容
+        $("#fix_head").text("请点击需要维修的阀门");
+        $("#init_state").text("全场正常运行");
+        //恢复构筑物及其标签的颜色
+        $(".name_ob").attr("style","color:#283a45;");
+        $(".name_ob").attr("style","background:rgba(255,255,255,0.5);");
+        document.getElementById("export").href="#";
     }
     function  fix_fm062(){
         clearAll();
+        hideAllFM();
+		setFMColorGreen("FM064");
+        setFMColorGreen("FM09");
+        setFMColorGreen("FM062");
         document.getElementById("fix_head").innerHTML="62#阀门维修配合方案";
         document.getElementById("FM062").src="image/y1.png";
         
 
-
-        document.getElementById("step_1").innerHTML="打开阀门10#";
-        document.getElementById("step_2").innerHTML="打开阀门07#";
-        document.getElementById("step_3").innerHTML="打开阀门65#";
-        document.getElementById("step_4").innerHTML="打开阀门63#";
-        document.getElementById("step_5").innerHTML="关闭阀门09#";
-        document.getElementById("step_6").innerHTML="关闭阀门64#";
-        document.getElementById("step_1_result").innerHTML="堵塞62#阀门下侧管道";
+        /*document.getElementById("scheme").onclick="";*/
+        document.getElementById("step_1").innerHTML="关闭09#阀门";
+        document.getElementById("step_2").innerHTML="关闭064#阀门";
+        document.getElementById("step_3").innerHTML="堵塞062#阀门下侧管道";
 
         setShow();
     }
@@ -1184,16 +1195,20 @@ oCanvas.domReady(function () {
     	$.messager.confirm('确认','是否将<strong>62#阀门</strong>设置为维修状态？', function(r){
     		if(r){
             fix_fm062();
-            document.getElementById("scheme").onclick="";
             
-            document.getElementById("reset").onclick=function(){
+            document.getElementById("restore").onclick=function(){
             	window.setTimeout(function(){
-           		setFMColorGreen("FM064");
+            		setFMColorGreen("FM062");
+                 },0);
+            	window.setTimeout(function(){
+            		setFMColorGreen("FM064");
                  },300);
                 window.setTimeout(function(){
                 	setFMColorGreen("FM09");
-                	clearAll();
                  },700);
+            	GD0101.state=3;
+            	GD11.state=3;
+            	GD1001.state=3;
             };
 
             document.getElementById("export").href="download/fix-fm062.docx";
@@ -1260,7 +1275,7 @@ oCanvas.domReady(function () {
             GD11.state=2;
             document.getElementById("reset").onclick=function(){
             	window.setTimeout(function(){
-           		setFMColorGreen("FM018");
+            		setFMColorGreen("FM018");
                  },300);
                 window.setTimeout(function(){
                 	setFMColorGreen("FM016");
