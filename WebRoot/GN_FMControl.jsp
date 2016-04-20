@@ -70,20 +70,30 @@
         left: 682px;
         top: 67px;
         }
+         #name_QS2{
+    	position: absolute;
+    	left: 677px;
+    	top: 147px;
+    	height: 50px;
+    	width: auto;
+    }
         #name_JJC1{
         position: absolute;
         left: 855px;
         top: 373px;
+        text-align:center;
         }
         #name_JJC2{
         position: absolute;
         left: 1065px;
         top: 373px;
+        text-align:center;
         }
         #name_JJC3{
         position: absolute;
         left:1143px;
         top: 603px;
+        text-align:center;
         }
         #name_VL{
         position: absolute;
@@ -449,6 +459,7 @@ if(openDgree_062+openDgree_063 != 0){
 
 <!--         <a href="#" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a> -->
 		<a href="#"  id="name_QS"    style="text-decoration: none" class="name_ob">取水泵房</a>
+		<a href="#"  id="name_QS2"    style="text-decoration: none" class="name_ob">取水泵房</a>
         <a href="#" id="name_JJC1" style="text-decoration: none" class="name_ob">1#<br>机加池</a>
         <a href="#" id="name_JJC2" style="text-decoration: none" class="name_ob">2#<br>机加池</a>
         <a href="#" id="name_JJC3" style="text-decoration: none" class="name_ob">3#<br>机加池</a>
