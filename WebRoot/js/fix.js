@@ -108,7 +108,7 @@ oCanvas.domReady(function () {
             {x_cell: 818, y_cell: 542}
         ],
         GDwidth:width_all,
-        color:color_GD
+        color:"rgba(26,215,255,0)"
     });//9
     var GD09=createGD1({
         parent:canvas,
@@ -120,7 +120,7 @@ oCanvas.domReady(function () {
             {x_cell: 818, y_cell: 562}
         ],
         GDwidth:width_all,
-        color:color_GD
+        color:"rgba(26,215,255,0)"
     });//10
     var GD10=createGD1({
         parent:canvas,
@@ -342,7 +342,7 @@ oCanvas.domReady(function () {
         parent:canvas,
         cells:[
             //{x_cell: 896 ,y_cell: 445},
-            {x_cell: 896 ,y_cell: 485},
+            {x_cell: 832 ,y_cell: 485},
             {x_cell: 793 ,y_cell: 485},
             {x_cell: 793 ,y_cell: 541},
             {x_cell: 818, y_cell: 541}
@@ -354,7 +354,7 @@ oCanvas.domReady(function () {
         parent:canvas,
         cells:[
             //{x_cell: 896 ,y_cell: 445},
-            {x_cell: 896 ,y_cell: 485},
+            {x_cell: 832 ,y_cell: 485},
             {x_cell: 793 ,y_cell: 485},
             {x_cell: 793 ,y_cell: 562},
             {x_cell: 818, y_cell: 562}
@@ -847,25 +847,25 @@ oCanvas.domReady(function () {
 
                         	fix_hx_left();
 
-        	    			window.setTimeout(function(){              
-        		            	decay(16,1);//GD04
-        		            	decay(17,1);//GD07
-        		            	decay(9,1);//GD141
-        		            	decay(10,1);
-        		            	decay(30,1);
-        		            	decay(31,1);
-        		             },100);
+//        	    			window.setTimeout(function(){              
+//        		            	decay(16,1);//GD04
+//        		            	decay(17,1);//GD07
+//        		            	decay(9,1);//GD141
+//        		            	decay(10,1);
+//        		            	decay(30,1);
+//        		            	decay(31,1);
+//        		             },100);
                             flag = 0;
                         }else{
 
                         	fix_hx_right(); 
                         	
-                        	window.setTimeout(function(){              
-                        	decay(12,1);//GD04
-                        	decay(14,1);//GD07
-                        	decay(17,1);//GD141
-                        	decay(34,1);
-                    	 	},100);
+//                        	window.setTimeout(function(){              
+//                        	decay(12,1);//GD04
+//                        	decay(14,1);//GD07
+//                        	decay(17,1);//GD141
+//                        	decay(34,1);
+//                    	 	},100);
                             flag = 1;
                         }
             		});
@@ -1259,7 +1259,7 @@ oCanvas.domReady(function () {
     		blinTwice("#step_6");
     		blinTwice("#step_6_result");
 
-    		GD141.state=2;
+    		//GD141.state=2;
     	}
         if((GD11.state==1)&&(GD1001.state==1)){    		
     		if(GD30.state!=1)
@@ -1268,6 +1268,53 @@ oCanvas.domReady(function () {
     		//console.log(GD30.state);
     	}
         if(GD30.state==1){    		
+    		if(GD141.state!=1)
+    		GD141.state=3;
+    		//console.log("GD30:");
+    		//console.log(GD30.state);
+    	}
+        
+        if((GD26.state==0)&&(GD27.state==0)){
+    		
+    		if(GD13.state!=0){
+    		GD13.state=2;
+    		setFMColorRed("FM017");
+
+    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+
+    		}
+    		
+    		//console.log("GD30:");
+    		//console.log(GD30.state);
+    	}
+        if((GD13.state!=2)&&(GD13.state!=1)){
+        	//console.log(GD1001.state);
+        	if(GD141.state==1){
+        		setFMColorRed("FM019");
+        		}
+        	if((GD141.state!=0)){
+        		GD141.state=2;
+        		}
+        	
+        	
+
+    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+
+    		//GD141.state=2;
+    	}
+        if((GD26.state==1)&&(GD27.state==1)){    		
+    		if(GD13.state!=1)
+    		GD13.state=3;
+    		//console.log("GD30:");
+    		//console.log(GD30.state);
+    	}
+        if((GD13.state==1)&&(GD11.state==1)&&(GD30.state==1)){    		
     		if(GD141.state!=1)
     		GD141.state=3;
     		//console.log("GD30:");
@@ -1842,7 +1889,7 @@ oCanvas.domReady(function () {
          },1700);
         window.setTimeout(function(){              
         	clearAll();
-         },4700);
+         },2700);
         
     }
     
@@ -1882,6 +1929,9 @@ oCanvas.domReady(function () {
     	//计时器控制阀门颜色和对应维修步骤变化情况
     	window.setTimeout(function(){              
     		setFMColorGreen("FM019");
+//    		GD141.state=3;
+//    		console.log("GD141:");
+//    		console.log(GD141.state);
     		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
@@ -1889,6 +1939,7 @@ oCanvas.domReady(function () {
          },300);
         window.setTimeout(function(){              
         	setFMColorGreen("FM017");
+//        	GD13.state=3;
     		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
@@ -1896,6 +1947,8 @@ oCanvas.domReady(function () {
          },1000);
         window.setTimeout(function(){              
         	setFMColorGreen("FM014");
+//        	GD26.state=3;
+//        	GD27.state=3;
     		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
@@ -1905,7 +1958,7 @@ oCanvas.domReady(function () {
          },1700);
         window.setTimeout(function(){              
         	clearAll();
-         },4700);
+         },2700);
 		
     }
     
@@ -1915,17 +1968,15 @@ oCanvas.domReady(function () {
         
 		hideAllFM();
 		setDefaultFMColor();
-		setFMColorRed("FM014");
-        setFMColorRed("FM017");
-        setFMColorRed("FM019");
+		setFMColorGreen("FM014");
+        setFMColorGreen("FM017");
+        setFMColorGreen("FM019");
         document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#8dd9ff";
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         document.getElementById("scheme").style.display="block";
 
-/*        setFMColorRed("FM014");
-        setFMColorRed("FM017");
-        setFMColorRed("FM019");*/
+
         
         var todolist = [
 		{ "index":"1" , "content":"关闭阀门14#", "result":"停止西侧虹吸进水" },
@@ -1946,6 +1997,14 @@ oCanvas.domReady(function () {
 		document.getElementById("export").href="download/fix-hx.doc";
     	$("#scheme").text("方案一");
     	
+    	//动态效果
+        setFMColorRed("FM014");  
+		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+    	GD26.state=2;
+    	GD27.state=2;
     	
         $("div.panel").show();
         
@@ -2417,25 +2476,25 @@ oCanvas.domReady(function () {
 
                 	fix_hx_left();
 
-	    			window.setTimeout(function(){              
-		            	decay(16,1);//GD04
-		            	decay(17,1);//GD07
-		            	decay(9,1);//GD141
-		            	decay(10,1);
-		            	decay(30,1);
-		            	decay(31,1);
-		             },100);
+//	    			window.setTimeout(function(){              
+//		            	decay(16,1);//GD04
+//		            	decay(17,1);//GD07
+//		            	decay(9,1);//GD141
+//		            	decay(10,1);
+//		            	decay(30,1);
+//		            	decay(31,1);
+//		             },100);
                     flag = 0;
                 }else{
                 	
                 	fix_hx_right(); 
                 	
-                	window.setTimeout(function(){              
-                	decay(12,1);//GD04
-                	decay(14,1);//GD07
-                	decay(17,1);//GD141
-                	decay(34,1);
-                	},100);
+//                	window.setTimeout(function(){              
+//                	decay(12,1);//GD04
+//                	decay(14,1);//GD07
+//                	decay(17,1);//GD141
+//                	decay(34,1);
+//                	},100);
                     flag = 1;
                 }	                            
 	});
@@ -2567,6 +2626,8 @@ oCanvas.domReady(function () {
     function clearAll(){
     	GD1001.state=3;
     	GD11.state=3;
+    	GD26.state=3;
+    	GD27.state=3;
     	canvas.children[2].fill=color_GD;
     	canvas.children[3].fill=color_GD;
     	canvas.children[4].fill=color_GD;
@@ -2574,8 +2635,8 @@ oCanvas.domReady(function () {
     	canvas.children[6].fill=color_GD;
     	canvas.children[7].fill=color_GD;
     	canvas.children[8].fill=color_GD;
-    	canvas.children[9].fill=color_GD;
-        canvas.children[10].fill=color_GD;
+//    	canvas.children[9].fill=color_GD;
+//        canvas.children[10].fill=color_GD;
         canvas.children[11].fill=color_GD;
         canvas.children[12].fill=color_GD;
         canvas.children[13].fill=color_GD;

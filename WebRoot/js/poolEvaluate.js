@@ -957,8 +957,9 @@ function formPoolID(value){
 	var strs = new Array();
 	var poolID;
 	strs=value.split("_");//字符切割
-	poolID = strs[2].replace(/SC/,'');
-	return "机加池" + poolID + "#";		
+	poolID = strs[2].replace(/SC0/,'');
+	poolID = poolID.replace(/SC0/,'');
+	return poolID + "#"+"机加池" ;		
 }
 
 
@@ -990,7 +991,7 @@ function export2excel(){
 //	}
 //	});
 
-	var downloadPath = "downloadTemp/PoolEvaluate.xls";
+	var downloadPath = "downloadTempForJJC/PoolEvaluate.xls";
 	$.post("exportPoolEvaluate.action", function(result) {
 		if (result.operateSuccess){
 			window.location.href=downloadPath;

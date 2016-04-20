@@ -12,29 +12,17 @@
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
     <title>北京自来水集团工艺平台</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/top_down.css">
     <link rel="stylesheet" href="css/breadcrumb.css">
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <link rel="stylesheet" href="css/FM&GZW_name.css">
-    
-    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
-    
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
-    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
-	<link rel="stylesheet" type="text/css" href="style/myeasyui.css" />    
-    
-    
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
     <script src="js/my_oCanvas.js"></script>
     <script src="js/fix_fm.js"></script>
-    
-    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script> 
-    
     <style>
         body {
             background: #afd9ee;

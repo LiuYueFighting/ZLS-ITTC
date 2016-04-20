@@ -507,13 +507,14 @@ function dealAddSave() {
 	//alert("prams is " + params);
 	var paramsArray = params.split("split=&");
 	//alert("paramsArray.length is " + paramsArray.length);
-	//alert("pramsArray is " + paramsArray);
+	alert("pramsArray is " + paramsArray);
 	var strLength;
 	var tempStr;
 	var newStr;
 	for(var i = 1; i < paramsArray.length; ++i) {
 		//alert("Into for loop!");
 		strLength = paramsArray[i].length;
+		//alert("params[1] = " + paramsArray[i]);
 		tempStr = paramsArray[i].substring(42, 60);
 		//alert("old tempStr" + tempStr);
 		newtempStr = tempStr.substring(0, 10) + '+' + tempStr.substring(11, tempStr.length);
@@ -927,8 +928,9 @@ function formPoolID(value){
 	var strs = new Array();
 	var poolID;
 	strs=value.split("_");//字符切割
-	poolID = strs[2].replace(/SC/,'');
-	return 	"清水池" + poolID + "#";
+	poolID = strs[2].replace(/SC0/,'');
+	poolID = poolID.replace(/SC/,'');
+	return 	poolID + "#"+"清水池" ;
 }
 
 

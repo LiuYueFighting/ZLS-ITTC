@@ -247,7 +247,7 @@ oCanvas.domReady(function () {
         origin: { x:"center", y: "top" },
         font: "bold 36px sans-serif",
         fill:"#0e406b",
-        text:"鏈哄姞姹犲伐鑹哄睍绀虹旱鍓栧浘"
+        text:"机加池工艺展示纵剖图"
     });
     canvas.addChild(txt1);
     var txt2=canvas.display.text({
@@ -256,7 +256,7 @@ oCanvas.domReady(function () {
         origin: { x:"center", y: "top" },
         font: "bold 25px sans-serif",
         fill:"#337ab7",
-        text:"娣峰悎浜曟潵姘�
+        text:"混合井来水"
     });
     canvas.addChild(txt2);
     var txt3=canvas.display.text({
@@ -265,7 +265,7 @@ oCanvas.domReady(function () {
         origin: { x:"center", y: "top" },
         font: "bold 25px sans-serif",
         fill:"#337ab7",
-        text:"鏈哄姞姹犲嚭姘�
+        text:"机加池出水"
     });
     canvas.addChild(txt3);
 
