@@ -161,7 +161,7 @@
         <div class="panel-heading">运行参数</div>
         <table class="table">
         <tr>
-        <td>滤速</td><td>8m/s</td>
+        <td>滤速</td><td>8m/h</td>
         </tr>
         <tr>
         <td>滤程</td><td>48h</td>
