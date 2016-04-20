@@ -53,10 +53,10 @@
 	    font-weight: bold;
 	    }
 	    #fix-panel{
-	    position: absolute;
 	    left: 91.2%;
 	    top: 4.7%;
 	    Z-INDEX: 999;
+	    position:absolute;
 	    }
 	    #panel_heading{
 	    cursor: pointer;
@@ -65,7 +65,7 @@
 	    border-bottom: 1px solid transparent;
 	    border-top-left-radius: 3px;
 	    border-top-right-radius: 3px;
-	    height: 85px;
+	    height: 75px;
 	    width: 245px;
 	    Z-INDEX: 999;
 	    -webkit-transition-property:background-color;
@@ -136,6 +136,10 @@
 	    #WFM062,#WFM019{
 	    color: #6dceff;
 	    background: rgba(255,0,0,0.6);
+	    }
+	   	.panel a{
+	    text-decoration: none;
+	    color: black;
 	    }
     </style>
     <script>
@@ -262,86 +266,88 @@
     <img id="FM07"  src="image/y3.png" class="fm_default_green">
     <img id="FM09"  src="image/y3.png" class="fm_default_green">
     <img id="FM010" src="image/y3.png" class="fm_default_green">
-    <img id="FM045" src="image/y3.png" class="fm_default_green">
     <img id="FM014" src="image/y3.png" class="fm_default_green">
     <img id="FM015" src="image/y3.png" class="fm_default_green">
-    <img id="FM069" src="image/y3.png" class="fm_default_green">
-    <img id="FM066" src="image/y3.png" class="fm_default_green">
     <img id="FM016" src="image/y3.png" class="fm_default_green">
-    <img id="FM068" src="image/y3.png" class="fm_default_green">
-    <img id="FM067" src="image/y3.png" class="fm_default_green">
     <img id="FM017" src="image/y3.png" class="fm_default_green">
     <img id="FM018" src="image/y3.png" class="fm_default_green">
     <img id="FM019" src="image/y3.png" class="fm_default_green">
     <img id="FM020" src="image/y3.png" class="fm_default_green">
-    <img id="FM052" src="image/y3.png" class="fm_default_green">
-    <img id="FM056" src="image/y3.png" class="fm_default_green">
-    <img id="FM053" src="image/y3.png" class="fm_default_green">
-    <img id="FM054" src="image/y3.png" class="fm_default_green">
-    <img id="FM057" src="image/y3.png" class="fm_default_green">
-    <img id="FM058" src="image/y3.png" class="fm_default_green">
-    <img id="FM059" src="image/y3.png" class="fm_default_green">
     <img id="FM021" src="image/y3.png" class="fm_default_green">
     <img id="FM022" src="image/y3.png" class="fm_default_green">
-    <img id="FM046" src="image/y3.png" class="fm_default_green">
-    <img id="FM023" src="image/y3.png" class="fm_default_green">
     <img id="FM024" src="image/y3.png" class="fm_default_green">
-    <img id="FM025" src="image/y3.png" class="fm_default_green">
-    <img id="FM044" src="image/y3.png" class="fm_default_green">
     <img id="FM026" src="image/y3.png" class="fm_default_green">
+    <img id="FM044" src="image/y3.png" class="fm_default_green">
+    <img id="FM045" src="image/y3.png" class="fm_default_green">
+    <img id="FM046" src="image/y3.png" class="fm_default_green">
     <img id="FM047" src="image/y3.png" class="fm_default_green">
     <img id="FM048" src="image/y3.png" class="fm_default_green">
     <img id="FM049" src="image/y3.png" class="fm_default_green">
-    <img id="FM050" src="image/y3.png" class="fm_default_green">
     <img id="FM051" src="image/y3.png" class="fm_default_green">
+    <img id="FM052" src="image/y3.png" class="fm_default_green">
+    <img id="FM053" src="image/y3.png" class="fm_default_green">
+    <img id="FM054" src="image/y3.png" class="fm_default_green">
     <img id="FM055" src="image/y3.png" class="fm_default_green">
-    <img id="FM065" src="image/y3.png" class="fm_default_green">
+    <img id="FM056" src="image/y3.png" class="fm_default_green">
+    <img id="FM057" src="image/y3.png" class="fm_default_green">
+    <img id="FM058" src="image/y3.png" class="fm_default_green">
+    <img id="FM059" src="image/y3.png" class="fm_default_green">
     <img id="FM062" src="image/y3.png" class="fm_default_green">
     <img id="FM063" src="image/y3.png" class="fm_default_green">
     <img id="FM064" src="image/y3.png" class="fm_default_green">
+    <img id="FM065" src="image/y3.png" class="fm_default_green">
+    <img id="FM066" src="image/y3.png" class="fm_default_green">
+    <img id="FM067" src="image/y3.png" class="fm_default_green">
+    <img id="FM068" src="image/y3.png" class="fm_default_green">
+    <img id="FM069" src="image/y3.png" class="fm_default_green">
 
-    <p id="WFM05" class="name_FM fm_default_green" >05#</p>
+    <img id="FM023" src="image/y3.png" class="fm_default_red">
+    <img id="FM025" src="image/y3.png" class="fm_default_red">
+    <img id="FM050" src="image/y3.png" class="fm_default_red">
+
+    <p id="WFM05" class="name_FM fm_default_green">05#</p>
     <p id="WFM06" class="name_FM fm_default_green">06#</p>
     <p id="WFM07" class="name_FM fm_default_green">07#</p>
     <p id="WFM09" class="name_FM fm_default_green">09#</p>
     <p id="WFM010" class="name_FM fm_default_green">010#</p>
-    <p id="WFM065" class="name_FM fm_default_green">065#</p>
-    <p id="WFM062" class="name_FM fm_default_green">062#</p>
-    <p id="WFM063" class="name_FM fm_default_green">063#</p>
-    <p id="WFM064" class="name_FM fm_default_green">064#</p>
-    <p id="WFM045" class="name_FM fm_default_green">045#</p>
     <p id="WFM014" class="name_FM fm_default_green">014#</p>
     <p id="WFM015" class="name_FM fm_default_green">015#</p>
-    <p id="WFM069" class="name_FM fm_default_green">069#</p>
-    <p id="WFM066" class="name_FM fm_default_green">066#</p>
     <p id="WFM016" class="name_FM fm_default_green">016#</p>
-    <p id="WFM068" class="name_FM fm_default_green">068#</p>
-    <p id="WFM067" class="name_FM fm_default_green">067#</p>
     <p id="WFM017" class="name_FM fm_default_green">017#</p>
     <p id="WFM018" class="name_FM fm_default_green">018#</p>
     <p id="WFM019" class="name_FM fm_default_green">019#</p>
     <p id="WFM020" class="name_FM fm_default_green">020#</p>
-    <p id="WFM052" class="name_FM fm_default_green">052#</p>
-    <p id="WFM056" class="name_FM fm_default_green">056#</p>
-    <p id="WFM053" class="name_FM fm_default_green">053#</p>
-    <p id="WFM054" class="name_FM fm_default_green">054#</p>
-    <p id="WFM057" class="name_FM fm_default_green">057#</p>
-    <p id="WFM058" class="name_FM fm_default_green">058#</p>
-    <p id="WFM059" class="name_FM fm_default_green">059#</p>
     <p id="WFM021" class="name_FM fm_default_green">021#</p>
     <p id="WFM022" class="name_FM fm_default_green">022#</p>
-    <p id="WFM046" class="name_FM fm_default_green">046#</p>
-    <p id="WFM023" class="name_FM fm_default_green">023#</p>
     <p id="WFM024" class="name_FM fm_default_green">024#</p>
-    <p id="WFM025" class="name_FM fm_default_green">025#</p>
-    <p id="WFM044" class="name_FM fm_default_green">044#</p>
-    <p id="WFM055" class="name_FM fm_default_green">055#</p>
     <p id="WFM026" class="name_FM fm_default_green">026#</p>
+    <p id="WFM044" class="name_FM fm_default_green">044#</p>
+    <p id="WFM045" class="name_FM fm_default_green">045#</p>
+    <p id="WFM046" class="name_FM fm_default_green">046#</p>
     <p id="WFM047" class="name_FM fm_default_green">047#</p>
     <p id="WFM048" class="name_FM fm_default_green">048#</p>
     <p id="WFM049" class="name_FM fm_default_green">049#</p>
-    <p id="WFM050" class="name_FM fm_default_green">050#</p>
     <p id="WFM051" class="name_FM fm_default_green">051#</p>
+    <p id="WFM052" class="name_FM fm_default_green">052#</p>
+    <p id="WFM053" class="name_FM fm_default_green">053#</p>
+    <p id="WFM054" class="name_FM fm_default_green">054#</p>
+    <p id="WFM055" class="name_FM fm_default_green">055#</p>
+    <p id="WFM056" class="name_FM fm_default_green">056#</p>
+    <p id="WFM057" class="name_FM fm_default_green">057#</p>
+    <p id="WFM058" class="name_FM fm_default_green">058#</p>
+    <p id="WFM059" class="name_FM fm_default_green">059#</p>
+    <p id="WFM062" class="name_FM fm_default_green">062#</p>
+    <p id="WFM063" class="name_FM fm_default_green">063#</p>
+    <p id="WFM064" class="name_FM fm_default_green">064#</p>
+    <p id="WFM065" class="name_FM fm_default_green">065#</p>
+    <p id="WFM066" class="name_FM fm_default_green">066#</p>
+    <p id="WFM067" class="name_FM fm_default_green">067#</p>
+    <p id="WFM068" class="name_FM fm_default_green">068#</p>
+    <p id="WFM069" class="name_FM fm_default_green">069#</p>
+
+    <p id="WFM023" class="name_FM fm_default_red">023#</p>
+    <p id="WFM025" class="name_FM fm_default_red">025#</p>
+    <p id="WFM050" class="name_FM fm_default_red">050#</p>
     </div>
     
     <!-- 页面右侧面板 -->
@@ -381,7 +387,7 @@
 			<div class="panel-heading">功能</div>
 			<table class="table">
 				<tr><td id="scheme" class="hcc">方案二</td><td id="restore" class="hcc">恢复运行</td></tr>
-				<tr><td id="export" class="hcc">生成方案</td><td id="reset" class="hcc">重置</td></tr>
+				<tr><td class="hcc"><a href="#" id="export">生成方案</a></td><td id="reset" class="hcc">重置</td></tr>
 			</table>
 		</div>
     </div>
