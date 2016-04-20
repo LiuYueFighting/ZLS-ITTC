@@ -134,11 +134,17 @@
 	    #fix_table{
     	font-size:12px
 	    }
-	    .table_td_left{
+	    .table_line{
     	text-align: left;
+    	width:100%;
+		position: absolute;
+		height:20px;
+		padding:4px;
 	    } 
-	/* 	.progressBar{width:200px;height:8px;border:1px solid #98AFB7;border-radius:5px;margin-top:10px;}
-		#bar{width:0px;height:8px;border-radius:5px;background:#5EC4EA;} */
+	    div.progress{
+	    margin:0;
+	    border-radius:0px;
+	    }
     </style>
     <script>
     function setFMColorRed(id){
@@ -188,27 +194,27 @@
 		$(".fm_default_red").attr("style","display:none;");
 		$(".fm_default_hide").attr("style","display:none;");
 	}
-	
-/* 
- *  用进度条的形式动态显示构筑物维修的操作步骤执行情况
-	function progressBar(){
+	 
+ 	//用进度条的形式动态显示构筑物维修的操作步骤执行情况
+	function progressBar(x,callback){
 	  	//初始化js进度条
-	  	$("#bar").css("width","0px");
+	  	$(x).css("width","0px");
 	  	//进度条的速度，越小越快
-		var speed = 20;
-		
+		var speed = 10;
 		bar = setInterval(function(){
-		nowWidth = parseInt($("#bar").width());
+		nowWidth = parseInt($(x).width());
 		//宽度要不能大于进度条的总宽度
-		if(nowWidth<=200){
-			barWidth = (nowWidth + 1)+"px";
-			$("#bar").css("width",barWidth);
+		if(nowWidth<=245){
+			barWidth = (nowWidth + 30)+"px";
+			$(x).css("width",barWidth);
 		}else{
 			//进度条读满后，停止
 			clearInterval(bar);
+			callback(x);
 		}
-	},speed);
- 	} */
+		},speed);
+
+ 	} 
     </script>
 </head>
 <body>
@@ -359,18 +365,102 @@
 		<div class="panel panel-info" id="fix_table">
 			<div class="panel-heading">操作步骤</div>
 			<table class="table">
-				<tr><td id="index_1">&nbsp;</td><td id="step_1" class="table_td_left" style="text-align: left">&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td id="step_1_result" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td id="index_2">&nbsp;</td><td id="step_2" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td>&nbsp;</td><td id="step_2_result" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td id="index_3">&nbsp;</td><td id="step_3" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td>&nbsp;</td><td id="step_3_result" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td id="index_4">&nbsp;</td><td id="step_4" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td>&nbsp;</td><td id="step_4_result" class="table_td_left" style="text-align: left"> </td></tr>
-				<tr><td id="index_5">&nbsp;</td><td id="step_5" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td>&nbsp;</td><td id="step_5_result" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td id="index_6">&nbsp;</td><td id="step_6" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td>&nbsp;</td><td id="step_6_result" class="table_td_left" style="text-align: left"></td></tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_1" role="progressbar" aria-valuenow="60" 
+	      					 aria-valuemin="0" aria-valuemax="100" style="width: 0%;" id="bar_group_1">	
+						</div>
+					<div id="step_1" class="table_line" style="text-align: left">&nbsp;</div>
+				</div>
+				</tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_1" role="progressbar" aria-valuenow="60" 
+	     					 		aria-valuemin="0" aria-valuemax="100" style="width: 0%;" id="bar_2">	
+						</div>
+						<div id="step_1_result" class="table_line" style="text-align: left">&nbsp;</div>
+					</div>
+				</tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_1" role="progressbar" aria-valuenow="60" 
+      					 		aria-valuemin="0" aria-valuemax="100" style="width: 0%;" id="bar_3">	
+						</div>
+						<div id="step_2" class="table_line" style="text-align: left">&nbsp;</div>
+					</div>
+				</tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_1" role="progressbar" aria-valuenow="60" 
+      					 		aria-valuemin="0" aria-valuemax="100" style="width: 0%;" id="bar_4">	
+						</div>
+						<div id="step_2_result" class="table_line" style="text-align: left">&nbsp;</div>
+					</div>
+				</tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_2" role="progressbar" aria-valuenow="60" 
+      					 		aria-valuemin="0" aria-valuemax="100" style="width: 0%;">	
+						</div>
+						<div id="step_3" class="table_line" style="text-align: left">&nbsp;</div>
+					</div>
+				</tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_2" role="progressbar" aria-valuenow="60" 
+      					 		aria-valuemin="0" aria-valuemax="100" style="width: 0%;">	
+						</div>
+						<div id="step_3_result" class="table_line" style="text-align: left">&nbsp;</div>
+					</div>
+				</tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_2" role="progressbar" aria-valuenow="60" 
+      					 		aria-valuemin="0" aria-valuemax="100" style="width: 0%;">	
+						</div>
+						<div id="step_4" class="table_line" style="text-align: left">&nbsp;</div>
+					</div>
+				</tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_2" role="progressbar" aria-valuenow="60" 
+      					 		aria-valuemin="0" aria-valuemax="100" style="width: 0%;">	
+						</div>
+						<div id="step_4_result" class="table_line" style="text-align: left">&nbsp;</div>
+					</div>
+				</tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_2" role="progressbar" aria-valuenow="60" 
+      					 		aria-valuemin="0" aria-valuemax="100" style="width: 0%;">	
+						</div>
+						<div id="step_5" class="table_line" style="text-align: left">&nbsp;</div>
+					</div>
+				</tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_2" role="progressbar" aria-valuenow="60" 
+      					 		aria-valuemin="0" aria-valuemax="100" style="width: 0%;">	
+						</div>
+						<div id="step_5_result" class="table_line" style="text-align: left">&nbsp;</div>
+					</div>
+				</tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_3" role="progressbar" aria-valuenow="60" 
+      					 		aria-valuemin="0" aria-valuemax="100" style="width: 0%;">	
+						</div>
+						<div id="step_6" class="table_line" style="text-align: left">&nbsp;</div>
+					</div>
+				</tr>
+				<tr>
+					<div class="progress progress-striped active">
+						<div class="progress-bar bar_group_3" role="progressbar" aria-valuenow="60" 
+      					 		aria-valuemin="0" aria-valuemax="100" style="width: 0%;">	
+						</div>
+						<div id="step_6_result" class="table_line" style="text-align: left">&nbsp;</div>
+					</div>
+				</tr>
 			</table>
 		</div>
 
@@ -381,7 +471,6 @@
 				<tr><td class="hcc"><a href="#" id="export">生成方案</a></td><td id="reset" class="hcc">重置</td></tr>
 			</table>
 		</div>
-	    
     </div>
     <jsp:include page="down.jsp" />
 </div>
