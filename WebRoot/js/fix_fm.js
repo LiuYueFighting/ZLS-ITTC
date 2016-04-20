@@ -1180,7 +1180,9 @@ oCanvas.domReady(function () {
     }
 
     $("#FM062").click(function(){
-        if(confirm("是否将“62#阀门”设置为维修状态？")){
+//        if(confirm("是否将“62#阀门”设置为维修状态？")){
+    	$.messager.confirm('确认','是否将<strong>62#阀门</strong>设置为维修状态？', function(r){
+    		if(r){
             fix_fm062();
             document.getElementById("scheme").onclick="";
             
@@ -1202,6 +1204,7 @@ oCanvas.domReady(function () {
 //            },100);
             setShow();
         }
+    });
     });
     function decay(a,b){
         if(b>0){
