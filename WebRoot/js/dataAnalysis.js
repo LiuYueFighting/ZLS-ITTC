@@ -1112,10 +1112,10 @@ function prehImage(){
 			title:{
 				text: ImageTitle,
 				style:{
-					font: '18px',
+					font: '20px',
 					color: '#0E2D5F',
 					fontWeight: 'bold',
-					fontSize:'18px',
+					fontSize:'20px',
 					fontFamily:'微软雅黑'
 				}
 			},
