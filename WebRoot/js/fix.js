@@ -1235,7 +1235,13 @@ oCanvas.domReady(function () {
     		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-
+    		
+    		blinTwice("#step_3");
+    		blinTwice("#step_3_result");
+    		blinTwice("#step_4");
+    		blinTwice("#step_4_result");
+    		blinTwice("#step_5");
+    		blinTwice("#step_5_result");
     		}
     		
     		//console.log("GD30:");
@@ -1250,6 +1256,8 @@ oCanvas.domReady(function () {
 
     		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+    		blinTwice("#step_6");
+    		blinTwice("#step_6_result");
 
     		GD141.state=2;
     	}
@@ -1734,7 +1742,25 @@ oCanvas.domReady(function () {
 		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+		/* js版blinblin
+		 * var demo = document.getElementById("step_1");
+		   blinTwice(demo);
+		 */
+		blinTwice("#step_1");
+		blinTwice("#step_1_result");
+		blinTwice("#step_2");
+		blinTwice("#step_2_result");
 		
+/*        $("#step_1").animate({
+            opacity:'1'},'fast');
+        $("#step_1").animate({
+            opacity:'0'},'fast');
+        $("#step_1").animate({
+            opacity:'1'},'fast');
+        $("#step_1").animate({
+            opacity:'0'},'fast');
+        $("#step_1").animate({
+            opacity:'1'},'fast');*/
 		//$("#step_1").animate({opacity:'1'},'fast');
 		
     	//管道退水
@@ -2524,6 +2550,19 @@ oCanvas.domReady(function () {
         }
     }
     
+    function blinTwice(jqueryDom){
+        $(jqueryDom).animate({
+            opacity:'1'},'fast');
+        $(jqueryDom).animate({
+            opacity:'0'},'fast');
+        $(jqueryDom).animate({
+            opacity:'1'},'fast');
+        $(jqueryDom).animate({
+            opacity:'0'},'fast');
+        $(jqueryDom).animate({
+            opacity:'1'},'fast');
+    }
+    
     
     function clearAll(){
     	GD1001.state=3;
@@ -2604,9 +2643,10 @@ oCanvas.domReady(function () {
         $(".table_td_left").attr("style","text-align:left");
         
         //解除功能面板的函数绑定
-/*      document.getElementById("scheme").onclick = function(){提示};
-        document.getElementById("restore").onclick = function(){提示};
-        document.getElementById("export").onclick = function(){提示};*/
+//      document.getElementById("scheme").onclick = function(){提示};
+//      document.getElementById("restore").onclick = function(){提示};
+//      document.getElementById("export").onclick = function(){提示};
+        document.getElementById("export").href="#";
         //隐藏表格面板
         $("div.panel").hide();
     }

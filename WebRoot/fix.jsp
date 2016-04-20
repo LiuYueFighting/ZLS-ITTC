@@ -21,12 +21,9 @@
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <link rel="stylesheet" href="css/FM&GZW_name.css">
     <link rel="stylesheet" href="css/flat/zebra_dialog.css" type="text/css">
-    
     <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
-    
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     
-     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 	<link rel="stylesheet" type="text/css" href="style/myeasyui.css" />    
     
     <script src="js/jquery.min.js"></script>
@@ -36,44 +33,38 @@
     <script src="js/fix.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script type="text/javascript" src="js/zebra_dialog.js"></script>
-    
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script> 
      
     <style>
         body {
-            background: #afd9ee;
+        background: #afd9ee;
         }
         #myPage {
-            font-family: '微软雅黑','Source Sans Pro';
-            font-size: 15px;
-            width: 1600px;
-            height: 800px;
-            margin:0px auto;
-            position:relative;
+        font-family: '微软雅黑','Source Sans Pro';
+        font-size: 15px;
+        width: 1600px;
+        height: 800px;
+        margin:0px auto;
+        position:relative;
         }
         #myContent{
-            margin: 0px 0px 0px 0px;
-            position: relative;
-            height: 750px;
-            width: 1600px;
+        margin: 0px 0px 0px 0px;
+        position: relative;
+        height: 750px;
+        width: 1600px;
         }
         #myContent a{
 	    color: #283a45;
 	    background: rgba(255,255,255,0.5);
 	    border: 1px solid black;
 	    } 
-	    .name_Model{
-	    font-family: '微软雅黑','Arial';
-	    color: #223bb8;
-	    font-size: 17px;
-	    font-weight: bold;
-	    }
 	    #fix-panel{
-	    position: absolute;
+	    position:absolute;
 	    left: 91.2%;
 	    top: 4.7%;
 	    Z-INDEX: 999;
+	    font-family: 微软雅黑, Arial;
 	    }
 	    #panel_heading{
 	    cursor: pointer;
@@ -82,7 +73,7 @@
 	    border-bottom: 1px solid transparent;
 	    border-top-left-radius: 3px;
 	    border-top-right-radius: 3px;
-	    height: 85px;
+	    height: 75px;
 	    width: 245px;
 	    Z-INDEX: 999;
 	    -webkit-transition-property:background-color;
@@ -94,7 +85,7 @@
 	    text-align: center;
 	    }
 	    #panel_heading:hover{
-	    background: rgba(194,215,245,0.5);
+    	background: rgba(194,215,245,0.5);
 	    }
 	    /* hcc:hover change color */
 	    .hcc{
@@ -104,17 +95,17 @@
 	    cursor: pointer;
 	    }
 	    .hcc:hover{
-	    background: rgba(194,215,245,0.5);
+    	background: rgba(194,215,245,0.5);
 	    }
 	    
 		/* demo  	    
 		#step_1{
-	    -webkit-transition-property:background-color;
-	    -webkit-transition-duration:0.5s;
-	    -webkit-transition-timing-function:ease;
+		    -webkit-transition-property:background-color;
+		    -webkit-transition-duration:0.5s;
+		    -webkit-transition-timing-function:ease;
 	    }
 	    #step_1:hover{
-	    background: rgba(194,215,245,0.5);
+	    	background: rgba(194,215,245,0.5);
 	    } */
 	    
 	    #panel_heading h2{
@@ -129,14 +120,22 @@
 	    margin-bottom:0px;
 	    display:none;
 	    }
+	    #name_gzw a{
+   	    text-decoration: none;
+	    color: black;
+	    } 
+	    .panel a{
+	    text-decoration: none;
+	    color: black;
+	    }
 	    .panel-heading{
-	    text-align: center;
+   		text-align: center;
 	    }
 	    #fix_table{
-	    font-size:12px
+    	font-size:12px
 	    }
 	    .table_td_left{
-	    text-align: left;
+    	text-align: left;
 	    } 
 	/* 	.progressBar{width:200px;height:8px;border:1px solid #98AFB7;border-radius:5px;margin-top:10px;}
 		#bar{width:0px;height:8px;border-radius:5px;background:#5EC4EA;} */
@@ -231,22 +230,22 @@
  	</div>
  	-->
 		<div id="name_gzw">
-		    <a href="#" id="name_QS"   class="name_ob" style="text-decoration: none">取水泵房</a>
-		    <a href="#" id="name_JJC1" class="name_ob" style="text-decoration: none">1#机加池</a>
-		    <a href="#" id="name_JJC2" class="name_ob" style="text-decoration: none" >2#机加池</a>
-		    <a href="#" id="name_JJC3" class="name_ob" style="text-decoration: none" >3#机加池</a>
-		    <a href="#" id="name_VL"   class="name_ob" style="text-decoration: none" >V型滤池</a>
-		    <a href="#" id="name_TC"   class="name_ob" style="text-decoration: none">1#炭滤池</a>
-		    <a href="#" id="name_TC1"  class="name_ob" style="text-decoration: none">2#炭滤池</a>
-		    <a href="#" id="name_CY"   class="name_ob" style="text-decoration: none">臭氧混合池</a>
-		    <a href="#" id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
-		    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
-		    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none">混合井</a>
-		    <a href="#" id="name_HX"   class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
-		    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
-		    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
-		    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
-		    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
+		    <a href="#" id="name_QS"   class="name_ob">取水泵房</a>
+		    <a href="#" id="name_JJC1" class="name_ob">1#机加池</a>
+		    <a href="#" id="name_JJC2" class="name_ob">2#机加池</a>
+		    <a href="#" id="name_JJC3" class="name_ob">3#机加池</a>
+		    <a href="#" id="name_VL"   class="name_ob">V型滤池</a>
+		    <a href="#" id="name_TC"   class="name_ob">1#炭滤池</a>
+		    <a href="#" id="name_TC1"  class="name_ob">2#炭滤池</a>
+		    <a href="#" id="name_CY"   class="name_ob">臭氧混合池</a>
+		    <a href="#" id="name_YC"   class="name_ob">预沉池</a>
+		    <a href="#" id="name_HHJ1" class="name_ob">混合井</a>
+		    <a href="#" id="name_HHJ2" class="name_ob">混合井</a>
+		    <a href="#" id="name_HX"   class="name_ob"> 虹吸滤池</a>
+		    <a href="#" id="name_QSC1" class="name_ob">3#清水池</a>
+		    <a href="#" id="name_QSC2" class="name_ob">1#清水池</a>
+		    <a href="#" id="name_QSC3" class="name_ob">2#清水池</a>
+		    <a href="#" id="name_QSC4" class="name_ob">4#清水池</a>
 		</div>
 		<div id="FM_group">
 			<!-- 阀门显示为红色 -->
@@ -379,7 +378,7 @@
 			<div class="panel-heading">功能</div>
 			<table class="table">
 				<tr><td id="scheme" class="hcc">方案二</td><td id="restore" class="hcc">恢复运行</td></tr>
-				<tr><td id="export" class="hcc">生成方案</td><td id="reset" class="hcc">重置</td></tr>
+				<tr><td class="hcc"><a href="#" id="export">生成方案</a></td><td id="reset" class="hcc">重置</td></tr>
 			</table>
 		</div>
 	    

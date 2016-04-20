@@ -18,9 +18,9 @@ $(document).ready(function() {
 			+ "<td id='indexNum" + _len + "'style='text-align:center; width:40px;height:26px'>" + _len + "</td>"
 			+ "<td style='width:152px;height:26px'><input name='moChiAnalysis.t' id='tAdd' type='datetime-local' style='width:150px;height:25px'/></td>"
 			+ "<td style='width:102px;height:26px'><select name='moChiAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'>"
-				+"<option value='MTG_MoChi_SC01' selected='selected'>膜池01#</option><option value='MTG_MoChi_SC02'>膜池02#</option><option value='MTG_MoChi_SC03'>膜池03#</option><option value='MTG_MoChi_SC04'>膜池04#</option><option value='MTG_MoChi_SC05'>膜池05#</option></select><option value='MTG_MoChi_SC06'>膜池06#</option></td>"
-			+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='InPress' name='moChiAnalysis.InPress' data-options='min:0,precision:0,' /></td>"
-			+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OutPress' name='moChiAnalysis.OutPress' data-options='min:0,precision:0' /></td>"
+				+"<option value='MTG_MoChi_SC01' selected='selected'>膜池01#</option><option value='MTG_MoChi_SC02'>膜池02#</option><option value='MTG_MoChi_SC03'>膜池03#</option><option value='MTG_MoChi_SC04'>膜池04#</option><option value='MTG_MoChi_SC05'>膜池05#</option><option value='MTG_MoChi_SC06'>膜池06#</option></select></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InPress' name='moChiAnalysis.InPress' data-options='min:0,precision:0,' /></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='OutPress' name='moChiAnalysis.OutPress' data-options='min:0,precision:0' /></td>"
 			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='DiffPress' name='moChiAnalysis.DiffPress' data-options='min:0,precision:0'/></td>"
 			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InFlow' name='moChiAnalysis.InFlow' data-options='min:0,precision:0'/></td>"
 			+ "<td id='delete" + _len + "'style='width:40px;height:26px'><a href='#' onclick='deltr(" + _len + ",event)'>删除</a></td>"
@@ -171,7 +171,6 @@ var deltr = function(index, event) {
 	var _len = $("#tab tr").length;
 	$("tr[id='tr" + index + "']").remove();
 	for(var i = index + 1; i < _len; ++i) {
-		//alert("i = " + i + " _len = " + _len);
 		$("tr[id='tr" + i + "']").replaceWith("<tr id='tr" + (i-1) + "'>"
 				+ "<td style='width:1px;height:26px'><input type='hidden' id='splitSign' name='split' style='width:1px;height:25px'/></td>"
 				+ "<td style='width:1px;height:26px'><input type='hidden' id='dateTempAdd' name='dateTemp' style='width:1px;height:25px' /></td>"
@@ -179,10 +178,10 @@ var deltr = function(index, event) {
 				+ "<td id='indexNum" + (i-1) + "'style='text-align:center; width:40px;height:26px'>" + (i-1) + "</td>"
 				+ "<td style='width:152px;height:26px'><input name='moChiAnalysis.t' id='tAdd' type='datetime-local' style='width:150px;height:25px'/></td>"
 				+ "<td style='width:102px;height:26px'><select name='moChiAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'><option value='MTG_MoChi_SC01' selected='selected'>膜池01#</option><option value='MTG_MoChi_SC02'>膜池02#</option><option value='MTG_MoChi_SC03'>膜池03#</option></select></td>"
-				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='InV' name='moChiAnalysis.InPress' data-options='min:0,precision:0,' /></td>"
-				+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OutV' name='moChiAnalysis.OutPress' data-options='min:0,precision:0' /></td>"
-				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='HXOutV' name='moChiAnalysis.DiffPress' data-options='min:0,precision:0'/></td>"
-				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='LCOutV' name='moChiAnalysis.InFlow' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='InPress' name='moChiAnalysis.InPress' data-options='min:0,precision:0,' /></td>"
+				+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OutPress' name='moChiAnalysis.OutPress' data-options='min:0,precision:0' /></td>"
+				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='DiffPress' name='moChiAnalysis.DiffPress' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InFlow' name='moChiAnalysis.InFlow' data-options='min:0,precision:0'/></td>"
 				+ "<td id='delete" + (i-1) + "'style='width:40px;height:26px'><a href='#' onclick='deltr(" + (i-1) + ",event)'>删除</a></td>"
 				+ "</tr>");
 	}
@@ -427,10 +426,7 @@ function dealSave() {
 function dealAddSave() {
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#newfrmEdit").serialize();
-	//alert("prams is " + params);
 	var paramsArray = params.split("split=&");
-	//alert("paramsArray.length is " + paramsArray.length);
-	//alert("pramsArray is " + paramsArray);
 	var strLength;
 	var tempStr;
 	var newStr;
@@ -446,6 +442,7 @@ function dealAddSave() {
 		paramsArray[i] = newStr;
 		
 	}
+	
 	//strTAddalert('Form表单' + params);
 	//alert('Form表单Array' + paramsArray);
 	var errorMessage = '';
@@ -455,8 +452,7 @@ function dealAddSave() {
 		// 得到id的值，为空串表示添加
 		var re = new RegExp(/^dateTemp=\d{4}-\d{2}\-\d{2}\+\d{2}%3A\d{2}/);
 		var test = re.test(paramsArray[i]);
-		//alert(test);
-		
+	
 		if(!test) {
 			var errorMessageTemp = '';
 			if(i == 1)
@@ -596,10 +592,10 @@ function dealSearch() {
 			newParams = params + 'MTG_MoChi_SC01';
 			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
 		
-//			title = '超 滤 膜 系 统 运 行 工 况 记 录';
-//			ImageTitle = "膜池运行工况记录图";
-//			newParams = params;
-//			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
+			title = '超 滤 膜 系 统 运 行 工 况 记 录';
+			ImageTitle = "膜池运行工况记录图";
+			newParams = params;
+			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
 		}
 	} else if(searchMode == 1){  //如果是从查询窗口进入
 		var params = $("#frmSearch").serialize(); //params = 'searchT=不确定是否为空&searchPoolID=不确定是否为空'

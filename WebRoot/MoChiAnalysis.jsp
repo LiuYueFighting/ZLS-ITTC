@@ -232,7 +232,7 @@ th, td, input, option {
 
 #addButton {
 	position: relative;
-	left: 940px;
+	left: 760px;
 	top: 5px;
 }
 
@@ -279,7 +279,7 @@ text-align: center;
 						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择膜池编号：</p>
 						<table>
 							<tr>
-								<td><input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1#膜池</label></td>
+								<td><input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" checked="checked" /><label for="index1">1#膜池</label></td>
 								<td><input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">2#膜池</label></td>
 							</tr>
 							<tr>
@@ -350,16 +350,16 @@ text-align: center;
 								&nbsp; &nbsp;进 膜 压 力: &nbsp;
 								<input class="easyui-numberbox textbox" name="moChiAnalysis.InPress"
 									style="width: 200px; height: 25px" id="InPress" data-options="min:0,precision:0," />
-								&nbsp; &nbsp;出 水 压 力 : &nbsp;
+								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;出 水 压 力 : &nbsp;
 								<input class="easyui-numberbox" name="moChiAnalysis.OutPress"
 								style="width: 200px; height: 25px" id="OutPress" data-options="min:0,precision:0" />
 							</dl>
 							<dl>
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;跨膜压差 : &nbsp;
+								&nbsp; &nbsp;跨 膜 压 差 : &nbsp;
 								<input class="easyui-numberbox textbox" style="width: 200px; height: 25px" id="DiffPress"
 									name="moChiAnalysis.DiffPress" data-options="min:0,precision:0" />
 									
-								&nbsp; &nbsp;进水流量: &nbsp;
+								&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;进 水 流 量 : &nbsp;
 								<input class="easyui-numberbox textbox"
 									style="width: 200px; height: 25px" id="InFlow"
 									name="moChiAnalysis.InFlow" data-options="min:0,precision:0" />
@@ -368,8 +368,8 @@ text-align: center;
 						</form>
 					</div><!-- tabEdit -->
 					<div id="newEdit" class="easyui-dialog" data-options="closed:true"
-						style="align: center; width: 1180px; height: 600px; padding: 10px 60px 10px 60px">
-						<form id="newfrmEdit" style="width:1060px"><br />
+						style="align: center; width: 960px; height: 600px; padding: 10px 60px 10px 60px">
+						<form id="newfrmEdit" style="width:860px"><br />
 							<table id="tab" style="align: center">
 								<tr>
 									<th style="width: 1px; height: 26px"></th>
@@ -378,8 +378,8 @@ text-align: center;
 									<th style="width: 40px; height: 26px">序 号</th>
 									<th style="width: 152px; height: 26px">时 间</th>
 									<th style="width: 102px; height: 26px">膜池编号</th>
-									<th style="width: 72px; height: 26px">进膜压力</th>
-									<th style="width: 62px; height: 26px">出水压力</th>
+									<th style="width: 102px; height: 26px">进膜压力</th>
+									<th style="width: 102px; height: 26px">出水压力</th>
 									<th style="width: 102px; height: 26px">跨膜压差</th>
 									<th style="width: 102px; height: 26px">进水流量</th>
 								</tr>
@@ -409,20 +409,20 @@ text-align: center;
 											<option value="MTG_MoChi_SC06">膜池06#</option>
 										</select>
 									</td>
-									<td style="width: 72px; height: 26px">
-										<!-- 总进水量 -->
-										<input id="InPress1" name="moChiAnalysis.InPress"	style="width: 70px; height: 25px" data-options="min:0,precision:0," />
+									<td style="width: 102px; height: 26px">
+										
+										<input id="InPress1" name="moChiAnalysis.InPress"	style="width: 100px; height: 25px" data-options="min:0,precision:0," />
 									</td>
-									<td style="width: 62px; height: 26px">
-										<!-- 出  水  量 -->
-										<input id="OutPress1" name="moChiAnalysis.OutPress" style="width: 60px; height: 25px"	data-options="min:0,precision:0" />
+									<td style="width: 102px; height: 26px">
+										
+										<input id="OutPress1" name="moChiAnalysis.OutPress" style="width: 100px; height: 25px"	data-options="min:0,precision:0" />
 									</td>
 									<td style="width: 102px; height: 26px">
 										 <input id="DiffRess1"
 										name="moChiAnalysis.DiffPress" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
 									</td>
 									<td style="width: 102px; height: 26px">
-										<!-- 洗V型滤池 --> 
+										
 										<input id="InFlow1" name="moChiAnalysis.InFlow" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
 									</td>
 									
