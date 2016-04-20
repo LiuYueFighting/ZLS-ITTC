@@ -408,7 +408,7 @@ public class PoolEvaluateAction extends ActionSupport{
 	public String export2excel(){
 		List<PoolEvaluate> list = (List<PoolEvaluate>) data.get("rows");
 		WritableWorkbook book = null;
-		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTemp"));
+		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTempForJJC"));
 		//判断上述路径是否存在，如果不存在则创建该路径
 		if (!uploadFile.exists()) {
 			uploadFile.mkdir();
@@ -423,7 +423,7 @@ public class PoolEvaluateAction extends ActionSupport{
 //				downloadFilename="PoolEvaluate";
 //			}
 			
-			String path=ServletActionContext.getServletContext().getRealPath("//downloadTemp")+"//PoolEvaluate.xls";
+			String path=ServletActionContext.getServletContext().getRealPath("//downloadTempForJJC")+"//PoolEvaluate.xls";
 			book = Workbook.createWorkbook(new File(path));
 
 			//设置格式

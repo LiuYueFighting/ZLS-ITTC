@@ -304,7 +304,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 	public String export2excel(){
 		List<MoChiAnalysis> list=(List<MoChiAnalysis>) data.get("rows");
 		WritableWorkbook book = null;
-		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTemp"));
+		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTempForMochi"));
 		//判断上述路径是否存在，如果不存在则创建该路径
 		if (!uploadFile.exists()) {
 			uploadFile.mkdir();
@@ -317,7 +317,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 			////				filename=(new SimpleDateFormat("yyyyMMdd-HHmmss")).format(System.currentTimeMillis());
 			//				downloadFilename="MoChiAnalysis";
 			//			}			
-			String path=ServletActionContext.getServletContext().getRealPath("//downloadTemp")+"//MoChiAnalysis.xls";
+			String path=ServletActionContext.getServletContext().getRealPath("//downloadTempForMochi")+"//MoChiAnalysis.xls";
 
 			//			String path="D://数据分析表-"+exportFileName+".xls";
 			book = Workbook.createWorkbook(new File(path));
@@ -422,7 +422,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 				}
 			}
 		}
-		return SUCCESS;
+		return "success";
 	}
 
 	public String import2DB() throws Exception{
@@ -494,12 +494,20 @@ public class MoChiAnalysisAction extends ActionSupport{
 						}catch(Exception e){
 							e.printStackTrace();
 						}
-						dataTemp.setPoolID(sheet.getCell(1,i).getContents());						
-						dataTemp.setInPress(Double.parseDouble(sheet.getCell(2,i).getContents()));
-						dataTemp.setOutPress(Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setDiffPress(Double.parseDouble(sheet.getCell(4,i).getContents()));
-						dataTemp.setInFlow(Long.parseLong(sheet.getCell(5,i).getContents()));
-						operateSuccess=(moChiAnalysisService.addMoChiAnalysis(dataTemp)>0);	//添加到数据库
+						if(sheet.getCell(2,i).getContents() == null ||
+								sheet.getCell(3,i).getContents() == null ||
+								sheet.getCell(4,i).getContents() == null ||
+								sheet.getCell(5,i).getContents() == null)
+							operateSuccess = false;
+						else {
+							dataTemp.setPoolID(sheet.getCell(1,i).getContents());						
+							dataTemp.setInPress(Double.parseDouble(sheet.getCell(2,i).getContents()));
+							dataTemp.setOutPress(Double.parseDouble(sheet.getCell(3,i).getContents()));
+							dataTemp.setDiffPress(Double.parseDouble(sheet.getCell(4,i).getContents()));
+							dataTemp.setInFlow(Long.parseLong(sheet.getCell(5,i).getContents()));
+							operateSuccess=(moChiAnalysisService.addMoChiAnalysis(dataTemp)>0);	//添加到数据库
+						}
+						
 					}
 				} //for
 				workBook.close(); //关闭
@@ -508,7 +516,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 			operateSuccess=false;
 			ServletActionContext.getServletContext().setAttribute("errorMsg", "请选择上传文件");
 		}
-		return SUCCESS;
+		return "success";
 	}
 
 
