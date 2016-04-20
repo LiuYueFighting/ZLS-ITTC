@@ -806,8 +806,11 @@ oCanvas.domReady(function () {
         	GD25.state=2;
         }
      
-        if(GD0101.state==1)
+        if((GD0101.state==1)&&(GD25.state==0)){
+//        	setFMColorGreen("FM064");
         	GD25.state=3;
+        }
+        	
 //        if(GD01.full==1){
 //            GD0101.paused=1;
 //        }
@@ -1112,7 +1115,7 @@ oCanvas.domReady(function () {
         canvas.children[19].fill="rgba(1,1,1,0)";
         canvas.redraw();
 
-        $(".fm_default_green").attr("src","image/y3-35x37.png");
+//        $(".fm_default_green").attr("src","image/y3-35x37.png");
        
         document.getElementById("scheme").style.display="none";        
 
@@ -1130,10 +1133,9 @@ oCanvas.domReady(function () {
     }
     function  fix_fm062(){
         clearAll();
-        //setFMColorGreen("FM064");
         document.getElementById("fix_head").innerHTML="62#阀门维修配合方案";
         document.getElementById("FM062").src="image/y1.png";
-        setFMColorRed("FM09");
+        
 
 
         document.getElementById("step_1").innerHTML="打开阀门10#";
@@ -1178,23 +1180,16 @@ oCanvas.domReady(function () {
             
             document.getElementById("reset").onclick=function(){
             	window.setTimeout(function(){
-            		setFMColorGreen("FM09");
+           		setFMColorGreen("FM064");
                  },300);
                 window.setTimeout(function(){
-                	setFMColorGreen("FM064");
+                	setFMColorGreen("FM09");
                 	clearAll();
-                 },1000);
-//                window.setTimeout(function(){
-//                	setFMColorGreen("FM016");
-//                	GD1001.state=3;
-//                	GD11.state=3;
-//                	clearAll();
-//                 },1700);
+                 },700);
             };
 
             document.getElementById("export").href="download/fix-fm062.docx";
             setFMColorRed("FM09");
-           // setFMColorGreen("FM064");
             GD0101.state=2;
 //            window.setTimeout(function(){
 //               decay(2,1);
@@ -1252,13 +1247,13 @@ oCanvas.domReady(function () {
             document.getElementById("scheme").onclick="";
             
             document.getElementById("export").href="download/fix-fm019.docx";
-            window.setTimeout(function(){
-                canvas.children[19].fill=color_GD;
-                decay(12,1);
-                decay(14,1);
-                decay(17,1);
-                decay(18,1);
-            },100);
+//            window.setTimeout(function(){
+//                canvas.children[19].fill=color_GD;
+//                decay(12,1);
+//                decay(14,1);
+//                decay(17,1);
+//                decay(18,1);
+//            },100);
             setShow();
         }
     });
