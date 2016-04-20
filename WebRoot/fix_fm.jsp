@@ -264,6 +264,7 @@
     <a  id="name_VL"   class="name_ob" style="text-decoration: none">V型滤池</a>
     <a  id="name_TC"   class="name_ob" style="text-decoration: none">1#炭滤池</a>
     <a  id="name_TC1"  class="name_ob" style="text-decoration: none">2#炭滤池</a>
+    <a  id="name_CYC"   class="name_ob" style="text-decoration: none">臭氧生产车间</a>
     <a  id="name_CY"   class="name_ob" style="text-decoration: none">臭氧混合池</a>
     <a  id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
     <a  id="name_HHJ1" class="name_ob" style="text-decoration: none">旧混合井</a>

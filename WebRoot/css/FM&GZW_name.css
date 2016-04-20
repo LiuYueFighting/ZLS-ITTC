@@ -63,6 +63,13 @@
     left: 612px;
     top: 670px;
 }
+#name_CYC{
+    position: absolute;
+    left:632px;
+    top: 456px;
+    height: auto;
+    width: 30px;
+}
 #name_QSC2{
     position: absolute;
     left:322px;
