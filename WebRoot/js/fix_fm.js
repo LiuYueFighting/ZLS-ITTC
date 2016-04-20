@@ -806,11 +806,17 @@ oCanvas.domReady(function () {
         	GD25.state=2;
         }
      
-        if((GD0101.state==1)&&(GD25.state==0)){
-//        	setFMColorGreen("FM064");
+        if((GD0101.state==1)&&(GD25.state==0)){        	
         	GD25.state=3;
         }
-        	
+        if((GD11.state==0)&&(GD1001.state==0)){        	
+        	setFMColorRed("FM018");
+        	GD141.state=2;
+        }
+        if((GD11.state==1)&&(GD1001.state==1)){        	
+        	GD141.state=3;
+        }
+        
 //        if(GD01.full==1){
 //            GD0101.paused=1;
 //        }
@@ -1106,6 +1112,8 @@ oCanvas.domReady(function () {
 
     function clearAll(){
     	GD0101.state=3;
+    	GD11.state=3;
+    	GD1001.state=3;
 
         canvas.children[2].fill=color_GD;
         canvas.children[14].fill=color_GD;
@@ -1152,12 +1160,12 @@ oCanvas.domReady(function () {
         clearAll();
         document.getElementById("fix_head").innerHTML="19#阀门维修配合方案";
         document.getElementById("FM019").src="image/y1.png";
-        setFMColorRed("FM016");
-        setFMColorRed("FM018");
-        setFMColorRed("FM020");
-        setFMColorRed("FM021");
-//        setFMColorRed("FM023");
-        setFMColorRed("FM054");
+        //setFMColorRed("FM016");
+//        setFMColorRed("FM018");
+//        setFMColorRed("FM020");
+//        setFMColorRed("FM021");
+////        setFMColorRed("FM023");
+//        setFMColorRed("FM054");
 
         document.getElementById("step_1").innerHTML="关闭阀门16#";
         document.getElementById("step_2").innerHTML="关闭阀门18#";
@@ -1247,6 +1255,18 @@ oCanvas.domReady(function () {
             document.getElementById("scheme").onclick="";
             
             document.getElementById("export").href="download/fix-fm019.docx";
+            setFMColorRed("FM016");
+            GD1001.state=2;
+            GD11.state=2;
+            document.getElementById("reset").onclick=function(){
+            	window.setTimeout(function(){
+           		setFMColorGreen("FM018");
+                 },300);
+                window.setTimeout(function(){
+                	setFMColorGreen("FM016");
+                	clearAll();
+                 },700);
+            };
 //            window.setTimeout(function(){
 //                canvas.children[19].fill=color_GD;
 //                decay(12,1);

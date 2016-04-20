@@ -245,6 +245,7 @@
 		    <a href="#" id="name_TC"   class="name_ob">1#炭滤池</a>
 		    <a href="#" id="name_TC1"  class="name_ob">2#炭滤池</a>
 		    <a href="#" id="name_CY"   class="name_ob">臭氧混合池</a>
+		    <a href="#" id="name_CYC"  class="name_ob">臭氧生产车间</a>
 		    <a href="#" id="name_YC"   class="name_ob">预沉池</a>
 		    <a href="#" id="name_HHJ1" class="name_ob">旧混合井</a>
 		    <a href="#" id="name_HHJ2" class="name_ob">新混合井</a>
