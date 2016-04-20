@@ -691,7 +691,7 @@ if(openDgree_062+openDgree_063 != 0){
     <jsp:include page="top.jsp" />
     <ol class="breadcrumb">
     <li><a href="main.jsp">水量控制</a></li>
-    <li class="active">水量增减</li>
+    <li class="active">水量分配</li>
     </ol>
 <div id="myPage">
     <div id="myContent" style="overflow: hidden">
