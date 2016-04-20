@@ -485,7 +485,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 					}
 					else{
 						MoChiAnalysis dataTemp = new MoChiAnalysis();
-						dataTemp.setID(0);
+						dataTemp.setID(Long.getLong("0"));
 						try{
 							int hour = Integer.parseInt(sheet.getCell(0,i).getContents());
 							Date datetime = new Date();

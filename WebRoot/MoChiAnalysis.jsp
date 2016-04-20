@@ -232,7 +232,7 @@ th, td, input, option {
 
 #addButton {
 	position: relative;
-	left: 760px;
+	left: 650px;
 	top: 5px;
 }
 
@@ -368,8 +368,8 @@ text-align: center;
 						</form>
 					</div><!-- tabEdit -->
 					<div id="newEdit" class="easyui-dialog" data-options="closed:true"
-						style="align: center; width: 960px; height: 600px; padding: 10px 60px 10px 60px">
-						<form id="newfrmEdit" style="width:860px"><br />
+						style="align: center; width: 860px; height: 600px; padding: 10px 60px 10px 60px">
+						<form id="newfrmEdit" style="width:740px"><br />
 							<table id="tab" style="align: center">
 								<tr>
 									<th style="width: 1px; height: 26px"></th>
