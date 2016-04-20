@@ -25,7 +25,7 @@
 
         <li class="nav_bag02">水量控制<img src="images/12.png" />
         <ul class="Secondary_menu">
-        <li class="Secondary_menu_item"><a href="GN_FMControl.jsp">水量增减</a></li>
+        <li class="Secondary_menu_item"><a href="GN_FMControl.jsp">水量分配</a></li>
         <li class="Secondary_menu_item"><a href="DataAnalysis.jsp">数据分析</a></li>
         </ul>
         </li>

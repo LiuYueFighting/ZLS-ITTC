@@ -823,8 +823,9 @@ function formPoolID(value){
 	var strs = new Array();
 	var poolID;
 	strs=value.split("_");//字符切割
-	poolID = strs[2].replace(/SC/,'');
-	return 	"出水池" + poolID + "#";
+	poolID = strs[2].replace(/SC0/,'');
+	poolID = poolID.replace(/SC0/,'');
+	return poolID + "#"+"出水池" ;	
 }
 
 
@@ -1308,7 +1309,7 @@ function GetNode(type){
 
 //导出到excel
 function export2excel(){
-	var downloadPath = "downloadTemp/OutStat.xls";
+	var downloadPath = "downloadTempForOut/OutStat.xls";
 	$.post("exportOutStat.action", function(result) {
 		if (result.operateSuccess){
 			window.location.href=downloadPath;

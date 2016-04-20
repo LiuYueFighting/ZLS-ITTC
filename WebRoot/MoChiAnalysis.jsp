@@ -232,7 +232,7 @@ th, td, input, option {
 
 #addButton {
 	position: relative;
-	left: 760px;
+	left: 650px;
 	top: 5px;
 }
 
@@ -337,7 +337,7 @@ text-align: center;
 									style="width: 200px; height: 25px" />
 								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;水 池 编 号 : &nbsp;
 								<select class="easyui-combobox textbox " id="PoolID" name="moChiAnalysis.PoolID"
-									style="width: 200px; height: 25px" data-options="required:true,missingMessage:'请输入水池编号'">
+									style="width: 200px; height: 25px" data-options="required:true,missingMessage:'请输入膜池编号'">
 									<option value="MTG_MoChi_SC01" selected>1#膜池</option>
 									<option value="MTG_MoChi_SC02">2#膜池</option>
 									<option value="MTG_MoChi_SC03">3#膜池</option>
@@ -368,8 +368,8 @@ text-align: center;
 						</form>
 					</div><!-- tabEdit -->
 					<div id="newEdit" class="easyui-dialog" data-options="closed:true"
-						style="align: center; width: 960px; height: 600px; padding: 10px 60px 10px 60px">
-						<form id="newfrmEdit" style="width:860px"><br />
+						style="align: center; width: 860px; height: 600px; padding: 10px 60px 10px 60px">
+						<form id="newfrmEdit" style="width:740px"><br />
 							<table id="tab" style="align: center">
 								<tr>
 									<th style="width: 1px; height: 26px"></th>
@@ -399,14 +399,14 @@ text-align: center;
 										<input name="moChiAnalysis.t" id="tAdd1" type="datetime-local" style="width: 150px; height: 25px" />
 									</td>
 									<td style="width: 102px; height: 26px">
-										<!-- 水池编号 -->
+										<!-- 膜池编号 -->
 										<select id="PoolIDAdd1" name="moChiAnalysis.PoolID" style="width: 100px; height: 25px">
-											<option value="MTG_MoChi_SC01" selected>膜池01#</option>
-											<option value="MTG_MoChi_SC02">膜池02#</option>
-											<option value="MTG_MoChi_SC03">膜池02#</option>
-											<option value="MTG_MoChi_SC04">膜池04#</option>
-											<option value="MTG_MoChi_SC05">膜池05#</option>
-											<option value="MTG_MoChi_SC06">膜池06#</option>
+											<option value="MTG_MoChi_SC01" selected>1#膜池</option>
+											<option value="MTG_MoChi_SC02">2#膜池</option>
+											<option value="MTG_MoChi_SC03">3#膜池</option>
+											<option value="MTG_MoChi_SC04">4#膜池</option>
+											<option value="MTG_MoChi_SC05">5#膜池</option>
+											<option value="MTG_MoChi_SC06">6#膜池</option>
 										</select>
 									</td>
 									<td style="width: 102px; height: 26px">
@@ -446,18 +446,18 @@ text-align: center;
 								<br />
 								<br />
 								<br /> &nbsp; &nbsp; &nbsp;
-								<!-- 水池编号:  <input  class="easyui-validatebox" type="text" style="width:120px" id="searchPoolID"
+								<!-- 膜池编号:  <input  class="easyui-validatebox" type="text" style="width:120px" id="searchPoolID"
 				            	     size="20px" name="searchPoolID" ></input> -->
-								水池编号:&nbsp;
+								膜池编号:&nbsp;
 								<!--  <input type="text" size="15" id="searchPoolID" name="searchPoolID" /> -->
 								<select class="easyui-combobox" style="width: 150px"
 									id="searchPoolID" name="searchPoolID">
-									<option value="MTG_MoChi_SC01" selected>膜池01#</option>
-									<option value="MTG_MoChi_SC02">膜池02#</option>
-									<option value="MTG_MoChi_SC03">膜池03#</option>
-									<option value="MTG_MoChi_SC04">膜池04#</option>
-									<option value="MTG_MoChi_SC05">膜池05#</option>
-									<option value="MTG_MoChi_SC06">膜池06#</option>
+									<option value="MTG_MoChi_SC01" selected>1#膜池</option>
+									<option value="MTG_MoChi_SC02">2#膜池</option>
+									<option value="MTG_MoChi_SC03">3#膜池</option>
+									<option value="MTG_MoChi_SC04">4#膜池</option>
+									<option value="MTG_MoChi_SC05">5#膜池</option>
+									<option value="MTG_MoChi_SC06">6#膜池#</option>
 								</select>									
 							</dl>
 						</form>

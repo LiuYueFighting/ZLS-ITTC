@@ -177,7 +177,7 @@
                 <div class="panel-heading">水质标准</div>
                 <table class="table">
                 <tr>
-                <td>混度</td><td><0.1</td>
+                <td>出水浊度</td><td><0.1NTU</td>
                 </tr>
                 </table>
                 </div>

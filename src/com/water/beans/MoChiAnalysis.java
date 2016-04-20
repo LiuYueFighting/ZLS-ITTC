@@ -9,56 +9,85 @@ import java.util.Date;
  */
 
 public class MoChiAnalysis {
-	private long ID;		//ID
+	private Long ID;		//ID
 	private String PoolID;		//膜池编号
 	private Date t;		//时间
-	private double InPress;		//进膜压力Mpa
-	private double OutPress;		//出水压力Mpa
-	private double DiffPress;		//跨膜压差Mpa
-	private long InFlow; 		//进水流量(m³)
-	public long getID() {
+	private Double InPress;		//进膜压力Mpa
+	private Double OutPress;		//出水压力Mpa
+	private Double DiffPress;		//跨膜压差Mpa
+	private Long InFlow; 		//进水流量(m³)
+	
+	
+	public Long getID() {
 		return ID;
 	}
-	public void setID(long iD) {
+
+
+	public void setID(Long iD) {
 		ID = iD;
 	}
+
+
 	public String getPoolID() {
 		return PoolID;
 	}
+
+
 	public void setPoolID(String poolID) {
 		PoolID = poolID;
 	}
+
+
 	public Date getT() {
 		return t;
 	}
+
+
 	public void setT(Date t) {
 		this.t = t;
 	}
-	public double getInPress() {
+
+
+	public Double getInPress() {
 		return InPress;
 	}
-	public void setInPress(double inPress) {
+
+
+	public void setInPress(Double inPress) {
 		InPress = inPress;
 	}
-	public double getOutPress() {
+
+
+	public Double getOutPress() {
 		return OutPress;
 	}
-	public void setOutPress(double outPress) {
+
+
+	public void setOutPress(Double outPress) {
 		OutPress = outPress;
 	}
-	public double getDiffPress() {
+
+
+	public Double getDiffPress() {
 		return DiffPress;
 	}
-	public void setDiffPress(double diffPress) {
+
+
+	public void setDiffPress(Double diffPress) {
 		DiffPress = diffPress;
 	}
-	public long getInFlow() {
+
+
+	public Long getInFlow() {
 		return InFlow;
 	}
-	public void setInFlow(long inFlow) {
+
+
+	public void setInFlow(Long inFlow) {
 		InFlow = inFlow;
 	}
-	
+
+
 	public int compareTo(MoChiAnalysis other) {
 		if(this.t == null || other.t == null)
 			return 0;
