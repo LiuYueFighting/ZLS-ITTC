@@ -256,7 +256,8 @@
     <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="true" onclick="showName(this)"> 默认未选中</label>
     <p class="name_Model" id="FMShow">阀门显示</p>
     <label><input id="chackBox_showFM" class="mui-switch mui-switch-anim" type="checkbox" checked="false" onclick="showFM(this)"> 默认未选中</label> -->
-    <a  id="name_QS"   class="name_ob" style="text-decoration: none">取水泵房</a>
+    <a  id="name_QS1"   class="name_ob" style="text-decoration: none">取水泵房</a>
+     <a  id="name_QS2"   class="name_ob" style="text-decoration: none">取水泵房</a>
     <a  id="name_JJC1" class="name_ob" style="text-decoration: none">1#机加池</a>
     <a  id="name_JJC2" class="name_ob" style="text-decoration: none">2#机加池</a>
     <a  id="name_JJC3" class="name_ob" style="text-decoration: none">3#机加池</a>
@@ -265,8 +266,8 @@
     <a  id="name_TC1"  class="name_ob" style="text-decoration: none">2#炭滤池</a>
     <a  id="name_CY"   class="name_ob" style="text-decoration: none">臭氧混合池</a>
     <a  id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
-    <a  id="name_HHJ1" class="name_ob" style="text-decoration: none">混合井</a>
-    <a  id="name_HHJ2" class="name_ob" style="text-decoration: none">混合井</a>
+    <a  id="name_HHJ1" class="name_ob" style="text-decoration: none">旧混合井</a>
+    <a  id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
     <a  id="name_HX"   class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
     <a  id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
     <a  id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>

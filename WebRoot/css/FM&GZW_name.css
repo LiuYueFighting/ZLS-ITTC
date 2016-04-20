@@ -8,10 +8,15 @@
     z-index: 999;
     padding: 4px;
 }
-#name_QS{
+#name_QS1{
     position: absolute;
     left: 689px;
     top: 70px;
+}
+#name_QS2{
+    position: absolute;
+    left: 689px;
+    top: 145px;
 }
 #name_JJC1{
     position: absolute;
