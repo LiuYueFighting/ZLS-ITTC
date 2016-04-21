@@ -38,6 +38,15 @@ oCanvas.domReady(function () {
             {x_t: 37, y_t: 34}
         ]
     });
+    
+    var SC00=createSC({
+        parent:canvas,
+        x:128,y:460,height:64,width:134,trail_flag:0,speed:speed_SC*0.5,color:color_SC
+    });
+    var SC001=createSC({
+        parent:canvas,
+        x:228,y:435,height:25,width:280,trail_flag:0,speed:speed_SC*0.1,color:color_SC
+    });
 
     var SC01=createSC({
         parent:canvas,
@@ -57,6 +66,20 @@ oCanvas.domReady(function () {
              {x_t: 31, y_t: 17}
          ]
     });
+    var SC02 = canvas.display.SC_show_down({
+        x: 1047,
+        y: 360,
+        Width: 164,
+        Height: 177,
+        height_now: 0,
+        trail_flag: 0,
+        t: 7540,
+        speed:speed_SC*2,
+        fill:color_SC,
+        full:0,
+        start:0
+    });
+    canvas.addChild(SC02);
 
     var x=140;
     var xx=140;
@@ -272,10 +295,16 @@ oCanvas.domReady(function () {
     canvas.setLoop(function () {
         GD01.advance();
         GD02.advance();
+        SC00.advance();
+        SC001.advance();
         SC01.advance();
+        SC02.advance();
         left_t.advance();
         right_t.advance();
         
+        if(SC00.full==1){
+        	SC001.start=1;
+        }
         if(GD01.full==1){
             left_t.start=1;
             right_t.start=1;
@@ -305,6 +334,7 @@ oCanvas.domReady(function () {
             arrow_4.start();
         }
         if(SC01.full==1){
+        	SC02.start=1;
         	GD02.paused = 1;
             arrow_7.start();
         }
@@ -321,11 +351,13 @@ oCanvas.domReady(function () {
 
         canvas.redraw();
     }).start();
+    SC00.start=1;
     GD01.paused=1;
     canvas.timeline.start();
     sprite.startAnimation();
     $("#btn_start").click(function(){
         if(this.value==1){
+        	SC00.start=1;
             GD01.paused=1;
             canvas.redraw();
             this.innerHTML="&#xe61f;";
