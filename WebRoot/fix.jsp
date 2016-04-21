@@ -56,8 +56,8 @@
         }
         #myContent a{
 	    color: #283a45;
-	    background: rgba(255,255,255,0.5);
-	    border: 1px solid black;
+	    /*background: rgba(255,255,255,0.5);
+	    border: 1px solid black;*/
 	    } 
 	    #fix-panel{
 	    position:absolute;
@@ -122,7 +122,7 @@
 	    }
 	    #name_gzw a{
    	    text-decoration: none;
-	    color: black;
+	    /*color: black;*/
 	    } 
 	    .panel a{
 	    text-decoration: none;
@@ -238,13 +238,13 @@
 		<div id="name_gzw">
 		    <a href="#" id="name_QS1"  class="name_ob">取水泵房</a>
 		    <a href="#" id="name_QS2"  class="name_ob">取水泵房</a>
-		    <a href="#" id="name_JJC1" class="name_ob">1#机加池</a>
-		    <a href="#" id="name_JJC2" class="name_ob">2#机加池</a>
-		    <a href="#" id="name_JJC3" class="name_ob">3#机加池</a>
+		    <a href="#" id="name_JJC1" class="name_ob">&nbsp;&nbsp;&nbsp;1#<br>机加池</a>
+		    <a href="#" id="name_JJC2" class="name_ob">&nbsp;&nbsp;&nbsp;2#<br>机加池</a>
+		    <a href="#" id="name_JJC3" class="name_ob">&nbsp;&nbsp;&nbsp;3#<br>机加池</a>
 		    <a href="#" id="name_VL"   class="name_ob">V型滤池</a>
 		    <a href="#" id="name_TC"   class="name_ob">1#炭滤池</a>
 		    <a href="#" id="name_TC1"  class="name_ob">2#炭滤池</a>
-		    <a href="#" id="name_CY"   class="name_ob">臭氧混合池</a>
+		    <a href="#" id="name_CY"   class="name_ob">&nbsp;臭氧<br>接触池</a>
 		    <a href="#" id="name_CYC"  class="name_ob">臭氧生产车间</a>
 		    <a href="#" id="name_YC"   class="name_ob">预沉池</a>
 		    <a href="#" id="name_HHJ1" class="name_ob">旧混合井</a>

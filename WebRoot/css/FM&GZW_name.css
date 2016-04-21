@@ -20,18 +20,18 @@
 }
 #name_JJC1{
     position: absolute;
-    left: 856px;
-    top: 392px;
+    left: 866px;
+    top: 375px;
 }
 #name_JJC2{
     position: absolute;
-    left: 1068px;
-    top: 389px;
+    left: 1078px;
+    top: 375px;
 }
 #name_JJC3{
     position: absolute;
-    left:1145px;
-    top: 622px;
+    left:1155px;
+    top: 602px;
 }
 #name_VL{
     position: absolute;
@@ -40,13 +40,13 @@
 }
 #name_HHJ1{
     position: absolute;
-    left:975px;
-    top: 353px;
+    left:965px;
+    top: 350px;
     font-size:17px;
 }
 #name_HHJ2{
     position: absolute;
-    left:1180px;
+    left:1178px;
     top: 363px;
     height: auto;
     width: 25px;
@@ -56,7 +56,6 @@
     position: absolute;
     left:849px;
     top: 533px;
-    font-size:17px;
 }
 #name_QSC1{
     position: absolute;
@@ -65,13 +64,13 @@
 }
 #name_CY{
     position: absolute;
-    left: 612px;
-    top: 670px;
+    left: 617px;
+    top: 650px;
 }
 #name_CYC{
     position: absolute;
     left:636px;
-    top: 457px;
+    top: 453px;
     height: auto;
     width: 25px;
 }
@@ -93,12 +92,12 @@
 #name_TC{
     position: absolute;
     left:380px;
-    top: 655px;
+    top: 647px;
 }
 #name_TC1{
     position: absolute;
-    left:491px;
-    top: 655px;
+    left:480px;
+    top: 647px;
 }
 #name_YC{
     position: absolute;

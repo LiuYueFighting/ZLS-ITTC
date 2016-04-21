@@ -265,14 +265,14 @@
     <label><input id="chackBox_showFM" class="mui-switch mui-switch-anim" type="checkbox" checked="false" onclick="showFM(this)"> 默认未选中</label> -->
     <a href="QS.jsp" id="name_QS1"  class="name_ob" style="text-decoration: none">取水泵房</a>
     <a href="QS.jsp" id="name_QS2"  class="name_ob" style="text-decoration: none">取水泵房</a>
-    <a href="JJC.jsp" id="name_JJC1" class="name_ob" style="text-decoration: none">1#机加池</a>
-    <a href="JJC.jsp" id="name_JJC2" class="name_ob" style="text-decoration: none">2#机加池</a>
-    <a href="JJC.jsp" id="name_JJC3" class="name_ob" style="text-decoration: none">3#机加池</a>
+    <a href="JJC.jsp" id="name_JJC1" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;1#<br>机加池</a>
+    <a href="JJC.jsp" id="name_JJC2" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;2#<br>机加池</a>
+    <a href="JJC.jsp" id="name_JJC3" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;3#<br>机加池</a>
     <a href="VL.jsp" id="name_VL"   class="name_ob" style="text-decoration: none">V型滤池</a>
     <a href="hxt.jsp" id="name_TC"   class="name_ob" style="text-decoration: none">1#炭滤池</a>
     <a href="hxt.jsp" id="name_TC1"  class="name_ob" style="text-decoration: none">2#炭滤池</a>
     <a href="cy.jsp" id="name_CYC"  class="name_ob" style="text-decoration: none">臭氧生产车间</a>
-    <a href="cy.jsp" id="name_CY"   class="name_ob" style="text-decoration: none">臭氧混合池</a>
+    <a href="cy.jsp" id="name_CY"   class="name_ob" style="text-decoration: none">&nbsp;臭氧<br>接触池</a>
     <a href="#" id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
     <a href="hhj.jsp" id="name_HHJ1" class="name_ob" style="text-decoration: none">旧混合井</a>
     <a href="hhj.jsp" id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
