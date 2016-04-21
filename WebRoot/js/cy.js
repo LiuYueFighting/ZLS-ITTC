@@ -12,39 +12,43 @@ oCanvas.domReady(function () {
 //绘制两个水池
  var SC01=createSC({
      parent:canvas,
-     x:261,y:244,height:346,width:127,trail_flag:0,speed:speed_SC,color:color_SC
+     x:258,y:245,height:346,width:127,trail_flag:0,speed:speed_SC,color:color_SC
  });
     var SC011=createSC({
         parent:canvas,
-        x:261,y:244,height:282,width:49,trail_flag:0,speed:speed_SC*1.1,color:color_SC
+        x:258,y:244,height:282,width:49,trail_flag:0,speed:speed_SC*1.1,color:color_SC
+    });
+    var SC00=createSC({
+        parent:canvas,
+        x:50,y:365,height:29,width:209,trail_flag:0,speed:speed_SC*0.15,color:color_SC
     });
  var SC02=createSC({
      parent:canvas,
-     x:398,y:247,height:349,width:176,trail_flag:0,speed:speed_SC,color:color_SC
+     x:398,y:244,height:349,width:178,trail_flag:0,speed:speed_SC,color:color_SC
  });
     var SC021=createSC({
         parent:canvas,
-        x:398,y:247,height:282,width:65,trail_flag:0,speed:speed_SC*1.1,color:color_SC
+        x:398,y:246,height:282,width:65,trail_flag:0,speed:speed_SC*1.1,color:color_SC
     });
  var SC03=createSC({
      parent:canvas,
-     x:588,y:247,height:349,width:271,trail_flag:0,speed:speed_SC,color:color_SC
+     x:588,y:244,height:349,width:271,trail_flag:0,speed:speed_SC,color:color_SC
  });
     var SC031=createSC({
         parent:canvas,
-        x:588,y:247,height:282,width:71,trail_flag:0,speed:speed_SC*1.1,color:color_SC
+        x:588,y:246,height:282,width:71,trail_flag:0,speed:speed_SC*1.1,color:color_SC
     });
  var SC04=createSC({
      parent:canvas,
-     x:873,y:247,height:349,width:182,trail_flag:0,speed:speed_SC,color:color_SC
+     x:873,y:244,height:349,width:182,trail_flag:0,speed:speed_SC,color:color_SC
  });
     var SC041=createSC({
         parent:canvas,
-        x:873,y:247,height:282,width:71,trail_flag:0,speed:speed_SC*1.1,color:color_SC
+        x:873,y:246,height:282,width:71,trail_flag:0,speed:speed_SC*1.1,color:color_SC
     });
  var SC05=createSC({
      parent:canvas,
-     x:1062,y:247,height:349,width:94,trail_flag:0,speed:speed_SC,color:color_SC
+     x:1064,y:244,height:349,width:224,trail_flag:0,speed:speed_SC,color:color_SC
  });
 //添加背景图片
  var bg = canvas.display.image({
@@ -117,8 +121,8 @@ oCanvas.domReady(function () {
  var GD01=createGD({
      parent:canvas,
      cells:[
-         {x_cell: 54,y_cell: 379},
-         {x_cell: 264, y_cell: 379}
+         {x_cell: 55,y_cell: 379},
+         {x_cell: 258, y_cell: 379}
      ],
      GDwidth:width_all,
      color:color_GD
@@ -127,7 +131,7 @@ oCanvas.domReady(function () {
      parent:canvas,
      cells:[
          {x_cell: 1159,y_cell: 559},
-         {x_cell: 1291, y_cell: 559}
+         {x_cell: 1286, y_cell: 559}
      ],
      GDwidth:width_all,
      color:color_GD
@@ -249,6 +253,7 @@ oCanvas.domReady(function () {
  canvas.setLoop(function () {
      GD01.advance();
      GD02.advance();
+     SC00.advance();
      SC01.advance();
      SC011.advance();
      SC02.advance();
@@ -321,10 +326,11 @@ oCanvas.domReady(function () {
  }).start();
 //添加按钮函数
     GD01.paused=1;
+    SC00.start=1;
     canvas.timeline.start();
     $("#btn_start").click(function(){
 	 if(this.value==0){
-
+		 SC00.start=1;
          GD01.paused=1;
          canvas.redraw();
          this.innerHTML="&#xe61f;";

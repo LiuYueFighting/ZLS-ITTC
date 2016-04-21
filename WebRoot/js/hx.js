@@ -56,7 +56,7 @@ oCanvas.domReady(function () {
     });
     var SC06=createSC({
         parent:canvas,
-        x:413,y:375,height:113,width:105,trail_flag:0,speed:speed_SC,color:color_SC
+        x:328,y:375,height:113,width:205,trail_flag:0,speed:speed_SC,color:color_SC
     });
 //添加背景图片
     var bg = canvas.display.image({

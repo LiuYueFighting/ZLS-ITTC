@@ -12,19 +12,38 @@ oCanvas.domReady(function () {
         speed_SC=0.9,
         color_GD="#007fff",
         color_SC="#43d9f9";
+    var SC00=createSC({
+        parent:canvas,
+        x:189,y:581,height:15,width:143,trail_flag:0,speed:speed_SC*0.1,color:color_SC
+    });
     var SC01=createSC({
         parent:canvas,
-        x:326,y:200,height:438,width:181,trail_flag:0,speed:speed_SC,color:color_SC
+        x:326,y:200,height:440,width:181,trail_flag:0,speed:speed_SC,color:color_SC
     });
 
     var SC02=createSC({
         parent:canvas,
-        x:496,y:567,height:72,width:186,trail_flag:0,speed:speed_SC,color:color_SC
+        x:497,y:535,height:105,width:186,trail_flag:0,speed:speed_SC,color:color_SC
+    });
+    
+    var SC021=createSC({
+        parent:canvas,
+        x:523,y:513,height:22,width:393,trail_flag:0,speed:speed_SC*0.08,color:color_SC
+    });
+    
+    var SC022=createSC({
+        parent:canvas,
+        x:895,y:233,height:281,width:22,trail_flag:0,speed:speed_SC*1.1,color:color_SC
     });
 
     var SC03=createSC({
         parent:canvas,
-        x:841,y:219,height:393,width:144,trail_flag:0,speed:speed_SC,color:color_SC
+        x:841,y:219,height:395,width:144,trail_flag:0,speed:speed_SC,color:color_SC
+    });
+    
+    var SC031=createSC({
+        parent:canvas,
+        x:985,y:579,height:16,width:163,trail_flag:0,speed:speed_SC*0.1,color:color_SC
     });
 
     var fg = canvas.display.image({
@@ -118,10 +137,14 @@ oCanvas.domReady(function () {
 
     canvas.setLoop(function () {
         GD01.advance();
+        SC00.advance();
         SC01.advance();
         SC02.advance();
+        SC021.advance();
+        SC022.advance();
         GD02.advance();
         SC03.advance();
+        SC031.advance();
         GD03.advance();
 
         if(GD01.full==1){
@@ -129,8 +152,15 @@ oCanvas.domReady(function () {
         	SC02.start = 1;
         }
 
-        if(SC02.full==1){
+        if(SC02.height_now>=47){
         	GD02.paused = 1;
+//        	SC021.start = 1;
+        }
+        if(SC02.full==1){
+        	SC021.start = 1;
+        }
+        if(SC021.full==1){
+        	SC022.start = 1;
         }
         if(GD02.full==1) {
         	SC03.start = 1;
@@ -138,14 +168,17 @@ oCanvas.domReady(function () {
             arrow_2.start();
         }
         if(SC03.height_now>=30) {
+        	SC031.start = 1;
         	GD03.paused = 1;
         }
         canvas.redraw();
     }).start();
+    SC00.start=1;
     GD01.paused=1;
     canvas.timeline.start();
     $("#btn_start").click(function(){
         if(this.value==1){
+        	SC00.start=1;
             GD01.paused=1;
             canvas.redraw();
             this.innerHTML="&#xe61f;";
