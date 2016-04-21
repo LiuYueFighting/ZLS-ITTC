@@ -1,7 +1,7 @@
 .name_ob{
     font-family: '微软雅黑','Arial';
-    color:#ff4400;
-    font-size: 18px;
+    color:#283a45;;
+    font-size: 20px;
     font-weight:bold;
     height: auto;
     width: auto;
@@ -42,13 +42,15 @@
     position: absolute;
     left:975px;
     top: 353px;
+    font-size:17px;
 }
 #name_HHJ2{
     position: absolute;
     left:1180px;
     top: 363px;
     height: auto;
-    width: 30px;
+    width: 25px;
+    font-size:17px;
 }
 #name_HX{
     position: absolute;
@@ -67,10 +69,10 @@
 }
 #name_CYC{
     position: absolute;
-    left:632px;
-    top: 456px;
+    left:636px;
+    top: 457px;
     height: auto;
-    width: 30px;
+    width: 25px;
 }
 #name_QSC2{
     position: absolute;
@@ -215,7 +217,7 @@
              left: 869px;
              top: 622px;
              z-index:999;
-             cursor:pointer;
+           
          }#FM020{
               position: absolute;
               left:705px;
