@@ -20,7 +20,7 @@ var SC02=createSC({
 });
 var SC03=createSC({
     parent:canvas,
-    x:766,y:451,height:96,width:470,trail_flag:0,speed:speed_SC/4,color:color_SC
+    x:766,y:451,height:96,width:514,trail_flag:0,speed:speed_SC/4,color:color_SC
 });
 //添加背景图片
 var bg = canvas.display.image({
@@ -207,7 +207,7 @@ canvas.setLoop(function () {
         arrow_11.start();
         arrow_12.start();
     }
-    if(SC02.height_now>=SC02.Height*0.3){
+    if(SC02.height_now>=SC02.Height*0.25){
         GD01.paused=1;
     }
     if(SC02.full==1){

@@ -10,6 +10,24 @@ oCanvas.domReady(function () {
      fps: 25
  });
 //绘制两个水池
+ var SC00=createSC({
+     parent:canvas,
+     x:332,y:619,height:21,width:311,trail_flag:0,speed:speed_SC*0.08,color:color_SC
+ });
+ var SC001=createSC({
+     parent:canvas,
+     x:618,y:579,height:42,width:28,trail_flag:0,speed:speed_SC*0.5,color:color_SC
+ });
+ var SC002=createSC({
+     parent:canvas,
+     x:599,y:526,height:53,width:67,trail_flag:1,speed:speed_SC,color:color_SC,
+      trail: [
+          {x_t: 0, y_t: 0},
+          {x_t: 19, y_t: 53},         
+          {x_t: 47, y_t: 53},
+          {x_t: 67, y_t: 0}
+      ]
+ });
  var SC01=createSC({
      parent:canvas,
      x:560,y:306,height:357,width:140,trail_flag:0,speed:speed_SC,color:color_SC
@@ -17,6 +35,10 @@ oCanvas.domReady(function () {
  var SC02=createSC({
      parent:canvas,
      x:700,y:307,height:347,width:85,trail_flag:0,speed:speed_SC,color:color_SC
+ });
+ var SC003=createSC({
+     parent:canvas,
+     x:779,y:625,height:15,width:137,trail_flag:0,speed:speed_SC*0.2,color:color_SC
  });
 //添加背景图片
  var bg = canvas.display.image({
@@ -106,8 +128,18 @@ oCanvas.domReady(function () {
  canvas.setLoop(function () {
      GD01.advance();
      GD02.advance();
+     SC00.advance();
+     SC001.advance();
+     SC002.advance();
      SC01.advance();
      SC02.advance();
+     SC003.advance();
+     if(SC00.full==1){
+         SC001.start=1;
+     }
+     if(SC001.full==1){
+         SC002.start=1;
+     }
      if(GD01.full==1){
          SC01.start=1;
          arrow_1.start();
@@ -117,14 +149,17 @@ oCanvas.domReady(function () {
          SC02.start=1;
          arrow_3.start();
          GD02.paused=1;
+         SC003.start=1;
      }
      canvas.redraw();
  }).start();
 //添加按钮函数
+ 	SC00.start=1;
     GD01.paused=1;
     canvas.timeline.start();
  $("#btn_start").click(function(){
      if(this.value==1){
+    	 SC00.start=1;
          GD01.paused=1;
          canvas.redraw();
          this.innerHTML="&#xe61f;";
