@@ -1231,20 +1231,24 @@ oCanvas.domReady(function () {
     		setFMColorRed("FM018");
 //    		console.log(document.getElementById("FM018").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png');
 
-/*    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";*/
+//    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+//    		var timer = setTimeout(function(){
+    			console.log("1111111");
+    			blinTwice("#step_3");
+    			blinTwice("#step_3_result");
+    			blinTwice("#step_4");
+    			blinTwice("#step_4_result");
+    			blinTwice("#step_5");
+    			blinTwice("#step_5_result");
+//    		},200);
     		
-/*    		blinTwice("#step_3");
-    		blinTwice("#step_3_result");
-    		blinTwice("#step_4");
-    		blinTwice("#step_4_result");
-    		blinTwice("#step_5");
-    		blinTwice("#step_5_result");*/
     		}
+    		//clearTimeout(timer);
     		
     		//console.log("GD30:");
     		//console.log(GD30.state);
@@ -1253,20 +1257,12 @@ oCanvas.domReady(function () {
         	//console.log(GD1001.state);
         	if(GD141.state!=0){
         		GD141.state=2;
-        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+//        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+//        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
         		blinTwice("#step_6");
         		blinTwice("#step_6_result");
         		}
         	setFMColorRed("FM019");
-
-
-/*    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-    		blinTwice("#step_6");
-    		blinTwice("#step_6_result");*/
-
-
     		//GD141.state=2;
     	}
         if((GD11.state==1)&&(GD1001.state==1)){    		
@@ -1288,12 +1284,18 @@ oCanvas.domReady(function () {
     		GD13.state=2;
     		setFMColorRed("FM017");
 
-    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+    		blinTwice("#step_3");
+    		blinTwice("#step_3_result");
+    		blinTwice("#step_4");
+    		blinTwice("#step_4_result");
+    		blinTwice("#step_5");
+    		blinTwice("#step_5_result");
 
     		}
     		
@@ -1311,8 +1313,10 @@ oCanvas.domReady(function () {
 //        	console.log("GD141:");
 //    		console.log(GD141.state);
 
-    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+    		blinTwice("#step_6");
+    		blinTwice("#step_6_result");
 
     		//GD141.state=2;
     	}
@@ -1758,7 +1762,6 @@ oCanvas.domReady(function () {
     function fix_hx_right(){
     	
         clearAll();
-        //hideAllFM();
 		hideAllFM();
 		setDefaultFMColor();
 		setFMColorGreen("FM016");
@@ -1801,11 +1804,10 @@ oCanvas.domReady(function () {
 		 * var demo = document.getElementById("step_1");
 		   blinTwice(demo);
 		 */
-		progressBar(".bar_group_1",blinTwice);
-/*		blinTwice("#step_1");
+		blinTwice("#step_1");
 		blinTwice("#step_1_result");
 		blinTwice("#step_2");
-		blinTwice("#step_2_result");*/
+		blinTwice("#step_2_result");
 		
     	//管道退水
 		GD11.state=2;
@@ -1855,31 +1857,36 @@ oCanvas.domReady(function () {
     	//计时器控制阀门颜色和对应维修步骤变化情况
     	window.setTimeout(function(){              
     		setFMColorGreen("FM019");
-    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-    		
+//    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+    		blinTwice("#step_6");
+    		blinTwice("#step_6_result");
+    		blinTwice("#step_5");
+    		blinTwice("#step_5_result");
          },300);
         window.setTimeout(function(){              
         	setFMColorGreen("FM018");
-    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+    		blinTwice("#step_3");
+    		blinTwice("#step_3_result");
+    		blinTwice("#step_4");
+    		blinTwice("#step_4_result");
          },1000);
         window.setTimeout(function(){              
         	setFMColorGreen("FM016");
-        	document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-//        	GD1001.state=3;
-//        	GD11.state=3;
-    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+//        	document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+    		blinTwice("#step_1");
+    		blinTwice("#step_1_result");
+    		blinTwice("#step_2");
+    		blinTwice("#step_2_result");
         	GD1001.state=3;
         	GD11.state=3;
          },1700);
@@ -1926,45 +1933,48 @@ oCanvas.domReady(function () {
     		GD141.state=3;
 //    		console.log("GD141:");
 //    		console.log(GD141.state);
-    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+    		blinTwice("#step_6");
+    		blinTwice("#step_6_result");
+    		blinTwice("#step_5");
+    		blinTwice("#step_5_result");
          },300);
         window.setTimeout(function(){              
         	setFMColorGreen("FM017");
         	GD13.state=3;
-    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+    		blinTwice("#step_3");
+    		blinTwice("#step_3_result");
+    		blinTwice("#step_4");
+    		blinTwice("#step_4_result");
          },1500);
         window.setTimeout(function(){              
         	setFMColorGreen("FM014");
         	GD26.state=3;
         	GD27.state=3;
-        	document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+//        	document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+//    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+    		blinTwice("#step_1");
+    		blinTwice("#step_1_result");
+    		blinTwice("#step_2");
+    		blinTwice("#step_2_result");
     		
 //        	GD1001.state=3;
 //        	GD11.state=3;
          },2500);
-        window.setTimeout(function(){              
-        	clearAll();
-         },4700);		
-        
-		progressBar(".bar_group_1");
-	/*	progressBar("#bar_2");
-		progressBar("#bar_3");
-		progressBar("#bar_4");*/
     }
     
     function  fix_hx_left(){
 
         clearAll();
-        
 		hideAllFM();
 		setDefaultFMColor();
 		setFMColorGreen("FM014");
@@ -1986,7 +1996,6 @@ oCanvas.domReady(function () {
 
 		for (i=0;i<todolist.length;i++){
 			var offset = i+1;
-	        
 	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
 	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
 		}
@@ -1996,10 +2005,14 @@ oCanvas.domReady(function () {
     	
     	//动态效果
         setFMColorRed("FM014");  
-		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+//		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+//		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+//		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+//		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+		blinTwice("#step_1");
+		blinTwice("#step_1_result");
+		blinTwice("#step_2");
+		blinTwice("#step_2_result");
     	GD26.state=2;
     	GD27.state=2;
 
@@ -2673,7 +2686,6 @@ oCanvas.domReady(function () {
 		 * ["FM021", "FM024", "FM025", "FM026", "FM046", "FM047", 
 		 *  "FM048", "FM049", "FM051", "FM053", "FM054", "FM058"]
 		 */
-        
 
         //恢复阀门的默认颜色
         $("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
@@ -2699,8 +2711,6 @@ oCanvas.domReady(function () {
         //恢复表格中单元格的颜色
         $(".table_line").attr("style","background:rgba(255,255,255,0.5);");
         $(".table_line").attr("style","text-align:left;");
-        //重置进度条的进度
-        $(".progress-bar").attr("style","width:0%;");
         
         //解除功能面板的函数绑定
 //      document.getElementById("scheme").onclick = function(){提示};

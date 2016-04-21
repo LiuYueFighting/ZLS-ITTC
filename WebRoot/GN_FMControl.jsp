@@ -174,7 +174,7 @@
         left: 687px;
         top: 35px;
         z-index: 998;
-        color: #223bb8;
+        color: #333;
     }
     #panelHeading{
         width: 124px;
@@ -198,12 +198,12 @@
      }
     #setConfig h1{
     font-size: 27px;
-    color: #223bb8;
+    color: #333;
     font-weight: bold;
     margin-bottom: 28px;
     }
     #setConfig h2{
-    font-size: 19px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 25px;
     }
@@ -218,8 +218,8 @@
 
         .flow{
         font-family: '微软雅黑','Arial';
-        color: #0D3C65;
-        font-size: 17px;
+        color: #333;
+        font-size: 16px;
         border: 0px;
 
         padding: 3px;
@@ -315,7 +315,7 @@
 
         else{
 
-             image.src = "image/y1.png";
+             image.src = "image/y5.png";
 
     return;
 
