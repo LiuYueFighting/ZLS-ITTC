@@ -333,9 +333,9 @@
 	    </div>
 
 		<div class="panel panel-info" id="init_stage">
-			<div class="panel-heading">初始状态</div>
+			<div class="panel-heading" id="init_state">初始状态</div>
 			<table class="table">
-				<tr><td id="init_state">全场正常运行</td></tr>
+				<tr><td id="init_statement">全场正常运行</td></tr>
 			</table>
 		</div>
 
@@ -360,8 +360,8 @@
 		<div class="panel panel-info" id="panel_button">
 			<div class="panel-heading">功能</div>
 			<table class="table">
-				<tr><td id="scheme" class="hcc">方案二</td><td id="restore" class="hcc">恢复运行</td></tr>
-				<tr><td class="hcc"><a href="#" id="export">生成方案</a></td><td id="reset" class="hcc">重置</td></tr>
+				<tr><td id="scheme_extra" class="hcc">&nbsp;</td><td id="scheme" class="hcc">&nbsp;</td></tr>
+				<tr><td class="hcc"><a href="#" id="export">&nbsp;</a></td><td id="reset" class="hcc">&nbsp;</td></tr>
 			</table>
 		</div>
     </div>
