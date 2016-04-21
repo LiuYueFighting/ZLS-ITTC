@@ -55,8 +55,8 @@
         }
         #myContent a{
 	    color: #283a45;
-	    /* background: rgba(255,255,255,0.5); */
-	    /* border: 1px solid black; */
+	     /*background: rgba(255,255,255,0.5); 
+	     border: 1px solid black; */
 	    } 
 	    .name_Model{
 	    font-family: '微软雅黑','Arial';

@@ -92,7 +92,7 @@ oCanvas.domReady(function () {
         x:700,
         y:30,
         origin: { x:"center", y: "top" },
-        font: "bold 36px sans-serif",
+        font: "bold 36px 微软雅黑",
         fill:"#0e406b",
         text:"取水泵房工艺展示纵剖图"
     });
@@ -102,7 +102,7 @@ oCanvas.domReady(function () {
         x:204,
         y:531,
         origin: { x:"center", y: "top" },
-        font: "bold 25px sans-serif",
+        font: "bold 25px 微软雅黑",
         fill:"#337ab7",
         text:"来水"
     }).add();
@@ -111,7 +111,7 @@ oCanvas.domReady(function () {
         x:1149,
         y:531,
         origin: { x:"center", y: "top" },
-        font: "bold 25px sans-serif",
+        font: "bold 25px 微软雅黑",
         fill:"#337ab7",
         text:"取水泵房出水"
     }).add();
