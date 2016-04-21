@@ -142,7 +142,7 @@ oCanvas.domReady(function () {
      x:700,
      y:30,
      origin: { x:"center", y: "top" },
-     font: "bold 36px sans-serif",
+     font: "bold 36px 微软雅黑",
      fill:"#0e406b",
      text:"臭氧接触池工艺展示纵剖图"
  }).add();
@@ -150,7 +150,7 @@ oCanvas.domReady(function () {
      x:110,
      y:425,
      origin: { x:"center", y: "top" },
-     font: "bold 25px sans-serif",
+     font: "bold 25px 微软雅黑",
      fill:"#337ab7",
      text:"滤池来水"
  }).add();
@@ -158,7 +158,7 @@ oCanvas.domReady(function () {
      x:1250,
      y:485,
      origin: { x:"center", y: "top" },
-     font: "bold 25px sans-serif",
+     font: "bold 25px 微软雅黑",
      fill:"#337ab7",
      text:"臭氧接\n触池出水"
  }).add();

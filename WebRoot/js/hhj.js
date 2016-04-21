@@ -82,7 +82,7 @@ oCanvas.domReady(function () {
      x:650,
      y:10,
      origin: { x:"center", y: "top" },
-     font: "bold 36px sans-serif",
+     font: "bold 36px 微软雅黑",
      fill:"#0e406b",
      text:"混合井工艺展示纵剖图"
  }).add();
@@ -90,7 +90,7 @@ oCanvas.domReady(function () {
      x:230,
      y:615,
      origin: { x:"center", y: "top" },
-     font: "bold 25px sans-serif",
+     font: "bold 25px 微软雅黑",
      fill:"#337ab7",
      text:"取水泵房来水"
  }).add();
@@ -98,7 +98,7 @@ oCanvas.domReady(function () {
      x:1120,
      y:615,
      origin: { x:"center", y: "top" },
-     font: "bold 25px sans-serif",
+     font: "bold 25px 微软雅黑",
      fill:"#337ab7",
      text:"混合井出水"
  }).add();

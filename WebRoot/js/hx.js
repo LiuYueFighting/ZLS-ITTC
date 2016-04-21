@@ -175,7 +175,7 @@ oCanvas.domReady(function () {
         x:696,
         y:15,
         origin: { x:"center", y: "top" },
-        font: "bold 36px sans-serif",
+        font: "bold 36px 微软雅黑",
         fill:"#0e406b",
         text:"虹吸滤池工艺展示纵剖图"
     }).add();
@@ -183,7 +183,7 @@ oCanvas.domReady(function () {
         x:703,
         y:97,
         origin: { x:"center", y: "top" },
-        font: "bold 25px sans-serif",
+        font: "bold 25px 微软雅黑",
         fill:"#337ab7",
         text:"机加池来水"
     }).add();
@@ -191,7 +191,7 @@ oCanvas.domReady(function () {
         x:326,
         y:398,
         origin: { x:"center", y: "top" },
-        font: "bold 25px sans-serif",
+        font: "bold 25px 微软雅黑",
         fill:"#337ab7",
         text:"虹吸滤池出水"
     }).add();

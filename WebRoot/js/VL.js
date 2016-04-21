@@ -211,7 +211,7 @@ oCanvas.domReady(function () {
         x:670,
         y:30,
         origin: { x:"center", y: "top" },
-        font: "bold 36px sans-serif",
+        font: "bold 36px 微软雅黑",
         fill:"#0e406b",
         text:"V型滤池工艺展示纵剖图"
     });
@@ -220,7 +220,7 @@ oCanvas.domReady(function () {
         x:70,
         y:140,
         origin: { x:"center", y: "top" },
-        font: "bold 25px sans-serif",
+        font: "bold 25px 微软雅黑",
         fill:"#337ab7",
         text:"机加池来水"
     });
@@ -229,7 +229,7 @@ oCanvas.domReady(function () {
         x:1200,
         y:490,
         origin: { x:"center", y: "top" },
-        font: "bold 25px sans-serif",
+        font: "bold 25px 微软雅黑",
         fill:"#337ab7",
         text:"V滤出水"
     });

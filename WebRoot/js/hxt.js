@@ -157,7 +157,7 @@ oCanvas.domReady(function () {
      x:700,
      y:30,
      origin: { x:"center", y: "top" },
-     font: "bold 36px sans-serif",
+     font: "bold 36px 微软雅黑",
      fill:"#0e406b",
      text:"活性炭池工艺展示纵剖图"
  }).add();
@@ -165,7 +165,7 @@ oCanvas.domReady(function () {
      x:410,
      y:675,
      origin: { x:"center", y: "top" },
-     font: "bold 25px sans-serif",
+     font: "bold 25px 微软雅黑",
      fill:"#337ab7",
      text:"臭氧接触池来水"
  }).add();
@@ -173,7 +173,7 @@ oCanvas.domReady(function () {
      x:1227,
      y:585,
      origin: { x:"center", y: "top" },
-     font: "bold 25px sans-serif",
+     font: "bold 25px 微软雅黑",
      fill:"#337ab7",
      text:"活性炭池出水"
  }).add();

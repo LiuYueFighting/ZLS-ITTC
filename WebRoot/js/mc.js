@@ -29,7 +29,7 @@ oCanvas.domReady(function () {
         x:700,
         y:30,
         origin: { x:"center", y: "top" },
-        font: "bold 36px sans-serif",
+        font: "bold 36px 微软雅黑",
         fill:"#0e406b",
         text:"膜车间工艺展示纵剖图"
     });
@@ -39,7 +39,7 @@ oCanvas.domReady(function () {
         x:194,
         y:611,
         origin: { x:"center", y: "top" },
-        font: "bold 25px sans-serif",
+        font: "bold 25px 微软雅黑",
         fill:"#337ab7",
         text:"来水"
     }).add();
@@ -48,7 +48,7 @@ oCanvas.domReady(function () {
         x:1159,
         y:581,
         origin: { x:"center", y: "top" },
-        font: "bold 25px sans-serif",
+        font: "bold 25px 微软雅黑",
         fill:"#337ab7",
         text:"出水"
     }).add();

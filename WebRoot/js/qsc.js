@@ -165,7 +165,7 @@ var txt1=canvas.display.text({
     x:710,
     y:30,
     origin: { x:"center", y: "top" },
-    font: "bold 36px sans-serif",
+    font: "bold 36px 微软雅黑",
     fill:"#0e406b",
     text:"清水池工艺展示纵剖图"
 }).add();
@@ -173,7 +173,7 @@ var txt2=canvas.display.text({
     x:630,
     y:565,
     origin: { x:"center", y: "top" },
-    font: "bold 25px sans-serif",
+    font: "bold 25px 微软雅黑",
     fill:"#337ab7",
     text:"活性炭池来水"
 }).add();
@@ -181,7 +181,7 @@ var txt3=canvas.display.text({
     x:1220,
     y:565,
     origin: { x:"center", y: "top" },
-    font: "bold 25px sans-serif",
+    font: "bold 25px 微软雅黑",
     fill:"#337ab7",
     text:"清水池出水"
 }).add();
