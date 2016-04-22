@@ -1153,7 +1153,7 @@ oCanvas.domReady(function () {
         
 		//恢复构筑物及标签的颜色
 		$(".name_ob").attr("style","color:#283a45;");
-		$(".name_ob").attr("style","background:transparent;");
+		$(".name_ob").attr("style","background:transparent;text-decoration: none;");
 
         $("div.panel").hide();
 

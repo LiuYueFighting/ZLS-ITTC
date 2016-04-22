@@ -172,10 +172,10 @@
     }
 
     function hideAllFM(){
-   	//隐藏所有阀门（包括阀门对应的标签）
-	$(".fm_default_green").attr("style","display:none;");
-	$(".fm_default_red").attr("style","display:none;");
-	$(".fm_default_hide").attr("style","display:none;");
+	   	//隐藏所有阀门（包括阀门对应的标签）
+		$(".fm_default_green").attr("style","display:none;");
+		$(".fm_default_red").attr("style","display:none;");
+		$(".fm_default_hide").attr("style","display:none;");
 	}
     </script>
 </head>
@@ -194,24 +194,24 @@
     <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="true" onclick="showName(this)"> 默认未选中</label>
     <p class="name_Model" id="FMShow">阀门显示</p>
     <label><input id="chackBox_showFM" class="mui-switch mui-switch-anim" type="checkbox" checked="false" onclick="showFM(this)"> 默认未选中</label> -->
-    <a href="#" id="name_QS1"  class="name_ob" style="text-decoration: none">取水泵房</a>
-    <a href="#" id="name_QS2"  class="name_ob" style="text-decoration: none">取水泵房</a>
-    <a href="#" id="name_JJC1" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;1#<br>机加池</a>
-    <a href="#" id="name_JJC2" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;2#<br>机加池</a>
-    <a href="#" id="name_JJC3" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;3#<br>机加池</a>
-    <a href="#" id="name_VL"   class="name_ob" style="text-decoration: none">V型滤池</a>
-    <a href="#" id="name_TC"   class="name_ob" style="text-decoration: none">1#炭滤池</a>
-    <a href="#" id="name_TC1"  class="name_ob" style="text-decoration: none">2#炭滤池</a>
-    <a href="#" id="name_CYC"  class="name_ob" style="text-decoration: none">臭氧生产车间</a>
-    <a href="#" id="name_CY"   class="name_ob" style="text-decoration: none">&nbsp;臭氧<br>接触池</a>
-    <a href="#" id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
-    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">旧混合井</a>
-    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
-    <a href="#" id="name_HX"   class="name_ob" style="text-decoration: none">虹吸滤池</a>
-    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
-    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
-    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
-    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
+    <a href="#" id="name_QS1"  class="name_ob" style="text-decoration: none;">取水泵房</a>
+    <a href="#" id="name_QS2"  class="name_ob" style="text-decoration: none;">取水泵房</a>
+    <a href="#" id="name_JJC1" class="name_ob" style="text-decoration: none;">&nbsp;&nbsp;&nbsp;1#<br>机加池</a>
+    <a href="#" id="name_JJC2" class="name_ob" style="text-decoration: none;">&nbsp;&nbsp;&nbsp;2#<br>机加池</a>
+    <a href="#" id="name_JJC3" class="name_ob" style="text-decoration: none;">&nbsp;&nbsp;&nbsp;3#<br>机加池</a>
+    <a href="#" id="name_VL"   class="name_ob" style="text-decoration: none;">V型滤池</a>
+    <a href="#" id="name_TC"   class="name_ob" style="text-decoration: none;">1#炭滤池</a>
+    <a href="#" id="name_TC1"  class="name_ob" style="text-decoration: none;">2#炭滤池</a>
+    <a href="#" id="name_CYC"  class="name_ob" style="text-decoration: none;">臭氧生产车间</a>
+    <a href="#" id="name_CY"   class="name_ob" style="text-decoration: none;">&nbsp;臭氧<br>接触池</a>
+    <a href="#" id="name_YC"   class="name_ob" style="text-decoration: none;">预沉池</a>
+    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none;">旧混合井</a>
+    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none;">新混合井</a>
+    <a href="#" id="name_HX"   class="name_ob" style="text-decoration: none;">虹吸滤池</a>
+    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none;">3#清水池</a>
+    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none;">1#清水池</a>
+    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none;">2#清水池</a>
+    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none;">4#清水池</a>
 
  	<!-- 阀门显示为红色 -->
     <img id="FM022" src="image/y2-35x37.png" class="fm_default_red">
