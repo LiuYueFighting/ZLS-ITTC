@@ -117,7 +117,7 @@ oCanvas.domReady(function () {
      text:"取水泵房来水"
  }).add();
  var txt3=canvas.display.text({
-     x:1120,
+     x:1000,
      y:615,
      origin: { x:"center", y: "top" },
      font: "bold 25px 微软雅黑",
