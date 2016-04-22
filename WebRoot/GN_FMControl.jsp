@@ -123,8 +123,8 @@
         }
         #name_QSC1{
         position: absolute;
-        left: 291px;
-        top: 507px;
+        left: 288px;
+        top: 485px;
         }
         #name_CY{
         position: absolute;
@@ -135,17 +135,17 @@
         #name_QSC2{
         position: absolute;
         left: 309px;
-        top: 303px;
+        top: 298px;
         }
         #name_QSC3{
         position: absolute;
         left:485px;
-        top: 303px;
+        top: 298px;
         }
         #name_QSC4{
         position: absolute;
-        left: 438px;
-        top: 507px;
+        left: 436px;
+        top: 485px;
         }
         #name_TC{
         position: absolute;
