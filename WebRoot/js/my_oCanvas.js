@@ -720,14 +720,27 @@ var constructor_gd1 = function (settings, core) {
         shapeType: "rectangular",
 
         init: function () {
-            this.startIndex = 0;
-            this.endIndex=this.cells.length-1;
+        	if(this.state==0){
+        		this.startIndex = this.cells.length-1;
+                this.endIndex=this.cells.length-1;
 
-            this.startPoint.x=this.cells[0].x_cell;
-            this.startPoint.y=this.cells[0].y_cell;
-            this.endPoint.x=this.cells[this.endIndex].x_cell;
-            this.endPoint.y=this.cells[this.endIndex].y_cell;
-            this.state=1;
+                this.startPoint.x=this.cells[this.endIndex].x_cell;
+                this.startPoint.y=this.cells[this.endIndex].y_cell;
+                this.endPoint.x=this.cells[this.endIndex].x_cell;
+                this.endPoint.y=this.cells[this.endIndex].y_cell;
+//                this.state=1;
+        	}
+        	if(this.state==1){
+        		this.startIndex = 0;
+                this.endIndex=this.cells.length-1;
+
+                this.startPoint.x=this.cells[0].x_cell;
+                this.startPoint.y=this.cells[0].y_cell;
+                this.endPoint.x=this.cells[this.endIndex].x_cell;
+                this.endPoint.y=this.cells[this.endIndex].y_cell;
+//                this.state=1;
+        	}
+            
             this.endHeight = -1;
             this.speed=2;
         },
@@ -940,7 +953,7 @@ function createGD1(options){
 	        GDwidth:options.GDwidth,
 	        fill:options.color,
 	        endHeight: 0,
-	        state:1
+	        state:options.state
 	});
 	options.parent.addChild(GD02);
     return GD02;

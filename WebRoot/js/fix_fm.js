@@ -25,6 +25,7 @@ oCanvas.domReady(function () {
             {x_cell: 707 ,y_cell: 96},
             {x_cell: 707 ,y_cell: 225}          
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//1
@@ -35,8 +36,9 @@ oCanvas.domReady(function () {
             {x_cell: 707 ,y_cell: 223},
             {x_cell: 769 ,y_cell: 261},
             {x_cell: 989 ,y_cell: 261},
-            {x_cell: 989, y_cell: 348}
+            {x_cell: 989, y_cell: 355}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//2
@@ -49,6 +51,7 @@ oCanvas.domReady(function () {
             {x_cell: 1019 ,y_cell: 240},
             {x_cell: 1019 , y_cell: 256}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//3
@@ -56,8 +59,9 @@ oCanvas.domReady(function () {
         parent:canvas,
         cells:[
             {x_cell: 1019 ,y_cell: 256},
-            {x_cell: 1019, y_cell: 348}
+            {x_cell: 1019, y_cell: 355}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//4
@@ -68,6 +72,7 @@ oCanvas.domReady(function () {
             {x_cell: 1188 ,y_cell: 261},
             {x_cell: 1188, y_cell: 374}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//5
@@ -78,6 +83,7 @@ oCanvas.domReady(function () {
             {x_cell: 989 ,y_cell: 411},
             {x_cell: 955, y_cell: 411}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//6
@@ -88,6 +94,7 @@ oCanvas.domReady(function () {
             {x_cell: 1019, y_cell: 411},
             {x_cell: 1058, y_cell: 411}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//7
@@ -97,6 +104,7 @@ oCanvas.domReady(function () {
             {x_cell: 1187,y_cell: 412},
             {x_cell: 1187,y_cell: 573}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//8
@@ -109,6 +117,7 @@ oCanvas.domReady(function () {
             {x_cell: 793 ,y_cell: 542},
             {x_cell: 818, y_cell: 542}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//9
@@ -121,6 +130,7 @@ oCanvas.domReady(function () {
             {x_cell: 793 ,y_cell: 562},
             {x_cell: 818, y_cell: 562}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//10
@@ -132,6 +142,7 @@ oCanvas.domReady(function () {
             {x_cell: 990 ,y_cell: 485},
             {x_cell: 990 ,y_cell: 527}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//11
@@ -142,6 +153,7 @@ oCanvas.domReady(function () {
             {x_cell: 990 ,y_cell: 543},
             {x_cell: 970, y_cell: 543}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//12
@@ -151,6 +163,7 @@ oCanvas.domReady(function () {
             {x_cell: 990 ,y_cell: 485},
             {x_cell: 900 ,y_cell: 485}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//13
@@ -161,6 +174,7 @@ oCanvas.domReady(function () {
             {x_cell: 990 ,y_cell: 563},
             {x_cell: 970, y_cell: 563}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//14
@@ -171,6 +185,7 @@ oCanvas.domReady(function () {
             {x_cell: 962, y_cell: 653},
             {x_cell: 962, y_cell: 667}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//15
@@ -182,6 +197,7 @@ oCanvas.domReady(function () {
             {x_cell: 659 ,y_cell: 605},
             {x_cell:659, y_cell: 646}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//16
@@ -205,6 +221,7 @@ oCanvas.domReady(function () {
             //{x_cell: 636 ,y_cell: 633}
             //{x_cell: 636, y_cell: 646}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//17
@@ -218,6 +235,7 @@ oCanvas.domReady(function () {
             {x_cell: 633 ,y_cell: 633},
             {x_cell: 633, y_cell: 646}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//18
@@ -229,6 +247,7 @@ oCanvas.domReady(function () {
             {x_cell: 715 ,y_cell: 735},
             {x_cell: 673, y_cell: 735}
         ],
+        state:1,
         GDwidth:width_all,
         color:"rgba(1,0,0,0)"
     });//19
@@ -238,6 +257,7 @@ oCanvas.domReady(function () {
             {x_cell: 615 ,y_cell: 673},
             {x_cell: 582, y_cell: 673}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//20
@@ -249,6 +269,7 @@ oCanvas.domReady(function () {
             {x_cell: 435 ,y_cell: 736},
             {x_cell: 435, y_cell: 691}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//21
@@ -258,6 +279,7 @@ oCanvas.domReady(function () {
             {x_cell: 414 ,y_cell: 657},
             {x_cell: 414, y_cell: 568}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//22
@@ -269,6 +291,7 @@ oCanvas.domReady(function () {
             {x_cell: 414 ,y_cell: 605},
             {x_cell: 414, y_cell: 563}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//23
@@ -278,6 +301,7 @@ oCanvas.domReady(function () {
             {x_cell: 403 ,y_cell: 485},
             {x_cell: 372 ,y_cell: 485}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//24
@@ -289,6 +313,7 @@ oCanvas.domReady(function () {
             {x_cell: 407, y_cell: 403},
             {x_cell: 407, y_cell: 376}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//25
@@ -303,6 +328,7 @@ oCanvas.domReady(function () {
             {x_cell: 1018, y_cell: 297},
             {x_cell: 1018, y_cell: 349}
         ],
+        state:1,
         GDwidth:width_all,
         color:"rgba(1,0,0,0)"
     });//26
@@ -315,6 +341,7 @@ oCanvas.domReady(function () {
             {x_cell: 464, y_cell: 403},
             {x_cell: 464, y_cell: 435}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//27
@@ -326,6 +353,7 @@ oCanvas.domReady(function () {
             {x_cell: 593 ,y_cell: 403},
             {x_cell: 593, y_cell: 375}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });//28
@@ -335,9 +363,31 @@ oCanvas.domReady(function () {
             {x_cell: 993 ,y_cell: 296},
             {x_cell: 1018 ,y_cell: 296}
         ],
+        state:1,
         GDwidth:width_all,
         color:color_GD
     });
+    var GD30=createGD1({
+        parent:canvas,
+        cells:[
+            {x_cell: 881 ,y_cell: 570},
+            {x_cell: 881 ,y_cell: 635},
+        ],
+        state:1,
+        GDwidth:width_all,
+        color:color_GD
+    });//34   
+    var GD36=createGD1({
+        parent:canvas,
+        cells:[
+            {x_cell: 885 ,y_cell: 605},
+            {x_cell: 848 ,y_cell: 605}
+        ],
+        state:1,
+        GDwidth:width_all,
+        color:color_GD
+        
+    });//40
 
     var img1=canvas.display.image({
         x:692,
@@ -800,6 +850,8 @@ oCanvas.domReady(function () {
         GD23.advance();
         GD24.advance();
         GD25.advance();
+        GD30.advance();
+        GD36.advance();
 
         if((GD0101.state==0)&&(GD25.state==1)){
         	setFMColorRed("FM064");
@@ -906,6 +958,8 @@ oCanvas.domReady(function () {
         GD23.init();
         GD24.init();
         GD25.init();
+        GD30.init();
+        GD36.init();
         
         img1.bind("flash",function(){
             $("#name_QS").animate({
