@@ -801,7 +801,7 @@ oCanvas.domReady(function () {
         GD24.advance();
         GD25.advance();
 
-        if(GD0101.state==0){
+        if((GD0101.state==0)&&(GD25.state==1)){
         	setFMColorRed("FM064");
         	GD25.state=2;
         }
