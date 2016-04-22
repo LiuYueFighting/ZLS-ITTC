@@ -1347,7 +1347,7 @@ oCanvas.domReady(function () {
         GD33.init();
         GD34.init();
         GD35.init();
-        img1.bind("flash",function(){
+/*        img1.bind("flash",function(){
             $("#name_QS").animate({
                 height:'200px',opacity:'1'},'fast');
             $("#name_QS").animate({
@@ -1553,15 +1553,13 @@ oCanvas.domReady(function () {
 
             GD16.paused=1;
             GD17.paused=1;
-        });
+        });*/
         canvas.settings.fps=40;
         GD01.paused=1;
         
     }
     
-    $("#panel_heading").click(function(){
-    	$("div.panel").toggle();
-    	}); 
+    $("#panel_heading").click(function(){$("div.panel").toggle();}); 
     
     function fix_qs_right(){
         clearAll();
@@ -1728,10 +1726,11 @@ oCanvas.domReady(function () {
         $("div.panel").show();
     }
     function fix_hx_right(){
-    	
+    	//初始化
         clearAll();
 		hideAllFM();
 		setDefaultFMColor();
+		
 		setFMColorGreen("FM016");
         setFMColorGreen("FM018");
         setFMColorGreen("FM019");
@@ -1759,7 +1758,19 @@ oCanvas.domReady(function () {
 	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
 		}
 		
-    	//动态效果
+		$("#scheme_extra").text("西侧维修");
+		document.getElementById("scheme_extra").onclick=function(){
+			fix_hx_left();
+		}
+		$("#scheme").text("东侧恢复");
+		document.getElementById("scheme").onclick=function(){
+			restore_hx_right();
+		}
+		document.getElementById("export").href="download/EAST_HX_FIX.doc";
+		$("#export").text("生成方案");
+		$("#reset").text("重置");
+
+		//动态效果
         setFMColorRed("FM016");  
 		/*document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
@@ -1771,6 +1782,7 @@ oCanvas.domReady(function () {
 		 */
         $("#init_state").text("状态");
         $("#init_statement").text("东侧阀门维修中");
+        
 		blinTwice("#step_1");
 		blinTwice("#step_1_result");
 		blinTwice("#step_2");
@@ -1779,33 +1791,21 @@ oCanvas.domReady(function () {
     	//管道退水
 		GD11.state=2;
     	GD1001.state=2;
-    	$("#scheme_extra").text("西侧维修");
-    	document.getElementById("scheme_extra").onclick=function(){
-    		fix_hx_left();
-    	}
-    	$("#scheme").text("东侧恢复");
-    	document.getElementById("scheme").onclick=function(){
-    		restore_hx_right();
-    	}
-    	document.getElementById("export").href="download/EAST_HX_FIX.doc";
-    	$("#export").text("生成方案");
-    	$("#reset").text("重置");
-
+    	
+    	//显示面板
         $("div.panel").show();
         
     }
     
     function restore_hx_right(){
     	
+    	document.getElementById("name_HX").style.color="#283a45";
+    	document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
     	//静态部分
     	$("#init_state").text("状态");
     	$("#init_statement").text("东侧阀门恢复中");
-        $(".table_line").attr("style","background:rgba(255,255,255,0.5)");
-        $(".table_line").attr("style","text-align:left");
-        $(".progress-bar").css("width","0px");
+        /*$(".table_line").attr("style","text-align:left");*/
         document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门改造配合<br>方案";
-        document.getElementById("name_HX").style.color="#283a45";
-        document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
         
 /*      setFMColorGreen("FM016");
         setFMColorGreen("FM018");
@@ -1879,15 +1879,13 @@ oCanvas.domReady(function () {
     }
     
     function restore_hx_left(){
+    	document.getElementById("name_HX").style.color="#283a45";
+    	document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
     	//静态部分
     	$("#init_state").text("状态");
     	$("#init_statement").text("西侧阀门恢复中");
-        $(".table_line").attr("style","background:rgba(255,255,255,0.5)");
-        $(".table_line").attr("style","text-align:left");
-        $(".progress-bar").css("width","0px");
+        /*$(".table_line").attr("style","text-align:left");*/
         document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
-        document.getElementById("name_HX").style.color="#283a45";
-        document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
         
 /*      setFMColorGreen("FM014");
         setFMColorGreen("FM017");
@@ -1918,7 +1916,7 @@ oCanvas.domReady(function () {
         document.getElementById("scheme_extra").onclick=function(){
         	fix_hx_left();
         };
-    	document.getElementById("export").href="download/WEST_HX_RECOVER.doc";
+    	document.getElementById("export").href="download/WEST_HX_RECOVER.docx";
     	$("#export").text("生成方案");
     	$("#reset").text("重置");
 		
@@ -1969,17 +1967,18 @@ oCanvas.domReady(function () {
     }
     
     function  fix_hx_left(){
-
+    	//初始化
         clearAll();
 		hideAllFM();
 		setDefaultFMColor();
+		
 		setFMColorGreen("FM014");
         setFMColorGreen("FM017");
         setFMColorGreen("FM019");
+        
         document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
         document.getElementById("name_HX").style.color="#8dd9ff";
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
-        document.getElementById("scheme").style.display="block";
         
         var todolist = [
 		{ "content":"1&nbsp;&nbsp;关闭阀门14#", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水" },
@@ -1996,6 +1995,7 @@ oCanvas.domReady(function () {
 	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
 		}
 		
+		document.getElementById("scheme").style.display="block";
     	$("#scheme").text("东侧维修");
     	document.getElementById("scheme").onclick=function(){
     		fix_hx_right();
@@ -2004,7 +2004,7 @@ oCanvas.domReady(function () {
     	document.getElementById("scheme_extra").onclick=function(){
     		restore_hx_left();
     	}
-    	document.getElementById("export").href="download/WEST_HX_FIX.doc";
+    	document.getElementById("export").href="download/WEST_HX_FIX.docx";
     	$("#export").text("生成方案");
     	$("#reset").text("重置");
     	
@@ -2252,17 +2252,7 @@ oCanvas.domReady(function () {
 
     }
 
-    $("#fix_head").bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-//        this.shadow="0 0 10px #eee";
-//        canvas.redraw();
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-//        this.shadow="0 0 0px #eee";
-//        canvas.redraw();
-    });
-
-    $("#name_QS").click(function(){
+/*    $("#name_QS").click(function(){
         if(confirm("是否将“取水泵房”设置为维修状态？")){
             fix_qs_right();
             document.getElementById("nextPage").onclick=function(){
@@ -2474,7 +2464,7 @@ oCanvas.domReady(function () {
             	decay(18,1);
              },100);
         }
-    });
+    });*/
     
 	$("#name_HX").click(function(){$.messager.confirm('确认','是否将<strong>虹吸滤池</strong>设置为维修状态？', function(r){
 		if(r){
@@ -2482,7 +2472,7 @@ oCanvas.domReady(function () {
 		}
     });
 	});
-    $("#name_QSC1").click(function(){
+/*    $("#name_QSC1").click(function(){
         if(confirm("是否将“#3清水池”设置为维修状态？")){
             fix_qsc3();
             document.getElementById("nextPage").onclick=function(){
@@ -2539,8 +2529,7 @@ oCanvas.domReady(function () {
              },100);
             $("div.panel").show();
         }
-    });
-
+    });*/
 
     $("#reset").bind("click", function () {
         clearAll();
@@ -2686,10 +2675,9 @@ oCanvas.domReady(function () {
         
         //恢复构筑物及其标签的颜色
         $("div#name_gzw .name_ob").attr("style","color:#283a45;");
-        $("div#name_gzw .name_ob").attr("style","background:rgba(255,255,255,0.5);");
-        //恢复表格中单元格的颜色
-        $(".table_line").attr("style","background:rgba(255,255,255,0.5);");
-        $(".table_line").attr("style","text-align:left;");
+        $("div#name_gzw .name_ob").attr("style","background:transparent;");
+        //左对齐
+        /*$(".table_line").attr("style","text-align:left;");*/
         
         //解除功能面板的函数绑定
 //      document.getElementById("scheme").onclick = function(){提示};
