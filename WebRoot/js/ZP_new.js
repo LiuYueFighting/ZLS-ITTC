@@ -558,7 +558,7 @@ $(document).ready(function(){
             x:215,
             y:440,
             origin: { x: "center", y: "top" },
-            font: "bold 22px sans-serif",
+            font: "bold 22px 微软雅黑",
             text: "取水泵房",
             fill: color_txt
         });
@@ -567,7 +567,7 @@ $(document).ready(function(){
             x:180,
             y:20,
             origin: { x: "center", y: "top" },
-            font: "bold 29px Tahoma",
+            font: "bold 29px 微软雅黑",
             text:"新工艺流程图",
             fill:"#0e406b"
         });

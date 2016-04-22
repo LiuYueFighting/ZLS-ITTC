@@ -453,378 +453,378 @@ oCanvas.domReady(function () {
         image:"image/main/qs.png"
     });
     canvas.addChild(img1);
-    img1.bind("click",function(){
-        //window.location.href="QS.jsp";
-    	if(confirm("是否将“取水泵房”设置为维修状态？")){
-            fix_qs_right();
-            document.getElementById("nextPage").onclick=function(){
-                fix_qs_left();
-                window.setTimeout(function(){              
-                	decay(2,1);//GD0101
-                	//decay(6,1);//GD05
-                	//decay(9,1);
-                	decay(10,1);
-                	//decay(33,1);
-                	decay(35,1);
-                	canvas.children[37].fill=color_GD;
-                 },100);
-            };
-            document.getElementById("lastPage").onclick=function(){
-                fix_qs_right();
-                window.setTimeout(function(){  
-                	//GD32.paused=1;
-                	canvas.children[36].fill=color_GD;
-                	decay(3,1);//GD02
-                	decay(4,1);//GD03
-                	//decay(5,1);//GD04
-                	//decay(7,1);
-                	//decay(8,1);//GD07
-                	//decay(11,1);
-                	//decay(12,1);
-                	//decay(13,1);
-                	//decay(14,1);
-                	//decay(15,1);//GD12
-                	//decay(18,1);
-                 },100);
-            };
-            document.getElementById("export").href="download/fix-qs.doc";
-            window.setTimeout(function(){  
-            	//GD32.paused=1;
-            	canvas.children[36].fill=color_GD;
-            	decay(3,1);//GD02
-            	decay(4,1);//GD03
-            	//decay(5,1);//GD04
-            	//decay(7,1);
-            	//decay(8,1);//GD07
-            	//decay(11,1);
-            	//decay(12,1);
-            	//decay(13,1);
-            	//decay(14,1);
-            	//decay(15,1);//GD12
-            	//decay(18,1);
-             },100);
-            $("div.panel").show();
-        }
-    });
-    img1.bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        //$("#name_QS").css("display","inline");
-        this.shadow="0 0 10px #eee";
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        //$("#name_QS").css("display","none");
-    }).bind("flash",function(){
-        this.unbind("flash");
-        window.setTimeout(function(){
-            GD01.paused=1;
-            GD22.paused=1;
-            GD02.paused=1;
-        },100);
-
-    });
+//    img1.bind("click",function(){
+//        //window.location.href="QS.jsp";
+//    	if(confirm("是否将“取水泵房”设置为维修状态？")){
+//            fix_qs_right();
+//            document.getElementById("nextPage").onclick=function(){
+//                fix_qs_left();
+//                window.setTimeout(function(){              
+//                	decay(2,1);//GD0101
+//                	//decay(6,1);//GD05
+//                	//decay(9,1);
+//                	decay(10,1);
+//                	//decay(33,1);
+//                	decay(35,1);
+//                	canvas.children[37].fill=color_GD;
+//                 },100);
+//            };
+//            document.getElementById("lastPage").onclick=function(){
+//                fix_qs_right();
+//                window.setTimeout(function(){  
+//                	//GD32.paused=1;
+//                	canvas.children[36].fill=color_GD;
+//                	decay(3,1);//GD02
+//                	decay(4,1);//GD03
+//                	//decay(5,1);//GD04
+//                	//decay(7,1);
+//                	//decay(8,1);//GD07
+//                	//decay(11,1);
+//                	//decay(12,1);
+//                	//decay(13,1);
+//                	//decay(14,1);
+//                	//decay(15,1);//GD12
+//                	//decay(18,1);
+//                 },100);
+//            };
+//            document.getElementById("export").href="download/fix-qs.doc";
+//            window.setTimeout(function(){  
+//            	//GD32.paused=1;
+//            	canvas.children[36].fill=color_GD;
+//            	decay(3,1);//GD02
+//            	decay(4,1);//GD03
+//            	//decay(5,1);//GD04
+//            	//decay(7,1);
+//            	//decay(8,1);//GD07
+//            	//decay(11,1);
+//            	//decay(12,1);
+//            	//decay(13,1);
+//            	//decay(14,1);
+//            	//decay(15,1);//GD12
+//            	//decay(18,1);
+//             },100);
+//            $("div.panel").show();
+//        }
+//    });
+//    img1.bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        //$("#name_QS").css("display","inline");
+//        this.shadow="0 0 10px #eee";
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        //$("#name_QS").css("display","none");
+//    }).bind("flash",function(){
+//        this.unbind("flash");
+//        window.setTimeout(function(){
+//            GD01.paused=1;
+//            GD22.paused=1;
+//            GD02.paused=1;
+//        },100);
+//
+//    });
     var img11=canvas.display.image({
         x:678,
         y:141,
         image:"image/main/qs2.png"
     });
     canvas.addChild(img11);
-    img11.bind("click",function(){
-    	if(confirm("是否将“取水泵房”设置为维修状态？")){
-            fix_qs_right();
-            document.getElementById("nextPage").onclick=function(){
-                fix_qs_left();
-                window.setTimeout(function(){              
-                	decay(2,1);//GD0101
-                	//decay(6,1);//GD05
-                	//decay(9,1);
-                	decay(10,1);
-                	//decay(33,1);
-                	decay(35,1);
-                	canvas.children[37].fill=color_GD;
-                 },100);
-            };
-            document.getElementById("lastPage").onclick=function(){
-                fix_qs_right();
-                window.setTimeout(function(){  
-                	//GD32.paused=1;
-                	canvas.children[36].fill=color_GD;
-                	decay(3,1);//GD02
-                	decay(4,1);//GD03
-                	//decay(5,1);//GD04
-                	//decay(7,1);
-                	//decay(8,1);//GD07
-                	//decay(11,1);
-                	//decay(12,1);
-                	//decay(13,1);
-                	//decay(14,1);
-                	//decay(15,1);//GD12
-                	//decay(18,1);
-                 },100);
-            };
-            document.getElementById("export").href="download/fix-qs.doc";
-            window.setTimeout(function(){  
-            	//GD32.paused=1;
-            	canvas.children[36].fill=color_GD;
-            	decay(3,1);//GD02
-            	decay(4,1);//GD03
-            	//decay(5,1);//GD04
-            	//decay(7,1);
-            	//decay(8,1);//GD07
-            	//decay(11,1);
-            	//decay(12,1);
-            	//decay(13,1);
-            	//decay(14,1);
-            	//decay(15,1);//GD12
-            	//decay(18,1);
-             },100);
-            $("div.panel").show();
-        }
-    });
-    img11.bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_QS2").css("display","inline");
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        //$("#name_QS2").css("display","none");
-    }).bind("flash",function(){
-        this.unbind("flash");
-    });
+//    img11.bind("click",function(){
+//    	if(confirm("是否将“取水泵房”设置为维修状态？")){
+//            fix_qs_right();
+//            document.getElementById("nextPage").onclick=function(){
+//                fix_qs_left();
+//                window.setTimeout(function(){              
+//                	decay(2,1);//GD0101
+//                	//decay(6,1);//GD05
+//                	//decay(9,1);
+//                	decay(10,1);
+//                	//decay(33,1);
+//                	decay(35,1);
+//                	canvas.children[37].fill=color_GD;
+//                 },100);
+//            };
+//            document.getElementById("lastPage").onclick=function(){
+//                fix_qs_right();
+//                window.setTimeout(function(){  
+//                	//GD32.paused=1;
+//                	canvas.children[36].fill=color_GD;
+//                	decay(3,1);//GD02
+//                	decay(4,1);//GD03
+//                	//decay(5,1);//GD04
+//                	//decay(7,1);
+//                	//decay(8,1);//GD07
+//                	//decay(11,1);
+//                	//decay(12,1);
+//                	//decay(13,1);
+//                	//decay(14,1);
+//                	//decay(15,1);//GD12
+//                	//decay(18,1);
+//                 },100);
+//            };
+//            document.getElementById("export").href="download/fix-qs.doc";
+//            window.setTimeout(function(){  
+//            	//GD32.paused=1;
+//            	canvas.children[36].fill=color_GD;
+//            	decay(3,1);//GD02
+//            	decay(4,1);//GD03
+//            	//decay(5,1);//GD04
+//            	//decay(7,1);
+//            	//decay(8,1);//GD07
+//            	//decay(11,1);
+//            	//decay(12,1);
+//            	//decay(13,1);
+//            	//decay(14,1);
+//            	//decay(15,1);//GD12
+//            	//decay(18,1);
+//             },100);
+//            $("div.panel").show();
+//        }
+//    });
+//    img11.bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_QS2").css("display","inline");
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        //$("#name_QS2").css("display","none");
+//    }).bind("flash",function(){
+//        this.unbind("flash");
+//    });
     var img2=canvas.display.image({
         x:839,
         y:342,
         image:"image/main/5.png"
     });
     canvas.addChild(img2);
-    img2.bind("click",function(){
-        //window.location.href="JJC.jsp";
-    	if(confirm("是否将“#1机加池”设置为维修状态？")){
-            fix_jjc1();
-            document.getElementById("scheme").onclick="";
-
-            document.getElementById("export").href="download/fix-jjc1.docx";
-            window.setTimeout(function(){
-            	decay(6,1);
-                decay(10,1);
-                decay(9,1);
-                decay(13,1);
-             },100);
-            $("div.panel").show();
-        }
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_JJC1").css("display","inline");
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0 #eee";
-        //$("#name_JJC1").css("display","none");
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-        window.setTimeout(function(){
-            GD08.paused=1;
-            GD09.paused=1;
-            GD26.paused=1;
-            GD27.paused=1;
-            GD29.paused=1;
-        },100);
-    });
+//    img2.bind("click",function(){
+//        //window.location.href="JJC.jsp";
+//    	if(confirm("是否将“#1机加池”设置为维修状态？")){
+//            fix_jjc1();
+//            document.getElementById("scheme").onclick="";
+//
+//            document.getElementById("export").href="download/fix-jjc1.docx";
+//            window.setTimeout(function(){
+//            	decay(6,1);
+//                decay(10,1);
+//                decay(9,1);
+//                decay(13,1);
+//             },100);
+//            $("div.panel").show();
+//        }
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_JJC1").css("display","inline");
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0 #eee";
+//        //$("#name_JJC1").css("display","none");
+//    }).bind("flash",function(){
+//
+//        this.unbind("flash");
+//        window.setTimeout(function(){
+//            GD08.paused=1;
+//            GD09.paused=1;
+//            GD26.paused=1;
+//            GD27.paused=1;
+//            GD29.paused=1;
+//        },100);
+//    });
 
     var img21=img2.clone({
         x:1049,
         y:340
     });
     canvas.addChild(img21);
-    img21.bind("click",function(){
-        //window.location.href="JJC.jsp";
-    	if(confirm("是否将“#2机加池”设置为维修状态？")){
-            fix_jjc2();
-            document.getElementById("scheme").onclick="";
-
-            document.getElementById("export").href="download/fix-jjc2.docx";
-            window.setTimeout(function(){
-                decay(7,1);
-                decay(11,1);
-                decay(12,1);
-                decay(13,1);
-                decay(14,1);
-             },100);
-            $("div.panel").show();
-        }
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_JJC2").css("display","inline");
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        //$("#name_JJC2").css("display","none");
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-        window.setTimeout(function(){
-            GD10.paused=1;
-        },100);
-
-    });
+//    img21.bind("click",function(){
+//        //window.location.href="JJC.jsp";
+//    	if(confirm("是否将“#2机加池”设置为维修状态？")){
+//            fix_jjc2();
+//            document.getElementById("scheme").onclick="";
+//
+//            document.getElementById("export").href="download/fix-jjc2.docx";
+//            window.setTimeout(function(){
+//                decay(7,1);
+//                decay(11,1);
+//                decay(12,1);
+//                decay(13,1);
+//                decay(14,1);
+//             },100);
+//            $("div.panel").show();
+//        }
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_JJC2").css("display","inline");
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        //$("#name_JJC2").css("display","none");
+//    }).bind("flash",function(){
+//
+//        this.unbind("flash");
+//        window.setTimeout(function(){
+//            GD10.paused=1;
+//        },100);
+//
+//    });
     var img22=img2.clone({
         x:1127,
         y:573
     });
     canvas.addChild(img22);
-    img22.bind("click",function(){
-        //window.location.href="JJC.jsp";
-    	if(confirm("是否将“#3机加池”设置为维修状态？")){
-            fix_jjc3();
-            document.getElementById("scheme").onclick="";
+//    img22.bind("click",function(){
+//        //window.location.href="JJC.jsp";
+//    	if(confirm("是否将“#3机加池”设置为维修状态？")){
+//            fix_jjc3();
+//            document.getElementById("scheme").onclick="";
+//
+//            document.getElementById("export").href="download/fix-jjc3.docx";
+//            window.setTimeout(function(){              
+//            	decay(5,1);//GD04
+//            	decay(8,1);//GD07
+//            	decay(15,1);//GD12
+//             },100);
+//            $("div.panel").show();
+//        }
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_JJC3").css("display","inline");
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        //$("#name_JJC3").css("display","none");
+//    }).bind("flash",function(){
+//
+//        this.unbind("flash");
+//        window.setTimeout(function(){
+//            GD12.paused=1;
+//        },100);
+//
+//    });
 
-            document.getElementById("export").href="download/fix-jjc3.docx";
-            window.setTimeout(function(){              
-            	decay(5,1);//GD04
-            	decay(8,1);//GD07
-            	decay(15,1);//GD12
-             },100);
-            $("div.panel").show();
-        }
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_JJC3").css("display","inline");
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        //$("#name_JJC3").css("display","none");
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-        window.setTimeout(function(){
-            GD12.paused=1;
-        },100);
-
-    });
-    //V?????????
     var img3=canvas.display.image({
         x:847,
         y:665,
         image:"image/main/6.png"
     });
     canvas.addChild(img3);
-    img3.bind("click",function(){
-        //window.location.href="VL.jsp";
-    	if(confirm("是否将“V型滤池设置为维修状态？”")){
-            fix_vl();
-            document.getElementById("scheme").onclick="";
+//    img3.bind("click",function(){
+//        //window.location.href="VL.jsp";
+//    	if(confirm("是否将“V型滤池设置为维修状态？”")){
+//            fix_vl();
+//            document.getElementById("scheme").onclick="";
+//
+//            document.getElementById("export").href="download/fix-vl.docx";
+//            window.setTimeout(function(){
+//            	decay(18,1);//GD15
+//            	decay(15,1);
+//            	canvas.children[38].fill=color_GD;
+//            },100);
+//            $("div.panel").show();
+//        }
+//    }).bind("mouseenter", function () {
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_VL").css("display","inline");
+//    }).bind("mouseleave", function () {
+//        canvas.mouse.cursor("default");
+//        this.shadow="0 0 0px #eee";
+//        //$("#name_VL").css("display","none");
+//
+//    }).bind("flash",function(){
+//
+//        this.unbind("flash");
+//        window.setTimeout(function(){
+//            GD15.paused=1;
+//            GD1501.paused=1;
+//            canvas.children[19].fill="rgba(1,1,1,0)";
+//        },100);
+//
+//    });
 
-            document.getElementById("export").href="download/fix-vl.docx";
-            window.setTimeout(function(){
-            	decay(18,1);//GD15
-            	decay(15,1);
-            	canvas.children[38].fill=color_GD;
-            },100);
-            $("div.panel").show();
-        }
-    }).bind("mouseenter", function () {
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_VL").css("display","inline");
-    }).bind("mouseleave", function () {
-        canvas.mouse.cursor("default");
-        this.shadow="0 0 0px #eee";
-        //$("#name_VL").css("display","none");
-
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-        window.setTimeout(function(){
-            GD15.paused=1;
-            GD1501.paused=1;
-            canvas.children[19].fill="rgba(1,1,1,0)";
-        },100);
-
-    });
-
-    //?????????
+    
     var img4=canvas.display.image({
         x:967,
         y:352,
         image:"image/main/hhj.png"
     });
     canvas.addChild(img4);
-    img4.bind("click",function(){
-        //window.location.href="qsc.jsp";
-    	if(confirm("是否将“旧混合井”设置为维修状态？")){
-            fix_hh_right();
-            document.getElementById("nextPage").onclick=function(){
-                fix_hh_left();
-            };
-            document.getElementById("lastPage").onclick=function(){
-                fix_hh_right();
-            };
-            document.getElementById("export").href="download/fix-hh-old.doc";
-            window.setTimeout(function(){
-                decay(7,1);
-                decay(11,1);
-                decay(12,1);
-                decay(13,1);
-                decay(14,1);
-             },100);
-            $("div.panel").show();
-        }
-    }).bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_QSC1").css("display","inline");
-    }).bind("mouseleave",function(){
-        //$("#name_QSC1").css("display","none");
-        this.shadow="0 0 0px #eee";
-        canvas.mouse.cursor("default");
-    }).bind("flash",function(){
-
-        img4.unbind("flash");
-
-        window.setTimeout(function(){GD05.paused=1;
-            GD06.paused=1;
-            GD07.paused=1;},100);
-
-
-    });
+//    img4.bind("click",function(){
+//        //window.location.href="qsc.jsp";
+//    	if(confirm("是否将“旧混合井”设置为维修状态？")){
+//            fix_hh_right();
+//            document.getElementById("nextPage").onclick=function(){
+//                fix_hh_left();
+//            };
+//            document.getElementById("lastPage").onclick=function(){
+//                fix_hh_right();
+//            };
+//            document.getElementById("export").href="download/fix-hh-old.doc";
+//            window.setTimeout(function(){
+//                decay(7,1);
+//                decay(11,1);
+//                decay(12,1);
+//                decay(13,1);
+//                decay(14,1);
+//             },100);
+//            $("div.panel").show();
+//        }
+//    }).bind("mouseenter",function(){
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_QSC1").css("display","inline");
+//    }).bind("mouseleave",function(){
+//        //$("#name_QSC1").css("display","none");
+//        this.shadow="0 0 0px #eee";
+//        canvas.mouse.cursor("default");
+//    }).bind("flash",function(){
+//
+//        img4.unbind("flash");
+//
+//        window.setTimeout(function(){GD05.paused=1;
+//            GD06.paused=1;
+//            GD07.paused=1;},100);
+//
+//
+//    });
     var img41=canvas.display.image({
         x:1179,
         y:381,
         image:"image/main/hhj2.png"
     });
     canvas.addChild(img41);
-    img41.bind("click",function(){
-        //window.location.href="hhj.jsp";
-    	if(confirm("是否将“新混合井”设置为维修状态？")){
-            fix_hh_new();
-            document.getElementById("scheme").onclick="";
+//    img41.bind("click",function(){
+//        //window.location.href="hhj.jsp";
+//    	if(confirm("是否将“新混合井”设置为维修状态？")){
+//            fix_hh_new();
+//            document.getElementById("scheme").onclick="";
+//
+//            document.getElementById("export").href="download/fix-hh-new.docx";
+//            window.setTimeout(function(){              
+//            	decay(5,1);//GD04
+//            	decay(8,1);//GD07
+//            	decay(15,1);
+//            	decay(18,1);
+//             },100);
+//        }
+//    }).bind("mouseenter",function(){
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_HHJ2").css("display","inline");
+//    }).bind("mouseleave",function(){
+//        //$("#name_HHJ2").css("display","none");
+//        this.shadow="0 0 0px #eee";
+//        canvas.mouse.cursor("default");
+//    }).bind("flash",function(){
+//
+//        img41.unbind("flash");
+//
+//    });
 
-            document.getElementById("export").href="download/fix-hh-new.docx";
-            window.setTimeout(function(){              
-            	decay(5,1);//GD04
-            	decay(8,1);//GD07
-            	decay(15,1);
-            	decay(18,1);
-             },100);
-        }
-    }).bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_HHJ2").css("display","inline");
-    }).bind("mouseleave",function(){
-        //$("#name_HHJ2").css("display","none");
-        this.shadow="0 0 0px #eee";
-        canvas.mouse.cursor("default");
-    }).bind("flash",function(){
-
-        img41.unbind("flash");
-
-    });
-    //???????
     var img5=canvas.display.image({
         x:810,
         y:529,
@@ -865,136 +865,136 @@ oCanvas.domReady(function () {
         image:"image/main/qsc1.png"
     });
     canvas.addChild(img6);
-    img6.bind("click",function(){
-        //window.location.href="qsc.jsp";
-    	if(confirm("是否将“#3清水池”设置为维修状态？")){
-            fix_qsc3();
-            document.getElementById("scheme").onclick=function(){
-            };
-            document.getElementById("export").href="download/fix-qsc3.docx";
-            window.setTimeout(function(){              
-            	decay(25,1);//GD21
-             },100);
-            $("div.panel").show();
-        }
-    }).bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_QSC1").css("display","inline");
-    }).bind("mouseleave",function(){
-        //$("#name_QSC1").css("display","none");
-        this.shadow="0 0 0px #eee";
-        canvas.mouse.cursor("default");
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-        window.setTimeout(function(){
-            GD21.paused=1;
-            GD23.paused=1;
-            GD35.paused=1;
-        },100);
-
-    });
+//    img6.bind("click",function(){
+//        //window.location.href="qsc.jsp";
+//    	if(confirm("是否将“#3清水池”设置为维修状态？")){
+//            fix_qsc3();
+//            document.getElementById("scheme").onclick=function(){
+//            };
+//            document.getElementById("export").href="download/fix-qsc3.docx";
+//            window.setTimeout(function(){              
+//            	decay(25,1);//GD21
+//             },100);
+//            $("div.panel").show();
+//        }
+//    }).bind("mouseenter",function(){
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_QSC1").css("display","inline");
+//    }).bind("mouseleave",function(){
+//        //$("#name_QSC1").css("display","none");
+//        this.shadow="0 0 0px #eee";
+//        canvas.mouse.cursor("default");
+//    }).bind("flash",function(){
+//
+//        this.unbind("flash");
+//        window.setTimeout(function(){
+//            GD21.paused=1;
+//            GD23.paused=1;
+//            GD35.paused=1;
+//        },100);
+//
+//    });
     var img61=canvas.display.image({
         x:287,
         y:253,
         image:"image/main/qsc2.png"
     });
     canvas.addChild(img61);
-    img61.bind("click",function(){
-        //window.location.href="qsc.jsp";
-    	if(confirm("是否将“#1清水池”设置为维修状态？")){
-            fix_qsc1();
-            document.getElementById("scheme").onclick=function(){
-            };
-
-            document.getElementById("export").href="download/fix-qsc1.doc";
-            window.setTimeout(function(){              
-            	decay(25,1);//GD21
-             },100);
-            $("div.panel").show();
-
-        }
-    }).bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_QSC2").css("display","inline");
-    }).bind("mouseleave",function(){
-        //$("#name_QSC2").css("display","none");
-        this.shadow="0 0 0px #eee";
-        canvas.mouse.cursor("default");
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-    });
+//    img61.bind("click",function(){
+//        //window.location.href="qsc.jsp";
+//    	if(confirm("是否将“#1清水池”设置为维修状态？")){
+//            fix_qsc1();
+//            document.getElementById("scheme").onclick=function(){
+//            };
+//
+//            document.getElementById("export").href="download/fix-qsc1.doc";
+//            window.setTimeout(function(){              
+//            	decay(25,1);//GD21
+//             },100);
+//            $("div.panel").show();
+//
+//        }
+//    }).bind("mouseenter",function(){
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_QSC2").css("display","inline");
+//    }).bind("mouseleave",function(){
+//        //$("#name_QSC2").css("display","none");
+//        this.shadow="0 0 0px #eee";
+//        canvas.mouse.cursor("default");
+//    }).bind("flash",function(){
+//
+//        this.unbind("flash");
+//    });
     var img62=canvas.display.image({
         x:462,
         y:251,
         image:"image/main/qsc2.png"
     });
     canvas.addChild(img62);
-    img62.bind("click",function(){
-        //window.location.href="qsc.jsp";
-    	if(confirm("是否将“#2清水池”设置为维修状态？")){
-            fix_qsc2();
-            document.getElementById("scheme").onclick=function(){
-            };
-
-            document.getElementById("export").href="download/fix-qsc2.doc";         
-            window.setTimeout(function(){              
-            	decay(28,1);//GD24
-             },100);
-            $("div.panel").show();
-        }
-    }).bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_QSC3").css("display","inline");
-    }).bind("mouseleave",function(){
-        //$("#name_QSC3").css("display","none");
-        this.shadow="0 0 0px #eee";
-        canvas.mouse.cursor("default");
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-    });
+//    img62.bind("click",function(){
+//        //window.location.href="qsc.jsp";
+//    	if(confirm("是否将“#2清水池”设置为维修状态？")){
+//            fix_qsc2();
+//            document.getElementById("scheme").onclick=function(){
+//            };
+//
+//            document.getElementById("export").href="download/fix-qsc2.doc";         
+//            window.setTimeout(function(){              
+//            	decay(28,1);//GD24
+//             },100);
+//            $("div.panel").show();
+//        }
+//    }).bind("mouseenter",function(){
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_QSC3").css("display","inline");
+//    }).bind("mouseleave",function(){
+//        //$("#name_QSC3").css("display","none");
+//        this.shadow="0 0 0px #eee";
+//        canvas.mouse.cursor("default");
+//    }).bind("flash",function(){
+//
+//        this.unbind("flash");
+//    });
     var img63=canvas.display.image({
         x:432,
         y:434,
         image:"image/main/qsc3.png"
     });
     canvas.addChild(img63);
-    img63.bind("click",function(){
-        //window.location.href="qsc.jsp";
-    	if(confirm("是否将“#4清水池”设置为维修状态？")){
-            fix_qsc4();
-            document.getElementById("scheme").onclick=function(){
-            };
-            document.getElementById("export").href="download/fix-qsc4.docx";
-            window.setTimeout(function(){              
-            	decay(27,1);
-            	decay(28,1);//GD24
-            	canvas.children[39].fill=color_GD;
-             },100);
-            $("div.panel").show();
-        }
-    }).bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_QSC4").css("display","inline");
-    }).bind("mouseleave",function(){
-        //$("#name_QSC4").css("display","none");
-        this.shadow="0 0 0px #eee";
-        canvas.mouse.cursor("default");
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-        window.setTimeout(function(){
-            GD24.paused=1;
-        },100);
-
-
-    });
+//    img63.bind("click",function(){
+//        //window.location.href="qsc.jsp";
+//    	if(confirm("是否将“#4清水池”设置为维修状态？")){
+//            fix_qsc4();
+//            document.getElementById("scheme").onclick=function(){
+//            };
+//            document.getElementById("export").href="download/fix-qsc4.docx";
+//            window.setTimeout(function(){              
+//            	decay(27,1);
+//            	decay(28,1);//GD24
+//            	canvas.children[39].fill=color_GD;
+//             },100);
+//            $("div.panel").show();
+//        }
+//    }).bind("mouseenter",function(){
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_QSC4").css("display","inline");
+//    }).bind("mouseleave",function(){
+//        //$("#name_QSC4").css("display","none");
+//        this.shadow="0 0 0px #eee";
+//        canvas.mouse.cursor("default");
+//    }).bind("flash",function(){
+//
+//        this.unbind("flash");
+//        window.setTimeout(function(){
+//            GD24.paused=1;
+//        },100);
+//
+//
+//    });
 
     var img7=canvas.display.image({
         x:870,
@@ -1002,15 +1002,15 @@ oCanvas.domReady(function () {
         image:"image/main/1.png"
     });
     canvas.addChild(img7);
-    img7.bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_YC").css("display","inline");
-    }).bind("mouseleave",function(){
-        //$("#name_YC").css("display","none");
-        this.shadow="0 0 0px #eee";
-        canvas.mouse.cursor("default");
-    });
+//    img7.bind("mouseenter",function(){
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_YC").css("display","inline");
+//    }).bind("mouseleave",function(){
+//        //$("#name_YC").css("display","none");
+//        this.shadow="0 0 0px #eee";
+//        canvas.mouse.cursor("default");
+//    });
 
     var img8=canvas.display.image({
         x:379,
@@ -1018,123 +1018,123 @@ oCanvas.domReady(function () {
         image:"image/main/tc.png"
     });
     canvas.addChild(img8);
-    img8.bind("click",function(){
-        //window.location.href="hxt.jsp";
-    	if(confirm("是否将“现有活性炭池”设置为维修状态？")){
-            fix_tc_old();
-            document.getElementById("scheme").onclick="";
-
-            document.getElementById("export").href="download/fix-tc-old.doc";
-            window.setTimeout(function(){              
-            	decay(21,1);//GD17  
-            	decay(22,1);//GD18
-             },100);
-        }
-    }).bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_TC").css("display","inline");
-    }).bind("mouseleave",function(){
-        this.shadow="0 0 0px #eee";
-        //$("#name_TC").css("display","none");
-        canvas.mouse.cursor("default");
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-        window.setTimeout(function(){
-            GD18.paused=1;
-            GD19.paused=1;
-        },100);
-
-    });
+//    img8.bind("click",function(){
+//        //window.location.href="hxt.jsp";
+//    	if(confirm("是否将“现有活性炭池”设置为维修状态？")){
+//            fix_tc_old();
+//            document.getElementById("scheme").onclick="";
+//
+//            document.getElementById("export").href="download/fix-tc-old.doc";
+//            window.setTimeout(function(){              
+//            	decay(21,1);//GD17  
+//            	decay(22,1);//GD18
+//             },100);
+//        }
+//    }).bind("mouseenter",function(){
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_TC").css("display","inline");
+//    }).bind("mouseleave",function(){
+//        this.shadow="0 0 0px #eee";
+//        //$("#name_TC").css("display","none");
+//        canvas.mouse.cursor("default");
+//    }).bind("flash",function(){
+//
+//        this.unbind("flash");
+//        window.setTimeout(function(){
+//            GD18.paused=1;
+//            GD19.paused=1;
+//        },100);
+//
+//    });
     var img81=canvas.display.image({
         x:488,
         y:652,
         image:"image/main/tc.png"
     });
     canvas.addChild(img81);
-    img81.bind("click",function(){
-        //window.location.href="hxt.jsp";
-    	if(confirm("是否将“新建活性炭池”设置为维修状态？")){
-            fix_tc_new();
-            document.getElementById("scheme").onclick="";
-
-            document.getElementById("export").href="download/fix-tc-new.doc";
-            window.setTimeout(function(){              
-            	decay(23,1);//GD19
-            	decay(20,1);//GD16
-             },100);
-        }
-    }).bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_TC1").css("display","inline");
-    }).bind("mouseleave",function(){
-        //$("#name_TC1").css("display","none");
-        this.shadow="0 0 0px #eee";
-        canvas.mouse.cursor("default");
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-
-    });
+//    img81.bind("click",function(){
+//        //window.location.href="hxt.jsp";
+//    	if(confirm("是否将“新建活性炭池”设置为维修状态？")){
+//            fix_tc_new();
+//            document.getElementById("scheme").onclick="";
+//
+//            document.getElementById("export").href="download/fix-tc-new.doc";
+//            window.setTimeout(function(){              
+//            	decay(23,1);//GD19
+//            	decay(20,1);//GD16
+//             },100);
+//        }
+//    }).bind("mouseenter",function(){
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_TC1").css("display","inline");
+//    }).bind("mouseleave",function(){
+//        //$("#name_TC1").css("display","none");
+//        this.shadow="0 0 0px #eee";
+//        canvas.mouse.cursor("default");
+//    }).bind("flash",function(){
+//
+//        this.unbind("flash");
+//
+//    });
     var img9=canvas.display.image({
         x:613,
         y:645,
         image:"image/main/cy.png"
     });
     canvas.addChild(img9);
-    img9.bind("click",function(){
-        //window.location.href="cy.jsp";
-    	if(confirm("是否将“臭氧接触池”设置为维修状态？")){
-            fix_cy_right();
-            document.getElementById("nextPage").onclick=function(){
-                fix_cy_left();
-            };
-            document.getElementById("lastPage").onclick=function(){
-                fix_cy_right();
-            };
-            document.getElementById("export").href="download/fix-cy.doc";
-            window.setTimeout(function(){              
-            	decay(21,1);//GD17
-             },100);
-            $("div.panel").show();
-        }
-
-    }).bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_CY").css("display","inline");
-    }).bind("mouseleave",function(){
-        //$("#name_CY").css("display","none");
-        this.shadow="0 0 0px #eee";
-        canvas.mouse.cursor("default");
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-        window.setTimeout(function(){
-            GD16.paused=1;
-            GD17.paused=1;
-        },100);
-
-    });
+//    img9.bind("click",function(){
+//        //window.location.href="cy.jsp";
+//    	if(confirm("是否将“臭氧接触池”设置为维修状态？")){
+//            fix_cy_right();
+//            document.getElementById("nextPage").onclick=function(){
+//                fix_cy_left();
+//            };
+//            document.getElementById("lastPage").onclick=function(){
+//                fix_cy_right();
+//            };
+//            document.getElementById("export").href="download/fix-cy.doc";
+//            window.setTimeout(function(){              
+//            	decay(21,1);//GD17
+//             },100);
+//            $("div.panel").show();
+//        }
+//
+//    }).bind("mouseenter",function(){
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_CY").css("display","inline");
+//    }).bind("mouseleave",function(){
+//        //$("#name_CY").css("display","none");
+//        this.shadow="0 0 0px #eee";
+//        canvas.mouse.cursor("default");
+//    }).bind("flash",function(){
+//
+//        this.unbind("flash");
+//        window.setTimeout(function(){
+//            GD16.paused=1;
+//            GD17.paused=1;
+//        },100);
+//
+//    });
     var img10=canvas.display.image({
         x:623,
         y:465,
         image:"image/main/cyc.png"
     });
     canvas.addChild(img10);
-    img10.bind("click",function(){
-        window.location.href="cy.jsp";
-    }).bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_CYC").css("display","inline");
-    }).bind("mouseleave",function(){
-        //$("#name_CYC").css("display","none");
-        this.shadow="0 0 0px #eee";
-        canvas.mouse.cursor("default");
-    });
+//    img10.bind("click",function(){
+//        window.location.href="cy.jsp";
+//    }).bind("mouseenter",function(){
+//        canvas.mouse.cursor("pointer");
+//        this.shadow="0 0 10px #eee";
+//        //$("#name_CYC").css("display","inline");
+//    }).bind("mouseleave",function(){
+//        //$("#name_CYC").css("display","none");
+//        this.shadow="0 0 0px #eee";
+//        canvas.mouse.cursor("default");
+//    });
 
 
     GD15.bind("start",function(){

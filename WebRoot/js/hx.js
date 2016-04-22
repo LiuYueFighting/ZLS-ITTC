@@ -16,7 +16,7 @@ oCanvas.domReady(function () {
     });
     var SC02=createSC({
         parent:canvas,
-        x:528,y:161,height:16,width:37,trail_flag:0,speed:speed_SC,color:color_SC
+        x:529,y:161,height:16,width:38,trail_flag:0,speed:speed_SC,color:color_SC
     });
     var SC03=createSC({
         parent:canvas,
@@ -42,7 +42,7 @@ oCanvas.domReady(function () {
     canvas.addChild(SC04);
     var SC05=createSC({
         parent:canvas,
-        x:458,y:403,height:275,width:403,trail_flag:1,speed:speed_SC,color:color_SC,
+        x:462,y:405,height:275,width:403,trail_flag:1,speed:speed_SC,color:color_SC,
         trail: [
             {x_t: 0, y_t: 0},
             {x_t: 0, y_t: 281},
@@ -97,7 +97,7 @@ oCanvas.domReady(function () {
             {x: 60, y: 0, w: 60, h: 60, d: 400},
             {x: 0, y: 0, w: 60, h: 60, d: 800}
         ]
-    }).add();//.scale(1,2)
+    }).scale(1,2).add();//.scale(1,2)
     var arrow_1 = canvas.display.sprite({
         x: 568,
         y: 504,
@@ -161,7 +161,7 @@ oCanvas.domReady(function () {
         ]
     }).add();//.scale(0.5)
     var arrow_4 = canvas.display.sprite({
-        x: 600,
+        x: 605,
         y: 100,
         image: "image/water-arrow/up.png",
         generate: false,
@@ -169,7 +169,7 @@ oCanvas.domReady(function () {
             {x: 60, y: 0, w: 60, h: 60, d: 400},
             {x: 0, y: 0, w: 60, h: 60, d: 800}
         ]
-    }).add();//.scale(1,2)
+    }).scale(0.5,1).add();//.scale(1,2)
 //添加文字标注
     var txt1=canvas.display.text({
         x:696,
