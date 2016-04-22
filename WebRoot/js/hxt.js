@@ -197,17 +197,21 @@ oCanvas.domReady(function () {
          arrow_0.start();
          GD02.full=0;
      }
+     if(SC01.height_now>=SC01.Height*0.1){
+    	 SC02.start=1;
+     }
      if(SC01.full==1){
-         SC01.full=0;
-         SC02.start=1;
+         SC01.full=0;         
          arrow_2.start();
          arrow_3.start();
          arrow_4.start();
          arrow_5.start();
      }
      if(SC02.full==1){
-         GD04.paused=1;
-         SC02.full=0;
+    	 arrow_0.stopAnimation();
+    	 arrow_0.frame=2;
+         GD04.paused=1;         
+         SC02.full=0;         
      }
      if(GD04.full==1){
          GD05.paused=1;

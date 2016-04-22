@@ -16,11 +16,11 @@ oCanvas.domReady(function () {
  });
  var SC001=createSC({
      parent:canvas,
-     x:618,y:579,height:42,width:28,trail_flag:0,speed:speed_SC*0.5,color:color_SC
+     x:618,y:579,height:42,width:28,trail_flag:0,speed:speed_SC*0.8,color:color_SC
  });
  var SC002=createSC({
      parent:canvas,
-     x:599,y:526,height:53,width:67,trail_flag:1,speed:speed_SC,color:color_SC,
+     x:599,y:526,height:53,width:67,trail_flag:1,speed:speed_SC*1.1,color:color_SC,
       trail: [
           {x_t: 0, y_t: 0},
           {x_t: 19, y_t: 53},         

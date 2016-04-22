@@ -34,7 +34,7 @@ oCanvas.domReady(function () {
         height_now: 0,
         trail_flag: 0,
         t: 7540,
-        speed:speed_SC*1.3,
+        speed:speed_SC*2,
         fill:color_SC,
         full:0,
         start:0
@@ -83,7 +83,7 @@ oCanvas.domReady(function () {
     canvas.addChild(SC03);
     var SC002=createSC({
         parent:canvas,
-        x:866,y:529,height:8,width:364,trail_flag:0,speed:speed_SC*0.1,color:color_SC
+        x:866,y:529,height:8,width:364,trail_flag:0,speed:speed_SC*0.026,color:color_SC
     });
 
     var fg = canvas.display.image({
