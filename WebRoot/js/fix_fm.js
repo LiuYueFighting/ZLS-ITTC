@@ -346,7 +346,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img1);
     img1.bind("click",function(){
-        window.location.href="QS.jsp";
+       // window.location.href="QS.jsp";
     });
     img1.bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
@@ -372,7 +372,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img11);
     img11.bind("click",function(){
-        window.location.href="QS.jsp";
+      //  window.location.href="QS.jsp";
     });
     img11.bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
@@ -392,7 +392,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img2);
     img2.bind("click",function(){
-        window.location.href="JJC.jsp";
+       // window.location.href="JJC.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -416,7 +416,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img21);
     img21.bind("click",function(){
-        window.location.href="JJC.jsp";
+     //   window.location.href="JJC.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -439,7 +439,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img22);
     img22.bind("click",function(){
-        window.location.href="JJC.jsp";
+       // window.location.href="JJC.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -464,7 +464,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img3);
     img3.bind("click",function(){
-        window.location.href="VL.jsp";
+      //  window.location.href="VL.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -493,7 +493,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img4);
     img4.bind("click",function(){
-        window.location.href="hhj.jsp";
+   //     window.location.href="hhj.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -519,7 +519,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img41);
     img41.bind("click",function(){
-        window.location.href="hhj.jsp";
+    //    window.location.href="hhj.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -541,7 +541,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img5);
     img5.bind("click",function(){
-        window.location.href="hx.jsp";
+     //   window.location.href="hx.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -568,7 +568,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img6);
     img6.bind("click",function(){
-        window.location.href="qsc.jsp";
+     //   window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -593,7 +593,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img61);
     img61.bind("click",function(){
-        window.location.href="qsc.jsp";
+      //  window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -613,7 +613,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img62);
     img62.bind("click",function(){
-        window.location.href="qsc.jsp";
+      //  window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -633,7 +633,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img63);
     img63.bind("click",function(){
-        window.location.href="qsc.jsp";
+      //  window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -675,7 +675,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img8);
     img8.bind("click",function(){
-        window.location.href="hxt.jsp";
+      //  window.location.href="hxt.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -700,7 +700,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img81);
     img81.bind("click",function(){
-        window.location.href="hxt.jsp";
+    //    window.location.href="hxt.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -721,7 +721,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img9);
     img9.bind("click",function(){
-        window.location.href="cy.jsp";
+      //  window.location.href="cy.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -746,7 +746,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img10);
     img10.bind("click",function(){
-        window.location.href="cy.jsp";
+       // window.location.href="cy.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 10px #eee";
@@ -806,10 +806,14 @@ oCanvas.domReady(function () {
         	GD25.state=2;
         	blinTwice("#step_2");
         }
-     
+       
         if((GD0101.state==1)&&(GD25.state==0)){        	
         	GD25.state=3;
+        	
         }
+//        if((GD0101.state==1)&&(GD25.state==1)){
+//        	blinTwice("#step_3");
+//        }
 //        if((GD11.state==0)&&(GD1001.state==0)){        	
 //        	setFMColorRed("FM018");
 //        	GD141.state=2;
