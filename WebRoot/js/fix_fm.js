@@ -36,6 +36,16 @@ oCanvas.domReady(function () {
             {x_cell: 707 ,y_cell: 223},
             {x_cell: 769 ,y_cell: 261},
             {x_cell: 989 ,y_cell: 261},
+            {x_cell: 989, y_cell: 345}
+        ],
+        state:1,
+        GDwidth:width_all,
+        color:color_GD
+    });//2
+    var GD0102=createGD1({
+        parent:canvas,
+        cells:[
+            {x_cell: 989 ,y_cell: 345},
             {x_cell: 989, y_cell: 355}
         ],
         state:1,
@@ -822,6 +832,7 @@ oCanvas.domReady(function () {
     canvas.setLoop(function () {
         GD01.advance();
         GD0101.advance();
+        GD0102.advance();
         GD02.advance();
         GD03.advance();
         GD04.advance();
@@ -858,10 +869,16 @@ oCanvas.domReady(function () {
         	GD25.state=2;
         	blinTwice("#step_2");
         }
-       
+       if((GD0101.state==0)&&(GD25.state==0)&&(GD0102.state==1)){
+    	  GD0102.state=2;
+    	  blinTwice("#step_3");
+       }
         if((GD0101.state==1)&&(GD25.state==0)){        	
         	GD25.state=3;
-        	
+        	GD0102.state=3;  	
+        }
+        if((GD0101.state==1)&&(GD25.state==0)){        	
+        	GD0102.state=3;	
         }
 //        if((GD0101.state==1)&&(GD25.state==1)){
 //        	blinTwice("#step_3");

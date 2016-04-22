@@ -68,7 +68,7 @@
     position: absolute;
     left: 1475px;
     top: 300px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     font-family: '微软雅黑', 'Arial';
     width: 142px;
@@ -79,7 +79,7 @@
     #check_div h1{
     color: #223bb8;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     }
 /*     #myContent a{
     color: #283a45;
