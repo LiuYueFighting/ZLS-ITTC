@@ -804,6 +804,7 @@ oCanvas.domReady(function () {
         if((GD0101.state==0)&&(GD25.state==1)){
         	setFMColorRed("FM064");
         	GD25.state=2;
+        	blinTwice("#step_2");
         }
      
         if((GD0101.state==1)&&(GD25.state==0)){        	
@@ -1192,9 +1193,9 @@ oCanvas.domReady(function () {
     	$("#init_statement").text("062#阀门维修中");
 
         /*document.getElementById("scheme").onclick="";*/
-        document.getElementById("step_1").innerHTML="关闭09#阀门";
-        document.getElementById("step_2").innerHTML="关闭064#阀门";
-        document.getElementById("step_3").innerHTML="堵塞062#阀门下侧管道";
+        document.getElementById("step_1").innerHTML="1&nbsp;&nbsp;关闭09#阀门";
+        document.getElementById("step_2").innerHTML="2&nbsp;&nbsp;关闭064#阀门";
+        document.getElementById("step_3").innerHTML="3&nbsp;&nbsp;堵塞062#阀门下侧管道";
         
 		$("#scheme").text("62#阀门恢复");
 		document.getElementById("scheme").onclick=function(){
@@ -1206,6 +1207,7 @@ oCanvas.domReady(function () {
 		$("#reset").text("重置");
 
         setFMColorRed("FM09");
+        blinTwice("#step_1");
         GD0101.state=2;
 //        window.setTimeout(function(){
 //           decay(2,1);
@@ -1490,6 +1492,19 @@ oCanvas.domReady(function () {
 //        }
 //    });
     $("#panel_heading").click(function(){$("div.panel").toggle();});
-
+    
+    function blinTwice(jqueryDom){
+        $(jqueryDom).animate({
+            opacity:'1'},'fast');
+        $(jqueryDom).animate({
+            opacity:'0'},'fast');
+        $(jqueryDom).animate({
+            opacity:'1'},'fast');
+        $(jqueryDom).animate({
+            opacity:'0'},'fast');
+        $(jqueryDom).animate({
+            opacity:'1'},'fast');
+    }
+    
 });
 
