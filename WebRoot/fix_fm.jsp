@@ -17,12 +17,8 @@
     <link rel="stylesheet" href="css/breadcrumb.css">
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <link rel="stylesheet" href="css/FM&GZW_name.css">
-    
-        <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
-    
-     <link rel="stylesheet" href="css/bootstrap.min.css">
-     
-         
+    <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 	<link rel="stylesheet" type="text/css" href="style/myeasyui.css" />  
     
@@ -155,14 +151,6 @@
 	    }
     </style>
     <script>
-    var hide=1;
-        function changeImage(id){
-        var image = document.getElementById(id);
-        if(image.src.match("image/y3.png"))
-        image.src = "image/y2.png";
-        else image.src = "image/y3.png";
-        }
-
 	function setFMColorRed(id){
     	var image = document.getElementById(id);
     	var FMTagId = "W" + id;
@@ -183,69 +171,12 @@
     	image.src = "image/y3-35x37.png";
     }
 
-    function showFMName(id){
-    document.getElementById(id).style.display="block";
-    document.getElementById("W"+id).style.display="block";
-
-    }
-    function notShowFMName(id){
-    if(id=="FM062"||id=="FM019") return;
-    document.getElementById(id).style.display="none";
-    document.getElementById("W"+id).style.display="none";
-    }
-    
     function hideAllFM(){
    	//隐藏所有阀门（包括阀门对应的标签）
 	$(".fm_default_green").attr("style","display:none;");
 	$(".fm_default_red").attr("style","display:none;");
 	$(".fm_default_hide").attr("style","display:none;");
 	}
-
-    function hideList(){
-    $("div.panel").hide();
-    }
-    function showList(){
-    $("div.panel").show();
-    }
-    function setShow(){
-    showList();
-    <%--document.getElementById("show_hide").innerHTML='隐藏';--%>
-    hide=0;
-    }
-    function changeHide(){
-        if(hide==1){
-            showList();
-            <%--document.getElementById("show_hide").innerHTML='隐藏';--%>
-            hide=0;
-            return;
-        }
-        else if(hide==0){
-            hideList();
-            <%--document.getElementById("show_hide").innerHTML='显示';--%>
-            hide=1;
-            return;
-        }
-    }
-
-    <%--function load(){--%>
-    <%--for(i in fmArray){--%>
-    <%--clearOpenDgree(fmArray[i]);--%>
-    <%--}--%>
-    <%--}--%>
-    var fmArray = new Array("FM05","FM06","FM07","FM09","FM010","FM065","FM062","FM063","FM064","FM045","FM014","FM015","FM069","FM066","FM016","FM068","FM017","FM018","FM019","FM020","FM052","FM056","FM053","FM054","FM057","FM058","FM059","FM021","FM022","FM046","FM023","FM024","FM025","FM044","FM055","FM026","FM047","FM048","FM049","FM050","FM051");
-    function showFM(e){
-    if(e.checked==false){
-    for(i in fmArray){
-    showFMName(fmArray[i]);
-    }
-    }
-
-    else {
-    for(i in fmArray){
-    notShowFMName(fmArray[i]);
-    }
-    }
-    }
     </script>
 </head>
 <body>
@@ -263,24 +194,24 @@
     <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="true" onclick="showName(this)"> 默认未选中</label>
     <p class="name_Model" id="FMShow">阀门显示</p>
     <label><input id="chackBox_showFM" class="mui-switch mui-switch-anim" type="checkbox" checked="false" onclick="showFM(this)"> 默认未选中</label> -->
-    <a href="QS.jsp" id="name_QS1"  class="name_ob" style="text-decoration: none">取水泵房</a>
-    <a href="QS.jsp" id="name_QS2"  class="name_ob" style="text-decoration: none">取水泵房</a>
-    <a href="JJC.jsp" id="name_JJC1" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;1#<br>机加池</a>
-    <a href="JJC.jsp" id="name_JJC2" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;2#<br>机加池</a>
-    <a href="JJC.jsp" id="name_JJC3" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;3#<br>机加池</a>
-    <a href="VL.jsp" id="name_VL"   class="name_ob" style="text-decoration: none">V型滤池</a>
-    <a href="hxt.jsp" id="name_TC"   class="name_ob" style="text-decoration: none">1#炭滤池</a>
-    <a href="hxt.jsp" id="name_TC1"  class="name_ob" style="text-decoration: none">2#炭滤池</a>
-    <a href="cy.jsp" id="name_CYC"  class="name_ob" style="text-decoration: none">臭氧生产车间</a>
-    <a href="cy.jsp" id="name_CY"   class="name_ob" style="text-decoration: none">&nbsp;臭氧<br>接触池</a>
+    <a href="#" id="name_QS1"  class="name_ob" style="text-decoration: none">取水泵房</a>
+    <a href="#" id="name_QS2"  class="name_ob" style="text-decoration: none">取水泵房</a>
+    <a href="#" id="name_JJC1" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;1#<br>机加池</a>
+    <a href="#" id="name_JJC2" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;2#<br>机加池</a>
+    <a href="#" id="name_JJC3" class="name_ob" style="text-decoration: none">&nbsp;&nbsp;&nbsp;3#<br>机加池</a>
+    <a href="#" id="name_VL"   class="name_ob" style="text-decoration: none">V型滤池</a>
+    <a href="#" id="name_TC"   class="name_ob" style="text-decoration: none">1#炭滤池</a>
+    <a href="#" id="name_TC1"  class="name_ob" style="text-decoration: none">2#炭滤池</a>
+    <a href="#" id="name_CYC"  class="name_ob" style="text-decoration: none">臭氧生产车间</a>
+    <a href="#" id="name_CY"   class="name_ob" style="text-decoration: none">&nbsp;臭氧<br>接触池</a>
     <a href="#" id="name_YC"   class="name_ob" style="text-decoration: none">预沉池</a>
-    <a href="hhj.jsp" id="name_HHJ1" class="name_ob" style="text-decoration: none">旧混合井</a>
-    <a href="hhj.jsp" id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
-    <a href="hx.jsp" id="name_HX"   class="name_ob" style="text-decoration: none">虹吸滤池</a>
-    <a href="qsc.jsp" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
-    <a href="qsc.jsp" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
-    <a href="qsc.jsp" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
-    <a href="qsc.jsp" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
+    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">旧混合井</a>
+    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
+    <a href="#" id="name_HX"   class="name_ob" style="text-decoration: none">虹吸滤池</a>
+    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
+    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
+    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
+    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
 
  	<!-- 阀门显示为红色 -->
     <img id="FM022" src="image/y2-35x37.png" class="fm_default_red">
@@ -378,40 +309,40 @@
     <div id="fix-panel">
     	<div>
 	    	<button type="button" id="panel_heading" class="hcc">
-	    		<h2 id="fix_head" >请点击需要维修的构筑物</h2>
+	    		<h2 id="fix_head" >请点击需要维修的阀门</h2>
 	    	</button>
 	    </div>
 
 		<div class="panel panel-info" id="init_stage">
-			<div class="panel-heading">初始状态</div>
+			<div id="init_state" class="panel-heading">初始状态</div>
 			<table class="table">
-				<tr><td id="init_state">全场正常运行</td></tr>
+				<tr><td id="init_statement">全场正常运行</td></tr>
 			</table>
 		</div>
 
 		<div class="panel panel-info" id="fix_table">
 			<div class="panel-heading">操作步骤</div>
 			<table class="table">
-				<tr><td id="index_1">&nbsp;</td><td id="step_1" class="table_td_left" style="text-align: left">&nbsp;</td></tr>
-				<tr><td>&nbsp;</td><td id="step_1_result" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td id="index_2">&nbsp;</td><td id="step_2" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td>&nbsp;</td><td id="step_2_result" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td id="index_3">&nbsp;</td><td id="step_3" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td>&nbsp;</td><td id="step_3_result" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td id="index_4">&nbsp;</td><td id="step_4" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td>&nbsp;</td><td id="step_4_result" class="table_td_left" style="text-align: left"> </td></tr>
-				<tr><td id="index_5">&nbsp;</td><td id="step_5" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td>&nbsp;</td><td id="step_5_result" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td id="index_6">&nbsp;</td><td id="step_6" class="table_td_left" style="text-align: left"></td></tr>
-				<tr><td>&nbsp;</td><td id="step_6_result" class="table_td_left" style="text-align: left"></td></tr>
+				<tr><td id="step_1" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_1_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_2" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_2_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_3" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_3_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_4" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_4_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_5" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_5_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_6" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_6_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
 			</table>
 		</div>
 
 		<div class="panel panel-info" id="panel_button">
 			<div class="panel-heading">功能</div>
 			<table class="table">
-				<tr><td class="hcc"><a href="#" id="export">生成方案</a></td><td id="restore" class="hcc">恢复运行</td></tr>
-				<tr><td id="reset" class="hcc">重置</td><td id="scheme" class="hcc">&nbsp;</td></tr>
+				<tr><!-- <td id="scheme_extra" class="hcc">&nbsp;</td> --><td id="scheme" class="hcc" colspan="2">&nbsp;</td></tr>
+				<tr><td class="hcc"><a href="#" id="export">&nbsp;</a></td><td id="reset" class="hcc">&nbsp;</td></tr>
 			</table>
 		</div>
     </div>

@@ -342,18 +342,18 @@
 		<div class="panel panel-info" id="fix_table">
 			<div class="panel-heading">操作步骤</div>
 			<table class="table">
-				<tr><td id="step_1" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_1_result" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_2" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_2_result" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_3" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_3_result" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_4" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_4_result" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_5" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_5_result" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_6" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_6_result" class="table_td_left" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_1" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_1_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_2" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_2_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_3" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_3_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_4" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_4_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_5" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_5_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_6" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_6_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
 			</table>
 		</div>
 
