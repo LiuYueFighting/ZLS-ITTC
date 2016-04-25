@@ -135,7 +135,7 @@
         <ol class="breadcrumb">
         <li><a href="main.jsp">动态演示</a></li>
         <li><a href="main.jsp">厂平展示</a></li>
-        <li class="active">取水泵房</li>
+        <li class="active">混合井</li>
         </ol>
         <div class="container-fluid">
         <div id="myContent" class="row" style="overflow: hidden">

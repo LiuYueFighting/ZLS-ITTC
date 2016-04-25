@@ -134,7 +134,7 @@
     <ol class="breadcrumb">
     <li><a href="main.jsp">动态演示</a></li>
     <li><a href="main.jsp">厂平展示</a></li>
-    <li class="active">取水泵房</li>
+    <li class="active">活性炭池</li>
     </ol>
     <div id="myContent" style="overflow: hidden">
     
