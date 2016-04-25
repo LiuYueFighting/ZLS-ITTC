@@ -197,6 +197,7 @@
                 <option value="hxt.jsp">活性炭池</option>
                 <option value="qsc.jsp" selected>清水池</option>
                 <option value="mc.jsp">膜车间</option>
+                <option value="ps.jsp">配水泵房</option>
                 </select>
                 </div>
                 <%--<div id="list_group" class="list-group">--%>

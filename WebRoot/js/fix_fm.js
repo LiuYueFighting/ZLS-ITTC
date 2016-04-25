@@ -1235,14 +1235,6 @@ oCanvas.domReady(function () {
 
     }
     function restore_fm062(){
-    	setFMColorGreen("FM062");
-    	window.setTimeout(function(){
-       		setFMColorGreen("FM064");
-             },300);
-        window.setTimeout(function(){
-        	setFMColorGreen("FM09");
-        	GD0101.state=3;
-             },700);
         
         document.getElementById("fix_head").innerHTML="62#阀门维修配合方案";
         
@@ -1253,6 +1245,23 @@ oCanvas.domReady(function () {
  		document.getElementById("scheme").onclick=function(){
 			fix_fm062();
 		}
+ 		
+        document.getElementById("step_1").innerHTML="1&nbsp;&nbsp;打开09#阀门";
+        document.getElementById("step_2").innerHTML="2&nbsp;&nbsp;打开064#阀门";
+        document.getElementById("step_3").innerHTML="3&nbsp;&nbsp;疏通062#阀门下侧管道";
+ 		
+    	setFMColorGreen("FM062");
+    	blinTwice("#step_3");
+    	window.setTimeout(function(){
+       		setFMColorGreen("FM064");
+       		blinTwice("#step_2");
+             },300);
+        window.setTimeout(function(){
+        	setFMColorGreen("FM09");
+        	GD0101.state=3;
+        	blinTwice("#step_1");
+             },700);
+        
  		$("div.panel").show();
     }
     function fix_fm062(){

@@ -19,7 +19,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
     <script src="js/my_oCanvas.js"></script>
-    <script src="js/QS.js"></script>
+    <script src="js/ps.js"></script>
 
 
     <style>
@@ -139,7 +139,7 @@
     <ol class="breadcrumb">
     <li><a href="main.jsp">动态演示</a></li>
     <li><a href="main.jsp">厂平展示</a></li>
-    <li class="active">取水泵房</li>
+    <li class="active">配水泵房</li>
     </ol>
     <div class="container-fluid">
         <div id="myContent" class="row" style="overflow: hidden;">
@@ -178,10 +178,13 @@
     <div class="panel-heading">运行参数</div>
     <table class="table">
     <tr>
-    <td>取水能力</td><td>2000m<sup>3</sup>/h</td>
+    <td>水泵扬程</td>
     </tr>
     <tr>
-    <td>次氯酸钠</td><td>2.0mg/L</td>
+    <td>白天</td><td>0.45Mp</td>
+    </tr>
+    <tr>
+    <td>夜间</td><td>0.44Mp</td>
     </tr>
     </table>
     </div>
@@ -191,14 +194,20 @@
     <div class="panel-heading">水质标准</div>
     <table class="table">
     <tr>
-    <td>出水浊度</td><td><20NTU</td>
+    <td>余氯</td><td>&ge;0.3mg/L</td>
+    </tr>
+    <tr>
+    <td>浊度</td><td>&le;0.3mg/L</td>
+    </tr>
+    <tr>
+    <td>嗅味</td><td>无味</td>
     </tr>
     </table>
     </div>
     </div>
     <div id="list_group" class="list-group">
     <select name="server" onchange="self.location.href=options[selectedIndex].value" id="server">
-    <option value="QS.jsp" selected>取水泵房</option>
+    <option value="QS.jsp">取水泵房</option>
     <option value="hhj.jsp">混合井</option>
     <option value="JJC.jsp">机加池</option>
     <option value="VL.jsp">V型滤池</option>
@@ -207,7 +216,7 @@
     <option value="hxt.jsp">活性炭池</option>
     <option value="qsc.jsp">清水池</option>
     <option value="mc.jsp" >膜车间</option>
-    <option value="ps.jsp">配水泵房</option>
+    <option value="ps.jsp" selected>配水泵房</option>
     </select>
     </div>
 
