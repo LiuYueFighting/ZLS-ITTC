@@ -1818,6 +1818,7 @@ oCanvas.domReady(function () {
 		document.getElementById("scheme_extra").onclick=function(){
 //			fix_hx_left();
 			//提示：请先完成东侧恢复
+			$.messager.alert('错误',  '<strong>请先完成东侧恢复</strong>', 'info');
 		}
 		$("#scheme").text("东侧恢复");
 		document.getElementById("scheme").onclick=function(){
@@ -2059,6 +2060,7 @@ oCanvas.domReady(function () {
     	document.getElementById("scheme").onclick=function(){
 //    		fix_hx_right();
     		//提示：请先完成西侧恢复
+    		$.messager.alert('提示', '<strong>请先完成西侧恢复</strong>', 'info');
     	}
     	$("#scheme_extra").text("西侧恢复");
     	document.getElementById("scheme_extra").onclick=function(){
