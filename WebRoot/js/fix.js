@@ -1261,21 +1261,12 @@ oCanvas.domReady(function () {
     		setFMColorRed("FM018");
 //    		console.log(document.getElementById("FM018").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png');
 
-//    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-//    		var timer = setTimeout(function(){
-    			console.log("1111111");
-    			blinTwice("#step_3");
-    			blinTwice("#step_3_result");
-    			blinTwice("#step_4");
-    			blinTwice("#step_4_result");
-    			blinTwice("#step_5");
-    			blinTwice("#step_5_result");
-//    		},200);
+			blinTwice("#step_3");
+			blinTwice("#step_3_result");
+			blinTwice("#step_4");
+			blinTwice("#step_4_result");
+			blinTwice("#step_5");
+			blinTwice("#step_5_result");
     		
     		}
     		//clearTimeout(timer);
@@ -1825,7 +1816,8 @@ oCanvas.domReady(function () {
 		
 		$("#scheme_extra").text("西侧维修");
 		document.getElementById("scheme_extra").onclick=function(){
-			fix_hx_left();
+//			fix_hx_left();
+			//提示：请先完成东侧恢复
 		}
 		$("#scheme").text("东侧恢复");
 		document.getElementById("scheme").onclick=function(){
@@ -2065,7 +2057,8 @@ oCanvas.domReady(function () {
 		document.getElementById("scheme").style.display="block";
     	$("#scheme").text("东侧维修");
     	document.getElementById("scheme").onclick=function(){
-    		fix_hx_right();
+//    		fix_hx_right();
+    		//提示：请先完成西侧恢复
     	}
     	$("#scheme_extra").text("西侧恢复");
     	document.getElementById("scheme_extra").onclick=function(){
