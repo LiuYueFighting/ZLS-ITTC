@@ -422,7 +422,7 @@ top: 10px;
 						<th>预测水位/m</th>
 					</tr>
 					<tr>
-						<th><input id="ycsw" type="text" value="3.43"/></th>
+						<th><input id="ycsw" type="text" value="3.39"/></th>
 					</tr>
 				</table>
 			</div>
