@@ -92,7 +92,7 @@ body {
 	overflow: scroll;
 }
 #treeGuid p {
-	color: #223bb8;
+	color: #337ab7;
 	font-weight: bold;
 	font-size: 18px;
 	text-align: left;
@@ -276,7 +276,7 @@ text-align: center;
 				
 				<div id="chooseIndex">
 					<form id="indexForm">
-						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择膜池编号：</p>
+						<p style="color:#337ab7; font-weight:bold;font-size:18px">请选择膜池编号：</p>
 						<table>
 							<tr>
 								<td><input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" checked="checked" /><label for="index1">1#膜池</label></td>

@@ -91,7 +91,7 @@ body {
 }
 
 #treeGuid p {
-	color: #223bb8;
+	color: #337ab7;
 	font-weight: bold;
 	font-size: 18px;
 	text-align: left;
@@ -126,7 +126,7 @@ body {
 	font-weight:bolder;
 }
     #treeGuid p {
-    color: #223bb8;
+    color: #337ab7;
     font-weight: bold;
     font-size: 18px;
     text-align: left;
@@ -287,7 +287,7 @@ th, td, input, option {
 				<!-- chooseIndex -->
 				<div id="chooseIndex">
 					<form id="indexForm">
-						<p style="color:#223bb8; font-weight:bold;font-size:18px">请选择机加池编号：</p>
+						<p style="color:#337ab7; font-weight:bold;font-size:18px">请选择机加池编号：</p>
 						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1#机加池</label><br />
 						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">2#机加池</label><br />
 						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">3#机加池</label><br />
