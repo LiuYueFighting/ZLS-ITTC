@@ -117,7 +117,7 @@
     #list_group{
     width:150px;
     position:absolute;
-    top:50%;
+    top:60%;
     font-size:20px;
     }
     .panel-heading{
@@ -144,7 +144,7 @@
     <div class="container-fluid">
         <div id="myContent" class="row" style="overflow: hidden;">
     <div id="left" class="col-lg-10 col-md-10" style="height: 753px;">
-    <canvas id="canvas_QS_zp" width="1400" height="775"></canvas>
+    <canvas id="canvas_ps" width="1400" height="775"></canvas>
     <div id="btn_group_container">
         <div id="btn_group_both">
             <div id="btn_group_up"></div>
