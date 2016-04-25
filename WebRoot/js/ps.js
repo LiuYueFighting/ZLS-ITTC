@@ -14,21 +14,25 @@ oCanvas.domReady(function () {
         color_SC="#43d9f9";
     var SC00=createSC({
         parent:canvas,
-        x:275,y:665,height:58,width:225,trail_flag:0,speed:speed_SC*0.18,color:color_SC
+        x:247,y:600,height:58,width:159,trail_flag:0,speed:speed_SC*0.3,color:color_SC
+    });
+    var SC001=createSC({
+        parent:canvas,
+        x:422,y:610,height:35,width:27,trail_flag:0,speed:speed_SC,color:color_SC
     });
     var SC01=createSC({
         parent:canvas,
-        x:601,y:665,height:39,width:51,trail_flag:0,speed:speed_SC,color:color_SC
+        x:542,y:615,height:39,width:51,trail_flag:0,speed:speed_SC,color:color_SC
     });
 
     var SC02=createSC({
         parent:canvas,
-        x:707,y:665,height:39,width:44,trail_flag:0,speed:speed_SC,color:color_SC
+        x:638,y:615,height:39,width:44,trail_flag:0,speed:speed_SC,color:color_SC
     });
 
     var SC03=createSC({
         parent:canvas,
-        x:776,y:665,height:39,width:228,trail_flag:0,speed:speed_SC*0.2,color:color_SC
+        x:700,y:615,height:39,width:210,trail_flag:0,speed:speed_SC*0.21,color:color_SC
     });
 
     var bg = canvas.display.image({
@@ -40,8 +44,17 @@ oCanvas.domReady(function () {
     var GD01=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 277, y_cell: 681},
-            {x_cell: 494, y_cell: 681}
+            {x_cell: 247, y_cell: 626},
+            {x_cell: 406, y_cell: 626}
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });
+    var GD001=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 423, y_cell: 626},
+            {x_cell: 472, y_cell: 626}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -50,8 +63,8 @@ oCanvas.domReady(function () {
     var GD02=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 604, y_cell: 686},
-            {x_cell: 655, y_cell: 686}
+            {x_cell: 542, y_cell: 631},
+            {x_cell: 591, y_cell: 631}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -60,8 +73,8 @@ oCanvas.domReady(function () {
     var GD03=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 707, y_cell: 686},
-            {x_cell: 755, y_cell: 686}
+            {x_cell: 638, y_cell: 631},
+            {x_cell: 680, y_cell: 631}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -69,8 +82,8 @@ oCanvas.domReady(function () {
     var GD04=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 772, y_cell: 686},
-            {x_cell: 1005, y_cell: 686}
+            {x_cell: 700, y_cell: 631},
+            {x_cell: 935, y_cell: 631}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -82,7 +95,7 @@ oCanvas.domReady(function () {
     }).add();
 
     var txt1=canvas.display.text({
-        x:643,
+        x:580,
         y:25,
         origin: { x:"center", y: "top" },
         font: "bold 36px 微软雅黑",
@@ -92,8 +105,8 @@ oCanvas.domReady(function () {
     canvas.addChild(txt1);
 
     var txt2=canvas.display.text({
-        x:304,
-        y:611,
+        x:280,
+        y:578, 
         origin: { x:"center", y: "top" },
         font: "bold 25px 微软雅黑",
         fill:"#337ab7",
@@ -101,8 +114,8 @@ oCanvas.domReady(function () {
     }).add();
 
     var txt3=canvas.display.text({
-        x:1035,
-        y:611,
+        x:930,
+        y:578,
         origin: { x:"center", y: "top" },
         font: "bold 25px 微软雅黑",
         fill:"#337ab7",
@@ -110,8 +123,10 @@ oCanvas.domReady(function () {
     }).add();
 
     canvas.setLoop(function () {
-        GD01.advance();        
+        GD01.advance();
+        GD001.advance();
         SC00.advance();
+        SC001.advance();
         GD02.advance();
         SC01.advance();
         SC02.advance();
@@ -120,6 +135,10 @@ oCanvas.domReady(function () {
         GD04.advance();
 
         if(GD01.full==1){
+        	SC001.start = 1;
+        	GD001.paused = 1;
+        }
+        if(GD001.full==1){
         	SC01.start = 1;
         	GD02.paused = 1;
         }
