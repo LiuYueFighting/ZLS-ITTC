@@ -77,7 +77,7 @@
     }
 
     #check_div h1{
-    color: #223bb8;
+    color:  #337ab7;
     font-weight: bold;
     font-size: 20px;
     }
