@@ -161,7 +161,7 @@
                 <div class="panel-heading">运行参数</div>
                 <table class="table">
                 <tr>
-                <td>调畜能力</td><td>8000m<sup>3</sup></td>
+                <td>调蓄能力</td><td>8000m<sup>3</sup></td>
                 </tr>
                 <tr>
                 <td>运行水位</td><td>1.8-4.92m</td>

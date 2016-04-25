@@ -144,7 +144,7 @@
                 <div class="panel-heading">运行参数</div>
                 <table class="table">
                 <tr>
-                <td>上升流度</td><td>1mm/s</td>
+                <td>上升流速</td><td>1mm/s</td>
                 </tr>
                 <tr>
                 <td>FeCl<sub>3</sub></td><td>20-25mg/L</td>
