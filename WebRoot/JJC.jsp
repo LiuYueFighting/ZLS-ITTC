@@ -147,7 +147,7 @@
                 <td>上升流速</td><td>1mm/s</td>
                 </tr>
                 <tr>
-                <td>FeCl<sub>3</sub></td><td>20-25mg/L</td>
+                <td>三氯化铁</sub></td><td>20-25mg/L</td>
                 </tr>
                 </table>
                 </div>

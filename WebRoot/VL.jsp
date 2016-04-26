@@ -170,7 +170,7 @@
                 <div class="panel-heading">运行参数</div>
                 <table class="table">
                 <tr>
-                <td>滤速</td><td>8.07m/h</td>
+                <td>滤速</td><td>8m/h</td>
                 </tr>
                 <tr>
                 <td>滤程</td><td>48h</td>
@@ -205,10 +205,10 @@
                 <td>出水浊度</td><td><0.25NTU</td>
                 </tr>
                 <tr>
-                <td>铁</td><td>&lt;0.3mg/L</td>
+                <td>Fe</td><td>&lt;0.3mg/L</td>
                 </tr>
                 <tr>
-                <td>铝</td><td>&lt;0.2mg/L</td>
+                <td>Al</td><td>&lt;0.2mg/L</td>
                 </tr>
                 </table>
                 </div>

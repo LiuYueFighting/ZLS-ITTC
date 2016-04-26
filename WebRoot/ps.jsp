@@ -194,14 +194,12 @@
     <div class="panel-heading">水质标准</div>
     <table class="table">
     <tr>
-    <td>余氯</td><td>&ge;0.3mg/L</td>
+    <td>余氯</td><td>0.6-0.8mg/L</td>
     </tr>
     <tr>
     <td>浊度</td><td>&le;0.3mg/L</td>
     </tr>
-    <tr>
-    <td>嗅味</td><td>无味</td>
-    </tr>
+    
     </table>
     </div>
     </div>

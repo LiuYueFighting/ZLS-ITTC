@@ -169,10 +169,16 @@
         <div class="panel-heading">运行参数</div>
         <table class="table">
         <tr>
+        <td>膜通量</td><td>&le;60L/h&middot;m<sup>2</sup></td>
+        </tr>
+        <tr>
+        <td>跨膜压差</td><td>&le;100KPa</td>
+        </tr>
+        <tr>
             <td>水冲周期</td><td>90min</td>
         </tr>
         <tr>
-        <td>CEB周期</td><td>40水冲周期</td>
+        <td>维护性清洗周期</td><td>40水冲周期</td>
         </tr>
         </table>
         </div>
@@ -184,12 +190,7 @@
         <tr>
         <td>出水浊度</td><td><0.1 NTU</td>
         </tr>
-        <tr>
-        <td>膜通量</td><td>&le;60L/h&middot;m<sup>2</sup></td>
-        </tr>
-        <tr>
-        <td>跨膜压差</td><td>&le;100KPa</td>
-        </tr>
+        
         </table>
         </div>
         </div>

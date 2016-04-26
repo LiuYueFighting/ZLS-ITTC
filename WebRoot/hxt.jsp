@@ -113,8 +113,20 @@
     #list_group{
     width:150px;
     position:absolute;
-    top:45%;
+    top:55%;
     font-size:20px;
+    }
+    #second{
+    border:0px;
+    height:20px;
+    text-align:left;
+    font-size:13px;
+    }
+      #dash2{
+    border:dashed 1px #999;
+    border-left:0px;
+    border-right:0px;
+    border-bottom:0px;
     }
     .panel-heading{
     font-size:18px;
@@ -161,10 +173,13 @@
                 <div class="panel-heading">运行参数</div>
                 <table class="table">
                 <tr>
-                <td>滤层高度</td><td>1.4m</td>
+                <td>冲洗周期</td><td>7-10d</td>
                 </tr>
                 <tr>
-                <td>重新周期</td><td>7-10d</td>
+                <tr><td>反冲强度</td><td></td></tr>
+                <tr id="dash2" height="20">
+                <td id="second" >&nbsp;&nbsp;<b>清水漂洗</b></td><td id="second">5-6L/&sup2;&middot;s</td>
+                </tr>
                 </tr>
                 </table>
                 </div>
