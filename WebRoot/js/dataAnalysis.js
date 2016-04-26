@@ -507,7 +507,7 @@ function dealAddSave() {
 	//alert("prams is " + params);
 	var paramsArray = params.split("split=&");
 	//alert("paramsArray.length is " + paramsArray.length);
-	alert("pramsArray is " + paramsArray);
+	//alert("pramsArray is " + paramsArray);
 	var strLength;
 	var tempStr;
 	var newStr;
@@ -973,6 +973,7 @@ function prehImage(){
 		        height: 650,
 			},
 			 credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
+				 	enabled: false,
 		        	text: '北京市自来水集团',
 		        	href: '',
 		        	position: {
@@ -989,18 +990,18 @@ function prehImage(){
 		        },	//显示图表版权信息
 			exporting : {
 				buttons: {
-	                contextButton: {
-	                    text: '导出'
+					contextButton: {
+	                    text: '下载'
 	                }
 	            }
 			},
 			lang:{						
 				printChart: '打印',
-				downloadJPEG: '下载JPEG 图片',
-                downloadPDF: '下载PDF文档',
-                downloadPNG: '下载PNG 图片',
-                downloadSVG: '下载SVG 矢量图',
-                exportButtonTitle: '导出图片',
+				downloadJPEG: 'JPEG 图片',
+                downloadPDF: 'PDF文档',
+                downloadPNG: 'PNG 图片',
+                downloadSVG: 'SVG 矢量图',
+                exportButtonTitle: '下载图片',
 				noData: '没有查询到数据',	
 			},
 			legend: {  //The legend is a box containing a symbol and name for each series item or point item in the chart.
@@ -1026,6 +1027,7 @@ function prehImage(){
 	             }
 	        },
 	        navigator: {
+	        	enabled : false,
 	            handles: {
 	                backgroundColor: '#66CCFF',
 	                borderColor: '#6600FF'
@@ -1437,15 +1439,19 @@ function GetNode(type){
 
 //导出到excel
 function export2excel(){
-	var downloadPath = "downloadTemp/DataAnalysis.xls";
-	$.post("exportDataAnalysis.action", function(result) {
+	$.messager.confirm("导出",'确认导出当前查询结果？',function(r){
+		if (r) {	
+			var downloadPath = "downloadTemp/DataAnalysis.xls";
+			$.post("exportDataAnalysis.action", function(result) {
 		if (result.operateSuccess){
 			window.location.href=downloadPath;
 //			$.messager.alert('导出', '导出成功,请在浏览器下载路径中查看', 'info');		
 		} else {
 			$.messager.alert('导出', '导出失败', 'warning');
 		}
-	});
+			});
+		}}
+	);
 }
 
 //导入文件操作

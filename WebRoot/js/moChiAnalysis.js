@@ -997,7 +997,8 @@ function prehImage(){
 		        height: 650,
 			},
 			 credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
-		        	text: '北京市自来水集团',
+				    enabled: false,
+				    text: '北京市自来水集团',
 		        	href: '',
 		        	position: {
 		        		align: 'right',
@@ -1014,17 +1015,17 @@ function prehImage(){
 			exporting : {
 				buttons: {
 	                contextButton: {
-	                    text: '导出'
+	                    text: '下载'
 	                }
 	            }
 			},
 			lang:{						
 				printChart: '打印',
-				downloadJPEG: '下载JPEG 图片',
-                downloadPDF: '下载PDF文档',
-                downloadPNG: '下载PNG 图片',
-                downloadSVG: '下载SVG 矢量图',
-                exportButtonTitle: '导出图片',
+				downloadJPEG: 'JPEG 图片',
+                downloadPDF: 'PDF文档',
+                downloadPNG: 'PNG 图片',
+                downloadSVG: 'SVG 矢量图',
+                exportButtonTitle: '下载图片',
 				noData: '没有查询到数据',	
 			},
 			legend: {  //The legend is a box containing a symbol and name for each series item or point item in the chart.
@@ -1050,6 +1051,7 @@ function prehImage(){
 	             }
 	        },
 	        navigator: {
+	        	enabled : false,
 	            handles: {
 	                backgroundColor: '#66CCFF',
 	                borderColor: '#6600FF'

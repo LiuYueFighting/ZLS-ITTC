@@ -930,6 +930,7 @@ function prehImage(){
 			         '#000000', '#FF0000', '#0000C6', '#00A600',
 			         '#000000', '#FF0000', '#0000C6', '#00A600'],
 			credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
+				enabled: false,
 				text: '北京市自来水集团',
 				href: '',
 				position: {
@@ -947,17 +948,17 @@ function prehImage(){
 			exporting : {
 				buttons: {
 				    contextButton: {
-				        text: '导出'
+				        text: '下载'
 				    }
 				}
 			},
 			lang:{						
 				printChart: '打印',
-				downloadJPEG: '下载JPEG 图片',
-			    downloadPDF: '下载PDF文档',
-			    downloadPNG: '下载PNG 图片',
-			    downloadSVG: '下载SVG 矢量图',
-			    exportButtonTitle: '导出图片',
+				downloadJPEG: 'JPEG 图片',
+			    downloadPDF: 'PDF文档',
+			    downloadPNG: 'PNG 图片',
+			    downloadSVG: 'SVG 矢量图',
+			    exportButtonTitle: '下载图片',
 				noData: '没有查询到数据',
 				Zoom: '时间选择',
 			},
@@ -984,6 +985,7 @@ function prehImage(){
 		    }
 		},
 		navigator: {
+			enabled : false,
 			handles: {
 		    	backgroundColor: '#66CCFF',
 		    	borderColor: '#6650FF'

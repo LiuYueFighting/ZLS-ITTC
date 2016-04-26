@@ -1201,7 +1201,8 @@ function drawImage(){
 		         '#000000', '#FF0000', '#0000C6', '#00A600',
 		         '#000000', '#FF0000', '#0000C6', '#00A600'],
 	    credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
-			text: '北京市自来水集团',
+	    	enabled: false,
+	    	text: '北京市自来水集团',
 		    href: '',
 		    position: {
 		    	align: 'right',
@@ -1218,18 +1219,19 @@ function drawImage(){
 		exporting : {
 			buttons: {
 		    	contextButton: {
-		        	text: '导出'
+		        	text: '下载'
 		        }
 		    }
 		},
 		lang:{						
 			printChart: '打印',
-			downloadJPEG: '下载JPEG 图片',
-	        downloadPDF: '下载PDF文档',
-	        downloadPNG: '下载PNG 图片',
-	        downloadSVG: '下载SVG 矢量图',
-	        exportButtonTitle: '导出图片',
-			noData: '没有查询到数据',	
+			downloadJPEG: 'JPEG 图片',
+	        downloadPDF: 'PDF文档',
+	        downloadPNG: 'PNG 图片',
+	        downloadSVG: 'SVG 矢量图',
+	        exportButtonTitle: '下载图片',
+			noData: '没有查询到数据',
+			Zoom: '时间选择',
 		},
 		legend: {  //The legend is a box containing a symbol and name for each series item or point item in the chart.
         	enabled: true,	//显示图例	
@@ -1254,7 +1256,8 @@ function drawImage(){
              }
         },
         navigator: {
-        	enable:true,
+        	//enable:true,
+        	enabled : false,
             handles: {
                 backgroundColor: '#66CCFF',
                 borderColor: '#6650FF'
@@ -1454,6 +1457,7 @@ function drawImage(){
 		         '#FF0000', '#0000C6', '#00A600',
 		         '#FF0000', '#0000C6', '#00A600'],
 		credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
+			enabled: false,
 			text: '北京市自来水集团',
 			href: '',
 			position: {
@@ -1471,17 +1475,17 @@ function drawImage(){
 		exporting : {
 			buttons: {
 			    contextButton: {
-			        text: '导出'
+			        text: '下载'
 			    }
 			}
 		},
 		lang:{						
 			printChart: '打印',
-			downloadJPEG: '下载JPEG 图片',
-		    downloadPDF: '下载PDF文档',
-		    downloadPNG: '下载PNG 图片',
-		    downloadSVG: '下载SVG 矢量图',
-		    exportButtonTitle: '导出图片',
+			downloadJPEG: 'JPEG 图片',
+		    downloadPDF: 'PDF文档',
+		    downloadPNG: 'PNG 图片',
+		    downloadSVG: 'SVG 矢量图',
+		    exportButtonTitle: '下载图片',
 			noData: '没有查询到数据',
 			Zoom: '时间选择',
 		},
@@ -1508,6 +1512,7 @@ function drawImage(){
 	    }
 	},
 	navigator: {
+		enabled : false,
 		handles: {
 	    	backgroundColor: '#66CCFF',
 	    	borderColor: '#6650FF'
@@ -1727,6 +1732,7 @@ function drawImage(){
 			         '#000000', '#FF0000', '#0000C6', '#00A600', '#F75000',
 			         '#000000', '#FF0000', '#0000C6', '#00A600', '#F75000'],
 			credits: {//Highchart by default puts a credits label in the lower right corner of the chart. This can be changed using these options.
+				enabled: false,
 				text: '北京市自来水集团',
 				href: '',
 				position: {
@@ -1744,17 +1750,17 @@ function drawImage(){
 			exporting : {
 				buttons: {
 				    contextButton: {
-				        text: '导出'
+				        text: '下载'
 				    }
 				}
 			},
 			lang:{						
 				printChart: '打印',
-				downloadJPEG: '下载JPEG 图片',
-			    downloadPDF: '下载PDF文档',
-			    downloadPNG: '下载PNG 图片',
-			    downloadSVG: '下载SVG 矢量图',
-			    exportButtonTitle: '导出图片',
+				downloadJPEG: 'JPEG 图片',
+			    downloadPDF: 'PDF文档',
+			    downloadPNG: 'PNG 图片',
+			    downloadSVG: 'SVG 矢量图',
+			    exportButtonTitle: '下载图片',
 				noData: '没有查询到数据',
 				Zoom: '时间选择',
 			},
@@ -1781,6 +1787,7 @@ function drawImage(){
 		    }
 		},
 		navigator: {
+			enabled : false,
 			handles: {
 		    	backgroundColor: '#66CCFF',
 		    	borderColor: '#6650FF'

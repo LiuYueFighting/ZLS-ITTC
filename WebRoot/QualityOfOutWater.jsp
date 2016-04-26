@@ -83,7 +83,7 @@
 
 	#gap {
 		width: 1300px;
-		height: 40px;
+		height: 15px;
 	}
 
 	#imageContainer {
@@ -103,7 +103,7 @@
 		position: relative;
 		top: 0px;
 		width: 200px;
-		height: 400px;
+		height: 300px;
 		padding: 5px;
 		border: 1px solid #95B8E7;
 		overflow: scroll;
@@ -118,7 +118,7 @@
 
 	#chooseIndex {
 		position: relative;
-		top: 10px;
+		top: 15px;
 		width: 200px;
 		height: 110px;
 		padding: 5px;
@@ -135,8 +135,8 @@
 	}
 */
 	#icon {
-		position: absolute;
-		top: 520px;
+		position: relative;
+		top: 40px;
 		left: 0px;
 		width: 180px;
 		height: 180px;

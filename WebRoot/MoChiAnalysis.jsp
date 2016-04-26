@@ -75,6 +75,11 @@ body {
 	width: 1300px;
 }
 
+#gap{
+		width: 1300px;
+		height: 15px;
+}
+
 #rightContainer {
 	position: absolute;
 	top: 10px;
@@ -86,7 +91,7 @@ body {
 	position: relative;
 	top: 0px;
 	width: 200px;
-	height: 400px;
+	height: 300px;
 	padding: 5px;
 	border: 1px solid #95B8E7;
 	overflow: scroll;
@@ -100,7 +105,7 @@ body {
 
 #chooseIndex {
 	position: relative;
-	top: 10px;
+	top: 15px;
 	width: 200px;
 	height: 110px;
 	padding: 5px;
@@ -161,8 +166,8 @@ body {
 
 
 div.icon {
-	position: absolute;
-	top: 520px;
+	position: relative;
+	top: 40px;
 	left: 0px;
 	width: 180px;
 	height: 180px;
@@ -264,7 +269,7 @@ text-align: center;
 			<div id="tab_entity">
 				<table id="moChiAnalysisbody" class="easyui-datagrid"
 					style="max-width: 1300px; height: 300px;" ></table>
-				<div style="height:40px"></div>
+				<div id="gap"></div>
 				<div id="imageContainer" style="max-width: 1300px; height: 600px;"></div>
 			</div><!-- "tab_entity" -->
 			<div id="rightContainer">

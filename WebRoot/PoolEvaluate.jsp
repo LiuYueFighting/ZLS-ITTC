@@ -74,6 +74,11 @@ body {
 	width: 1300px;
 }
 
+#gap {
+	width: 1300px;
+	height: 5px;
+}
+
 #rightContainer {
 	position: absolute;
 	top: 10px;
@@ -85,7 +90,7 @@ body {
 	position: relative;
 	top: 0px;
 	width: 200px;
-	height: 400px;
+	height: 300px;
 	padding: 5px;
 	border: 1px solid #95B8E7;
 }
@@ -98,7 +103,7 @@ body {
 }
 #chooseIndex {
 	position: relative;
-	top: 10px;
+	top: 15px;
 	width: 200px;
 	height: 110px;
 	padding: 5px;
@@ -143,8 +148,8 @@ body {
 }
 
 div.icon {
-	position: absolute;
-	top: 520px;
+	position: relative;
+	top: 40px;
 	left: 0px;
 	width: 180px;
 	height: 180px;
@@ -325,6 +330,7 @@ th, td, input, option {
 			<div id="tab_entity">
 				<table id="poolEvaluatebody" class="easyui-datagrid" style="width:1300;height:300px;"></table><br />
 				<!-- easyui-tabs -->
+				<div id="gap"></div>
 				<div class="easyui-tabs" style="width:1300px;height:690px;">
 					<div title="浊度/加药量分析图" id="imageContainer1" style="width:1300px;height:600px;padding:0px;border-width:0px"></div>
 					<div title="原水藻类/水温/预加氯量分析图" id="imageContainer2" style="width:1300px;height:690px;padding:0px;border-width:0px"></div>
