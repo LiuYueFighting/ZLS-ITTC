@@ -1117,7 +1117,7 @@ function prehImage(){
 	                color: 'red',
 	                fontWeight: 'bold'
 	            },
-	            selected: 1
+	            selected: 2
 	        },
 	        scrollbar: {
 	            barBackgroundColor: 'gray',
