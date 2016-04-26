@@ -114,7 +114,7 @@
         #list_group{
         width:150px;
         position:absolute;
-        top:38%;
+        top:40%;
         font-size:20px;
         }
         .panel-heading{
@@ -167,6 +167,9 @@
         </tr>
         <tr>
         <td>来水量</td><td>2000m<sup>3</sup>/h</td>
+        </tr>
+         <tr>
+        <td>碱铝</td><td>20-25mg/L</td>
         </tr>
         </table>
         </div>
