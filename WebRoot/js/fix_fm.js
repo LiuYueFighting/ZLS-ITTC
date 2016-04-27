@@ -873,6 +873,10 @@ oCanvas.domReady(function () {
     	  GD0102.state=2;
     	  blinTwice("#step_3");
        }
+       if((GD0101.state==0)&&(GD0102.state==0)){  	
+       	GD05.state=2;
+       }
+       
         if((GD0101.state==1)&&(GD25.state==0)){        	
         	GD25.state=3;
         	GD0102.state=3;  	
@@ -1293,6 +1297,8 @@ oCanvas.domReady(function () {
         setFMColorRed("FM09");
         blinTwice("#step_1");
         GD0101.state=2;
+      
+        
 //        window.setTimeout(function(){
 //           decay(2,1);
 //        },100);
