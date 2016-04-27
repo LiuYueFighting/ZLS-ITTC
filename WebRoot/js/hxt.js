@@ -131,15 +131,15 @@ oCanvas.domReady(function () {
      color:color_GD
  });
 
- var GD04=createGD({
-     parent:canvas,
-     cells:[
-         {x_cell: 572,y_cell: 408},
-         {x_cell: 1006, y_cell: 408}
-     ],
-     GDwidth:width_all,
-     color:color_GD
- });
+// var GD04=createGD({
+//     parent:canvas,
+//     cells:[
+//         {x_cell: 572,y_cell: 408},
+//         {x_cell: 1006, y_cell: 408}
+//     ],
+//     GDwidth:width_all,
+//     color:color_GD
+// });
  var GD05=createGD({
      parent:canvas,
      cells:[
@@ -181,7 +181,7 @@ oCanvas.domReady(function () {
  canvas.setLoop(function () {
      GD01.advance();
      GD02.advance();
-     GD04.advance();
+//     GD04.advance();
      GD05.advance();
      SC00.advance();
      SC01.advance();
@@ -206,19 +206,19 @@ oCanvas.domReady(function () {
          arrow_3.start();
          arrow_4.start();
          arrow_5.start();
-     }
-     if(SC02.full==1){
-    	 arrow_0.stopAnimation();
-    	 arrow_0.frame=2;
-         GD04.paused=1;         
-         SC02.full=0;         
-     }
-     if(GD04.full==1){
+     }     
+     if(SC02.height_now>=247){
          GD05.paused=1;
          SC03.start=1;
          SC001.start=1;
          //arrow_1.start();
-         GD04.full=0;
+//         GD04.full=0;
+     }
+     if(SC02.full==1){
+    	 arrow_0.stopAnimation();
+    	 arrow_0.frame=2;
+//         GD04.paused=1;         
+         SC02.full=0;         
      }
      if(GD05.full==1){
          arrow_2.stopAnimation();
