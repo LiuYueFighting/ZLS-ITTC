@@ -467,15 +467,15 @@ top: 10px;
 						<input type=file name="upload" id="upload" style="display: none;"
 							onchange="fakeUpload.value=value" /> 
 						<input id="btn-select" type=button  class="btn btn-primary" value="选择文件" onclick=upload.click()
-							style="width: 134px; font-size: 18px; background-color:#3399FF" /><br /> 
+							style="width: 134px; font-size: 18px; background-color:rgba(0, 51, 255, 0.8)" /><br /> 
 						<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click()
 							style="width: 134px; height: 35px; border: 1px solid #95B8E7;" />
 						<br />
 						<input id="btn-import" class="btn btn-primary"
-							style="font-size: 18px; width: 65px;  background-color:#3399FF"" value="确定"
+							style="font-size: 18px; width: 65px;  background-color:rgba(0, 51, 255, 0.8)"" value="确定"
 							onclick="javascript:import2DB();fakeUpload.value='';" />
 						<input id="btn-cancel" class="btn btn-primary"
-							style="font-size: 18px; width: 65px;  background-color:#3399FF"" value="取消"/>
+							style="font-size: 18px; width: 65px;  background-color:rgba(0, 51, 255, 0.8)"" value="取消"/>
 					</form>	
 				</div><!-- tabexport -->
 			</div><!-- rightContainer -->
@@ -487,6 +487,11 @@ top: 10px;
 							<input type="hidden" id="dateTemp" name="dateTemp" /> <input
 								type="hidden" id="ID" name="dataAnalysis.ID" /> <br />
 							<dl>
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp; 
+								<input class="easyui-datebox" style="width:150px" id="lowT" name="lowT"/ ><br/><br/>
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp;
+								<input class="easyui-datebox" style="width:150px" id="highT" name="highT"/ ><br /><br />
+						
 								&nbsp; &nbsp;时 &nbsp; &nbsp; &nbsp; &nbsp; 间 : &nbsp;
 								<input class="easyui-datetimebox" name="dataAnalysis.t" id="t"
 									type="text"	data-options="required:true,showSeconds:false,missingMessage:'请选择时间'"
@@ -652,9 +657,31 @@ top: 10px;
 									<option value="MTG_QingS_SC03">3#清水池</option>
 								</select>									
 							</dl>
-						</form>
-					</div>
-				</div><!-- editArea -->
+						</form><!-- frmSearch -->
+					</div><!-- tabSearch -->
+				</div><!-- searchArea -->
+				<div id="searchAreaForExport" style="display: none; width: 400px">
+					<div id="tabSearchForExport" class="easyui-dialog"
+						data-options="closed:true"
+						style="align: center; width: 500px; height: 400px; padding: 10px 60px 20px 60px">
+						<form id="frmSearchForExport">
+							<dl>
+								<br /> 
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp;
+								<input class="easyui-datebox" style="width:150px" id="lowT" name="lowT"/ ><br/><br/>
+							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp;	
+							    <input class="easyui-datebox" style="width:150px" id="highT" name="highT"/ ><br /><br />
+							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水  &nbsp;池 &nbsp; 编  &nbsp;号 : &nbsp; 
+								<select class="easyui-combobox" style="width: 150px"
+									id="searchPoolID" name="searchPoolID">
+									<option value="MTG_QingS_SC01">1#清水池</option>
+									<option value="MTG_QingS_SC02">2#清水池</option>
+									<option value="MTG_QingS_SC03">3#清水池</option>
+								</select>									
+							</dl>
+						</form><!-- frmSearchForExport -->
+					</div><!-- tabSearchForExport -->
+				</div><!-- searchAreaForExport -->
 			</center>
 		</div><!-- myContent -->
 	</div><!-- myPage -->

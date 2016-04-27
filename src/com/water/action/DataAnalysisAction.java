@@ -114,6 +114,24 @@ public class DataAnalysisAction extends ActionSupport{
 	public void setSearchT(Date searchT) {
 		this.searchT = searchT;
 	}
+	private Date lowT;		//查询时间上限
+	private Date highT;		//查询时间下限
+		
+	public Date getLowT() {
+		return lowT;
+	}
+
+	public void setLowT(Date lowT) {
+		this.lowT = lowT;
+	}
+
+	public Date getHighT() {
+		return highT;
+	}
+
+	public void setHighT(Date highT) {
+		this.highT = highT;
+	}
 
 	private int page;//  当前第几页
 	private Map<String, Object> data = new HashMap<String, Object>();// 封装数据
@@ -123,6 +141,15 @@ public class DataAnalysisAction extends ActionSupport{
 
 	// 标识操作是否成功
 	private boolean operateSuccess;
+	private int state=0; //标识导出失败的原因  1-未查询到相关数据 2-程序异常
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
 
 	// set注入
 	public void setDataAnalysisService(DataAnalysisService dataAnalysisService) {
@@ -284,10 +311,12 @@ public class DataAnalysisAction extends ActionSupport{
 		DateFormat sdFormat=new SimpleDateFormat("yyyy-MM-dd");
 		//查询条件拼接
 		if(searchT==null && searchPoolID ==null ){
+//		if(lowT==null && highT==null && searchPoolID ==null){
 			sql="from DataAnalysis";
 		}
 		else {
 			sql="from DataAnalysis where 1=1";
+
 			if (searchT!=null)
 			{
 				sql+= " and Convert(varchar,t,120)  like '%"+sdFormat.format(searchT)+"%'";
@@ -315,7 +344,37 @@ public class DataAnalysisAction extends ActionSupport{
 
 	@SuppressWarnings("unchecked")
 	public String export2excel(){
-		List<DataAnalysis> list=(List<DataAnalysis>) data.get("rows");
+		String sql;
+		if(lowT==null && highT==null && searchPoolID ==null){
+			sql="from DataAnalysis";
+		}
+		else {
+			sql="from DataAnalysis where 1=1";
+			if (lowT!=null)
+			{
+				sql+= " and t  >= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(lowT)+"'";
+			}
+			if (highT!=null){
+				sql+= " and t <= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(highT)+"'";
+			}
+			if(!searchPoolID.equals(""))
+			{
+				sql+=" and PoolID like '%"+searchPoolID+"'";
+			}
+			
+		}
+//		System.out.println(sql);
+		List<DataAnalysis> list = dataAnalysisService.findBySql(sql);
+		if(list.isEmpty()){
+			System.out.println("没有查到数据，无法导出");
+			operateSuccess=false;
+			state =1; //没有查到数据
+			return SUCCESS;
+		}
+		Collections.sort(list, COMPARATOR);
+//		System.out.println(list.get(0).getT()+","+list.get(0).getPoolID());
+//		List<DataAnalysis> list=(List<DataAnalysis>) data.get("rows");
+
 		WritableWorkbook book = null;
 		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTemp"));
 		//判断上述路径是否存在，如果不存在则创建该路径
@@ -443,6 +502,7 @@ public class DataAnalysisAction extends ActionSupport{
 			operateSuccess=true;
 		}catch(Exception e){
 			e.printStackTrace();
+			state = 2;//程序异常
 			operateSuccess=false;
 		}finally{
 			if(book!=null){

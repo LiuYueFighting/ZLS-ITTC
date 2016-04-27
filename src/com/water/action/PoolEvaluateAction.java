@@ -76,7 +76,16 @@ public class PoolEvaluateAction extends ActionSupport{
 		this.uploadContentType = uploadContentType;
 	}
 
-	
+	private int state=0; //标识导出失败的原因  1-未查询到相关数据 2-程序异常
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
 	private PoolEvaluateService poolEvaluateService;
 
 	private PoolEvaluate poolEvaluate; 
@@ -406,7 +415,34 @@ public class PoolEvaluateAction extends ActionSupport{
 	
 	@SuppressWarnings("unchecked")
 	public String export2excel(){
-		List<PoolEvaluate> list = (List<PoolEvaluate>) data.get("rows");
+		String sql;
+		if(lowT==null && highT==null && searchPoolID ==null){
+			sql="from PoolEvaluate";
+		}
+		else {
+			sql="from PoolEvaluate where 1=1";
+			if (lowT!=null)
+			{
+				sql+= " and t  >= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(lowT)+"'";
+			}
+			if (highT!=null){
+				sql+= " and t <= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(highT)+"'";
+			}
+			if(!searchPoolID.equals(""))
+			{
+				sql+=" and PoolID like '%"+searchPoolID+"'";
+			}
+			
+		}
+//		System.out.println(sql);
+		List<PoolEvaluate> list = poolEvaluateService.findBySql(sql);
+		if(list.isEmpty()){
+			System.out.println("没有查到数据，无法导出");
+			operateSuccess=false;
+			state =1; //没有查到数据
+			return SUCCESS;
+		}
+//		List<PoolEvaluate> list = (List<PoolEvaluate>) data.get("rows");
 		WritableWorkbook book = null;
 		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTempForJJC"));
 		//判断上述路径是否存在，如果不存在则创建该路径
