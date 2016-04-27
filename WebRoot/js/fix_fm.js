@@ -867,11 +867,13 @@ oCanvas.domReady(function () {
         if((GD0101.state==0)&&(GD25.state==1)){
         	setFMColorRed("FM064");
         	GD25.state=2;
-        	blinTwice("#step_2");
+//        	blinTwice("#step_2");
+    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
         }
        if((GD0101.state==0)&&(GD25.state==0)&&(GD0102.state==1)){
     	  GD0102.state=2;
-    	  blinTwice("#step_3");
+    	  document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+//    	  blinTwice("#step_3");
        }
         if((GD0101.state==1)&&(GD25.state==0)){        	
         	GD25.state=3;
@@ -1221,6 +1223,7 @@ oCanvas.domReady(function () {
 		$("#init_state").html("初始状态");
 		$("#init_statement").html("全场正常运行");
 		
+		$(".table_content").attr("style","background:#ffffff;");
         $("#scheme").html("&nbsp;");
         $("#scheme_extra").html("&nbsp;");
         $("#export").html("&nbsp;");
@@ -1246,20 +1249,25 @@ oCanvas.domReady(function () {
 			fix_fm062();
 		}
  		
-        document.getElementById("step_1").innerHTML="1&nbsp;&nbsp;打开09#阀门";
-        document.getElementById("step_2").innerHTML="2&nbsp;&nbsp;打开064#阀门";
-        document.getElementById("step_3").innerHTML="3&nbsp;&nbsp;疏通062#阀门下侧管道";
+ 		$(".table_content").attr("style","background:#ffffff;");
+        $("#step_1").html("1&nbsp;&nbsp;打开09#阀门");
+        $("#step_2").html("2&nbsp;&nbsp;打开064#阀门");
+        $("#step_3").html("3&nbsp;&nbsp;打开旧混合井西侧搅拌浆");
+        $("#step_4").html("&nbsp;");
  		
     	setFMColorGreen("FM062");
-    	blinTwice("#step_3");
+//    	blinTwice("#step_3");
+		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
     	window.setTimeout(function(){
        		setFMColorGreen("FM064");
-       		blinTwice("#step_2");
+    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+       		/*blinTwice("#step_2");*/
              },300);
         window.setTimeout(function(){
         	setFMColorGreen("FM09");
+    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
         	GD0101.state=3;
-        	blinTwice("#step_1");
+        	/*blinTwice("#step_1");*/
              },700);
         
  		$("div.panel").show();
@@ -1270,16 +1278,18 @@ oCanvas.domReady(function () {
 		setFMColorGreen("FM064");
         setFMColorGreen("FM09");
         setFMColorGreen("FM062");
-        document.getElementById("fix_head").innerHTML="62#阀门维修配合方案";
+        $("#fix_head").html("62#阀门维修配合方案");
         document.getElementById("FM062").src="image/y1.png";
         
     	$("#init_state").text("状态");
     	$("#init_statement").text("062#阀门维修中");
 
         /*document.getElementById("scheme").onclick="";*/
-        document.getElementById("step_1").innerHTML="1&nbsp;&nbsp;关闭09#阀门";
-        document.getElementById("step_2").innerHTML="2&nbsp;&nbsp;关闭064#阀门";
-        document.getElementById("step_3").innerHTML="3&nbsp;&nbsp;堵塞062#阀门下侧管道";
+    	$(".table_content").attr("style","background:#ffffff;");
+        $("#step_1").html("1&nbsp;&nbsp;关闭09#阀门");
+        $("#step_2").html("2&nbsp;&nbsp;关闭064#阀门");
+        $("#step_3").html("3&nbsp;&nbsp;停旧混合井西侧搅拌浆");
+        $("#step_4").html("4&nbsp;&nbsp;1#机加池停止进水");
         
 		$("#scheme").text("62#阀门恢复");
 		document.getElementById("scheme").onclick=function(){
@@ -1291,7 +1301,8 @@ oCanvas.domReady(function () {
 		$("#reset").text("重置");
 
         setFMColorRed("FM09");
-        blinTwice("#step_1");
+        /*blinTwice("#step_1");*/
+		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
         GD0101.state=2;
 //        window.setTimeout(function(){
 //           decay(2,1);

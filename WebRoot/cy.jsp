@@ -161,13 +161,16 @@
                 <div class="panel-heading">运行参数</div>
                 <table class="table">
                 <tr>
-                <td>一级曝气量</td><td>暂无数据</td>
+                <td>一级曝气时间</td><td>2.25min</td>
                 </tr>
                 <tr>
-                <td>二级曝气量</td><td>暂无数据</td>
+                <td>二级曝气时间</td><td>3.60min</td>
                 </tr>
                 <tr>
-                <td>三级曝气量</td><td>暂无数据</td>
+                <td>三级曝气时间</td><td>3.60min</td>
+                </tr>
+                <tr>
+                <td>臭氧投加量</td><td>0.4-0.5mg/L</td>
                 </tr>
                 </table>
                 </div>
