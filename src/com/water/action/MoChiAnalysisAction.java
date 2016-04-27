@@ -93,7 +93,36 @@ public class MoChiAnalysisAction extends ActionSupport{
 	public void setSearchPoolID(String searchPoolID) {
 		this.searchPoolID = searchPoolID;
 	}
+	private Date lowT;		//查询时间上限
+	private Date highT;		//查询时间下限
+		
+	public Date getLowT() {
+		return lowT;
+	}
 
+	public void setLowT(Date lowT) {
+		this.lowT = lowT;
+	}
+
+	public Date getHighT() {
+		return highT;
+	}
+
+	public void setHighT(Date highT) {
+		this.highT = highT;
+	}
+
+	private int state=0; //标识导出失败的原因  1-未查询到相关数据 2-程序异常
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
+
+	
 	private Date searchT=null;
 
 	public Date getSearchT() {
@@ -188,7 +217,6 @@ public class MoChiAnalysisAction extends ActionSupport{
 	public void setOperateSuccess(boolean operateSuccess) {
 		this.operateSuccess = operateSuccess;
 	}
-	
 	
 	
 	/**
@@ -302,7 +330,34 @@ public class MoChiAnalysisAction extends ActionSupport{
 
 	@SuppressWarnings("unchecked")
 	public String export2excel(){
-		List<MoChiAnalysis> list=(List<MoChiAnalysis>) data.get("rows");
+		String sql;
+		if(lowT==null && highT==null && searchPoolID ==null){
+			sql="from MoChiAnalysis";
+		}
+		else {
+			sql="from MoChiAnalysis where 1=1";
+			if (lowT!=null)
+			{
+				sql+= " and t  >= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(lowT)+"'";
+			}
+			if (highT!=null){
+				sql+= " and t <= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(highT)+"'";
+			}
+			if(!searchPoolID.equals(""))
+			{
+				sql+=" and PoolID like '%"+searchPoolID+"'";
+			}
+			
+		}
+//		System.out.println(sql);
+		List<MoChiAnalysis> list = moChiAnalysisService.findBySql(sql);
+		if(list.isEmpty()){
+			System.out.println("没有查到数据，无法导出");
+			operateSuccess=false;
+			state =1; //没有查到数据
+			return SUCCESS;
+		}
+//		List<MoChiAnalysis> list=(List<MoChiAnalysis>) data.get("rows");
 		WritableWorkbook book = null;
 		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTempForMochi"));
 		//判断上述路径是否存在，如果不存在则创建该路径
@@ -412,6 +467,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 			operateSuccess=true;
 		}catch(Exception e){
 			e.printStackTrace();
+			state=2;
 			operateSuccess=false;
 		}finally{
 			if(book!=null){

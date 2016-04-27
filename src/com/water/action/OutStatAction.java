@@ -106,6 +106,34 @@ public class OutStatAction extends ActionSupport{
 	public void setSearchT(Date searchT) {
 		this.searchT = searchT;
 	}
+	private Date lowT;		//查询时间上限
+	private Date highT;		//查询时间下限
+		
+	public Date getLowT() {
+		return lowT;
+	}
+
+	public void setLowT(Date lowT) {
+		this.lowT = lowT;
+	}
+
+	public Date getHighT() {
+		return highT;
+	}
+
+	public void setHighT(Date highT) {
+		this.highT = highT;
+	}
+
+	private int state=0; //标识导出失败的原因  1-未查询到相关数据 2-程序异常
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
+	}
 
 	private int page;//  当前第几页
 	private Map<String, Object> data = new HashMap<String, Object>();// 封装数据
@@ -296,7 +324,35 @@ public class OutStatAction extends ActionSupport{
 	
 	public String export2excel(){
 		@SuppressWarnings("unchecked")
-		List<OutStat> list=(List<OutStat>) data.get("rows");
+		String sql;
+		if(lowT==null && highT==null && searchPoolID ==null){
+			sql="from OutStat";
+		}
+		else {
+			sql="from OutStat where 1=1";
+			if (lowT!=null)
+			{
+				sql+= " and t  >= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(lowT)+"'";
+			}
+			if (highT!=null){
+				sql+= " and t <= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(highT)+"'";
+			}
+			if(!searchPoolID.equals(""))
+			{
+				sql+=" and PoolID like '%"+searchPoolID+"'";
+			}
+			
+		}
+		System.out.println(sql);
+		List<OutStat> list = outStatService.findBySql(sql);
+		if(list.isEmpty()){
+			System.out.println("没有查到数据，无法导出");
+			operateSuccess=false;
+			state =1; //没有查到数据
+			return SUCCESS;
+		}
+		
+//		List<OutStat> list=(List<OutStat>) data.get("rows");
 		WritableWorkbook book = null;
 		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTempForOut"));
 		//判断上述路径是否存在，如果不存在则创建该路径
@@ -389,6 +445,7 @@ public class OutStatAction extends ActionSupport{
 			operateSuccess=true;
 		}catch(Exception e){
 			e.printStackTrace();
+			state=2; //程序异常
 			operateSuccess=false;
 		}finally{
 			if(book!=null){
