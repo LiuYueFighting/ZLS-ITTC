@@ -24,11 +24,11 @@ oCanvas.domReady(function () {
     });
     var SC01=createSC({
         parent:canvas,
-        x:259,y:533,height:32,width:113,trail_flag:0,speed:speed_SC,color:color_SC
+        x:259,y:533,height:32,width:103,trail_flag:0,speed:speed_SC,color:color_SC
     });
     var SC02=createSC({
         parent:canvas,
-        x:269,y:311,height:150,width:122,trail_flag:0,speed:speed_SC,color:color_SC
+        x:269,y:281,height:180,width:102,trail_flag:0,speed:speed_SC,color:color_SC
     });
     var SC03=createSC({
         parent:canvas,
