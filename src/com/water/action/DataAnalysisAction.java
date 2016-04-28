@@ -309,8 +309,9 @@ public class DataAnalysisAction extends ActionSupport{
 	public String searchDataAnalysis() {
 		String sql;
 		DateFormat sdFormat=new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat sdFormat2=new SimpleDateFormat("yyyy.MM.dd");
 		//查询条件拼接
-		if(searchT==null && searchPoolID ==null ){
+		/*if(searchT==null && searchPoolID ==null ){
 //		if(lowT==null && highT==null && searchPoolID ==null){
 			sql="from DataAnalysis";
 		}
@@ -325,6 +326,24 @@ public class DataAnalysisAction extends ActionSupport{
 			{
 				sql+=" and PoolID like '%"+searchPoolID+"'";
 			}
+		}*/
+		if(lowT==null && highT==null && searchPoolID ==null){
+			sql="from DataAnalysis";
+		}
+		else {
+			sql="from DataAnalysis where 1=1";
+			if (lowT!=null)
+			{
+				sql+= " and Convert(varchar,t,102)  >= '"+sdFormat2.format(lowT)+"'"; //SQL时间格式转换 参考http://www.w3school.com.cn/sql/func_convert.asp
+			}
+			if (highT!=null){
+				sql+= " and Convert(varchar,t,102) <= '"+sdFormat2.format(highT)+"'";
+			}
+			if(!searchPoolID.equals(""))
+			{
+				sql+=" and PoolID like '%"+searchPoolID+"'";
+			}
+			
 		}
 
 		System.out.println(sql);
@@ -345,6 +364,7 @@ public class DataAnalysisAction extends ActionSupport{
 	@SuppressWarnings("unchecked")
 	public String export2excel(){
 		String sql;
+		DateFormat sdFormat2=new SimpleDateFormat("yyyy.MM.dd");
 		if(lowT==null && highT==null && searchPoolID ==null){
 			sql="from DataAnalysis";
 		}
@@ -352,10 +372,10 @@ public class DataAnalysisAction extends ActionSupport{
 			sql="from DataAnalysis where 1=1";
 			if (lowT!=null)
 			{
-				sql+= " and t  >= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(lowT)+"'";
+				sql+= " and Convert(varchar,t,102)  >= '"+sdFormat2.format(lowT)+"'"; //SQL时间格式转换 参考http://www.w3school.com.cn/sql/func_convert.asp
 			}
 			if (highT!=null){
-				sql+= " and t <= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(highT)+"'";
+				sql+= " and Convert(varchar,t,102) <= '"+sdFormat2.format(highT)+"'";
 			}
 			if(!searchPoolID.equals(""))
 			{

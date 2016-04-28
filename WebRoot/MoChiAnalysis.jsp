@@ -456,22 +456,26 @@ text-align: center;
 						</form>
 					</div><!-- newTabEdit -->
 				</div><!-- editArea -->
-				<div id="searchArea" style="display: none; width: 400px">
+				<div id="searchArea" style="display: none; width: 600px">
 					<div id="tabSearch" class="easyui-dialog"
 						data-options="closed:true"
-						style="align: center; width: 400px; height: 270px; padding: 10px 60px 20px 60px">
+						style="align: center; width: 500px; height: 400px; padding: 10px 60px 20px 60px">
 						<form id="frmSearch">
 							<dl>
-								<br /> &nbsp; &nbsp; &nbsp; 时 &nbsp; &nbsp; &nbsp; 间: &nbsp;
+								<!-- <br /> &nbsp; &nbsp; &nbsp; 时 &nbsp; &nbsp; &nbsp; 间: &nbsp;
 								<input class="easyui-datebox" style="width: 150px" id="searchT"
 									name="searchT" text="" type="text"></input>
 								<br />
 								<br />
 								<br /> &nbsp; &nbsp; &nbsp;
-								<!-- 膜池编号:  <input  class="easyui-validatebox" type="text" style="width:120px" id="searchPoolID"
-				            	     size="20px" name="searchPoolID" ></input> -->
-								膜池编号:&nbsp;
-								<!--  <input type="text" size="15" id="searchPoolID" name="searchPoolID" /> -->
+								膜池编号:  <input  class="easyui-validatebox" type="text" style="width:120px" id="searchPoolID"
+				            	     size="20px" name="searchPoolID" ></input>
+								膜池编号:&nbsp; -->
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp;
+								<input class="easyui-datebox" style="width:150px" id="lowT" name="lowT"/ ><br/><br/>
+							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp;	
+							    <input class="easyui-datebox" style="width:150px" id="highT" name="highT"/ ><br /><br />
+							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 膜  &nbsp;池 &nbsp; 编  &nbsp;号 : &nbsp; 
 								<select class="easyui-combobox" style="width: 150px"
 									id="searchPoolID" name="searchPoolID">
 									<option value="MTG_MoChi_SC01" selected>1#膜池</option>

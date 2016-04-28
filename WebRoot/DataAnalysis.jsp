@@ -634,20 +634,12 @@ top: 10px;
 						style="align: center; width: 500px; height: 400px; padding: 10px 60px 20px 60px">
 						<form id="frmSearch">
 							<dl>
-								<br /> &nbsp; &nbsp; &nbsp; 时 &nbsp; &nbsp; &nbsp; 间: &nbsp;
-								<input class="easyui-datebox" style="width: 150px" id="searchT"
-									name="searchT" text="" type="text"></input>
-								<!-- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp; 
+								<br />
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp;
 								<input class="easyui-datebox" style="width:150px" id="lowT" name="lowT"/ ><br/><br/>
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp;
-								<input class="easyui-datebox" style="width:150px" id="highT" name="highT"/ ><br /><br /> -->
-								<br />
-								<br />
-								<br /> &nbsp; &nbsp; &nbsp;
-								<!-- 水池编号:  <input  class="easyui-validatebox" type="text" style="width:120px" id="searchPoolID"
-				            	     size="20px" name="searchPoolID" ></input> -->
-								水池编号:&nbsp;
-								<!--  <input type="text" size="15" id="searchPoolID" name="searchPoolID" /> -->
+							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp;	
+							    <input class="easyui-datebox" style="width:150px" id="highT" name="highT"/ ><br /><br />
+							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水  &nbsp;池 &nbsp; 编  &nbsp;号 : &nbsp; 
 								<select class="easyui-combobox" style="width: 150px"
 									id="searchPoolID" name="searchPoolID">
 									<option value="MTG_QingS_SC01">1#清水池</option>

@@ -395,9 +395,24 @@ div.menuSecond{
 						data-options="iconCls:'icon-add'">添加</a>
 				</form>
 			</div>
-			<div id="searchArea" class="easyui-dialog" data-options="closed:true">
-				<form id="fromSearch" >
-					<table>
+			<div id="searchArea" class="easyui-dialog" data-options="closed:true" 
+					style="align: center; width: 500px; height: 400px; padding: 10px 60px 20px 60px">
+				<form id="frmSearch" >
+					<dl>
+								<br /> 
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp;
+								<input class="easyui-datebox" style="width:150px" id="lowT" name="lowT"/ ><br/><br/>
+							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp;	
+							    <input class="easyui-datebox" style="width:150px" id="highT" name="highT"/ ><br /><br />
+							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水  &nbsp;池 &nbsp; 编  &nbsp;号 : &nbsp; 
+								<select class="easyui-combobox" style="width: 150px"
+									id="searchPoolID" name="searchPoolID">
+									<option value="MTG_JJC_SC01">1#出水池</option>
+									<option value="MTG_JJC_SC02">2#出水池</option>
+									<option value="MTG_JJC_SC03">3#出水池</option>
+								</select>									
+							</dl>
+					<!-- <table>
 						<tr>
 							<td>时间  : </td>
 							<td style="width: 200px; height: 30px"><input id="searchT" name="searchT" type="text" class="easyui-datebox"
@@ -414,7 +429,7 @@ div.menuSecond{
 								</select>
 							</td>
 						</tr>
-					</table>
+					</table> -->
 				</form><!-- fromSearm  -->
 			</div><!-- searchArea -->
 				<div id="searchAreaForExport" style="display: none; width: 400px">

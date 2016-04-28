@@ -290,24 +290,27 @@ public class OutStatAction extends ActionSupport{
 	 */
 	public String searchOutStat() {
 		String sql;
+		DateFormat sdFormat2=new SimpleDateFormat("yyyy.MM.dd");
 		//查询条件拼接
-		if(searchT==null && searchPoolID ==null ){
+		if(lowT==null && highT==null && searchPoolID ==null){
 			sql="from OutStat";
 		}
 		else {
 			sql="from OutStat where 1=1";
-			if (searchT!=null)
+			if (lowT!=null)
 			{
-				sql+= " and Convert(varchar,t,120)  like '%"+(new SimpleDateFormat("yyyy-MM-dd")).format(searchT)+"%'";
+				sql+= " and Convert(varchar,t,102)  >= '"+sdFormat2.format(lowT)+"'"; 
+			}
+			if (highT!=null){
+				sql+= " and Convert(varchar,t,102) <= '"+sdFormat2.format(highT)+"'";
 			}
 			if(!searchPoolID.equals(""))
 			{
 				sql+=" and PoolID like '%"+searchPoolID+"'";
 			}
+			
 		}
-
 		System.out.println(sql);
-
 		List<OutStat> searchList = outStatService.findBySql(sql);
 		Collections.sort(searchList, COMPARATOR);
 		List<String> tlist = new ArrayList<String>();
@@ -325,6 +328,7 @@ public class OutStatAction extends ActionSupport{
 	public String export2excel(){
 		@SuppressWarnings("unchecked")
 		String sql;
+		DateFormat sdFormat2=new SimpleDateFormat("yyyy.MM.dd");
 		if(lowT==null && highT==null && searchPoolID ==null){
 			sql="from OutStat";
 		}
@@ -332,10 +336,10 @@ public class OutStatAction extends ActionSupport{
 			sql="from OutStat where 1=1";
 			if (lowT!=null)
 			{
-				sql+= " and t  >= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(lowT)+"'";
+				sql+= " and Convert(varchar,t,102)  >= '"+sdFormat2.format(lowT)+"'"; //SQL时间格式转换 参考http://www.w3school.com.cn/sql/func_convert.asp
 			}
 			if (highT!=null){
-				sql+= " and t <= '"+(new SimpleDateFormat("yyyy-MM-dd")).format(highT)+"'";
+				sql+= " and Convert(varchar,t,102) <= '"+sdFormat2.format(highT)+"'";
 			}
 			if(!searchPoolID.equals(""))
 			{
@@ -343,7 +347,7 @@ public class OutStatAction extends ActionSupport{
 			}
 			
 		}
-		System.out.println(sql);
+//		System.out.println(sql);
 		List<OutStat> list = outStatService.findBySql(sql);
 		if(list.isEmpty()){
 			System.out.println("没有查到数据，无法导出");

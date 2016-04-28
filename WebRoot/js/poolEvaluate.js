@@ -1326,7 +1326,7 @@ function drawImage(){
         },
         navigator: {
         	//enable:true,
-        	enabled : false,
+        	enabled : true,
             handles: {
                 backgroundColor: '#66CCFF',
                 borderColor: '#6650FF'
@@ -1596,7 +1596,7 @@ function drawImage(){
 	    }
 	},
 	navigator: {
-		enabled : false,
+		enabled : true,
 		handles: {
 	    	backgroundColor: '#66CCFF',
 	    	borderColor: '#6650FF'
@@ -1886,7 +1886,7 @@ function drawImage(){
 		    }
 		},
 		navigator: {
-			enabled : false,
+			enabled : true,
 			handles: {
 		    	backgroundColor: '#66CCFF',
 		    	borderColor: '#6650FF'

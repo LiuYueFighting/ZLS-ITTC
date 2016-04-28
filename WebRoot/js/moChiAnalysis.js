@@ -42,8 +42,9 @@ $(document).ready(function() {
 	$('#chooseIndexButton2').combobox({  
         onChange:function(){  
     		hideImportPanel();
-    		searchMode = 0;
-    		dealSearch(); 
+    		searchMode=0;
+    		$("#frmSearch").form('clear');
+    		dealSearch();
         }
 	});  
 	
@@ -546,414 +547,248 @@ function listAllMoChiAnalysis(){
 //条件查询
 function searchMoChiAnalysis(){
 	//$("#searchT").val(searchT);
-	//$("#searchPoolID").val(searchPoolID);
+//	$("#lowT").val(lowT);
+//	$("#highT").val(highT);
+//	$("#searchPoolID").val(searchPoolID);
 	showSearchForm();
 }
 
 var treeURL; //params = 'searchT=&searchPoolID
 
-
-//查询处理
 function dealSearch() {
 	var indexButton = $('#indexForm').serialize();
-//	var buttonID = indexButton.slice(-6);  //searchID = 'index3'
+//	var buttonID = indexButton.slice(-6);  //buttonID = 'index3'
 	var buttonID=$('#chooseIndexButton2').combobox('getValue');
-//	alert("buttonID:"+buttonID);
-	
-	var ImageTitleTemp;
+	var poolIDInMode2;
 	var newParams = '';
+	var failAppearence = false;
 
 	if(searchMode == 0) {   //如果是从三个radio进行查询
-		var params = $("#frmSearch").form('clear').serialize(); //params = 'searchT=&searchPoolID='
+		var params = $("#frmSearch").form('clear').serialize(); 
+		// lowT=&highT=&searchPoolID=&lowNTU=0&highNTU=100&lowAlgaeContent=0&highAlgaeContent=100&lowOutNTU=0&highOutNTU=100&lowSV=0.00&highSV=100.00
 		switch(buttonID) {
-//		case 'index1':
+		//case 'index1':
 		case 'MTG_MoChi_SC01':
-			title = ' 1#膜池 运行工况记录表';
-			ImageTitle = "1#膜池 运行工况记录图";
-			newParams = params + 'MTG_MoChi_SC01';
-			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
+			title = '1#膜池 运行工况记录表';
+			ImageTitle = "1# 膜池 运行工况记录图 ";
+			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_MoChi_SC01');
+			//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?dataAnalysis.PoolID=MTG_MoChi_SC01';
 			break;
-//		case 'index2':
+		//case 'index2':
 		case 'MTG_MoChi_SC02':
 			title = '2#膜池 运行工况记录表';
-			ImageTitle = "2#膜池 运行工况记录图";
-			newParams = params + 'MTG_MoChi_SC02';
-			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
+			ImageTitle = "2# 膜池 运行工况记录图 ";
+			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_MoChi_SC02');
+			//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?dataAnalysis.PoolID=MTG_MoChi_SC02';
 			break;
 //		case 'index3':
-		case 'MTG_MoChi_SC03':
+		case 'MTG_MoChi_SC03':		
 			title = '3#膜池 运行工况记录表';
-			ImageTitle = "3#膜池 运行工况记录图";
-			newParams = params + 'MTG_MoChi_SC03';
-			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
+			ImageTitle = "3# 膜池 运行工况记录图 ";
+			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_MoChi_SC03');
+			//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?dataAnalysis.PoolID=MTG_MoChi_SC03';
 			break;
 //		case 'index4':
 		case 'MTG_MoChi_SC04':
-			title = ' 4#运行工况记录表';
-			ImageTitle = "4#膜池 运行工况记录图";
-			newParams = params + 'MTG_MoChi_SC04';
-			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
+			title = '4#膜池 运行工况记录表';
+			ImageTitle = "4# 膜池 运行工况记录图 ";
+			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_MoChi_SC04');
+			//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?dataAnalysis.PoolID=MTG_MoChi_SC03';
 			break;
 //		case 'index5':
 		case 'MTG_MoChi_SC05':
 			title = '5#膜池 运行工况记录表';
-			ImageTitle = "5#膜池 运行工况记录图";
-			newParams = params + 'MTG_MoChi_SC05';
-			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
+			ImageTitle = "5# 膜池 运行工况记录图 ";
+			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_MoChi_SC05');
+			//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?dataAnalysis.PoolID=MTG_MoChi_SC03';
 			break;
 //		case 'index6':
 		case 'MTG_MoChi_SC06':
 			title = '6#膜池 运行工况记录表';
-			ImageTitle = "6#膜池 运行工况记录图";
-			newParams = params + 'MTG_MoChi_SC06';
-			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
+			ImageTitle = "6# 膜池 运行工况记录图 ";
+			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_MoChi_SC06');
+			//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?dataAnalysis.PoolID=MTG_MoChi_SC03';
 			break;
 		default :
-			title = ' 1#膜池 运行工况记录表';
-			ImageTitle = "1#膜池 运行工况记录图";
-			newParams = params + 'MTG_MoChi_SC01';
-			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
-		
-//			title = '膜池运行工况记录表';
-//			ImageTitle = "膜池运行工况记录图";
-//			newParams = params;
-//			treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
+			title = '1#膜池 运行工况记录表';
+			ImageTitle = "1# 膜池 运行工况记录图 ";
+			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_MoChi_SC01');
+			//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
 		}
 	} else if(searchMode == 1){  //如果是从查询窗口进入
-		var params = $("#frmSearch").serialize(); //params = 'searchT=不确定是否为空&searchPoolID=不确定是否为空'
+		var params = $("#frmSearch").serialize(); 
+		/*
+		 * lowT= 或 lowT=XXXX-XX-XX
+		 * highT=(不确定是否有值) 或 highT=XXXX-XX-XX
+		 * searchPoolID=(不确定是否有值) 或 searchPoolID=MTG_MoChi_SC0X
+		 */
 		//alert("poolID " + poolID);
 		
-		var reTime = new RegExp(/^searchT=\d{4}-\d{2}\-\d{2}/);
-		var testTime = reTime.test(params);
+		var reLowTime = new RegExp(/^lowT=\d{4}-\d{2}\-\d{2}/);
+		var testLowTime = reLowTime.test(params);
+		var reHighTime = new RegExp(/highT=\d{4}-\d{2}\-\d{2}/);
+		var testHighTime = reHighTime.test(params);
 		var reID = new RegExp(/searchPoolID=MTG_MoChi_SC0\d{1}/);
 		var testID = reID.test(params);
 		
-		if(!testTime && !testID) {  //日期空 ID空     searchT=&searchPoolID=
-			switch(buttonID) {
-//				case 'index1':
-				case 'MTG_MoChi_SC01':
-					titleTemp = '1#膜池 运行工况记录表';
-					ImageTitleTemp = "1#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC01';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
-					break;
-//				case 'index2':
-				case 'MTG_MoChi_SC02':
-					titleTemp = '2#膜池 运行工况记录表';
-					ImageTitleTemp = "2#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC02';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
-					break;
-//				case 'index3':
-				case 'MTG_MoChi_SC03':
-					titleTemp = '3#膜池 运行工况记录表';
-					ImageTitleTemp = "3#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC03';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
-					break;
-//				case 'index4':
-				case 'MTG_MoChi_SC04':
-					titleTemp = '4#膜池 运行工况记录表';
-					ImageTitleTemp = "4#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC04';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
-					break;
-//				case 'index5':
-				case 'MTG_MoChi_SC05':
-					titleTemp = '5#膜池 运行工况记录表';
-					ImageTitleTemp = "5#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC05';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
-					break;
-//				case 'index6':
-				case 'MTG_MoChi_SC06':
-					titleTemp = '6#膜池 运行工况记录表';
-					ImageTitleTemp = "6#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC06';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
-					break;
-				default :
-					title = ' 1#膜池 运行工况记录表';
-					ImageTitle = "1#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC01';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC01');
-//					titleTemp = '膜池运行工况记录';
-//					ImageTitleTemp = "膜池运行工况记录图";
-//					newParams = params;
-//					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
-			}   //searchT=&searchPoolID=MTG_MoChi_SC0X
-			title = titleTemp;
-			ImageTitle = ImageTitleTemp;
-		}  //忽略日期，只显示膜池，且树形菜单时间与膜池数据对应
 		
-		if(!testTime && testID) {  //日期空 ID不空     searchT=&searchPoolID=MTG_MoChi_SC0X
-			var index = params.slice(-1);
+		if(testLowTime && testHighTime && testID) {  // lowT、highT、searchPoolID均不为空
+			var lowTimeStr = params.substring(5, 15);
+			var highTimeStr = params.substring(22, 32);
+			var index = params.substring(59, 60);
+			if (lowTimeStr != highTimeStr)
+				TimeStr = lowTimeStr + '~' + highTimeStr;
+			else 
+				TimeStr = lowTimeStr;
 			switch(index) {
 				case '1':
-					titleTemp = '1#膜池 运行工况记录表';
-					ImageTitleTemp = "1#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
+					title = '1#膜池 运行工况记录表' + ' ' + TimeStr;
+					ImageTitle = "1# 膜池 运行工况记录图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC01');
-					break;
-				case '2':
-					titleTemp = '2#膜池 运行工况记录表';
-					ImageTitleTemp = "2#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
-					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
-					//alert($("input[name='chooseIndexButton'][checked]").val());
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC02');
-					break;
-				case '3':
-					titleTemp = '3#膜池 运行工况记录表';
-					ImageTitleTemp = "3#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
-					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC03');
-					break;
-				case '4':
-					titleTemp = '4#膜池 运行工况记录表';
-					ImageTitleTemp = "4#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
-					$('input[name="chooseIndexButton"][value="index4"]').attr("checked", true);
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC04');
-					break;
-				case '5':
-					titleTemp = '5#膜池 运行工况记录表';
-					ImageTitleTemp = "5#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
-					$('input[name="chooseIndexButton"][value="index5"]').attr("checked", true);
-					//alert($("input[name='chooseIndexButton'][checked]").val());
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC05');
-					break;
-				case '6':
-					titleTemp = '6#膜池 运行工况记录表';
-					ImageTitleTemp = "6#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
-					$('input[name="chooseIndexButton"][value="index6"]').attr("checked", true);
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC06');
-					break;
-				default :
-//					titleTemp = '膜池运行工况记录表';
-//					ImageTitleTemp = "膜池运行工况记录图";
-//					newParams = params;
-//					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
-//					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
-					title = ' 1#膜池 运行工况记录表';
-				ImageTitle = "1#膜池 运行工况记录图";
-				newParams = params + 'MTG_MoChi_SC01';
-				treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC01');
-			}//searchT=&searchPoolID=MTG_MoChi_SC0X
-			title = titleTemp;
-			ImageTitle = ImageTitleTemp;
-		}//忽略日期，只显示膜池，且树形菜单时间与膜池数据对应
-		
-		if(testTime && !testID) {  //日期不空 ID空     searchT=XXXX-XX-XX&searchPoolID=
-			switch(buttonID) {
-//				case 'index1':
-			case 'MTG_MoChi_SC01':
-					titleTemp = '1#膜池 运行工况记录表';
-					ImageTitleTemp = "1#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC01';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
-					break;
-//				case 'index2':
-			case 'MTG_MoChi_SC02':
-					titleTemp = '2#膜池 运行工况记录表';
-					ImageTitleTemp = "2#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC02';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
-					break;
-//				case 'index3':
-			case 'MTG_MoChi_SC03':
-					titleTemp = '3#膜池 运行工况记录表';
-					ImageTitleTemp = "3#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC03';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
-					break;
-//				case 'index4':
-			case 'MTG_MoChi_SC04':
-					titleTemp = '4#膜池 运行工况记录表';
-					ImageTitleTemp = "4#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC04';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
-					break;
-//				case 'index5':
-			case 'MTG_MoChi_SC05':
-					titleTemp = '5#膜池 运行工况记录表';
-					ImageTitleTemp = "5#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC05';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
-					break;
-//				case 'index6':
-			case 'MTG_MoChi_SC06':
-					titleTemp = '6#膜池 运行工况记录表';
-					ImageTitleTemp = "6#膜池 运行工况记录图";
-					newParams = params + 'MTG_MoChi_SC06';
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
-					break;
-				default :
-					title = ' 1#膜池 运行工况记录表';
-				ImageTitle = "1#膜池 运行工况记录图";
-				newParams = params + 'MTG_MoChi_SC01';
-				treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
-				$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC01');
-//					titleTemp = '膜池运行工况记录表';
-//					ImageTitleTemp = "膜池运行工况记录图";
-//					newParams = params;
-//					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
-			} //searchT=XXXX-XX-XX&searchPoolID=MTG_MoChi_SC0X
-			var strDate = ' ' + params.substring(8, 18);  // XXXX-XX-XX
-			title = titleTemp + strDate;
-			ImageTitle = ImageTitleTemp + strDate;
-		}//图标显示日期，显示膜池编号，且树形菜单时间与膜池数据对应
-		
-		if(testTime && testID) {  //日期不空 ID不空     searchT=XXXX-XX-XX&searchPoolID=MTG_MoChi_SC0X
-			var index = params.slice(-1);
-			switch(index) {
-				case '1':
-					titleTemp = '1#膜池 运行工况记录表';
-					ImageTitleTemp = "1#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
-					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC01');
-					break;
-				case '2':
-					titleTemp = '2#膜池 运行工况记录表';
-					ImageTitleTemp = "2#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
-					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC02');
-					break;
-				case '3':
-					titleTemp = '3#膜池 运行工况记录表';
-					ImageTitleTemp = "3#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
-					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC03');
-					break;
-				case '4':
-					titleTemp = '4#膜池 运行工况记录表';
-					ImageTitleTemp = "4#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC04';
-					$('input[name="chooseIndexButton"][value="index4"]').attr("checked", true);
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC04');
-					break;
-				case '5':
-					titleTemp = '5#膜池 运行工况记录表';
-					ImageTitleTemp = "5#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC05';
-					$('input[name="chooseIndexButton"][value="index5"]').attr("checked", true);
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC05');
-					break;
-				case '6':
-					titleTemp = '6#膜池 运行工况记录表';
-					ImageTitleTemp = "6#膜池 运行工况记录图";
-					newParams = params;
-					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC06';
-					$('input[name="chooseIndexButton"][value="index6"]').attr("checked", true);
-					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC06');
-					break;
-				default :
-					title = ' 1#膜池 运行工况记录表';
-				ImageTitle = "1#膜池 运行工况记录图";
-				newParams = params + 'MTG_MoChi_SC01';
-				treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
-				$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC01');
-//					titleTemp = '膜池运行工况记录表';
-//					ImageTitleTemp = "膜池运行工况记录图";
-//					newParams = params;
-//					treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
-//					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 //					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC01');
-			}//searchT=XXXX-XX-XX&searchPoolID=MTG_MoChi_SC0X
-			var strDate = ' ' + params.substring(8, 18);  // XXXX-XX-XX
-			title = titleTemp + strDate;
-			ImageTitle = ImageTitleTemp + strDate;
-		}//图标显示日期，只显示膜池，且树形菜单时间与膜池数据对应
-	} else if(searchMode == 2) {  //如果是从树形菜单进入  
-		var params = $("#frmSearch").serialize();  //params = 'searchT=XXXX-XX-XX&searchPoolID=不关心有没有'
-//		alert(params);
-		strDate = params.substring(8, 18);  //'XXXX-XX-XX'
-		switch(buttonID) {  //先查看现在radio的值为多少
+					newParams = params;
+					break;
+				case '2':
+					title = '2#膜池 运行工况记录表' + ' ' + TimeStr;
+					ImageTitle = "2# 膜池 运行工况记录图 " + ' ' + TimeStr;
+					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
+//					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC02');
+					newParams = params;
+					break;
+				case '3':
+					title = '3#膜池 运行工况记录表' + ' ' + TimeStr;
+					ImageTitle = "3# 膜池 运行工况记录图 " + ' ' + TimeStr;
+					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
+//					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC03');
+					newParams = params;
+					break;
+				case '4':
+					title = '4#膜池 运行工况记录表' + ' ' + TimeStr;
+					ImageTitle = "4# 膜池 运行工况记录图 " + ' ' + TimeStr;
+					$('input[name="chooseIndexButton"][value="index4"]').attr("checked", true);
+//					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC04');
+					newParams = params;
+					break;
+				case '5':
+					title = '5#膜池 运行工况记录表' + ' ' + TimeStr;
+					ImageTitle = "5# 膜池 运行工况记录图 " + ' ' + TimeStr;
+					$('input[name="chooseIndexButton"][value="index5"]').attr("checked", true);
+//					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC05');
+					newParams = params;
+					break;
+				case '6':
+					title = '6#膜池 运行工况记录表' + ' ' + TimeStr;
+					ImageTitle = "6# 膜池 运行工况记录图 " + ' ' + TimeStr;
+					$('input[name="chooseIndexButton"][value="index6"]').attr("checked", true);
+//					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC06');
+					newParams = params;
+					break;
+				default :
+					/*title = '运行工况记录表' + ' ' + TimeStr;
+					ImageTitle = "膜池 运行工况记录图 " + ' ' + TimeStr;
+					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
+					newParams = params;*/
+					
+					title = '1#膜池 运行工况记录表' + ' ' + TimeStr;
+					ImageTitle = "1# 膜池 运行工况记录图 " + ' ' + TimeStr;
+					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
+//					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC01');
+					newParams = params;
+					
+				}
+		} else {  // 如果  lowT、highT、searchPoolID均不为空  不满足，退出查询
+			failAppearence = true;
+			$.messager.alert('错误', '查询失败！<br />起始/结束日期、膜池编号不能为空！', 'warning');
+			//设置一个错误的数据，使得查询失败，避免图表刷新，因为即便是数据缺失，SQLServer也会返回特定结果
+			newParams = 'lowT=2015-01-01&highT=2014-01-01&searchPoolID';
+			//closeSearchForm();
+		}
+	} else if(searchMode == 2) {  //从时间树
+		/*
+		 * lowT=XXXX-XX-XX
+		 * highT=XXXX-XX-XX
+		 * searchPoolID=空
+		 * 其余参数也为空
+		 */
+		var params = $("#frmSearch").serialize(); 
+		var lowTimeStr = params.substring(5, 15);
+		var highTimeStr = params.substring(22, 32);
+		var TimeStr = "";
+		if (lowTimeStr != highTimeStr)
+			TimeStr = lowTimeStr + '~' + highTimeStr;
+		else 
+			TimeStr = lowTimeStr;
+//		buttonID= $("#searchPoolID").val();
+		
+		switch(buttonID) {
 //			case 'index1':
 		case 'MTG_MoChi_SC01':
-				title = '1#膜池 运行工况记录表' + '' + strDate;
-				ImageTitle = "1#膜池 运行工况记录图" + ' ' + strDate;
-				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC01';
-				//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC01';
-				break;
-//			case 'index2':
+			title = '1#膜池 运行工况记录表' + ' ' + TimeStr;
+			ImageTitle = "1# 膜池 运行工况记录图 " + ' ' + TimeStr;
+			poolIDInMode2 = 'MTG_MoChi_SC01';
+			newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
+			break;
+//		case 'index2':
 		case 'MTG_MoChi_SC02':
-				title = '2#膜池 运行工况记录表' + '' + strDate;
-				ImageTitle = "2#膜池 运行工况记录图" + '' + strDate;
-				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC02';
-				//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC02';
-				break;
-//			case 'index3':
-		case 'MTG_MoChi_SC03':
-				title = '3#膜池 运行工况记录表' + '' + strDate;
-				ImageTitle = "3#膜池 运行工况记录图" + '' + strDate;
-				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC03';
-				//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action?moChiAnalysis.PoolID=MTG_MoChi_SC03';
-				break;
-//			case 'index4':
-		case 'MTG_MoChi_SC04':
-				title = '4#膜池 运行工况记录表' + '' + strDate;
-				ImageTitle = "4#膜池 运行工况记录图" + '' + strDate;
-				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC04';
-				break;
-//			case 'index5':
+			title = '2#膜池 运行工况记录表' + ' ' + TimeStr;
+			ImageTitle = "2# 膜池 运行工况记录图 " + ' ' + TimeStr;
+			poolIDInMode2 = 'MTG_MoChi_SC02';
+			newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
+			break;
+//		case 'index3':
+		case 'MTG_MoChi_SC03':		
+			title = '3#膜池 运行工况记录表' + ' ' + TimeStr;
+			ImageTitle = "3# 膜池 运行工况记录图 " + ' ' + TimeStr;
+			poolIDInMode2 = 'MTG_MoChi_SC03';
+			newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
+			break;
+		case 'index4':
+		//case 'MTG_MoChi_SC04':
+			title = '4#膜池 运行工况记录表' + ' ' + TimeStr;
+			ImageTitle = "1# 膜池 运行工况记录图 " + ' ' + TimeStr;
+			poolIDInMode2 = 'MTG_MoChi_SC04';
+			newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
+			break;
+//		case 'index5':
 		case 'MTG_MoChi_SC05':
-				title = '5#膜池 运行工况记录表' + '' + strDate;
-				ImageTitle = "5#膜池 运行工况记录图" + '' + strDate;
-				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC05';
-				break;
-//			case 'index6':
+			title = '5#膜池 运行工况记录表' + ' ' + TimeStr;
+			ImageTitle = "5# 膜池 运行工况记录图 " + ' ' + TimeStr;
+			poolIDInMode2 = 'MTG_MoChi_SC05';
+			newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
+			break;
+//		case 'index6':
 		case 'MTG_MoChi_SC06':
-				title = '6#膜池 运行工况记录表' + '' + strDate;
-				ImageTitle = "6#膜池 运行工况记录图" + '' + strDate;
-				newParams = 'searchT=' + strDate + '&searchPoolID=MTG_MoChi_SC06';
-				break;
-			default :
-				title = '膜池运行工况记录表';
-				ImageTitle = "膜池运行工况记录图";
-				newParams = params;
-				//treeURL = '${pageContext.request.contextPath}/searchMoChiAnalysis.action';
+			title = '6#膜池 运行工况记录表' + ' ' + TimeStr;
+			ImageTitle = "6# 膜池 运行工况记录图 " + ' ' + TimeStr;
+			poolIDInMode2 = 'MTG_MoChi_SC06';
+			newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
+			break;
+		default :
+			title = '1#膜池 运行工况记录表' + ' ' + TimeStr;
+			ImageTitle = "1# 膜池 运行工况记录图 " + ' ' + TimeStr;
+			poolIDInMode2 = 'MTG_MoChi_SC01';
+			newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
+			
 		}
-	}
-	//alert("searchMode = " + searchMode +
-	//		"\nbuttonID = " + buttonID + 
-	//		"\nnewParams = " + newParams);
-	
-	$.post("searchMoChiAnalysis.action", newParams, function(result) {
-			if (result.total!=0) {
-				//$('#moChiAnalysisbody').datagrid('reload');// 重新加载
-				tlist = result.tlist;
-				listMoChiAnalysis(result);
-				if(searchMode != 2) {
-					listTreeNode(tlist);
-				}
-			} else {
-				$.messager.alert('查询', '未查询到相关信息', 'warning');
-			}
-	});
 		
-}
+	}	  
 
+//	alert("searchMode:"+searchMode+",newParams = " + newParams);
+	$.post("searchMoChiAnalysis.action", newParams, function(result) {
+		if (result.total!=0) {
+			tlist = result.tlist;
+			listMoChiAnalysis(result);
+			if(searchMode != 2) {
+				listTreeNode(tlist);
+			}
+		} else {
+			if(!failAppearence) {
+				//如果已经出现了查询失败窗口，见mode2，就不必要再出现下面的窗口
+				$.messager.alert('查询', '查询失败,未查找到相关信息', 'warning');
+			}
+		}
+	});
+}
 
 //显示查询窗口
 function showSearchForm() {
@@ -1135,7 +970,7 @@ function prehImage(){
 	             }
 	        },
 	        navigator: {
-	        	enabled : false,
+	        	enabled : true,
 	            handles: {
 	                backgroundColor: '#66CCFF',
 	                borderColor: '#6600FF'
@@ -1386,9 +1221,11 @@ function listTreeNode(tlist){
 			if($('#timeTree').tree('isLeaf',node.target)){	//是根节点
 				out=out.replace("年",'-'); out=out.replace("月",'-'); out=out.replace("日",'');
 				//alert('test');
-				$("#searchT").datebox("setValue",out);
+//				$("#searchT").datebox("setValue",out);
+				$("#lowT").datebox("setValue",out);
+				$("#highT").datebox("setValue",out);
 				$("#searchPoolID").val();
-				dealSearch();		
+				dealSearch();
 			}
 		},
 		cascadeCheck:true,//是否支持级联选择
