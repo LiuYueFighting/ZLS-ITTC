@@ -1,8 +1,10 @@
 //JQuery的入口
 $(function() {
-//	listOutStat();
+	//alert("Initialization call dealsearch");
 	dealSearch();
+	
 });
+
 var tlist=new Array();
 var strDate = '';
 var searchMode = 0;
@@ -31,6 +33,7 @@ $(document).ready(function() {
 		//alert("$selectedValue = " + $selectedValue);
 		hideImportPanel();
 		searchMode = 0;
+		//alert("menu change call dealsearch");
 		dealSearch();
 	});
 });
@@ -151,7 +154,8 @@ $(document).ready(function() {
 	});
 	$('#export').click(function() {
 		hideImportPanel();
-		export2excel();
+		showSearchforExportForm();
+		//export2excel();
 	});
 	$('#import').click(function() {
 		$('#tab_export').css('display','block');
@@ -543,11 +547,11 @@ function deleteOutStat() {
 	});
 }
 
-//查询全部
-function listAllOutStat(){
-	$('#fromSearch').form('clear');
-	dealSearch();
-}
+////查询全部
+//function listAllOutStat(){
+//	$('#fromSearch').form('clear');
+//	dealSearch();
+//}
 
 //条件查询
 function searchOutStat(){
@@ -796,6 +800,7 @@ function showSearchForm() {
 				// 进行表单字段验证，当全部字段都有效时返回true和validatebox一起使用
 				//if ($('#frmSearch').form('validate')) {
 					// 提交到服务器并写入数据库
+				
 					dealSearch();
 					// 关闭窗口
 					closeSearchForm();
@@ -1272,6 +1277,7 @@ function listTreeNode(tlist){
 				out=out.replace("年",'-'); out=out.replace("月",'-'); out=out.replace("日",'');
 				$("#searchT").datebox("setValue",out);
 				$("#searchPoolID").val();
+				//alert('Tree node call')
 				dealSearch();		
 			}
 		},
@@ -1308,18 +1314,68 @@ function GetNode(type){
     };  
 }; 
 
+//显示导出前的查询窗口
+function showSearchforExportForm() {
+	$("#tabSearchForExport").dialog({
+		modal : true,// 模式窗口
+		title : '请选择导出的数据范围',
+		iconCls : 'icon-search',
+		closed:false,
+		buttons : [ {
+			text : '确认',
+			handler : function() {
+				// 进行表单字段验证，当全部字段都有效时返回true和validatebox一起使用
+				//if ($('#frmSearch').form('validate')) {
+					// 提交到服务器并写入数据库
+					// 关闭窗口
+					export2excel();
+					closeSearchForExportForm();
+				//} else {
+				//	$.messager.alert('验证', '项目信息有误或不完整', 'error');
+				//}
+			}
+		}, {
+			text : '取消',
+			handler : function() {
+				closeSearchForExportForm();
+			}
+		} ]
+	});
+}
+
+
+//关闭导出前打开的查询窗口
+function closeSearchForExportForm() {
+	$("#frmSearchForExport").form('clear');
+	$('#tabSearchForExport').dialog('close');
+}
 
 //导出到excel
 function export2excel(){
+	var params = $("#frmSearchForExport").serialize(); 
+	var reLowTime = new RegExp(/^lowT=\d{4}-\d{2}\-\d{2}/);
+	var testLowTime = reLowTime.test(params);
+	var reHighTime = new RegExp(/highT=\d{4}-\d{2}\-\d{2}/);
+	var testHighTime = reHighTime.test(params);
+	var reID = new RegExp(/searchPoolID=MTG_Qing_SC0\d{1}/);
+	var testID = reID.test(params);
+	
+	var url="exportOutStat.action?"+params;
 	var downloadPath = "downloadTempForOut/OutStat.xls";
-	$.post("exportOutStat.action", function(result) {
-		if (result.operateSuccess){
-			window.location.href=downloadPath;
-//			$.messager.alert('导出', '导出成功,请在浏览器下载路径中查看', 'info');		
-		} else {
+	$.post(url, function(result) {
+	if (result.operateSuccess){
+		window.location.href=downloadPath;
+//		$.messager.alert('导出', '导出成功,请在浏览器下载路径中查看', 'info');		
+	} else {
+		if(result.state==1){  //导出失败原因  1-没有相关数据
+			$.messager.alert('导出', '导出失败,没有相关数据', 'warning');
+		}else if(result.state==2){
+			$.messager.alert('导出', '导出失败,程序抛出异常', 'warning');
+		}else{
 			$.messager.alert('导出', '导出失败', 'warning');
 		}
-	});
+	
+	}});
 }
 
 //导入文件操作

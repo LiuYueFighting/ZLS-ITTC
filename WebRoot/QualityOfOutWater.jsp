@@ -199,12 +199,12 @@ div.menuSecond{
 
 	
 	#tab_export {
-		position: absolute;
-		left: 25px;
-		top: 830px;
-		z-index: 999;
-		font-size: 14px;
-		width: 200px;
+	position: relative;
+	left: 25px;
+	top: 170px;
+	z-index: 999;
+	font-size: 14px;
+	width: 200px;
 	}
 
 	#tableEdit {
@@ -291,15 +291,15 @@ div.menuSecond{
 						<input id="upload" type="file" name="upload" style="display:none" onchange="fakeUpload.value=value" /> 
 						<input id="btn-select" type="button" class="btn btn-primary" value="选择文件" 
 							onclick="javascript:upload.click()"
-							style="width:134px; font-size:18px; background-color:#3399FF" /><br /> 
+							style="width:134px; font-size:18px; background-color:rgba(0, 51, 255, 0.8)" /><br /> 
 						<input id="fakeUpload" name="fakeUpload" type="text" 
 							ondblclick="javascript:upload.click()"
 							style="width:134px; height:35px; border:1px solid #95B8E7" /><br />
 						<input id="btn-import" class="btn btn-primary"
 							onclick="javascript:import2DB();fakeUpload.value='';"
-							style="font-size:18px; width:65px; background-color:#3399FF" value="确定" />
+							style="font-size:18px; width:65px; background-color:rgba(0, 51, 255, 0.8)" value="确定" />
 						<input id="btn-cancel" class="btn btn-primary"
-							style="font-size:18px; width:65px; background-color:#3399FF" value="取消"/>
+							style="font-size:18px; width:65px; background-color:rgba(0, 51, 255, 0.8)" value="取消"/>
 					</form>
 				</div>
 			</div>
@@ -399,24 +399,46 @@ div.menuSecond{
 				<form id="fromSearch" >
 					<table>
 						<tr>
-							<td>时间 : </td>
+							<td>时间  : </td>
 							<td style="width: 200px; height: 30px"><input id="searchT" name="searchT" type="text" class="easyui-datebox"
 									style="width: 200px; height: 25px"/></td>
 						</tr>
 						<tr></tr>
 						<tr>
-							<td>编号: </td>
+							<td>编号  : </td>
 							<td style="width: 200px; height: 30px"><select id="searchPoolID" name="searchPoolID" type="text" class="easyui-combobox"
 									style="width: 200px; height: 25px">
-									<option value="MTG_JJC_SC01" selected>出水池01#</option>
-									<option value="MTG_JJC_SC02">出水池02#</option>
-									<option value="MTG_JJC_SC03">出水池03#</option>
+									<option value="MTG_JJC_SC01" selected>1#出水池</option>
+									<option value="MTG_JJC_SC02">2#出水池</option>
+									<option value="MTG_JJC_SC03">3#出水池</option>
 								</select>
 							</td>
 						</tr>
 					</table>
-				</form>
-			</div>
+				</form><!-- fromSearm  -->
+			</div><!-- searchArea -->
+				<div id="searchAreaForExport" style="display: none; width: 400px">
+					<div id="tabSearchForExport" class="easyui-dialog"
+						data-options="closed:true"
+						style="align: center; width: 500px; height: 400px; padding: 10px 60px 20px 60px">
+						<form id="frmSearchForExport">
+							<dl>
+								<br /> 
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp;
+								<input class="easyui-datebox" style="width:150px" id="lowT" name="lowT"/ ><br/><br/>
+							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp;	
+							    <input class="easyui-datebox" style="width:150px" id="highT" name="highT"/ ><br /><br />
+							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水  &nbsp;池 &nbsp; 编  &nbsp;号 : &nbsp; 
+								<select class="easyui-combobox" style="width: 150px"
+									id="searchPoolID" name="searchPoolID">
+									<option value="MTG_JJC_SC01">1#出水池</option>
+									<option value="MTG_JJC_SC02">2#出水池</option>
+									<option value="MTG_JJC_SC03">3#出水池</option>
+								</select>									
+							</dl>
+						</form><!-- frmSearchForExport -->
+					</div><!-- tabSearchForExport -->
+				</div><!-- searchAreaForExport -->
 		</center>
 	</div>
 	<jsp:include page="down.jsp" />

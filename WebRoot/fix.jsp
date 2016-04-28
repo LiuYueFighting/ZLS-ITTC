@@ -37,160 +37,123 @@
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script> 
      
     <style>
-        body {
-        background: #afd9ee;
-        }
-        #myPage {
-        font-family: '微软雅黑','Source Sans Pro';
-        font-size: 15px;
-        width: 1600px;
-        height: 800px;
-        margin:0px auto;
-        position:relative;
-        }
-        #myContent{
-        margin: 0px 0px 0px 0px;
-        position: relative;
-        height: 750px;
-        width: 1600px;
-        }
-        #myContent a{
-	    color: #283a45;
-	    /*background: rgba(255,255,255,0.5);
-	    border: 1px solid black;*/
-	    } 
-	    #fix-panel{
-	    position:absolute;
-	    left: 91.2%;
-	    top: 4.7%;
-	    Z-INDEX: 999;
-	    font-family: 微软雅黑, Arial;
-	    }
-	    #panel_heading{
-	    cursor: pointer;
-	    vertical-align: middle;
-	    padding: 5px 5px;
-	    border-bottom: 1px solid transparent;
-	    border-top-left-radius: 3px;
-	    border-top-right-radius: 3px;
-	    height: 75px;
-	    width: 245px;
-	    Z-INDEX: 999;
+    body {
+    background: #afd9ee;
+    }
+    #myPage {
+    font-family: '微软雅黑','Source Sans Pro';
+    font-size: 15px;
+    width: 1600px;
+    height: 800px;
+    margin:0px auto;
+    position:relative;
+    }
+    #myContent{
+    margin: 0px 0px 0px 0px;
+    position: relative;
+    height: 750px;
+    width: 1600px;
+    }
+    #myContent a{
+    color: #283a45;
+    /*background: rgba(255,255,255,0.5);
+    border: 1px solid black;*/
+    } 
+    #fix-panel{
+    position:absolute;
+    left: 91.2%;
+    top: 4.7%;
+    Z-INDEX: 999;
+    font-family: 微软雅黑, Arial;
+    }
+    #panel_heading{
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 5px 5px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    height: 75px;
+    width: 245px;
+    Z-INDEX: 999;
+    -webkit-transition-property:background-color;
+    -webkit-transition-duration:1s;
+    -webkit-transition-timing-function:ease;
+    /* border: 1px solid; */
+    background: rgba(255,255,255,0.5);
+    border: 2px solid #008fd7;
+    text-align: center;
+    }
+    #panel_heading:hover{
+   	background: rgba(194,215,245,0.5);
+    }
+    /* hcc:hover change color */
+    .hcc{
+   	-webkit-transition-property:background-color;
+    -webkit-transition-duration:0.5s;
+    -webkit-transition-timing-function:ease;
+    cursor: pointer;
+    }
+    .hcc:hover{
+   	background: rgba(194,215,245,0.5);
+    }
+    
+	/* demo  	    
+	#step_1{
 	    -webkit-transition-property:background-color;
-	    -webkit-transition-duration:1s;
-	    -webkit-transition-timing-function:ease;
-	    /* border: 1px solid; */
-	    background: rgba(255,255,255,0.5);
-	    border: 2px solid #008fd7;
-	    text-align: center;
-	    }
-	    #panel_heading:hover{
-    	background: rgba(194,215,245,0.5);
-	    }
-	    /* hcc:hover change color */
-	    .hcc{
-	   	-webkit-transition-property:background-color;
 	    -webkit-transition-duration:0.5s;
 	    -webkit-transition-timing-function:ease;
-	    cursor: pointer;
-	    }
-	    .hcc:hover{
+    }
+    #step_1:hover{
     	background: rgba(194,215,245,0.5);
-	    }
-	    
-		/* demo  	    
-		#step_1{
-		    -webkit-transition-property:background-color;
-		    -webkit-transition-duration:0.5s;
-		    -webkit-transition-timing-function:ease;
-	    }
-	    #step_1:hover{
-	    	background: rgba(194,215,245,0.5);
-	    } */
-	    
-	    #panel_heading h2{
-	    color: #283a45;
-	    font-weight: bolder;
-	    }
-	    .panel{
-	    /* height: 651px; */
-	    width: 245px;
-	    background: rgba(255,255,255,0.7);
-	    color: black;
-	    margin-bottom:0px;
-	    display:none;
-	    }
-	    #name_gzw a{
-   	    text-decoration: none;
-	    /*color: black;*/
-	    } 
-	    .panel a{
-	    text-decoration: none;
-	    color: black;
-	    }
-	    .panel-heading{
-   		text-align: center;
-	    }
-	    #fix_table{
-    	font-size:12px
-	    }
-	    .table_line{
-    	text-align: left;
-    	width:100%;
-		position: absolute;
-		height:20px;
-		padding:4px;
-	    } 
+    } */
+    
+    #panel_heading h2{
+    color: #283a45;
+    font-weight: bolder;
+    }
+    .panel{
+    /* height: 651px; */
+    width: 245px;
+    background: rgba(255,255,255,0.7);
+    color: black;
+    margin-bottom:0px;
+    display:none;
+    }
+    .btn{
+    width:100%;
+    border: 2px solid #337ab7;
+    }
+    #name_gzw a{
+  	    text-decoration: none;
+    /*color: black;*/
+    } 
+    .panel a{
+    text-decoration: none;
+    color: black;
+    }
+    .panel-heading{
+  		text-align: center;
+    }
+    #fix_table{
+   	font-size:12px
+    }
+    .table_line{
+   	text-align: left;
+   	width:100%;
+	position: absolute;
+	height:20px;
+	padding:4px;
+    } 
+    .dropdown-menu>li{
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    }
     </style>
-    <script>
-    function setFMColorRed(id){
-    	//获取阀门及对应标签的对象
-    	var image = document.getElementById(id);
-    	var FMTagId = "W" + id;
-    	var tag = document.getElementById(FMTagId);
-		//强制显示阀门及对应标签
-   		image.style.display = "block"
-   		tag.style.display = "block"
-    	image.src = "image/y2-35x37.png";
-    }
-  
-    function setFMColorGreen(id){
-    	//获取阀门及对应标签的对象
-    	var image = document.getElementById(id);
-    	var FMTagId = "W" + id;
-    	var tag = document.getElementById(FMTagId);
-		//强制显示阀门及对应标签
-   		image.style.display = "block"
-   		tag.style.display = "block"
-    	image.src = "image/y3-35x37.png";
-    }    
-/*
- *  批量显示、隐藏标签模块；考虑使用toggle	
-    function showName(e){
-    	var structureNameGroup = ["name_QS", "name_JJC1", "name_JJC2", "name_JJC3", 
-   								  "name_VL", "name_TC", "name_TC1", "name_CY", 
-   								  "name_YC", "name_HHJ1", "name_HHJ2", "name_HX", 
-   								  "name_QSC1", "name_QSC2", "name_QSC3", "name_QSC4"]
-	    if(e.checked == true){
-			$("div#name_gzw .name_ob").attr("style","display:block;");
-	    }else{
-    		$("div#name_gzw .name_ob").attr("style","display:none;");
-    	}
-    }
-*/
-	/* 重置阀门颜色 */
-	function setDefaultFMColor(){
-		$("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
-        $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
-	}
-	
-    function hideAllFM(){
-    	//隐藏所有阀门（包括阀门对应的标签）
-		$(".fm_default_green").attr("style","display:none;");
-		$(".fm_default_red").attr("style","display:none;");
-		$(".fm_default_hide").attr("style","display:none;");
-	}
-    </script>
 </head>
 <body>
     <jsp:include page="top.jsp" />
@@ -334,26 +297,40 @@
 
 		<div class="panel panel-info" id="init_stage">
 			<div class="panel-heading" id="init_state">初始状态</div>
+<!-- 			
 			<table class="table">
-				<tr><td id="init_statement">全场正常运行</td></tr>
-			</table>
+			<tr><td id="init_statement">全厂正常运行</td></tr>
+			</table> 
+-->
+		</div>
+		<div class="btn-group">
+		    <button type="button" class="btn btn-default dropdown-toggle" 
+		      data-toggle="dropdown">
+		      	全厂正常运行 <span class="caret"></span>
+		    </button>
+		    <ul class="dropdown-menu" role="menu">
+		      <li id="fix_scheme">西侧阀门维修</li>
+		      <li id="restore_scheme">西侧阀门恢复</li>
+		      <li id="extra_fix_scheme">东侧阀门维修</li>
+		      <li id="extra_restore_scheme">东侧阀门恢复</li>
+		    </ul>
 		</div>
 
 		<div class="panel panel-info" id="fix_table">
 			<div class="panel-heading">操作步骤</div>
 			<table class="table">
-				<tr><td id="step_1" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_1_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_2" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_2_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_3" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_3_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_4" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_4_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_5" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_5_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_6" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_6_result" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_1" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_1_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_2" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_2_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_3" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_3_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_4" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_4_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_5" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_5_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_6" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_6_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
 			</table>
 		</div>
 

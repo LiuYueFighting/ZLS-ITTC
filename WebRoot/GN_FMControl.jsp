@@ -233,12 +233,36 @@
         top: 413px;
         z-index:999;
     }
+    #WFM062{
+    		background: rgba(255,255,255,0);
+    		font-size: 20px;
+    		position: absolute;
+    		left: 929px;
+    		top: 332px;
+    		z-index: 999;
+    }
+    #WFM063{
+    		background: rgba(255,255,255,0);
+    		font-size: 20px;
+    		position: absolute;
+    		left: 1029px;
+    		top: 332px;
+    		z-index: 999;
+    }
+    #WFM065{
+    		background: rgba(255,255,255,0);
+    		font-size: 20px;
+    		position: absolute;
+    		left: 1026px;
+    		top: 227px;
+    		z-index: 999;
+    }
     .panel-heading {
     padding: 9px 1px;
 	}
 	p {
 		margin:0;
-		 white-space:nowrap;
+		white-space:nowrap;
 	}
 	.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
 		padding: 0px;
@@ -276,7 +300,13 @@
     setOpenDgree("FM065",read_065);
     computeAll();
     write();
+    showPanel();
     }
+    
+    function showPanel(){
+    		document.getElementById("Prediction_results").style.display="block";
+    	}
+    	
     function setOpenDgree(id,openDgree){
         var num = id.substr(2);
 
@@ -372,15 +402,31 @@
 
     }
     function compute1(){
+    	if (openDgree_062 == 100 && 
+            openDgree_063 == 100 &&
+            openDgree_065 == 100) {
+			hh2In=hh1In1=hh1In2=600;
+		}else if (openDgree_062+openDgree_063 != 0) {
+			hh2In=Math.round(read*4/9*openDgree_065/100/50)*50;
+        	hh1In1=Math.round((read-hh2In)*openDgree_062/(openDgree_062+openDgree_063)/50)*50;
+        	hh1In2=Math.round((read-hh2In)*openDgree_063/(openDgree_062+openDgree_063)/50)*50;
+		}else {
+				hh2In=read;
+        		hh1In1=hh1In2=0;
+		}
 
-if(openDgree_062+openDgree_063 != 0){
-        hh2In=read*4/9*openDgree_065/100;
-        hh1In1=(read-hh2In)*openDgree_062/(openDgree_062+openDgree_063);
-        hh1In2=(read-hh2In)*openDgree_063/(openDgree_062+openDgree_063);
-        }else{
-        	hh2In=read;
-        	hh1In1=hh1In2=0;
-        }
+// if(openDgree_062+openDgree_063 != 0){
+//         hh2In=Math.round(read*4/9*openDgree_065/100/50)*50;
+//         hh1In1=Math.round((read-hh2In)*openDgree_062/(openDgree_062+openDgree_063)/50)*50;
+//         hh1In2=Math.round((read-hh2In)*openDgree_063/(openDgree_062+openDgree_063)/50)*50;
+//         }else if(openDgree_062 == 100 && 
+//         		 openDgree_063 == 100 &&
+//         		 openDgree_065 == 100){
+//         		 	hh2In=hh1In1=hh1In2=600;
+//         }else{
+//         			hh2In=read;
+//         			hh1In1=hh1In2=0;
+//         }
         hh1Out1=hh1In1;
         hh1Out2=hh1In2;
         hh2Out=hh2In;
@@ -440,23 +486,22 @@ if(openDgree_062+openDgree_063 != 0){
             <p>65#&nbsp;&nbsp;<input id="read_FM65" type="text"size="10px" value="100"/>&nbsp;%</p>
             <button id="btn_submit" class="btn btn-info btn_main" value="0" onclick="changeInput()">预测</button>
         </div>
-        <div class="panel panel-info" id="Prediction_results">
-                <div class="panel-heading" id="panelHeading">机加池水量</div>
+        <div class="panel panel-info" id="Prediction_results" style="display:none">
+            <div class="panel-heading" id="panelHeading">机加池水量</div>
                 <table class="table">
                 <tr>
-                <td><span class="flow">1#</span><span id="jjc1In" class="flow">500</span></td><td><span class="flow">m<sup>3</sup>/h</span></td>
+                <td><span class="flow">1#</span><span id="jjc1In" class="flow">600</span></td><td><span class="flow">m<sup>3</sup>/h</span></td>
                 </tr>
                 <tr>
-                <td><span class="flow">2#</span><span id="jjc2In" class="flow">500</span></td><td><span class="flow">m<sup>3</sup>/h</span></td>
+                <td><span class="flow">2#</span><span id="jjc2In" class="flow">600</span></td><td><span class="flow">m<sup>3</sup>/h</span></td>
                 </tr>
                  <tr>
-                <td><span class="flow">3#</span><span id="jjc3In" class="flow">800</span></td><td><span class="flow">m<sup>3</sup>/h</span></td>
+                <td><span class="flow">3#</span><span id="jjc3In" class="flow">600</span></td><td><span class="flow">m<sup>3</sup>/h</span></td>
                 </tr>
                 </table>
-                </div>
+        </div>
                 
        <div>
-
 
 
 <!--         <a href="#" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a> -->

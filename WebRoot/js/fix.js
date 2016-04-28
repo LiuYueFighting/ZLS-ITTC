@@ -1261,12 +1261,18 @@ oCanvas.domReady(function () {
     		setFMColorRed("FM018");
 //    		console.log(document.getElementById("FM018").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png');
 
-			blinTwice("#step_3");
-			blinTwice("#step_3_result");
-			blinTwice("#step_4");
-			blinTwice("#step_4_result");
-			blinTwice("#step_5");
-			blinTwice("#step_5_result");
+//			blinTwice("#step_3");
+//			blinTwice("#step_3_result");
+//			blinTwice("#step_4");
+//			blinTwice("#step_4_result");
+//			blinTwice("#step_5");
+//			blinTwice("#step_5_result");
+			document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+			document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+			document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+			document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+			document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+			document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
     		
     		}
     		//clearTimeout(timer);
@@ -1278,10 +1284,10 @@ oCanvas.domReady(function () {
         	//console.log(GD1001.state);
         	if(GD141.state!=0){
         		GD141.state=2;
-//        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-//        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-        		blinTwice("#step_6");
-        		blinTwice("#step_6_result");
+        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+//        		blinTwice("#step_6");
+//        		blinTwice("#step_6_result");
         		}
         	setFMColorRed("FM019");
     		//GD141.state=2;
@@ -1305,18 +1311,18 @@ oCanvas.domReady(function () {
     		GD37.state=2;
     		setFMColorRed("FM017");
 
-//    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-    		blinTwice("#step_3");
-    		blinTwice("#step_3_result");
-    		blinTwice("#step_4");
-    		blinTwice("#step_4_result");
-    		blinTwice("#step_5");
-    		blinTwice("#step_5_result");
+    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+//    		blinTwice("#step_3");
+//    		blinTwice("#step_3_result");
+//    		blinTwice("#step_4");
+//    		blinTwice("#step_4_result");
+//    		blinTwice("#step_5");
+//    		blinTwice("#step_5_result");
 
     		}
     		
@@ -1326,8 +1332,10 @@ oCanvas.domReady(function () {
         if((GD37.state==0)){//(GD13.state!=2)&&(GD13.state!=1)
         	//console.log(GD37.state);
         	if((GD141.state==1)){
-        		blinTwice("#step_6");
-        		blinTwice("#step_6_result");
+//        		blinTwice("#step_6");
+//        		blinTwice("#step_6_result");
+        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
         		setFMColorRed("FM019");
         		}
         	if(document.getElementById("FM019").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png'){
@@ -1798,14 +1806,13 @@ oCanvas.domReady(function () {
 /*      setFMColorRed("FM016");
         setFMColorRed("FM018");
         setFMColorRed("FM019");*/
-
         var todolist = [
-			{ "content":"1&nbsp;&nbsp;关闭阀门16#", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧虹吸进水" },
-			{ "content":"2&nbsp;&nbsp;关闭阀门9#~14#小虹吸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧进水" },
-			{ "content":"3&nbsp;&nbsp;关闭阀门18#", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;防止西侧反水" },
-			{ "content":"4&nbsp;&nbsp;打开9#~14#滤池排空闸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;9#~14#滤格排空" },
-			{ "content":"5&nbsp;&nbsp;断开东西滤池清水联通闸",  "result":"&nbsp;&nbsp;&nbsp;&nbsp;断开联通" },
-			{ "content":"6&nbsp;&nbsp;关闭阀门19#", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
+			{ "content":"1&nbsp;&nbsp;关闭阀门16#,", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧虹吸进水" },
+			{ "content":"2&nbsp;&nbsp;关闭阀门9#~14#小虹吸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧进水" },
+			{ "content":"3&nbsp;&nbsp;关闭阀门18#,", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;防止西侧反水" },
+			{ "content":"4&nbsp;&nbsp;打开9#~14#滤池排空闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;9#~14#滤格排空" },
+			{ "content":"5&nbsp;&nbsp;断开东西滤池清水联通闸,",  "result":"&nbsp;&nbsp;&nbsp;&nbsp;断开联通" },
+			{ "content":"6&nbsp;&nbsp;关闭阀门19#,", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
 		];
 
 		for (i=0;i<todolist.length;i++){
@@ -1830,10 +1837,11 @@ oCanvas.domReady(function () {
 
 		//动态效果
         setFMColorRed("FM016");  
-		/*document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+		
 		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";*/
+		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
 		/* js版blinblin
 		 * var demo = document.getElementById("step_1");
 		   blinTwice(demo);
@@ -1841,10 +1849,10 @@ oCanvas.domReady(function () {
         $("#init_state").text("状态");
         $("#init_statement").text("东侧阀门维修中");
         
-		blinTwice("#step_1");
-		blinTwice("#step_1_result");
-		blinTwice("#step_2");
-		blinTwice("#step_2_result");
+//		blinTwice("#step_1");
+//		blinTwice("#step_1_result");
+//		blinTwice("#step_2");
+//		blinTwice("#step_2_result");
 		
     	//管道退水
 		GD11.state=2;
@@ -1869,13 +1877,14 @@ oCanvas.domReady(function () {
         setFMColorGreen("FM018");
         setFMColorGreen("FM019");*/
         
+        $(".table_content").css("background-color","#ffffff");
         var todolist = [
-			{"content":"1&nbsp;&nbsp;打开阀门16#", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复东侧虹吸进水" },
-			{"content":"2&nbsp;&nbsp;打开阀门9#~14#小虹吸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;逐格滤料冲洗合格后可以恢复" },
-			{"content":"3&nbsp;&nbsp;打开阀门18#", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
-			{"content":"4&nbsp;&nbsp;关闭9#~14#滤池排空闸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
-			{"content":"5&nbsp;&nbsp;开启东西滤池清水联通闸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;平衡东西两侧水量" },
-			{"content":"6&nbsp;&nbsp;打开阀门19#", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
+			{"content":"1&nbsp;&nbsp;打开阀门16#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复东侧虹吸进水" },
+			{"content":"2&nbsp;&nbsp;打开阀门9#~14#小虹吸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;逐格滤料冲洗合格后可以恢复" },
+			{"content":"3&nbsp;&nbsp;打开阀门18#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
+			{"content":"4&nbsp;&nbsp;关闭9#~14#滤池排空闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
+			{"content":"5&nbsp;&nbsp;开启东西滤池清水联通闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;平衡东西两侧水量" },
+			{"content":"6&nbsp;&nbsp;打开阀门19#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
 		];
         
 		for (i=0;i<todolist.length;i++){
@@ -1900,36 +1909,36 @@ oCanvas.domReady(function () {
     	//计时器控制阀门颜色和对应维修步骤变化情况
     	window.setTimeout(function(){              
     		setFMColorGreen("FM019");
-//    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-    		blinTwice("#step_6");
-    		blinTwice("#step_6_result");
-    		blinTwice("#step_5");
-    		blinTwice("#step_5_result");
+    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+//    		blinTwice("#step_6");
+//    		blinTwice("#step_6_result");
+//    		blinTwice("#step_5");
+//    		blinTwice("#step_5_result");
          },300);
         window.setTimeout(function(){              
         	setFMColorGreen("FM018");
-//    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-    		blinTwice("#step_3");
-    		blinTwice("#step_3_result");
-    		blinTwice("#step_4");
-    		blinTwice("#step_4_result");
+    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+//    		blinTwice("#step_3");
+//    		blinTwice("#step_3_result");
+//    		blinTwice("#step_4");
+//    		blinTwice("#step_4_result");
          },1000);
         window.setTimeout(function(){              
         	setFMColorGreen("FM016");
-//        	document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-    		blinTwice("#step_1");
-    		blinTwice("#step_1_result");
-    		blinTwice("#step_2");
-    		blinTwice("#step_2_result");
+        	document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+//    		blinTwice("#step_1");
+//    		blinTwice("#step_1_result");
+//    		blinTwice("#step_2");
+//    		blinTwice("#step_2_result");
         	GD1001.state=3;
         	GD11.state=3;
          },1700);
@@ -1949,13 +1958,14 @@ oCanvas.domReady(function () {
         setFMColorGreen("FM017");
         setFMColorGreen("FM019");*/
         
+        $(".table_content").css("background-color","#ffffff");
         var todolist = [
-			{ "content":"1&nbsp;&nbsp;打开阀门14#", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复西侧虹吸进水" },
-			{ "content":"2&nbsp;&nbsp;打开阀门1#~8#小虹吸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;逐格滤料冲洗合格后可以恢复" },
-			{ "content":"3&nbsp;&nbsp;打开阀门17#", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
-			{ "content":"4&nbsp;&nbsp;关闭1#~8#滤池排空闸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
-			{ "content":"5&nbsp;&nbsp;开启东西滤池清水联通闸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;平衡东西两侧水量" },
-			{ "content":"6&nbsp;&nbsp;打开阀门19#", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
+			{ "content":"1&nbsp;&nbsp;打开阀门14#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复西侧虹吸进水" },
+			{ "content":"2&nbsp;&nbsp;打开阀门1#~8#小虹吸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;逐格滤料冲洗合格后可以恢复" },
+			{ "content":"3&nbsp;&nbsp;打开阀门17#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
+			{ "content":"4&nbsp;&nbsp;关闭1#~8#滤池排空闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
+			{ "content":"5&nbsp;&nbsp;开启东西滤池清水联通闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;平衡东西两侧水量" },
+			{ "content":"6&nbsp;&nbsp;打开阀门19#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
 		];
 
 		for (i=0;i<todolist.length;i++){
@@ -1986,39 +1996,39 @@ oCanvas.domReady(function () {
     		GD141.state=3;
 //    		console.log("GD141:");
 //    		console.log(GD141.state);
-//    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-    		blinTwice("#step_6");
-    		blinTwice("#step_6_result");
-    		blinTwice("#step_5");
-    		blinTwice("#step_5_result");
+    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+//    		blinTwice("#step_6");
+//    		blinTwice("#step_6_result");
+//    		blinTwice("#step_5");
+//    		blinTwice("#step_5_result");
          },300);
         window.setTimeout(function(){              
         	setFMColorGreen("FM017");
         	GD37.state=3;
-//    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-    		blinTwice("#step_3");
-    		blinTwice("#step_3_result");
-    		blinTwice("#step_4");
-    		blinTwice("#step_4_result");
+    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+//    		blinTwice("#step_3");
+//    		blinTwice("#step_3_result");
+//    		blinTwice("#step_4");
+//    		blinTwice("#step_4_result");
          },1500);
         window.setTimeout(function(){              
         	setFMColorGreen("FM014");
         	GD26.state=3;
         	GD27.state=3;
-//        	document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-    		blinTwice("#step_1");
-    		blinTwice("#step_1_result");
-    		blinTwice("#step_2");
-    		blinTwice("#step_2_result");
+        	document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+//    		blinTwice("#step_1");
+//    		blinTwice("#step_1_result");
+//    		blinTwice("#step_2");
+//    		blinTwice("#step_2_result");
     		
 //        	GD1001.state=3;
 //        	GD11.state=3;
@@ -2041,12 +2051,12 @@ oCanvas.domReady(function () {
         document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
         
         var todolist = [
-		{ "content":"1&nbsp;&nbsp;关闭阀门14#", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水" },
-		{ "content":"2&nbsp;&nbsp;关闭阀门1#~8#小虹吸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止西侧进水" },
-		{ "content":"3&nbsp;&nbsp;关闭阀门17#", "result":"&nbsp;&nbsp;&nbsp;&nbsp;防止东侧反水" },
-		{ "content":"4&nbsp;&nbsp;打开1#~8#滤池排空闸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;1#~8#滤格排空" },
-		{ "content":"5&nbsp;&nbsp;断开东西滤池清水联通闸", "result":"&nbsp;&nbsp;&nbsp;&nbsp;断开联通" },
-		{ "content":"6&nbsp;&nbsp;关闭阀门19#", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
+		{ "content":"1&nbsp;&nbsp;关闭阀门14#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水" },
+		{ "content":"2&nbsp;&nbsp;关闭阀门1#~8#小虹吸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止西侧进水" },
+		{ "content":"3&nbsp;&nbsp;关闭阀门17#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;防止东侧反水" },
+		{ "content":"4&nbsp;&nbsp;打开1#~8#滤池排空闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;1#~8#滤格排空" },
+		{ "content":"5&nbsp;&nbsp;断开东西滤池清水联通闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;断开联通" },
+		{ "content":"6&nbsp;&nbsp;关闭阀门19#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
 		];
 
 		for (i=0;i<todolist.length;i++){
@@ -2072,16 +2082,16 @@ oCanvas.domReady(function () {
     	
     	//动态效果
         setFMColorRed("FM014");  
-//		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-//		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-//		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-//		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
         $("#init_state").text("状态");
         $("#init_statement").text("西侧阀门维修中");
-        blinTwice("#step_1");
-		blinTwice("#step_1_result");
-		blinTwice("#step_2");
-		blinTwice("#step_2_result");
+//      blinTwice("#step_1");
+//		blinTwice("#step_1_result");
+//		blinTwice("#step_2");
+//		blinTwice("#step_2_result");
     	GD26.state=2;
     	GD27.state=2;
 
@@ -2654,6 +2664,40 @@ oCanvas.domReady(function () {
             opacity:'1'},'fast');
     }
     
+    function setFMColorRed(id){
+    	//获取阀门及对应标签的对象
+    	var image = document.getElementById(id);
+    	var FMTagId = "W" + id;
+    	var tag = document.getElementById(FMTagId);
+		//强制显示阀门及对应标签
+   		image.style.display = "block"
+   		tag.style.display = "block"
+    	image.src = "image/y2-35x37.png";
+    }
+  
+    function setFMColorGreen(id){
+    	//获取阀门及对应标签的对象
+    	var image = document.getElementById(id);
+    	var FMTagId = "W" + id;
+    	var tag = document.getElementById(FMTagId);
+		//强制显示阀门及对应标签
+   		image.style.display = "block"
+   		tag.style.display = "block"
+    	image.src = "image/y3-35x37.png";
+    }    
+
+	/* 重置阀门颜色 */
+	function setDefaultFMColor(){
+		$("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
+        $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
+	}
+	
+    function hideAllFM(){
+    	//隐藏所有阀门（包括阀门对应的标签）
+		$(".fm_default_green").attr("style","display:none;");
+		$(".fm_default_red").attr("style","display:none;");
+		$(".fm_default_hide").attr("style","display:none;");
+	}
     
     function clearAll(){
     	GD1001.state=3;
@@ -2729,6 +2773,8 @@ oCanvas.domReady(function () {
         $("#fix_head").text("请点击需要维修的构筑物");
         $("#init_state").text("初始状态");
         $("#init_statement").text("全场正常运行");
+        
+		$(".table_content").css("background-color","#ffffff");
         
         $("#scheme").html("&nbsp;");
         $("#scheme_extra").html("&nbsp;");

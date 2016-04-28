@@ -159,7 +159,8 @@ $(document).ready(function() {
 	});
 	$('#export').click(function() {
 		hideImportPanel();
-		export2excel();
+//		export2excel();
+		showSearchforExportForm();
 	});
 	$('#import').click(function() {
 		$('#tab_export').css('display','block');
@@ -617,9 +618,9 @@ function dealAddSave() {
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#newfrmEdit").serialize();
 	var paramsArray = params.split("split=&");
-	alert("prams is " + params + 
+	/*alert("prams is " + params + 
 			"\nparamsArray.length is " + paramsArray.length + 
-			"\npramsArray is " + paramsArray);
+			"\npramsArray is " + paramsArray);*/
 	var errorMessage = '';
 	var flag = true;
 	for(var i = 1; i < paramsArray.length; ++i) {
@@ -708,7 +709,7 @@ function searchPoolEvaluate(){
 function dealSearch() {
 	var indexButton = $('#indexForm').serialize();
 	var buttonID = indexButton.slice(-6);  //buttonID = 'index3'
-	
+	var poolIDInMode2;
 	var newParams = '';
 	var failAppearence = false;
 
@@ -837,7 +838,8 @@ function dealSearch() {
 				ImageTitle1 = "1# 机加池浊度分析图 " + ' ' + TimeStr;
 				ImageTitle2 = "1# 机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
 				ImageTitle3 = "1# 机加池基本运行参数分析图 " + ' ' + TimeStr;
-				newParams = params;
+				poolIDInMode2 = 'MTG_JJC_SC01';
+				newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 				break;
 			case 'index2':
@@ -845,7 +847,8 @@ function dealSearch() {
 				ImageTitle1 = "2# 机加池浊度分析图 " + ' ' + TimeStr;
 				ImageTitle2 = "2# 机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
 				ImageTitle3 = "2# 机加池基本运行参数分析图 " + ' ' + TimeStr;
-				newParams = params;
+				poolIDInMode2 = 'MTG_JJC_SC02';
+				newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 				break;
 			case 'index3':
@@ -853,7 +856,8 @@ function dealSearch() {
 				ImageTitle1 = "3# 机加池浊度分析图 " + ' ' + TimeStr;
 				ImageTitle2 = "3# 机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
 				ImageTitle3 = "3# 机加池基本运行参数分析图 " + ' ' + TimeStr;
-				newParams = params;
+				poolIDInMode2 = 'MTG_JJC_SC03';
+				newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_JJC_SC03';
 				break;
 			default :
@@ -861,10 +865,12 @@ function dealSearch() {
 				ImageTitle1 = "机加池浊度分析图 " + ' ' + TimeStr;
 				ImageTitle2 = "机加池原水藻类/水温/预加氯量分析图 " + ' ' + TimeStr;
 				ImageTitle3 = "机加池基本运行参数分析图 " + ' ' + TimeStr;
-				newParams = params;
+				poolIDInMode2 = 'MTG_JJC_SC03';
+				newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
 				//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action';
 		}
 	}
+	  
 
 	//alert("newParams = " + newParams);
 	$.post("searchPoolEvaluate.action", newParams, function(result) {
@@ -970,6 +976,40 @@ function keysrt(key,desc) {
 	}
 }
 
+function showSearchforExportForm() {
+	$("#tabSearchForExport").dialog({
+		modal : true,// 模式窗口
+		title : '请选择导出的数据范围',
+		iconCls : 'icon-search',
+		closed:false,
+		buttons : [ {
+			text : '确认',
+			handler : function() {
+				// 进行表单字段验证，当全部字段都有效时返回true和validatebox一起使用
+				//if ($('#frmSearch').form('validate')) {
+					// 提交到服务器并写入数据库
+					// 关闭窗口
+					export2excel();
+					closeSearchForExportForm();
+				//} else {
+				//	$.messager.alert('验证', '项目信息有误或不完整', 'error');
+				//}
+			}
+		}, {
+			text : '取消',
+			handler : function() {
+				closeSearchForExportForm();
+			}
+		} ]
+	});
+}
+
+
+//关闭导出前打开的查询窗口
+function closeSearchForExportForm() {
+	$("#frmSearchForExport").form('clear');
+	$('#tabSearchForExport').dialog('close');
+}
 
 //导出到excel文件
 function export2excel(){
@@ -990,17 +1030,31 @@ function export2excel(){
 //	$.messager.alert('导出', '导出失败', 'warning');
 //	}
 //	});
-
+	var params = $("#frmSearchForExport").serialize(); 
+	var reLowTime = new RegExp(/^lowT=\d{4}-\d{2}\-\d{2}/);
+	var testLowTime = reLowTime.test(params);
+	var reHighTime = new RegExp(/highT=\d{4}-\d{2}\-\d{2}/);
+	var testHighTime = reHighTime.test(params);
+	var reID = new RegExp(/searchPoolID=MTG_JJC_SC0\d{1}/);
+	var testID = reID.test(params);
+	var url="exportPoolEvaluate.action?"+params;
+	
 	var downloadPath = "downloadTempForJJC/PoolEvaluate.xls";
-	$.post("exportPoolEvaluate.action", function(result) {
+	
+	$.post(url, function(result) {
 		if (result.operateSuccess){
 			window.location.href=downloadPath;
-//			$.messager.alert('导出', '导出成功', 'info');		
 		} else {
-			$.messager.alert('导出', '导出失败', 'warning');
-		}
-	});
-}
+			if(result.state==1){  //导出失败原因  1-没有相关数据
+				$.messager.alert('导出', '导出失败,没有相关数据', 'warning');
+			}else if(result.state==2){
+				$.messager.alert('导出', '导出失败,程序抛出异常', 'warning');
+			}else{
+				$.messager.alert('导出', '导出失败', 'warning');
+			}
+		
+		}});
+}//export2excel
 
 //导入文件操作
 function import2DB(){
