@@ -1030,11 +1030,26 @@ function prehImage(){
 		        	}
 		        },	//显示图表版权信息
 			exporting : {
-				buttons: {
-					contextButton: {
-	                    text: '下载'
-	                }
-	            }
+				  type:'image/svg+xml',
+				  filename: 'DataAnalysis',
+				  buttons: {
+		                contextButton: {
+		                    enabled: false
+		                },
+		                exportButton: {
+		                    text: '导出',
+		                    onclick: function () {
+		                        this.exportChart();
+		                    }
+//		                    menuItems: Highcharts.getOptions().exporting.buttons.contextButton.menuItems.splice(2)
+		                },
+		                printButton: {
+		                    text: '打印',
+		                    onclick: function () {
+		                        this.print();
+		                    }
+		                }
+		            }
 			},
 			lang:{						
 				printChart: '打印',

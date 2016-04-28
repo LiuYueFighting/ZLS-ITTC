@@ -137,6 +137,92 @@ var constructor_show_down = function (settings, core) {
 };
 
 oCanvas.registerDisplayObject("SC_show_down", constructor_show_down, "init");
+
+var constructor_show_fill = function (settings, core) {
+
+    return oCanvas.extend({
+        core: core,
+        shapeType: "rectangular",
+
+        init: function () {
+            this.start=0;
+            this.full=0;
+            this.height_now=this.Height;
+//            this.a=0;
+            this.color="rgba(26,215,255,0)";
+        },
+        advance: function () {
+            if(this.start==1&&this.full!=1){
+//            	if(this.a<1){
+//            		this.a += 0.1;
+//            		console.log(this.a);
+//            		this.fill="rgba(26,215,255,this.a)";
+//            	}
+//            	else{
+//            		this.full=1;
+//            	}
+                if (this.fill == "rgba(26,215,255,0)") {
+//                    this.a += 0.1;
+                    this.fill="rgba(26,215,255,0.1)";
+                }
+                else if(this.fill == "rgba(26,215,255,0.1)"){
+                	this.fill="rgba(26,215,255,0.2)";
+                }
+                else if(this.fill == "rgba(26,215,255,0.2)"){
+                	this.fill="rgba(26,215,255,0.3)";
+                }
+                else if(this.fill == "rgba(26,215,255,0.3)"){
+                	this.fill="rgba(26,215,255,0.4)";
+                }
+                else if(this.fill == "rgba(26,215,255,0.4)"){
+                	this.fill="rgba(26,215,255,0.5)";
+                }
+                else if(this.fill == "rgba(26,215,255,0.5)"){
+                	this.fill="rgba(26,215,255,0.6)";
+                }
+                else if(this.fill == "rgba(26,215,255,0.6)"){
+                	this.fill="rgba(26,215,255,0.7)";
+                }
+                else if(this.fill == "rgba(26,215,255,0.7)"){
+                	this.fill="rgba(26,215,255,0.8)";
+                }
+                else if(this.fill == "rgba(26,215,255,0.8)"){
+                	this.fill="rgba(26,215,255,0.9)";
+                }
+                else if(this.fill == "rgba(26,215,255,0.9)"){
+                	this.fill="rgba(26,215,255,1)";
+                }
+                else {
+                    this.full = 1;
+                }
+            }
+        },
+        draw: function () {
+            var canvas = this.core.canvas,
+                origin = this.getOrigin(),
+                x = this.abs_x - origin.x,
+                y = this.abs_y - origin.y;
+
+            canvas.beginPath();
+            canvas.strokeStyle = "#000";
+            if (this.trail_flag == 1) {
+                canvas.moveTo(this.trail[0].x_t, this.trail[0].y_t);
+                for (var i = 1; i < this.trail.length; i++) {
+                    canvas.lineTo(this.trail[i].x_t, this.trail[i].y_t);
+                }
+                canvas.lineTo(this.trail[0].x_t, this.trail[0].y_t);
+                canvas.clip();
+            }
+            if (this.fill !== "") {
+                canvas.fillStyle = this.fill;
+                canvas.fillRect(x, y , this.Width, this.Height);
+            }
+            canvas.closePath();
+        }
+    }, settings);
+};
+
+oCanvas.registerDisplayObject("SC_show_fill", constructor_show_fill, "init");
 //原来的管道绘制方法
 //var constructor_gd = function (settings, core) {
 //
@@ -742,7 +828,7 @@ var constructor_gd1 = function (settings, core) {
         	}
             
             this.endHeight = -1;
-            this.speed=2;
+//            this.speed=2;
         },
         
         advance: function () {
@@ -948,13 +1034,14 @@ function createGD1(options){
 	       endPoint: {
 	            x: 0, y: 0
 	        },
-	        speed:2,
+	        speed:options.speed,
 	        startIndex: 0,
 	        endIndex:0,
 	        GDwidth:options.GDwidth,
 	        fill:options.color,
 	        endHeight: 0,
 	        state:options.state
+	        
 	});
 	options.parent.addChild(GD02);
     return GD02;
@@ -1024,5 +1111,45 @@ function createSC(options){
     }
     options.parent.addChild(SC01);
     return SC01;
+}
+
+function createSC1(options){
+    var SC02;
+    if(options.trail_flag==1){
+        SC02 = options.parent.display.SC_show({
+            x: options.x,
+            y: options.y,
+            Width: options.width,
+            Height: options.height,
+            height_now: options.height,
+            trail_flag: 1,
+            trail: options.trail,
+            t: 1405,
+            speed:options.speed*2,
+//            a:0,
+            fill: options.color,
+//            fill: "rgba(26,215,255,options.a)",
+            full:0,
+            start:0
+        });
+    }else{
+        SC02 = options.parent.display.SC_show({
+            x: options.x,
+            y: options.y,
+            Width: options.width,
+            Height: options.height,
+            height_now: options.height,
+            trail_flag: 0,
+            t: 1405,
+            speed :options.speed*2,
+//            a:0,
+            fill: options.color,
+//            fill: "rgba(26,215,255,options.a)",
+            full:0,
+            start:0
+        });
+    }
+    options.parent.addChild(SC02);
+    return SC02;
 }
 
