@@ -164,7 +164,7 @@ div.icon {
 	border: 1px solid #CCCCCC;
 	border-radius: 90%;
 	color: #FFFFFF;
-	background-color: #3399FF; 
+	background-color: #337ab7; 
 	display: block;
 	height: 70px;
 	width: 70px;
@@ -189,7 +189,7 @@ div.menuSecond{
 	border: 1px solid #CCCCCC;
 	border-radius: 90%;
 	color: #FFFFFF;
-	background-color: #3399FF; 
+	background-color: #337ab7; 
 	display: block;
 	height: 50px;
 	width: 50px;

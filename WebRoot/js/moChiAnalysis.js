@@ -1014,9 +1014,24 @@ function prehImage(){
 		        	}
 		        },	//显示图表版权信息
 			exporting : {
+				filename: 'MoChiAnalysis',
+				type:'image/svg+xml',
 				buttons: {
 	                contextButton: {
-	                    text: '下载'
+	                    enabled: false
+	                },
+	                exportButton: {
+	                    text: '导出',
+//	                    menuItems: Highcharts.getOptions().exporting.buttons.contextButton.menuItems.splice(2)
+	                    onclick: function(){
+	                    	this.exportChart();
+	                    }
+	                },
+	                printButton: {
+	                    text: '打印',
+	                    onclick: function () {
+	                        this.print();
+	                    }
 	                }
 	            }
 			},

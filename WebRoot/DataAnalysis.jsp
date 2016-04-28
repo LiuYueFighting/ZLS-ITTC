@@ -180,7 +180,7 @@ div.icon {
 	border: 1px solid #CCCCCC;
 	border-radius: 90%;
 	color: #FFFFFF;
-	background-color: #3399FF; 
+	background-color: #337ab7; 
 	display: block;
 	height: 70px;
 	width: 70px;
@@ -205,7 +205,7 @@ div.menuSecond{
 	border: 1px solid #CCCCCC;
 	border-radius: 90%;
 	color: #FFFFFF;
-	background-color: #3399FF; 
+	background-color: #337ab7; 
 	display: block;
 	height: 50px;
 	width: 50px;
@@ -426,7 +426,6 @@ top: 10px;
 					</tr>
 				</table>
 			</div>
-			
 			<div id="tab_entity">
 				<div id="imageContainer" style="max-width: 1300px; height: 600px;"></div>
 				<div id="dataBody">
@@ -487,11 +486,6 @@ top: 10px;
 							<input type="hidden" id="dateTemp" name="dateTemp" /> <input
 								type="hidden" id="ID" name="dataAnalysis.ID" /> <br />
 							<dl>
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp; 
-								<input class="easyui-datebox" style="width:150px" id="lowT" name="lowT"/ ><br/><br/>
-								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp;
-								<input class="easyui-datebox" style="width:150px" id="highT" name="highT"/ ><br /><br />
-						
 								&nbsp; &nbsp;时 &nbsp; &nbsp; &nbsp; &nbsp; 间 : &nbsp;
 								<input class="easyui-datetimebox" name="dataAnalysis.t" id="t"
 									type="text"	data-options="required:true,showSeconds:false,missingMessage:'请选择时间'"
@@ -637,12 +631,16 @@ top: 10px;
 				<div id="searchArea" style="display: none; width: 400px">
 					<div id="tabSearch" class="easyui-dialog"
 						data-options="closed:true"
-						style="align: center; width: 400px; height: 270px; padding: 10px 60px 20px 60px">
+						style="align: center; width: 500px; height: 400px; padding: 10px 60px 20px 60px">
 						<form id="frmSearch">
 							<dl>
 								<br /> &nbsp; &nbsp; &nbsp; 时 &nbsp; &nbsp; &nbsp; 间: &nbsp;
 								<input class="easyui-datebox" style="width: 150px" id="searchT"
 									name="searchT" text="" type="text"></input>
+								<!-- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 起  &nbsp;始  &nbsp;日 &nbsp; 期 : &nbsp; 
+								<input class="easyui-datebox" style="width:150px" id="lowT" name="lowT"/ ><br/><br/>
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 结  &nbsp;束  &nbsp;日 &nbsp; 期 : &nbsp;
+								<input class="easyui-datebox" style="width:150px" id="highT" name="highT"/ ><br /><br /> -->
 								<br />
 								<br />
 								<br /> &nbsp; &nbsp; &nbsp;
