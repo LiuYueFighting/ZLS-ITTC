@@ -42,7 +42,7 @@ oCanvas.domReady(function () {
         ],
         state:1,
         GDwidth:width_all,
-        speed:2,
+        speed:6,
         color:color_GD
     });//2
     var GD0102=createGD1({
@@ -53,14 +53,14 @@ oCanvas.domReady(function () {
         ],
         state:1,
         GDwidth:width_all,
-        speed:speed_GD,
+        speed:0.3,
         color:color_GD
     });//2
     var GD02=createGD1({
         parent:canvas,
         cells:[
             {x_cell: 747 ,y_cell: 98},
-            {x_cell: 747 ,y_cell: 222},
+            {x_cell: 747 ,y_cell: 221},
             {x_cell: 775 ,y_cell: 240},
             {x_cell: 1019 ,y_cell: 240},
             {x_cell: 1019 , y_cell: 256}
@@ -405,7 +405,7 @@ oCanvas.domReady(function () {
         ],
         state:1,
         GDwidth:width_all,
-        speed:speed_GD,
+        speed:0.3,
         color:color_GD
     });
     var GD30=createGD1({
@@ -908,6 +908,10 @@ oCanvas.domReady(function () {
     	  document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
 //    	  blinTwice("#step_3");
        }
+       if((GD0101.state==0)&&(GD25.state==0)&&(GD0102.state==0)&&(GD05.state==0)){
+     	  document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+//     	  blinTwice("#step_3");
+        }
        if((GD0101.state==0)&&(GD0102.state==0)){  	
        	GD05.state=2;
        }
@@ -916,9 +920,10 @@ oCanvas.domReady(function () {
         	GD25.state=3;
         	GD0102.state=3;  	
         }
-        if((GD0101.state==1)&&(GD25.state==0)){        	
-        	GD0102.state=3;	
+        if((GD0101.state==1)&&(GD25.state==1)&&(GD0102.state==1)){        	
+        	GD05.state=3;	
         }
+        
 //        if((GD0101.state==1)&&(GD25.state==1)){
 //        	blinTwice("#step_3");
 //        }
@@ -1230,12 +1235,12 @@ oCanvas.domReady(function () {
 //    	GD11.state=3;
 //    	GD1001.state=3;
 
-        canvas.children[2].fill=color_GD;
-        canvas.children[14].fill=color_GD;
-        canvas.children[12].fill=color_GD;
-        canvas.children[17].fill=color_GD;
-        canvas.children[18].fill=color_GD;
-        canvas.children[19].fill="rgba(1,1,1,0)";
+//        canvas.children[2].fill=color_GD;
+//        canvas.children[14].fill=color_GD;
+//        canvas.children[12].fill=color_GD;
+//        canvas.children[17].fill=color_GD;
+//        canvas.children[18].fill=color_GD;
+//        canvas.children[19].fill="rgba(1,1,1,0)";
         canvas.redraw();
 
 //      $(".fm_default_green").attr("src","image/y3-35x37.png");
