@@ -26,10 +26,25 @@ oCanvas.domReady(function () {
         parent:canvas,
         x:259,y:533,height:32,width:103,trail_flag:0,speed:speed_SC,color:color_SC
     });
-    var SC02=createSC({
-        parent:canvas,
-        x:269,y:281,height:180,width:102,trail_flag:0,speed:speed_SC,color:color_SC
+//    var SC02=createSC1({
+//        parent:canvas,
+//        x:269,y:281,height:180,width:102,trail_flag:0,speed:speed_SC,a:0,color:"rgba(26,215,255,0)"
+//    });
+    var SC02 = canvas.display.SC_show_fill({
+        x: 269,
+        y: 281,
+        Width: 102,
+        Height: 180,
+        height_now: 180,
+        trail_flag: 0,
+        t: 7540,
+        speed:speed_SC*1.5,
+//        a:0.1,
+        fill:"rgba(26,215,255,0)",
+        full:0,
+        start:0
     });
+    canvas.addChild(SC02);
     var SC03=createSC({
         parent:canvas,
         x:291,y:311,height:228,width:13,trail_flag:0,speed:speed_SC*1.2,color:color_SC
@@ -142,7 +157,7 @@ oCanvas.domReady(function () {
         	GD03.paused=1;
         	SC01.full=0;
         }
-        if(SC03.height_now>=86){
+        if(GD03.full==1){
         	SC02.start=1;        	
         	GD03.full=0;
         }
