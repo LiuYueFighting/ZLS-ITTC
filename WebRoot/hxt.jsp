@@ -120,7 +120,7 @@
     border:0px;
     height:20px;
     text-align:left;
-    font-size:13px;
+    font-size:11px;
     }
       #dash2{
     border:dashed 1px #999;
@@ -178,7 +178,7 @@
                 <tr>
                 <tr><td>反冲强度</td><td></td></tr>
                 <tr id="dash2" height="20">
-                <td id="second" >&nbsp;&nbsp;<b>清水漂洗</b></td><td id="second">5-6L/&sup2;&middot;s</td>
+                <td id="second" >&nbsp;&nbsp;清水漂洗</td><td id="second">5-6L/&sup2;&middot;s</td>
                 </tr>
                 </tr>
                 </table>
