@@ -12,6 +12,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(bg);//1
     var speed_all=1.5,
+    	speed_GD=2,
         width_all=16,
         color_GD="#007fff",
         color_GD_new="blue",
@@ -24,6 +25,7 @@ oCanvas.domReady(function () {
             {x_cell: 707 ,y_cell: 150}          
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//1
@@ -37,6 +39,7 @@ oCanvas.domReady(function () {
             {x_cell: 989, y_cell: 355}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//2
@@ -50,6 +53,7 @@ oCanvas.domReady(function () {
             {x_cell: 1019 , y_cell: 256}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//3
@@ -60,6 +64,7 @@ oCanvas.domReady(function () {
             {x_cell: 1019, y_cell: 355}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//4
@@ -71,6 +76,7 @@ oCanvas.domReady(function () {
             {x_cell: 1188, y_cell: 374}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//5
@@ -82,6 +88,7 @@ oCanvas.domReady(function () {
             {x_cell: 955, y_cell: 411}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//6
@@ -93,6 +100,7 @@ oCanvas.domReady(function () {
             {x_cell: 1058, y_cell: 411}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//7
@@ -103,6 +111,7 @@ oCanvas.domReady(function () {
             {x_cell: 1187,y_cell: 573}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//8
@@ -116,6 +125,7 @@ oCanvas.domReady(function () {
             {x_cell: 818, y_cell: 542}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:"rgba(26,215,255,0)"
     });//9
@@ -129,6 +139,7 @@ oCanvas.domReady(function () {
             {x_cell: 818, y_cell: 562}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:"rgba(26,215,255,0)"
     });//10
@@ -141,6 +152,7 @@ oCanvas.domReady(function () {
             {x_cell: 990 ,y_cell: 527}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//11
@@ -152,6 +164,7 @@ oCanvas.domReady(function () {
             {x_cell: 970, y_cell: 543}
         ],
         state:1,
+        speed:1.5,
         GDwidth:width_all,
         color:color_GD
     });//12
@@ -162,6 +175,7 @@ oCanvas.domReady(function () {
             {x_cell: 900 ,y_cell: 485}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//13
@@ -173,6 +187,7 @@ oCanvas.domReady(function () {
             {x_cell: 970, y_cell: 563}
         ],
         state:1,
+        speed:1.5,
         GDwidth:width_all,
         color:color_GD
     });//14
@@ -184,6 +199,7 @@ oCanvas.domReady(function () {
             {x_cell: 962, y_cell: 667}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//15
@@ -196,6 +212,7 @@ oCanvas.domReady(function () {
             {x_cell:659, y_cell: 646}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//16
@@ -220,6 +237,7 @@ oCanvas.domReady(function () {
             //{x_cell: 636, y_cell: 646}
         ],
         state:1,
+        speed:speed_GD*1.1,
         GDwidth:width_all,
         color:color_GD
     });//17
@@ -234,6 +252,7 @@ oCanvas.domReady(function () {
             {x_cell: 633, y_cell: 646}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//18
@@ -246,6 +265,7 @@ oCanvas.domReady(function () {
             {x_cell: 673, y_cell: 735}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:"rgba(1,0,0,0)"
     });//19
@@ -256,6 +276,7 @@ oCanvas.domReady(function () {
             {x_cell: 582, y_cell: 673}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//20
@@ -268,6 +289,7 @@ oCanvas.domReady(function () {
             {x_cell: 435, y_cell: 691}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//21
@@ -278,6 +300,7 @@ oCanvas.domReady(function () {
             {x_cell: 414, y_cell: 568}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//22
@@ -290,6 +313,7 @@ oCanvas.domReady(function () {
             {x_cell: 414, y_cell: 563}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//23
@@ -300,6 +324,7 @@ oCanvas.domReady(function () {
             {x_cell: 372 ,y_cell: 485}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//24
@@ -312,6 +337,7 @@ oCanvas.domReady(function () {
             {x_cell: 407, y_cell: 376}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//25
@@ -327,6 +353,7 @@ oCanvas.domReady(function () {
             {x_cell: 1018, y_cell: 349}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:"rgba(1,0,0,0)"
     });//26
@@ -340,6 +367,7 @@ oCanvas.domReady(function () {
             {x_cell: 464, y_cell: 435}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//27
@@ -352,6 +380,7 @@ oCanvas.domReady(function () {
             {x_cell: 593, y_cell: 375}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//28
@@ -363,6 +392,7 @@ oCanvas.domReady(function () {
             {x_cell: 747 ,y_cell: 222},
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//29
@@ -377,6 +407,7 @@ oCanvas.domReady(function () {
             {x_cell: 818, y_cell: 541}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//30
@@ -390,6 +421,7 @@ oCanvas.domReady(function () {
             {x_cell: 818, y_cell: 562}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//31
@@ -400,6 +432,7 @@ oCanvas.domReady(function () {
             {x_cell: 707 ,y_cell: 223}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//32
@@ -412,6 +445,7 @@ oCanvas.domReady(function () {
             
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//33
@@ -422,6 +456,7 @@ oCanvas.domReady(function () {
             {x_cell: 881 ,y_cell: 635},
         ],
         state:1,
+        speed:speed_GD*0.5,
         GDwidth:width_all,
         color:color_GD
     });//34
@@ -437,6 +472,7 @@ oCanvas.domReady(function () {
             {x_cell: 1019, y_cell: 348}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
     });//35
@@ -447,6 +483,7 @@ oCanvas.domReady(function () {
             {x_cell: 1019, y_cell: 258}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:"rgba(26,215,255,0)"
     });//36
@@ -458,6 +495,7 @@ oCanvas.domReady(function () {
             {x_cell: 989, y_cell: 348}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:"rgba(26,215,255,0)"
     });//37
@@ -470,6 +508,7 @@ oCanvas.domReady(function () {
             //{x_cell: 1023, y_cell: 650}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:"rgba(26,215,255,0)"
     });//38
@@ -482,6 +521,7 @@ oCanvas.domReady(function () {
             {x_cell: 592, y_cell: 375}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:"rgba(26,215,255,0)"
     });//39
@@ -492,6 +532,7 @@ oCanvas.domReady(function () {
             {x_cell: 848 ,y_cell: 605}
         ],
         state:1,
+        speed:speed_GD,
         GDwidth:width_all,
         color:color_GD
         
@@ -503,6 +544,7 @@ oCanvas.domReady(function () {
             {x_cell: 848 ,y_cell: 570}          
         ],
         state:1,
+        speed:speed_GD*0.07,
         GDwidth:width_all,
         color:color_GD
     });
@@ -1257,8 +1299,15 @@ oCanvas.domReady(function () {
 //            console.log("GD30:");
 //    		console.log(GD30.state);
     		if((GD30.state!=0)&&(GD30.state!=2)){
-    		GD30.state=2;
-    		setFMColorRed("FM018");
+    			
+    			window.setTimeout(function(){              
+   				 setFMColorRed("FM018");
+   		         },800);
+//    			 window.setTimeout(function(){              
+    				 GD30.state=2;
+//    		         },1000);
+    			
+//    		setFMColorRed("FM018");
 //    		console.log(document.getElementById("FM018").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png');
 
 //			blinTwice("#step_3");
@@ -1282,14 +1331,22 @@ oCanvas.domReady(function () {
     	}
         if((GD30.state!=2)&&(GD30.state!=1)&&(GD141.state==1)){
         	//console.log(GD1001.state);
+        	document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+        	window.setTimeout(function(){              
+  				 setFMColorRed("FM019");
+  		         },500);
         	if(GD141.state!=0){
-        		GD141.state=2;
-        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+        		window.setTimeout(function(){              
+     				 GD141.state=2;
+     		         },800);
+        		
+//        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+//        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
 //        		blinTwice("#step_6");
 //        		blinTwice("#step_6_result");
-        		}
-        	setFMColorRed("FM019");
+        		}        	
+//        	setFMColorRed("FM019");
     		//GD141.state=2;
     	}
         if((GD11.state==1)&&(GD1001.state==1)){    		
@@ -1308,8 +1365,10 @@ oCanvas.domReady(function () {
         if((GD26.state==0)&&(GD27.state==0)){
     		
     		if(GD37.state==1&&GD141.state==1){
-    		GD37.state=2;
-    		setFMColorRed("FM017");
+    			window.setTimeout(function(){              
+    	        	setFMColorRed("FM017");
+    	         },500);
+    			GD37.state=2;    		
 
     		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
@@ -1336,10 +1395,15 @@ oCanvas.domReady(function () {
 //        		blinTwice("#step_6_result");
         		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
         		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-        		setFMColorRed("FM019");
+        		window.setTimeout(function(){              
+                	setFMColorRed("FM019");
+                 },650);
         		}
         	if(document.getElementById("FM019").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png'){
-        		GD141.state=2;
+        		window.setTimeout(function(){              
+                	GD141.state=2;
+                 },1000);
+        		
         		}
 //        	console.log("GD141:");
 //    		console.log(GD141.state);
@@ -1836,12 +1900,15 @@ oCanvas.domReady(function () {
 		$("#reset").text("重置");
 
 		//动态效果
-        setFMColorRed("FM016");  
+//        setFMColorRed("FM016");  
 		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
 		
 		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+		window.setTimeout(function(){              
+				 setFMColorRed("FM016");
+		         },500);
 		/* js版blinblin
 		 * var demo = document.getElementById("step_1");
 		   blinTwice(demo);
@@ -1928,7 +1995,7 @@ oCanvas.domReady(function () {
 //    		blinTwice("#step_3_result");
 //    		blinTwice("#step_4");
 //    		blinTwice("#step_4_result");
-         },1000);
+         },1300);
         window.setTimeout(function(){              
         	setFMColorGreen("FM016");
         	document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
@@ -1941,7 +2008,7 @@ oCanvas.domReady(function () {
 //    		blinTwice("#step_2_result");
         	GD1001.state=3;
         	GD11.state=3;
-         },1700);
+         },2000);
         
     }
     
@@ -1990,41 +2057,41 @@ oCanvas.domReady(function () {
 		
 		//动态部分
     	//计时器控制阀门颜色和对应维修步骤变化情况
-    	window.setTimeout(function(){              
+    	window.setTimeout(function(){  
+    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
+    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
     		setFMColorGreen("FM019");
     		//GD37.state=3;
     		GD141.state=3;
 //    		console.log("GD141:");
 //    		console.log(GD141.state);
-    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
 //    		blinTwice("#step_6");
 //    		blinTwice("#step_6_result");
 //    		blinTwice("#step_5");
 //    		blinTwice("#step_5_result");
          },300);
         window.setTimeout(function(){              
-        	setFMColorGreen("FM017");
-        	GD37.state=3;
-    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+        	document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+        	setFMColorGreen("FM017");
+        	GD37.state=3;   		
 //    		blinTwice("#step_3");
 //    		blinTwice("#step_3_result");
 //    		blinTwice("#step_4");
 //    		blinTwice("#step_4_result");
-         },1500);
+         },2500);
         window.setTimeout(function(){              
-        	setFMColorGreen("FM014");
-        	GD26.state=3;
-        	GD27.state=3;
         	document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+        	setFMColorGreen("FM014");
+        	GD26.state=3;
+        	GD27.state=3;        	
 //    		blinTwice("#step_1");
 //    		blinTwice("#step_1_result");
 //    		blinTwice("#step_2");
@@ -2032,7 +2099,7 @@ oCanvas.domReady(function () {
     		
 //        	GD1001.state=3;
 //        	GD11.state=3;
-         },2500);
+         },4000);
     }
     
     function  fix_hx_left(){
@@ -2081,19 +2148,25 @@ oCanvas.domReady(function () {
     	$("#reset").text("重置");
     	
     	//动态效果
-        setFMColorRed("FM014");  
+          
 		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
 		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
+		window.setTimeout(function(){              
+        	setFMColorRed("FM014");
+         },500);
         $("#init_state").text("状态");
         $("#init_statement").text("西侧阀门维修中");
 //      blinTwice("#step_1");
 //		blinTwice("#step_1_result");
 //		blinTwice("#step_2");
 //		blinTwice("#step_2_result");
-    	GD26.state=2;
+        window.setTimeout(function(){              
+        	GD26.state=2;
     	GD27.state=2;
+         },1000);
+    	
 
         $("div.panel").show();
     }

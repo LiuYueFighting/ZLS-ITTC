@@ -81,6 +81,8 @@ oCanvas.domReady(function () {
     var fg = canvas.display.image({
         x: 0,
         y: 0,
+//        height:100,
+//        width:100,
         image: "image/mc_test.png"
     });
     canvas.addChild(fg);
@@ -129,6 +131,9 @@ oCanvas.domReady(function () {
         	SC01.start=1;
         	GD00.full=0;
         	GD01.full=0;
+//        	fg.width=1;
+//        	fg.height=1;
+//        	canvas.redraw();
         }
         if(SC01.full==1){
         	SC03.start=1;
