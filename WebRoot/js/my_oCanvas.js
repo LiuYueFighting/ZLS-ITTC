@@ -742,7 +742,7 @@ var constructor_gd1 = function (settings, core) {
         	}
             
             this.endHeight = -1;
-            this.speed=2;
+//            this.speed=2;
         },
         
         advance: function () {
@@ -947,13 +947,14 @@ function createGD1(options){
 	       endPoint: {
 	            x: 0, y: 0
 	        },
-	        speed:2,
+	        speed:options.speed,
 	        startIndex: 0,
 	        endIndex:0,
 	        GDwidth:options.GDwidth,
 	        fill:options.color,
 	        endHeight: 0,
 	        state:options.state
+	        
 	});
 	options.parent.addChild(GD02);
     return GD02;
