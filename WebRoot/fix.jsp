@@ -153,6 +153,14 @@
     color: #333;
     white-space: nowrap;
     }
+    #muti-plan{
+    height:32px;
+    }
+    .hiden{
+    display:none;}
+    #muti-plan-show{
+    display:none;
+    }
     </style>
 </head>
 <body>
@@ -295,15 +303,28 @@
 	    	</button>
 	    </div>
 
-		<div class="panel panel-info" id="init_stage">
+ 		<div class="hiden panel panel-info"> 
 			<div class="panel-heading" id="init_state">初始状态</div>
-<!-- 			
-			<table class="table">
+  			<table id="muti-plan-hide" class="table">
 			<tr><td id="init_statement">全厂正常运行</td></tr>
-			</table> 
--->
+			</table>  
+		</div> 
+		
+		<div id="muti-plan-show" class="btn-group">
+		   <button type="button" id="init_stat" class="btn btn-default dropdown-toggle" 
+		      data-toggle="dropdown">
+		         	选择维修方案<span class="caret"></span>
+		   </button>
+		   <ul class="dropdown-menu" role="menu">
+		      <li id="fix_scheme">西侧阀门维修</li>
+		      <li id="restore_scheme">西侧阀门恢复</li>
+		      <li id="extra_fix_scheme">东侧阀门维修</li>
+		      <li id="extra_restore_scheme">东侧阀门恢复</li>
+		   </ul>  
 		</div>
-		<div class="btn-group">
+ 
+		<!-- 		
+		<div class="panel btn-group">
 		    <button type="button" class="btn btn-default dropdown-toggle" 
 		      data-toggle="dropdown">
 		      	全厂正常运行 <span class="caret"></span>
@@ -314,9 +335,10 @@
 		      <li id="extra_fix_scheme">东侧阀门维修</li>
 		      <li id="extra_restore_scheme">东侧阀门恢复</li>
 		    </ul>
-		</div>
+		</div> 
+		-->
 
-		<div class="panel panel-info" id="fix_table">
+		<div class="hiden panel panel-info" id="fix_table">
 			<div class="panel-heading">操作步骤</div>
 			<table class="table">
 				<tr><td id="step_1" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
@@ -334,10 +356,10 @@
 			</table>
 		</div>
 
-		<div class="panel panel-info" id="panel_button">
+		<div class="hiden panel panel-info" id="panel_button">
 			<div class="panel-heading">功能</div>
 			<table class="table">
-				<tr><td id="scheme_extra" class="hcc">&nbsp;</td><td id="scheme" class="hcc">&nbsp;</td></tr>
+				<!-- <tr><td id="scheme_extra" class="hcc">&nbsp;</td><td id="scheme" class="hcc">&nbsp;</td></tr> -->
 				<tr><td class="hcc"><a href="#" id="export">&nbsp;</a></td><td id="reset" class="hcc">&nbsp;</td></tr>
 			</table>
 		</div>
