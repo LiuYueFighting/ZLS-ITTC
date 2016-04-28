@@ -759,6 +759,7 @@ var constructor_gd1 = function (settings, core) {
         			this.startPoint.x=this.endPoint.x;
         			this.startPoint.y=this.endPoint.y;
         			this.endHeight=-1;
+        			$(document).trigger('drain');
         		}
         		else{
         			 this.deta_x = this.cells[this.startIndex + 1].x_cell - this.cells[this.startIndex].x_cell;

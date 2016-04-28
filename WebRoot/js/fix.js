@@ -1269,115 +1269,115 @@ oCanvas.domReady(function () {
         GD36.advance();
         GD37.advance();
 
-        if((GD11.state==0)&&(GD1001.state==0)){
-//            console.log("GD30:");
-//    		console.log(GD30.state);
-    		if((GD30.state!=0)&&(GD30.state!=2)){
-    		GD30.state=2;
-    		setFMColorRed("FM018");
-//    		console.log(document.getElementById("FM018").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png');
-
-//			blinTwice("#step_3");
-//			blinTwice("#step_3_result");
-//			blinTwice("#step_4");
-//			blinTwice("#step_4_result");
-//			blinTwice("#step_5");
-//			blinTwice("#step_5_result");
-			document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-			document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-			document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-			document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-			document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-			document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-    		
-    		}
-    		//clearTimeout(timer);
-    		
-    		//console.log("GD30:");
-    		//console.log(GD30.state);
-    	}
-        if((GD30.state!=2)&&(GD30.state!=1)&&(GD141.state==1)){
-        	//console.log(GD1001.state);
-        	if(GD141.state!=0){
-        		GD141.state=2;
-        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-//        		blinTwice("#step_6");
-//        		blinTwice("#step_6_result");
-        		}
-        	setFMColorRed("FM019");
-    		//GD141.state=2;
-    	}
-        if((GD11.state==1)&&(GD1001.state==1)){    		
-    		if(GD30.state!=1)
-    		GD30.state=3;
-    		//console.log("GD30:");
-    		//console.log(GD30.state);
-    	}
-        if(GD30.state==1){    		
-    		if(GD141.state!=1)
-    		GD141.state=3;
-    		//console.log("GD30:");
-    		//console.log(GD30.state);
-    	}
-        
-        if((GD26.state==0)&&(GD27.state==0)){
-    		
-    		if(GD37.state==1&&GD141.state==1){
-    		GD37.state=2;
-    		setFMColorRed("FM017");
-
-    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-//    		blinTwice("#step_3");
-//    		blinTwice("#step_3_result");
-//    		blinTwice("#step_4");
-//    		blinTwice("#step_4_result");
-//    		blinTwice("#step_5");
-//    		blinTwice("#step_5_result");
-
-    		}
-    		
-    		//console.log("GD30:");
-    		//console.log(GD30.state);
-    	}
-        if((GD37.state==0)){//(GD13.state!=2)&&(GD13.state!=1)
-        	//console.log(GD37.state);
-        	if((GD141.state==1)){
-//        		blinTwice("#step_6");
-//        		blinTwice("#step_6_result");
-        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-        		setFMColorRed("FM019");
-        		}
-        	if(document.getElementById("FM019").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png'){
-        		GD141.state=2;
-        		}
-//        	console.log("GD141:");
-//    		console.log(GD141.state);
-
-//    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-//    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-    		
-
-    		//GD141.state=2;
-    	}
-//        if((GD26.state==1)&&(GD27.state==1)){    		
-//    		if(GD13.state!=1)
-//    		GD13.state=3;
+//        if((GD11.state==0)&&(GD1001.state==0)){
+////            console.log("GD30:");
+////    		console.log(GD30.state);
+//    		if((GD30.state!=0)&&(GD30.state!=2)){
+//    		GD30.state=2;
+//    		setFMColorRed("FM018");
+////    		console.log(document.getElementById("FM018").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png');
+//
+////			blinTwice("#step_3");
+////			blinTwice("#step_3_result");
+////			blinTwice("#step_4");
+////			blinTwice("#step_4_result");
+////			blinTwice("#step_5");
+////			blinTwice("#step_5_result");
+//			document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+//			document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+//			document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+//			document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+//			document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+//			document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+//    		
+//    		}
+//    		//clearTimeout(timer);
+//    		
 //    		//console.log("GD30:");
 //    		//console.log(GD30.state);
 //    	}
-//        if((GD13.state==1)&&(GD11.state==1)&&(GD30.state==1)){    		
+//        if((GD30.state!=2)&&(GD30.state!=1)&&(GD141.state==1)){
+//        	//console.log(GD1001.state);
+//        	if(GD141.state!=0){
+//        		GD141.state=2;
+//        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+//        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+////        		blinTwice("#step_6");
+////        		blinTwice("#step_6_result");
+//        		}
+//        	setFMColorRed("FM019");
+//    		//GD141.state=2;
+//    	}
+//        if((GD11.state==1)&&(GD1001.state==1)){    		
+//    		if(GD30.state!=1)
+//    		GD30.state=3;
+//    		//console.log("GD30:");
+//    		//console.log(GD30.state);
+//    	}
+//        if(GD30.state==1){    		
 //    		if(GD141.state!=1)
 //    		GD141.state=3;
 //    		//console.log("GD30:");
 //    		//console.log(GD30.state);
 //    	}
+//        
+//        if((GD26.state==0)&&(GD27.state==0)){
+//    		
+//    		if(GD37.state==1&&GD141.state==1){
+////    		GD37.state=2;
+////    		setFMColorRed("FM017");
+////
+////    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
+////    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
+////    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
+////    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
+////    		document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
+////    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
+////    		blinTwice("#step_3");
+////    		blinTwice("#step_3_result");
+////    		blinTwice("#step_4");
+////    		blinTwice("#step_4_result");
+////    		blinTwice("#step_5");
+////    		blinTwice("#step_5_result");
+//
+//    		}
+//    		
+//    		//console.log("GD30:");
+//    		//console.log(GD30.state);
+//    	}
+//        if((GD37.state==0)){//(GD13.state!=2)&&(GD13.state!=1)
+//        	//console.log(GD37.state);
+////        	if((GD141.state==1)){
+//////        		blinTwice("#step_6");
+//////        		blinTwice("#step_6_result");
+////        		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+////        		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+////        		setFMColorRed("FM019");
+////        		}
+////        	if(document.getElementById("FM019").src=='http://localhost:8080/ZLS-ITTC/image/y2-35x37.png'){
+////        		GD141.state=2;
+////        		}
+////        	console.log("GD141:");
+////    		console.log(GD141.state);
+//
+////    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
+////    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
+//    		
+//
+//    		//GD141.state=2;
+//    	}
+////        if((GD26.state==1)&&(GD27.state==1)){    		
+////    		if(GD13.state!=1)
+////    		GD13.state=3;
+////    		//console.log("GD30:");
+////    		//console.log(GD30.state);
+////    	}
+////        if((GD13.state==1)&&(GD11.state==1)&&(GD30.state==1)){    		
+////    		if(GD141.state!=1)
+////    		GD141.state=3;
+////    		//console.log("GD30:");
+////    		//console.log(GD30.state);
+////    	}
 
         canvas.redraw();
     });
@@ -2058,15 +2058,15 @@ oCanvas.domReady(function () {
         $("#muti-plan-hide").hide();
 		hideAllFM();
 		setDefaultFMColor();
-		
+		//显示与该构筑物维修相关的阀门
 		setFMColorGreen("FM014");
         setFMColorGreen("FM017");
         setFMColorGreen("FM018");
         setFMColorGreen("FM019");
         
-        document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
-        document.getElementById("name_HX").style.color="#8dd9ff";
-        document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
+        $("#fix_head").html("西侧虹吸滤池闸门改造配合<br>方案");
+        $("#name_HX").css('color','#8dd9ff');
+        $("#name_HX").css('background','rgba(255,0,0,0.7)');
         
         var todolist = [
 		{ "content":"1&nbsp;&nbsp;关闭阀门14#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水" },
@@ -2079,8 +2079,8 @@ oCanvas.domReady(function () {
 
 		for (i=0;i<todolist.length;i++){
 			var offset = i+1;
-	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
-	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
+	        $("#step_" + offset).html(todolist[i].content);
+	        $("#step_" + offset + "_result").html(todolist[i].result);
 		}
 		
 //		document.getElementById("scheme").style.display="block";
@@ -2098,20 +2098,217 @@ oCanvas.domReady(function () {
     	$("#export").text("生成方案");
     	$("#reset").text("重置");
     	
-    	//动态效果
-        setFMColorRed("FM014");  
-		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-        $("#init_state").text("状态");
-        $("#init_stat").html('西侧阀门维修<span class="caret"></span>');
-//      blinTwice("#step_1");
-//		blinTwice("#step_1_result");
-//		blinTwice("#step_2");
-//		blinTwice("#step_2_result");
-    	GD26.state=2;
-    	GD27.state=2;
+    	$("#init_state").text("状态");
+    	$("#init_stat").html('西侧阀门维修<span class="caret"></span>');
+    	
+    	//动画队列
+    	var fix_hx_left_queue = [
+			function() {
+				setFMColorRed("FM014");
+		    	
+				setTimeout(function(){
+		    		$(document).dequeue("fix_hx_left_queue");
+		    	},1000);
+				
+			},
+			function() {
+				$("#step_1").css('background','rgba(194,215,245,0.5)');
+				$("#step_1_result").css('background','rgba(194,215,245,0.5)');
+				
+		    	setTimeout(function(){
+		    		$(document).dequeue("fix_hx_left_queue");
+		    	},1000);
+		    	
+			},
+			function() {
+				$("#step_2").css('background','rgba(194,215,245,0.5)');
+				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
+				
+		    	setTimeout(function(){
+		    		$(document).dequeue("fix_hx_left_queue");
+		    	},1000);
+		    	
+			},
+			function() {
+				GD26.state=2;
+				GD27.state=2;
+				$(document).on('drain', function(){
+					setTimeout(function(){
+						$(document).dequeue("fix_hx_left_queue");
+					},1000);
+				});
+				},
+			function(){
+			    //消除两根水管排空带来的影响
+			},
+			function() {
+				setFMColorRed("FM017");
+				
+    			setTimeout(function(){
+    				$(document).dequeue("fix_hx_left_queue");
+    			},2000);
+			},
+			function() {
+				$("#step_3").css('background','rgba(194,215,245,0.5)');
+				$("#step_3_result").css('background','rgba(194,215,245,0.5)');
+    			setTimeout(function(){
+    				$(document).dequeue("fix_hx_left_queue");
+    			},3000);
+			},
+			function() {
+				$("#step_4").css('background','rgba(194,215,245,0.5)');
+				$("#step_4_result").css('background','rgba(194,215,245,0.5)');
+    			setTimeout(function(){
+    				$(document).dequeue("fix_hx_left_queue");
+    			},1000);
+			},
+			function() {
+				$("#step_5").css('background','rgba(194,215,245,0.5)');
+				$("#step_5_result").css('background','rgba(194,215,245,0.5)');
+    			setTimeout(function(){
+    				$(document).dequeue("fix_hx_left_queue");
+    			},1000);
+			},
+			function(){
+				GD30.state=2;
+				$(document).on('drain', function(){
+					setTimeout(function(){
+						$(document).dequeue("fix_hx_left_queue");
+					},1000);
+				});
+				},
+			function(){
+				setFMColorRed("FM019");
+				setTimeout(function(){
+					$(document).dequeue("fix_hx_left_queue");
+				},1000);
+			},
+			function(){    		
+				$("#step_6").css('background','rgba(194,215,245,0.5)');
+				$("#step_6_result").css('background','rgba(194,215,245,0.5)');
+				setTimeout(function(){
+					$(document).dequeue("fix_hx_left_queue");
+				},1000);
+				},
+			function(){GD141.state=2;}
+        ];
+    	
+    	$(document).queue("fix_hx_left_queue",fix_hx_left_queue);
+    	$(document).dequeue("fix_hx_left_queue");
+    	
+    	var fix_hx_left_queue_mask = [
+    	    function(){
+    	    	//Start of animation,reset all animation
+    	    	setFMColorGreen("FM014");
+    	    	setFMColorGreen("FM017");
+    	    	setFMColorGreen("FM019");
+    			$(".table_content").css("background-color","#ffffff");
+ 				GD26.state = 1;
+ 				GD27.state = 1;
+ 				GD30.state = 1;
+ 				GD141.state = 1;
+// 				$(document).dequeue("fix_hx_left_queue");
+    	    },
+ 			function() {
+ 				setFMColorRed("FM014");
+	    		$(document).dequeue("fix_hx_left_queue");
+ 			},
+ 			function() {
+ 				$("#step_1").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_1_result").css('background','rgba(194,215,245,0.5)');
+	    		$(document).dequeue("fix_hx_left_queue");
+ 			},
+ 			function() {
+ 				$("#step_2").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
+	    		$(document).dequeue("fix_hx_left_queue");
+ 			},
+ 			function() {
+// 				GD26.state=2;
+// 				GD27.state=2;
+// 				$(document).on('drain', function(){
+ 				GD26.state = 0;
+ 				GD27.state = 0;
+				$(document).dequeue("fix_hx_left_queue");
+// 				});
+ 				},
+ 			function(){
+ 			    //消除两根水管排空带来的影响
+				$(document).dequeue("fix_hx_left_queue");
+ 			},
+ 			function() {
+ 				setFMColorRed("FM017");
+ 				$(document).dequeue("fix_hx_left_queue");
+ 			},
+ 			function() {
+ 				$("#step_3").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_3_result").css('background','rgba(194,215,245,0.5)');
+ 				$(document).dequeue("fix_hx_left_queue");
+ 			},
+ 			function() {
+ 				$("#step_4").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_4_result").css('background','rgba(194,215,245,0.5)');
+ 				$(document).dequeue("fix_hx_left_queue");
+ 			},
+ 			function() {
+ 				$("#step_5").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_5_result").css('background','rgba(194,215,245,0.5)');
+ 				$(document).dequeue("fix_hx_left_queue");
+ 			},
+ 			function(){
+ 				GD30.state=0;
+				$(document).dequeue("fix_hx_left_queue");
+ 				},
+ 			function(){
+ 				setFMColorRed("FM019");
+				$(document).dequeue("fix_hx_left_queue");
+ 			},
+ 			function(){    		
+ 				$("#step_6").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_6_result").css('background','rgba(194,215,245,0.5)');
+				$(document).dequeue("fix_hx_left_queue");
+ 				},
+ 			function(){GD141.state=2;}
+         ];
+    	
+    	$('#step_1,#step_1_result,#step_2,#step_2_result').click(function(){
+    		$(document).clearQueue("fix_hx_left_queue")
+    		$(document).queue("fix_hx_left_queue",fix_hx_left_queue);
+    		var s1 = fix_hx_left_queue_mask.shift();
+    		fix_hx_left_queue.unshift(s1);
+        	$(document).dequeue("fix_hx_left_queue");
+    	});
+    	
+    	$('#step_3,#step_3_result,#step_4,#step_4_result,#step_5,#step_5_result').click(function(){
+    		$(document).clearQueue("fix_hx_left_queue")
+    		$(document).queue("fix_hx_left_queue",fix_hx_left_queue);
+    		var s1 = fix_hx_left_queue_mask.shift();
+    		var s2 = fix_hx_left_queue_mask.shift();
+    		var s3 = fix_hx_left_queue_mask.shift();
+    		var s4 = fix_hx_left_queue_mask.shift();
+    		var s5 = fix_hx_left_queue_mask.shift();
+    		fix_hx_left_queue.splice(0,3,s1,s2,s3,s4,s5);
+        	$(document).dequeue("fix_hx_left_queue");
+    	});
+    	
+    	$('#step_6,#step_6_result').click(function(){
+    		$(document).clearQueue("fix_hx_left_queue")
+    		$(document).queue("fix_hx_left_queue",fix_hx_left_queue);
+    		var s1 = fix_hx_left_queue_mask.shift();
+    		var s2 = fix_hx_left_queue_mask.shift();
+    		var s3 = fix_hx_left_queue_mask.shift();
+    		var s4 = fix_hx_left_queue_mask.shift();
+    		var s5 = fix_hx_left_queue_mask.shift();
+    		var s6 = fix_hx_left_queue_mask.shift();
+    		var s7 = fix_hx_left_queue_mask.shift();
+    		var s8 = fix_hx_left_queue_mask.shift();
+    		var s9 = fix_hx_left_queue_mask.shift();
+    		var s10 = fix_hx_left_queue_mask.shift();
+    		var s11 = fix_hx_left_queue_mask.shift();
+    		fix_hx_left_queue.splice(0,9,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11);
+        	$(document).dequeue("fix_hx_left_queue");
+    	});
+    	
 
 //      $("div.panel").show();
     }

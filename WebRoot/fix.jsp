@@ -97,6 +97,9 @@
     .hcc:hover{
    	background: rgba(194,215,245,0.5);
     }
+    .table_content{
+    cursor: pointer;
+    }
     
 	/* demo  	    
 	#step_1{
