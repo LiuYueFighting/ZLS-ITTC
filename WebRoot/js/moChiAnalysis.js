@@ -37,17 +37,15 @@ $(document).ready(function() {
 	});
 });
 
-
+function changeButton2(){
+	hideImportPanel();
+	if(searchMode!=1){ //不是从查询窗口进入的
+		searchMode=0;
+		$("#frmSearch").form('clear');
+		dealSearch();
+	}
+}
 $(document).ready(function() {
-	$('#chooseIndexButton2').combobox({  
-        onChange:function(){  
-    		hideImportPanel();
-    		searchMode=0;
-    		$("#frmSearch").form('clear');
-    		dealSearch();
-        }
-	});  
-	
 	var count = 0;
 	$('#menu').click(function() {
 		hideImportPanel();
@@ -558,7 +556,8 @@ var treeURL; //params = 'searchT=&searchPoolID
 function dealSearch() {
 	var indexButton = $('#indexForm').serialize();
 //	var buttonID = indexButton.slice(-6);  //buttonID = 'index3'
-	var buttonID=$('#chooseIndexButton2').combobox('getValue');
+//	var buttonID=$('#chooseIndexButton2').combobox('getValue');  //使用easyui时的取值方式
+	var buttonID=$('#chooseIndexButton2 option:selected').val();
 	var poolIDInMode2;
 	var newParams = '';
 	var failAppearence = false;
@@ -646,6 +645,7 @@ function dealSearch() {
 					ImageTitle = "1# 膜池 运行工况记录图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 //					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC01');
+					$('#chooseIndexButton2').val('MTG_MoChi_SC01');
 					newParams = params;
 					break;
 				case '2':
@@ -653,6 +653,7 @@ function dealSearch() {
 					ImageTitle = "2# 膜池 运行工况记录图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
 //					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC02');
+					$('#chooseIndexButton2').val('MTG_MoChi_SC02');
 					newParams = params;
 					break;
 				case '3':
@@ -660,6 +661,7 @@ function dealSearch() {
 					ImageTitle = "3# 膜池 运行工况记录图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 //					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC03');
+					$('#chooseIndexButton2').val('MTG_MoChi_SC03');
 					newParams = params;
 					break;
 				case '4':
@@ -667,6 +669,7 @@ function dealSearch() {
 					ImageTitle = "4# 膜池 运行工况记录图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index4"]').attr("checked", true);
 //					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC04');
+					$('#chooseIndexButton2').val('MTG_MoChi_SC04');
 					newParams = params;
 					break;
 				case '5':
@@ -674,6 +677,7 @@ function dealSearch() {
 					ImageTitle = "5# 膜池 运行工况记录图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index5"]').attr("checked", true);
 //					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC05');
+					$('#chooseIndexButton2').val('MTG_MoChi_SC05');
 					newParams = params;
 					break;
 				case '6':
@@ -681,6 +685,7 @@ function dealSearch() {
 					ImageTitle = "6# 膜池 运行工况记录图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index6"]').attr("checked", true);
 //					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC06');
+					$('#chooseIndexButton2').val('MTG_MoChi_SC06');
 					newParams = params;
 					break;
 				default :
@@ -692,7 +697,7 @@ function dealSearch() {
 					title = '1#膜池 运行工况记录表' + ' ' + TimeStr;
 					ImageTitle = "1# 膜池 运行工况记录图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
-//					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC01');
+					$('#chooseIndexButton2').combobox('setValue', 'MTG_MoChi_SC01');
 					newParams = params;
 					
 				}
@@ -703,6 +708,7 @@ function dealSearch() {
 			newParams = 'lowT=2015-01-01&highT=2014-01-01&searchPoolID';
 			//closeSearchForm();
 		}
+		searchMode=0; //将设置模式重置，否则此时改变下拉框会不起作用
 	} else if(searchMode == 2) {  //从时间树
 		/*
 		 * lowT=XXXX-XX-XX
@@ -967,7 +973,17 @@ function prehImage(){
 	            }, 
 	        	menuStyle: {
 	                 background: '#E0E0E0'
-	             }
+	             },
+		            buttonOptions:{
+		            	theme:{
+		            		 style: {
+		            			 fontWeight: 'bolder',
+		     	                 background: 'none',
+		     	                 color: 'black',
+		                     }
+		            	}
+		            	
+		            }
 	        },
 	        navigator: {
 	        	enabled : true,

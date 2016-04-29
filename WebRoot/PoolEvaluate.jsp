@@ -290,7 +290,7 @@ th, td, input, option {
 					<ul id="timeTree" class="easyui-tree"></ul>
 				</div>
 				<!-- chooseIndex -->
-				<div id="chooseIndex">
+				<div id="chooseIndex" style="display:none">
 					<form id="indexForm">
 						<p style="color:#337ab7; font-weight:bold;font-size:18px">请选择机加池编号：</p>
 						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1#机加池</label><br />
@@ -339,9 +339,13 @@ th, td, input, option {
 					<div title="基本运行参数分析图" id="imageContainer3" style="width:1300px;height:690px;padding:0px;border-width:0px"></div>
 				 </div>
 			</div>
-			
-			
-			
+			<select  id="chooseIndexButton2" name="chooseIndexButton2" onchange="javascript:changeButton2()"
+						 data-options="required:true,missingMessage:'请选择机加池编号' ">
+									<option value="MTG_JJC_SC01">1#机加池</option>
+									<option value="MTG_JJC_SC02">2#机加池</option>
+									<option value="MTG_JJC_SC03" selected>3#机加池</option>
+			</select>
+						
 			<!-- 编辑数据的div，默认看不到 -->
 			<div style="display:none">
 				<div id="tabEdit" class="easyui-dialog" data-options="closed:true"

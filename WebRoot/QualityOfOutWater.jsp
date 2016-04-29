@@ -262,12 +262,21 @@ div.menuSecond{
 				<div id="gap"></div>
 				<div id="imageContainer"></div>
 			</div>
+				
+			<select  id="chooseIndexButton2" name="chooseIndexButton2" onchange="javascript:changeButton2()"
+						 data-options="required:true,missingMessage:'请选择出水池编号' ">
+									<option value="MTG_JJC_SC01">1#出水池</option>
+									<option value="MTG_JJC_SC02">2#出水池</option>
+									<option value="MTG_JJC_SC03"  selected>3#出水池</option>
+			</select>
+			
+			
 			<div id="rightContainer">
 				<div id="treeGuid">
 					<p>选择时间:</p>
 					<ul id="timeTree" class="easyui-tree"></ul>
 				</div>
-				<div id="chooseIndex">
+				<div id="chooseIndex" style="display:none"> <!-- 不显示该模块 -->
 					<form id="indexForm">
 						<p style="color:#337ab7; font-weight:bold;font-size:18px">请选择出水池编号：</p>
 						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1#出水池</label><br />

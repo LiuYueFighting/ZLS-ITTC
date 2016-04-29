@@ -256,11 +256,8 @@ tr, td, th {
 input {
 text-align: center;
 }*/
-#selectButton{
-	position: absolute;
-	left: 1195px;
-	top: 10px;
-}
+
+
 </style>
 </head>
 <body>
@@ -277,17 +274,17 @@ text-align: center;
 				<div id="gap"></div>
 				<div id="imageContainer" style="max-width: 1300px; height: 600px;"></div>
 			</div><!-- "tab_entity" -->
-			<div id="selectButton">	
-				<select class="easyui-combobox textbox " id="chooseIndexButton2" name="chooseIndexButton2"
-						style="width: 150px; height: 34px" data-options="required:true,missingMessage:'请选择膜池编号' ">
-									<option value="MTG_MoChi_SC01" selected>1#膜池</option>
-									<option value="MTG_MoChi_SC02">2#膜池</option>
-									<option value="MTG_MoChi_SC03">3#膜池</option>
-									<option value="MTG_MoChi_SC04">4#膜池</option>
-									<option value="MTG_MoChi_SC05">5#膜池</option>
-									<option value="MTG_MoChi_SC06">6#膜池</option>
-				</select>
-			</div>
+			
+			<select  id="chooseIndexButton2" name="chooseIndexButton2" onchange="javascript:changeButton2()"
+						 data-options="required:true,missingMessage:'请选择膜池编号' ">
+									<option value="MTG_MoChi_SC01" selected>1# 膜池</option>
+									<option value="MTG_MoChi_SC02">2# 膜池</option>
+									<option value="MTG_MoChi_SC03">3# 膜池</option>
+									<option value="MTG_MoChi_SC04">4# 膜池</option>
+									<option value="MTG_MoChi_SC05">5# 膜池</option>
+									<option value="MTG_MoChi_SC06">6# 膜池</option>
+			</select>
+			
 			<div id="rightContainer">
 				<div id="treeGuid" style="overflow: scroll">
 					<p>选择时间:</p>
@@ -295,7 +292,7 @@ text-align: center;
 					<ul id="timeTree" class="easyui-tree"></ul>
 				</div><!-- treeGuid -->
 				
-				<!-- <div id="chooseIndex">
+				<div id="chooseIndex" style="display:none">
 					<form id="indexForm">
 						<p style="color:#337ab7; font-weight:bold;font-size:18px">请选择膜池编号：</p>
 						<table>
@@ -313,7 +310,7 @@ text-align: center;
 							</tr>
 						</table>
 					</form>
-				</div>chooseIndex -->
+				</div><!-- chooseIndex  -->
 				
 				<div class="icon">
     				<div class="menuBar" id="menu">功能</div>

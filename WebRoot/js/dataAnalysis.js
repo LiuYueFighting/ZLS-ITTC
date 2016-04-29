@@ -1190,7 +1190,12 @@ function prehImage(){
 		                    enabled: false
 		                },
 		                exportButton: {
-		                    text: '导出',
+//		                	symbol: 'menu',
+//		                    symbolStrokeWidth: 1,
+//		                    symbolFill: '#bada55',
+//		                    symbolStroke: '#330033',
+		                   
+		                	text: '导出',
 		                    onclick: function () {
 		                        this.exportChart();
 		                    }
@@ -1233,7 +1238,17 @@ function prehImage(){
 	            }, 
 	        	menuStyle: {
 	                 background: '#E0E0E0'
-	             }
+	             },
+	            buttonOptions:{
+	            	theme:{
+	            		 style: {
+	            			 fontWeight: 'bolder',
+	     	                 background: 'none',
+	     	                 color: 'black',
+	                     }
+	            	}
+	            	
+	            }
 	        },
 	        navigator: {
 	        	enabled : true,
