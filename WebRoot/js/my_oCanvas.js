@@ -943,15 +943,23 @@ var constructor_gd1 = function (settings, core) {
                 this.endPoint.y=this.cells[this.endIndex].y_cell;
                 this.state=1;
                 this.endHeight = -1;
-        	}else if(this.state==0){
-        		this.startIndex = this.cells.length-1;
-                this.endIndex=this.cells.length-1;
-                this.startPoint.x=this.cells[this.endIndex].x_cell;
-                this.startPoint.y=this.cells[this.endIndex].y_cell;
-                this.endPoint.x=this.cells[this.endIndex].x_cell;
-                this.endPoint.y=this.cells[this.endIndex].y_cell;
-                this.endHeight = -1;
-                this.state=0;    			
+        	}else {
+//        		this.startIndex = this.cells.length-1;
+//                this.endIndex=this.cells.length-1;
+//                this.startPoint.x=this.cells[this.endIndex].x_cell;
+//                this.startPoint.y=this.cells[this.endIndex].y_cell;
+//                this.endPoint.x=this.cells[this.endIndex].x_cell;
+//                this.endPoint.y=this.cells[this.endIndex].y_cell;
+//                this.endHeight = -1;
+//                this.state=0;  
+        		this.state=0;
+    			this.endPoint.x=this.cells[0].x_cell;
+    			this.endPoint.y=this.cells[0].y_cell;
+    			this.startIndex=0;
+    			this.endIndex=0;
+    			this.startPoint.x=this.endPoint.x;
+    			this.startPoint.y=this.endPoint.y;
+    			this.endHeight=-1;
         	}
         	
         },
