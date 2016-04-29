@@ -1850,6 +1850,9 @@ oCanvas.domReady(function () {
     function fix_hx_right(){
     	//初始化
         clearAll();
+        $(".hiden").show();
+        $("#muti-plan-show").show();
+        $("#muti-plan-hide").hide();
 		hideAllFM();
 		setDefaultFMColor();
 		
@@ -1891,29 +1894,226 @@ oCanvas.domReady(function () {
         $(".hiden").show();
         $("#muti-plan-show").show();
         $("#muti-plan-hide").hide();
+        $("#init_state").text("状态");
+        $("#init_stat").html('东侧阀门维修<span class="caret"></span>');
 		document.getElementById("export").href="download/EAST_HX_FIX.doc";
 		$("#export").text("生成方案");
 		$("#reset").text("重置");
 
-		//动态效果
-//        setFMColorRed("FM016");  
-		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-		
-		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-
-        $("#init_state").text("状态");
-        $("#init_stat").html('东侧阀门维修<span class="caret"></span>');
-        
-//		blinTwice("#step_1");
-//		blinTwice("#step_1_result");
-//		blinTwice("#step_2");
-//		blinTwice("#step_2_result");
-		
-    	//管道退水
-		GD11.state=2;
-    	GD1001.state=2;
+		//动画队列
+    	var fix_hx_right_queue = [
+			function() {
+				setFMColorRed("FM016");
+				setTimeout(function(){
+		    		$(document).dequeue("fix_hx_right_queue");
+		    	},1000);
+			},
+			function() {
+				$("#step_1").css('background','rgba(194,215,245,0.5)');
+				$("#step_1_result").css('background','rgba(194,215,245,0.5)');
+		    	setTimeout(function(){
+		    		$(document).dequeue("fix_hx_right_queue");
+		    	},1000);
+			},
+			function() {
+				$("#step_2").css('background','rgba(194,215,245,0.5)');
+				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
+		    	setTimeout(function(){
+		    		$(document).dequeue("fix_hx_right_queue");
+		    	},1000);
+			},
+			function() {
+				GD11.state=2;
+		    	GD1001.state=2;
+				$(document).on('drain', function(){
+					setTimeout(function(){
+						$(document).dequeue("fix_hx_right_queue");
+					},1000);
+				});
+				},
+			function(){
+			    //消除两根水管排空带来的影响
+			},
+			function() {
+				setFMColorRed("FM018");
+				
+    			setTimeout(function(){
+    				$(document).dequeue("fix_hx_right_queue");
+    			},2000);
+			},
+			function() {
+				$("#step_3").css('background','rgba(194,215,245,0.5)');
+				$("#step_3_result").css('background','rgba(194,215,245,0.5)');
+    			setTimeout(function(){
+    				$(document).dequeue("fix_hx_right_queue");
+    			},3000);
+			},
+			function() {
+				$("#step_4").css('background','rgba(194,215,245,0.5)');
+				$("#step_4_result").css('background','rgba(194,215,245,0.5)');
+    			setTimeout(function(){
+    				$(document).dequeue("fix_hx_right_queue");
+    			},1000);
+			},
+			function() {
+				$("#step_5").css('background','rgba(194,215,245,0.5)');
+				$("#step_5_result").css('background','rgba(194,215,245,0.5)');
+    			setTimeout(function(){
+    				$(document).dequeue("fix_hx_right_queue");
+    			},1000);
+			},
+			function(){
+				GD30.state=2;
+				$(document).on('drain', function(){
+					setTimeout(function(){
+						$(document).dequeue("fix_hx_right_queue");
+					},1000);
+				});
+				},
+			function(){
+				setFMColorRed("FM019");
+				setTimeout(function(){
+					$(document).dequeue("fix_hx_right_queue");
+				},1000);
+			},
+			function(){    		
+				$("#step_6").css('background','rgba(194,215,245,0.5)');
+				$("#step_6_result").css('background','rgba(194,215,245,0.5)');
+				setTimeout(function(){
+					$(document).dequeue("fix_hx_right_queue");
+				},1000);
+				},
+			function(){GD141.state=2;}
+        ];
+    	
+    	$(document).queue("fix_hx_right_queue",fix_hx_right_queue);
+    	$(document).dequeue("fix_hx_right_queue");
+    	
+    	var fix_hx_right_queue_mask = [
+    	    function(){
+    	    	//Start of animation,reset all animation
+    	    	setFMColorGreen("FM016");
+    	    	setFMColorGreen("FM018");
+    	    	setFMColorGreen("FM019");
+    			$(".table_content").css("background-color","#ffffff");
+ 				GD11.state = 1;
+ 				GD1001.state = 1;
+ 				GD30.state = 1;
+ 				GD141.state = 1;
+ 				$(document).dequeue("fix_hx_right_queue");
+    	    },
+ 			function() {
+ 				setFMColorRed("FM016");
+	    		$(document).dequeue("fix_hx_right_queue");
+ 			},
+ 			function() {
+ 				$("#step_1").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_1_result").css('background','rgba(194,215,245,0.5)');
+	    		$(document).dequeue("fix_hx_right_queue");
+ 			},
+ 			function() {
+ 				$("#step_2").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
+	    		$(document).dequeue("fix_hx_right_queue");
+ 			},
+ 			function() {
+// 				GD26.state=2;
+// 				GD27.state=2;
+// 				$(document).on('drain', function(){
+ 				GD11.state = 0;
+ 				GD1001.state = 0;
+				$(document).dequeue("fix_hx_right_queue");
+// 				});
+ 				},
+// 			function(){
+// 			    //消除两根水管排空带来的影响
+//				$(document).dequeue("fix_hx_right_queue");
+// 			},
+ 			function() {
+ 				setFMColorRed("FM018");
+ 				$(document).dequeue("fix_hx_right_queue");
+ 			},
+ 			function() {
+ 				$("#step_3").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_3_result").css('background','rgba(194,215,245,0.5)');
+ 				$(document).dequeue("fix_hx_right_queue");
+ 			},
+ 			function() {
+ 				$("#step_4").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_4_result").css('background','rgba(194,215,245,0.5)');
+ 				$(document).dequeue("fix_hx_right_queue");
+ 			},
+ 			function() {
+ 				$("#step_5").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_5_result").css('background','rgba(194,215,245,0.5)');
+ 				$(document).dequeue("fix_hx_right_queue");
+ 			},
+ 			function(){
+ 				GD30.state = 0;
+				$(document).dequeue("fix_hx_right_queue");
+ 				},
+ 			function(){
+ 				setFMColorRed("FM019");
+				$(document).dequeue("fix_hx_right_queue");
+ 			},
+ 			function(){    		
+ 				$("#step_6").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_6_result").css('background','rgba(194,215,245,0.5)');
+				$(document).dequeue("fix_hx_right_queue");
+ 				},
+ 			function(){GD141.state=2;}
+         ];
+    	
+    	$('#step_1,#step_1_result,#step_2,#step_2_result').click(function(){
+    		$(document).clearQueue("fix_hx_right_queue");
+    		var tempQueue = fix_hx_right_queue.slice(0);
+    		var swapQueue = fix_hx_right_queue_mask.slice(0);
+    		
+    		var s1 = swapQueue.shift();
+//    		console.log(tempQueue.length);
+//    		console.log(swapQueue.length);
+    		tempQueue.unshift(s1);
+//    		console.log(tempQueue.length);
+//    		console.log(swapQueue.length);
+    			
+    		$(document).queue("fix_hx_right_queue",tempQueue);
+        	s2 = $(document).dequeue("fix_hx_right_queue");
+    	});
+    	
+    	$('#step_3,#step_3_result,#step_4,#step_4_result,#step_5,#step_5_result').click(function(){
+    		$(document).clearQueue("fix_hx_right_queue");
+    		var tempQueue = fix_hx_right_queue.slice(0);
+    		var swapQueue = fix_hx_right_queue_mask.slice(0);
+    		
+    		var s1 = swapQueue.shift();
+    		var s2 = swapQueue.shift();
+    		var s3 = swapQueue.shift();
+    		var s4 = swapQueue.shift();
+    		var s5 = swapQueue.shift();
+    		tempQueue.splice(0,5,s1,s2,s3,s4,s5);
+    		$(document).queue("fix_hx_right_queue",tempQueue);
+        	$(document).dequeue("fix_hx_right_queue");
+    	});
+    	
+    	$('#step_6,#step_6_result').click(function(){
+    		$(document).clearQueue("fix_hx_right_queue");
+    		var tempQueue = fix_hx_right_queue.slice(0);
+    		var swapQueue = fix_hx_right_queue_mask.slice(0);
+    		
+    		var s1 = swapQueue.shift();
+    		var s2 = swapQueue.shift();
+    		var s3 = swapQueue.shift();
+    		var s4 = swapQueue.shift();
+    		var s5 = swapQueue.shift();
+    		var s6 = swapQueue.shift();
+    		var s7 = swapQueue.shift();
+    		var s8 = swapQueue.shift();
+    		var s9 = swapQueue.shift();
+    		var s10 = swapQueue.shift();
+    		tempQueue.splice(0,10,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10);
+    		$(document).queue("fix_hx_right_queue",tempQueue);
+        	$(document).dequeue("fix_hx_right_queue");
+    	});
     	
     	//显示面板
 //        $("div.panel").show();
@@ -2249,10 +2449,10 @@ oCanvas.domReady(function () {
  				GD27.state = 1;
  				GD30.state = 1;
  				GD141.state = 1;
-// 				$(document).dequeue("fix_hx_left_queue");
+ 				$(document).dequeue("fix_hx_left_queue");
     	    },
  			function() {
- 				setFMColorRed("FM014");
+				setFMColorRed("FM014");
 	    		$(document).dequeue("fix_hx_left_queue");
  			},
  			function() {
@@ -2273,13 +2473,13 @@ oCanvas.domReady(function () {
  				GD27.state = 0;
 				$(document).dequeue("fix_hx_left_queue");
 // 				});
- 				},
- 			function(){
- 			    //消除两根水管排空带来的影响
-				$(document).dequeue("fix_hx_left_queue");
- 			},
+			},
+// 			function(){
+// 			    //消除两根水管排空带来的影响
+//				$(document).dequeue("fix_hx_left_queue");
+// 			},
  			function() {
- 				setFMColorRed("FM017");
+				setFMColorRed("FM017");
  				$(document).dequeue("fix_hx_left_queue");
  			},
  			function() {
@@ -2302,7 +2502,7 @@ oCanvas.domReady(function () {
 				$(document).dequeue("fix_hx_left_queue");
  				},
  			function(){
- 				setFMColorRed("FM019");
+				setFMColorRed("FM019");
 				$(document).dequeue("fix_hx_left_queue");
  			},
  			function(){    		
@@ -2314,40 +2514,53 @@ oCanvas.domReady(function () {
          ];
     	
     	$('#step_1,#step_1_result,#step_2,#step_2_result').click(function(){
-    		$(document).clearQueue("fix_hx_left_queue")
-    		$(document).queue("fix_hx_left_queue",fix_hx_left_queue);
-    		var s1 = fix_hx_left_queue_mask.shift();
-    		fix_hx_left_queue.unshift(s1);
-        	$(document).dequeue("fix_hx_left_queue");
+    		$(document).clearQueue("fix_hx_left_queue");
+    		var tempQueue = fix_hx_left_queue.slice(0);
+    		var swapQueue = fix_hx_left_queue_mask.slice(0);
+    		
+    		var s1 = swapQueue.shift();
+//    		console.log(tempQueue.length);
+//    		console.log(swapQueue.length);
+    		tempQueue.unshift(s1);
+//    		console.log(tempQueue.length);
+//    		console.log(swapQueue.length);
+    			
+    		$(document).queue("fix_hx_left_queue",tempQueue);
+        	s2 = $(document).dequeue("fix_hx_left_queue");
     	});
     	
     	$('#step_3,#step_3_result,#step_4,#step_4_result,#step_5,#step_5_result').click(function(){
-    		$(document).clearQueue("fix_hx_left_queue")
-    		$(document).queue("fix_hx_left_queue",fix_hx_left_queue);
-    		var s1 = fix_hx_left_queue_mask.shift();
-    		var s2 = fix_hx_left_queue_mask.shift();
-    		var s3 = fix_hx_left_queue_mask.shift();
-    		var s4 = fix_hx_left_queue_mask.shift();
-    		var s5 = fix_hx_left_queue_mask.shift();
-    		fix_hx_left_queue.splice(0,3,s1,s2,s3,s4,s5);
+    		$(document).clearQueue("fix_hx_left_queue");
+    		var tempQueue = fix_hx_left_queue.slice(0);
+    		var swapQueue = fix_hx_left_queue_mask.slice(0);
+    		
+    		var s1 = swapQueue.shift();
+    		var s2 = swapQueue.shift();
+    		var s3 = swapQueue.shift();
+    		var s4 = swapQueue.shift();
+    		var s5 = swapQueue.shift();
+    		tempQueue.splice(0,5,s1,s2,s3,s4,s5);
+    		$(document).queue("fix_hx_left_queue",tempQueue);
         	$(document).dequeue("fix_hx_left_queue");
     	});
     	
     	$('#step_6,#step_6_result').click(function(){
-    		$(document).clearQueue("fix_hx_left_queue")
-    		$(document).queue("fix_hx_left_queue",fix_hx_left_queue);
-    		var s1 = fix_hx_left_queue_mask.shift();
-    		var s2 = fix_hx_left_queue_mask.shift();
-    		var s3 = fix_hx_left_queue_mask.shift();
-    		var s4 = fix_hx_left_queue_mask.shift();
-    		var s5 = fix_hx_left_queue_mask.shift();
-    		var s6 = fix_hx_left_queue_mask.shift();
-    		var s7 = fix_hx_left_queue_mask.shift();
-    		var s8 = fix_hx_left_queue_mask.shift();
-    		var s9 = fix_hx_left_queue_mask.shift();
-    		var s10 = fix_hx_left_queue_mask.shift();
-    		var s11 = fix_hx_left_queue_mask.shift();
-    		fix_hx_left_queue.splice(0,9,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11);
+    		$(document).clearQueue("fix_hx_left_queue");
+    		var tempQueue = fix_hx_left_queue.slice(0);
+    		var swapQueue = fix_hx_left_queue_mask.slice(0);
+    		
+    		var s1 = swapQueue.shift();
+    		var s2 = swapQueue.shift();
+    		var s3 = swapQueue.shift();
+    		var s4 = swapQueue.shift();
+    		var s5 = swapQueue.shift();
+    		var s6 = swapQueue.shift();
+    		var s7 = swapQueue.shift();
+    		var s8 = swapQueue.shift();
+    		var s9 = swapQueue.shift();
+    		var s10 = swapQueue.shift();
+    		tempQueue.splice(0,10,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10);
+    		$(document).queue("fix_hx_left_queue",tempQueue);
         	$(document).dequeue("fix_hx_left_queue");
     	});
 
@@ -2977,11 +3190,11 @@ oCanvas.domReady(function () {
 	}
     
     function clearAll(){
-    	GD1001.state=3;
-    	GD11.state=3;
-    	GD37.state=3;
-    	GD26.state=3;
-    	GD27.state=3;
+    	GD1001.state=1;
+    	GD11.state=1;
+    	GD37.state=1;
+    	GD26.state=1;
+    	GD27.state=1;
     	canvas.children[2].fill=color_GD;
     	canvas.children[3].fill=color_GD;
     	canvas.children[4].fill=color_GD;
