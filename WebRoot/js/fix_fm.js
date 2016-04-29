@@ -896,33 +896,6 @@ oCanvas.domReady(function () {
         GD25.advance();
         GD30.advance();
         GD36.advance();
-
-        if((GD0101.state==0)&&(GD25.state==1)){
-        	setFMColorRed("FM064");
-        	GD25.state=2;
-//        	blinTwice("#step_2");
-    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-        }
-       if((GD0101.state==0)&&(GD25.state==0)&&(GD0102.state==1)){
-    	  GD0102.state=2;
-    	  document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-//    	  blinTwice("#step_3");
-       }
-       if((GD0101.state==0)&&(GD25.state==0)&&(GD0102.state==0)&&(GD05.state==0)){
-     	  document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-//     	  blinTwice("#step_3");
-        }
-       if((GD0101.state==0)&&(GD0102.state==0)){  	
-       	GD05.state=2;
-       }
-       
-        if((GD0101.state==1)&&(GD25.state==0)){        	
-        	GD25.state=3;
-        	GD0102.state=3;  	
-        }
-        if((GD0101.state==1)&&(GD25.state==1)&&(GD0102.state==1)){        	
-        	GD05.state=3;	
-        }
         
 //        if((GD0101.state==1)&&(GD25.state==1)){
 //        	blinTwice("#step_3");
@@ -1231,7 +1204,7 @@ oCanvas.domReady(function () {
     }
 
     function clearAll(){
-    	GD0101.state=3;
+    	GD0101.state=1;
 //    	GD11.state=3;
 //    	GD1001.state=3;
 
@@ -1297,20 +1270,75 @@ oCanvas.domReady(function () {
         $("#step_3").html("3&nbsp;&nbsp;打开旧混合井西侧搅拌浆");
         $("#step_4").html("&nbsp;");
  		
-    	setFMColorGreen("FM062");
-//    	blinTwice("#step_3");
-		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-    	window.setTimeout(function(){
-       		setFMColorGreen("FM064");
-    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-       		/*blinTwice("#step_2");*/
-             },300);
-        window.setTimeout(function(){
-        	setFMColorGreen("FM09");
-    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-        	GD0101.state=3;
-        	/*blinTwice("#step_1");*/
-             },700);
+        $('#step_1').click(function(){});
+        $('#step_2').click(function(){});
+        $('#step_3').click(function(){});
+        $('#step_4').click(function(){});
+		//动画队列
+    	var restore_fm062_queue = [
+			function() {
+				$("#step_1").css('background','rgba(194,215,245,0.5)');
+				setTimeout(function(){
+		    		$(document).dequeue("restore_fm062_queue");
+		    	},1000);
+			},
+			function() {
+				setFMColorGreen("FM062");
+		    	setTimeout(function(){
+		    		$(document).dequeue("restore_fm062_queue");
+		    	},1000);
+			},
+			function() {
+				$("#step_2").css('background','rgba(194,215,245,0.5)');
+		    	setTimeout(function(){
+		    		$(document).dequeue("restore_fm062_queue");
+		    	},1000);
+			},
+			function(){
+				setFMColorGreen("FM064");
+		    	setTimeout(function(){
+		    		$(document).dequeue("restore_fm062_queue");
+		    	},1000);
+			},
+			function() {
+				$("#step_3").css('background','rgba(194,215,245,0.5)');
+    			setTimeout(function(){
+    				$(document).dequeue("restore_fm062_queue");
+    			},1000);
+			},
+			function() {
+				setFMColorGreen("FM09");
+				setTimeout(function(){
+					$(document).dequeue("restore_fm062_queue");
+				},1000);
+			},
+			function() {
+				GD0101.state = 3;
+    			setTimeout(function(){
+    				$(document).dequeue("restore_fm062_queue");
+    			},1000);
+			},
+			function() {
+				GD25.state = 3;
+    			setTimeout(function(){
+    				$(document).dequeue("restore_fm062_queue");
+    			},1000);
+			},
+			function() {
+				GD0102.state = 3;
+    			setTimeout(function(){
+    				$(document).dequeue("restore_fm062_queue");
+    			},1000);
+			},
+			function() {
+				GD05.state = 3;
+    			setTimeout(function(){
+    				$(document).dequeue("restore_fm062_queue");
+    			},1000);
+			}
+        ];
+    	$(document).queue("restore_fm062_queue",restore_fm062_queue);
+    	$(document).dequeue("restore_fm062_queue");
         
  		$("div.panel").show();
     }
@@ -1326,31 +1354,211 @@ oCanvas.domReady(function () {
     	$("#init_state").text("状态");
     	$("#init_statement").text("062#阀门维修中");
 
-        /*document.getElementById("scheme").onclick="";*/
     	$(".table_content").attr("style","background:#ffffff;");
         $("#step_1").html("1&nbsp;&nbsp;关闭09#阀门");
         $("#step_2").html("2&nbsp;&nbsp;关闭064#阀门");
         $("#step_3").html("3&nbsp;&nbsp;停旧混合井西侧搅拌浆");
         $("#step_4").html("4&nbsp;&nbsp;1#机加池停止进水");
-        
+		
+        $("#export").text("生成方案");
+		document.getElementById("export").href="download/fix-fm062.docx";
+		$("#reset").text("重置");
 		$("#scheme").text("62#阀门恢复");
+		
 		document.getElementById("scheme").onclick=function(){
 			restore_fm062();
 		}
 		
-		$("#export").text("生成方案");
-		document.getElementById("export").href="download/fix-fm062.docx";
-		$("#reset").text("重置");
+		//动画队列
+    	var fix_fm062_queue = [
+			function() {
+				$("#step_1").css('background','rgba(194,215,245,0.5)');
+				setTimeout(function(){
+		    		$(document).dequeue("fix_fm062_queue");
+		    	},1000);
+			},
+			function() {
+				setFMColorRed("FM09");
+		    	setTimeout(function(){
+		    		$(document).dequeue("fix_fm062_queue");
+		    	},1000);
+			},
+			function() {
+		        GD0101.state = 2;
+				$(document).on('drain', function(){
+					setTimeout(function(){
+						$(document).dequeue("fix_fm062_queue");
+					},1000);
+				});
+			},
+			function() {
+				$("#step_2").css('background','rgba(194,215,245,0.5)');
+		    	setTimeout(function(){
+		    		$(document).dequeue("fix_fm062_queue");
+		    	},1000);
+			},
+			function(){
+				setFMColorRed("FM064");
+		    	setTimeout(function(){
+		    		$(document).dequeue("fix_fm062_queue");
+		    	},1000);
+			},
+			function() {
+				GD25.state = 2;
+				
+				$(document).on('drain', function(){
+					setTimeout(function(){
+						$(document).dequeue("fix_fm062_queue");
+					},1000);
+				});
+			},
+			function() {
+				$("#step_3").css('background','rgba(194,215,245,0.5)');
+    			setTimeout(function(){
+    				$(document).dequeue("fix_fm062_queue");
+    			},3000);
+			},
+			function() {
+				GD0102.state = 2;
 
-        setFMColorRed("FM09");
-        /*blinTwice("#step_1");*/
-		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-        GD0101.state=2;
-      
-        
-//        window.setTimeout(function(){
-//           decay(2,1);
-//        },100);
+				$(document).on('drain', function(){
+					setTimeout(function(){
+						$(document).dequeue("fix_fm062_queue");
+					},1000);
+				});
+			},
+			function() {
+				$("#step_4").css('background','rgba(194,215,245,0.5)');
+    			setTimeout(function(){
+    				$(document).dequeue("fix_fm062_queue");
+    			},1000);
+			},
+			function() {
+				GD05.state = 2;
+			}
+        ];
+    	$(document).queue("fix_fm062_queue",fix_fm062_queue);
+    	$(document).dequeue("fix_fm062_queue");
+    	
+    	var fix_fm062_queue_mask = [
+		    function(){
+		    	//Start of animation,reset all animation
+		    	setFMColorGreen("FM09");
+		    	setFMColorGreen("FM064");
+				$(".table_content").css("background-color","#ffffff");
+				GD0101.state = 1;
+				GD0102.state = 1;
+				GD25.state = 1;
+				GD05.state = 1;
+				$(document).dequeue("fix_fm062_queue");
+		    },
+  			function() {
+  				$("#step_1").css('background','rgba(194,215,245,0.5)');
+  				$(document).dequeue("fix_fm062_queue");
+  			},
+  			function() {
+  				setFMColorRed("FM09");
+	    		$(document).dequeue("fix_fm062_queue");
+  			},
+  			function() {
+  		        GD0101.state = 0;
+				$(document).dequeue("fix_fm062_queue");
+  			},
+  			function() {
+  				$("#step_2").css('background','rgba(194,215,245,0.5)');
+	    		$(document).dequeue("fix_fm062_queue");
+  			},
+  			function(){
+  				setFMColorRed("FM064");
+	    		$(document).dequeue("fix_fm062_queue");
+  			},
+  			function() {
+  				GD25.state = 0;
+				$(document).dequeue("fix_fm062_queue");
+  			},
+  			function() {
+  				$("#step_3").css('background','rgba(194,215,245,0.5)');
+  				$(document).dequeue("fix_fm062_queue");
+  			},
+  			function() {
+  				GD0102.state = 0;
+				$(document).dequeue("fix_fm062_queue");
+  			},
+  			function() {
+  				$("#step_4").css('background','rgba(194,215,245,0.5)');
+  				$(document).dequeue("fix_fm062_queue");
+  			},
+			function() {
+				GD05.state = 0;
+			}
+          ];
+    	
+    	$('#step_1').click(function(){
+    		$(document).clearQueue("fix_fm062_queue");
+    		var tempQueue = fix_fm062_queue.slice(0);
+    		var swapQueue = fix_fm062_queue_mask.slice(0);
+    		
+    		var s1 = swapQueue.shift();
+    		tempQueue.unshift(s1);
+    			
+    		$(document).queue("fix_fm062_queue",tempQueue);
+        	$(document).dequeue("fix_fm062_queue");
+    	});
+    	
+    	$('#step_2').click(function(){
+    		$(document).clearQueue("fix_fm062_queue");
+    		var tempQueue = fix_fm062_queue.slice(0);
+    		var swapQueue = fix_fm062_queue_mask.slice(0);
+    		
+    		var s1 = swapQueue.shift();
+    		var s2 = swapQueue.shift();
+    		var s3 = swapQueue.shift();
+    		var s4 = swapQueue.shift();
+    		tempQueue.splice(0,3,s1,s2,s3,s4);
+    			
+    		$(document).queue("fix_fm062_queue",tempQueue);
+        	$(document).dequeue("fix_fm062_queue");
+    	});
+    	
+    	$('#step_3').click(function(){
+    		$(document).clearQueue("fix_fm062_queue");
+    		var tempQueue = fix_fm062_queue.slice(0);
+    		var swapQueue = fix_fm062_queue_mask.slice(0);
+    		
+    		var s1 = swapQueue.shift();
+    		var s2 = swapQueue.shift();
+    		var s3 = swapQueue.shift();
+    		var s4 = swapQueue.shift();
+    		var s5 = swapQueue.shift();
+    		var s6 = swapQueue.shift();
+    		var s7 = swapQueue.shift();
+    		tempQueue.splice(0,6,s1,s2,s3,s4,s5,s6,s7);
+    			
+    		$(document).queue("fix_fm062_queue",tempQueue);
+        	$(document).dequeue("fix_fm062_queue");
+    	});
+    	
+    	$('#step_4').click(function(){
+    		$(document).clearQueue("fix_fm062_queue");
+    		var tempQueue = fix_fm062_queue.slice(0);
+    		var swapQueue = fix_fm062_queue_mask.slice(0);
+    		
+    		var s1 = swapQueue.shift();
+    		var s2 = swapQueue.shift();
+    		var s3 = swapQueue.shift();
+    		var s4 = swapQueue.shift();
+    		var s5 = swapQueue.shift();
+    		var s6 = swapQueue.shift();
+    		var s7 = swapQueue.shift();
+    		var s8 = swapQueue.shift();
+    		var s9 = swapQueue.shift();
+    		var s10 = swapQueue.shift();
+    		tempQueue.splice(0,9,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10);
+    			
+    		$(document).queue("fix_fm062_queue",tempQueue);
+        	$(document).dequeue("fix_fm062_queue");
+    	});
+		
         $("div.panel").show();
     }
 //    function  fix_fm019(){

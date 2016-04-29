@@ -132,7 +132,7 @@
     font-size:18px;
     }
     #list_group>select{
-    border: solid 2px #196dff;
+    border: solid 2px #337ab7;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 6px;
@@ -178,7 +178,7 @@
                 <tr>
                 <tr><td>反冲强度</td><td></td></tr>
                 <tr id="dash2" height="20">
-                <td id="second" >&nbsp;&nbsp;清水漂洗</td><td id="second">5-6L/&sup2;&middot;s</td>
+                <td id="second" >&nbsp;&nbsp;清水漂洗</td><td id="second">13-15L/m&sup2;&middot;s</td>
                 </tr>
                 </tr>
                 </table>

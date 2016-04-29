@@ -2077,7 +2077,7 @@ oCanvas.domReady(function () {
 //    		console.log(swapQueue.length);
     			
     		$(document).queue("fix_hx_right_queue",tempQueue);
-        	s2 = $(document).dequeue("fix_hx_right_queue");
+        	$(document).dequeue("fix_hx_right_queue");
     	});
     	
     	$('#step_3,#step_3_result,#step_4,#step_4_result,#step_5,#step_5_result').click(function(){
@@ -2466,13 +2466,9 @@ oCanvas.domReady(function () {
 	    		$(document).dequeue("fix_hx_left_queue");
  			},
  			function() {
-// 				GD26.state=2;
-// 				GD27.state=2;
-// 				$(document).on('drain', function(){
  				GD26.state = 0;
  				GD27.state = 0;
 				$(document).dequeue("fix_hx_left_queue");
-// 				});
 			},
 // 			function(){
 // 			    //消除两根水管排空带来的影响
@@ -2519,11 +2515,7 @@ oCanvas.domReady(function () {
     		var swapQueue = fix_hx_left_queue_mask.slice(0);
     		
     		var s1 = swapQueue.shift();
-//    		console.log(tempQueue.length);
-//    		console.log(swapQueue.length);
     		tempQueue.unshift(s1);
-//    		console.log(tempQueue.length);
-//    		console.log(swapQueue.length);
     			
     		$(document).queue("fix_hx_left_queue",tempQueue);
         	s2 = $(document).dequeue("fix_hx_left_queue");

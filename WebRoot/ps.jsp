@@ -124,7 +124,7 @@
     font-size:18px;
     }
     #list_group>select{
-    border: solid 2px #196dff;
+    border: solid 2px #337ab7;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 6px;
@@ -181,10 +181,10 @@
     <td>水泵扬程</td>
     </tr>
     <tr>
-    <td>白天</td><td>0.45Mp</td>
+    <td>6:00~23:00</td><td>0.45Mp</td>
     </tr>
     <tr>
-    <td>夜间</td><td>0.44Mp</td>
+    <td>23:00~6:00</td><td>0.44Mp</td>
     </tr>
     </table>
     </div>

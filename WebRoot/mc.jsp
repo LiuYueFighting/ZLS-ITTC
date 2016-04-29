@@ -124,7 +124,7 @@
         font-size:18px;
         }
         #list_group>select{
-        border: solid 1px #196dff;
+        border: solid 1px #337ab7;
         -moz-border-radius: 15px;
         -webkit-border-radius: 15px;
         border-radius: 6px;
