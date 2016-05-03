@@ -605,7 +605,7 @@ oCanvas.domReady(function () {
 //            	//decay(15,1);//GD12
 //            	//decay(18,1);
 //             },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //        }
 //    });
 //    img1.bind("mouseenter", function () {
@@ -680,7 +680,7 @@ oCanvas.domReady(function () {
 //            	//decay(15,1);//GD12
 //            	//decay(18,1);
 //             },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //        }
 //    });
 //    img11.bind("mouseenter", function () {
@@ -713,7 +713,7 @@ oCanvas.domReady(function () {
 //                decay(9,1);
 //                decay(13,1);
 //             },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //        }
 //    }).bind("mouseenter", function () {
 //        canvas.mouse.cursor("pointer");
@@ -754,7 +754,7 @@ oCanvas.domReady(function () {
 //                decay(13,1);
 //                decay(14,1);
 //             },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //        }
 //    }).bind("mouseenter", function () {
 //        canvas.mouse.cursor("pointer");
@@ -789,7 +789,7 @@ oCanvas.domReady(function () {
 //            	decay(8,1);//GD07
 //            	decay(15,1);//GD12
 //             },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //        }
 //    }).bind("mouseenter", function () {
 //        canvas.mouse.cursor("pointer");
@@ -826,7 +826,7 @@ oCanvas.domReady(function () {
 //            	decay(15,1);
 //            	canvas.children[38].fill=color_GD;
 //            },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //        }
 //    }).bind("mouseenter", function () {
 //        canvas.mouse.cursor("pointer");
@@ -873,7 +873,7 @@ oCanvas.domReady(function () {
 //                decay(13,1);
 //                decay(14,1);
 //             },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //        }
 //    }).bind("mouseenter",function(){
 //        canvas.mouse.cursor("pointer");
@@ -934,14 +934,40 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img5);
     img5.bind("click",function(){
-    //window.location.href="hx.jsp";  	
-    //弹窗提示样式    	
+    	onClickHX();
+    }).bind("mouseenter",function(){
+        canvas.mouse.cursor("pointer");
+        this.shadow="0 0 10px #eee";
+        //$("#name_HX").css("display","inline");
+    }).bind("mouseleave",function(){
+        //$("#name_HX").css("display","none");
+        this.shadow="0 0 0px #eee";
+        canvas.mouse.cursor("default");
+    });
+//    .bind("flash",function(){
+//
+//        this.unbind("flash");
+//        window.setTimeout(function(){
+//            GD13.paused=1;
+//            //GD14.paused=1;
+//            GD141.paused=1;
+//            GD30.paused=1;
+//        },100);
+//
+//    });
+    
+	$("#name_HX").click(function(){
+		onClickHX();
+	});
+    
+    function onClickHX(){
+    	//window.location.href="hx.jsp";  	
+        //弹窗提示样式    	
     	$.messager.confirm('确认','是否将<strong>虹吸滤池</strong>设置为维修状态？', function(r){
     		if(r){
     			/*fix_hx_right();*/
-    			$("div.panel").show();
-    			$('#muti-plan-hide').hide();
-    			$('#muti-plan-show').show();
+    			$(".hiden").show();
+    			$('#init_stat').html('选择维修方案<span class="caret"></span>');
     			$('#fix_scheme').click(function(){
 				    fix_hx_left();
     			});
@@ -954,29 +980,10 @@ oCanvas.domReady(function () {
     			$('#extra_restore_scheme').click(function(){
   				    restore_hx_right();
     			});
-    			
     		}
-    		});                     	
-    }).bind("mouseenter",function(){
-        canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
-        //$("#name_HX").css("display","inline");
-    }).bind("mouseleave",function(){
-        //$("#name_HX").css("display","none");
-        this.shadow="0 0 0px #eee";
-        canvas.mouse.cursor("default");
-    }).bind("flash",function(){
-
-        this.unbind("flash");
-        window.setTimeout(function(){
-            GD13.paused=1;
-            //GD14.paused=1;
-            GD141.paused=1;
-            GD30.paused=1;
-        },100);
-
-    });
-
+    	});
+    }
+    
     var img6=canvas.display.image({
         x:284,
         y:435,
@@ -993,7 +1000,7 @@ oCanvas.domReady(function () {
 //            window.setTimeout(function(){              
 //            	decay(25,1);//GD21
 //             },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //        }
 //    }).bind("mouseenter",function(){
 //        canvas.mouse.cursor("pointer");
@@ -1030,7 +1037,7 @@ oCanvas.domReady(function () {
 //            window.setTimeout(function(){              
 //            	decay(25,1);//GD21
 //             },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //
 //        }
 //    }).bind("mouseenter",function(){
@@ -1062,7 +1069,7 @@ oCanvas.domReady(function () {
 //            window.setTimeout(function(){              
 //            	decay(28,1);//GD24
 //             },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //        }
 //    }).bind("mouseenter",function(){
 //        canvas.mouse.cursor("pointer");
@@ -1094,7 +1101,7 @@ oCanvas.domReady(function () {
 //            	decay(28,1);//GD24
 //            	canvas.children[39].fill=color_GD;
 //             },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //        }
 //    }).bind("mouseenter",function(){
 //        canvas.mouse.cursor("pointer");
@@ -1216,7 +1223,7 @@ oCanvas.domReady(function () {
 //            window.setTimeout(function(){              
 //            	decay(21,1);//GD17
 //             },100);
-//            $("div.panel").show();
+//            $("div.hiden").show();
 //        }
 //
 //    }).bind("mouseenter",function(){
@@ -1430,6 +1437,7 @@ oCanvas.domReady(function () {
     canvas.timeline.start();
 
 
+    
     function restart(){
         canvas.timeline.start();
     }
@@ -1681,7 +1689,7 @@ oCanvas.domReady(function () {
         
     }
     
-    $("#panel_heading").click(function(){$("div.hiden").toggle();}); 
+    $("#panel_heading").click(function(){$(".hiden").toggle();}); 
     
     function fix_qs_right(){
         clearAll();
@@ -1703,7 +1711,7 @@ oCanvas.domReady(function () {
 //        document.getElementById("step_3_result").innerHTML="关闭阀门68#";
 //            document.getElementById("step_4").innerHTML="打开阀门45#";
 
-        $("div.panel").show();
+        $("div.hiden").show();
     }
 
     function fix_qs_left(){
@@ -1722,7 +1730,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_2").innerHTML="关闭阀门09#";
         document.getElementById("step_2_result").innerHTML="打开西侧池排空泵#";
 
-        $("div.panel").show();
+        $("div.hiden").show();
     }
 
     function  fix_hh_right(){
@@ -1745,7 +1753,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_3").innerHTML="关闭阀门69#";
         document.getElementById("step_3_result").innerHTML="打开东侧池排水泵";
 
-        $("div.panel").show();
+        $("div.hiden").show();
 
     }
 
@@ -1768,7 +1776,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_3").innerHTML="关闭阀门45#";
         document.getElementById("step_3_result").innerHTML="打开西侧池排水泵";
 
-        $("div.panel").show();
+        $("div.hiden").show();
 
     }
 
@@ -1786,7 +1794,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_2").innerHTML="关闭阀门65#";
         document.getElementById("step_2_result").innerHTML="关闭阀门66#";
         document.getElementById("step_3").innerHTML="打开新建混合井排水泵";
-        $("div.panel").show();
+        $("div.hiden").show();
     }
 
     function fix_jjc1(){
@@ -1807,7 +1815,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_3").innerHTML="关闭阀门14#";
         document.getElementById("step_3_result").innerHTML="打开1#机加池排水泵";
 
-        $("div.panel").show();
+        $("div.hiden").show();
     }
 
     function fix_jjc2(){
@@ -1826,7 +1834,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_2").innerHTML="关闭阀门15#";
         document.getElementById("step_2_result").innerHTML="打开2#机加池排水泵";
 
-        $("div.panel").show();
+        $("div.hiden").show();
     }
 
     function fix_jjc3(){
@@ -1845,7 +1853,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_2").innerHTML="关闭阀门67#";
         document.getElementById("step_2_result").innerHTML="打开3#机加池排水泵";
 
-        $("div.panel").show();
+        $("div.hiden").show();
     }
     function fix_hx_right(){
     	//初始化
@@ -1854,7 +1862,6 @@ oCanvas.domReady(function () {
         $("#muti-plan-show").show();
         $("#muti-plan-hide").hide();
 		hideAllFM();
-		setDefaultFMColor();
 		
 		setFMColorGreen("FM016");
         setFMColorGreen("FM018");
@@ -1867,12 +1874,12 @@ oCanvas.domReady(function () {
         setFMColorRed("FM018");
         setFMColorRed("FM019");*/
         var todolist = [
-			{ "content":"1&nbsp;&nbsp;关闭阀门16#,", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧虹吸进水" },
-			{ "content":"2&nbsp;&nbsp;关闭阀门9#~14#小虹吸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧进水" },
-			{ "content":"3&nbsp;&nbsp;关闭阀门18#,", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;防止西侧反水" },
-			{ "content":"4&nbsp;&nbsp;打开9#~14#滤池排空闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;9#~14#滤格排空" },
-			{ "content":"5&nbsp;&nbsp;断开东西滤池清水联通闸,",  "result":"&nbsp;&nbsp;&nbsp;&nbsp;断开联通" },
-			{ "content":"6&nbsp;&nbsp;关闭阀门19#,", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
+			{ "content":"1&nbsp;&nbsp;关闭阀门16#，", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧虹吸进水" },
+			{ "content":"2&nbsp;&nbsp;关闭阀门9#~14#小虹吸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧进水" },
+			{ "content":"3&nbsp;&nbsp;关闭阀门18#，", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;防止西侧反水" },
+			{ "content":"4&nbsp;&nbsp;打开9#~14#滤池排空闸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;9#~14#滤格排空" },
+			{ "content":"5&nbsp;&nbsp;断开东西滤池清水联通闸，",  "result":"&nbsp;&nbsp;&nbsp;&nbsp;断开联通" },
+			{ "content":"6&nbsp;&nbsp;关闭阀门19#，", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
 		];
 
 		for (i=0;i<todolist.length;i++){
@@ -1892,193 +1899,141 @@ oCanvas.domReady(function () {
 //			restore_hx_right();
 //		}
         $(".hiden").show();
-        $("#muti-plan-show").show();
-        $("#muti-plan-hide").hide();
         $("#init_state").text("状态");
         $("#init_stat").html('东侧阀门维修<span class="caret"></span>');
 		document.getElementById("export").href="download/EAST_HX_FIX.doc";
 		$("#export").text("生成方案");
 		$("#reset").text("重置");
+		
+//		function setFMColorQueue(FMName,delay){
+//			var dfd = $.Deferred();
+//			setFMColorRed(FMName);
+//			setTimeout(function(){
+//				dfd.resolve();
+//			},delay);
+//			return dfd.promise;
+//		}
+//		　　function f1(){
+//		　　　　var dfd = $.Deferred();
+//		　　　　setTimeout(function () {
+//		　　　　　　alert('f1');
+//		　　　　　　dfd.resolve();
+//		　　　　}, 500);
+//		　　　　return dfd.promise();
+//		　　}
+//		function f2(){
+//			alert('f2');
+//		}
+//		f1().then(f2);
 
+		
+		
+		function next(delay){
+			setTimeout(function(){
+	    		$(document).dequeue("fix_hx_right_queue");
+	    	},delay);
+		}
+		
+		function setStepBackgroundColor(stepName, color){
+			$(stepName).css('background',color);
+			$(stepName+'_result').css('background',color);
+		}
+		
 		//动画队列
     	var fix_hx_right_queue = [
 			function() {
 				setFMColorRed("FM016");
-				setTimeout(function(){
-		    		$(document).dequeue("fix_hx_right_queue");
-		    	},1000);
+				next(1000);
 			},
 			function() {
-				$("#step_1").css('background','rgba(194,215,245,0.5)');
-				$("#step_1_result").css('background','rgba(194,215,245,0.5)');
-		    	setTimeout(function(){
-		    		$(document).dequeue("fix_hx_right_queue");
-		    	},1000);
-			},
-			function() {
-				$("#step_2").css('background','rgba(194,215,245,0.5)');
-				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
-		    	setTimeout(function(){
-		    		$(document).dequeue("fix_hx_right_queue");
-		    	},1000);
+				setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+				next(1000);
 			},
 			function() {
 				GD11.state=2;
 		    	GD1001.state=2;
 				$(document).on('drain', function(){
-					setTimeout(function(){
-						$(document).dequeue("fix_hx_right_queue");
-					},1000);
+					next(1000);
 				});
-				},
+			},
 			function(){
 			    //消除两根水管排空带来的影响
 			},
 			function() {
+				setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
 				setFMColorRed("FM018");
-				
-    			setTimeout(function(){
-    				$(document).dequeue("fix_hx_right_queue");
-    			},2000);
+				next(2000);
 			},
 			function() {
-				$("#step_3").css('background','rgba(194,215,245,0.5)');
-				$("#step_3_result").css('background','rgba(194,215,245,0.5)');
-    			setTimeout(function(){
-    				$(document).dequeue("fix_hx_right_queue");
-    			},3000);
-			},
-			function() {
-				$("#step_4").css('background','rgba(194,215,245,0.5)');
-				$("#step_4_result").css('background','rgba(194,215,245,0.5)');
-    			setTimeout(function(){
-    				$(document).dequeue("fix_hx_right_queue");
-    			},1000);
-			},
-			function() {
-				$("#step_5").css('background','rgba(194,215,245,0.5)');
-				$("#step_5_result").css('background','rgba(194,215,245,0.5)');
-    			setTimeout(function(){
-    				$(document).dequeue("fix_hx_right_queue");
-    			},1000);
+				setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+				next(1000);
 			},
 			function(){
 				GD30.state=2;
 				$(document).on('drain', function(){
-					setTimeout(function(){
-						$(document).dequeue("fix_hx_right_queue");
-					},1000);
+					next(1000);
 				});
-				},
+			},
+			function() {
+				setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_5', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
 			function(){
 				setFMColorRed("FM019");
-				setTimeout(function(){
-					$(document).dequeue("fix_hx_right_queue");
-				},1000);
+				next(1000);
 			},
 			function(){    		
-				$("#step_6").css('background','rgba(194,215,245,0.5)');
-				$("#step_6_result").css('background','rgba(194,215,245,0.5)');
-				setTimeout(function(){
-					$(document).dequeue("fix_hx_right_queue");
-				},1000);
-				},
+				setStepBackgroundColor('#step_6', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
 			function(){GD141.state=2;}
         ];
     	
     	$(document).queue("fix_hx_right_queue",fix_hx_right_queue);
-    	$(document).dequeue("fix_hx_right_queue");
+//    	$(document).dequeue("fix_hx_right_queue");
+    	next(1000);
     	
-    	var fix_hx_right_queue_mask = [
-    	    function(){
-    	    	//Start of animation,reset all animation
-    	    	setFMColorGreen("FM016");
-    	    	setFMColorGreen("FM018");
-    	    	setFMColorGreen("FM019");
-    			$(".table_content").css("background-color","#ffffff");
- 				GD11.state = 1;
- 				GD1001.state = 1;
- 				GD30.state = 1;
- 				GD141.state = 1;
- 				$(document).dequeue("fix_hx_right_queue");
-    	    },
- 			function() {
- 				setFMColorRed("FM016");
-	    		$(document).dequeue("fix_hx_right_queue");
- 			},
- 			function() {
- 				$("#step_1").css('background','rgba(194,215,245,0.5)');
- 				$("#step_1_result").css('background','rgba(194,215,245,0.5)');
-	    		$(document).dequeue("fix_hx_right_queue");
- 			},
- 			function() {
- 				$("#step_2").css('background','rgba(194,215,245,0.5)');
- 				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
-	    		$(document).dequeue("fix_hx_right_queue");
- 			},
- 			function() {
-// 				GD26.state=2;
-// 				GD27.state=2;
-// 				$(document).on('drain', function(){
- 				GD11.state = 0;
- 				GD1001.state = 0;
-				$(document).dequeue("fix_hx_right_queue");
-// 				});
- 				},
-// 			function(){
-// 			    //消除两根水管排空带来的影响
-//				$(document).dequeue("fix_hx_right_queue");
-// 			},
- 			function() {
- 				setFMColorRed("FM018");
- 				$(document).dequeue("fix_hx_right_queue");
- 			},
- 			function() {
- 				$("#step_3").css('background','rgba(194,215,245,0.5)');
- 				$("#step_3_result").css('background','rgba(194,215,245,0.5)');
- 				$(document).dequeue("fix_hx_right_queue");
- 			},
- 			function() {
- 				$("#step_4").css('background','rgba(194,215,245,0.5)');
- 				$("#step_4_result").css('background','rgba(194,215,245,0.5)');
- 				$(document).dequeue("fix_hx_right_queue");
- 			},
- 			function() {
- 				$("#step_5").css('background','rgba(194,215,245,0.5)');
- 				$("#step_5_result").css('background','rgba(194,215,245,0.5)');
- 				$(document).dequeue("fix_hx_right_queue");
- 			},
- 			function(){
- 				GD30.state = 0;
-				$(document).dequeue("fix_hx_right_queue");
- 				},
- 			function(){
- 				setFMColorRed("FM019");
-				$(document).dequeue("fix_hx_right_queue");
- 			},
- 			function(){    		
- 				$("#step_6").css('background','rgba(194,215,245,0.5)');
- 				$("#step_6_result").css('background','rgba(194,215,245,0.5)');
-				$(document).dequeue("fix_hx_right_queue");
- 				},
- 			function(){GD141.state=2;}
-         ];
+    	function playbackReset(){
+    		//Start of animation,reset all animation
+    		setFMColorGreen("FM016");
+    		setFMColorGreen("FM018");
+    		setFMColorGreen("FM019");
+    		$(".table_content").css("background-color","#ffffff");
+    		GD11.state = 1;
+    		GD1001.state = 1;
+    		GD30.state = 1;
+    		GD141.state = 1;
+    		$(document).dequeue("fix_hx_right_queue");
+    	}
     	
-    	$('#step_1,#step_1_result,#step_2,#step_2_result').click(function(){
+    	$('#step_1,#step_1_result').click(function(){
+    		$(document).clearQueue("fix_hx_right_queue");
+    		$(document).queue("fix_hx_right_queue",fix_hx_right_queue);
+    		playbackReset();
+    	});
+    	
+    	$('#step_2,#step_2_result').click(function(){
     		$(document).clearQueue("fix_hx_right_queue");
     		var tempQueue = fix_hx_right_queue.slice(0);
-    		var swapQueue = fix_hx_right_queue_mask.slice(0);
-    		
-    		var s1 = swapQueue.shift();
-//    		console.log(tempQueue.length);
-//    		console.log(swapQueue.length);
-    		tempQueue.unshift(s1);
-//    		console.log(tempQueue.length);
-//    		console.log(swapQueue.length);
-    			
+    		tempQueue.splice(0,4,function(){
+    			setFMColorRed("FM016");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			GD11.state=2;
+		    	GD1001.state=2;
+		    	next(1000);
+    		});
     		$(document).queue("fix_hx_right_queue",tempQueue);
-        	$(document).dequeue("fix_hx_right_queue");
+    			
+    		playbackReset();
     	});
+    	
     	
     	$('#step_3,#step_3_result,#step_4,#step_4_result,#step_5,#step_5_result').click(function(){
     		$(document).clearQueue("fix_hx_right_queue");
@@ -2116,7 +2071,7 @@ oCanvas.domReady(function () {
     	});
     	
     	//显示面板
-//        $("div.panel").show();
+//        $("div.hiden").show();
         
     }
     
@@ -2136,12 +2091,12 @@ oCanvas.domReady(function () {
         
         $(".table_content").css("background-color","#ffffff");
         var todolist = [
-			{"content":"1&nbsp;&nbsp;打开阀门16#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复东侧虹吸进水" },
-			{"content":"2&nbsp;&nbsp;打开阀门9#~14#小虹吸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;逐格滤料冲洗合格后可以恢复" },
-			{"content":"3&nbsp;&nbsp;打开阀门18#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
-			{"content":"4&nbsp;&nbsp;关闭9#~14#滤池排空闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
-			{"content":"5&nbsp;&nbsp;开启东西滤池清水联通闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;平衡东西两侧水量" },
-			{"content":"6&nbsp;&nbsp;打开阀门19#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
+			{"content":"1&nbsp;&nbsp;打开阀门19#，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" },
+			{"content":"2&nbsp;&nbsp;开启东西滤池清水联通闸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;平衡东西两侧水量" },
+			{"content":"3&nbsp;&nbsp;关闭9#~14#滤池排空闸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
+			{"content":"4&nbsp;&nbsp;打开阀门18#，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
+			{"content":"5&nbsp;&nbsp;打开阀门9#~14#小虹吸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;逐格滤料冲洗合格后可以恢复" },
+			{"content":"6&nbsp;&nbsp;打开阀门16#，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复东侧虹吸进水" }
 		];
         
 		for (i=0;i<todolist.length;i++){
@@ -2170,10 +2125,6 @@ oCanvas.domReady(function () {
     		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-//    		blinTwice("#step_6");
-//    		blinTwice("#step_6_result");
-//    		blinTwice("#step_5");
-//    		blinTwice("#step_5_result");
          },300);
         window.setTimeout(function(){              
         	setFMColorGreen("FM018");
@@ -2181,10 +2132,6 @@ oCanvas.domReady(function () {
     		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-//    		blinTwice("#step_3");
-//    		blinTwice("#step_3_result");
-//    		blinTwice("#step_4");
-//    		blinTwice("#step_4_result");
          },1300);
         window.setTimeout(function(){              
         	setFMColorGreen("FM016");
@@ -2192,10 +2139,6 @@ oCanvas.domReady(function () {
     		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-//    		blinTwice("#step_1");
-//    		blinTwice("#step_1_result");
-//    		blinTwice("#step_2");
-//    		blinTwice("#step_2_result");
         	GD1001.state=3;
         	GD11.state=3;
          },2000);
@@ -2217,12 +2160,12 @@ oCanvas.domReady(function () {
         
         $(".table_content").css("background-color","#ffffff");
         var todolist = [
-			{ "content":"1&nbsp;&nbsp;打开阀门14#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复西侧虹吸进水" },
-			{ "content":"2&nbsp;&nbsp;打开阀门1#~8#小虹吸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;逐格滤料冲洗合格后可以恢复" },
-			{ "content":"3&nbsp;&nbsp;打开阀门17#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
-			{ "content":"4&nbsp;&nbsp;关闭1#~8#滤池排空闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
-			{ "content":"5&nbsp;&nbsp;开启东西滤池清水联通闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;平衡东西两侧水量" },
-			{ "content":"6&nbsp;&nbsp;打开阀门19#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
+			{ "content":"1&nbsp;&nbsp;打开阀门19#，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" },
+			{ "content":"2&nbsp;&nbsp;开启东西滤池清水联通闸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;平衡东西两侧水量" },
+			{ "content":"3&nbsp;&nbsp;关闭1#~8#滤池排空闸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
+			{ "content":"4&nbsp;&nbsp;打开阀门17#，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复正常出水" },
+			{ "content":"5&nbsp;&nbsp;打开阀门1#~8#小虹吸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;逐格滤料冲洗合格后可以恢复" },
+			{ "content":"6&nbsp;&nbsp;打开阀门14#，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;恢复西侧虹吸进水" }
 		];
 
 		for (i=0;i<todolist.length;i++){
@@ -2296,10 +2239,7 @@ oCanvas.domReady(function () {
     	//初始化
         clearAll();
         $(".hiden").show();
-        $("#muti-plan-show").show();
-        $("#muti-plan-hide").hide();
 		hideAllFM();
-		setDefaultFMColor();
 		//显示与该构筑物维修相关的阀门
 		setFMColorGreen("FM014");
         setFMColorGreen("FM017");
@@ -2311,12 +2251,12 @@ oCanvas.domReady(function () {
         $("#name_HX").css('background','rgba(255,0,0,0.7)');
         
         var todolist = [
-		{ "content":"1&nbsp;&nbsp;关闭阀门14#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水" },
-		{ "content":"2&nbsp;&nbsp;关闭阀门1#~8#小虹吸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止西侧进水" },
-		{ "content":"3&nbsp;&nbsp;关闭阀门17#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;防止东侧反水" },
-		{ "content":"4&nbsp;&nbsp;打开1#~8#滤池排空闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;1#~8#滤格排空" },
-		{ "content":"5&nbsp;&nbsp;断开东西滤池清水联通闸,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;断开联通" },
-		{ "content":"6&nbsp;&nbsp;关闭阀门19#,", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
+		{ "content":"1&nbsp;&nbsp;关闭阀门14#，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水" },
+		{ "content":"2&nbsp;&nbsp;关闭阀门1#~8#小虹吸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止西侧进水" },
+		{ "content":"3&nbsp;&nbsp;关闭阀门17#，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;防止东侧反水" },
+		{ "content":"4&nbsp;&nbsp;打开1#~8#滤池排空闸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;1#~8#滤格排空" },
+		{ "content":"5&nbsp;&nbsp;断开东西滤池清水联通闸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;断开联通" },
+		{ "content":"6&nbsp;&nbsp;关闭阀门19#，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;保持滤池出水进东侧臭氧接触池" }
 		];
 
 		for (i=0;i<todolist.length;i++){
@@ -2363,6 +2303,18 @@ oCanvas.domReady(function () {
 		    	
 			},
 			function() {
+				GD26.state=2;
+				GD27.state=2;
+				$(document).on('drain', function(){
+					setTimeout(function(){
+						$(document).dequeue("fix_hx_left_queue");
+					},1000);
+				});
+			},
+			function(){
+				//消除两根水管排空带来的影响
+			},
+			function() {
 				$("#step_2").css('background','rgba(194,215,245,0.5)');
 				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
 				
@@ -2372,30 +2324,26 @@ oCanvas.domReady(function () {
 		    	
 			},
 			function() {
-				GD26.state=2;
-				GD27.state=2;
-				$(document).on('drain', function(){
-					setTimeout(function(){
-						$(document).dequeue("fix_hx_left_queue");
-					},1000);
-				});
-				},
-			function(){
-			    //消除两根水管排空带来的影响
-			},
-			function() {
 				setFMColorRed("FM017");
 				
     			setTimeout(function(){
     				$(document).dequeue("fix_hx_left_queue");
-    			},2000);
+    			},1000);
 			},
 			function() {
 				$("#step_3").css('background','rgba(194,215,245,0.5)');
 				$("#step_3_result").css('background','rgba(194,215,245,0.5)');
     			setTimeout(function(){
     				$(document).dequeue("fix_hx_left_queue");
-    			},3000);
+    			},1000);
+			},
+			function(){
+				GD30.state=2;
+				$(document).on('drain', function(){
+					setTimeout(function(){
+						$(document).dequeue("fix_hx_left_queue");
+					},1000);
+				});
 			},
 			function() {
 				$("#step_4").css('background','rgba(194,215,245,0.5)');
@@ -2411,14 +2359,6 @@ oCanvas.domReady(function () {
     				$(document).dequeue("fix_hx_left_queue");
     			},1000);
 			},
-			function(){
-				GD30.state=2;
-				$(document).on('drain', function(){
-					setTimeout(function(){
-						$(document).dequeue("fix_hx_left_queue");
-					},1000);
-				});
-				},
 			function(){
 				setFMColorRed("FM019");
 				setTimeout(function(){
@@ -2461,19 +2401,19 @@ oCanvas.domReady(function () {
 	    		$(document).dequeue("fix_hx_left_queue");
  			},
  			function() {
- 				$("#step_2").css('background','rgba(194,215,245,0.5)');
- 				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
-	    		$(document).dequeue("fix_hx_left_queue");
- 			},
- 			function() {
  				GD26.state = 0;
  				GD27.state = 0;
-				$(document).dequeue("fix_hx_left_queue");
-			},
+ 				$(document).dequeue("fix_hx_left_queue");
+ 			},
 // 			function(){
 // 			    //消除两根水管排空带来的影响
 //				$(document).dequeue("fix_hx_left_queue");
 // 			},
+ 			function() {
+ 				$("#step_2").css('background','rgba(194,215,245,0.5)');
+ 				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
+	    		$(document).dequeue("fix_hx_left_queue");
+ 			},
  			function() {
 				setFMColorRed("FM017");
  				$(document).dequeue("fix_hx_left_queue");
@@ -2481,6 +2421,10 @@ oCanvas.domReady(function () {
  			function() {
  				$("#step_3").css('background','rgba(194,215,245,0.5)');
  				$("#step_3_result").css('background','rgba(194,215,245,0.5)');
+ 				$(document).dequeue("fix_hx_left_queue");
+ 			},
+ 			function(){
+ 				GD30.state=0;
  				$(document).dequeue("fix_hx_left_queue");
  			},
  			function() {
@@ -2493,10 +2437,6 @@ oCanvas.domReady(function () {
  				$("#step_5_result").css('background','rgba(194,215,245,0.5)');
  				$(document).dequeue("fix_hx_left_queue");
  			},
- 			function(){
- 				GD30.state=0;
-				$(document).dequeue("fix_hx_left_queue");
- 				},
  			function(){
 				setFMColorRed("FM019");
 				$(document).dequeue("fix_hx_left_queue");
@@ -2556,7 +2496,7 @@ oCanvas.domReady(function () {
         	$(document).dequeue("fix_hx_left_queue");
     	});
 
-//      $("div.panel").show();
+//      $("div.hiden").show();
     }
 
     function fix_vl(){
@@ -2577,7 +2517,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_2_result").innerHTML="关闭阀门20#";
         document.getElementById("step_3").innerHTML="关闭阀门56#";
 
-        $("div.panel").show();
+        $("div.hiden").show();
     }
     
     function fix_cy_right(){
@@ -2603,7 +2543,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_3_result").innerHTML="关闭阀门56#";
 //            document.getElementById("step_4").innerHTML="打开阀门45#";
 
-        $("div.panel").show();
+        $("div.hiden").show();
     }
     
     function  fix_cy_left(){
@@ -2627,7 +2567,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_3").innerHTML="关闭阀门59#";
         document.getElementById("step_3_result").innerHTML="关闭阀门56#";
 
-        $("div.panel").show();
+        $("div.hiden").show();
 
     }
     
@@ -2670,7 +2610,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_4").innerHTML="打开阀门55#";
         document.getElementById("step_4_result").innerHTML="关闭阀门44#";
 //      document.getElementById("step_4").innerHTML="打开阀门45#";
-        $("div.panel").show();
+        $("div.hiden").show();
     }
     
     function fix_tc_new(){
@@ -2696,7 +2636,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_4").innerHTML="关闭阀门55#";
         document.getElementById("step_4_result").innerHTML="打开阀门44#";
 
-        $("div.panel").show();
+        $("div.hiden").show();
 
 //            document.getElementById("step_4").innerHTML="打开阀门45#";
     }
@@ -2721,7 +2661,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_5").innerHTML="开启清水池出水闸29#";
         document.getElementById("step_5_result").innerHTML="来水涨至1950m3/h";
 
-        $("div.panel").show();
+        $("div.hiden").show();
 
 //            document.getElementById("step_4").innerHTML="打开阀门45#";
     }
@@ -2745,7 +2685,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_5").innerHTML="来水涨至__m3/h";
 //      document.getElementById("step_4").innerHTML="打开阀门45#";
 
-        $("div.panel").show();
+        $("div.hiden").show();
 
     }
 
@@ -2764,7 +2704,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_2").innerHTML="关闭阀门48#";
         document.getElementById("step_2_result").innerHTML="打开3#清水池抽水泵";
 
-        $("div.panel").show();
+        $("div.hiden").show();
 
     }
 
@@ -2781,7 +2721,7 @@ oCanvas.domReady(function () {
         document.getElementById("step_1_result").innerHTML="关闭阀门51#";
         document.getElementById("step_2").innerHTML="打开4#清水池抽水泵";
 
-        $("div.panel").show();
+        $("div.hiden").show();
 
     }
 
@@ -2834,7 +2774,7 @@ oCanvas.domReady(function () {
             	//decay(15,1);//GD12
             	//decay(18,1);
              },100);
-            $("div.panel").show();
+            $("div.hiden").show();
         }
     });
     $("#name_JJC1").click(function(){
@@ -2852,7 +2792,7 @@ oCanvas.domReady(function () {
                 decay(31,1);
                 decay(33,1);
              },100);
-            $("div.panel").show();
+            $("div.hiden").show();
         }
     });
     $("#name_JJC2").click(function(){
@@ -2868,7 +2808,7 @@ oCanvas.domReady(function () {
                 decay(13,1);
                 decay(14,1);
              },100);
-            $("div.panel").show();
+            $("div.hiden").show();
         }
     });
     $("#name_JJC3").click(function(){
@@ -2883,7 +2823,7 @@ oCanvas.domReady(function () {
             	decay(15,1);//GD12
             	decay(18,1);
              },100);
-            $("div.panel").show();
+            $("div.hiden").show();
         }
     });
     $("#name_VL").click(function(){
@@ -2897,7 +2837,7 @@ oCanvas.domReady(function () {
             	decay(18,1);//GD15
             	canvas.children[38].fill=color_GD;
             },100);
-            $("div.panel").show();
+            $("div.hiden").show();
         }
     });
     $("#name_TC").click(function(){
@@ -2945,7 +2885,7 @@ oCanvas.domReady(function () {
             	decay(21,1);//GD17
             	decay(22,1);
              },100);
-            $("div.panel").show();
+            $("div.hiden").show();
         }
     });
     $("#name_HHJ1").click(function(){
@@ -2980,7 +2920,7 @@ oCanvas.domReady(function () {
                 decay(13,1);
                 decay(14,1);
              },100);
-            $("div.panel").show();
+            $("div.hiden").show();
         }
     });
     
@@ -2999,27 +2939,7 @@ oCanvas.domReady(function () {
         }
     });*/
     
-	$("#name_HX").click(function(){$.messager.confirm('确认','是否将<strong>虹吸滤池</strong>设置为维修状态？', function(r){
-		if(r){
-        	/*fix_hx_right();*/
-			$("div.panel").show();
-			$('#muti-plan-hide').hide();
-			$('#muti-plan-show').show();
-			$('#fix_scheme').click(function(){
-			    fix_hx_left();
-			});
-			$('#restore_scheme').click(function(){
-			    restore_hx_left();
-			});
-			$('#extra_fix_scheme').click(function(){
-			    fix_hx_right();
-			});	
-			$('#extra_restore_scheme').click(function(){
-			    restore_hx_right();
-			});
-		}
-    });
-	});
+
 /*    $("#name_QSC1").click(function(){
         if(confirm("是否将“#3清水池”设置为维修状态？")){
             fix_qsc3();
@@ -3031,7 +2951,7 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(25,1);//GD21
              },100);
-            $("div.panel").show();
+            $("div.hiden").show();
         }
     }); //???
     $("#name_QSC2").click(function(){
@@ -3045,7 +2965,7 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(25,1);//GD21
              },100);
-            $("div.panel").show();
+            $("div.hiden").show();
 
         }
     });
@@ -3060,7 +2980,7 @@ oCanvas.domReady(function () {
             window.setTimeout(function(){              
             	decay(28,1);//GD24
              },100);
-            $("div.panel").show();
+            $("div.hiden").show();
         }
     });
     $("#name_QSC4").click(function(){
@@ -3075,7 +2995,7 @@ oCanvas.domReady(function () {
             	decay(28,1);//GD24
             	canvas.children[39].fill=color_GD;
              },100);
-            $("div.panel").show();
+            $("div.hiden").show();
         }
     });*/
 
@@ -3170,8 +3090,8 @@ oCanvas.domReady(function () {
 
 	/* 重置阀门颜色 */
 	function setDefaultFMColor(){
-		$("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
-        $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
+		$(".fm_default_green").attr("src","image/y3-35x37.png");
+        $(".fm_default_red").attr("src","image/y2-35x37.png");
 	}
 	
     function hideAllFM(){
@@ -3237,8 +3157,7 @@ oCanvas.domReady(function () {
 		 */
 
         //恢复阀门的默认颜色
-        $("div#FM_group img.fm_default_green").attr("src","image/y3-35x37.png");
-        $("div#FM_group img.fm_default_red").attr("src","image/y2-35x37.png");
+        setDefaultFMColor();
         //只显示重要的阀门和标签
         $(".fm_default_hide").attr("style","display:none;");
         $("div#FM_group .fm_default_green").attr("style","display:block;");
@@ -3254,7 +3173,7 @@ oCanvas.domReady(function () {
 		//重置面板提示的内容
         $("#fix_head").text("请点击需要维修的构筑物");
         $("#init_state").text("初始状态");
-        $("#init_statement").text("全厂正常运行");
+        $('#init_stat').html('全厂正常运行');
         
 		$(".table_content").css("background-color","#ffffff");
         
@@ -3264,8 +3183,8 @@ oCanvas.domReady(function () {
         $("#reset").html("&nbsp;");
         
         //恢复构筑物及其标签的颜色
-        $("div#name_gzw .name_ob").attr("style","color:#283a45;");
-        $("div#name_gzw .name_ob").attr("style","background:transparent;");
+        $(".name_ob").attr("style","color:#283a45;");
+        $(".name_ob").attr("style","background:transparent;");
         //左对齐
         /*$(".table_line").attr("style","text-align:left;");*/
         
@@ -3276,9 +3195,6 @@ oCanvas.domReady(function () {
         document.getElementById("export").href="#";
         //隐藏表格面板
         $(".hiden").hide();
-        $("#muti-plan-show").hide();
-        $("#muti-plan-hide").show();
-
     }
 
 });
