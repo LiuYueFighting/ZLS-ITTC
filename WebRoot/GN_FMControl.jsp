@@ -234,7 +234,7 @@
         z-index:999;
     }
     #WFM062{
-    		background: rgba(255,255,255,0);
+    		background: rgba(255,255,0,1);
     		font-size: 20px;
     		position: absolute;
     		left: 929px;
@@ -242,7 +242,7 @@
     		z-index: 999;
     }
     #WFM063{
-    		background: rgba(255,255,255,0);
+    		background: rgba(255,255,0,1);
     		font-size: 20px;
     		position: absolute;
     		left: 1029px;
@@ -250,7 +250,7 @@
     		z-index: 999;
     }
     #WFM065{
-    		background: rgba(255,255,255,0);
+    		background: rgba(255,255,0,1);
     		font-size: 20px;
     		position: absolute;
     		left: 1026px;
