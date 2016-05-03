@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 	<link rel="stylesheet" type="text/css" href="style/myeasyui.css" />  
-    
+   	<link rel="stylesheet" type="text/css" href="css/equiment_fix.css" />  
+   	     
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
@@ -32,152 +33,12 @@
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script> 
     
     <style>
-        body {
-            background: #afd9ee;
-        }
-        #myPage {
-            font-family: '微软雅黑','Source Sans Pro';
-            font-size: 15px;
-            width: 1600px;
-            height: 800px;
-            margin:0px auto;
-            position:relative;
-        }
-        #myContent{
-            margin: 0px 0px 0px 0px;
-            position: relative;
-            height: 750px;
-            width: 1600px;
-        }
-        #myContent a{
-	    color: #283a45;
-	     /*background: rgba(255,255,255,0.5); 
-	     border: 1px solid black; */
-	    } 
-	    .name_Model{
-	    font-family: '微软雅黑','Arial';
-	    color: #223bb8;
-	    font-size: 17px;
-	    font-weight: bold;
-	    }
-	    #fix-panel{
-	    left: 91.2%;
-	    top: 4.7%;
-	    Z-INDEX: 999;
-	    position:absolute;
-	    }
-	    #panel_heading{
-	    cursor: pointer;
-	    vertical-align: middle;
-	    padding: 5px 5px;
-	    border-bottom: 1px solid transparent;
-	    border-top-left-radius: 3px;
-	    border-top-right-radius: 3px;
-	    height: 75px;
-	    width: 245px;
-	    Z-INDEX: 999;
-	    -webkit-transition-property:background-color;
-	    -webkit-transition-duration:1s;
-	    -webkit-transition-timing-function:ease;
-	    /* border: 1px solid; */
-	    background: rgba(255,255,255,0.5);
-	    border: 2px solid #008fd7;
-	    text-align: center;
-	    }
-	    #panel_heading:hover{
-	    background: rgba(194,215,245,0.5);
-	    }
-	    /* hcc:hover change color */
-	    .hcc{
-	   	-webkit-transition-property:background-color;
-	    -webkit-transition-duration:0.5s;
-	    -webkit-transition-timing-function:ease;
-	    cursor: pointer;
-	    }
-	    .hcc:hover{
-	    background: rgba(194,215,245,0.5);
-	    }
-	    
-		/* demo  	    
-		#step_1{
-	    -webkit-transition-property:background-color;
-	    -webkit-transition-duration:0.5s;
-	    -webkit-transition-timing-function:ease;
-	    }
-	    #step_1:hover{
-	    background: rgba(194,215,245,0.5);
-	    } */
-	    
-	    #panel_heading h2{
-	    color: #283a45;
-	    font-weight: bolder;
-	    }
-	    .panel{
-	    /* height: 651px; */
-	    width: 245px;
-	    background: rgba(255,255,255,0.7);
-	    color: black;
-	    margin-bottom:0px;
-	    display:none;
-	    }
-	    .panel-heading{
-	    text-align: center;
-	    }
-	    #fix_table{
-	    font-size:12px
-	    }
-	    .table_td_left{
-	    text-align: left;
-	    } 
-	    #WShow{
-	    position: absolute;
-	    top: 704px;
-	    left: 1297px;
-	    z-index: 999;
-	    }
-	    #FMShow{
-	    position: absolute;
-	    top: 729px;
-	    left: 1316px;
-	    z-index: 999;
-	    }
-	    #WFM062{
+    #WFM062{
 	    color: #6dceff;
-	    background: rgba(255,0,0,0.6);
-	    }
-	   	.panel a{
-	    text-decoration: none;
-	    color: black;
-	    }
+		background: rgba(255,0,0,0.6);
+    }
     </style>
-    <script>
-	function setFMColorRed(id){
-    	var image = document.getElementById(id);
-    	var FMTagId = "W" + id;
-    	var tag = document.getElementById(FMTagId);
 
-   		image.style.display = "block"
-   		tag.style.display = "block"
-    	image.src = "image/y2-35x37.png";
-    }
-  
-    function setFMColorGreen(id){
-    	var image = document.getElementById(id);
-    	var FMTagId = "W" + id;
-    	var tag = document.getElementById(FMTagId);
-
-   		image.style.display = "block"
-   		tag.style.display = "block"
-    	image.src = "image/y3-35x37.png";
-    }
-
-    function hideAllFM(){
-	   	//隐藏所有阀门（包括阀门对应的标签）
-		$(".fm_default_green").attr("style","display:none;");
-		$(".fm_default_red").attr("style","display:none;");
-		$(".fm_default_hide").attr("style","display:none;");
-	}
-    </script>
 </head>
 <body>
     <jsp:include page="top.jsp" />
@@ -190,28 +51,26 @@
         <div id="mainView" style="position: absolute;z-index: 1" >
             <canvas id="canvas_fix" width="1583" height="757"></canvas>
         </div>
-<!--<p class="name_Model" id="WShow">构筑物显示</p>
-    <label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="true" onclick="showName(this)"> 默认未选中</label>
-    <p class="name_Model" id="FMShow">阀门显示</p>
-    <label><input id="chackBox_showFM" class="mui-switch mui-switch-anim" type="checkbox" checked="false" onclick="showFM(this)"> 默认未选中</label> -->
-    <a href="#" id="name_QS1"  class="name_ob" style="text-decoration: none;">取水泵房</a>
-    <a href="#" id="name_QS2"  class="name_ob" style="text-decoration: none;">取水泵房</a>
-    <a href="#" id="name_JJC1" class="name_ob" style="text-decoration: none;">&nbsp;&nbsp;&nbsp;1#<br>机加池</a>
-    <a href="#" id="name_JJC2" class="name_ob" style="text-decoration: none;">&nbsp;&nbsp;&nbsp;2#<br>机加池</a>
-    <a href="#" id="name_JJC3" class="name_ob" style="text-decoration: none;">&nbsp;&nbsp;&nbsp;3#<br>机加池</a>
-    <a href="#" id="name_VL"   class="name_ob" style="text-decoration: none;">V型滤池</a>
-    <a href="#" id="name_TC"   class="name_ob" style="text-decoration: none;">1#炭滤池</a>
-    <a href="#" id="name_TC1"  class="name_ob" style="text-decoration: none;">2#炭滤池</a>
-    <a href="#" id="name_CYC"  class="name_ob" style="text-decoration: none;">臭氧生产车间</a>
-    <a href="#" id="name_CY"   class="name_ob" style="text-decoration: none;">&nbsp;臭氧<br>接触池</a>
-    <a href="#" id="name_YC"   class="name_ob" style="text-decoration: none;">预沉池</a>
-    <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none;">旧混合井</a>
-    <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none;">新混合井</a>
-    <a href="#" id="name_HX"   class="name_ob" style="text-decoration: none;">虹吸滤池</a>
-    <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none;">3#清水池</a>
-    <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none;">1#清水池</a>
-    <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none;">2#清水池</a>
-    <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none;">4#清水池</a>
+	<div id="name_gzw">
+	    <a href="#" id="name_QS1"  class="name_ob">取水泵房</a>
+	    <a href="#" id="name_QS2"  class="name_ob">取水泵房</a>
+	    <a href="#" id="name_JJC1" class="name_ob">&nbsp;&nbsp;&nbsp;1#<br>机加池</a>
+	    <a href="#" id="name_JJC2" class="name_ob">&nbsp;&nbsp;&nbsp;2#<br>机加池</a>
+	    <a href="#" id="name_JJC3" class="name_ob">&nbsp;&nbsp;&nbsp;3#<br>机加池</a>
+	    <a href="#" id="name_VL"   class="name_ob">V型滤池</a>
+	    <a href="#" id="name_TC"   class="name_ob">1#炭滤池</a>
+	    <a href="#" id="name_TC1"  class="name_ob">2#炭滤池</a>
+	    <a href="#" id="name_CYC"  class="name_ob">臭氧生产车间</a>
+	    <a href="#" id="name_CY"   class="name_ob">&nbsp;臭氧<br>接触池</a>
+	    <a href="#" id="name_YC"   class="name_ob">预沉池</a>
+	    <a href="#" id="name_HHJ1" class="name_ob">旧混合井</a>
+	    <a href="#" id="name_HHJ2" class="name_ob">新混合井</a>
+	    <a href="#" id="name_HX"   class="name_ob">虹吸滤池</a>
+	    <a href="#" id="name_QSC1" class="name_ob">3#清水池</a>
+	    <a href="#" id="name_QSC2" class="name_ob">1#清水池</a>
+	    <a href="#" id="name_QSC3" class="name_ob">2#清水池</a>
+	    <a href="#" id="name_QSC4" class="name_ob">4#清水池</a>
+    </div>
 
  	<!-- 阀门显示为红色 -->
     <img id="FM022" src="image/y2-35x37.png" class="fm_default_red">
@@ -313,35 +172,43 @@
 	    	</button>
 	    </div>
 
-		<div class="panel panel-info" id="init_stage">
-			<div id="init_state" class="panel-heading">初始状态</div>
-			<table class="table">
-				<tr><td id="init_statement">全厂正常运行</td></tr>
-			</table>
+ 		<div class="hiden panel panel-info"> 
+			<div class="panel-heading" id="init_state">初始状态</div> 
+		</div> 
+		
+		<div class="hiden btn-group">
+		   <button type="button" id="init_stat" class="btn btn-default dropdown-toggle" 
+		      data-toggle="dropdown">
+		         	全厂正常运行
+		   </button>
+		   <ul class="dropdown-menu" role="menu">
+		      <li id="fix_scheme">阀门维修</li>
+		      <li id="restore_scheme">阀门恢复</li>
+		   </ul>  
 		</div>
 
-		<div class="panel panel-info" id="fix_table">
+		<div class="hiden panel panel-info" id="fix_table">
 			<div class="panel-heading">操作步骤</div>
 			<table class="table">
-				<tr><td id="step_1" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_1_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_2" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_2_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_3" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_3_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_4" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_4_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_5" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_5_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_6" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
-				<tr><td id="step_6_result" class="table_content" style="text-align: left" colspan="2">&nbsp;</td></tr>
+				<tr><td id="step_1" class="table_content">&nbsp;</td></tr>
+				<tr><td id="step_1_result" class="table_content">&nbsp;</td></tr>
+				<tr><td id="step_2" class="table_content">&nbsp;</td></tr>
+				<tr><td id="step_2_result" class="table_content">&nbsp;</td></tr>
+				<tr><td id="step_3" class="table_content">&nbsp;</td></tr>
+				<tr><td id="step_3_result" class="table_content">&nbsp;</td></tr>
+				<tr><td id="step_4" class="table_content">&nbsp;</td></tr>
+				<tr><td id="step_4_result" class="table_content">&nbsp;</td></tr>
+				<tr><td id="step_5" class="table_content">&nbsp;</td></tr>
+				<tr><td id="step_5_result" class="table_content">&nbsp;</td></tr>
+				<tr><td id="step_6" class="table_content">&nbsp;</td></tr>
+				<tr><td id="step_6_result" class="table_content">&nbsp;</td></tr>
 			</table>
 		</div>
 
-		<div class="panel panel-info" id="panel_button">
+		<div class="hiden panel panel-info" id="panel_button">
 			<div class="panel-heading">功能</div>
 			<table class="table">
-				<tr><!-- <td id="scheme_extra" class="hcc">&nbsp;</td> --><td id="scheme" class="hcc" colspan="2">&nbsp;</td></tr>
+				<!-- <tr><td id="scheme_extra" class="hcc">&nbsp;</td><td id="scheme" class="hcc">&nbsp;</td></tr> -->
 				<tr><td class="hcc"><a href="#" id="export">&nbsp;</a></td><td id="reset" class="hcc">&nbsp;</td></tr>
 			</table>
 		</div>

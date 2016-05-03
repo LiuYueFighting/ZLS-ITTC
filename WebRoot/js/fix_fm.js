@@ -1215,13 +1215,9 @@ oCanvas.domReady(function () {
 //        canvas.children[18].fill=color_GD;
 //        canvas.children[19].fill="rgba(1,1,1,0)";
         canvas.redraw();
-
-//      $(".fm_default_green").attr("src","image/y3-35x37.png");
-       
-        /*document.getElementById("scheme").style.display="none";*/        
+      
         //恢复阀门的默认颜色
-        $("img.fm_default_green").attr("src","image/y3-35x37.png");
-        $("img.fm_default_red").attr("src","image/y2-35x37.png");
+        setDefaultFMColor();
         //只显示重要的阀门和标签
         $(".fm_default_hide").attr("style","display:none;");
         $(".fm_default_green").attr("style","display:block;");
@@ -1236,7 +1232,7 @@ oCanvas.domReady(function () {
 		//重置面板提示的内容
 		$("#fix_head").html("请点击需要维修的阀门");
 		$("#init_state").html("初始状态");
-		$("#init_statement").html("全场正常运行");
+		$("#init_stat").html("全厂正常运行");
 		
 		$(".table_content").attr("style","background:#ffffff;");
         $("#scheme").html("&nbsp;");
@@ -1249,20 +1245,14 @@ oCanvas.domReady(function () {
 		$(".name_ob").attr("style","color:#283a45;");
 		$(".name_ob").attr("style","background:transparent;text-decoration: none;");
 
-        $("div.panel").hide();
-
+        $(".hiden").hide();
     }
     function restore_fm062(){
         
         document.getElementById("fix_head").innerHTML="62#阀门维修配合方案";
         
-        $("#init_statement").text("062#阀门恢复中");
-
-        $("#scheme").text("62#阀门维修");
+        $("#init_stat").html('062#阀门恢复<span class="caret"></span>');
         document.getElementById("export").href="#";
- 		document.getElementById("scheme").onclick=function(){
-			fix_fm062();
-		}
  		
  		$(".table_content").attr("style","background:#ffffff;");
         $("#step_1").html("1&nbsp;&nbsp;打开09#阀门");
@@ -1340,11 +1330,12 @@ oCanvas.domReady(function () {
     	$(document).queue("restore_fm062_queue",restore_fm062_queue);
     	$(document).dequeue("restore_fm062_queue");
         
- 		$("div.panel").show();
+ 		$("div.hiden").show();
     }
     function fix_fm062(){
         clearAll();
         hideAllFM();
+        $(".hiden").show();
 		setFMColorGreen("FM064");
         setFMColorGreen("FM09");
         setFMColorGreen("FM062");
@@ -1352,7 +1343,7 @@ oCanvas.domReady(function () {
         document.getElementById("FM062").src="image/y1.png";
         
     	$("#init_state").text("状态");
-    	$("#init_statement").text("062#阀门维修中");
+    	$("#init_stat").html('062#阀门维修<span class="caret"></span>');
 
     	$(".table_content").attr("style","background:#ffffff;");
         $("#step_1").html("1&nbsp;&nbsp;关闭09#阀门");
@@ -1364,10 +1355,6 @@ oCanvas.domReady(function () {
 		document.getElementById("export").href="download/fix-fm062.docx";
 		$("#reset").text("重置");
 		$("#scheme").text("62#阀门恢复");
-		
-		document.getElementById("scheme").onclick=function(){
-			restore_fm062();
-		}
 		
 		//动画队列
     	var fix_fm062_queue = [
@@ -1559,7 +1546,7 @@ oCanvas.domReady(function () {
         	$(document).dequeue("fix_fm062_queue");
     	});
 		
-        $("div.panel").show();
+        $("div.hiden").show();
     }
 //    function  fix_fm019(){
 //        clearAll();
@@ -1588,9 +1575,16 @@ oCanvas.domReady(function () {
 //        if(confirm("是否将“62#阀门”设置为维修状态？")){
     	$.messager.confirm('确认','是否将<strong>62#阀门</strong>设置为维修状态？', function(r){
     		if(r){
-            fix_fm062();
-        }
-    });
+    			$(".hiden").show();
+    			$('#init_stat').html('选择维修方案<span class="caret"></span>');
+    			$('#fix_scheme').click(function(){
+				    fix_fm062();
+    			});
+    			$('#restore_scheme').click(function(){
+  				    restore_fm062();
+    			});
+    		}
+    	});
     });	
     function decay(a,b){
         if(b>0){
@@ -1838,7 +1832,7 @@ oCanvas.domReady(function () {
 //            setShow();
 //        }
 //    });
-    $("#panel_heading").click(function(){$("div.panel").toggle();});
+    $("#panel_heading").click(function(){$(".hiden").toggle();});
     
     function blinTwice(jqueryDom){
         $(jqueryDom).animate({
@@ -1852,6 +1846,38 @@ oCanvas.domReady(function () {
         $(jqueryDom).animate({
             opacity:'1'},'fast');
     }
+	function setFMColorRed(id){
+    	var image = document.getElementById(id);
+    	var FMTagId = "W" + id;
+    	var tag = document.getElementById(FMTagId);
+
+   		image.style.display = "block"
+   		tag.style.display = "block"
+    	image.src = "image/y2-35x37.png";
+    }
+  
+    function setFMColorGreen(id){
+    	var image = document.getElementById(id);
+    	var FMTagId = "W" + id;
+    	var tag = document.getElementById(FMTagId);
+
+   		image.style.display = "block"
+   		tag.style.display = "block"
+    	image.src = "image/y3-35x37.png";
+    }
+
+    function hideAllFM(){
+	   	//隐藏所有阀门（包括阀门对应的标签）
+		$(".fm_default_green").attr("style","display:none;");
+		$(".fm_default_red").attr("style","display:none;");
+		$(".fm_default_hide").attr("style","display:none;");
+	}
+    
+	/* 重置阀门颜色 */
+	function setDefaultFMColor(){
+		$(".fm_default_green").attr("src","image/y3-35x37.png");
+        $(".fm_default_red").attr("src","image/y2-35x37.png");
+	}
     
 });
 
