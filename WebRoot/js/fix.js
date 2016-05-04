@@ -1880,8 +1880,8 @@ oCanvas.domReady(function () {
 
 		for (i=0;i<todolist.length;i++){
 			var offset = i+1;
-	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
-	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
+	        $("#step_" + offset).html(todolist[i].content);
+	        $("#step_" + offset + "_result").html(todolist[i].result);
 		}
 		
 //		$("#scheme_extra").text("西侧维修");
@@ -1901,29 +1901,6 @@ oCanvas.domReady(function () {
 		$("#export").text("生成方案");
 		$("#reset").text("重置");
 		
-//		function setFMColorQueue(FMName,delay){
-//			var dfd = $.Deferred();
-//			setFMColorRed(FMName);
-//			setTimeout(function(){
-//				dfd.resolve();
-//			},delay);
-//			return dfd.promise;
-//		}
-//		　　function f1(){
-//		　　　　var dfd = $.Deferred();
-//		　　　　setTimeout(function () {
-//		　　　　　　alert('f1');
-//		　　　　　　dfd.resolve();
-//		　　　　}, 500);
-//		　　　　return dfd.promise();
-//		　　}
-//		function f2(){
-//			alert('f2');
-//		}
-//		f1().then(f2);
-
-		
-		
 		function next(delay){
 			setTimeout(function(){
 	    		$(document).dequeue("fix_hx_right_queue");
@@ -1935,73 +1912,73 @@ oCanvas.domReady(function () {
 			$(stepName+'_result').css('background',color);
 		}
 		
-//		//动画队列
-//    	var fix_hx_right_queue = [
-//			function() {
-//				setFMColorRed("FM016");
-//				next(1000);
-//			},
-//			function() {
-//				setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
-//				next(1000);
-//			},
-//			function() {
-//				GD11.state=2;
-//		    	GD1001.state=2;
-//				$(document).on('drain', function(){
-//					next(1000);
-//				});
-//			},
-//			function(){
-//			    //消除两根水管排空带来的影响
-//			},
-//			function() {
-//				setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
-//				next(1000);
-//			},
-//			function() {
-//				setFMColorRed("FM018");
-//				next(2000);
-//			},
-//			function() {
-//				setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
-//				next(1000);
-//			},
-//			function(){
-//				GD30.state=2;
-//				$(document).on('drain', function(){
-//					next(1000);
-//				});
-//			},
-//			function() {
-//				setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
-//				next(1000);
-//			},
-//			function() {
-//				setStepBackgroundColor('#step_5', 'rgba(194,215,245,0.5)');
-//				next(1000);
-//			},
-//			function(){
-//				setFMColorRed("FM019");
-//				next(1000);
-//			},
-//			function(){    		
-//				setStepBackgroundColor('#step_6', 'rgba(194,215,245,0.5)');
-//				next(1000);
-//			},
-//			function(){GD141.state=2;}
-//        ];
-//    	
-//    	$(document).queue("fix_hx_right_queue",fix_hx_right_queue);
-////    	$(document).dequeue("fix_hx_right_queue");
-//    	next(1000);
+		//动画队列
+    	var fix_hx_right_queue = [
+			function() {
+				setFMColorRed("FM016");
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				GD11.state=2;
+		    	GD1001.state=2;
+				$(document).on('drain', function(){
+					next(1000);
+				});
+			},
+			function(){
+			    //消除两根水管排空带来的影响
+			},
+			function() {
+				setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				setFMColorRed("FM018");
+				next(2000);
+			},
+			function() {
+				setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function(){
+				GD30.state=2;
+				$(document).on('drain', function(){
+					next(1000);
+				});
+			},
+			function() {
+				setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_5', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function(){
+				setFMColorRed("FM019");
+				next(1000);
+			},
+			function(){    		
+				setStepBackgroundColor('#step_6', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function(){GD141.state=2;}
+        ];
+    	
+    	$(document).queue("fix_hx_right_queue",fix_hx_right_queue);
+//    	$(document).dequeue("fix_hx_right_queue");
+    	next(1000);
     	
     	function playbackReset(){
     		//Start of animation,reset all animation
     		setFMColorGreen("FM016");
     		setFMColorGreen("FM018");
     		setFMColorGreen("FM019");
-    		$(".table_content").css("background-color","#ffffff");
+    		$(".table_content").css("background","#ffffff");
     		GD11.state = 1;
     		GD1001.state = 1;
     		GD30.state = 1;
