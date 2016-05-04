@@ -144,7 +144,7 @@ oCanvas.domReady(function () {
         height_now: 0,
         trail_flag: 0,
         t: 7540,
-        speed:speed_SC*2,
+        speed:speed_SC*2.8,
         fill:color_SC,
         full:0,
         start:0
@@ -156,7 +156,7 @@ oCanvas.domReady(function () {
     });
     var SC061=createSC({
         parent:canvas,
-        x:717,y:377,height:90,width:186,trail_flag:0,speed:speed_SC*2,color:color_SC
+        x:717,y:377,height:90,width:186,trail_flag:0,speed:speed_SC*1.7,color:color_SC
     });
     var SC07 = canvas.display.SC_show_fill({
         x: 511,
