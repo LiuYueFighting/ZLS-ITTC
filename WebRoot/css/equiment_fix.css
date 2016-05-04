@@ -1,7 +1,7 @@
 body {
     background: #afd9ee;
 }
-.table>tbody>tr>td {
+#left-align-td td {
 	text-align: left;
 	colspan="2";
 }

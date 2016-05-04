@@ -189,7 +189,7 @@
 
 		<div class="hiden panel panel-info" id="fix_table">
 			<div class="panel-heading">操作步骤</div>
-			<table class="table">
+			<table class="table" id="left-align-td">
 				<tr><td id="step_1" class="table_content">&nbsp;</td></tr>
 				<tr><td id="step_1_result" class="table_content">&nbsp;</td></tr>
 				<tr><td id="step_2" class="table_content">&nbsp;</td></tr>

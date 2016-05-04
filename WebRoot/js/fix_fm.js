@@ -1225,8 +1225,8 @@ oCanvas.domReady(function () {
         
         //清空单元格的内容
 		for (i=1;i<7;i++){
-	        document.getElementById("step_" + i).innerHTML="&nbsp;";
-	        document.getElementById("step_" + i + "_result").innerHTML="&nbsp;";
+	        $("#step_" + i).html("&nbsp;");
+	        $("#step_" + i + "_result").html("&nbsp;");
 		}
 		
 		//重置面板提示的内容
@@ -1234,7 +1234,7 @@ oCanvas.domReady(function () {
 		$("#init_state").html("初始状态");
 		$("#init_stat").html("全厂正常运行");
 		
-		$(".table_content").attr("style","background:#ffffff;");
+		$(".table_content").css('background','#ffffff');
         $("#scheme").html("&nbsp;");
         $("#scheme_extra").html("&nbsp;");
         $("#export").html("&nbsp;");
@@ -1242,28 +1242,28 @@ oCanvas.domReady(function () {
         document.getElementById("export").href="#";
         
 		//恢复构筑物及标签的颜色
-		$(".name_ob").attr("style","color:#283a45;");
+		$(".name_ob").css('color','#283a45');
 		$(".name_ob").attr("style","background:transparent;text-decoration: none;");
 
         $(".hiden").hide();
     }
     function restore_fm062(){
         
-        document.getElementById("fix_head").innerHTML="62#阀门维修配合方案";
+        $("#fix_head").html("62#阀门维修配合方案");
         
         $("#init_stat").html('062#阀门恢复<span class="caret"></span>');
         document.getElementById("export").href="#";
  		
- 		$(".table_content").attr("style","background:#ffffff;");
-        $("#step_1").html("1&nbsp;&nbsp;打开09#阀门");
+ 		$(".table_content").css('background','#ffffff');
+        $("#step_1").html("1&nbsp;&nbsp;打开旧混合井西侧搅拌浆");
         $("#step_2").html("2&nbsp;&nbsp;打开064#阀门");
-        $("#step_3").html("3&nbsp;&nbsp;打开旧混合井西侧搅拌浆");
+        $("#step_3").html("3&nbsp;&nbsp;打开09#阀门");
         $("#step_4").html("&nbsp;");
  		
-        $('#step_1').click(function(){});
-        $('#step_2').click(function(){});
-        $('#step_3').click(function(){});
-        $('#step_4').click(function(){});
+        $('#step_1').unbind();
+        $('#step_2').unbind();
+        $('#step_3').unbind();
+        $('#step_4').unbind();
 		//动画队列
     	var restore_fm062_queue = [
 			function() {
@@ -1345,7 +1345,7 @@ oCanvas.domReady(function () {
     	$("#init_state").text("状态");
     	$("#init_stat").html('062#阀门维修<span class="caret"></span>');
 
-    	$(".table_content").attr("style","background:#ffffff;");
+    	$(".table_content").css('background','#ffffff');
         $("#step_1").html("1&nbsp;&nbsp;关闭09#阀门");
         $("#step_2").html("2&nbsp;&nbsp;关闭064#阀门");
         $("#step_3").html("3&nbsp;&nbsp;停旧混合井西侧搅拌浆");

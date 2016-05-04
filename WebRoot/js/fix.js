@@ -1858,21 +1858,17 @@ oCanvas.domReady(function () {
     function fix_hx_right(){
     	//初始化
         clearAll();
+        
         $(".hiden").show();
-        $("#muti-plan-show").show();
-        $("#muti-plan-hide").hide();
 		hideAllFM();
 		
 		setFMColorGreen("FM016");
         setFMColorGreen("FM018");
         setFMColorGreen("FM019");
-        document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门改造配合<br>方案";
-        document.getElementById("name_HX").style.color="#8dd9ff";
-        document.getElementById("name_HX").style.background="rgba(255,0,0,0.7)";
+        $("#fix_head").html("东侧虹吸滤池闸门改造配合<br>方案");
+        $("#name_HX").css('color','#8dd9ff');
+        $("#name_HX").css('background-color','rgba(255,0,0,0.7)');
         
-/*      setFMColorRed("FM016");
-        setFMColorRed("FM018");
-        setFMColorRed("FM019");*/
         var todolist = [
 			{ "content":"1&nbsp;&nbsp;关闭阀门16#，", 		"result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧虹吸进水" },
 			{ "content":"2&nbsp;&nbsp;关闭阀门9#~14#小虹吸，", "result":"&nbsp;&nbsp;&nbsp;&nbsp;停止东侧进水" },
@@ -1939,66 +1935,66 @@ oCanvas.domReady(function () {
 			$(stepName+'_result').css('background',color);
 		}
 		
-		//动画队列
-    	var fix_hx_right_queue = [
-			function() {
-				setFMColorRed("FM016");
-				next(1000);
-			},
-			function() {
-				setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
-				next(1000);
-			},
-			function() {
-				GD11.state=2;
-		    	GD1001.state=2;
-				$(document).on('drain', function(){
-					next(1000);
-				});
-			},
-			function(){
-			    //消除两根水管排空带来的影响
-			},
-			function() {
-				setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
-				next(1000);
-			},
-			function() {
-				setFMColorRed("FM018");
-				next(2000);
-			},
-			function() {
-				setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
-				next(1000);
-			},
-			function(){
-				GD30.state=2;
-				$(document).on('drain', function(){
-					next(1000);
-				});
-			},
-			function() {
-				setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
-				next(1000);
-			},
-			function() {
-				setStepBackgroundColor('#step_5', 'rgba(194,215,245,0.5)');
-				next(1000);
-			},
-			function(){
-				setFMColorRed("FM019");
-				next(1000);
-			},
-			function(){    		
-				setStepBackgroundColor('#step_6', 'rgba(194,215,245,0.5)');
-				next(1000);
-			},
-			function(){GD141.state=2;}
-        ];
-    	
-    	$(document).queue("fix_hx_right_queue",fix_hx_right_queue);
-//    	$(document).dequeue("fix_hx_right_queue");
-    	next(1000);
+//		//动画队列
+//    	var fix_hx_right_queue = [
+//			function() {
+//				setFMColorRed("FM016");
+//				next(1000);
+//			},
+//			function() {
+//				setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+//				next(1000);
+//			},
+//			function() {
+//				GD11.state=2;
+//		    	GD1001.state=2;
+//				$(document).on('drain', function(){
+//					next(1000);
+//				});
+//			},
+//			function(){
+//			    //消除两根水管排空带来的影响
+//			},
+//			function() {
+//				setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+//				next(1000);
+//			},
+//			function() {
+//				setFMColorRed("FM018");
+//				next(2000);
+//			},
+//			function() {
+//				setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+//				next(1000);
+//			},
+//			function(){
+//				GD30.state=2;
+//				$(document).on('drain', function(){
+//					next(1000);
+//				});
+//			},
+//			function() {
+//				setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+//				next(1000);
+//			},
+//			function() {
+//				setStepBackgroundColor('#step_5', 'rgba(194,215,245,0.5)');
+//				next(1000);
+//			},
+//			function(){
+//				setFMColorRed("FM019");
+//				next(1000);
+//			},
+//			function(){    		
+//				setStepBackgroundColor('#step_6', 'rgba(194,215,245,0.5)');
+//				next(1000);
+//			},
+//			function(){GD141.state=2;}
+//        ];
+//    	
+//    	$(document).queue("fix_hx_right_queue",fix_hx_right_queue);
+////    	$(document).dequeue("fix_hx_right_queue");
+//    	next(1000);
     	
     	function playbackReset(){
     		//Start of animation,reset all animation
@@ -2025,8 +2021,8 @@ oCanvas.domReady(function () {
     		tempQueue.splice(0,4,function(){
     			setFMColorRed("FM016");
     			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
-    			GD11.state=2;
-		    	GD1001.state=2;
+    			GD11.state=0;
+		    	GD1001.state=0;
 		    	next(1000);
     		});
     		$(document).queue("fix_hx_right_queue",tempQueue);
@@ -2038,52 +2034,48 @@ oCanvas.domReady(function () {
     	$('#step_3,#step_3_result,#step_4,#step_4_result,#step_5,#step_5_result').click(function(){
     		$(document).clearQueue("fix_hx_right_queue");
     		var tempQueue = fix_hx_right_queue.slice(0);
-    		var swapQueue = fix_hx_right_queue_mask.slice(0);
-    		
-    		var s1 = swapQueue.shift();
-    		var s2 = swapQueue.shift();
-    		var s3 = swapQueue.shift();
-    		var s4 = swapQueue.shift();
-    		var s5 = swapQueue.shift();
-    		tempQueue.splice(0,5,s1,s2,s3,s4,s5);
+    		tempQueue.splice(0,5,function(){
+    			setFMColorRed("FM016");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+    			GD11.state=0;
+		    	GD1001.state=0;
+		    	next(1000);
+    		});
     		$(document).queue("fix_hx_right_queue",tempQueue);
-        	$(document).dequeue("fix_hx_right_queue");
+    		playbackReset();
     	});
     	
     	$('#step_6,#step_6_result').click(function(){
     		$(document).clearQueue("fix_hx_right_queue");
     		var tempQueue = fix_hx_right_queue.slice(0);
-    		var swapQueue = fix_hx_right_queue_mask.slice(0);
-    		
-    		var s1 = swapQueue.shift();
-    		var s2 = swapQueue.shift();
-    		var s3 = swapQueue.shift();
-    		var s4 = swapQueue.shift();
-    		var s5 = swapQueue.shift();
-    		var s6 = swapQueue.shift();
-    		var s7 = swapQueue.shift();
-    		var s8 = swapQueue.shift();
-    		var s9 = swapQueue.shift();
-    		var s10 = swapQueue.shift();
-    		tempQueue.splice(0,10,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10);
+    		tempQueue.splice(0,10,function(){
+    			setFMColorRed("FM016");
+    			setFMColorRed("FM018");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_5', 'rgba(194,215,245,0.5)');
+    			GD11.state=0;
+		    	GD1001.state=0;
+		    	GD30.state=0;
+		    	next(1000);
+    		});
     		$(document).queue("fix_hx_right_queue",tempQueue);
-        	$(document).dequeue("fix_hx_right_queue");
+    		playbackReset();
     	});
-    	
-    	//显示面板
-//        $("div.hiden").show();
-        
     }
     
     function restore_hx_right(){
     	
-    	document.getElementById("name_HX").style.color="#283a45";
-    	document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
+    	$("#name_HX").css('color','#283a45');
+    	$("#name_HX").css('background-color','rgba(255,255,255,0.5)');
     	//静态部分
     	$("#init_state").text("状态");
     	$("#init_stat").html('东侧阀门恢复<span class="caret"></span>');
         /*$(".table_line").attr("style","text-align:left");*/
-        document.getElementById("fix_head").innerHTML="东侧虹吸滤池闸门改造配合<br>方案";
+        $("#fix_head").html("东侧虹吸滤池闸门改造配合<br>方案");
         
 /*      setFMColorGreen("FM016");
         setFMColorGreen("FM018");
@@ -2101,8 +2093,8 @@ oCanvas.domReady(function () {
         
 		for (i=0;i<todolist.length;i++){
 			var offset = i+1;
-	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
-	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
+	        $("#step_" + offset).html(todolist[i].content);
+	        $("#step_" + offset + "_result").html(todolist[i].result);
 		}
         
 //    	$("#scheme_extra").text("西侧维修");
@@ -2146,13 +2138,13 @@ oCanvas.domReady(function () {
     }
     
     function restore_hx_left(){
-    	document.getElementById("name_HX").style.color="#283a45";
-    	document.getElementById("name_HX").style.background="rgba(255,255,255,0.5)";
+    	$("#name_HX").css('color','#283a45');
+    	$("#name_HX").css('background-color','rgba(255,255,255,0.5)');
     	//静态部分
     	$("#init_state").text("状态");
     	$("#init_stat").html('西侧阀门恢复<span class="caret"></span>');
         /*$(".table_line").attr("style","text-align:left");*/
-        document.getElementById("fix_head").innerHTML="西侧虹吸滤池闸门改造配合<br>方案";
+        $("#fix_head").html("西侧虹吸滤池闸门改造配合<br>方案");
         
 /*      setFMColorGreen("FM014");
         setFMColorGreen("FM017");
@@ -2170,9 +2162,8 @@ oCanvas.domReady(function () {
 
 		for (i=0;i<todolist.length;i++){
 			var offset = i+1;
-	  
-	        document.getElementById("step_" + offset).innerHTML=todolist[i].content;
-	        document.getElementById("step_" + offset + "_result").innerHTML=todolist[i].result;
+	        $("#step_" + offset).html(todolist[i].content);
+	        $("#step_" + offset + "_result").html(todolist[i].result);
 		}
 		
 		//执行完恢复运行后解除恢复运行绑定的函数
@@ -2200,10 +2191,6 @@ oCanvas.domReady(function () {
     		GD141.state=3;
 //    		console.log("GD141:");
 //    		console.log(GD141.state);
-//    		blinTwice("#step_6");
-//    		blinTwice("#step_6_result");
-//    		blinTwice("#step_5");
-//    		blinTwice("#step_5_result");
          },300);
         window.setTimeout(function(){              
         	document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
@@ -2212,10 +2199,6 @@ oCanvas.domReady(function () {
     		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
         	setFMColorGreen("FM017");
         	GD37.state=3;   		
-//    		blinTwice("#step_3");
-//    		blinTwice("#step_3_result");
-//    		blinTwice("#step_4");
-//    		blinTwice("#step_4_result");
          },2500);
         window.setTimeout(function(){              
         	document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
@@ -2225,10 +2208,6 @@ oCanvas.domReady(function () {
         	setFMColorGreen("FM014");
         	GD26.state=3;
         	GD27.state=3;        	
-//    		blinTwice("#step_1");
-//    		blinTwice("#step_1_result");
-//    		blinTwice("#step_2");
-//    		blinTwice("#step_2_result");
     		
 //        	GD1001.state=3;
 //        	GD11.state=3;
