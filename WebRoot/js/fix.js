@@ -3063,6 +3063,8 @@ oCanvas.domReady(function () {
     	GD37.state=1;
     	GD26.state=1;
     	GD27.state=1;
+    	GD30.state=1;
+    	GD141.state=1;
     	canvas.children[2].fill=color_GD;
     	canvas.children[3].fill=color_GD;
     	canvas.children[4].fill=color_GD;
