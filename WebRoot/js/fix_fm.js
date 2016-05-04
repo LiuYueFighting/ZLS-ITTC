@@ -1205,6 +1205,9 @@ oCanvas.domReady(function () {
 
     function clearAll(){
     	GD0101.state=1;
+    	GD0102.state=1;
+    	GD05.state=1;
+    	GD25.state=1;
 //    	GD11.state=3;
 //    	GD1001.state=3;
 
@@ -1255,9 +1258,9 @@ oCanvas.domReady(function () {
         document.getElementById("export").href="download/FM_62_RECOVER.docx";
  		
  		$(".table_content").attr("style","background:#ffffff;");
-        $("#step_1").html("1&nbsp;&nbsp;打开09#阀门");
+        $("#step_1").html("1&nbsp;&nbsp;打开旧混合井西侧搅拌浆");
         $("#step_2").html("2&nbsp;&nbsp;打开064#阀门");
-        $("#step_3").html("3&nbsp;&nbsp;打开旧混合井西侧搅拌浆");
+        $("#step_3").html("3&nbsp;&nbsp;打开09#阀门");
         $("#step_4").html("&nbsp;");
  		
         $('#step_1').click(function(){});
