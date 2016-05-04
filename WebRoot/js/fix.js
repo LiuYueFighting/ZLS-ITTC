@@ -1986,6 +1986,7 @@ oCanvas.domReady(function () {
     		$(document).dequeue("fix_hx_right_queue");
     	}
     	
+    	$('.table_content').unbind();
     	$('#step_1,#step_1_result').click(function(){
     		$(document).clearQueue("fix_hx_right_queue");
     		$(document).queue("fix_hx_right_queue",fix_hx_right_queue);
@@ -2085,7 +2086,7 @@ oCanvas.domReady(function () {
     	document.getElementById("export").href="download/EAST_HX_RECOVER.doc";
     	$("#export").text("生成方案");
     	$("#reset").text("重置");
-		
+    	$('.table_content').unbind();
 		//动态部分
     	//计时器控制阀门颜色和对应维修步骤变化情况
     	window.setTimeout(function(){              
@@ -2110,6 +2111,8 @@ oCanvas.domReady(function () {
     		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
         	GD1001.state=3;
         	GD11.state=3;
+        	GD30.state=3;   
+        	GD141.state=3;
          },2000);
         
     }
@@ -2155,7 +2158,7 @@ oCanvas.domReady(function () {
     	document.getElementById("export").href="download/WEST_HX_RECOVER.docx";
     	$("#export").text("生成方案");
     	$("#reset").text("重置");
-		
+    	$('.table_content').unbind();
 		//动态部分
     	//计时器控制阀门颜色和对应维修步骤变化情况
     	window.setTimeout(function(){  
@@ -2165,7 +2168,6 @@ oCanvas.domReady(function () {
     		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
     		setFMColorGreen("FM019");
     		//GD37.state=3;
-    		GD141.state=3;
 //    		console.log("GD141:");
 //    		console.log(GD141.state);
          },300);
@@ -2175,7 +2177,6 @@ oCanvas.domReady(function () {
     		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
         	setFMColorGreen("FM017");
-        	GD37.state=3;   		
          },2500);
         window.setTimeout(function(){              
         	document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
@@ -2184,8 +2185,9 @@ oCanvas.domReady(function () {
     		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
         	setFMColorGreen("FM014");
         	GD26.state=3;
-        	GD27.state=3;        	
-    		
+        	GD27.state=3;   
+        	GD30.state=3;   
+        	GD141.state=3;
 //        	GD1001.state=3;
 //        	GD11.state=3;
          },4000);
@@ -2404,7 +2406,7 @@ oCanvas.domReady(function () {
  				},
  			function(){GD141.state=2;}
          ];
-    	
+    	$('.table_content').unbind();
     	$('#step_1,#step_1_result,#step_2,#step_2_result').click(function(){
     		$(document).clearQueue("fix_hx_left_queue");
     		var tempQueue = fix_hx_left_queue.slice(0);
@@ -3134,7 +3136,8 @@ oCanvas.domReady(function () {
         $('#init_stat').html('全厂正常运行');
         
 		$(".table_content").css("background-color","#ffffff");
-        
+		$('.table_content').unbind();
+		
         $("#scheme").html("&nbsp;");
         $("#scheme_extra").html("&nbsp;");
         $("#export").html("&nbsp;");

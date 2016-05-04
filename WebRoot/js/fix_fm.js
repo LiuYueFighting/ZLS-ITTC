@@ -1265,10 +1265,7 @@ oCanvas.domReady(function () {
         $("#step_3").html("3&nbsp;&nbsp;打开09#阀门");
         $("#step_4").html("&nbsp;");
  		
-        $('#step_1').unbind();
-        $('#step_2').unbind();
-        $('#step_3').unbind();
-        $('#step_4').unbind();
+        $('.table_content').unbind();
 		//动画队列
     	var restore_fm062_queue = [
 			function() {
@@ -1485,6 +1482,7 @@ oCanvas.domReady(function () {
 			}
           ];
     	
+    	$('.table_content').unbind();
     	$('#step_1').click(function(){
     		$(document).clearQueue("fix_fm062_queue");
     		var tempQueue = fix_fm062_queue.slice(0);
