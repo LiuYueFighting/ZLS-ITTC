@@ -345,7 +345,7 @@
 
         else{
 
-             image.src = "image/y5.png";
+             image.src = "image/y6.png";
 
     return;
 
