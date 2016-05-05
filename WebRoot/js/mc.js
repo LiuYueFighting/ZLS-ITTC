@@ -206,6 +206,28 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(SC071);
     
+    var arrow_0=canvas.display.sprite({
+        x: 717,
+        y: 268,
+        image: "image/water-arrow/left.png",
+        generate:false,
+        frames: [
+            {x:60,y:0,w:60,h:40,d:400},
+            {x:0,y:0,w:60,h:40,d:800}
+        ]
+    }).add();
+    var arrow_1=canvas.display.sprite({
+        x: 717,
+        y: 410,
+        image: "image/water-arrow/left.png",
+        generate:false,
+        frames: [
+            {x:60,y:0,w:60,h:40,d:400},
+            {x:0,y:0,w:60,h:40,d:800}
+
+        ]
+    }).add();
+    
     var GD04=createGD({
         parent:canvas,
         cells:[
@@ -357,15 +379,19 @@ oCanvas.domReady(function () {
         if(SC051.full==1){       	
         	SC07.start=1;
         	SC071.start=1;
-        }
+        	arrow_0.start();
+        	arrow_1.start();
+        }        
         if(SC07.full==1){       	
         	GD06.paused=1;
         	GD061.paused=1;
         	SC08.start=1;
-        	SC081.start=1;
+        	SC081.start=1;        	
         }
         if(SC081.full==1){       	
         	SC08.start=1;
+        	arrow_0.frame=2;
+        	arrow_1.frame=2;
         }
         canvas.redraw();
     }).start();
@@ -392,7 +418,7 @@ oCanvas.domReady(function () {
         else{
             this.innerHTML='&#xe626;';
             this.value=1;
-            canvas.timeline.stop();
+            canvas.timeline.stop(); 
         }
     });
     $("#btn_upS").click(function(){

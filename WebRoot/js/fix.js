@@ -2110,10 +2110,14 @@ oCanvas.domReady(function () {
     		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
     		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
         	GD1001.state=3;
-        	GD11.state=3;
-        	GD30.state=3;   
-        	GD141.state=3;
+        	GD11.state=3;       	
          },2000);
+        window.setTimeout(function(){                     	
+        	GD30.state=3;   
+         },3300);
+        window.setTimeout(function(){               
+        	GD141.state=3;
+         },5300);
         
     }
     
