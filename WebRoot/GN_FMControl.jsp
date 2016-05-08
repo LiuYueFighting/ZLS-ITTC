@@ -234,7 +234,7 @@
         z-index:999;
     }
     #WFM062{
-    		background: rgba(255,255,0,1);
+    		background: rgba(26,215,255,1);
     		font-size: 20px;
     		position: absolute;
     		left: 929px;
@@ -242,7 +242,7 @@
     		z-index: 999;
     }
     #WFM063{
-    		background: rgba(255,255,0,1);
+    		background: rgba(26,215,255,1);
     		font-size: 20px;
     		position: absolute;
     		left: 1029px;
@@ -250,7 +250,7 @@
     		z-index: 999;
     }
     #WFM065{
-    		background: rgba(255,255,0,1);
+    		background: rgba(26,215,255,1);
     		font-size: 20px;
     		position: absolute;
     		left: 1026px;
@@ -301,12 +301,24 @@
     computeAll();
     write();
     showPanel();
+    blinTwice("#Prediction_results")
     }
     
     function showPanel(){
     		document.getElementById("Prediction_results").style.display="block";
     	}
-    	
+    function blinTwice(jqueryDom){
+       $(jqueryDom).animate({
+           opacity:'1'},'fast');
+       $(jqueryDom).animate({
+           opacity:'0'},'fast');
+       $(jqueryDom).animate({
+           opacity:'1'},'fast');
+       $(jqueryDom).animate({
+           opacity:'0'},'fast');
+       $(jqueryDom).animate({
+           opacity:'1'},'fast');
+   }	
     function setOpenDgree(id,openDgree){
         var num = id.substr(2);
 
