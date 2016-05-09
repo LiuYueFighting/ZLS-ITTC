@@ -8,7 +8,7 @@ oCanvas.domReady(function () {
 
     var canvas = oCanvas.create({
         canvas: "#canvas_QS_mc",
-        background: "#ccc",
+        background: "#eeeeef",
         fps: 25
     });
     var width_all=30,
@@ -92,6 +92,14 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
+    var fg2 = canvas.display.image({
+        x: 0,
+        y: 0,
+//        height:1,
+//        width:1,
+        image: "image/mc_test2.png"
+    });
+    canvas.addChild(fg2);
 
     var fg = canvas.display.image({
         x: 0,
@@ -101,14 +109,15 @@ oCanvas.domReady(function () {
         image: "image/mc_test.png"
     });
     canvas.addChild(fg);
-    var bg = canvas.display.image({
-        x: 374,
-        y: 130,
-        height:1,
-        width:1,
-        image: "image/mc_bg2.png"
-    });
-    canvas.addChild(bg);
+    
+//    var bg = canvas.display.image({
+//        x: 374,
+//        y: 130,
+//        height:1,
+//        width:1,
+//        image: "image/mc_bg2.png"
+//    });
+//    canvas.addChild(bg);
     var jtbg = canvas.display.image({
         x: 390,
         y: 100,
@@ -358,8 +367,12 @@ oCanvas.domReady(function () {
         if(SC02.full==1){
         	detail.width=650;
         	detail.height=500;
-        	bg.width=825;
-        	bg.height=493;
+//        	bg.width=825;
+//        	bg.height=493;
+        	fg.width=1;
+        	fg.height=1;
+//        	fg2.width=1333;
+//        	fg2.height=753;
         	jtbg.width=650;
         	jtbg.height=500;
         	GD04.paused=1;
