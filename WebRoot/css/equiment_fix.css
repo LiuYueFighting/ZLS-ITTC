@@ -113,3 +113,8 @@ body {
 .hiden{
     display:none;
 }
+.FMstyle{
+    background: rgba(26,215,255,1);
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1865,6 +1865,9 @@ oCanvas.domReady(function () {
 		setFMColorGreen("FM016");
         setFMColorGreen("FM018");
         setFMColorGreen("FM019");
+        $("#WFM016").addClass("FMstyle");
+        $("#WFM018").addClass("FMstyle");
+        $("#WFM019").addClass("FMstyle");
         $("#fix_head").html("东侧虹吸滤池闸门改造配合<br>方案");
         $("#name_HX").css('color','#8dd9ff');
         $("#name_HX").css('background-color','rgba(255,0,0,0.7)');
@@ -3126,6 +3129,9 @@ oCanvas.domReady(function () {
         $(".fm_default_hide").attr("style","display:none;");
         $("div#FM_group .fm_default_green").attr("style","display:block;");
         $("div#FM_group .fm_default_red").attr("style","display:block;");
+        $("#WFM016").removeClass("FMstyle");
+        $("#WFM018").removeClass("FMstyle");
+        $("#WFM019").removeClass("FMstyle");
 
         //右侧
         //清空单元格的内容
