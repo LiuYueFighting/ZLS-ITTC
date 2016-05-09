@@ -1225,6 +1225,7 @@ oCanvas.domReady(function () {
         $(".fm_default_hide").attr("style","display:none;");
         $(".fm_default_green").attr("style","display:block;");
         $(".fm_default_red").attr("style","display:block;");
+        $(".fm_tag").removeClass("FMStyle");
         
         //清空单元格的内容
 		for (i=1;i<7;i++){
@@ -1332,12 +1333,6 @@ oCanvas.domReady(function () {
  		$("div.hiden").show();
     }
     function fix_fm062(){
-        clearAll();
-        hideAllFM();
-        $(".hiden").show();
-		setFMColorGreen("FM064");
-        setFMColorGreen("FM09");
-        setFMColorGreen("FM062");
         $("#fix_head").html("62#阀门维修配合方案");
         document.getElementById("FM062").src="image/y1.png";
         
@@ -1582,8 +1577,16 @@ oCanvas.domReady(function () {
 //        if(confirm("是否将“62#阀门”设置为维修状态？")){
     	$.messager.confirm('确认','是否将<strong>62#阀门</strong>设置为维修状态？', function(r){
     		if(r){
-    			$(".hiden").show();
-    			$('#init_stat').html('选择维修方案<span class="caret"></span>');
+    	        clearAll();
+    	        hideAllFM();
+    	        $(".hiden").show();
+    			setFMColorGreen("FM064");
+    	        setFMColorGreen("FM09");
+    	        setFMColorGreen("FM062");
+    	        $('#init_stat').html('选择维修方案<span class="caret"></span>');
+    	        $("#WFM09").addClass("FMStyle");
+    	        $("#WFM062").addClass("FMStyle");
+    	        $("#WFM064").addClass("FMStyle");
     			$('#fix_scheme').click(function(){
 				    fix_fm062();
     			});
