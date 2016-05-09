@@ -1225,6 +1225,7 @@ oCanvas.domReady(function () {
         $(".fm_default_hide").attr("style","display:none;");
         $(".fm_default_green").attr("style","display:block;");
         $(".fm_default_red").attr("style","display:block;");
+        $(".fm_tag").removeClass("FMStyle");
         
         //清空单元格的内容
 		for (i=1;i<7;i++){
@@ -1308,25 +1309,22 @@ oCanvas.domReady(function () {
 				GD0101.state = 3;
     			setTimeout(function(){
     				$(document).dequeue("restore_fm062_queue");
-    			},1000);
+    			},3000);
 			},
 			function() {
 				GD25.state = 3;
     			setTimeout(function(){
     				$(document).dequeue("restore_fm062_queue");
-    			},1000);
+    			},2000);
 			},
 			function() {
 				GD0102.state = 3;
     			setTimeout(function(){
     				$(document).dequeue("restore_fm062_queue");
-    			},1000);
+    			},2000);
 			},
 			function() {
 				GD05.state = 3;
-    			setTimeout(function(){
-    				$(document).dequeue("restore_fm062_queue");
-    			},1000);
 			}
         ];
     	$(document).queue("restore_fm062_queue",restore_fm062_queue);
@@ -1335,12 +1333,6 @@ oCanvas.domReady(function () {
  		$("div.hiden").show();
     }
     function fix_fm062(){
-        clearAll();
-        hideAllFM();
-        $(".hiden").show();
-		setFMColorGreen("FM064");
-        setFMColorGreen("FM09");
-        setFMColorGreen("FM062");
         $("#fix_head").html("62#阀门维修配合方案");
         document.getElementById("FM062").src="image/y1.png";
         
@@ -1359,6 +1351,8 @@ oCanvas.domReady(function () {
 		$("#scheme").text("62#阀门恢复");
 		
 		//动画队列
+		$(document).off('drain');
+		
     	var fix_fm062_queue = [
 			function() {
 				$("#step_1").css('background','rgba(194,215,245,0.5)');
@@ -1376,6 +1370,7 @@ oCanvas.domReady(function () {
 		        GD0101.state = 2;
 				$(document).on('drain', function(){
 					setTimeout(function(){
+						$(document).off('drain');
 						$(document).dequeue("fix_fm062_queue");
 					},1000);
 				});
@@ -1397,6 +1392,7 @@ oCanvas.domReady(function () {
 				
 				$(document).on('drain', function(){
 					setTimeout(function(){
+						$(document).off('drain');
 						$(document).dequeue("fix_fm062_queue");
 					},1000);
 				});
@@ -1412,6 +1408,7 @@ oCanvas.domReady(function () {
 
 				$(document).on('drain', function(){
 					setTimeout(function(){
+						$(document).off('drain');
 						$(document).dequeue("fix_fm062_queue");
 					},1000);
 				});
@@ -1432,6 +1429,8 @@ oCanvas.domReady(function () {
     	var fix_fm062_queue_mask = [
 		    function(){
 		    	//Start of animation,reset all animation
+		    	$(document).off('drain');
+		    	
 		    	setFMColorGreen("FM09");
 		    	setFMColorGreen("FM064");
 				$(".table_content").css("background-color","#ffffff");
@@ -1578,8 +1577,16 @@ oCanvas.domReady(function () {
 //        if(confirm("是否将“62#阀门”设置为维修状态？")){
     	$.messager.confirm('确认','是否将<strong>62#阀门</strong>设置为维修状态？', function(r){
     		if(r){
-    			$(".hiden").show();
-    			$('#init_stat').html('选择维修方案<span class="caret"></span>');
+    	        clearAll();
+    	        hideAllFM();
+    	        $(".hiden").show();
+    			setFMColorGreen("FM064");
+    	        setFMColorGreen("FM09");
+    	        setFMColorGreen("FM062");
+    	        $('#init_stat').html('选择维修方案<span class="caret"></span>');
+    	        $("#WFM09").addClass("FMStyle");
+    	        $("#WFM062").addClass("FMStyle");
+    	        $("#WFM064").addClass("FMStyle");
     			$('#fix_scheme').click(function(){
 				    fix_fm062();
     			});

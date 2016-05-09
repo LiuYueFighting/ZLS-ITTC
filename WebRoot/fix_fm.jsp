@@ -33,10 +33,10 @@
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script> 
     
     <style>
-    #WFM062{
+    /* #WFM062{
 	    color: #6dceff;
 		background: rgba(255,0,0,0.6);
-    }
+    } */
     </style>
 
 </head>
@@ -105,63 +105,63 @@
     <img id="FM067" src="image/y3-35x37.png" class="fm_default_green">
     <img id="FM069" src="image/y3-35x37.png" class="fm_default_green">
 	<!-- 不显示多余的阀门     -->
-    <img id="FM021" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
-    <img id="FM024" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
-    <img id="FM025" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
-    <img id="FM026" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
-    <img id="FM046" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
-    <img id="FM047" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
-    <img id="FM048" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
-    <img id="FM049" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
-    <img id="FM051" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;"> 
-    <img id="FM053" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
-    <img id="FM054" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
-    <img id="FM058" src="image/y3-35x37.png" class="fm_default_hide" style="display:none;">
+    <img id="FM021" src="image/y3-35x37.png" class="fm_default_hide">
+    <img id="FM024" src="image/y3-35x37.png" class="fm_default_hide">
+    <img id="FM025" src="image/y3-35x37.png" class="fm_default_hide">
+    <img id="FM026" src="image/y3-35x37.png" class="fm_default_hide">
+    <img id="FM046" src="image/y3-35x37.png" class="fm_default_hide">
+    <img id="FM047" src="image/y3-35x37.png" class="fm_default_hide">
+    <img id="FM048" src="image/y3-35x37.png" class="fm_default_hide">
+    <img id="FM049" src="image/y3-35x37.png" class="fm_default_hide">
+    <img id="FM051" src="image/y3-35x37.png" class="fm_default_hide"> 
+    <img id="FM053" src="image/y3-35x37.png" class="fm_default_hide">
+    <img id="FM054" src="image/y3-35x37.png" class="fm_default_hide">
+    <img id="FM058" src="image/y3-35x37.png" class="fm_default_hide">
 
     <!-- 阀门对应的标签 -->
-    <p id="WFM05"  class="fm_default_green">05#</p>
-    <p id="WFM06"  class="fm_default_green">06#</p>
-    <p id="WFM07"  class="fm_default_green">07#</p>
-    <p id="WFM09"  class="fm_default_green">09#</p>
-    <p id="WFM010" class="fm_default_green">010#</p>
-    <p id="WFM065" class="fm_default_green">065#</p>
-    <p id="WFM062" class="fm_default_green">062#</p>
-    <p id="WFM063" class="fm_default_green">063#</p>
-    <p id="WFM064" class="fm_default_green">064#</p>
-    <p id="WFM045" class="fm_default_green">045#</p>
-    <p id="WFM014" class="fm_default_green">014#</p>
-    <p id="WFM015" class="fm_default_green">015#</p>
-    <p id="WFM069" class="fm_default_green">069#</p>
-    <p id="WFM066" class="fm_default_green">066#</p>
-    <p id="WFM016" class="fm_default_green">016#</p>
-    <p id="WFM067" class="fm_default_green">067#</p>
-    <p id="WFM017" class="fm_default_green">017#</p>
-    <p id="WFM018" class="fm_default_green">018#</p>
-    <p id="WFM019" class="fm_default_green">019#</p>
-    <p id="WFM020" class="fm_default_green">020#</p>
-    <p id="WFM052" class="fm_default_green">052#</p>
-    <p id="WFM057" class="fm_default_green">057#</p>
-    <p id="WFM059" class="fm_default_green">059#</p>
-    <p id="WFM044" class="fm_default_green">044#</p>
-    <p id="WFM055" class="fm_default_green">055#</p>
-    <p id="WFM022" class="fm_default_red">022#</p>
-    <p id="WFM023" class="fm_default_red">023#</p>
-    <p id="WFM050" class="fm_default_red">050#</p>
-    <p id="WFM056" class="fm_default_red">056#</p>
-    <p id="WFM068" class="fm_default_red">068#</p>
+    <p id="WFM05"  class="fm_tag fm_default_green">05#</p>
+    <p id="WFM06"  class="fm_tag fm_default_green">06#</p>
+    <p id="WFM07"  class="fm_tag fm_default_green">07#</p>
+    <p id="WFM09"  class="fm_tag fm_default_green">09#</p>
+    <p id="WFM010" class="fm_tag fm_default_green">010#</p>
+    <p id="WFM065" class="fm_tag fm_default_green">065#</p>
+    <p id="WFM062" class="fm_tag fm_default_green">062#</p>
+    <p id="WFM063" class="fm_tag fm_default_green">063#</p>
+    <p id="WFM064" class="fm_tag fm_default_green">064#</p>
+    <p id="WFM045" class="fm_tag fm_default_green">045#</p>
+    <p id="WFM014" class="fm_tag fm_default_green">014#</p>
+    <p id="WFM015" class="fm_tag fm_default_green">015#</p>
+    <p id="WFM069" class="fm_tag fm_default_green">069#</p>
+    <p id="WFM066" class="fm_tag fm_default_green">066#</p>
+    <p id="WFM016" class="fm_tag fm_default_green">016#</p>
+    <p id="WFM067" class="fm_tag fm_default_green">067#</p>
+    <p id="WFM017" class="fm_tag fm_default_green">017#</p>
+    <p id="WFM018" class="fm_tag fm_default_green">018#</p>
+    <p id="WFM019" class="fm_tag fm_default_green">019#</p>
+    <p id="WFM020" class="fm_tag fm_default_green">020#</p>
+    <p id="WFM052" class="fm_tag fm_default_green">052#</p>
+    <p id="WFM057" class="fm_tag fm_default_green">057#</p>
+    <p id="WFM059" class="fm_tag fm_default_green">059#</p>
+    <p id="WFM044" class="fm_tag fm_default_green">044#</p>
+    <p id="WFM055" class="fm_tag fm_default_green">055#</p>
+    <p id="WFM022" class="fm_tag fm_default_red">022#</p>
+    <p id="WFM023" class="fm_tag fm_default_red">023#</p>
+    <p id="WFM050" class="fm_tag fm_default_red">050#</p>
+    <p id="WFM056" class="fm_tag fm_default_red">056#</p>
+    <p id="WFM068" class="fm_tag fm_default_red">068#</p>
     <!-- 不显示多余阀门下方标号 -->
-    <p id="WFM021" class="fm_default_hide" style="display:none;">021#</p>
-    <p id="WFM024" class="fm_default_hide" style="display:none;">024#</p>
-    <p id="WFM025" class="fm_default_hide" style="display:none;">025#</p>
-    <p id="WFM026" class="fm_default_hide" style="display:none;">026#</p>
-    <p id="WFM046" class="fm_default_hide" style="display:none;">046#</p>
-    <p id="WFM047" class="fm_default_hide" style="display:none;">047#</p>
-    <p id="WFM048" class="fm_default_hide" style="display:none;">048#</p>
-    <p id="WFM049" class="fm_default_hide" style="display:none;">049#</p>
-    <p id="WFM051" class="fm_default_hide" style="display:none;">051#</p>
-    <p id="WFM053" class="fm_default_hide" style="display:none;">053#</p>
-    <p id="WFM054" class="fm_default_hide" style="display:none;">054#</p>
-    <p id="WFM058" class="fm_default_hide" style="display:none;">058#</p>
+    <p id="WFM021" class="fm_tag fm_default_hide">021#</p>
+    <p id="WFM024" class="fm_tag fm_default_hide">024#</p>
+    <p id="WFM025" class="fm_tag fm_default_hide">025#</p>
+    <p id="WFM026" class="fm_tag fm_default_hide">026#</p>
+    <p id="WFM046" class="fm_tag fm_default_hide">046#</p>
+    <p id="WFM047" class="fm_tag fm_default_hide">047#</p>
+    <p id="WFM048" class="fm_tag fm_default_hide">048#</p>
+    <p id="WFM049" class="fm_tag fm_default_hide">049#</p>
+    <p id="WFM051" class="fm_tag fm_default_hide">051#</p>
+    <p id="WFM053" class="fm_tag fm_default_hide">053#</p>
+    <p id="WFM054" class="fm_tag fm_default_hide">054#</p>
+    <p id="WFM058" class="fm_tag fm_default_hide">058#</p>
     </div>
     
     <!-- 页面右侧面板 -->

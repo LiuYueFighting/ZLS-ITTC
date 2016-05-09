@@ -113,3 +113,11 @@ body {
 .hiden{
     display:none;
 }
+.FMStyle{
+    background: rgba(26,215,255,1);
+    font-size: 20px;
+    font-weight: bold;
+}
+.fm_default_hide{
+	display:none;
+}

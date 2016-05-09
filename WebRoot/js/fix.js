@@ -1865,6 +1865,9 @@ oCanvas.domReady(function () {
 		setFMColorGreen("FM016");
         setFMColorGreen("FM018");
         setFMColorGreen("FM019");
+        $("#WFM016").addClass("FMStyle");
+        $("#WFM018").addClass("FMStyle");
+        $("#WFM019").addClass("FMStyle");
         $("#fix_head").html("东侧虹吸滤池闸门改造配合<br>方案");
         $("#name_HX").css('color','#8dd9ff');
         $("#name_HX").css('background-color','rgba(255,0,0,0.7)');
@@ -1913,6 +1916,8 @@ oCanvas.domReady(function () {
 		}
 		
 		//动画队列
+		$(document).off('drain');
+		
     	var fix_hx_right_queue = [
 			function() {
 				setFMColorRed("FM016");
@@ -1933,6 +1938,7 @@ oCanvas.domReady(function () {
 			    //消除两根水管排空带来的影响
 			},
 			function() {
+				$(document).off('drain');
 				setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
 				next(1000);
 			},
@@ -1947,6 +1953,7 @@ oCanvas.domReady(function () {
 			function(){
 				GD30.state=2;
 				$(document).on('drain', function(){
+					$(document).off('drain');
 					next(1000);
 				});
 			},
@@ -1975,6 +1982,7 @@ oCanvas.domReady(function () {
     	
     	function playbackReset(){
     		//Start of animation,reset all animation
+    		$(document).off('drain');
     		setFMColorGreen("FM016");
     		setFMColorGreen("FM018");
     		setFMColorGreen("FM019");
@@ -2114,10 +2122,10 @@ oCanvas.domReady(function () {
          },2000);
         window.setTimeout(function(){                     	
         	GD30.state=3;   
-         },3300);
+         },5300);
         window.setTimeout(function(){               
         	GD141.state=3;
-         },5300);
+         },7300);
         
     }
     
@@ -2190,11 +2198,13 @@ oCanvas.domReady(function () {
         	setFMColorGreen("FM014");
         	GD26.state=3;
         	GD27.state=3;   
-        	GD30.state=3;   
-        	GD141.state=3;
-//        	GD1001.state=3;
-//        	GD11.state=3;
          },4000);
+        window.setTimeout(function(){                     	
+        	GD30.state=3;   
+         },5300);
+        window.setTimeout(function(){                     	
+        	GD141.state=3;   
+         },7300);
     }
     
     function  fix_hx_left(){
@@ -2207,6 +2217,11 @@ oCanvas.domReady(function () {
         setFMColorGreen("FM017");
         setFMColorGreen("FM018");
         setFMColorGreen("FM019");
+        $("#WFM014").addClass("FMStyle");
+        $("#WFM017").addClass("FMStyle");
+        $("#WFM018").addClass("FMStyle");
+        $("#WFM019").addClass("FMStyle");
+        
         
         $("#fix_head").html("西侧虹吸滤池闸门改造配合<br>方案");
         $("#name_HX").css('color','#8dd9ff');
@@ -2246,6 +2261,8 @@ oCanvas.domReady(function () {
     	$("#init_stat").html('西侧阀门维修<span class="caret"></span>');
     	
     	//动画队列
+    	$(document).off('drain');
+    	
     	var fix_hx_left_queue = [
 			function() {
 				setFMColorRed("FM014");
@@ -2259,7 +2276,7 @@ oCanvas.domReady(function () {
 				$("#step_1").css('background','rgba(194,215,245,0.5)');
 				$("#step_1_result").css('background','rgba(194,215,245,0.5)');
 				
-		    	setTimeout(function(){
+				setTimeout(function(){
 		    		$(document).dequeue("fix_hx_left_queue");
 		    	},1000);
 		    	
@@ -2267,6 +2284,7 @@ oCanvas.domReady(function () {
 			function() {
 				GD26.state=2;
 				GD27.state=2;
+				$(document).off('drain');
 				$(document).on('drain', function(){
 					setTimeout(function(){
 						$(document).dequeue("fix_hx_left_queue");
@@ -2280,7 +2298,7 @@ oCanvas.domReady(function () {
 				$("#step_2").css('background','rgba(194,215,245,0.5)');
 				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
 				
-		    	setTimeout(function(){
+				setTimeout(function(){
 		    		$(document).dequeue("fix_hx_left_queue");
 		    	},1000);
 		    	
@@ -2288,19 +2306,20 @@ oCanvas.domReady(function () {
 			function() {
 				setFMColorRed("FM017");
 				
-    			setTimeout(function(){
+				setTimeout(function(){
     				$(document).dequeue("fix_hx_left_queue");
     			},1000);
 			},
 			function() {
 				$("#step_3").css('background','rgba(194,215,245,0.5)');
 				$("#step_3_result").css('background','rgba(194,215,245,0.5)');
-    			setTimeout(function(){
+				setTimeout(function(){
     				$(document).dequeue("fix_hx_left_queue");
     			},1000);
 			},
 			function(){
 				GD30.state=2;
+				$(document).off('drain');
 				$(document).on('drain', function(){
 					setTimeout(function(){
 						$(document).dequeue("fix_hx_left_queue");
@@ -2310,16 +2329,16 @@ oCanvas.domReady(function () {
 			function() {
 				$("#step_4").css('background','rgba(194,215,245,0.5)');
 				$("#step_4_result").css('background','rgba(194,215,245,0.5)');
-    			setTimeout(function(){
+				setTimeout(function(){
     				$(document).dequeue("fix_hx_left_queue");
-    			},1000);
+    			},2000);
 			},
 			function() {
 				$("#step_5").css('background','rgba(194,215,245,0.5)');
 				$("#step_5_result").css('background','rgba(194,215,245,0.5)');
-    			setTimeout(function(){
+				setTimeout(function(){
     				$(document).dequeue("fix_hx_left_queue");
-    			},1000);
+    			},3000);
 			},
 			function(){
 				setFMColorRed("FM019");
@@ -2343,6 +2362,7 @@ oCanvas.domReady(function () {
     	var fix_hx_left_queue_mask = [
     	    function(){
     	    	//Start of animation,reset all animation
+    	    	$(document).off('drain');
     	    	setFMColorGreen("FM014");
     	    	setFMColorGreen("FM017");
     	    	setFMColorGreen("FM019");
@@ -3124,8 +3144,9 @@ oCanvas.domReady(function () {
         setDefaultFMColor();
         //只显示重要的阀门和标签
         $(".fm_default_hide").attr("style","display:none;");
-        $("div#FM_group .fm_default_green").attr("style","display:block;");
-        $("div#FM_group .fm_default_red").attr("style","display:block;");
+        $(".fm_default_green").attr("style","display:block;");
+        $(".fm_default_red").attr("style","display:block;");
+        $(".fm_tag").removeClass("FMStyle");
 
         //右侧
         //清空单元格的内容
