@@ -102,8 +102,8 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(fg);
     var bg = canvas.display.image({
-        x: 390,
-        y: 129,
+        x: 374,
+        y: 130,
         height:1,
         width:1,
         image: "image/mc_bg2.png"
@@ -358,8 +358,8 @@ oCanvas.domReady(function () {
         if(SC02.full==1){
         	detail.width=650;
         	detail.height=500;
-        	bg.width=650;
-        	bg.height=450;
+        	bg.width=825;
+        	bg.height=493;
         	jtbg.width=650;
         	jtbg.height=500;
         	GD04.paused=1;
