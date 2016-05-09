@@ -1308,25 +1308,22 @@ oCanvas.domReady(function () {
 				GD0101.state = 3;
     			setTimeout(function(){
     				$(document).dequeue("restore_fm062_queue");
-    			},1000);
+    			},3000);
 			},
 			function() {
 				GD25.state = 3;
     			setTimeout(function(){
     				$(document).dequeue("restore_fm062_queue");
-    			},1000);
+    			},2000);
 			},
 			function() {
 				GD0102.state = 3;
     			setTimeout(function(){
     				$(document).dequeue("restore_fm062_queue");
-    			},1000);
+    			},2000);
 			},
 			function() {
 				GD05.state = 3;
-    			setTimeout(function(){
-    				$(document).dequeue("restore_fm062_queue");
-    			},1000);
 			}
         ];
     	$(document).queue("restore_fm062_queue",restore_fm062_queue);
@@ -1359,6 +1356,8 @@ oCanvas.domReady(function () {
 		$("#scheme").text("62#阀门恢复");
 		
 		//动画队列
+		$(document).off('drain');
+		
     	var fix_fm062_queue = [
 			function() {
 				$("#step_1").css('background','rgba(194,215,245,0.5)');
@@ -1376,6 +1375,7 @@ oCanvas.domReady(function () {
 		        GD0101.state = 2;
 				$(document).on('drain', function(){
 					setTimeout(function(){
+						$(document).off('drain');
 						$(document).dequeue("fix_fm062_queue");
 					},1000);
 				});
@@ -1397,6 +1397,7 @@ oCanvas.domReady(function () {
 				
 				$(document).on('drain', function(){
 					setTimeout(function(){
+						$(document).off('drain');
 						$(document).dequeue("fix_fm062_queue");
 					},1000);
 				});
@@ -1412,6 +1413,7 @@ oCanvas.domReady(function () {
 
 				$(document).on('drain', function(){
 					setTimeout(function(){
+						$(document).off('drain');
 						$(document).dequeue("fix_fm062_queue");
 					},1000);
 				});
@@ -1432,6 +1434,8 @@ oCanvas.domReady(function () {
     	var fix_fm062_queue_mask = [
 		    function(){
 		    	//Start of animation,reset all animation
+		    	$(document).off('drain');
+		    	
 		    	setFMColorGreen("FM09");
 		    	setFMColorGreen("FM064");
 				$(".table_content").css("background-color","#ffffff");
