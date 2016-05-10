@@ -74,7 +74,7 @@
     <jsp:include page="top.jsp" />
     <ol class="breadcrumb">
     <li><a href="main.jsp">动态演示</a></li>
-    <li class="active">旧系列工艺线</li>
+    <li class="active">老系列工艺线</li>
     </ol>
     <div id="myContent" style="overflow: auto">
         <div id="mainView" style="position: absolute;z-index: 1" >
