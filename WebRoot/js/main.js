@@ -298,6 +298,15 @@ oCanvas.domReady(function () {
         GDwidth:width_all,
         color:color_GD
     });
+    var GD00=createGD({
+        parent:canvas,
+        cells:[
+            {x_cell: 707 ,y_cell: 96},
+            {x_cell: 707 ,y_cell: 156}
+        ],
+        GDwidth:width_all,
+        color:color_GD
+    });
 
     var img1=canvas.display.image({
         x:692,
@@ -363,7 +372,7 @@ oCanvas.domReady(function () {
             height:'200px',opacity:'0'},'fast');
         $("#name_QS2").animate({
             height:'200px',opacity:'1'},'fast');
-        this.unbind("flash");
+        this.unbind("flash");        
 
     });
     var img2=canvas.display.image({
@@ -461,7 +470,7 @@ oCanvas.domReady(function () {
         this.unbind("flash");
         window.setTimeout(function(){
             GD12.paused=1;
-        },1200);
+        },600);
 
     });
     //V?????????
@@ -496,7 +505,7 @@ oCanvas.domReady(function () {
         this.unbind("flash");
         window.setTimeout(function(){
             GD15.paused=1;
-        },1200);
+        },600);
 
     });
 
@@ -530,9 +539,12 @@ oCanvas.domReady(function () {
             height:'200px',opacity:'1'},'fast');
         img4.unbind("flash");
 
-        window.setTimeout(function(){GD05.paused=1;
+        window.setTimeout(function(){
+        	GD05.paused=1;
             GD06.paused=1;
-            GD07.paused=1;},1200);
+//            GD07.paused=1;
+            }
+        ,2000);
 
 
     });
@@ -564,6 +576,12 @@ oCanvas.domReady(function () {
         $("#name_HHJ2").animate({
             height:'200px',opacity:'1'},'fast');
         img41.unbind("flash");
+        window.setTimeout(function(){
+//        	GD05.paused=1;
+//            GD06.paused=1;
+            GD07.paused=1;
+            }
+        ,1200);
 
     });
     //???????
@@ -775,7 +793,7 @@ oCanvas.domReady(function () {
         this.unbind("flash");
         window.setTimeout(function(){
             GD18.paused=1;
-            GD19.paused=1;
+//            GD19.paused=1;
         },1200);
 
     });
@@ -807,6 +825,10 @@ oCanvas.domReady(function () {
         $("#name_TC1").animate({
             height:'200px',opacity:'1'},'fast');
         this.unbind("flash");
+        window.setTimeout(function(){
+//            GD18.paused=1;
+            GD19.paused=1;
+        },2400);
 
     });
     var img9=canvas.display.image({
@@ -877,6 +899,7 @@ oCanvas.domReady(function () {
         this.paused=1;
     });
     canvas.addChild(GD15);
+    GD00.paused=1;
     GD01.paused=1;
     GD011.paused=1;
     GD22.paused=1;
@@ -884,7 +907,8 @@ oCanvas.domReady(function () {
 
 
     canvas.setLoop(function () {
-        GD01.advance();
+    	GD00.advance();
+    	GD01.advance();
         GD011.advance();
         GD02.advance();
         GD03.advance();
@@ -910,31 +934,52 @@ oCanvas.domReady(function () {
         GD23.advance();
         GD24.advance();
 
+        if(GD00.full==1){
+        	img11.trigger("flash");
+        }
         if(GD02.full==1){
             GD03.paused=1;
             GD04.paused=1;
         }
         if(GD04.full==1){
-            img4.trigger("flash");
+//            img4.trigger("flash");
             img41.trigger("flash");
         }
-        if(GD07.full==1){
+        if(GD03.full==1){
+            img4.trigger("flash");
+//            img41.trigger("flash");
+        }
+        if(GD06.full==1){
             img2.trigger("flash");
             img21.trigger("flash");
+//            img22.trigger("flash");
+        }
+        if(GD07.full==1){
+//            img2.trigger("flash");
+//            img21.trigger("flash");
             img22.trigger("flash");
         }
         if(GD09.full==1)
         {
             img5.trigger("flash");
+//            img3.trigger("flash");
+        }
+        if(GD12.full==1)
+        {
+//            img5.trigger("flash");
             img3.trigger("flash");
         }
 
         if(GD15.full==1){
             img9.trigger("flash");
         }
+        if(GD16.full==1){
+//            img8.trigger("flash");
+            img81.trigger("flash");
+        }
         if(GD17.full==1){
             img8.trigger("flash");
-            img81.trigger("flash");
+//            img81.trigger("flash");
         }
         if(GD19.full==1){
             img6.trigger("flash");
@@ -951,6 +996,7 @@ oCanvas.domReady(function () {
         }
         canvas.redraw();
     });
+    GD00.paused=1;
     GD01.paused=1;
     GD011.paused=1;
     GD02.paused=1;
@@ -1055,6 +1101,7 @@ oCanvas.domReady(function () {
         canvas.children[19].fill=color_GD;
         canvas.children[25].fill=color_GD;
         canvas.children[22].fill="rgba(1,1,1,0)";
+        GD00.init();
         GD01.init();
         GD011.init();
         GD02.init();
@@ -1081,7 +1128,8 @@ oCanvas.domReady(function () {
         GD23.init();
         GD24.init();
         img1.bind("flash",function(){
-            GD01.paused=1;
+        	GD00.paused=1;
+        	GD01.paused=1;
             GD011.paused=1;
             GD22.paused=1;
             GD02.paused=1;
