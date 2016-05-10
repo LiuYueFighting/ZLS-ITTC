@@ -327,21 +327,21 @@ oCanvas.domReady(function () {
         //$("#name_QS").css("display","none");
     }).bind("flash",function(){
         $("#name_QS").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QS").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QS").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QS").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QS").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
         window.setTimeout(function(){
             GD01.paused=1;
             GD22.paused=1;
             GD02.paused=1;
-        },1200);
+        },150);
 
     });
     var img11=canvas.display.image({
@@ -363,15 +363,15 @@ oCanvas.domReady(function () {
         //$("#name_QS2").css("display","none");
     }).bind("flash",function(){
         $("#name_QS2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QS2").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QS2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QS2").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QS2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");        
 
     });
@@ -393,20 +393,20 @@ oCanvas.domReady(function () {
         //$("#name_JJC1").css("display","none");
     }).bind("flash",function(){
         $("#name_JJC1").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_JJC1").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_JJC1").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_JJC1").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_JJC1").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
         window.setTimeout(function(){
             GD08.paused=1;
             GD09.paused=1;
-        },1200);
+        },150);
     });
     var img21=img2.clone({
         x:1049,
@@ -425,20 +425,20 @@ oCanvas.domReady(function () {
         //$("#name_JJC2").css("display","none");
     }).bind("flash",function(){
         $("#name_JJC2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_JJC2").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_JJC2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_JJC2").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_JJC2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
         window.setTimeout(function(){
             GD10.paused=1;
             GD11.paused=1;
-        },1200);
+        },150);
 
     });
     var img22=img2.clone({
@@ -458,15 +458,15 @@ oCanvas.domReady(function () {
         //$("#name_JJC3").css("display","none");
     }).bind("flash",function(){
         $("#name_JJC3").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_JJC3").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_JJC3").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_JJC3").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_JJC3").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
         window.setTimeout(function(){
             GD12.paused=1;
@@ -493,15 +493,15 @@ oCanvas.domReady(function () {
 
     }).bind("flash",function(){
         $("#name_VL").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_VL").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_VL").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_Vl").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_Vl").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
         window.setTimeout(function(){
             GD15.paused=1;
@@ -528,15 +528,15 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_HHJ").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_HHJ").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_HHJ").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_HHJ").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_HHJ").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         img4.unbind("flash");
 
         window.setTimeout(function(){
@@ -544,7 +544,7 @@ oCanvas.domReady(function () {
             GD06.paused=1;
 //            GD07.paused=1;
             }
-        ,2000);
+        ,500);
 
 
     });
@@ -566,22 +566,22 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_HHJ2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_HHJ2").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_HHJ2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_HHJ2").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_HHJ2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         img41.unbind("flash");
         window.setTimeout(function(){
 //        	GD05.paused=1;
 //            GD06.paused=1;
             GD07.paused=1;
             }
-        ,1200);
+        ,150);
 
     });
     //???????
@@ -603,20 +603,20 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_HX").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_HX").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_HX").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_HX").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_HX").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
         window.setTimeout(function(){
             GD13.paused=1;
             GD14.paused=1;
-        },1200);
+        },150);
 
     });
 
@@ -638,20 +638,20 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_QSC1").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QSC1").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QSC1").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QSC1").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QSC1").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
         window.setTimeout(function(){
             GD21.paused=1;
             GD23.paused=1;
-        },1200);
+        },150);
 
     });
     var img61=canvas.display.image({
@@ -672,15 +672,15 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_QSC2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QSC2").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QSC2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QSC2").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QSC2").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
     });
     var img62=canvas.display.image({
@@ -701,15 +701,15 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_QSC3").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QSC3").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QSC3").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QSC3").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QSC3").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
     });
     var img63=canvas.display.image({
@@ -730,19 +730,19 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_QSC4").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QSC4").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QSC4").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_QSC4").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_QSC4").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
         window.setTimeout(function(){
             GD24.paused=1;
-        },1200);
+        },150);
 
 
     });
@@ -781,20 +781,20 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_TC").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_TC").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_TC").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_TC").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_TC").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
         window.setTimeout(function(){
             GD18.paused=1;
 //            GD19.paused=1;
-        },1200);
+        },150);
 
     });
     var img81=canvas.display.image({
@@ -815,15 +815,15 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_TC1").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_TC1").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_TC1").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_TC1").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_TC1").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
         window.setTimeout(function(){
 //            GD18.paused=1;
@@ -849,20 +849,20 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("default");
     }).bind("flash",function(){
         $("#name_CY").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_CY").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_CY").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         $("#name_CY").animate({
-            height:'200px',opacity:'0'},'fast');
+            height:'50px',opacity:'0'},'fast');
         $("#name_CY").animate({
-            height:'200px',opacity:'1'},'fast');
+            height:'50px',opacity:'1'},'fast');
         this.unbind("flash");
         window.setTimeout(function(){
             GD16.paused=1;
             GD17.paused=1;
-        },1200);
+        },150);
 
     });
     var img10=canvas.display.image({
@@ -1284,29 +1284,29 @@ oCanvas.domReady(function () {
         GD24.init();
         img1.bind("flash",function(){
             $("#name_QS").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_QS").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_QS").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_QS").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_QS").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
         });
 
         img2.bind("flash",function(){
             $("#name_JJC1").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_JJC1").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_JJC1").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_JJC1").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_JJC1").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
             GD08.paused=1;
             GD09.paused=1;
@@ -1315,15 +1315,15 @@ oCanvas.domReady(function () {
 
         img21.bind("flash",function(){
             $("#name_JJC2").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_JJC2").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_JJC2").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_JJC2").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_JJC2").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
 
             GD10.paused=1;
@@ -1332,15 +1332,15 @@ oCanvas.domReady(function () {
 
         img22.bind("flash",function(){
             $("#name_JJC3").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_JJC3").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_JJC3").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_JJC3").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_JJC3").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
 
             GD12.paused=1;
@@ -1348,15 +1348,15 @@ oCanvas.domReady(function () {
 
         img3.bind("flash",function(){
             $("#name_VL").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_VL").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_VL").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_Vl").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_Vl").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
 
             GD15.paused=1;
@@ -1364,15 +1364,15 @@ oCanvas.domReady(function () {
 
         img4.bind("flash",function(){
             $("#name_HHJ").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_HHJ").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_HHJ").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_HHJ").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_HHJ").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             img4.unbind("flash");
 
             GD05.paused=1;
@@ -1382,15 +1382,15 @@ oCanvas.domReady(function () {
 
         img5.bind("flash",function(){
             $("#name_HX").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_HX").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_HX").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_HX").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_HX").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
 
             GD13.paused=1;
@@ -1399,71 +1399,71 @@ oCanvas.domReady(function () {
 
         img6.bind("flash",function(){
             $("#name_QSC1").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_QSC1").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_QSC1").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_QSC1").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_QSC1").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
         });
 
         img61.bind("flash",function(){
             $("#name_QSC2").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_QSC2").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_QSC2").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_QSC2").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_QSC2").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
         });
 
         img62.bind("flash",function(){
             $("#name_QSC3").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_QSC3").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_QSC3").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_QSC3").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_QSC3").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
         });
 
         img63.bind("flash",function(){
             $("#name_QSC4").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_QSC4").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_QSC4").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_QSC4").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_QSC4").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
         });
 
         img8.bind("flash",function(){
             $("#name_TC").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_TC").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_TC").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_TC").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_TC").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
 
             GD18.paused=1;
@@ -1472,15 +1472,15 @@ oCanvas.domReady(function () {
 
         img9.bind("flash",function(){
             $("#name_CY").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_CY").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_CY").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             $("#name_CY").animate({
-                height:'200px',opacity:'0'},'fast');
+                height:'50px',opacity:'0'},'fast');
             $("#name_CY").animate({
-                height:'200px',opacity:'1'},'fast');
+                height:'50px',opacity:'1'},'fast');
             this.unbind("flash");
 
             GD16.paused=1;
