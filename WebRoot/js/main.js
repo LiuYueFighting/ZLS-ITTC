@@ -320,7 +320,7 @@ oCanvas.domReady(function () {
     img1.bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
         //$("#name_QS").css("display","inline");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
         this.shadow="0 0 0px #eee";
@@ -355,7 +355,7 @@ oCanvas.domReady(function () {
     });
     img11.bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_QS2").css("display","inline");
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
@@ -385,7 +385,7 @@ oCanvas.domReady(function () {
         window.location.href="JJC.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 20px #eee";
         //$("#name_JJC1").css("display","inline");
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
@@ -417,7 +417,7 @@ oCanvas.domReady(function () {
         window.location.href="JJC.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 20px #eee";
         //$("#name_JJC2").css("display","inline");
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
@@ -450,7 +450,7 @@ oCanvas.domReady(function () {
         window.location.href="JJC.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 20px #eee";
         //$("#name_JJC3").css("display","inline");
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
@@ -484,7 +484,7 @@ oCanvas.domReady(function () {
         window.location.href="VL.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_VL").css("display","inline");
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
@@ -520,7 +520,7 @@ oCanvas.domReady(function () {
         window.location.href="hhj.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_HHJ").css("display","inline");
     }).bind("mouseleave",function(){
         //$("#name_HHJ").css("display","none");
@@ -558,7 +558,7 @@ oCanvas.domReady(function () {
         window.location.href="hhj.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_HHJ2").css("display","inline");
     }).bind("mouseleave",function(){
         //$("#name_HHJ2").css("display","none");
@@ -595,7 +595,7 @@ oCanvas.domReady(function () {
         window.location.href="hx.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_HX").css("display","inline");
     }).bind("mouseleave",function(){
         //$("#name_HX").css("display","none");
@@ -630,7 +630,7 @@ oCanvas.domReady(function () {
         window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_QSC1").css("display","inline");
     }).bind("mouseleave",function(){
         //$("#name_QSC1").css("display","none");
@@ -664,7 +664,7 @@ oCanvas.domReady(function () {
         window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_QSC2").css("display","inline");
     }).bind("mouseleave",function(){
         //$("#name_QSC2").css("display","none");
@@ -693,7 +693,7 @@ oCanvas.domReady(function () {
         window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_QSC3").css("display","inline");
     }).bind("mouseleave",function(){
         //$("#name_QSC3").css("display","none");
@@ -722,7 +722,7 @@ oCanvas.domReady(function () {
         window.location.href="qsc.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_QSC4").css("display","inline");
     }).bind("mouseleave",function(){
         //$("#name_QSC4").css("display","none");
@@ -755,7 +755,7 @@ oCanvas.domReady(function () {
     canvas.addChild(img7);
     img7.bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_YC").css("display","inline");
     }).bind("mouseleave",function(){
         //$("#name_YC").css("display","none");
@@ -773,7 +773,7 @@ oCanvas.domReady(function () {
         window.location.href="hxt.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_TC").css("display","inline");
     }).bind("mouseleave",function(){
         this.shadow="0 0 0px #eee";
@@ -807,7 +807,7 @@ oCanvas.domReady(function () {
         window.location.href="hxt.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_TC1").css("display","inline");
     }).bind("mouseleave",function(){
         //$("#name_TC1").css("display","none");
@@ -841,7 +841,7 @@ oCanvas.domReady(function () {
         window.location.href="cy.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 40px #eee";
         //$("#name_CY").css("display","inline");
     }).bind("mouseleave",function(){
         //$("#name_CY").css("display","none");
@@ -875,7 +875,7 @@ oCanvas.domReady(function () {
         window.location.href="cy.jsp";
     }).bind("mouseenter",function(){
         canvas.mouse.cursor("pointer");
-        this.shadow="0 0 10px #eee";
+        this.shadow="0 0 30px #eee";
         //$("#name_CYC").css("display","inline");
     }).bind("mouseleave",function(){
         //$("#name_CYC").css("display","none");
@@ -900,6 +900,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(GD15);
     GD00.paused=1;
+    img1.trigger("flash");
     GD01.paused=1;
     GD011.paused=1;
     GD22.paused=1;
@@ -997,6 +998,7 @@ oCanvas.domReady(function () {
         canvas.redraw();
     });
     GD00.paused=1;
+    img1.trigger("flash");
     GD01.paused=1;
     GD011.paused=1;
     GD02.paused=1;
@@ -1129,6 +1131,7 @@ oCanvas.domReady(function () {
         GD24.init();
         img1.bind("flash",function(){
         	GD00.paused=1;
+        	img1.trigger("flash");
         	GD01.paused=1;
             GD011.paused=1;
             GD22.paused=1;
@@ -1198,6 +1201,7 @@ oCanvas.domReady(function () {
             GD16.paused=1;
             GD17.paused=1;
         });
+        img1.trigger("flash");
         GD01.paused=1;
         GD011.paused=1;
         GD22.paused=1;
