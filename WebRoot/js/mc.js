@@ -8,7 +8,7 @@ oCanvas.domReady(function () {
 
     var canvas = oCanvas.create({
         canvas: "#canvas_QS_mc",
-        background: "#eeeeef",
+        background: "#ccc",
         fps: 25
     });
     var width_all=30,
@@ -97,7 +97,7 @@ oCanvas.domReady(function () {
         y: 0,
 //        height:1,
 //        width:1,
-        image: "image/mc_test2.png"
+        image: "image/mc_a.png"
     });
     canvas.addChild(fg2);
 
@@ -106,7 +106,7 @@ oCanvas.domReady(function () {
         y: 0,
 //        height:100,
 //        width:100,
-        image: "image/mc_test.png"
+        image: "image/mc.png"
     });
     canvas.addChild(fg);
     
