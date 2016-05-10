@@ -1268,71 +1268,68 @@ oCanvas.domReady(function () {
  		
         $('.table_content').unbind();
 		//动画队列
+    	function next(delay){
+			setTimeout(function(){
+	    		$(document).dequeue("restore_fm062_queue");
+	    	},delay);
+		}
+    	
     	var restore_fm062_queue = [
 			function() {
 				$("#step_1").css('background','rgba(194,215,245,0.5)');
-				setTimeout(function(){
-		    		$(document).dequeue("restore_fm062_queue");
-		    	},1000);
+				next(1000);
 			},
 			function() {
 				setFMColorGreen("FM062");
-		    	setTimeout(function(){
-		    		$(document).dequeue("restore_fm062_queue");
-		    	},1000);
+				next(1000);
 			},
 			function() {
 				$("#step_2").css('background','rgba(194,215,245,0.5)');
-		    	setTimeout(function(){
-		    		$(document).dequeue("restore_fm062_queue");
-		    	},1000);
+				next(1000);
 			},
 			function(){
 				setFMColorGreen("FM064");
-		    	setTimeout(function(){
-		    		$(document).dequeue("restore_fm062_queue");
-		    	},1000);
+				next(1000);
 			},
 			function() {
 				$("#step_3").css('background','rgba(194,215,245,0.5)');
-    			setTimeout(function(){
-    				$(document).dequeue("restore_fm062_queue");
-    			},1000);
+				next(1000);
 			},
 			function() {
 				setFMColorGreen("FM09");
-				setTimeout(function(){
-					$(document).dequeue("restore_fm062_queue");
-				},1000);
+				next(1000);
 			},
 			function() {
 				GD0101.state = 3;
-    			setTimeout(function(){
-    				$(document).dequeue("restore_fm062_queue");
-    			},3000);
+				$(document).on('overflow', function(){
+					$(document).off('overflow');
+					next(1000);
+				});
 			},
 			function() {
 				GD25.state = 3;
-    			setTimeout(function(){
-    				$(document).dequeue("restore_fm062_queue");
-    			},2000);
+				$(document).on('overflow', function(){
+					$(document).off('overflow');
+					next(1000);
+				});
 			},
 			function() {
 				GD0102.state = 3;
-    			setTimeout(function(){
-    				$(document).dequeue("restore_fm062_queue");
-    			},2000);
+				$(document).on('overflow', function(){
+					$(document).off('overflow');
+					next(1000);
+				});
 			},
 			function() {
 				GD05.state = 3;
 			}
         ];
     	$(document).queue("restore_fm062_queue",restore_fm062_queue);
-    	$(document).dequeue("restore_fm062_queue");
+    	initReset();
     	
-    	function playbackReset(){
+    	function initReset(){
     		//Start of animation,reset all animation
-    		$(document).off('drain');
+    		$(document).off('overflow');
     		
     		setFMColorRed("FM09");
     		setFMColorRed("FM064");
@@ -1351,7 +1348,7 @@ oCanvas.domReady(function () {
     	$('#step_1').click(function(){
     		$(document).clearQueue("restore_fm062_queue");
     		$(document).queue("restore_fm062_queue",restore_fm062_queue);
-    		playbackReset();
+    		initReset();
     	});
     	
     	$('#step_2').click(function(){
@@ -1365,7 +1362,7 @@ oCanvas.domReady(function () {
 				},1000);
     		});
     		$(document).queue("restore_fm062_queue",tempQueue);
-    		playbackReset();
+    		initReset();
     	});
     	
     	$('#step_3').click(function(){
@@ -1381,7 +1378,7 @@ oCanvas.domReady(function () {
 				},1000);
     		});
     		$(document).queue("restore_fm062_queue",tempQueue);
-    		playbackReset();
+    		initReset();
     	});
         
  		$("div.hiden").show();

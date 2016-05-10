@@ -73,7 +73,7 @@
 <body>
     <jsp:include page="top.jsp" />
     <ol class="breadcrumb">
-    <li><a href="main.jsp">动态演示</a></li>
+    <li><a href="main.jsp">首页</a></li>
     <li class="active">老系列工艺线</li>
     </ol>
     <div id="myContent" style="overflow: auto">

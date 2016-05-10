@@ -17,12 +17,12 @@
    
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/top_down.css">
-    <link rel="stylesheet" href="css/breadcrumb.css">
     <link rel="stylesheet" href="css/swich.css" media="screen" type="text/css">
     <link rel="stylesheet" href="css/FM&GZW_name.css">
     <link rel="stylesheet" href="css/flat/zebra_dialog.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/breadcrumb.css">
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 	<link rel="stylesheet" type="text/css" href="style/myeasyui.css" /> 
 	<link rel="stylesheet" type="text/css" href="css/equiment_fix.css" />       
@@ -41,7 +41,7 @@
 <body>
     <jsp:include page="top.jsp" />
     <ol class="breadcrumb">
-    <li><a href="main.jsp">设备检修</a></li>
+    <li><a href="main.jsp">首页</a></li>
     <li class="active">构筑物维修</li>
     </ol>
 <div id="myPage">
