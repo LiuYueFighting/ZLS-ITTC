@@ -294,24 +294,19 @@ div.menuSecond{
 	        		<div class="menuSecond" id="import">导入</div>
     	    		<!-- <div class="menuSecond" id="template"><a href="download/OutStat.xls" style="height:50px">模板</a></div> -->
 				</div>
-				<div id="tab_export" style="display:none">
-					<form action="${pageContext.request.contextPath}/importDataAnalysis"
-						name="uploadForm" enctype="multipart/form-data" method="post">
-						<input id="upload" type="file" name="upload" style="display:none" onchange="fakeUpload.value=value" /> 
-						<input id="btn-select" type="button" class="btn btn-primary" value="选择文件" 
-							onclick="javascript:upload.click()"
-							style="width:134px; font-size:18px; background-color:rgba(0, 51, 255, 0.8)" /><br /> 
-						<input id="fakeUpload" name="fakeUpload" type="text" 
-							ondblclick="javascript:upload.click()"
-							style="width:134px; height:35px; border:1px solid #95B8E7" /><br />
-						<input id="btn-import" class="btn btn-primary"
-							onclick="javascript:import2DB();fakeUpload.value='';"
-							style="font-size:18px; width:65px; background-color:rgba(0, 51, 255, 0.8)" value="确定" />
-						<input id="btn-cancel" class="btn btn-primary"
-							style="font-size:18px; width:65px; background-color:rgba(0, 51, 255, 0.8)" value="取消"/>
-					</form>
-				</div>
-			</div>
+				<div id="tab_Import" class="easyui-dialog" data-options="closed:true"
+					style="align:center;width:500px;height:200px;padding:10px 60px 20px 60px">
+					<form id="frmImportEdit" name="uploadForm" enctype="multipart/form-data" method="post">
+						<br>
+						<button type="button"  class="btn btn-primary" onclick=upload.click()>
+					             <span class="fa fa-folder-open" style="font-size: 14px; "></span>浏览
+					   </button>
+						<input type=file name="upload" id="upload" style="display: none;" onchange="fakeUpload.value=value" /> 
+						<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click()
+							style="width: 260px; height: 35px; border: 1px solid #95B8E7;">						
+					</form>	
+				</div><!-- tab_Import -->
+			
 		</div>
 		<center>
 			<div id="tableEdit" class="easyui-dialog" data-options="closed:true">
@@ -464,6 +459,7 @@ div.menuSecond{
 					</div><!-- tabSearchForExport -->
 				</div><!-- searchAreaForExport -->
 		</center>
+		<div id="errMsg" name="errMsg" style="display: none"></div>
 	</div>
 	<jsp:include page="down.jsp" />
 </body>

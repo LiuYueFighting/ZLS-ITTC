@@ -181,7 +181,8 @@ $(document).ready(function() {
 		showSearchforExportForm();
 	});
 	$('#import').click(function() {
-		$('#tab_export').css('display','block');
+//		$('#tab_export').css('display','block');
+		showImportPanel();
 	});
 	//$('#template').click(function() {
 	//	$('#download').click();
@@ -193,8 +194,42 @@ $(document).ready(function() {
 
 function hideImportPanel() {
 	$('#import').text('导入');
-	$('#tab_export').css('display','none');
+//	$('#tab_export').css('display','none');
+	$("#frmImportEdit").form('clear');
+	$('#tab_Import').dialog('close');
 	//alert($('#tab_export').css('display'));
+}
+
+function showImportPanel() {
+	$('#import').text('导入');
+//	$('#tab_export').css('display','none');
+	//alert($('#tab_export').css('display'));
+ 
+	$("#tab_Import").dialog({
+		modal : true,// 模式窗口
+		title : '导入文件操作',
+		iconCls : 'icon-redo',
+		closed:false,
+		buttons : [ {
+			text : '确认',
+			handler : function() {
+				// 进行表单字段验证，当全部字段都有效时返回true和validatebox一起使用
+				if ($('#frmImportEdit').form('validate')) {
+					import2DB();
+					// 关闭窗口
+					hideImportPanel();
+				} else {
+					$.messager.alert('验证', '项目信息有误或不完整', 'error');
+				}
+			}
+		}, {
+			text : '取消',
+			handler : function() {
+				hideImportPanel();				
+			}
+		} ]
+
+	});
 }
 
 var deltr = function(index, event) {
@@ -1401,17 +1436,17 @@ function drawImage(){
                 }
             },
             buttons: [{
-            	type: 'day',
+            	type: 'week',
             	count: 1,
-            	text: '1天'
+            	text: '1周'
             },{
-            	type: 'day',
-            	count: 3,
-            	text: '3天'
+            	type: 'week',
+            	count: 2,
+            	text: '2周'
             },{
     	    	type: 'week',
-    	    	count: 1,
-    	    	text: '1周'
+    	    	count: 3,
+    	    	text: '3周'
     			}, {
     			type: 'month',
     			count: 1,
@@ -1436,7 +1471,7 @@ function drawImage(){
                 color: 'red',
                 fontWeight: 'bold'
             },
-            selected: 2
+            selected: 0
         },
         scrollbar: {
             barBackgroundColor: 'gray',
@@ -1681,17 +1716,17 @@ function drawImage(){
             }
         },
         buttons: [{
-        	type: 'day',
+        	type: 'week',
         	count: 1,
-        	text: '1天'
+        	text: '1周'
         },{
-        	type: 'day',
-        	count: 3,
-        	text: '3天'
+        	type: 'week',
+        	count: 2,
+        	text: '2周'
         },{
 	    	type: 'week',
-	    	count: 1,
-	    	text: '1周'
+	    	count: 3,
+	    	text: '3周'
 			}, {
 			type: 'month',
 			count: 1,
@@ -1716,7 +1751,7 @@ function drawImage(){
             color: 'red',
             fontWeight: 'bold'
         },
-        selected: 2
+        selected: 0
     },
 	scrollbar: {
 		barBackgroundColor: 'gray',
@@ -1981,17 +2016,17 @@ function drawImage(){
                 }
             },
             buttons: [{
-            	type: 'day',
+            	type: 'week',
             	count: 1,
-            	text: '1天'
+            	text: '1周'
             },{
-            	type: 'day',
-            	count: 3,
-            	text: '3天'
+            	type: 'week',
+            	count: 2,
+            	text: '2周'
             },{
     	    	type: 'week',
-    	    	count: 1,
-    	    	text: '1周'
+    	    	count: 3,
+    	    	text: '3周'
     			}, {
     			type: 'month',
     			count: 1,
@@ -2016,7 +2051,7 @@ function drawImage(){
                 color: 'red',
                 fontWeight: 'bold'
             },
-            selected: 2
+            selected: 0
         },
 		scrollbar: {
 			barBackgroundColor: 'gray',

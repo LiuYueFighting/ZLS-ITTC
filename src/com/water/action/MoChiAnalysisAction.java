@@ -28,6 +28,7 @@ import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.water.beans.DataAnalysis;
 import com.water.beans.MoChiAnalysis;
 import com.water.service.MoChiAnalysisService;
 //import com.water.util.JsonTreeData;
@@ -435,7 +436,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getInPress()),formatBody));
 						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOutPress()),formatBody));
 						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getDiffPress()),formatBody));
-						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getInFlow()),formatBody));
+						sheet.addCell(new Label(5,j,Long.toString(list.get(i).getInFlow()),formatBody));
 						j=j+1;
 					}else{ //新建个sheet
 						j=2;
@@ -534,11 +535,12 @@ public class MoChiAnalysisAction extends ActionSupport{
 				}
 				String poolIDTemp=sheet.getCell(1,2).getContents();
 				String sql="delete from MoChiAnalysis where PoolID like '%"+poolIDTemp+"'";
-				sql+= " and Convert(varchar,t,120)  like '%"+day+"%'";
+				sql+= " and Convert(varchar,t,120)  like '%"+sheetName+"%'";
+				System.out.println("sql:"+sql);
 				// 直接覆盖
 				int deleteResult = moChiAnalysisService.bulkUpadte(sql);
 				System.out.println("受影响结果："+deleteResult);
-				for(int i=2;i<sheet.getRows();i++){ //共11列数据,从第三行开始
+				for(int i=2;i<sheet.getRows();i++){ //从第三行开始
 
 					if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
 					{	
@@ -551,24 +553,16 @@ public class MoChiAnalysisAction extends ActionSupport{
 							int hour = Integer.parseInt(sheet.getCell(0,i).getContents());
 							Date datetime = new Date();
 							datetime.setTime(day.getTime()+hour*3600*1000);
-							dataTemp.setT(datetime);							
-						}catch(Exception e){
-							e.printStackTrace();
-						}
-						if(sheet.getCell(2,i).getContents() == null ||
-								sheet.getCell(3,i).getContents() == null ||
-								sheet.getCell(4,i).getContents() == null ||
-								sheet.getCell(5,i).getContents() == null)
-							operateSuccess = false;
-						else {
-							dataTemp.setPoolID(sheet.getCell(1,i).getContents());						
+							dataTemp.setT(datetime);					
+							dataTemp.setPoolID(sheet.getCell(1,i).getContents());
 							dataTemp.setInPress(Double.parseDouble(sheet.getCell(2,i).getContents()));
 							dataTemp.setOutPress(Double.parseDouble(sheet.getCell(3,i).getContents()));
 							dataTemp.setDiffPress(Double.parseDouble(sheet.getCell(4,i).getContents()));
-							dataTemp.setInFlow(Long.parseLong(sheet.getCell(5,i).getContents()));
+							dataTemp.setInFlow(Math.round(Double.parseDouble(sheet.getCell(5,i).getContents())));
 							operateSuccess=(moChiAnalysisService.addMoChiAnalysis(dataTemp)>0);	//添加到数据库
+						}catch(Exception e){
+							e.printStackTrace();
 						}
-						
 					}
 				} //for
 				workBook.close(); //关闭
@@ -614,10 +608,10 @@ public class MoChiAnalysisAction extends ActionSupport{
 			}
 			String poolIDTemp=sheet.getCell(1,2).getContents();
 			String sql="from MoChiAnalysis where 1=1 ";
-			sql+= "and Convert(varchar,t,120) like '%"+day+"%'";
+			sql+= "and Convert(varchar,t,120) like '%"+sheetName+"%'";
 			sql+=" and PoolID like '%"+poolIDTemp+"'";
 			List<MoChiAnalysis> list = moChiAnalysisService.findBySql(sql);
-			System.out.println(list.size());
+			System.out.println("sql:"+sql+",result:"+list.size());
 			if(null == list||list.isEmpty()){
 				errMsg="";
 				operateSuccess=true;
@@ -630,7 +624,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 			errMsg = "请选择上传文件！";
 			operateSuccess=false;
 		}
-		System.out.println(errMsg);
+		System.out.println("errMsg:"+errMsg);
 		ServletActionContext.getServletContext().setAttribute("errorMsg",errMsg);
 		return SUCCESS;
 	}

@@ -584,7 +584,7 @@ public class DataAnalysisAction extends ActionSupport{
 				}
 				String poolIDTemp=sheet.getCell(1,2).getContents();
 				String sql="delete from DataAnalysis where PoolID like '%"+poolIDTemp+"'";
-				sql+= " and Convert(varchar,t,120)  like '%"+day+"%'";
+				sql+= " and Convert(varchar,t,120)  like '%"+sheetName+"%'";
 				// 直接覆盖
 				int deleteResult = dataAnalysisService.bulkUpadte(sql);
 				System.out.println("受影响结果："+deleteResult);
@@ -602,20 +602,21 @@ public class DataAnalysisAction extends ActionSupport{
 							Date datetime = new Date();
 							datetime.setTime(day.getTime()+hour*3600*1000);
 							dataTemp.setT(datetime);							
+						
+							dataTemp.setPoolID(sheet.getCell(1,i).getContents());						
+							dataTemp.setInV(Double.parseDouble(sheet.getCell(2,i).getContents()));
+							dataTemp.setOutV(Double.parseDouble(sheet.getCell(3,i).getContents()));
+							dataTemp.setHXOutV(Double.parseDouble(sheet.getCell(4,i).getContents()));
+							dataTemp.setLCOutV(Double.parseDouble(sheet.getCell(5,i).getContents()));
+							dataTemp.setTCOutV(Double.parseDouble(sheet.getCell(6,i).getContents()));
+							dataTemp.setJJOutV(Double.parseDouble(sheet.getCell(7,i).getContents()));
+							dataTemp.setHLInV(Double.parseDouble(sheet.getCell(8,i).getContents()));
+							dataTemp.setStorage(Double.parseDouble(sheet.getCell(9,i).getContents()));
+							dataTemp.setPreH(Double.parseDouble(sheet.getCell(10,i).getContents()));
+							operateSuccess=(dataAnalysisService.addDataAnalysis(dataTemp)>0);	//添加到数据库
 						}catch(Exception e){
 							e.printStackTrace();
 						}
-						dataTemp.setPoolID(sheet.getCell(1,i).getContents());						
-						dataTemp.setInV(Double.parseDouble(sheet.getCell(2,i).getContents()));
-						dataTemp.setOutV(Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setHXOutV(Double.parseDouble(sheet.getCell(4,i).getContents()));
-						dataTemp.setLCOutV(Double.parseDouble(sheet.getCell(5,i).getContents()));
-						dataTemp.setTCOutV(Double.parseDouble(sheet.getCell(6,i).getContents()));
-						dataTemp.setJJOutV(Double.parseDouble(sheet.getCell(7,i).getContents()));
-						dataTemp.setHLInV(Double.parseDouble(sheet.getCell(8,i).getContents()));
-						dataTemp.setStorage(Double.parseDouble(sheet.getCell(9,i).getContents()));
-						dataTemp.setPreH(Double.parseDouble(sheet.getCell(10,i).getContents()));
-						operateSuccess=(dataAnalysisService.addDataAnalysis(dataTemp)>0);	//添加到数据库
 					}
 				} //for
 				workBook.close(); //关闭
@@ -661,10 +662,10 @@ public class DataAnalysisAction extends ActionSupport{
 			}
 			String poolIDTemp=sheet.getCell(1,2).getContents();
 			String sql="from DataAnalysis where 1=1 ";
-			sql+= "and Convert(varchar,t,120) like '%"+day+"%'";
+			sql+= "and Convert(varchar,t,120) like '%"+sheetName+"%'";
 			sql+=" and PoolID like '%"+poolIDTemp+"'";
 			List<DataAnalysis> list = dataAnalysisService.findBySql(sql);
-			System.out.println(list.size());
+			System.out.println("sql:"+sql+",result:"+list.size());
 			if(null == list||list.isEmpty()){
 				errMsg="";
 				operateSuccess=true;

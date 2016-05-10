@@ -322,24 +322,19 @@ text-align: center;
         			<div class="menuSecond" id="import">导入</div>
         			<!-- <div class="menuSecond" id="template"><a href="download/MoChiAnalysis.xls" style="height:50px">模板</a></div> -->
 				</div><!-- icon -->
-					
-				<div id="tab_export" style="display:none">
-					<form action="${pageContext.request.contextPath}/importMoChiAnalysis"
-						name="uploadForm" enctype="multipart/form-data" method="post">
-						<input type=file name="upload" id="upload" style="display: none;"
-							onchange="fakeUpload.value=value" /> 
-						<input id="btn-select" type=button  class="btn btn-primary" value="选择文件" onclick=upload.click()
-							style="width: 134px; font-size: 18px; background-color:rgba(0, 51, 255, 0.8)" /><br /> 
+				
+				<div id="tab_Import" class="easyui-dialog" data-options="closed:true"
+					style="align:center;width:500px;height:200px;padding:10px 60px 20px 60px">
+					<form id="frmImportEdit" name="uploadForm" enctype="multipart/form-data" method="post">
+						<br>
+						<button type="button"  class="btn btn-primary" onclick=upload.click()>
+					             <span class="fa fa-folder-open" style="font-size: 14px; "></span>浏览
+					   </button>
+						<input type=file name="upload" id="upload" style="display: none;" onchange="fakeUpload.value=value" /> 
 						<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click()
-							style="width: 134px; height: 35px; border: 1px solid #95B8E7;" />
-						<br />
-						<input id="btn-import" class="btn btn-primary"
-							style="font-size: 18px; width: 65px;  background-color:rgba(0, 51, 255, 0.8)"" value="确定"
-							onclick="javascript:import2DB();fakeUpload.value='';" />
-						<input id="btn-cancel" class="btn btn-primary"
-							style="font-size: 18px; width: 65px;  background-color:rgba(0, 51, 255, 0.8)"" value="取消"/>
+							style="width: 260px; height: 35px; border: 1px solid #95B8E7;">						
 					</form>	
-				</div><!-- tabexport -->
+				</div><!-- tab_Import -->
 				
 			</div><!-- rightContainer -->
 			<center>
