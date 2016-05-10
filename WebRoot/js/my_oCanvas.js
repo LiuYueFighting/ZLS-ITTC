@@ -894,6 +894,7 @@ var constructor_gd1 = function (settings, core) {
         		if(this.endIndex==this.cells.length-1){
         			this.state=1;
         			this.endHeight=-1;
+        			$(document).trigger('overflow');
         		}
         		else{
         			 this.deta_x = this.cells[this.endIndex + 1].x_cell - this.cells[this.endIndex].x_cell;

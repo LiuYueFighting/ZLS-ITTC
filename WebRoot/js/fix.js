@@ -1978,11 +1978,12 @@ oCanvas.domReady(function () {
     	
     	$(document).queue("fix_hx_right_queue",fix_hx_right_queue);
 //    	$(document).dequeue("fix_hx_right_queue");
-    	next(1000);
+    	initReset();
     	
-    	function playbackReset(){
+    	function initReset(){
     		//Start of animation,reset all animation
     		$(document).off('drain');
+    		$(document).off('overflow');
     		setFMColorGreen("FM016");
     		setFMColorGreen("FM018");
     		setFMColorGreen("FM019");
@@ -1998,7 +1999,7 @@ oCanvas.domReady(function () {
     	$('#step_1,#step_1_result').click(function(){
     		$(document).clearQueue("fix_hx_right_queue");
     		$(document).queue("fix_hx_right_queue",fix_hx_right_queue);
-    		playbackReset();
+    		initReset();
     	});
     	
     	$('#step_2,#step_2_result').click(function(){
@@ -2013,11 +2014,10 @@ oCanvas.domReady(function () {
     		});
     		$(document).queue("fix_hx_right_queue",tempQueue);
     			
-    		playbackReset();
+    		initReset();
     	});
     	
-    	
-    	$('#step_3,#step_3_result,#step_4,#step_4_result,#step_5,#step_5_result').click(function(){
+    	$('#step_3,#step_3_result').click(function(){
     		$(document).clearQueue("fix_hx_right_queue");
     		var tempQueue = fix_hx_right_queue.slice(0);
     		tempQueue.splice(0,5,function(){
@@ -2029,7 +2029,44 @@ oCanvas.domReady(function () {
 		    	next(1000);
     		});
     		$(document).queue("fix_hx_right_queue",tempQueue);
-    		playbackReset();
+    		initReset();
+    	});
+    	
+    	$('#step_4,#step_4_result').click(function(){
+    		$(document).clearQueue("fix_hx_right_queue");
+    		var tempQueue = fix_hx_right_queue.slice(0);
+    		tempQueue.splice(0,8,function(){
+    			setFMColorRed("FM016");
+    			setFMColorRed("FM018");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+    			GD11.state = 0;
+		    	GD1001.state = 0;
+		    	GD30.state = 0;
+		    	next(1000);
+    		});
+    		$(document).queue("fix_hx_right_queue",tempQueue);
+    		initReset();
+    	});
+    	
+    	$('#step_5,#step_5_result').click(function(){
+    		$(document).clearQueue("fix_hx_right_queue");
+    		var tempQueue = fix_hx_right_queue.slice(0);
+    		tempQueue.splice(0,9,function(){
+    			setFMColorRed("FM016");
+    			setFMColorRed("FM018");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+    			GD11.state=0;
+		    	GD1001.state=0;
+		    	GD30.state = 0;
+		    	next(1000);
+    		});
+    		$(document).queue("fix_hx_right_queue",tempQueue);
+    		initReset();
     	});
     	
     	$('#step_6,#step_6_result').click(function(){
@@ -2049,12 +2086,18 @@ oCanvas.domReady(function () {
 		    	next(1000);
     		});
     		$(document).queue("fix_hx_right_queue",tempQueue);
-    		playbackReset();
+    		initReset();
     	});
     }
     
     function restore_hx_right(){
-    	
+        $(".hiden").show();
+		hideAllFM();
+		
+        $("#WFM016").addClass("FMStyle");
+        $("#WFM018").addClass("FMStyle");
+        $("#WFM019").addClass("FMStyle");
+        
     	$("#name_HX").css('color','#283a45');
     	$("#name_HX").css('background-color','rgba(255,255,255,0.5)');
     	//静态部分
@@ -2062,10 +2105,6 @@ oCanvas.domReady(function () {
     	$("#init_stat").html('东侧阀门恢复<span class="caret"></span>');
         /*$(".table_line").attr("style","text-align:left");*/
         $("#fix_head").html("东侧虹吸滤池闸门改造配合<br>方案");
-        
-/*      setFMColorGreen("FM016");
-        setFMColorGreen("FM018");
-        setFMColorGreen("FM019");*/
         
         $(".table_content").css("background-color","#ffffff");
         var todolist = [
@@ -2083,53 +2122,198 @@ oCanvas.domReady(function () {
 	        $("#step_" + offset + "_result").html(todolist[i].result);
 		}
         
-//    	$("#scheme_extra").text("西侧维修");
-//    	document.getElementById("scheme_extra").onclick=function(){
-//    		fix_hx_left();
-//    	}
-//    	$("#scheme").text("东侧维修");
-//    	document.getElementById("scheme").onclick=function(){
-//    		fix_hx_right();
-//    	}
     	document.getElementById("export").href="download/EAST_HX_RECOVER.doc";
     	$("#export").text("生成方案");
     	$("#reset").text("重置");
     	$('.table_content').unbind();
-		//动态部分
-    	//计时器控制阀门颜色和对应维修步骤变化情况
-    	window.setTimeout(function(){              
-    		setFMColorGreen("FM019");
-    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-         },300);
-        window.setTimeout(function(){              
-        	setFMColorGreen("FM018");
-    		document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-         },1300);
-        window.setTimeout(function(){              
-        	setFMColorGreen("FM016");
-        	document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-        	GD1001.state=3;
-        	GD11.state=3;       	
-         },2000);
-        window.setTimeout(function(){                     	
-        	GD30.state=3;   
-         },5300);
-        window.setTimeout(function(){               
-        	GD141.state=3;
-         },7300);
+        
+		//动画队列
+        
+		function next(delay){
+			setTimeout(function(){
+	    		$(document).dequeue("restore_hx_right_queue");
+	    	},delay);
+		}
+		
+		function setStepBackgroundColor(stepName, color){
+			$(stepName).css('background',color);
+			$(stepName+'_result').css('background',color);
+		}
+		
+		$(document).off('drain');
+		
+    	var restore_hx_right_queue = [
+			function() {
+				setFMColorGreen("FM019");
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function(){
+				setFMColorGreen("FM018");
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_5', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function(){
+				setFMColorGreen("FM016");
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_6', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				GD1001.state=3;
+				GD11.state=3; 
+				$(document).on('overflow', function(){
+					next(1000);
+				});
+			},
+			function(){
+				
+			},
+			function(){
+				GD30.state=3;
+				$(document).off('overflow');
+				$(document).on('overflow', function(){
+					$(document).off('overflow');
+					next(1000);
+				});
+			},
+			function(){    		
+				GD141.state=3;
+				$(document).on('overflow', function(){
+					$(document).off('overflow');
+				});
+			}
+        ];
+    	
+    	$(document).queue("restore_hx_right_queue",restore_hx_right_queue);
+//    	$(document).dequeue("restore_hx_right_queue");
+    	initReset();
+    	
+    	function initReset(){
+    		//Start of animation,reset all animation
+    		$(document).off('drain');
+    		$(document).off('overflow');
+    		setFMColorRed("FM016");
+    		setFMColorRed("FM018");
+    		setFMColorRed("FM019");
+    		$(".table_content").css("background","#ffffff");
+    		GD11.state = 0;
+    		GD1001.state = 0;
+    		GD30.state = 0;
+    		GD141.state = 0;
+    		$(document).dequeue("restore_hx_right_queue");
+    	}
+    	
+    	$('.table_content').unbind();
+    	$('#step_1,#step_1_result').click(function(){
+    		$(document).clearQueue("restore_hx_right_queue");
+    		$(document).queue("restore_hx_right_queue",restore_hx_right_queue);
+    		initReset();
+    	});
+    	
+    	$('#step_2,#step_2_result').click(function(){
+    		$(document).clearQueue("restore_hx_right_queue");
+    		var tempQueue = restore_hx_right_queue.slice(0);
+    		tempQueue.splice(0,2,function(){
+    			setFMColorGreen("FM019");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+		    	next(1000);
+    		});
+    		$(document).queue("restore_hx_right_queue",tempQueue);
+    			
+    		initReset();
+    	});
+    	
+    	$('#step_3,#step_3_result').click(function(){
+    		$(document).clearQueue("restore_hx_right_queue");
+    		var tempQueue = restore_hx_right_queue.slice(0);
+    		tempQueue.splice(0,3,function(){
+    			setFMColorGreen("FM019");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+		    	next(1000);
+    		});
+    		$(document).queue("restore_hx_right_queue",tempQueue);
+    		initReset();
+    	});
+    	
+    	$('#step_4,#step_4_result').click(function(){
+    		$(document).clearQueue("restore_hx_right_queue");
+    		var tempQueue = restore_hx_right_queue.slice(0);
+    		tempQueue.splice(0,4,function(){
+    			setFMColorGreen("FM019");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+		    	next(1000);
+    		});
+    		$(document).queue("restore_hx_right_queue",tempQueue);
+    		initReset();
+    	});
+    	
+    	$('#step_5,#step_5_result').click(function(){
+    		$(document).clearQueue("restore_hx_right_queue");
+    		var tempQueue = restore_hx_right_queue.slice(0);
+    		tempQueue.splice(0,6,function(){
+    			setFMColorGreen("FM019");
+    			setFMColorGreen("FM018");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+		    	next(0);
+    		});
+    		$(document).queue("restore_hx_right_queue",tempQueue);
+    		initReset();
+    	});
+    	
+    	$('#step_6,#step_6_result').click(function(){
+    		$(document).clearQueue("restore_hx_right_queue");
+    		var tempQueue = restore_hx_right_queue.slice(0);
+    		tempQueue.splice(0,7,function(){
+    			setFMColorGreen("FM019");
+    			setFMColorGreen("FM018");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_5', 'rgba(194,215,245,0.5)');
+		    	next(1000);
+    		});
+    		$(document).queue("restore_hx_right_queue",tempQueue);
+    		initReset();
+    	});
         
     }
     
     function restore_hx_left(){
+        $(".hiden").show();
+		hideAllFM();
+		
+        $("#WFM019").addClass("FMStyle");
+        $("#WFM017").addClass("FMStyle");
+        $("#WFM018").addClass("FMStyle");
+        $("#WFM014").addClass("FMStyle");
     	$("#name_HX").css('color','#283a45');
     	$("#name_HX").css('background-color','rgba(255,255,255,0.5)');
     	//静态部分
@@ -2171,40 +2355,183 @@ oCanvas.domReady(function () {
     	$("#export").text("生成方案");
     	$("#reset").text("重置");
     	$('.table_content').unbind();
-		//动态部分
-    	//计时器控制阀门颜色和对应维修步骤变化情况
-    	window.setTimeout(function(){  
-    		document.getElementById("step_1").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_1_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_2_result").style.background = "rgba(194,215,245,0.5)";
-    		setFMColorGreen("FM019");
-    		//GD37.state=3;
-//    		console.log("GD141:");
-//    		console.log(GD141.state);
-         },300);
-        window.setTimeout(function(){              
-        	document.getElementById("step_3").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_3_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_4_result").style.background = "rgba(194,215,245,0.5)";
-        	setFMColorGreen("FM017");
-         },2500);
-        window.setTimeout(function(){              
-        	document.getElementById("step_5").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_5_result").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_6").style.background = "rgba(194,215,245,0.5)";
-    		document.getElementById("step_6_result").style.background = "rgba(194,215,245,0.5)";
-        	setFMColorGreen("FM014");
-        	GD26.state=3;
-        	GD27.state=3;   
-         },4000);
-        window.setTimeout(function(){                     	
-        	GD30.state=3;   
-         },5300);
-        window.setTimeout(function(){                     	
-        	GD141.state=3;   
-         },7300);
+
+    	function next(delay){
+			setTimeout(function(){
+	    		$(document).dequeue("restore_hx_left_queue");
+	    	},delay);
+		}
+		
+		function setStepBackgroundColor(stepName, color){
+			$(stepName).css('background',color);
+			$(stepName+'_result').css('background',color);
+		}
+		
+		$(document).off('drain');
+		
+    	var restore_hx_left_queue = [
+			function() {
+				setFMColorGreen("FM019");
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function(){
+				setFMColorGreen("FM017");
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_5', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function(){
+				setFMColorGreen("FM014");
+				next(1000);
+			},
+			function() {
+				setStepBackgroundColor('#step_6', 'rgba(194,215,245,0.5)');
+				next(1000);
+			},
+			function() {
+				GD26.state=3;
+				GD27.state=3; 
+				$(document).on('overflow', function(){
+					next(1000);
+				});
+			},
+			function(){
+				
+			},
+			function(){
+				GD30.state=3;
+				$(document).off('overflow');
+				$(document).on('overflow', function(){
+					$(document).off('overflow');
+					next(1000);
+				});
+			},
+			function(){    		
+				GD141.state=3;
+				$(document).on('overflow', function(){
+					$(document).off('overflow');
+				});
+			}
+        ];
+    	
+    	$(document).queue("restore_hx_left_queue",restore_hx_left_queue);
+//    	$(document).dequeue("restore_hx_left_queue");
+    	initReset();
+    	
+    	function initReset(){
+    		//Start of animation,reset all animation
+    		$(document).off('drain');
+    		$(document).off('overflow');
+    		setFMColorRed("FM019");
+    		setFMColorGreen("FM018");
+    		setFMColorRed("FM017");
+    		setFMColorRed("FM014");
+    		$(".table_content").css("background","#ffffff");
+    		GD26.state = 0;
+    		GD27.state = 0;
+    		GD30.state = 0;
+    		GD141.state = 0;
+    		$(document).dequeue("restore_hx_left_queue");
+    	}
+    	
+    	$('.table_content').unbind();
+    	$('#step_1,#step_1_result').click(function(){
+    		$(document).clearQueue("restore_hx_left_queue");
+    		$(document).queue("restore_hx_left_queue",restore_hx_left_queue);
+    		initReset();
+    	});
+    	
+    	$('#step_2,#step_2_result').click(function(){
+    		$(document).clearQueue("restore_hx_left_queue");
+    		var tempQueue = restore_hx_left_queue.slice(0);
+    		tempQueue.splice(0,2,function(){
+    			setFMColorGreen("FM019");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+		    	next(1000);
+    		});
+    		$(document).queue("restore_hx_left_queue",tempQueue);
+    			
+    		initReset();
+    	});
+    	
+    	$('#step_3,#step_3_result').click(function(){
+    		$(document).clearQueue("restore_hx_left_queue");
+    		var tempQueue = restore_hx_left_queue.slice(0);
+    		tempQueue.splice(0,3,function(){
+    			setFMColorGreen("FM019");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+		    	next(1000);
+    		});
+    		$(document).queue("restore_hx_left_queue",tempQueue);
+    		initReset();
+    	});
+    	
+    	$('#step_4,#step_4_result').click(function(){
+    		$(document).clearQueue("restore_hx_left_queue");
+    		var tempQueue = restore_hx_left_queue.slice(0);
+    		tempQueue.splice(0,4,function(){
+    			setFMColorGreen("FM019");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+		    	next(1000);
+    		});
+    		$(document).queue("restore_hx_left_queue",tempQueue);
+    		initReset();
+    	});
+    	
+    	$('#step_5,#step_5_result').click(function(){
+    		$(document).clearQueue("restore_hx_left_queue");
+    		var tempQueue = restore_hx_left_queue.slice(0);
+    		tempQueue.splice(0,6,function(){
+    			setFMColorGreen("FM019");
+    			setFMColorGreen("FM017");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+		    	next(0);
+    		});
+    		$(document).queue("restore_hx_left_queue",tempQueue);
+    		initReset();
+    	});
+    	
+    	$('#step_6,#step_6_result').click(function(){
+    		$(document).clearQueue("restore_hx_left_queue");
+    		var tempQueue = restore_hx_left_queue.slice(0);
+    		tempQueue.splice(0,7,function(){
+    			setFMColorGreen("FM019");
+    			setFMColorGreen("FM017");
+    			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+    			setStepBackgroundColor('#step_5', 'rgba(194,215,245,0.5)');
+		    	next(1000);
+    		});
+    		$(document).queue("restore_hx_left_queue",tempQueue);
+    		initReset();
+    	});
+    	
     }
     
     function  fix_hx_left(){
@@ -2213,10 +2540,6 @@ oCanvas.domReady(function () {
         $(".hiden").show();
 		hideAllFM();
 		//显示与该构筑物维修相关的阀门
-		setFMColorGreen("FM014");
-        setFMColorGreen("FM017");
-        setFMColorGreen("FM018");
-        setFMColorGreen("FM019");
         $("#WFM014").addClass("FMStyle");
         $("#WFM017").addClass("FMStyle");
         $("#WFM018").addClass("FMStyle");
@@ -2260,225 +2583,201 @@ oCanvas.domReady(function () {
     	$("#init_state").text("状态");
     	$("#init_stat").html('西侧阀门维修<span class="caret"></span>');
     	
-    	//动画队列
-    	$(document).off('drain');
-    	
-    	var fix_hx_left_queue = [
-			function() {
-				setFMColorRed("FM014");
-		    	
-				setTimeout(function(){
-		    		$(document).dequeue("fix_hx_left_queue");
-		    	},1000);
-				
-			},
-			function() {
-				$("#step_1").css('background','rgba(194,215,245,0.5)');
-				$("#step_1_result").css('background','rgba(194,215,245,0.5)');
-				
-				setTimeout(function(){
-		    		$(document).dequeue("fix_hx_left_queue");
-		    	},1000);
-		    	
-			},
-			function() {
-				GD26.state=2;
-				GD27.state=2;
-				$(document).off('drain');
-				$(document).on('drain', function(){
-					setTimeout(function(){
-						$(document).dequeue("fix_hx_left_queue");
-					},1000);
-				});
-			},
-			function(){
-				//消除两根水管排空带来的影响
-			},
-			function() {
-				$("#step_2").css('background','rgba(194,215,245,0.5)');
-				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
-				
-				setTimeout(function(){
-		    		$(document).dequeue("fix_hx_left_queue");
-		    	},1000);
-		    	
-			},
-			function() {
-				setFMColorRed("FM017");
-				
-				setTimeout(function(){
-    				$(document).dequeue("fix_hx_left_queue");
-    			},1000);
-			},
-			function() {
-				$("#step_3").css('background','rgba(194,215,245,0.5)');
-				$("#step_3_result").css('background','rgba(194,215,245,0.5)');
-				setTimeout(function(){
-    				$(document).dequeue("fix_hx_left_queue");
-    			},1000);
-			},
-			function(){
-				GD30.state=2;
-				$(document).off('drain');
-				$(document).on('drain', function(){
-					setTimeout(function(){
-						$(document).dequeue("fix_hx_left_queue");
-					},1000);
-				});
-			},
-			function() {
-				$("#step_4").css('background','rgba(194,215,245,0.5)');
-				$("#step_4_result").css('background','rgba(194,215,245,0.5)');
-				setTimeout(function(){
-    				$(document).dequeue("fix_hx_left_queue");
-    			},2000);
-			},
-			function() {
-				$("#step_5").css('background','rgba(194,215,245,0.5)');
-				$("#step_5_result").css('background','rgba(194,215,245,0.5)');
-				setTimeout(function(){
-    				$(document).dequeue("fix_hx_left_queue");
-    			},3000);
-			},
-			function(){
-				setFMColorRed("FM019");
-				setTimeout(function(){
-					$(document).dequeue("fix_hx_left_queue");
-				},1000);
-			},
-			function(){    		
-				$("#step_6").css('background','rgba(194,215,245,0.5)');
-				$("#step_6_result").css('background','rgba(194,215,245,0.5)');
-				setTimeout(function(){
-					$(document).dequeue("fix_hx_left_queue");
-				},1000);
-				},
-			function(){GD141.state=2;}
-        ];
-    	
-    	$(document).queue("fix_hx_left_queue",fix_hx_left_queue);
-    	$(document).dequeue("fix_hx_left_queue");
-    	
-    	var fix_hx_left_queue_mask = [
-    	    function(){
-    	    	//Start of animation,reset all animation
-    	    	$(document).off('drain');
-    	    	setFMColorGreen("FM014");
-    	    	setFMColorGreen("FM017");
-    	    	setFMColorGreen("FM019");
-    			$(".table_content").css("background-color","#ffffff");
- 				GD26.state = 1;
- 				GD27.state = 1;
- 				GD30.state = 1;
- 				GD141.state = 1;
- 				$(document).dequeue("fix_hx_left_queue");
-    	    },
- 			function() {
-				setFMColorRed("FM014");
-	    		$(document).dequeue("fix_hx_left_queue");
- 			},
- 			function() {
- 				$("#step_1").css('background','rgba(194,215,245,0.5)');
- 				$("#step_1_result").css('background','rgba(194,215,245,0.5)');
-	    		$(document).dequeue("fix_hx_left_queue");
- 			},
- 			function() {
- 				GD26.state = 0;
- 				GD27.state = 0;
- 				$(document).dequeue("fix_hx_left_queue");
- 			},
-// 			function(){
-// 			    //消除两根水管排空带来的影响
-//				$(document).dequeue("fix_hx_left_queue");
-// 			},
- 			function() {
- 				$("#step_2").css('background','rgba(194,215,245,0.5)');
- 				$("#step_2_result").css('background','rgba(194,215,245,0.5)');
-	    		$(document).dequeue("fix_hx_left_queue");
- 			},
- 			function() {
-				setFMColorRed("FM017");
- 				$(document).dequeue("fix_hx_left_queue");
- 			},
- 			function() {
- 				$("#step_3").css('background','rgba(194,215,245,0.5)');
- 				$("#step_3_result").css('background','rgba(194,215,245,0.5)');
- 				$(document).dequeue("fix_hx_left_queue");
- 			},
- 			function(){
- 				GD30.state=0;
- 				$(document).dequeue("fix_hx_left_queue");
- 			},
- 			function() {
- 				$("#step_4").css('background','rgba(194,215,245,0.5)');
- 				$("#step_4_result").css('background','rgba(194,215,245,0.5)');
- 				$(document).dequeue("fix_hx_left_queue");
- 			},
- 			function() {
- 				$("#step_5").css('background','rgba(194,215,245,0.5)');
- 				$("#step_5_result").css('background','rgba(194,215,245,0.5)');
- 				$(document).dequeue("fix_hx_left_queue");
- 			},
- 			function(){
-				setFMColorRed("FM019");
+		function next(delay) {
+			setTimeout(function() {
 				$(document).dequeue("fix_hx_left_queue");
- 			},
- 			function(){    		
- 				$("#step_6").css('background','rgba(194,215,245,0.5)');
- 				$("#step_6_result").css('background','rgba(194,215,245,0.5)');
-				$(document).dequeue("fix_hx_left_queue");
- 				},
- 			function(){GD141.state=2;}
-         ];
-    	$('.table_content').unbind();
-    	$('#step_1,#step_1_result,#step_2,#step_2_result').click(function(){
-    		$(document).clearQueue("fix_hx_left_queue");
-    		var tempQueue = fix_hx_left_queue.slice(0);
-    		var swapQueue = fix_hx_left_queue_mask.slice(0);
-    		
-    		var s1 = swapQueue.shift();
-    		tempQueue.unshift(s1);
-    			
-    		$(document).queue("fix_hx_left_queue",tempQueue);
-        	s2 = $(document).dequeue("fix_hx_left_queue");
-    	});
-    	
-    	$('#step_3,#step_3_result,#step_4,#step_4_result,#step_5,#step_5_result').click(function(){
-    		$(document).clearQueue("fix_hx_left_queue");
-    		var tempQueue = fix_hx_left_queue.slice(0);
-    		var swapQueue = fix_hx_left_queue_mask.slice(0);
-    		
-    		var s1 = swapQueue.shift();
-    		var s2 = swapQueue.shift();
-    		var s3 = swapQueue.shift();
-    		var s4 = swapQueue.shift();
-    		var s5 = swapQueue.shift();
-    		tempQueue.splice(0,5,s1,s2,s3,s4,s5);
-    		$(document).queue("fix_hx_left_queue",tempQueue);
-        	$(document).dequeue("fix_hx_left_queue");
-    	});
-    	
-    	$('#step_6,#step_6_result').click(function(){
-    		$(document).clearQueue("fix_hx_left_queue");
-    		var tempQueue = fix_hx_left_queue.slice(0);
-    		var swapQueue = fix_hx_left_queue_mask.slice(0);
-    		
-    		var s1 = swapQueue.shift();
-    		var s2 = swapQueue.shift();
-    		var s3 = swapQueue.shift();
-    		var s4 = swapQueue.shift();
-    		var s5 = swapQueue.shift();
-    		var s6 = swapQueue.shift();
-    		var s7 = swapQueue.shift();
-    		var s8 = swapQueue.shift();
-    		var s9 = swapQueue.shift();
-    		var s10 = swapQueue.shift();
-    		tempQueue.splice(0,10,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10);
-    		$(document).queue("fix_hx_left_queue",tempQueue);
-        	$(document).dequeue("fix_hx_left_queue");
-    	});
+			}, delay);
+		}
+	
+		function setStepBackgroundColor(stepName, color) {
+			$(stepName).css('background', color);
+			$(stepName + '_result').css('background', color);
+		}
+	
+		// 动画队列
+		$(document).off('drain');
+	
+		var fix_hx_left_queue = [ function() {
+			setFMColorRed("FM014");
+			next(1000);
+		}, function() {
+			setStepBackgroundColor('#step_1', 'rgba(194,215,245,0.5)');
+			next(1000);
+		}, function() {
+			GD26.state = 2;
+			GD27.state = 2;
+			$(document).on('drain', function() {
+				next(1000);
+			});
+		}, function() {
+			// 消除两根水管排空带来的影响
+		}, function() {
+			$(document).off('drain');
+			setStepBackgroundColor('#step_2', 'rgba(194,215,245,0.5)');
+			next(1000);
+		}, function() {
+			setFMColorRed("FM017");
+			next(2000);
+		}, function() {
+			setStepBackgroundColor('#step_3', 'rgba(194,215,245,0.5)');
+			next(1000);
+		}, function() {
+			GD30.state = 2;
+			$(document).on('drain', function() {
+				$(document).off('drain');
+				next(1000);
+			});
+		}, function() {
+			setStepBackgroundColor('#step_4', 'rgba(194,215,245,0.5)');
+			next(1000);
+		}, function() {
+			setStepBackgroundColor('#step_5', 'rgba(194,215,245,0.5)');
+			next(1000);
+		}, function() {
+			setFMColorRed("FM019");
+			next(1000);
+		}, function() {
+			setStepBackgroundColor('#step_6', 'rgba(194,215,245,0.5)');
+			next(1000);
+		}, function() {
+			GD141.state = 2;
+		} ];
+	
+		$(document).queue("fix_hx_left_queue", fix_hx_left_queue);
+		// $(document).dequeue("fix_hx_left_queue");
+		initReset();
+	
+		function initReset() {
+			// Start of animation,reset all animation
+			$(document).off('drain');
+			$(document).off('overflow');
+			setFMColorGreen("FM014");
+			setFMColorGreen("FM017");
+			setFMColorGreen("FM018");
+			setFMColorGreen("FM019");
+			$(".table_content").css("background", "#ffffff");
+			GD26.state = 1;
+			GD27.state = 1;
+			GD30.state = 1;
+			GD141.state = 1;
+			$(document).dequeue("fix_hx_left_queue");
+		}
+	
+		$('.table_content').unbind();
+		$('#step_1,#step_1_result').click(function() {
+			$(document).clearQueue("fix_hx_left_queue");
+			$(document).queue("fix_hx_left_queue", fix_hx_left_queue);
+			initReset();
+		});
+	
+		$('#step_2,#step_2_result').click(
+			function() {
+				$(document).clearQueue("fix_hx_left_queue");
+				var tempQueue = fix_hx_left_queue.slice(0);
+				tempQueue.splice(0, 4, function() {
+					setFMColorRed("FM014");
+					setStepBackgroundColor('#step_1',
+							'rgba(194,215,245,0.5)');
+					GD26.state = 0;
+					GD27.state = 0;
+					next(1000);
+				});
+			$(document).queue("fix_hx_left_queue", tempQueue);
 
-//      $("div.hiden").show();
+			initReset();
+		});
+	
+		$('#step_3,#step_3_result').click(
+			function() {
+				$(document).clearQueue("fix_hx_left_queue");
+				var tempQueue = fix_hx_left_queue.slice(0);
+				tempQueue.splice(0, 5, function() {
+					setFMColorRed("FM014");
+					setStepBackgroundColor('#step_1',
+							'rgba(194,215,245,0.5)');
+					setStepBackgroundColor('#step_2',
+							'rgba(194,215,245,0.5)');
+					GD26.state = 0;
+					GD27.state = 0;
+					next(1000);
+				});
+			$(document).queue("fix_hx_left_queue", tempQueue);
+			initReset();
+		});
+	
+		$('#step_4,#step_4_result').click(
+			function() {
+				$(document).clearQueue("fix_hx_left_queue");
+				var tempQueue = fix_hx_left_queue.slice(0);
+				tempQueue.splice(0, 8, function() {
+					setFMColorRed("FM014");
+					setFMColorRed("FM017");
+					setStepBackgroundColor('#step_1',
+							'rgba(194,215,245,0.5)');
+					setStepBackgroundColor('#step_2',
+							'rgba(194,215,245,0.5)');
+					setStepBackgroundColor('#step_3',
+							'rgba(194,215,245,0.5)');
+					GD26.state = 0;
+					GD27.state = 0;
+					GD30.state = 0;
+					next(1000);
+				});
+			$(document).queue("fix_hx_left_queue", tempQueue);
+			initReset();
+		});
+
+		$('#step_5,#step_5_result').click(
+			function() {
+				$(document).clearQueue("fix_hx_left_queue");
+				var tempQueue = fix_hx_left_queue.slice(0);
+				tempQueue.splice(0, 9, function() {
+					setFMColorRed("FM014");
+					setFMColorRed("FM017");
+					setStepBackgroundColor('#step_1',
+							'rgba(194,215,245,0.5)');
+					setStepBackgroundColor('#step_2',
+							'rgba(194,215,245,0.5)');
+					setStepBackgroundColor('#step_3',
+							'rgba(194,215,245,0.5)');
+					setStepBackgroundColor('#step_4',
+							'rgba(194,215,245,0.5)');
+					GD26.state = 0;
+					GD27.state = 0;
+					GD30.state = 0;
+					next(1000);
+			});
+			$(document).queue("fix_hx_left_queue", tempQueue);
+			initReset();
+		});
+	
+		$('#step_6,#step_6_result').click(
+			function() {
+				$(document).clearQueue("fix_hx_left_queue");
+				var tempQueue = fix_hx_left_queue.slice(0);
+				tempQueue.splice(0, 10, function() {
+					setFMColorRed("FM014");
+					setFMColorRed("FM017");
+					setStepBackgroundColor('#step_1',
+							'rgba(194,215,245,0.5)');
+					setStepBackgroundColor('#step_2',
+							'rgba(194,215,245,0.5)');
+					setStepBackgroundColor('#step_3',
+							'rgba(194,215,245,0.5)');
+					setStepBackgroundColor('#step_4',
+							'rgba(194,215,245,0.5)');
+					setStepBackgroundColor('#step_5',
+							'rgba(194,215,245,0.5)');
+					GD26.state = 0;
+					GD27.state = 0;
+					GD30.state = 0;
+					next(1000);
+			});
+			$(document).queue("fix_hx_left_queue", tempQueue);
+			initReset();
+		});
+
+// $("div.hiden").show();
     }
 
     function fix_vl(){
@@ -2491,7 +2790,7 @@ oCanvas.domReady(function () {
         setFMColorRed("FM052");
         setFMColorRed("FM020");
          
-//        setFMColorRed("FM014");
+// setFMColorRed("FM014");
 
         document.getElementById("step_1").innerHTML="打开阀门68#";
         document.getElementById("step_1_result").innerHTML="关闭1#~5#滤格控制阀";

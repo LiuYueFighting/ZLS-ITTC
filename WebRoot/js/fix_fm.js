@@ -1268,67 +1268,118 @@ oCanvas.domReady(function () {
  		
         $('.table_content').unbind();
 		//动画队列
+    	function next(delay){
+			setTimeout(function(){
+	    		$(document).dequeue("restore_fm062_queue");
+	    	},delay);
+		}
+    	
     	var restore_fm062_queue = [
 			function() {
 				$("#step_1").css('background','rgba(194,215,245,0.5)');
-				setTimeout(function(){
-		    		$(document).dequeue("restore_fm062_queue");
-		    	},1000);
+				next(1000);
 			},
 			function() {
 				setFMColorGreen("FM062");
-		    	setTimeout(function(){
-		    		$(document).dequeue("restore_fm062_queue");
-		    	},1000);
+				next(1000);
 			},
 			function() {
 				$("#step_2").css('background','rgba(194,215,245,0.5)');
-		    	setTimeout(function(){
-		    		$(document).dequeue("restore_fm062_queue");
-		    	},1000);
+				next(1000);
 			},
 			function(){
 				setFMColorGreen("FM064");
-		    	setTimeout(function(){
-		    		$(document).dequeue("restore_fm062_queue");
-		    	},1000);
+				next(1000);
 			},
 			function() {
 				$("#step_3").css('background','rgba(194,215,245,0.5)');
-    			setTimeout(function(){
-    				$(document).dequeue("restore_fm062_queue");
-    			},1000);
+				next(1000);
 			},
 			function() {
 				setFMColorGreen("FM09");
-				setTimeout(function(){
-					$(document).dequeue("restore_fm062_queue");
-				},1000);
+				next(1000);
 			},
 			function() {
 				GD0101.state = 3;
-    			setTimeout(function(){
-    				$(document).dequeue("restore_fm062_queue");
-    			},3000);
+				$(document).on('overflow', function(){
+					$(document).off('overflow');
+					next(1000);
+				});
 			},
 			function() {
 				GD25.state = 3;
-    			setTimeout(function(){
-    				$(document).dequeue("restore_fm062_queue");
-    			},2000);
+				$(document).on('overflow', function(){
+					$(document).off('overflow');
+					next(1000);
+				});
 			},
 			function() {
 				GD0102.state = 3;
-    			setTimeout(function(){
-    				$(document).dequeue("restore_fm062_queue");
-    			},2000);
+				$(document).on('overflow', function(){
+					$(document).off('overflow');
+					next(1000);
+				});
 			},
 			function() {
 				GD05.state = 3;
 			}
         ];
     	$(document).queue("restore_fm062_queue",restore_fm062_queue);
-    	$(document).dequeue("restore_fm062_queue");
+    	initReset();
+    	
+    	function initReset(){
+    		//Start of animation,reset all animation
+    		$(document).off('overflow');
+    		
+    		setFMColorRed("FM09");
+    		setFMColorRed("FM064");
+    		document.getElementById("FM062").src="image/y1.png";
+    		
+    		$(".table_content").css("background","#ffffff");
+    		
+    		GD0101.state = 0;
+    		GD25.state = 0;
+    		GD0102.state = 0;
+    		GD05.state = 0;
+    		$(document).dequeue("restore_fm062_queue");
+    	}
+    	
+    	$('.table_content').unbind();
+    	$('#step_1').click(function(){
+    		$(document).clearQueue("restore_fm062_queue");
+    		$(document).queue("restore_fm062_queue",restore_fm062_queue);
+    		initReset();
+    	});
+    	
+    	$('#step_2').click(function(){
+    		$(document).clearQueue("restore_fm062_queue");
+    		var tempQueue = restore_fm062_queue.slice(0);
+    		tempQueue.splice(0,2,function(){
+    			$("#step_1").css('background','rgba(194,215,245,0.5)');
+    			setFMColorGreen("FM062");
+				setTimeout(function(){
+					$(document).dequeue("restore_fm062_queue");
+				},1000);
+    		});
+    		$(document).queue("restore_fm062_queue",tempQueue);
+    		initReset();
+    	});
+    	
+    	$('#step_3').click(function(){
+    		$(document).clearQueue("restore_fm062_queue");
+    		var tempQueue = restore_fm062_queue.slice(0);
+    		tempQueue.splice(0,4,function(){
+    			$("#step_1").css('background','rgba(194,215,245,0.5)');
+    			setFMColorGreen("FM062");
+    			$("#step_2").css('background','rgba(194,215,245,0.5)');
+    			setFMColorGreen("FM064");
+				setTimeout(function(){
+					$(document).dequeue("restore_fm062_queue");
+				},1000);
+    		});
+    		$(document).queue("restore_fm062_queue",tempQueue);
+    		initReset();
+    	});
         
  		$("div.hiden").show();
     }
@@ -1401,7 +1452,7 @@ oCanvas.domReady(function () {
 				$("#step_3").css('background','rgba(194,215,245,0.5)');
     			setTimeout(function(){
     				$(document).dequeue("fix_fm062_queue");
-    			},3000);
+    			},1000);
 			},
 			function() {
 				GD0102.state = 2;
@@ -1475,10 +1526,7 @@ oCanvas.domReady(function () {
   			function() {
   				$("#step_4").css('background','rgba(194,215,245,0.5)');
   				$(document).dequeue("fix_fm062_queue");
-  			},
-			function() {
-				GD05.state = 0;
-			}
+  			}
           ];
     	
     	$('.table_content').unbind();

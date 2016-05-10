@@ -387,7 +387,7 @@ top: 10px;
 <body>
 	<jsp:include page="top.jsp" />
 	<ol class="breadcrumb">
-    <li><a href="main.jsp">水量控制</a></li>
+    <li><a href="main.jsp">首页</a></li>
     <li class="active">数据分析</li>
     </ol>
 	<div id="myPage">
