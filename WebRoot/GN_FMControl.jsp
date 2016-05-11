@@ -414,10 +414,20 @@
 
     }
     function compute1(){
-    
-		hh1In1=Math.round(read*openDgree_062/(openDgree_062+openDgree_063+openDgree_065)/50)*50;
-		hh1In2=Math.round(read*openDgree_063/(openDgree_062+openDgree_063+openDgree_065)/50)*50;
-		hh2In=Math.round(read*openDgree_065/(openDgree_062+openDgree_063+openDgree_065)/50)*50;
+		
+    	if (openDgree_062 == 100 && 
+            openDgree_063 == 100 &&
+            openDgree_065 == 100) {
+			hh2In=hh1In1=hh1In2=600;
+		}else if (openDgree_062+openDgree_063 != 0) {
+			hh2In=Math.round(read*4/9*openDgree_065/100/50)*50;
+        	hh1In1=Math.round((read-hh2In)*openDgree_062/(openDgree_062+openDgree_063)/50)*50;
+        	hh1In2=Math.round((read-hh2In)*openDgree_063/(openDgree_062+openDgree_063)/50)*50;
+		}else {
+				hh2In=read;
+       		hh1In1=hh1In2=0;
+		}
+
 		
         hh1Out1=hh1In1;
         hh1Out2=hh1In2;
