@@ -137,7 +137,7 @@
 <body>
     <jsp:include page="top.jsp" />
     <ol class="breadcrumb">
-    <li><a href="main.jsp">动态演示</a></li>
+    <li><a href="main.jsp">首页</a></li>
     <li><a href="main.jsp">厂平展示</a></li>
     <li class="active">配水泵房</li>
     </ol>
@@ -181,10 +181,10 @@
     <td>水泵扬程</td>
     </tr>
     <tr>
-    <td>6:00~23:00</td><td>0.45Mp</td>
+    <td>6:00-23:00</td><td>0.45Mp</td>
     </tr>
     <tr>
-    <td>23:00~6:00</td><td>0.44Mp</td>
+    <td>23:00-6:00</td><td>0.44Mp</td>
     </tr>
     </table>
     </div>
