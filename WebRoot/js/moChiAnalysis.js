@@ -269,8 +269,8 @@ function listMoChiAnalysis(data) {
 		            },
 		            /*{field : 'inPress', title : '进膜压力', align :'center', sortable : true, width:80},
 		            {field : 'outPress', title : '出水压力', align : 'center', sortable : true,width:70},*/
-		            {field : 'diffPress', title : '跨膜压差', align :'center', sortable : true,width:105},
-		            {field : 'inFlow', title : '进水流量', align : 'center', sortable : true,width:105},
+		            {field : 'diffPress', title : '跨膜压差/Mpa', align :'center', sortable : true,width:105},
+		            {field : 'inFlow', title : '进水流量/m<sup>3', align : 'center', sortable : true,width:105},
 		            ]],
 		onLoadError: function () {
 			 $.messager.alert("提示", "服务器忙，请稍后再试！", "warning");

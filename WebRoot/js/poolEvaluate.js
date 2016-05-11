@@ -319,7 +319,7 @@ function listPoolEvaluate(data) {
 		             }, 
 		             {
 		            	 field : 'PAC',
-		            	 title : 'PAC投加量',
+		            	 title : 'PAC投加量<br>mg/L',
 		            	 align : 'center',
 		            	 width : 80,
 //		            	 formatter : function(value) {
@@ -328,7 +328,7 @@ function listPoolEvaluate(data) {
 		            	 sortable : true
 		             },{
 		            	 field : 'feCl3',
-		            	 title : 'FeCl<sub>3</sub>投加量',
+		            	 title : 'FeCl<sub>3</sub>投加量<br>mg/L',
 		            	 align : 'center',
 		            	 width : 85,
 //		            	 formatter : function(value) {
@@ -339,7 +339,7 @@ function listPoolEvaluate(data) {
 		             {
 		            	 field : 'openDegree',
 		            	 title : '开启度',
-		            	 width : 60,
+		            	 width : 55,
 		            	 align : 'center',
 		            	 formatter : function(value) {
 		            		 return value+"%";
@@ -366,8 +366,8 @@ function listPoolEvaluate(data) {
 		             },
 		             {
 		            	 field : 'waterTemp',
-		            	 title : '水温',
-		            	 width : 60,
+		            	 title : '水温<br>',
+		            	 width : 55,
 		            	 align : 'center',
 		            	 formatter : function(value) {
 		            		 return value+"℃";
@@ -376,21 +376,21 @@ function listPoolEvaluate(data) {
 		             },
 		             {
 		            	 field : 'smallMudFre',
-		            	 title : '小斗排泥时长',
+		            	 title : '小斗排泥时长<br>h',
 		            	 width : 80,
 		            	 align : 'center',
 		            	 sortable : true
 		             },
 		             {
 		            	 field : 'bigMudFre',
-		            	 title : '大斗排泥时长',
+		            	 title : '大斗排泥时长<br>h',
 		            	 width : 80,
 		            	 align : 'center',
 		            	 sortable : true
 		             },
 		             {
 		            	 field : 'NTU',
-		            	 title : '原水浊度',
+		            	 title : '原水浊度<br>NTU',
 		            	 width : 60,
 		            	 align : 'center',
 		            	 sortable : true
@@ -398,7 +398,7 @@ function listPoolEvaluate(data) {
 		             {
 		            	 field : 'algaeContent',
 		            	 title : '原水藻类含量',
-		            	 width : 80,
+		            	 width : 90,
 		            	 align : 'center',
 		            	 formatter : function(value) {
 		            		 return value+"%";
@@ -407,14 +407,14 @@ function listPoolEvaluate(data) {
 		             },
 		             {
 		            	 field : 'outNTU',
-		            	 title : '出水浊度',
+		            	 title : '出水浊度<br>NTU',
 		            	 width : 60,
 		            	 align : 'center',
 		            	 sortable : true
 		             },	 
 		             {
 		            	 field : 'CL',
-		            	 title : '预加氯量',
+		            	 title : '预加氯量<br>mg/L',
 		            	 width : 60,
 		            	 align : 'center',
 		            	 sortable : true

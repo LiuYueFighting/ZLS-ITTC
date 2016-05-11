@@ -286,7 +286,7 @@ function listOutStat(data) {
 		            		return formPoolID(value);
 		            		}
 		            },
-		            {field : 'NTU', title : '出水浊度', align :'center', sortable : true, width:100,
+		            {field : 'NTU', title : '出水浊度NTU', align :'center', sortable : true, width:100,
 		            	styler: function(value) {
 		            		if(value> 0.25 && value < 0.3){
 		            			return 'background-color:#FFFF00;font-weight:bolder;border:2px solid #FFFF00';
@@ -295,7 +295,7 @@ function listOutStat(data) {
 		            		}
 		            	}
 		            },
-		            {field : 'cl', title : '余氯', align : 'center', sortable : true,width:100,
+		            {field : 'cl', title : '余氯mg/L', align : 'center', sortable : true,width:100,
 		            	formatter : function(value) {  //只显示两位小数
 	            			  return value.toFixed(2);
 		            	},
@@ -305,7 +305,7 @@ function listOutStat(data) {
 		            		} 
 		            	}
 		            },
-		            {field : 'fe', title : '铁含量', align :'center', sortable : true,width:100,
+		            {field : 'fe', title : '铁含量mg/L', align :'center', sortable : true,width:100,
 		            	formatter : function(value) {  //只显示两位小数
 	            			  return value.toFixed(2);
 		            	},
@@ -318,7 +318,7 @@ function listOutStat(data) {
 		            	}
 		            	
 		            },
-		            {field : 'al', title : '铝含量', align : 'center', sortable : true,width:100,
+		            {field : 'al', title : '铝含量mg/L', align : 'center', sortable : true,width:100,
 		            	formatter : function(value) {  //只显示两位小数
 	            			  return value.toFixed(3);
 		            	},
