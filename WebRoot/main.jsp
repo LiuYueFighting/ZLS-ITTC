@@ -93,6 +93,10 @@
     font-size: 20px;
     font-weight:bold;
     }
+    .name_ob:hover{
+    color: #F75C2F;
+    }
+    
     #name_QS{
     position: absolute;
     left: 683px;

@@ -870,6 +870,12 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 30px #eee";
         //$("#name_YC").css("display","inline");
+        $("#name_YC").animate({
+            height:'50px',opacity:'1'},'fast');
+        $("#name_YC").animate({
+            height:'50px',opacity:'0'},'fast');
+        $("#name_YC").animate({
+            height:'50px',opacity:'1'},'fast');
     }).bind("mouseleave",function(){
         //$("#name_YC").css("display","none");
         this.shadow="0 0 0px #eee";
@@ -1008,6 +1014,12 @@ oCanvas.domReady(function () {
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 30px #eee";
         //$("#name_CYC").css("display","inline");
+        $("#name_CYC").animate({
+            height:'150px',opacity:'1'},'fast');
+        $("#name_CYC").animate({
+            height:'150px',opacity:'0'},'fast');
+        $("#name_CYC").animate({
+            height:'150px',opacity:'1'},'fast');
     }).bind("mouseleave",function(){
         //$("#name_CYC").css("display","none");
         this.shadow="0 0 0px #eee";
