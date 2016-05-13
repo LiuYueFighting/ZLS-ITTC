@@ -23,8 +23,20 @@
         <property name="DiffPress" type="java.lang.Double">
             <column name="DIFFPRESS" />
         </property>
-        <property name="InFlow" type="java.lang.Long">
+        <property name="InFlow" type="java.lang.Double">
             <column name="INFLOW" />
+        </property>
+        <property name="InNTU" type="java.lang.Double">
+            <column name="INNTU" />
+        </property>
+        <property name="OutNTU" type="java.lang.Double">
+            <column name="OUTNTU" />
+        </property>
+        <property name="InAlga" type="java.lang.Double">
+            <column name="INALGA" />
+        </property>
+        <property name="OutAlga" type="java.lang.Double">
+            <column name="OUTALGA" />
         </property>
     </class>
 </hibernate-mapping>

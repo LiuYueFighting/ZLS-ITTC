@@ -237,7 +237,7 @@ th, td, input, option {
 
 #addButton {
 	position: relative;
-	left: 650px;
+	left: 1000px;
 	top: 5px;
 }
 
@@ -378,11 +378,28 @@ text-align: center;
 									style="width: 200px; height: 25px" id="InFlow"
 									name="moChiAnalysis.InFlow" data-options="min:0,precision:0" />
 							</dl>
-							
+							<dl>
+								&nbsp; &nbsp;进 膜 浊 度 : &nbsp;
+								<input class="easyui-numberbox textbox" style="width: 200px; height: 25px" id="InNTU"
+									name="moChiAnalysis.InNTU" data-options="min:0,precision:2" />
+									
+								&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;出 膜 浊 度  : &nbsp;
+								<input class="easyui-numberbox textbox"
+									style="width: 200px; height: 25px" id="OutNTU"
+									name="moChiAnalysis.OutNTU" data-options="min:0,precision:2" />
+							</dl>
+							<dl>
+								&nbsp; &nbsp;进 膜 藻 类: &nbsp;
+								<input class="easyui-numberbox textbox" name="moChiAnalysis.InAlga"
+									style="width: 200px; height: 25px" id="InAlga" data-options="min:0,precision:2," />
+								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;出 膜 藻 类 : &nbsp;
+								<input class="easyui-numberbox" name="moChiAnalysis.OutAlga"
+								style="width: 200px; height: 25px" id="OutAlga" data-options="min:0,precision:2" />
+							</dl>
 						</form>
 					</div><!-- tabEdit -->
 					<div id="newEdit" class="easyui-dialog" data-options="closed:true"
-						style="align: center; width: 860px; height: 600px; padding: 10px 60px 10px 60px">
+						style="align: center; width: 1200px; height: 600px; padding: 10px 60px 10px 60px">
 						<form id="newfrmEdit" style="width:740px"><br />
 							<table id="tab" style="align: center">
 								<tr>
@@ -396,6 +413,10 @@ text-align: center;
 									<th style="width: 102px; height: 26px">出水压力</th>
 									<th style="width: 102px; height: 26px">跨膜压差</th>
 									<th style="width: 102px; height: 26px">进水流量</th>
+									<th style="width: 102px; height: 26px">进膜浊度</th>
+									<th style="width: 102px; height: 26px">出膜浊度</th>
+									<th style="width: 102px; height: 26px">进膜藻类</th>
+									<th style="width: 102px; height: 26px">出膜藻类</th>
 								</tr>
 								<tr id="tr1">
 									<td style="width: 1px; height: 26px">
@@ -440,6 +461,22 @@ text-align: center;
 										<input id="InFlow1" name="moChiAnalysis.InFlow" style="width: 100px; height: 25px" data-options="min:0,precision:0" />
 									</td>
 									
+									<td style="width: 102px; height: 26px">
+										
+										<input id="InNTU1" name="moChiAnalysis.InNTU"	style="width: 100px; height: 25px" data-options="min:0,precision:2," />
+									</td>
+									<td style="width: 102px; height: 26px">
+										
+										<input id="OutNTU1" name="moChiAnalysis.OutNTU" style="width: 100px; height: 25px"	data-options="min:0,precision:2" />
+									</td>
+									<td style="width: 102px; height: 26px">
+										 <input id="InAlga1"
+										name="moChiAnalysis.InAlga" style="width: 100px; height: 25px" data-options="min:0,precision:2" />
+									</td>
+									<td style="width: 102px; height: 26px">
+										
+										<input id="OutAlga1" name="moChiAnalysis.OutAlga" style="width: 100px; height: 25px" data-options="min:0,precision:2" />
+									</td>
 									
 								</tr>
 							</table>

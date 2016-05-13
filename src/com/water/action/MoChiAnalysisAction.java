@@ -35,6 +35,7 @@ import com.water.service.MoChiAnalysisService;
 import com.water.util.ListSort;
 //import com.water.util.ListTool;
 import com.water.util.TimeTree;
+import com.water.util.Tools;
 import com.water.util.TreeNode;
 
 
@@ -417,7 +418,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 				//给sheet电子版中所有的列设置默认的列的宽度;  
 				sheet.getSettings().setDefaultColumnWidth(15);
 				sheet.setColumnView(1, 20);//给第二列设置列宽 
-				sheet.mergeCells(0, 0, 5, 0); //合并单元格，用于显示标题
+				sheet.mergeCells(0, 0, 9, 0); //合并单元格，用于显示标题
 				sheet.addCell(new Label(0,0, "超 滤 膜 系 统 运 行 工 况 记 录 表",formatTitle));
 				//添加表头
 				sheet.addCell(new Label(0,1," 时间 ",formatHead));
@@ -426,6 +427,10 @@ public class MoChiAnalysisAction extends ActionSupport{
 				sheet.addCell(new Label(3,1," 出水压力Mpa ",formatHead));
 				sheet.addCell(new Label(4,1," 跨膜压差Mpa ",formatHead));
 				sheet.addCell(new Label(5,1," 进水流量(m³) ",formatHead));				
+				sheet.addCell(new Label(6,1," 进膜浊度(NTU) ",formatHead));
+				sheet.addCell(new Label(7,1," 出膜浊度(NTU) ",formatHead));
+				sheet.addCell(new Label(8,1," 进膜藻类(万个/L) ",formatHead));
+				sheet.addCell(new Label(9,1," 出膜藻类(万个/L) ",formatHead));
 				
 				int j=2;
 				for(int i=0;i<list.size();i++){
@@ -433,10 +438,14 @@ public class MoChiAnalysisAction extends ActionSupport{
 					if (day.equals(tempT)){					
 						sheet.addCell(new Label(0,j,sdf.format(list.get(i).getT()),formatBody));
 						sheet.addCell(new Label(1,j,list.get(i).getPoolID(),formatBody));
-						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getInPress()),formatBody));
-						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOutPress()),formatBody));
-						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getDiffPress()),formatBody));
-						sheet.addCell(new Label(5,j,Long.toString(list.get(i).getInFlow()),formatBody));
+						sheet.addCell(new Label(2,j,list.get(i).getInPress()==null?"":Double.toString(list.get(i).getInPress()),formatBody));
+						sheet.addCell(new Label(3,j,list.get(i).getOutPress()==null?"":Double.toString(list.get(i).getOutPress()),formatBody));
+						sheet.addCell(new Label(4,j,list.get(i).getDiffPress()==null?"":Double.toString(list.get(i).getDiffPress()),formatBody));
+						sheet.addCell(new Label(5,j,list.get(i).getInFlow()==null?"":Double.toString(list.get(i).getInFlow()),formatBody));
+						sheet.addCell(new Label(6,j,list.get(i).getInNTU()==null?"":Double.toString(list.get(i).getInNTU()),formatBody));
+						sheet.addCell(new Label(7,j,list.get(i).getOutNTU()==null?"":Double.toString(list.get(i).getOutNTU()),formatBody));
+						sheet.addCell(new Label(8,j,list.get(i).getInAlga()==null?"":Double.toString(list.get(i).getInAlga()),formatBody));
+						sheet.addCell(new Label(9,j,list.get(i).getOutAlga()==null?"":Double.toString(list.get(i).getOutAlga()),formatBody));
 						j=j+1;
 					}else{ //新建个sheet
 						j=2;
@@ -445,7 +454,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 						//给sheet电子版中所有的列设置默认的列的宽度;  
 						sheet.getSettings().setDefaultColumnWidth(15);
 						sheet.setColumnView(1, 20);//给第二列设置列宽 
-						sheet.mergeCells(0, 0, 5, 0); //合并单元格，用于显示标题
+						sheet.mergeCells(0, 0, 9, 0); //合并单元格，用于显示标题
 						sheet.addCell(new Label(0,0, "超 滤 膜 系 统 运 行 工 况 记 录 表",formatTitle));
 						//添加表头
 						//				sheet.addCell(new Label(0,1," 编号 ",formatHead));
@@ -456,13 +465,21 @@ public class MoChiAnalysisAction extends ActionSupport{
 						sheet.addCell(new Label(3,1," 出水压力Mpa ",formatHead));
 						sheet.addCell(new Label(4,1," 跨膜压差Mpa ",formatHead));
 						sheet.addCell(new Label(5,1," 进水流量(m³) ",formatHead));
+						sheet.addCell(new Label(6,1," 进膜浊度(NTU) ",formatHead));
+						sheet.addCell(new Label(7,1," 出膜浊度(NTU) ",formatHead));
+						sheet.addCell(new Label(8,1," 进膜藻类(万个/L) ",formatHead));
+						sheet.addCell(new Label(9,1," 出膜藻类(万个/L) ",formatHead));
 						
 						sheet.addCell(new Label(0,j,sdf.format(list.get(i).getT()),formatBody));
 						sheet.addCell(new Label(1,j,list.get(i).getPoolID(),formatBody));
-						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getInPress()),formatBody));
-						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOutPress()),formatBody));
-						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getDiffPress()),formatBody));
-						sheet.addCell(new Label(5,j,Long.toString(list.get(i).getInFlow()),formatBody));
+						sheet.addCell(new Label(2,j,list.get(i).getInPress()==null?"":Double.toString(list.get(i).getInPress()),formatBody));
+						sheet.addCell(new Label(3,j,list.get(i).getOutPress()==null?"":Double.toString(list.get(i).getOutPress()),formatBody));
+						sheet.addCell(new Label(4,j,list.get(i).getDiffPress()==null?"":Double.toString(list.get(i).getDiffPress()),formatBody));
+						sheet.addCell(new Label(5,j,list.get(i).getInFlow()==null?"":Double.toString(list.get(i).getInFlow()),formatBody));
+						sheet.addCell(new Label(6,j,list.get(i).getInNTU()==null?"":Double.toString(list.get(i).getInNTU()),formatBody));
+						sheet.addCell(new Label(7,j,list.get(i).getOutNTU()==null?"":Double.toString(list.get(i).getOutNTU()),formatBody));
+						sheet.addCell(new Label(8,j,list.get(i).getInAlga()==null?"":Double.toString(list.get(i).getInAlga()),formatBody));
+						sheet.addCell(new Label(9,j,list.get(i).getOutAlga()==null?"":Double.toString(list.get(i).getOutAlga()),formatBody));
 						j=j+1;
 					}
 				}
@@ -555,10 +572,15 @@ public class MoChiAnalysisAction extends ActionSupport{
 							datetime.setTime(day.getTime()+hour*3600*1000);
 							dataTemp.setT(datetime);					
 							dataTemp.setPoolID(sheet.getCell(1,i).getContents());
-							dataTemp.setInPress(Double.parseDouble(sheet.getCell(2,i).getContents()));
-							dataTemp.setOutPress(Double.parseDouble(sheet.getCell(3,i).getContents()));
-							dataTemp.setDiffPress(Double.parseDouble(sheet.getCell(4,i).getContents()));
-							dataTemp.setInFlow(Math.round(Double.parseDouble(sheet.getCell(5,i).getContents())));
+							dataTemp.setInPress(Tools.isNumeric(sheet.getCell(2,i).getContents())?null:Double.parseDouble(sheet.getCell(2,i).getContents()));
+							dataTemp.setOutPress(Tools.isNumeric(sheet.getCell(3,i).getContents())?null:Double.parseDouble(sheet.getCell(3,i).getContents()));
+							dataTemp.setDiffPress(Tools.isNumeric(sheet.getCell(4,i).getContents())?null:Double.parseDouble(sheet.getCell(4,i).getContents()));
+							dataTemp.setInFlow(Tools.isNumeric(sheet.getCell(5,i).getContents())?null:Double.parseDouble(sheet.getCell(5,i).getContents()));
+							dataTemp.setInNTU(Tools.isNumeric(sheet.getCell(6,i).getContents())?null:Double.parseDouble(sheet.getCell(6,i).getContents()));
+							dataTemp.setOutNTU(Tools.isNumeric(sheet.getCell(7,i).getContents())?null:Double.parseDouble(sheet.getCell(7,i).getContents()));
+							dataTemp.setInAlga(Tools.isNumeric(sheet.getCell(8,i).getContents())?null:Double.parseDouble(sheet.getCell(8,i).getContents()));
+							dataTemp.setOutAlga(Tools.isNumeric(sheet.getCell(9,i).getContents())?null:Double.parseDouble(sheet.getCell(9,i).getContents()));
+							
 							operateSuccess=(moChiAnalysisService.addMoChiAnalysis(dataTemp)>0);	//添加到数据库
 						}catch(Exception e){
 							e.printStackTrace();

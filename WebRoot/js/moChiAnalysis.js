@@ -24,6 +24,10 @@ $(document).ready(function() {
 			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='OutPress' name='moChiAnalysis.OutPress' data-options='min:0,precision:0' /></td>"
 			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='DiffPress' name='moChiAnalysis.DiffPress' data-options='min:0,precision:0'/></td>"
 			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InFlow' name='moChiAnalysis.InFlow' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InNTU' name='moChiAnalysis.InNTU' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='OutNTU' name='moChiAnalysis.OutNTU' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InAlga' name='moChiAnalysis.InAlga' data-options='min:0,precision:0'/></td>"
+			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='OutAlga' name='moChiAnalysis.OutAlga' data-options='min:0,precision:0'/></td>"
 			+ "<td id='delete" + _len + "'style='width:40px;height:26px'><a href='#' onclick='deltr(" + _len + ",event)'>删除</a></td>"
 			+ "</tr>");
 	});
@@ -224,7 +228,10 @@ var deltr = function(index, event) {
 				+ "<td style='width:62px;height:26px'><input style='width:60px;height:25px' id='OutPress' name='moChiAnalysis.OutPress' data-options='min:0,precision:0' /></td>"
 				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='DiffPress' name='moChiAnalysis.DiffPress' data-options='min:0,precision:0'/></td>"
 				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InFlow' name='moChiAnalysis.InFlow' data-options='min:0,precision:0'/></td>"
-				+ "<td id='delete" + (i-1) + "'style='width:40px;height:26px'><a href='#' onclick='deltr(" + (i-1) + ",event)'>删除</a></td>"
+				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InNTU' name='moChiAnalysis.InNTU' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='OutNTU' name='moChiAnalysis.OutNTU' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InAlga' name='moChiAnalysis.InAlga' data-options='min:0,precision:0'/></td>"
+				+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='OutAlga' name='moChiAnalysis.OutAlga' data-options='min:0,precision:0'/></td>"
 				+ "</tr>");
 	}
 }
@@ -271,6 +278,10 @@ function listMoChiAnalysis(data) {
 		            {field : 'outPress', title : '出水压力', align : 'center', sortable : true,width:70},*/
 		            {field : 'diffPress', title : '跨膜压差', align :'center', sortable : true,width:105},
 		            {field : 'inFlow', title : '进水流量', align : 'center', sortable : true,width:105},
+		            {field : 'inNTU', title : '进膜浊度', align :'center', sortable : true,width:105},
+		            {field : 'outNTU', title : '出膜浊度', align : 'center', sortable : true,width:105},
+		            {field : 'inAlga', title : '进膜藻类', align :'center', sortable : true,width:105,precision:2},
+		            {field : 'outAlga', title : '出膜藻类', align : 'center', sortable : true,width:105,precision:2},
 		            ]],
 		onLoadError: function () {
 			 $.messager.alert("提示", "服务器忙，请稍后再试！", "warning");
@@ -429,7 +440,11 @@ function editMoChiAnalysis() {
 	$("#OutPress").numberbox('setValue',moChiAnalysis.outPress);
 	$("#DiffPress").numberbox('setValue',moChiAnalysis.diffPress);
 	$("#InFlow").numberbox('setValue',moChiAnalysis.inFlow);
-
+	
+	$("#InNTU").numberbox('setValue',moChiAnalysis.inNTU);
+	$("#OutNTU").numberbox('setValue',moChiAnalysis.outNTU);
+	$("#InAlga").numberbox('setValue',moChiAnalysis.inAlga);
+	$("#OutAlga").numberbox('setValue',moChiAnalysis.outAlga);
 	// 显示编辑页面
 	showEditForm();
 }
@@ -923,7 +938,7 @@ function prehImage(){
 			inPressArray[flag_i].push([tempTime,row.inPress]);	//填充数据，进膜压力
 			outPressArray[flag_i].push([tempTime,row.outPress]);	//填充数据，出水压力
 			diffPressArray[flag_i].push([tempTime,row.diffPress]);	//填充数据，跨膜压差
-			inFlowArray[flag_i].push([tempTime,row.inFlow/10000]);	//填充数据，进水流量
+			inFlowArray[flag_i].push([tempTime,row.inFlow==null?null:row.inFlow/10000]);	//填充数据，进水流量
 			
 			
 		} //for
@@ -1210,7 +1225,10 @@ function prehImage(){
 								} 
 						    },
 			        		enableMouseTracking: true,
-			        	}, 
+			        	},
+			        	series:{
+			        		connectNulls:true, //设置可以包含null值
+			        	}
 			        },
 			        		       
 			        //指定数据列

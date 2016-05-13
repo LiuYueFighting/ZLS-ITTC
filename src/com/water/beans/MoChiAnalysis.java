@@ -15,7 +15,11 @@ public class MoChiAnalysis {
 	private Double InPress;		//进膜压力Mpa
 	private Double OutPress;		//出水压力Mpa
 	private Double DiffPress;		//跨膜压差Mpa
-	private Long InFlow; 		//进水流量(m³)
+	private Double InFlow; 		//进水流量(m³)
+	private Double InNTU;       //进膜浊度
+	private Double OutNTU;		//出膜浊度
+	private Double InAlga;		//进膜藻类含量
+	private Double OutAlga;		//出膜藻类含量
 	
 	
 	public Long getID() {
@@ -78,13 +82,53 @@ public class MoChiAnalysis {
 	}
 
 
-	public Long getInFlow() {
+	public Double getInFlow() {
 		return InFlow;
 	}
 
 
-	public void setInFlow(Long inFlow) {
+	public void setInFlow(Double inFlow) {
 		InFlow = inFlow;
+	}
+
+
+	public Double getInNTU() {
+		return InNTU;
+	}
+
+
+	public void setInNTU(Double inNTU) {
+		InNTU = inNTU;
+	}
+
+
+	public Double getOutNTU() {
+		return OutNTU;
+	}
+
+
+	public void setOutNTU(Double outNTU) {
+		OutNTU = outNTU;
+	}
+
+
+	public Double getInAlga() {
+		return InAlga;
+	}
+
+
+	public void setInAlga(Double inAlga) {
+		InAlga = inAlga;
+	}
+
+
+	public Double getOutAlga() {
+		return OutAlga;
+	}
+
+
+	public void setOutAlga(Double outAlga) {
+		OutAlga = outAlga;
 	}
 
 
