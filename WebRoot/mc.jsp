@@ -137,7 +137,7 @@
         <body>
         <jsp:include page="top.jsp" />
         <ol class="breadcrumb">
-        <li><a href="main.jsp">动态演示</a></li>
+        <li><a href="main.jsp">首页</a></li>
         <li><a href="main.jsp">厂平展示</a></li>
         <li class="active">膜车间</li>
         </ol>

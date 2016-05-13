@@ -547,15 +547,15 @@ top: 10px;
 									<th style="width: 40px; height: 26px">序 号</th>
 									<th style="width: 152px; height: 26px">时 间</th>
 									<th style="width: 102px; height: 26px">清水池编号</th>
-									<th style="width: 72px; height: 26px">总进水量</th>
-									<th style="width: 62px; height: 26px">出水量</th>
-									<th style="width: 102px; height: 26px">虹吸反洗水量</th>
-									<th style="width: 102px; height: 26px">V滤反洗水量</th>
-									<th style="width: 82px; height: 26px">炭池反洗水量</th>
-									<th style="width: 82px; height: 26px">机加池排泥</th>
-									<th style="width: 72px; height: 26px">回流进水</th>
-									<th style="width: 52px; height: 26px">蓄水量</th>
-									<th style="width: 72px; height: 26px">预测水位</th>
+									<th style="width: 72px; height: 26px">总进水量/m<sup>3</sup></th>
+									<th style="width: 62px; height: 26px">出水量/m<sup>3</sup></th>
+									<th style="width: 102px; height: 26px">虹吸反洗水量/m<sup>3</sup></th>
+									<th style="width: 102px; height: 26px">V滤反洗水量/m<sup>3</sup></th>
+									<th style="width: 82px; height: 26px">炭池反洗水量/m<sup>3</sup></th>
+									<th style="width: 82px; height: 26px">机加池排泥/m<sup>3</sup></th>
+									<th style="width: 72px; height: 26px">回流进水/m<sup>3</sup></th>
+									<th style="width: 52px; height: 26px">蓄水量/m<sup>3</sup></th>
+									<th style="width: 72px; height: 26px">预测水位/m</th>
 								</tr>
 								<tr id="tr1">
 									<td style="width: 1px; height: 26px">

@@ -132,7 +132,7 @@
 <body>
     <jsp:include page="top.jsp" />
     <ol class="breadcrumb">
-    <li><a href="main.jsp">动态演示</a></li>
+    <li><a href="main.jsp">首页</a></li>
     <li><a href="main.jsp">厂平展示</a></li>
     <li class="active">臭氧接触池</li>
     </ol>
@@ -170,7 +170,7 @@
                 <td>三级曝气时间</td><td>3.60min</td>
                 </tr>
                 <tr>
-                <td>臭氧投加量</td><td>0.4-0.5mg/L</td>
+                <td>臭氧<br>投加量</td><td>0.4-0.5mg/L</td>
                 </tr>
                 </table>
                 </div>

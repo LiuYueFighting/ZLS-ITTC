@@ -124,7 +124,7 @@
     font-size:18px;
     }
     #list_group>select{
-    border: solid 2px #196dff;
+    border: solid 2px #337ab7;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 6px;
@@ -137,7 +137,7 @@
 <body>
     <jsp:include page="top.jsp" />
     <ol class="breadcrumb">
-    <li><a href="main.jsp">动态演示</a></li>
+    <li><a href="main.jsp">首页</a></li>
     <li><a href="main.jsp">厂平展示</a></li>
     <li class="active">取水泵房</li>
     </ol>

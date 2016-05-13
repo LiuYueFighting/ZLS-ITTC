@@ -144,7 +144,7 @@
 <body>
     <jsp:include page="top.jsp" />
     <ol class="breadcrumb">
-    <li><a href="main.jsp">动态演示</a></li>
+    <li><a href="main.jsp">首页</a></li>
     <li><a href="main.jsp">厂平展示</a></li>
     <li class="active">V型滤池</li>
     </ol>
@@ -190,7 +190,7 @@
                 <td  id="third">&nbsp;&nbsp;&nbsp;&nbsp;水洗</td><td id="third">2.5-3L/m&sup2;&middot;s</td>
                 </tr>
                 <tr id="dash2" height="20">
-                <td id="second" >&nbsp;&nbsp;<b>清水漂洗</b></td><td id="second">5-6L/&sup2;&middot;s</td>
+                <td id="second" >&nbsp;&nbsp;<b>清水漂洗</b></td><td id="second">5-6L/m&sup2;&middot;s</td>
                 </tr>
                 </tr>
                 
