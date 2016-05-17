@@ -912,6 +912,10 @@ function prehImage(){
 	var outPressArray = new Array(); //出水压力
 	var diffPressArray = new Array(); //跨膜压差
 	var inFlowArray = new Array(); //进水流量
+	var inNTUArray = new Array(); //进水浊度
+	var outNTUArray = new Array(); //出水浊度
+	var inAlgaArray = new Array(); //进水藻类
+	var outAlgaArray = new Array(); //出水藻类
 	
 	var poollist = new Array();
 	var options;
@@ -928,6 +932,10 @@ function prehImage(){
 				diffPressArray[flag_i]=[];
 				inFlowArray[flag_i]=[];
 				
+				inNTUArray[flag_i]= [];
+				outNTUArray[flag_i]=[];
+				inAlgaArray[flag_i]=[];
+				outAlgaArray[flag_i]=[];
 			}//if flag_i
 			
 			var tempTime = Date.UTC(row.t.substring(0, 4),
@@ -940,7 +948,10 @@ function prehImage(){
 			diffPressArray[flag_i].push([tempTime,row.diffPress]);	//填充数据，跨膜压差
 			inFlowArray[flag_i].push([tempTime,row.inFlow==null?null:row.inFlow/10000]);	//填充数据，进水流量
 			
-			
+			inNTUArray[flag_i].push([tempTime,row.inNTU]);
+			outNTUArray[flag_i].push([tempTime,row.outNTU]);
+			inAlgaArray[flag_i].push([tempTime,row.inAlga]);
+			outAlgaArray[flag_i].push([tempTime,row.outAlga]);
 		} //for
 	} //if datalist.length
 	//var data=listArray[0].sort();
@@ -1191,7 +1202,46 @@ function prehImage(){
 			  
 			},
 			{
-				//第二个y坐标
+				//第2个y坐标
+				labels: {
+	            	overflow: 'justify'
+	            },
+			    startOnTick: true,
+	            endOnTick: true,
+	            minPadding: 0,
+	            maxPadding: 0,
+			    gridLineColor: 'silver',
+			    opposite:false,
+			    tickColor: 'green',
+	            tickLength: 10,
+	            tickWidth: 3,
+	            tickPosition: 'inside',
+			    showLastLabel: true,
+			    title: {
+			    	text: '进水量(万立方米)'                  //指定y轴的标题
+			    },
+			},
+			{
+				//第3个y坐标
+				labels: {
+	            	overflow: 'justify'
+	            },
+			    startOnTick: true,
+	            endOnTick: false,
+	            minPadding: 0,
+	            maxPadding: 0,
+			    gridLineColor: 'silver',
+			    opposite:true,
+			    tickColor: 'green',
+	            tickLength: 10,
+	            tickWidth: 3,
+	            tickPosition: 'inside',
+			    showLastLabel: true,
+			    title: {
+			    	text: '浊度(NTU)'                  //指定y轴的标题
+			    },
+			},{
+				//第4个y坐标
 				labels: {
 	            	overflow: 'justify'
 	            },
@@ -1207,7 +1257,7 @@ function prehImage(){
 	            tickPosition: 'inside',
 			    showLastLabel: true,
 			    title: {
-			    	text: '进水量(万立方米)'                  //指定y轴的标题
+			    	text: '藻类(万个/L)'                  //指定y轴的标题
 			    },
 			}],
 			        
@@ -1260,6 +1310,31 @@ function prehImage(){
 		options.series[i+poollist.length].name='进水流量';
 		options.series[i+poollist.length].type="line";
 		options.series[i+poollist.length].yAxis = 1;
+		
+		options.series[i+poollist.length*2] = new Object();
+		options.series[i+poollist.length*2].data=inNTUArray[i].sort(); 
+		options.series[i+poollist.length*2].name='进水浊度';
+		options.series[i+poollist.length*2].type="line";
+		options.series[i+poollist.length*2].yAxis = 2;
+		
+		options.series[i+poollist.length*3] = new Object();
+		options.series[i+poollist.length*3].data=outNTUArray[i].sort(); 
+		options.series[i+poollist.length*3].name='出水浊度';
+		options.series[i+poollist.length*3].type="line";
+		options.series[i+poollist.length*3].yAxis = 2;
+		
+		options.series[i+poollist.length*4] = new Object();
+		options.series[i+poollist.length*4].data=inAlgaArray[i].sort(); 
+		options.series[i+poollist.length*4].name='进水藻类';
+		options.series[i+poollist.length*4].type="line";
+		options.series[i+poollist.length*4].yAxis = 3;
+		
+		options.series[i+poollist.length*5] = new Object();
+		options.series[i+poollist.length*5].data=outAlgaArray[i].sort(); 
+		options.series[i+poollist.length*5].name='出水藻类';
+		options.series[i+poollist.length*5].type="line";
+		options.series[i+poollist.length*5].yAxis = 3;
+		
 	}
 	options.series.sort(keysrt("name",false));
 	//chart = new Highcharts.Chart(options);
