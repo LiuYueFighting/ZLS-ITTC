@@ -1,6 +1,12 @@
 body {
     background: #afd9ee;
 }
+li {
+	cursor: pointer;
+}
+a:hover {
+	text-decoration:none;
+}
 #left-align-td td {
 	text-align: left;
 	colspan="2";
@@ -56,10 +62,13 @@ body {
     color: #283a45;
     font-weight: bolder;
 }
-#name_gzw a{
+.name_ob{
   	text-decoration: none;
-    /*color: black;*/
+  	cursor: default;
 } 
+#name_HX{
+	cursor: pointer;
+}
 #fix_table{
    	font-size:12px
 }

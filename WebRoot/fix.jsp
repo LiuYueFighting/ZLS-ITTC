@@ -26,7 +26,7 @@
     <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 	<link rel="stylesheet" type="text/css" href="style/myeasyui.css" /> 
 	<link rel="stylesheet" type="text/css" href="css/equiment_fix.css" />       
-    
+    <link rel="stylesheet" type="text/css" href="css/fix.css" />
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
@@ -36,7 +36,7 @@
     <script type="text/javascript" src="js/zebra_dialog.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script> 
-
+	
 </head>
 <body>
     <jsp:include page="top.jsp" />
@@ -188,10 +188,10 @@
 		         	全厂正常运行
 		   </button>
 		   <ul class="dropdown-menu" role="menu">
-		      <li id="fix_scheme">西侧阀门维修</li>
-		      <li id="restore_scheme">西侧阀门恢复</li>
-		      <li id="extra_fix_scheme">东侧阀门维修</li>
-		      <li id="extra_restore_scheme">东侧阀门恢复</li>
+		      <li id="fix_scheme" class="hcc">西侧阀门维修</li>
+		      <li id="restore_scheme" class="hcc">西侧阀门恢复</li>
+		      <li id="extra_fix_scheme" class="hcc">东侧阀门维修</li>
+		      <li id="extra_restore_scheme" class="hcc">东侧阀门恢复</li>
 		   </ul>  
 		</div>
 

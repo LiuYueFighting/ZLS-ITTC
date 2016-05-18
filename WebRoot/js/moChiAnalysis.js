@@ -280,8 +280,8 @@ function listMoChiAnalysis(data) {
 		            {field : 'inFlow', title : '进水流量<br>m<sup>3', align : 'center', sortable : true,width:105},
 		            {field : 'inNTU', title : '进膜浊度 <br>NTU', align :'center', sortable : true,width:105},
 		            {field : 'outNTU', title : '出膜浊度<br>NTU', align : 'center', sortable : true,width:105},
-		            {field : 'inAlga', title : '进膜藻类 <br>万个/L', align :'center', sortable : true,width:105},
-		            {field : 'outAlga', title : '出膜藻类 <br>万个/L', align : 'center', sortable : true,width:105},
+		            {field : 'inAlga', title : '进膜藻类 <br>10000/L', align :'center', sortable : true,width:105},
+		            {field : 'outAlga', title : '出膜藻类 <br>10000/L', align : 'center', sortable : true,width:105},
 		            ]],
 		onLoadError: function () {
 			 $.messager.alert("提示", "服务器忙，请稍后再试！", "warning");
@@ -1257,7 +1257,7 @@ function prehImage(){
 	            tickPosition: 'inside',
 			    showLastLabel: true,
 			    title: {
-			    	text: '藻类(万个/L)'                  //指定y轴的标题
+			    	text: '藻类(10000/L)'                  //指定y轴的标题
 			    },
 			}],
 			        

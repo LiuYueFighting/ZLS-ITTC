@@ -22,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 	<link rel="stylesheet" type="text/css" href="style/myeasyui.css" />  
    	<link rel="stylesheet" type="text/css" href="css/equiment_fix.css" />  
+   	<link rel="stylesheet" type="text/css" href="css/fix_fm.css" />  
    	     
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -32,13 +33,6 @@
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script> 
     
-    <style>
-    /* #WFM062{
-	    color: #6dceff;
-		background: rgba(255,0,0,0.6);
-    } */
-    </style>
-
 </head>
 <body>
     <jsp:include page="top.jsp" />
@@ -182,8 +176,8 @@
 		         	全厂正常运行
 		   </button>
 		   <ul class="dropdown-menu" role="menu">
-		      <li id="fix_scheme">阀门维修</li>
-		      <li id="restore_scheme">阀门恢复</li>
+		      <li id="fix_scheme" class="hcc">阀门维修</li>
+		      <li id="restore_scheme" class="hcc">阀门恢复</li>
 		   </ul>  
 		</div>
 
