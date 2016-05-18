@@ -349,7 +349,7 @@ function listPoolEvaluate(data) {
 
 		             {
 		            	 field : 'rotationSpeed',
-		            	 title : '转速',
+		            	 title : '转速<br>r/min',
 		            	 width : 50,
 		            	 align : 'center',
 		            	 sortable : true
