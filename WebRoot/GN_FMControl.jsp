@@ -269,7 +269,15 @@
 		line-height: 3.5;
 		text-align: left;
 	}
-	
+	a:focus, a:hover {
+    color: #283a45;
+}
+	#FM062 {
+    position: absolute;
+    left: 979px;
+    top: 320px;
+    z-index: 999;
+    cursor: auto;
     </style>
     
     <script>
@@ -511,24 +519,24 @@
 
 
 <!--         <a href="#" id="name_QS"  style="text-decoration: none" class="name_ob">取水泵房</a> -->
-		<a href="#"  id="name_QS"    style="text-decoration: none" class="name_ob">取水泵房</a>
-		<a href="#"  id="name_QS2"    style="text-decoration: none" class="name_ob">取水泵房</a>
-        <a href="#" id="name_JJC1" style="text-decoration: none" class="name_ob">1#<br>机加池</a>
-        <a href="#" id="name_JJC2" style="text-decoration: none" class="name_ob">2#<br>机加池</a>
-        <a href="#" id="name_JJC3" style="text-decoration: none" class="name_ob">3#<br>机加池</a>
-        <a href="#" id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
-        <a href="#" id="name_TC" class="name_ob" style="text-decoration: none">1#炭滤池</a>
-        <a href="#" id="name_TC1" class="name_ob" style="text-decoration: none">2#炭滤池</a>
-        <a href="#" id="name_CY" class="name_ob" style="text-decoration: none">臭氧<br>接触池</a>
-        <a href="#"  id="name_CYC"  class="name_ob" style="text-decoration: none">臭氧生产车间</a>
-        <a href="#" id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
-        <a href="#" id="name_HHJ1" class="name_ob" style="text-decoration: none">旧混合井</a>
-        <a href="#" id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
-        <a href="#" id="name_HX" class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
-        <a href="#" id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
-        <a href="#" id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
-        <a href="#" id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
-        <a href="#" id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
+		<a id="name_QS"    style="text-decoration: none" class="name_ob">取水泵房</a>
+		<a id="name_QS2"    style="text-decoration: none" class="name_ob">取水泵房</a>
+        <a id="name_JJC1" style="text-decoration: none" class="name_ob">1#<br>机加池</a>
+        <a id="name_JJC2" style="text-decoration: none" class="name_ob">2#<br>机加池</a>
+        <a id="name_JJC3" style="text-decoration: none" class="name_ob">3#<br>机加池</a>
+        <a id="name_VL" style="text-decoration: none" class="name_ob">V型滤池</a>
+        <a id="name_TC" class="name_ob" style="text-decoration: none">1#炭滤池</a>
+        <a id="name_TC1" class="name_ob" style="text-decoration: none">2#炭滤池</a>
+        <a id="name_CY" class="name_ob" style="text-decoration: none">臭氧<br>接触池</a>
+        <a id="name_CYC"  class="name_ob" style="text-decoration: none">臭氧生产车间</a>
+        <a id="name_YC" class="name_ob" style="text-decoration: none">预沉池</a>
+        <a id="name_HHJ1" class="name_ob" style="text-decoration: none">旧混合井</a>
+        <a id="name_HHJ2" class="name_ob" style="text-decoration: none">新混合井</a>
+        <a id="name_HX" class="name_ob" style="text-decoration: none"> 虹吸滤池</a>
+        <a id="name_QSC1" class="name_ob" style="text-decoration: none">3#清水池</a>
+        <a id="name_QSC2" class="name_ob" style="text-decoration: none">1#清水池</a>
+        <a id="name_QSC3" class="name_ob" style="text-decoration: none">2#清水池</a>
+        <a id="name_QSC4" class="name_ob" style="text-decoration: none">4#清水池</a>
 
     <img id="FM065" src="image/y3.png" >
     <img id="FM062" src="image/y3.png" >
