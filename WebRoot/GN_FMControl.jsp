@@ -279,10 +279,12 @@
     var openDgree_065=100;
  
     function changeInput(){
+    showPanel();
     read =parseFloat(document.getElementById("read").value);
         if(read<0||read>1800||isNaN(read)){
 
 			$.messager.alert('错误', '<strong>进厂水量输入有误！</strong> </br>进厂水量范围为0-1800m<sup>3</sup>/h', 'info');
+			hidePanel(); 
         return;
     }
     var textFeild =document.getElementById("write");
@@ -293,6 +295,7 @@
     if(read_062==0&&read_063==0&&read_065==0){
 
 		$.messager.alert('错误', '<strong>开启度不能全部为0!</strong> </br>请重新输入！', 'info');
+		hidePanel();
         return;
     }
     setOpenDgree("FM062",read_062);
@@ -300,13 +303,15 @@
     setOpenDgree("FM065",read_065);
     computeAll();
     write();
-    showPanel();
-    blinTwice("#Prediction_results")
+    blinTwice("#Prediction_results");
     }
     
     function showPanel(){
     		document.getElementById("Prediction_results").style.display="block";
     	}
+    function hidePanel(){
+			document.getElementById("Prediction_results").style.display="none";
+	}
     function blinTwice(jqueryDom){
        $(jqueryDom).animate({
            opacity:'1'},'fast');
@@ -326,6 +331,7 @@
 
         if(openDgree<0||openDgree>100||isNaN(openDgree)){
 
+				hidePanel();
 				$.messager.alert('错误', '<strong>阀门</strong>'+num+'<strong>的开启度输入有误！</br>请重新输入！</strong>', 'info');
             return;
         }
@@ -415,10 +421,8 @@
     }
     function compute1(){
 		
-    	if (openDgree_062 == 100 && 
-            openDgree_063 == 100 &&
-            openDgree_065 == 100) {
-			hh2In=hh1In1=hh1In2=600;
+    	if (openDgree_062 == openDgree_063 && openDgree_063 == openDgree_065) {
+			hh2In=hh1In1=hh1In2=parseInt(read/3/50)*50;
 		}else if (openDgree_062+openDgree_063 != 0) {
 			hh2In=Math.round(read*4/9*openDgree_065/100/50)*50;
         	hh1In1=Math.round((read-hh2In)*openDgree_062/(openDgree_062+openDgree_063)/50)*50;
@@ -480,12 +484,12 @@
             <h1>参数设置：</h1>
              <h2> 1. 进水量</h2>
 
-            <p><input id="read" type="text"size="10px" autofocus  value="1800"/>&nbsp;m<sup>3</sup>/h</p>
+            <p><input id="read" type="text"size="10px" autofocus  value="1800" oninput="hidePanel()"/>&nbsp;m<sup>3</sup>/h</p>
 
             <h2> 2. 阀门开启度</h2>
-            <p>62#&nbsp;&nbsp;<input id="read_FM62" type="text" size="10px" value="100"/>&nbsp;%</p>
-            <p>63#&nbsp;&nbsp;<input id="read_FM63" type="text"size="10px" value="100"/>&nbsp;%</p>
-            <p>65#&nbsp;&nbsp;<input id="read_FM65" type="text"size="10px" value="100"/>&nbsp;%</p>
+            <p>62#&nbsp;&nbsp;<input id="read_FM62" type="text" size="10px" value="100" oninput="hidePanel()"/>&nbsp;%</p>
+            <p>63#&nbsp;&nbsp;<input id="read_FM63" type="text"size="10px" value="100" oninput="hidePanel()"/>&nbsp;%</p>
+            <p>65#&nbsp;&nbsp;<input id="read_FM65" type="text"size="10px" value="100" oninput="hidePanel()"/>&nbsp;%</p>
             <button id="btn_submit" class="btn btn-info btn_main" value="0" onclick="changeInput()">预测</button>
         </div>
         <div class="panel panel-info" id="Prediction_results" style="display:none">
