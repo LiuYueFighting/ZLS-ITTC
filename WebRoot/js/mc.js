@@ -97,7 +97,7 @@ oCanvas.domReady(function () {
         y: 0,
 //        height:1,
 //        width:1,
-        image: "image/mc_a.png"
+        image: "image/mc_a2.png"
     });
     canvas.addChild(fg2);
 
