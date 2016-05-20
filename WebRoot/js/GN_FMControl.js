@@ -598,18 +598,27 @@ oCanvas.domReady(function(){
     	document.getElementById("name_TC1").style.opacity=0.2;
     	document.getElementById("name_YC").style.opacity=0.2;
     	document.getElementById("name_CYC").style.opacity=0.2;
-    	
-//    	img1.
-//    	img1.opacity=0.2;
-//    	img1.opacity=0.2;
-//    	img1.opacity=0.2;
-//    	canvas.addChild(fg);
-    	canvas.redraw()
+
+    	canvas.redraw();
     	changeInput();
-//        	console.log(bg);
-//        	bg.width=1;
-//    	bg.height=1;
     });
+    $('#read').bind('input propertychange', function() {
+    	hidePanel();
+    	show();
+    });
+    $('#read_FM62').bind('input propertychange', function() {
+    	hidePanel();
+    	show();
+    });
+    $('#read_FM63').bind('input propertychange', function() {
+    	hidePanel();
+    	show();
+    });
+    $('#read_FM65').bind('input propertychange', function() {
+    	hidePanel();
+    	show();
+    });
+    
     
     var read = 1800;
     var openDgree_062=100;
@@ -795,4 +804,45 @@ oCanvas.domReady(function(){
         document.getElementById("jjc3In").innerHTML=jjc3In.toFixed(0);
 
         }
+    
+    function show(){
+    	bg.opacity=1;
+    	img1.opacity=1;
+    	img11.opacity=1;
+    	img2.opacity=1;
+    	img21.opacity=1;
+    	img22.opacity=1;
+    	img3.opacity=1;
+    	img4.opacity=1;
+    	img41.opacity=1;
+    	img5.opacity=1;
+    	img6.opacity=1;
+    	img61.opacity=1;
+    	img62.opacity=1;
+    	img63.opacity=1;
+    	img7.opacity=1;
+    	img8.opacity=1;
+    	img81.opacity=1;
+    	img9.opacity=1;
+    	img10.opacity=1;
+    	document.getElementById("name_QS").style.opacity=1;
+    	document.getElementById("name_QS2").style.opacity=1;
+    	document.getElementById("name_JJC1").style.opacity=1;
+    	document.getElementById("name_JJC2").style.opacity=1;
+    	document.getElementById("name_JJC3").style.opacity=1;
+    	document.getElementById("name_VL").style.opacity=1;
+    	document.getElementById("name_HHJ1").style.opacity=1;
+    	document.getElementById("name_HHJ2").style.opacity=1;
+    	document.getElementById("name_HX").style.opacity=1;
+    	document.getElementById("name_QSC1").style.opacity=1;
+    	document.getElementById("name_CY").style.opacity=1;
+    	document.getElementById("name_QSC2").style.opacity=1;
+    	document.getElementById("name_QSC3").style.opacity=1;
+    	document.getElementById("name_QSC4").style.opacity=1;
+    	document.getElementById("name_TC").style.opacity=1;
+    	document.getElementById("name_TC1").style.opacity=1;
+    	document.getElementById("name_YC").style.opacity=1;
+    	document.getElementById("name_CYC").style.opacity=1;
+    	canvas.redraw();
+    }
 });

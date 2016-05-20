@@ -304,12 +304,12 @@
             <h1>参数设置：</h1>
              <h2> 1. 进水量</h2>
 
-            <p><input id="read" type="text"size="10px" autofocus  value="1800" oninput="hidePanel()"/>&nbsp;m<sup>3</sup>/h</p>
+            <p><input id="read" type="text"size="10px" autofocus  value="1800" />&nbsp;m<sup>3</sup>/h</p>
 
             <h2> 2. 阀门开启度</h2>
-            <p>62#&nbsp;&nbsp;<input id="read_FM62" type="text" size="10px" value="100" oninput="hidePanel()"/>&nbsp;%</p>
-            <p>63#&nbsp;&nbsp;<input id="read_FM63" type="text"size="10px" value="100" oninput="hidePanel()"/>&nbsp;%</p>
-            <p>65#&nbsp;&nbsp;<input id="read_FM65" type="text"size="10px" value="100" oninput="hidePanel()"/>&nbsp;%</p>
+            <p>62#&nbsp;&nbsp;<input id="read_FM62" type="text" size="10px" value="100"/>&nbsp;%</p>
+            <p>63#&nbsp;&nbsp;<input id="read_FM63" type="text"size="10px" value="100" />&nbsp;%</p>
+            <p>65#&nbsp;&nbsp;<input id="read_FM65" type="text"size="10px" value="100" />&nbsp;%</p>
             <button id="btn_submit" class="btn btn-info btn_main" value="0">预测</button>
         </div>
         <div class="panel panel-info" id="Prediction_results" style="display:none">
@@ -358,7 +358,7 @@
     <p id="WFM062" class="name_FM">062#</p>
     <p id="WFM063" class="name_FM">063#</p>
 
-                
+            
         
     
 
