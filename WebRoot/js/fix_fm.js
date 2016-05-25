@@ -896,64 +896,7 @@ oCanvas.domReady(function () {
         GD25.advance();
         GD30.advance();
         GD36.advance();
-        
-//        if((GD0101.state==1)&&(GD25.state==1)){
-//        	blinTwice("#step_3");
-//        }
-//        if((GD11.state==0)&&(GD1001.state==0)){        	
-//        	setFMColorRed("FM018");
-//        	GD141.state=2;
-//        }
-//        if((GD11.state==1)&&(GD1001.state==1)){        	
-//        	GD141.state=3;
-//        }
-        
-//        if(GD01.full==1){
-//            GD0101.paused=1;
-//        }
-//        if(GD02.full==1){
-//            GD03.paused=1;
-//            GD04.paused=1;
-//        }
-//        if(GD04.full==1){
-//            img4.trigger("flash");
-//            img41.trigger("flash");
-//        }
-//        if(GD07.full==1){
-//            img2.trigger("flash");
-//            img21.trigger("flash");
-//            img22.trigger("flash");
-//        }
-//        if(GD09.full==1)
-//        {
-//            img5.trigger("flash");
-//            img3.trigger("flash");
-//        }
-//        if(GD10.full==1){
-//            GD1001.paused=1;
-//            GD1002.paused=1;
-//            GD11.paused=1;
-//        }
-//        if(GD15.full==1){
-//            img9.trigger("flash");
-//        }
-//        if(GD17.full==1){
-//            img8.trigger("flash");
-//            img81.trigger("flash");
-//        }
-//        if(GD19.full==1){
-//            img6.trigger("flash");
-//
-//        }
-//        if(GD21.full==1){
-//            img61.trigger("flash");
-//        }
-//        if(GD23.full==1){
-//            img63.trigger("flash");
-//        }
-//        if(GD24.full==1){
-//            img62.trigger("flash");
-//        }
+
         canvas.redraw();
     });
 //    GD01.paused=1;
@@ -994,211 +937,7 @@ oCanvas.domReady(function () {
         GD25.init();
         GD30.init();
         GD36.init();
-        
-        img1.bind("flash",function(){
-            $("#name_QS").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QS").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QS").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QS").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QS").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-        });
 
-        img2.bind("flash",function(){
-            $("#name_JJC1").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_JJC1").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_JJC1").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_JJC1").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_JJC1").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-            GD08.paused=1;
-            GD09.paused=1;
-        });
-
-
-        img21.bind("flash",function(){
-            $("#name_JJC2").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_JJC2").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_JJC2").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_JJC2").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_JJC2").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-
-            GD10.paused=1;
-            GD11.paused=1;
-        });
-
-        img22.bind("flash",function(){
-            $("#name_JJC3").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_JJC3").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_JJC3").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_JJC3").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_JJC3").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-
-            GD12.paused=1;
-        });
-
-        img3.bind("flash",function(){
-            $("#name_VL").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_VL").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_VL").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_Vl").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_Vl").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-
-            GD15.paused=1;
-        });
-
-        img4.bind("flash",function(){
-            $("#name_HHJ").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_HHJ").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_HHJ").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_HHJ").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_HHJ").animate({
-                height:'200px',opacity:'1'},'fast');
-            img4.unbind("flash");
-
-            GD05.paused=1;
-            GD06.paused=1;
-            GD07.paused=1;
-        });
-
-        img5.bind("flash",function(){
-            $("#name_HX").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_HX").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_HX").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_HX").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_HX").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-
-            GD13.paused=1;
-            GD14.paused=1;
-        });
-
-        img6.bind("flash",function(){
-            $("#name_QSC1").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QSC1").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QSC1").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QSC1").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QSC1").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-        });
-
-        img61.bind("flash",function(){
-            $("#name_QSC2").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QSC2").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QSC2").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QSC2").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QSC2").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-        });
-
-        img62.bind("flash",function(){
-            $("#name_QSC3").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QSC3").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QSC3").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QSC3").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QSC3").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-        });
-
-        img63.bind("flash",function(){
-            $("#name_QSC4").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QSC4").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QSC4").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_QSC4").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_QSC4").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-        });
-
-        img8.bind("flash",function(){
-            $("#name_TC").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_TC").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_TC").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_TC").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_TC").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-
-            GD18.paused=1;
-            GD19.paused=1;
-        });
-
-        img9.bind("flash",function(){
-            $("#name_CY").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_CY").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_CY").animate({
-                height:'200px',opacity:'1'},'fast');
-            $("#name_CY").animate({
-                height:'200px',opacity:'0'},'fast');
-            $("#name_CY").animate({
-                height:'200px',opacity:'1'},'fast');
-            this.unbind("flash");
-
-            GD16.paused=1;
-            GD17.paused=1;
-        });
         canvas.settings.fps=40;
         GD01.paused=1;
     }
@@ -1252,349 +991,89 @@ oCanvas.domReady(function () {
         $(".hiden").hide();
     }
     function restore_fm062(){
-        
         $("#fix_head").html("62#阀门维修配合方案");
-        
+
         $("#init_stat").html('062#阀门恢复<span class="caret"></span>');
         document.getElementById("export").href="download/FM_62_RECOVER.docx";
- 		
 
- 		$(".table_content").css('background','#ffffff');
+
+        $(".table_content").css('background','#ffffff');
 
         $("#step_1").html("1&nbsp;&nbsp;打开旧混合井西侧搅拌浆");
         $("#step_2").html("2&nbsp;&nbsp;打开064#阀门");
         $("#step_3").html("3&nbsp;&nbsp;打开09#阀门");
         $("#step_4").html("&nbsp;");
- 		
+
         $('.table_content').unbind();
-		//动画队列
-    	function next(delay){
-			setTimeout(function(){
-	    		$(document).dequeue("restore_fm062_queue");
-	    	},delay);
-		}
-    	
-    	var restore_fm062_queue = [
-			function() {
-				$("#step_1").css('background','rgba(194,215,245,0.5)');
-				next(1000);
-			},
-			function() {
-				setFMColorGreen("FM062");
-				next(1000);
-			},
-			function() {
-				$("#step_2").css('background','rgba(194,215,245,0.5)');
-				next(1000);
-			},
-			function(){
-				setFMColorGreen("FM064");
-				next(1000);
-			},
-			function() {
-				$("#step_3").css('background','rgba(194,215,245,0.5)');
-				next(1000);
-			},
-			function() {
-				setFMColorGreen("FM09");
-				next(1000);
-			},
-			function() {
-				GD0101.state = 3;
-				$(document).on('overflow', function(){
-					$(document).off('overflow');
-					next(1000);
-				});
-			},
-			function() {
-				GD25.state = 3;
-				$(document).on('overflow', function(){
-					$(document).off('overflow');
-					next(1000);
-				});
-			},
-			function() {
-				GD0102.state = 3;
-				$(document).on('overflow', function(){
-					$(document).off('overflow');
-					next(1000);
-				});
-			},
-			function() {
-				GD05.state = 3;
-			}
-        ];
-    	$(document).queue("restore_fm062_queue",restore_fm062_queue);
-    	initReset();
-    	
-    	function initReset(){
-    		//Start of animation,reset all animation
-    		$(document).off('overflow');
-    		
-    		setFMColorRed("FM09");
-    		setFMColorRed("FM064");
-    		document.getElementById("FM062").src="image/y1.png";
-    		
-    		$(".table_content").css("background","#ffffff");
-    		
-    		GD0101.state = 0;
-    		GD25.state = 0;
-    		GD0102.state = 0;
-    		GD05.state = 0;
-    		$(document).dequeue("restore_fm062_queue");
-    	}
-    	
-    	$('.table_content').unbind();
-    	$('#step_1').click(function(){
-    		$(document).clearQueue("restore_fm062_queue");
-    		$(document).queue("restore_fm062_queue",restore_fm062_queue);
-    		initReset();
-    	});
-    	
-    	$('#step_2').click(function(){
-    		$(document).clearQueue("restore_fm062_queue");
-    		var tempQueue = restore_fm062_queue.slice(0);
-    		tempQueue.splice(0,2,function(){
-    			$("#step_1").css('background','rgba(194,215,245,0.5)');
-    			setFMColorGreen("FM062");
-				setTimeout(function(){
-					$(document).dequeue("restore_fm062_queue");
-				},1000);
-    		});
-    		$(document).queue("restore_fm062_queue",tempQueue);
-    		initReset();
-    	});
-    	
-    	$('#step_3').click(function(){
-    		$(document).clearQueue("restore_fm062_queue");
-    		var tempQueue = restore_fm062_queue.slice(0);
-    		tempQueue.splice(0,4,function(){
-    			$("#step_1").css('background','rgba(194,215,245,0.5)');
-    			setFMColorGreen("FM062");
-    			$("#step_2").css('background','rgba(194,215,245,0.5)');
-    			setFMColorGreen("FM064");
-				setTimeout(function(){
-					$(document).dequeue("restore_fm062_queue");
-				},1000);
-    		});
-    		$(document).queue("restore_fm062_queue",tempQueue);
-    		initReset();
-    	});
-        
- 		$("div.hiden").show();
+        //动画队列
+        $(document).off('drain');
+        var elements = ['#step_1','FM062','#step_2','FM064','#step_3','FM09',GD0101,GD25,GD0102,GD05],
+            delayGroup = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000],
+            fixController = new animation_queue.animationQueueModel.AnimationQueueFactory('restore_fm062_queue');
+
+        fixController.createQueue(elements, delayGroup);
+        fixController.play();
+
+        $('.table_content').unbind();
+        $('#step_1').click(function(){
+            fixController.playback();
+        });
+
+        $('#step_2').click(function(){
+            fixController.playback(2);
+        });
+
+        $('#step_3').click(function(){
+            fixController.playback(4);
+        });
+
+        document.getElementById("FM062").src="image/y1.png";
+
+        $("div.hiden").show();
     }
     function fix_fm062(){
         $("#fix_head").html("62#阀门维修配合方案");
         document.getElementById("FM062").src="image/y1.png";
-        
-    	$("#init_state").text("状态");
-    	$("#init_stat").html('062#阀门维修<span class="caret"></span>');
 
-    	$(".table_content").css('background','#ffffff');
+        $("#init_state").text("状态");
+        $("#init_stat").html('062#阀门维修<span class="caret"></span>');
+
+        $(".table_content").css('background','#ffffff');
         $("#step_1").html("1&nbsp;&nbsp;关闭09#阀门");
         $("#step_2").html("2&nbsp;&nbsp;关闭064#阀门");
         $("#step_3").html("3&nbsp;&nbsp;停旧混合井西侧搅拌浆");
         $("#step_4").html("4&nbsp;&nbsp;1#机加池停止进水");
-		
-        $("#export").text("生成方案");
-		document.getElementById("export").href="download/FM_62_FIX.docx";
-		$("#reset").text("重置");
-		$("#scheme").text("62#阀门恢复");
-		
-		//动画队列
-		$(document).off('drain');
-		
-    	var fix_fm062_queue = [
-			function() {
-				$("#step_1").css('background','rgba(194,215,245,0.5)');
-				setTimeout(function(){
-		    		$(document).dequeue("fix_fm062_queue");
-		    	},1000);
-			},
-			function() {
-				setFMColorRed("FM09");
-		    	setTimeout(function(){
-		    		$(document).dequeue("fix_fm062_queue");
-		    	},1000);
-			},
-			function() {
-		        GD0101.state = 2;
-				$(document).on('drain', function(){
-					setTimeout(function(){
-						$(document).off('drain');
-						$(document).dequeue("fix_fm062_queue");
-					},1000);
-				});
-			},
-			function() {
-				$("#step_2").css('background','rgba(194,215,245,0.5)');
-		    	setTimeout(function(){
-		    		$(document).dequeue("fix_fm062_queue");
-		    	},1000);
-			},
-			function(){
-				setFMColorRed("FM064");
-		    	setTimeout(function(){
-		    		$(document).dequeue("fix_fm062_queue");
-		    	},1000);
-			},
-			function() {
-				GD25.state = 2;
-				
-				$(document).on('drain', function(){
-					setTimeout(function(){
-						$(document).off('drain');
-						$(document).dequeue("fix_fm062_queue");
-					},1000);
-				});
-			},
-			function() {
-				$("#step_3").css('background','rgba(194,215,245,0.5)');
-    			setTimeout(function(){
-    				$(document).dequeue("fix_fm062_queue");
-    			},1000);
-			},
-			function() {
-				GD0102.state = 2;
 
-				$(document).on('drain', function(){
-					setTimeout(function(){
-						$(document).off('drain');
-						$(document).dequeue("fix_fm062_queue");
-					},1000);
-				});
-			},
-			function() {
-				$("#step_4").css('background','rgba(194,215,245,0.5)');
-    			setTimeout(function(){
-    				$(document).dequeue("fix_fm062_queue");
-    			},1000);
-			},
-			function() {
-				GD05.state = 2;
-			}
-        ];
-    	$(document).queue("fix_fm062_queue",fix_fm062_queue);
-    	$(document).dequeue("fix_fm062_queue");
-    	
-    	var fix_fm062_queue_mask = [
-		    function(){
-		    	//Start of animation,reset all animation
-		    	$(document).off('drain');
-		    	
-		    	setFMColorGreen("FM09");
-		    	setFMColorGreen("FM064");
-				$(".table_content").css("background-color","#ffffff");
-				GD0101.state = 1;
-				GD0102.state = 1;
-				GD25.state = 1;
-				GD05.state = 1;
-				$(document).dequeue("fix_fm062_queue");
-		    },
-  			function() {
-  				$("#step_1").css('background','rgba(194,215,245,0.5)');
-  				$(document).dequeue("fix_fm062_queue");
-  			},
-  			function() {
-  				setFMColorRed("FM09");
-	    		$(document).dequeue("fix_fm062_queue");
-  			},
-  			function() {
-  		        GD0101.state = 0;
-				$(document).dequeue("fix_fm062_queue");
-  			},
-  			function() {
-  				$("#step_2").css('background','rgba(194,215,245,0.5)');
-	    		$(document).dequeue("fix_fm062_queue");
-  			},
-  			function(){
-  				setFMColorRed("FM064");
-	    		$(document).dequeue("fix_fm062_queue");
-  			},
-  			function() {
-  				GD25.state = 0;
-				$(document).dequeue("fix_fm062_queue");
-  			},
-  			function() {
-  				$("#step_3").css('background','rgba(194,215,245,0.5)');
-  				$(document).dequeue("fix_fm062_queue");
-  			},
-  			function() {
-  				GD0102.state = 0;
-				$(document).dequeue("fix_fm062_queue");
-  			},
-  			function() {
-  				$("#step_4").css('background','rgba(194,215,245,0.5)');
-  				$(document).dequeue("fix_fm062_queue");
-  			}
-          ];
-    	
-    	$('.table_content').unbind();
-    	$('#step_1').click(function(){
-    		$(document).clearQueue("fix_fm062_queue");
-    		var tempQueue = fix_fm062_queue.slice(0);
-    		var swapQueue = fix_fm062_queue_mask.slice(0);
-    		
-    		var s1 = swapQueue.shift();
-    		tempQueue.unshift(s1);
-    			
-    		$(document).queue("fix_fm062_queue",tempQueue);
-        	$(document).dequeue("fix_fm062_queue");
-    	});
-    	
-    	$('#step_2').click(function(){
-    		$(document).clearQueue("fix_fm062_queue");
-    		var tempQueue = fix_fm062_queue.slice(0);
-    		var swapQueue = fix_fm062_queue_mask.slice(0);
-    		
-    		var s1 = swapQueue.shift();
-    		var s2 = swapQueue.shift();
-    		var s3 = swapQueue.shift();
-    		var s4 = swapQueue.shift();
-    		tempQueue.splice(0,3,s1,s2,s3,s4);
-    			
-    		$(document).queue("fix_fm062_queue",tempQueue);
-        	$(document).dequeue("fix_fm062_queue");
-    	});
-    	
-    	$('#step_3').click(function(){
-    		$(document).clearQueue("fix_fm062_queue");
-    		var tempQueue = fix_fm062_queue.slice(0);
-    		var swapQueue = fix_fm062_queue_mask.slice(0);
-    		
-    		var s1 = swapQueue.shift();
-    		var s2 = swapQueue.shift();
-    		var s3 = swapQueue.shift();
-    		var s4 = swapQueue.shift();
-    		var s5 = swapQueue.shift();
-    		var s6 = swapQueue.shift();
-    		var s7 = swapQueue.shift();
-    		tempQueue.splice(0,6,s1,s2,s3,s4,s5,s6,s7);
-    			
-    		$(document).queue("fix_fm062_queue",tempQueue);
-        	$(document).dequeue("fix_fm062_queue");
-    	});
-    	
-    	$('#step_4').click(function(){
-    		$(document).clearQueue("fix_fm062_queue");
-    		var tempQueue = fix_fm062_queue.slice(0);
-    		var swapQueue = fix_fm062_queue_mask.slice(0);
-    		
-    		var s1 = swapQueue.shift();
-    		var s2 = swapQueue.shift();
-    		var s3 = swapQueue.shift();
-    		var s4 = swapQueue.shift();
-    		var s5 = swapQueue.shift();
-    		var s6 = swapQueue.shift();
-    		var s7 = swapQueue.shift();
-    		var s8 = swapQueue.shift();
-    		var s9 = swapQueue.shift();
-    		var s10 = swapQueue.shift();
-    		tempQueue.splice(0,9,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10);
-    			
-    		$(document).queue("fix_fm062_queue",tempQueue);
-        	$(document).dequeue("fix_fm062_queue");
-    	});
+        $("#export").text("生成方案");
+        document.getElementById("export").href="download/FM_62_FIX.docx";
+        $("#reset").text("重置");
+        $("#scheme").text("62#阀门恢复");
+
+        //动画队列
+        $(document).off('drain');
+        var elements = ['#step_1','FM09',GD0101,'#step_2','FM064',GD25,'#step_3',GD0102,'#step_4',GD05],
+            delayGroup = [10, 10, 10, 10, 10, 10, 10, 10, 1000, 1000],
+            fixController = new animation_queue.animationQueueModel.AnimationQueueFactory('fix_fm062_queue');
+
+        fixController.createQueue(elements, delayGroup);
+        fixController.play();
+
+        $('.table_content').unbind();
+        $('#step_1').click(function(){
+            fixController.playback();
+        });
+
+        $('#step_2').click(function(){
+            fixController.playback(2);
+        });
+
+        $('#step_3').click(function(){
+            fixController.playback(5);
+        });
+
+        $('#step_4').click(function(){
+            fixController.playback(6);
+        });
 		
         $("div.hiden").show();
     }
