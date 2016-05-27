@@ -467,7 +467,7 @@ top: 10px;
 						<button type="button"  class="btn btn-primary" onclick=upload.click()>
 					             <span class="fa fa-folder-open" style="font-size: 14px; "></span>浏览
 					   </button>
-						<input type=file name="upload" id="upload" style="display: none;" onchange="fakeUpload.value=value" /> 
+						<input type=file name="upload" id="upload" style="display: none;" onchange="fakeUpload.value=value.replace(/.*fakepath\\/i, '')"/> 
 						<input id="fakeUpload" name="fakeUpload" type="text" ondblclick=upload.click()
 							style="width: 260px; height: 35px; border: 1px solid #95B8E7;">						
 					</form>	
