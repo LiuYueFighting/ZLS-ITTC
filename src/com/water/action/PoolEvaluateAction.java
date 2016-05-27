@@ -623,53 +623,54 @@ public class PoolEvaluateAction extends ActionSupport{
 					fs = new FileInputStream(upload);
 					//得到工作簿
 					workBook = Workbook.getWorkbook(fs);
-				}catch(FileNotFoundException e){
-					e.printStackTrace();
-					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
-					operateSuccess=false;
-				}catch(BiffException e){
-					e.printStackTrace();
-					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
-					operateSuccess=false;
-				}catch(IOException e){
+				}catch(Exception e){
 					e.printStackTrace();
 					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
 					operateSuccess=false;
 				}
-				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-				String sheetName = sheet.getName();
-				Date day = sdf.parse(sheetName);
-				String sql="delete PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
-				// 直接覆盖当天信息
-				int deleteResult = poolEvaluateService.bulkUpadte(sql);
-				System.out.println("受影响的行数："+deleteResult);
-				for(int i=2;i<sheet.getRows();i++){ //共13列数据,从第3行开始
-					if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
-					{	
-						continue;
-					}
-					else{
-						PoolEvaluate dataTemp = new PoolEvaluate();
-						dataTemp.setID(0);
-						dataTemp.setT(day);
-						dataTemp.setPoolID(sheet.getCell(0,i).getContents());
-						dataTemp.setPAC(Double.parseDouble(sheet.getCell(1,i).getContents()));
-						dataTemp.setFeCl3(Double.parseDouble(sheet.getCell(2,i).getContents()));
-						dataTemp.setOpenDegree(Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setRotationSpeed(Double.parseDouble(sheet.getCell(4,i).getContents()));
-						dataTemp.setSV(Double.parseDouble(sheet.getCell(5,i).getContents()));
-						dataTemp.setSmallMudFre(Double.parseDouble(sheet.getCell(6,i).getContents()));
-						dataTemp.setBigMudFre(Double.parseDouble(sheet.getCell(7,i).getContents()));
-						dataTemp.setNTU(Double.parseDouble(sheet.getCell(8,i).getContents()));
-						dataTemp.setAlgaeContent(Double.parseDouble(sheet.getCell(9,i).getContents()));
-						dataTemp.setOutNTU(Double.parseDouble(sheet.getCell(10,i).getContents()));
-						dataTemp.setCL(Double.parseDouble(sheet.getCell(11,i).getContents()));
-						dataTemp.setWaterTemp(Double.parseDouble(sheet.getCell(12,i).getContents()));
-						operateSuccess=(poolEvaluateService.addPoolEvaluate(dataTemp)>0);	//添加到数据库
-					}
-				} //for
-				workBook.close(); //关闭
+				
+				try{
+					DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+					Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
+					String sheetName = sheet.getName();
+					Date day = sdf.parse(sheetName);
+					String sql="delete PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
+					// 直接覆盖当天信息
+					int deleteResult = poolEvaluateService.bulkUpadte(sql);
+					System.out.println("受影响的行数："+deleteResult);
+					for(int i=2;i<sheet.getRows();i++){ //共13列数据,从第3行开始
+						if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
+						{	
+							continue;
+						}
+						else{
+							PoolEvaluate dataTemp = new PoolEvaluate();
+							dataTemp.setID(0);
+							dataTemp.setT(day);
+							dataTemp.setPoolID(sheet.getCell(0,i).getContents());
+							dataTemp.setPAC(Double.parseDouble(sheet.getCell(1,i).getContents()));
+							dataTemp.setFeCl3(Double.parseDouble(sheet.getCell(2,i).getContents()));
+							dataTemp.setOpenDegree(Double.parseDouble(sheet.getCell(3,i).getContents()));
+							dataTemp.setRotationSpeed(Double.parseDouble(sheet.getCell(4,i).getContents()));
+							dataTemp.setSV(Double.parseDouble(sheet.getCell(5,i).getContents()));
+							dataTemp.setSmallMudFre(Double.parseDouble(sheet.getCell(6,i).getContents()));
+							dataTemp.setBigMudFre(Double.parseDouble(sheet.getCell(7,i).getContents()));
+							dataTemp.setNTU(Double.parseDouble(sheet.getCell(8,i).getContents()));
+							dataTemp.setAlgaeContent(Double.parseDouble(sheet.getCell(9,i).getContents()));
+							dataTemp.setOutNTU(Double.parseDouble(sheet.getCell(10,i).getContents()));
+							dataTemp.setCL(Double.parseDouble(sheet.getCell(11,i).getContents()));
+							dataTemp.setWaterTemp(Double.parseDouble(sheet.getCell(12,i).getContents()));
+							operateSuccess=(poolEvaluateService.addPoolEvaluate(dataTemp)>0);	//添加到数据库
+						}
+					} //for
+				}
+				catch(Exception e){
+					e.printStackTrace();
+					ServletActionContext.getServletContext().setAttribute("errorMsg", "文件上传错误！");
+					operateSuccess = false;
+				}finally{
+					workBook.close(); //关闭
+				}
 			}//upload!=null
 			else{
 				operateSuccess=false;
@@ -694,26 +695,30 @@ public class PoolEvaluateAction extends ActionSupport{
 				fs = new FileInputStream(upload);
 				//得到工作簿
 				workBook = Workbook.getWorkbook(fs);
+				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
+				String sheetName = sheet.getName();
+				//得到当前天数
+				Date day = (Date) sdf.parse(sheetName);
+				String sql="from PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
+				List<PoolEvaluate> list = poolEvaluateService.findBySql(sql);
+				if(null == list||list.isEmpty()){
+					errMsg="";
+					operateSuccess=true;
+				}
+				else{
+					errMsg = "文件冲突，已存在相关信息！";	
+					operateSuccess=false;
+				}
 			}catch(Exception e){
 				e.printStackTrace();
 				errMsg = uploadFileName+ "数据导入发生错误！";	
 				operateSuccess=false;
+			}finally{
+				fs.close();
+				workBook.close();
 			}
-			DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-			String sheetName = sheet.getName();
-			//得到当前天数
-			Date day = (Date) sdf.parse(sheetName);
-			String sql="from PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
-			List<PoolEvaluate> list = poolEvaluateService.findBySql(sql);
-			if(null == list||list.isEmpty()){
-				errMsg="";
-				operateSuccess=true;
-			}
-			else{
-				errMsg = "文件冲突，已存在相关信息！";	
-				operateSuccess=false;
-			}
+			
 		}else{ //upload=''
 			errMsg = "请选择上传文件！";
 			operateSuccess=false;
