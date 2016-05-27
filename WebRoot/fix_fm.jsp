@@ -29,7 +29,6 @@
     <script src="js/ocanvas-2.7.4.min.js"></script>
     <script src="js/my_oCanvas.js"></script>
     <script src="js/fix_fm.js"></script>
-    <script src="js/models/animation_queue.js"></script>
     
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script> 

@@ -1,736 +1,581 @@
-.name_ob {
-    font-family: '微软雅黑', 'Arial';
-    color: #283a45;;
+.name_ob{
+    font-family: '微软雅黑','Arial';
+    color:#283a45;;
     font-size: 20px;
-    font-weight: bold;
+    font-weight:bold;
     height: auto;
     width: auto;
     z-index: 999;
     padding: 4px;
 }
-
-#name_QS1 {
+#name_QS1{
     position: absolute;
     left: 689px;
     top: 66px;
 }
-
-#name_QS2 {
+#name_QS2{
     position: absolute;
     left: 689px;
     top: 145px;
 }
-
-#name_JJC1 {
+#name_JJC1{
     position: absolute;
     left: 865px;
     top: 373px;
 }
-
-#name_JJC2 {
+#name_JJC2{
     position: absolute;
     left: 1076px;
     top: 373px;
 }
-
-#name_JJC3 {
+#name_JJC3{
     position: absolute;
-    left: 1153px;
+    left:1153px;
     top: 602px;
 }
-
-#name_VL {
+#name_VL{
     position: absolute;
     left: 875px;
     top: 685px;
 }
-
-#name_HHJ1 {
+#name_HHJ1{
     position: absolute;
-    left: 965px;
+    left:965px;
     top: 349px;
-    font-size: 17px;
+    font-size:17px;
 }
-
-#name_HHJ2 {
+#name_HHJ2{
     position: absolute;
-    left: 1176px;
+    left:1176px;
     top: 363px;
     height: auto;
     width: 25px;
-    font-size: 17px;
+    font-size:17px;
 }
-
-#name_HX {
+#name_HX{
     position: absolute;
-    left: 849px;
+    left:849px;
     top: 533px;
 }
-
-#name_QSC1 {
+#name_QSC1{
     position: absolute;
-    left: 295px;
+    left:295px;
     top: 489px;
 }
-
-#name_CY {
+#name_CY{
     position: absolute;
     left: 617px;
     top: 647px;
 }
-
-#name_CYC {
+#name_CYC{
     position: absolute;
-    left: 636px;
+    left:636px;
     top: 453px;
     height: auto;
     width: 25px;
 }
-
-#name_QSC2 {
+#name_QSC2{
     position: absolute;
-    left: 315px;
+    left:315px;
     top: 307px;
 }
-
-#name_QSC3 {
+#name_QSC3{
     position: absolute;
-    left: 488px;
+    left:488px;
     top: 307px;
 }
-
-#name_QSC4 {
+#name_QSC4{
     position: absolute;
-    left: 447px;
+    left:447px;
     top: 489px;
 }
-
-#name_TC {
+#name_TC{
     position: absolute;
-    left: 383px;
+    left:383px;
     top: 648px;
 }
-
-#name_TC1 {
+#name_TC1{
     position: absolute;
-    left: 492px;
+    left:492px;
     top: 648px;
 }
-
-#name_YC {
+#name_YC{
     position: absolute;
-    left: 979px;
+    left:979px;
     top: 150px;
 }
-
-#FM05 {
+#FM05{
     position: absolute;
-    left: 695px;
+    left:695px;
     top: 106px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM06 {
+#FM06{
     position: absolute;
     left: 736px;
     top: 118px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM05 {
+#FM05{
     position: absolute;
     left: 697px;
     top: 118px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM07 {
+#FM07{
     position: absolute;
     left: 718px;
     top: 180px;
-    z-index: 999;
-}
-
-#FM09 {
-    position: absolute;
-    left: 696px;
-    top: 205px;
-    z-index: 999;
-}
-
-#FM010 {
-    position: absolute;
-    left: 738px;
-    top: 207px;
-    z-index: 999;
-}
-
-#FM065 {
-    position: absolute;
-    left: 1032px;
-    top: 245px;
-    z-index: 999;
-}
-
-#FM062 {
-    position: absolute;
-    left: 979px;
-    top: 320px;
-    z-index: 999;
-    cursor: pointer;
-}
-
-#FM063 {
+    z-index:999;
+}#FM09{
+     position: absolute;
+     left: 696px;
+     top: 205px;
+     z-index:999;
+ }#FM010{
+      position: absolute;
+      left:738px;
+      top: 207px;
+      z-index:999;
+  }#FM065{
+       position: absolute;
+       left:1032px;
+       top: 245px;
+       z-index:999;
+   }#FM062{
+        position: absolute;
+        left: 979px;
+        top: 320px;
+        z-index:999;
+        cursor:pointer;
+    }
+#FM063{
     position: absolute;
     left: 1007px;
     top: 320px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM064 {
+#FM064{
     position: absolute;
     left: 1002px;
     top: 284px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM045 {
+#FM045{
     position: absolute;
     left: 886px;
     top: 470px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM014 {
+#FM014{
     position: absolute;
-    left: 826px;
+    left:826px;
     top: 469px;
-    z-index: 999;
-}
-
-#FM015 {
+    z-index:999;
+}#FM015{
+     position: absolute;
+     left: 997px;
+     top: 472px;
+     z-index:999;
+ }#FM069{
+      position: absolute;
+      left: 1058px;
+      top: 471px;
+      z-index:999;
+  }#FM066{
+       position: absolute;
+       left: 1176px;
+       top: 482px;
+       z-index:999;
+   }#FM016{
+        position: absolute;
+        left:978px;
+        top: 505px;
+        z-index:999;
+    }#FM068{
+         position: absolute;
+         left: 1014px;
+         top: 567px;
+         z-index:999;
+     }#FM067{
+          position: absolute;
+          left:1011px;
+          top: 635px;
+          z-index:999;
+      }#FM017{
+           position: absolute;
+           left: 839px;
+           top: 576px;
+           z-index:999;
+       }#FM018{
+            position: absolute;
+            left:869px;
+            top: 576px;
+            z-index:999;
+        }#FM019{
+             position: absolute;
+             left: 869px;
+             top: 622px;
+             z-index:999;
+           
+         }#FM020{
+              position: absolute;
+              left:705px;
+              top: 645px;
+              z-index:999;
+          }
+#FM052{
     position: absolute;
-    left: 997px;
-    top: 472px;
-    z-index: 999;
-}
-
-#FM069 {
-    position: absolute;
-    left: 1058px;
-    top: 471px;
-    z-index: 999;
-}
-
-#FM066 {
-    position: absolute;
-    left: 1176px;
-    top: 482px;
-    z-index: 999;
-}
-
-#FM016 {
-    position: absolute;
-    left: 978px;
-    top: 505px;
-    z-index: 999;
-}
-
-#FM068 {
-    position: absolute;
-    left: 1014px;
-    top: 567px;
-    z-index: 999;
-}
-
-#FM067 {
-    position: absolute;
-    left: 1011px;
-    top: 635px;
-    z-index: 999;
-}
-
-#FM017 {
-    position: absolute;
-    left: 839px;
-    top: 576px;
-    z-index: 999;
-}
-
-#FM018 {
-    position: absolute;
-    left: 869px;
-    top: 576px;
-    z-index: 999;
-}
-
-#FM019 {
-    position: absolute;
-    left: 869px;
-    top: 622px;
-    z-index: 999;
-
-}
-
-#FM020 {
-    position: absolute;
-    left: 705px;
-    top: 645px;
-    z-index: 999;
-}
-
-#FM052 {
-    position: absolute;
-    left: 756px;
+    left:756px;
     top: 698px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM056 {
+#FM056{
     position: absolute;
     left: 690px;
     top: 723px;
-    z-index: 999;
-}
-
-#FM053 {
-    position: absolute;
-    left: 649px;
-    top: 640px;
-    z-index: 999;
-}
-
-#FM054 {
-    position: absolute;
-    left: 622px;
-    top: 641px;
-    z-index: 999;
-}
-
-#FM057 {
-    position: absolute;
-    left: 669px;
-    top: 700px;
-    z-index: 999;
-}
-
-#FM058 {
-    position: absolute;
-    left: 638px;
-    top: 707px;
-    z-index: 999;
-}
-
-#FM059 {
-    position: absolute;
-    left: 599px;
-    top: 657px;
-    z-index: 1000;
-}
-
-#FM021 {
+    z-index:999;
+}#FM053{
+     position: absolute;
+     left: 649px;
+     top: 640px;
+     z-index:999;
+ }#FM054{
+      position: absolute;
+      left:622px;
+      top: 641px;
+      z-index:999;
+  }#FM057{
+       position: absolute;
+       left: 669px;
+       top: 700px;
+       z-index:999;
+   }#FM058{
+        position: absolute;
+        left: 638px;
+        top: 707px;
+        z-index:999;
+    }#FM059{
+         position: absolute;
+         left: 599px;
+         top: 657px;
+         z-index:1000;
+     }
+#FM021{
     position: absolute;
     left: 581px;
     top: 615px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM022 {
+#FM022{
     position: absolute;
-    left: 611px;
+    left:611px;
     top: 588px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM046 {
+#FM046{
     position: absolute;
     left: 370px;
     top: 454px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM023 {
+#FM023{
     position: absolute;
     left: 532px;
     top: 529px;
-    z-index: 999;
-}
-
-#FM024 {
-    position: absolute;
-    left: 559px;
-    top: 589px;
-    z-index: 999;
-}
-
-#FM025 {
-    position: absolute;
-    left: 431px;
-    top: 589px;
-    z-index: 999;
-}
-
-#FM044 {
+    z-index:999;
+}#FM024{
+     position: absolute;
+     left:559px;
+     top: 589px;
+     z-index:999;
+ }#FM025{
+      position: absolute;
+      left: 431px;
+      top: 589px;
+      z-index:999;
+  }
+#FM044{
     position: absolute;
     left: 404px;
     top: 623px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM055 {
+#FM055{
     position: absolute;
     left: 530px;
     top: 624px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM026 {
+#FM026{
     position: absolute;
     left: 404px;
     top: 561px;
-    z-index: 999;
+    z-index:999;
 }
-
-#FM047 {
+#FM047{
     position: absolute;
     left: 328px;
     top: 388px;
-    z-index: 999;
-}
-
-#FM048 {
-    position: absolute;
-    left: 395px;
-    top: 410px;
-    z-index: 999;
-}
-
-#FM049 {
-    position: absolute;
-    left: 452px;
-    top: 411px;
-    z-index: 999;
-}
-
-#FM050 {
-    position: absolute;
-    left: 485px;
-    top: 387px;
-    z-index: 999;
-}
-
-#FM051 {
+    z-index:999;
+}#FM048{
+     position: absolute;
+     left: 395px;
+     top: 410px;
+     z-index:999;
+ }#FM049{
+      position: absolute;
+      left: 452px;
+      top: 411px;
+      z-index:999;
+  }#FM050{
+       position: absolute;
+       left:485px;
+       top: 387px;
+       z-index:999;
+   }
+#FM051{
     position: absolute;
     left: 517px;
     top: 411px;
-    z-index: 999;
+    z-index:999;
 }
-
-#WFM05 {
+#WFM05{
     position: absolute;
-    left: 695px;
+    left:695px;
     top: 106px;
-    z-index: 999;
+    z-index:999;
 }
-
-#WFM06 {
+#WFM06{
     position: absolute;
     left: 762px;
     top: 122px;
-    z-index: 999;
+    z-index:999;
 }
-
-#WFM05 {
+#WFM05{
     position: absolute;
     left: 660px;
     top: 123px;
-    z-index: 999;
+    z-index:999;
 }
-
-#WFM07 {
+#WFM07{
     position: absolute;
     left: 717px;
     top: 169px;
-    z-index: 999;
-}
-
-#WFM09 {
-    position: absolute;
-    left: 658px;
-    top: 213px;
-    z-index: 999;
-}
-
-#WFM010 {
-    position: absolute;
-    left: 763px;
-    top: 211px;
-    z-index: 999;
-}
-
-#WFM065 {
-    position: absolute;
-    left: 1029px;
-    top: 226px;
-    z-index: 999;
-}
-
-#WFM062 {
-    position: absolute;
-    left: 928px;
-    top: 330px;
-    z-index: 999;
-}
-
-#WFM063 {
+    z-index:999;
+}#WFM09{
+     position: absolute;
+     left: 658px;
+     top: 213px;
+     z-index:999;
+ }#WFM010{
+      position: absolute;
+      left: 763px;
+      top: 211px;
+      z-index:999;
+  }#WFM065{
+       position: absolute;
+       left: 1029px;
+       top: 226px;
+       z-index:999;
+   }#WFM062{
+        position: absolute;
+        left: 928px;
+        top: 330px;
+        z-index:999;
+    }
+#WFM063{
     position: absolute;
     left: 1029px;
     top: 331px;
-    z-index: 999;
-}
-
-#WFM064 {
-    position: absolute;
-    left: 986px;
-    top: 265px;
-    z-index: 999;
-}
-
-#WFM045 {
-    position: absolute;
-    left: 870px;
-    top: 498px;
-    z-index: 999;
-}
-
-#WFM014 {
+    z-index:999;
+}#WFM064{
+     position: absolute;
+     left: 986px;
+     top: 265px;
+     z-index:999;
+ }#WFM045{
+      position: absolute;
+      left: 870px;
+      top: 498px;
+      z-index:999;
+  }
+#WFM014{
     position: absolute;
     left: 808px;
     top: 498px;
-    z-index: 999;
-}
-
-#WFM015 {
-    position: absolute;
-    left: 985px;
-    top: 452px;
-    z-index: 999;
-}
-
-#WFM069 {
-    position: absolute;
-    left: 1045px;
-    top: 499px;
-    z-index: 999;
-}
-
-#WFM066 {
-    position: absolute;
-    left: 1126px;
-    top: 491px;
-    z-index: 999;
-}
-
-#WFM016 {
-    position: absolute;
-    left: 925px;
-    top: 508px;
-    z-index: 999;
-}
-
-#WFM068 {
-    position: absolute;
-    left: 1042px;
-    top: 579px;
-    z-index: 999;
-}
-
-#WFM067 {
-    position: absolute;
-    left: 1008px;
-    top: 663px;
-    z-index: 999;
-}
-
-#WFM017 {
-    position: absolute;
-    left: 788px;
-    top: 584px;
-    z-index: 999;
-}
-
-#WFM018 {
-    position: absolute;
-    left: 896px;
-    top: 584px;
-    z-index: 999;
-}
-
-#WFM019 {
-    position: absolute;
-    left: 866px;
-    top: 650px;
-    z-index: 999;
-}
-
-#WFM020 {
-    position: absolute;
-    left: 730px;
-    top: 653px;
-    z-index: 999;
-}
-
-#WFM052 {
+    z-index:999;
+}#WFM015{
+     position: absolute;
+     left: 985px;
+     top: 452px;
+     z-index:999;
+ }#WFM069{
+      position: absolute;
+      left: 1045px;
+      top: 499px;
+      z-index:999;
+  }#WFM066{
+       position: absolute;
+       left: 1126px;
+       top: 491px;
+       z-index:999;
+   }#WFM016{
+        position: absolute;
+        left: 925px;
+        top: 508px;
+        z-index:999;
+    }#WFM068{
+         position: absolute;
+         left: 1042px;
+         top: 579px;
+         z-index:999;
+     }#WFM067{
+          position: absolute;
+          left: 1008px;
+          top: 663px;
+          z-index:999;
+      }#WFM017{
+           position: absolute;
+           left: 788px;
+           top: 584px;
+           z-index:999;
+       }#WFM018{
+            position: absolute;
+            left: 896px;
+            top: 584px;
+            z-index:999;
+        }#WFM019{
+             position: absolute;
+             left: 866px;
+             top: 650px;
+             z-index:999;
+         }#WFM020{
+              position: absolute;
+              left: 730px;
+              top: 653px;
+              z-index:999;
+          }
+#WFM052{
     position: absolute;
     left: 745px;
     top: 678px;
-    z-index: 999;
+    z-index:999;
 }
-
-#WFM056 {
+#WFM056{
     position: absolute;
     left: 722px;
     top: 730px;
-    z-index: 999;
-}
-
-#WFM053 {
-    position: absolute;
-    left: 669px;
-    top: 651px;
-    z-index: 999;
-}
-
-#WFM054 {
-    position: absolute;
-    left: 617px;
-    top: 629px;
-    z-index: 999;
-}
-
-#WFM057 {
-    position: absolute;
-    left: 681px;
-    top: 680px;
-    z-index: 999;
-}
-
-#WFM058 {
-    position: absolute;
-    left: 599px;
-    top: 716px;
-    z-index: 999;
-}
-
-#WFM059 {
-    position: absolute;
-    left: 575px;
-    top: 682px;
-    z-index: 999;
-}
-
-#WFM021 {
+    z-index:999;
+}#WFM053{
+     position: absolute;
+     left: 669px;
+     top: 651px;
+     z-index:999;
+ }#WFM054{
+      position: absolute;
+      left: 617px;
+      top: 629px;
+      z-index:999;
+  }#WFM057{
+       position: absolute;
+       left: 681px;
+       top: 680px;
+       z-index:999;
+   }#WFM058{
+        position: absolute;
+        left: 599px;
+        top: 716px;
+        z-index:999;
+    }#WFM059{
+         position: absolute;
+         left: 575px;
+         top: 682px;
+         z-index:999;
+     }
+#WFM021{
     position: absolute;
     left: 610px;
     top: 613px;
-    z-index: 999;
+    z-index:999;
 }
-
-#WFM022 {
+#WFM022{
     position: absolute;
     left: 637px;
     top: 586px;
-    z-index: 999;
+    z-index:999;
 }
-
-#WFM046 {
+#WFM046{
     position: absolute;
     left: 332px;
     top: 461px;
-    z-index: 999;
+    z-index:999;
 }
-
-#WFM023 {
+#WFM023{
     position: absolute;
     left: 546px;
     top: 538px;
-    z-index: 999;
-}
-
-#WFM024 {
-    position: absolute;
-    left: 524px;
-    top: 585px;
-    z-index: 999;
-}
-
-#WFM025 {
-    position: absolute;
-    left: 460px;
-    top: 585px;
-    z-index: 999;
-}
-
-#WFM044 {
+    z-index:999;
+}#WFM024{
+     position: absolute;
+     left: 524px;
+     top: 585px;
+     z-index:999;
+ }#WFM025{
+      position: absolute;
+      left: 460px;
+      top: 585px;
+      z-index:999;
+  }
+#WFM044{
     position: absolute;
     left: 353px;
     top: 628px;
-    z-index: 999;
+    z-index:999;
 }
-
-#WFM055 {
+#WFM055{
     position: absolute;
     left: 480px;
     top: 628px;
-    z-index: 999;
+    z-index:999;
 }
-
-#WFM026 {
+#WFM026{
     position: absolute;
     left: 372px;
     top: 585px;
-    z-index: 999;
+    z-index:999;
 }
-
-#WFM047 {
+#WFM047{
     position: absolute;
     left: 356px;
     top: 385px;
-    z-index: 999;
-}
-
-#WFM048 {
-    position: absolute;
-    left: 362px;
-    top: 410px;
-    z-index: 999;
-}
-
-#WFM049 {
-    position: absolute;
-    left: 473px;
-    top: 424px;
-    z-index: 999;
-}
-
-#WFM050 {
-    position: absolute;
-    left: 435px;
-    top: 380px;
-    z-index: 999;
-}
-
-#WFM051 {
+    z-index:999;
+}#WFM048{
+     position: absolute;
+     left: 362px;
+     top: 410px;
+     z-index:999;
+ }#WFM049{
+      position: absolute;
+      left: 473px;
+      top: 424px;
+      z-index:999;
+  }#WFM050{
+       position: absolute;
+       left: 435px;
+       top: 380px;
+       z-index:999;
+   }
+#WFM051{
     position: absolute;
     left: 543px;
     top: 410px;
-    z-index: 999;
+    z-index:999;
 }
-
-.name_FM {
-    font-family: '微软雅黑', 'Arial';
+.name_FM{
+    font-family: '微软雅黑','Arial';
     color: #00082d;
     font-size: 14px;
     font-weight: bold;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255,255,255,0.4);
 }

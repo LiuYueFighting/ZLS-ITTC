@@ -49,7 +49,13 @@
         <div id="mainView" style="position: absolute;z-index: 1" >
             <canvas id="canvas_fix" width="1583" height="757"></canvas>
         </div>
-
+	
+   	<!-- 显示名称模块
+	<div id="show_name">
+   		<p class="name_Model" id="WShow">显示名称</p>
+    	<label><input id="chackBox_name" class="mui-switch mui-switch-anim" type="checkbox" checked="checked" onclick="showName(this)"> 默认未选中</label> 
+ 	</div>
+ 	-->
 		<div id="name_gzw">
 		    <a href="#" id="name_QS1"  class="name_ob">取水泵房</a>
 		    <a href="#" id="name_QS2"  class="name_ob">取水泵房</a>
@@ -178,7 +184,8 @@
 		
 		<div class="hiden btn-group">
 		   <button type="button" id="init_stat" class="btn btn-default dropdown-toggle" 
-		      data-toggle="dropdown">全厂正常运行
+		      data-toggle="dropdown">
+		         	全厂正常运行
 		   </button>
 		   <ul class="dropdown-menu" role="menu">
 		      <li id="fix_scheme" class="hcc">西侧阀门维修</li>
