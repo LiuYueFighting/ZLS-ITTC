@@ -171,9 +171,17 @@
     font-size: 16px;
 }
 #btn_submit{
+	position: absolute;
+    left: -36px;
+    top: 340px;
     margin: 13px auto auto 28px;
 }
-
+#btn_refresh{
+	position: absolute;
+    left: 38px;
+    top: 340px;
+    margin: 13px auto auto 28px;
+}
 .flow{
     font-family: '微软雅黑','Arial';
     color: #333;
@@ -185,7 +193,7 @@
 
 #Prediction_results{
     position: absolute;
-    left:1472px;
+    left:1464px;
     top: 413px;
     z-index:999;
 }

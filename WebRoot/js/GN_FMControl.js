@@ -557,6 +557,10 @@ oCanvas.domReady(function(){
 //        canvas.redraw();
 //    }).start();
     canvas.timeline.start();
+    $("#btn_refresh").click(function(){
+    	hidePanel();
+    	show();
+    });
     $("#btn_submit").click(function(){   
     	
     	fg.width=1340;

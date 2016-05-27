@@ -59,6 +59,7 @@
                 <p>63#&nbsp;&nbsp;<input id="read_FM63" type="text"size="10px" value="100" />&nbsp;%</p>
                 <p>65#&nbsp;&nbsp;<input id="read_FM65" type="text"size="10px" value="100" />&nbsp;%</p>
                 <button id="btn_submit" class="btn btn-info btn_main" value="0">预测</button>
+                <button id="btn_refresh" class="btn btn-info btn_main" value="0">重置</button>
             </div>
 
             <div class="panel panel-info" id="Prediction_results" style="display:none">
