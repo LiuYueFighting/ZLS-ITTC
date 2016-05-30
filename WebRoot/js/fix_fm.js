@@ -1256,7 +1256,7 @@ oCanvas.domReady(function () {
         $("#fix_head").html("62#阀门维修配合方案");
         
         $("#init_stat").html('062#阀门恢复<span class="caret"></span>');
-        document.getElementById("export").href="download/FM_62_RECOVER.docx";
+        document.getElementById("export").href="download/FM_ 62_RECOVER.docx";
  		
 
  		$(".table_content").css('background','#ffffff');
@@ -1397,7 +1397,7 @@ oCanvas.domReady(function () {
         $("#step_4").html("4&nbsp;&nbsp;1#机加池停止进水");
 		
         $("#export").text("生成方案");
-		document.getElementById("export").href="download/FM_62_FIX.docx";
+		document.getElementById("export").href="download/FM_ 62_FIX.docx";
 		$("#reset").text("重置");
 		$("#scheme").text("62#阀门恢复");
 		
