@@ -558,7 +558,15 @@ public class DataAnalysisAction extends ActionSupport{
 					fs = new FileInputStream(upload);
 					//得到工作簿
 					workBook = Workbook.getWorkbook(fs);
-				}catch(Exception e){
+				}catch(FileNotFoundException e){
+					e.printStackTrace();
+					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
+					operateSuccess=false;
+				}catch(BiffException e){
+					e.printStackTrace();
+					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
+					operateSuccess=false;
+				}catch(IOException e){
 					e.printStackTrace();
 					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
 					operateSuccess=false;
@@ -569,48 +577,49 @@ public class DataAnalysisAction extends ActionSupport{
 				Date day=new Date();
 				try{
 					 day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
-					 String poolIDTemp=sheet.getCell(1,2).getContents();
-						String sql="delete from DataAnalysis where PoolID like '%"+poolIDTemp+"'";
-						sql+= " and Convert(varchar,t,120)  like '%"+sheetName+"%'";
-						// 直接覆盖
-						int deleteResult = dataAnalysisService.bulkUpadte(sql);
-						System.out.println("受影响结果："+deleteResult);
-						for(int i=2;i<sheet.getRows();i++){ //共11列数据,从第三行开始
-
-							if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
-							{	
-								continue;
-							}
-							else{
-								DataAnalysis dataTemp = new DataAnalysis();
-								dataTemp.setID(0);
-								
-								int hour = Integer.parseInt(sheet.getCell(0,i).getContents());
-								Date datetime = new Date();
-								datetime.setTime(day.getTime()+hour*3600*1000);
-								dataTemp.setT(datetime);							
-
-								dataTemp.setPoolID(sheet.getCell(1,i).getContents());						
-								dataTemp.setInV(Double.parseDouble(sheet.getCell(2,i).getContents()));
-								dataTemp.setOutV(Double.parseDouble(sheet.getCell(3,i).getContents()));
-								dataTemp.setHXOutV(Double.parseDouble(sheet.getCell(4,i).getContents()));
-								dataTemp.setLCOutV(Double.parseDouble(sheet.getCell(5,i).getContents()));
-								dataTemp.setTCOutV(Double.parseDouble(sheet.getCell(6,i).getContents()));
-								dataTemp.setJJOutV(Double.parseDouble(sheet.getCell(7,i).getContents()));
-								dataTemp.setHLInV(Double.parseDouble(sheet.getCell(8,i).getContents()));
-								dataTemp.setStorage(Double.parseDouble(sheet.getCell(9,i).getContents()));
-								dataTemp.setPreH(Double.parseDouble(sheet.getCell(10,i).getContents()));
-								operateSuccess=(dataAnalysisService.addDataAnalysis(dataTemp)>0);	//添加到数据库
-								
-							}
-						} //for
 				}catch(Exception e){
 					e.printStackTrace();
 					ServletActionContext.getServletContext().setAttribute("errorMsg", "文件格式不正确！");
 					operateSuccess = false;
-				}finally{
-					workBook.close(); //关闭
 				}
+				String poolIDTemp=sheet.getCell(1,2).getContents();
+				String sql="delete from DataAnalysis where PoolID like '%"+poolIDTemp+"'";
+				sql+= " and Convert(varchar,t,120)  like '%"+sheetName+"%'";
+				// 直接覆盖
+				int deleteResult = dataAnalysisService.bulkUpadte(sql);
+				System.out.println("受影响结果："+deleteResult);
+				for(int i=2;i<sheet.getRows();i++){ //共11列数据,从第三行开始
+
+					if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
+					{	
+						continue;
+					}
+					else{
+						DataAnalysis dataTemp = new DataAnalysis();
+						dataTemp.setID(0);
+						try{
+							int hour = Integer.parseInt(sheet.getCell(0,i).getContents());
+							Date datetime = new Date();
+							datetime.setTime(day.getTime()+hour*3600*1000);
+							dataTemp.setT(datetime);							
+						
+							dataTemp.setPoolID(sheet.getCell(1,i).getContents());						
+							dataTemp.setInV(Double.parseDouble(sheet.getCell(2,i).getContents()));
+							dataTemp.setOutV(Double.parseDouble(sheet.getCell(3,i).getContents()));
+							dataTemp.setHXOutV(Double.parseDouble(sheet.getCell(4,i).getContents()));
+							dataTemp.setLCOutV(Double.parseDouble(sheet.getCell(5,i).getContents()));
+							dataTemp.setTCOutV(Double.parseDouble(sheet.getCell(6,i).getContents()));
+							dataTemp.setJJOutV(Double.parseDouble(sheet.getCell(7,i).getContents()));
+							dataTemp.setHLInV(Double.parseDouble(sheet.getCell(8,i).getContents()));
+							dataTemp.setStorage(Double.parseDouble(sheet.getCell(9,i).getContents()));
+							dataTemp.setPreH(Double.parseDouble(sheet.getCell(10,i).getContents()));
+							operateSuccess=(dataAnalysisService.addDataAnalysis(dataTemp)>0);	//添加到数据库
+						}catch(Exception e){
+							e.printStackTrace();
+						}
+					}//else
+				} //for
+				workBook.close(); //关闭
 		}//upload!=null
 		else{
 			operateSuccess=false;
@@ -635,36 +644,36 @@ public class DataAnalysisAction extends ActionSupport{
 				fs = new FileInputStream(upload);
 				//得到工作簿
 				workBook = Workbook.getWorkbook(fs);
-
-				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-				//得到当前天数
-				String sheetName = sheet.getName();
-				Date day=new Date();
-
-				day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
-				String poolIDTemp=sheet.getCell(1,2).getContents();
-				String sql="from DataAnalysis where 1=1 ";
-				sql+= "and Convert(varchar,t,120) like '%"+sheetName+"%'";
-				sql+=" and PoolID like '%"+poolIDTemp+"'";
-				List<DataAnalysis> list = dataAnalysisService.findBySql(sql);
-				System.out.println("sql:"+sql+",result:"+list.size());
-				if(null == list||list.isEmpty()){
-					errMsg="";
-					operateSuccess=true;
-				}
-				else{
-					errMsg = "文件冲突，已存在相关信息！";	
-					operateSuccess=false;
-				}
 			}catch(Exception e){
 				e.printStackTrace();
 				errMsg = uploadFileName+ "数据导入发生错误！";	
 				operateSuccess=false;
-			}finally{
-				fs.close();
-				workBook.close();
 			}
-			
+			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
+			//得到当前天数
+			String sheetName = sheet.getName();
+			Date day=new Date();
+			try{
+				 day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
+			}catch(Exception e){
+				e.printStackTrace();
+				errMsg="文件格式不正确";
+				operateSuccess = false;
+			}
+			String poolIDTemp=sheet.getCell(1,2).getContents();
+			String sql="from DataAnalysis where 1=1 ";
+			sql+= "and Convert(varchar,t,120) like '%"+sheetName+"%'";
+			sql+=" and PoolID like '%"+poolIDTemp+"'";
+			List<DataAnalysis> list = dataAnalysisService.findBySql(sql);
+			System.out.println("sql:"+sql+",result:"+list.size());
+			if(null == list||list.isEmpty()){
+				errMsg="";
+				operateSuccess=true;
+			}
+			else{
+				errMsg = "文件冲突，已存在相关信息！";	
+				operateSuccess=false;
+			}
 		}else{ //upload=''
 			errMsg = "请选择上传文件！";
 			operateSuccess=false;

@@ -50,7 +50,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 	public void setDateTemp(String dateTemp) {
 		this.dateTemp = dateTemp;
 	}
-	
+
 	//导入的文件路径和文件名,文件类型
 
 
@@ -97,7 +97,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 	}
 	private Date lowT;		//查询时间上限
 	private Date highT;		//查询时间下限
-		
+
 	public Date getLowT() {
 		return lowT;
 	}
@@ -124,7 +124,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 		this.state = state;
 	}
 
-	
+
 	private Date searchT=null;
 
 	public Date getSearchT() {
@@ -219,8 +219,8 @@ public class MoChiAnalysisAction extends ActionSupport{
 	public void setOperateSuccess(boolean operateSuccess) {
 		this.operateSuccess = operateSuccess;
 	}
-	
-	
+
+
 	/**
 	 * 查询某一页的数据
 	 */
@@ -283,16 +283,16 @@ public class MoChiAnalysisAction extends ActionSupport{
 		return "success";
 	}
 
-	
-	
-	
+
+
+
 	public static final Comparator<MoChiAnalysis> COMPARATOR = new Comparator<MoChiAnalysis>() {
 		public int compare(MoChiAnalysis data1, MoChiAnalysis data2) {
 			return data1.compareTo(data2);
 		}
 	};
-	
-	
+
+
 	/**
 	 * 通过设置查询条件查询
 	 */
@@ -317,7 +317,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 			{
 				sql+=" and PoolID like '%"+searchPoolID+"'";
 			}
-			
+
 		}
 		System.out.println(sql);
 		List<MoChiAnalysis> searchList = moChiAnalysisService.findBySql(sql);
@@ -354,9 +354,9 @@ public class MoChiAnalysisAction extends ActionSupport{
 			{
 				sql+=" and PoolID like '%"+searchPoolID+"'";
 			}
-			
+
 		}
-//		System.out.println(sql);
+		//		System.out.println(sql);
 		List<MoChiAnalysis> list = moChiAnalysisService.findBySql(sql);
 		if(list.isEmpty()){
 			System.out.println("没有查到数据，无法导出");
@@ -364,7 +364,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 			state =1; //没有查到数据
 			return SUCCESS;
 		}
-//		List<MoChiAnalysis> list=(List<MoChiAnalysis>) data.get("rows");
+		//		List<MoChiAnalysis> list=(List<MoChiAnalysis>) data.get("rows");
 		WritableWorkbook book = null;
 		File uploadFile = new File(ServletActionContext.getServletContext().getRealPath("/downloadTempForMochi"));
 		//判断上述路径是否存在，如果不存在则创建该路径
@@ -383,12 +383,12 @@ public class MoChiAnalysisAction extends ActionSupport{
 
 			//			String path="D://数据分析表-"+exportFileName+".xls";
 			book = Workbook.createWorkbook(new File(path));
-//			//生成工作表
-//			WritableSheet sheet = book.createSheet("sheet1", 0);
-//
-//			//给sheet电子版中所有的列设置默认的列的宽度;  
-//			sheet.getSettings().setDefaultColumnWidth(15);
-//			sheet.setColumnView(1, 20);//给第二列设置列宽 
+			//			//生成工作表
+			//			WritableSheet sheet = book.createSheet("sheet1", 0);
+			//
+			//			//给sheet电子版中所有的列设置默认的列的宽度;  
+			//			sheet.getSettings().setDefaultColumnWidth(15);
+			//			sheet.setColumnView(1, 20);//给第二列设置列宽 
 			//设置格式
 			//标题
 			WritableFont formatH = new WritableFont(WritableFont.TAHOMA,14,WritableFont.BOLD);   
@@ -412,7 +412,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 				listSort.Sort(list, "getT","asc"); //排序
 				DateFormat sdfDay = new SimpleDateFormat("yyyy-MM-dd");
 				DateFormat sdf = new SimpleDateFormat("HH");
-				
+
 				String tempT = sdfDay.format(list.get(0).getT());
 				WritableSheet sheet = book.createSheet(tempT, 0);
 				//给sheet电子版中所有的列设置默认的列的宽度;  
@@ -431,7 +431,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 				sheet.addCell(new Label(7,1," 出膜浊度(NTU) ",formatHead));
 				sheet.addCell(new Label(8,1," 进膜藻类(万个/L) ",formatHead));
 				sheet.addCell(new Label(9,1," 出膜藻类(万个/L) ",formatHead));
-				
+
 				int j=2;
 				for(int i=0;i<list.size();i++){
 					String day = sdfDay.format(list.get(i).getT());
@@ -469,7 +469,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 						sheet.addCell(new Label(7,1," 出膜浊度(NTU) ",formatHead));
 						sheet.addCell(new Label(8,1," 进膜藻类(万个/L) ",formatHead));
 						sheet.addCell(new Label(9,1," 出膜藻类(万个/L) ",formatHead));
-						
+
 						sheet.addCell(new Label(0,j,sdf.format(list.get(i).getT()),formatBody));
 						sheet.addCell(new Label(1,j,list.get(i).getPoolID(),formatBody));
 						sheet.addCell(new Label(2,j,list.get(i).getInPress()==null?"":Double.toString(list.get(i).getInPress()),formatBody));
@@ -522,65 +522,66 @@ public class MoChiAnalysisAction extends ActionSupport{
 			Workbook workBook = null;
 			InputStream fs = null;
 			try{
-					//加载excel文件
-					fs = new FileInputStream(upload);
-					//得到工作簿
-					workBook = Workbook.getWorkbook(fs);
-				}catch(Exception e){
-					e.printStackTrace();
-					ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
-					operateSuccess=false;
-				}
-				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-				//得到当前天数
-				String sheetName = sheet.getName();
-				Date day=new Date();
-				try{
-					 day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
-					 String poolIDTemp=sheet.getCell(1,2).getContents();
-						String sql="delete from MoChiAnalysis where PoolID like '%"+poolIDTemp+"'";
-						sql+= " and Convert(varchar,t,120)  like '%"+sheetName+"%'";
-						System.out.println("sql:"+sql);
-						// 直接覆盖
-						int deleteResult = moChiAnalysisService.bulkUpadte(sql);
-						System.out.println("受影响结果："+deleteResult);
-						for(int i=2;i<sheet.getRows();i++){ //从第三行开始
+				//加载excel文件
+				fs = new FileInputStream(upload);
+				//得到工作簿
+				workBook = Workbook.getWorkbook(fs);
+			}catch(Exception e){
+				e.printStackTrace();
+				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
+				operateSuccess=false;
+			}
+			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
+			//得到当前天数
+			String sheetName = sheet.getName();
+			Date day=new Date();
+			try{
+				day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
+			}catch(Exception e){
+				e.printStackTrace();
+				ServletActionContext.getServletContext().setAttribute("errorMsg", "文件格式不正确！");
+				operateSuccess = false;
+			}
+			String poolIDTemp=sheet.getCell(1,2).getContents();
+			String sql="delete from MoChiAnalysis where PoolID like '%"+poolIDTemp+"'";
+			sql+= " and Convert(varchar,t,120)  like '%"+sheetName+"%'";
+			System.out.println("sql:"+sql);
+			// 直接覆盖
+			int deleteResult = moChiAnalysisService.bulkUpadte(sql);
+			System.out.println("受影响结果："+deleteResult);
+			for(int i=2;i<sheet.getRows();i++){ //从第三行开始
 
-							if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
-							{	
-								continue;
-							}
-							else{
-								MoChiAnalysis dataTemp = new MoChiAnalysis();
-								dataTemp.setID(Long.getLong("0"));
-								try{
-									int hour = Integer.parseInt(sheet.getCell(0,i).getContents());
-									Date datetime = new Date();
-									datetime.setTime(day.getTime()+hour*3600*1000);
-									dataTemp.setT(datetime);					
-									dataTemp.setPoolID(sheet.getCell(1,i).getContents());
-									dataTemp.setInPress(Tools.isNumeric(sheet.getCell(2,i).getContents())?null:Double.parseDouble(sheet.getCell(2,i).getContents()));
-									dataTemp.setOutPress(Tools.isNumeric(sheet.getCell(3,i).getContents())?null:Double.parseDouble(sheet.getCell(3,i).getContents()));
-									dataTemp.setDiffPress(Tools.isNumeric(sheet.getCell(4,i).getContents())?null:Double.parseDouble(sheet.getCell(4,i).getContents()));
-									dataTemp.setInFlow(Tools.isNumeric(sheet.getCell(5,i).getContents())?null:Double.parseDouble(sheet.getCell(5,i).getContents()));
-									dataTemp.setInNTU(Tools.isNumeric(sheet.getCell(6,i).getContents())?null:Double.parseDouble(sheet.getCell(6,i).getContents()));
-									dataTemp.setOutNTU(Tools.isNumeric(sheet.getCell(7,i).getContents())?null:Double.parseDouble(sheet.getCell(7,i).getContents()));
-									dataTemp.setInAlga(Tools.isNumeric(sheet.getCell(8,i).getContents())?null:Double.parseDouble(sheet.getCell(8,i).getContents()));
-									dataTemp.setOutAlga(Tools.isNumeric(sheet.getCell(9,i).getContents())?null:Double.parseDouble(sheet.getCell(9,i).getContents()));
-									
-									operateSuccess=(moChiAnalysisService.addMoChiAnalysis(dataTemp)>0);	//添加到数据库
-								}catch(Exception e){
-									e.printStackTrace();
-								}
-							}
-						} //for
-				}catch(Exception e){
-					e.printStackTrace();
-					ServletActionContext.getServletContext().setAttribute("errorMsg", "文件格式不正确！");
-					operateSuccess = false;
-				}finally{
-					workBook.close(); //关闭
+				if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
+				{	
+					continue;
 				}
+				else{
+					MoChiAnalysis dataTemp = new MoChiAnalysis();
+					dataTemp.setID(0);
+					try{
+						int hour = Integer.parseInt(sheet.getCell(0,i).getContents());
+						Date datetime = new Date();
+						datetime.setTime(day.getTime()+hour*3600*1000);
+						dataTemp.setT(datetime);					
+						dataTemp.setPoolID(sheet.getCell(1,i).getContents());
+						dataTemp.setInPress(Tools.isNumeric(sheet.getCell(2,i).getContents())?null:Double.parseDouble(sheet.getCell(2,i).getContents()));
+						dataTemp.setOutPress(Tools.isNumeric(sheet.getCell(3,i).getContents())?null:Double.parseDouble(sheet.getCell(3,i).getContents()));
+						dataTemp.setDiffPress(Tools.isNumeric(sheet.getCell(4,i).getContents())?null:Double.parseDouble(sheet.getCell(4,i).getContents()));
+						dataTemp.setInFlow(Tools.isNumeric(sheet.getCell(5,i).getContents())?null:Double.parseDouble(sheet.getCell(5,i).getContents()));
+						dataTemp.setInNTU(Tools.isNumeric(sheet.getCell(6,i).getContents())?null:Double.parseDouble(sheet.getCell(6,i).getContents()));
+						dataTemp.setOutNTU(Tools.isNumeric(sheet.getCell(7,i).getContents())?null:Double.parseDouble(sheet.getCell(7,i).getContents()));
+						dataTemp.setInAlga(Tools.isNumeric(sheet.getCell(8,i).getContents())?null:Double.parseDouble(sheet.getCell(8,i).getContents()));
+						dataTemp.setOutAlga(Tools.isNumeric(sheet.getCell(9,i).getContents())?null:Double.parseDouble(sheet.getCell(9,i).getContents()));
+						System.out.println(dataTemp.getID());
+						System.out.println("import2DB-----dataTemp:"+dataTemp);
+						operateSuccess=(moChiAnalysisService.addMoChiAnalysis(dataTemp)>0);	//添加到数据库
+					}catch(Exception e){
+						e.printStackTrace();
+					}
+				}
+			} //for
+			workBook.close(); //关闭
+
 		}//upload!=null
 		else{
 			operateSuccess=false;
@@ -630,11 +631,8 @@ public class MoChiAnalysisAction extends ActionSupport{
 				e.printStackTrace();
 				errMsg="文件格式不正确";
 				operateSuccess = false;
-			}finally{
-				fs.close();
-				workBook.close();
 			}
-			
+
 		}else{ //upload=''
 			errMsg = "请选择上传文件！";
 			operateSuccess=false;

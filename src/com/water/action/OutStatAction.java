@@ -485,7 +485,15 @@ public class OutStatAction extends ActionSupport{
 				fs = new FileInputStream(upload);
 				//得到工作簿
 				workBook = Workbook.getWorkbook(fs);
-			}catch(Exception e){
+			}catch(FileNotFoundException e){
+				e.printStackTrace();
+				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
+				operateSuccess=false;
+			}catch(BiffException e){
+				e.printStackTrace();
+				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
+				operateSuccess=false;
+			}catch(IOException e){
 				e.printStackTrace();
 				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "数据导入发生错误！");
 				operateSuccess=false;
@@ -531,9 +539,8 @@ public class OutStatAction extends ActionSupport{
 				e.printStackTrace();
 				ServletActionContext.getServletContext().setAttribute("errorMsg", "文件上传错误！");
 				operateSuccess = false;
-			}finally{
-				workBook.close(); //关闭
 			}
+			workBook.close(); //关闭
 		}//upload!=null
 		else{
 			operateSuccess=false;
@@ -558,10 +565,15 @@ public class OutStatAction extends ActionSupport{
 				fs = new FileInputStream(upload);
 				//得到工作簿
 				workBook = Workbook.getWorkbook(fs);
-
-				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-				//得到当前天数
-				String sheetName = sheet.getName();
+			}catch(Exception e){
+				e.printStackTrace();
+				errMsg = uploadFileName+ "数据导入发生错误！";	
+				operateSuccess=false;
+			}
+			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
+			//得到当前天数
+			String sheetName = sheet.getName();
+			try{
 				Date day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
 				String poolIDTemp=sheet.getCell(0,2).getContents();
 				String sql="from OutStat where 1=1 ";
@@ -578,11 +590,8 @@ public class OutStatAction extends ActionSupport{
 				}
 			}catch(Exception e){
 				e.printStackTrace();
-				errMsg = uploadFileName+ "数据导入发生错误！";	
+				errMsg="文件格式不正确";
 				operateSuccess = false;
-			}finally{
-				fs.close();
-				workBook.close();
 			}
 
 		}else{ //upload=''

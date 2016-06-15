@@ -1149,12 +1149,14 @@ function import2DB(){
 								$("#poolEvaluatebody").data().datagrid.cache = null;
 								$('#poolEvaluatebody').datagrid('reload');// 重新加载
 							} else {
-								$.messager.alert('导入', '导入失败<br /><br />'+$('#errMsg').val(), 'warning');
+//								$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+								$.messager.alert('导入', '导入失败<br><br>', 'warning');
 							}
 						},//success
 						error:function(result){
 							console.log("error 上传失败");
-							$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+//							$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+							$.messager.alert('导入', '导入失败<br><br>', 'warning');
 						} //error
 					});//ajaxFileUpload	
 					location.reload();
@@ -1173,13 +1175,15 @@ function import2DB(){
 										$.messager.alert('导入', '导入成功', 'info');
 										setTimeout(location.reload(),10000);
 									} else {
-										$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+//										$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+										$.messager.alert('导入', '导入失败<br><br>', 'warning');
 									}
 									location.reload();
 								},//success
 								error:function(data,status){
 									console.log("error 上传失败");
-									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+//									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+									$.messager.alert('导入', '导入失败<br><br>', 'warning');
 									$("#poolEvaluatebody").data().datagrid.cache = null;
 									$('#poolEvaluatebody').datagrid('reload');// 重新加载
 								} //error
