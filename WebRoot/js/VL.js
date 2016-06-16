@@ -11,7 +11,7 @@ oCanvas.domReady(function () {
     var bg = canvas.display.image({
         x: 0,
         y: 0,
-        image: "image/vl_v1.png"
+        image: "image/vl_v2.png"
     });
     canvas.addChild(bg);
     var speed_all=1.5,
@@ -69,7 +69,7 @@ oCanvas.domReady(function () {
     canvas.addChild(SC04);
     var SC03 = canvas.display.SC_show_down({
         x: 357,
-        y: 342,
+        y: 342, 
         Width: 509,
         Height: 230,
         height_now: 0,
@@ -83,13 +83,13 @@ oCanvas.domReady(function () {
     canvas.addChild(SC03);
     var SC002=createSC({
         parent:canvas,
-        x:866,y:529,height:8,width:364,trail_flag:0,speed:speed_SC*0.026,color:color_SC
+        x:866,y:524,height:8,width:364,trail_flag:0,speed:speed_SC*0.026,color:color_SC
     });
 
     var fg = canvas.display.image({
         x: 0,
         y: 0,
-        image: "image/vl_v1.png"
+        image: "image/vl_v2.png"
     });
     canvas.addChild(fg);
     var arrow_0=canvas.display.sprite({
@@ -186,8 +186,8 @@ oCanvas.domReady(function () {
             x_d: 0, y_d: 0
         },
         cells: [
-            {x_cell: 862, y_cell: 468+65},
-            {x_cell: 1228, y_cell: 468+65}
+            {x_cell: 862, y_cell: 468+60},
+            {x_cell: 1228, y_cell: 468+60}
 
         ],  //拐点数组
         cellIndex: 0,         //当前数组索引
