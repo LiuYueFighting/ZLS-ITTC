@@ -1487,12 +1487,14 @@ function import2DB(){
 								
 								$('#moChiAnalysisbody').datagrid('reload');// 重新加载									
 							} else {
-								$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+//								$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+								$.messager.alert('导入', '导入失败<br><br>', 'warning');
 							}
 						},//success
 						error:function(result){
 							console.log("error 上传失败");
-							$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+//							$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+							$.messager.alert('导入', '导入失败<br><br>', 'warning');
 						} //error
 					});//ajaxFileUpload	
 					location.reload();
@@ -1512,13 +1514,15 @@ function import2DB(){
 										$('#import').text('导入');
 										$('#tab_export').css('display','none');
 									} else {
-										$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+//										$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+										$.messager.alert('导入', '导入失败<br><br>', 'warning');
 									}
 									location.reload();
 								},//success
 								error:function(data,status){
 									console.log("error 上传失败");
-									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+//									$.messager.alert('导入', '导入失败<br><br>'+$('#errMsg').val(), 'warning');
+									$.messager.alert('导入', '导入失败<br><br>', 'warning');
 								} //error
 							});//ajaxFileUpload
 						}//if r

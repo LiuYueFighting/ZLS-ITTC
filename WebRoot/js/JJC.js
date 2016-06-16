@@ -16,7 +16,7 @@ oCanvas.domReady(function () {
     var bg = canvas.display.image({
         x: 0,
         y: 0,
-        image: "image/jjc_v1.png"
+        image: "image/jjc_v2.png"
     });
 
     var left_t=createSC({
@@ -50,17 +50,17 @@ oCanvas.domReady(function () {
 
     var SC01=createSC({
         parent:canvas,
-        x:212,y:349,height:240,width:860,trail_flag:1,speed:speed_SC,color:color_SC,
+        x:212,y:334,height:255,width:860,trail_flag:1,speed:speed_SC,color:color_SC,
          trail: [
              {x_t: 0, y_t: 17},
-             {x_t: 0, y_t: 240},
-             {x_t: 860, y_t: 240},
+             {x_t: 0, y_t: 255},
+             {x_t: 860, y_t: 255},
              {x_t: 860, y_t: 17},
              {x_t: 829, y_t: 17},
              {x_t: 829, y_t: 8},
-             {x_t: 572, y_t: 8},
-             {x_t: 572, y_t: 0},
-             {x_t: 292, y_t: 0},
+             {x_t: 576, y_t: 8},
+             {x_t: 576, y_t: 6},
+             {x_t: 292, y_t: 6},
              {x_t: 292, y_t: 8},
              {x_t: 31, y_t: 8},
              {x_t: 31, y_t: 17}
