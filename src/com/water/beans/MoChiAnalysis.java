@@ -9,7 +9,7 @@ import java.util.Date;
  */
 
 public class MoChiAnalysis {
-	private Long ID;		//ID
+	private long ID;		//ID
 	private String PoolID;		//膜池编号
 	private Date t;		//时间
 	private Double InPress;		//进膜压力Mpa
@@ -22,12 +22,12 @@ public class MoChiAnalysis {
 	private Double OutAlga;		//出膜藻类含量
 	
 	
-	public Long getID() {
+	public long getID() {
 		return ID;
 	}
 
 
-	public void setID(Long iD) {
+	public void setID(long iD) {
 		ID = iD;
 	}
 

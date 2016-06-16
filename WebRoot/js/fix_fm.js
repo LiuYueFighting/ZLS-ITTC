@@ -994,7 +994,12 @@ oCanvas.domReady(function () {
         $("#fix_head").html("62#阀门维修配合方案");
 
         $("#init_stat").html('062#阀门恢复<span class="caret"></span>');
+<<<<<<< HEAD
         document.getElementById("export").href="download/FM_62_RECOVER.docx";
+=======
+        document.getElementById("export").href="download/FM_ 62_RECOVER.docx";
+ 		
+>>>>>>> fb904dac6d14bcfb006fa091e3e428a834aa1ae4
 
 
         $(".table_content").css('background','#ffffff');
@@ -1045,9 +1050,71 @@ oCanvas.domReady(function () {
         $("#step_4").html("4&nbsp;&nbsp;1#机加池停止进水");
 
         $("#export").text("生成方案");
+<<<<<<< HEAD
         document.getElementById("export").href="download/FM_62_FIX.docx";
         $("#reset").text("重置");
         $("#scheme").text("62#阀门恢复");
+=======
+		document.getElementById("export").href="download/FM_ 62_FIX.docx";
+		$("#reset").text("重置");
+		$("#scheme").text("62#阀门恢复");
+		
+		//动画队列
+		$(document).off('drain');
+		
+    	var fix_fm062_queue = [
+			function() {
+				$("#step_1").css('background','rgba(194,215,245,0.5)');
+				setTimeout(function(){
+		    		$(document).dequeue("fix_fm062_queue");
+		    	},1000);
+			},
+			function() {
+				setFMColorRed("FM09");
+		    	setTimeout(function(){
+		    		$(document).dequeue("fix_fm062_queue");
+		    	},1000);
+			},
+			function() {
+		        GD0101.state = 2;
+				$(document).on('drain', function(){
+					setTimeout(function(){
+						$(document).off('drain');
+						$(document).dequeue("fix_fm062_queue");
+					},1000);
+				});
+			},
+			function() {
+				$("#step_2").css('background','rgba(194,215,245,0.5)');
+		    	setTimeout(function(){
+		    		$(document).dequeue("fix_fm062_queue");
+		    	},1000);
+			},
+			function(){
+				setFMColorRed("FM064");
+		    	setTimeout(function(){
+		    		$(document).dequeue("fix_fm062_queue");
+		    	},1000);
+			},
+			function() {
+				GD25.state = 2;
+				
+				$(document).on('drain', function(){
+					setTimeout(function(){
+						$(document).off('drain');
+						$(document).dequeue("fix_fm062_queue");
+					},1000);
+				});
+			},
+			function() {
+				$("#step_3").css('background','rgba(194,215,245,0.5)');
+    			setTimeout(function(){
+    				$(document).dequeue("fix_fm062_queue");
+    			},1000);
+			},
+			function() {
+				GD0102.state = 2;
+>>>>>>> fb904dac6d14bcfb006fa091e3e428a834aa1ae4
 
         //动画队列
         $(document).off('drain');
