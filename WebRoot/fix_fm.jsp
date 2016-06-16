@@ -20,19 +20,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/breadcrumb.css">
 	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
-	<link rel="stylesheet" type="text/css" href="style/myeasyui.css" />  
-   	<link rel="stylesheet" type="text/css" href="css/equiment_fix.css" />  
-   	<link rel="stylesheet" type="text/css" href="css/fix_fm.css" />  
-   	     
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/ocanvas-2.7.4.min.js"></script>
-    <script src="js/my_oCanvas.js"></script>
-    <script src="js/fix_fm.js"></script>
-    
-    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script> 
-    
+	<link rel="stylesheet" type="text/css" href="style/myeasyui.css" />
+   	<link rel="stylesheet" type="text/css" href="css/equiment_fix.css" />
+   	<link rel="stylesheet" type="text/css" href="css/fix_fm.css" />
+
+
 </head>
 <body>
     <jsp:include page="top.jsp" />
@@ -107,7 +99,7 @@
     <img id="FM047" src="image/y3-35x37.png" class="fm_default_hide">
     <img id="FM048" src="image/y3-35x37.png" class="fm_default_hide">
     <img id="FM049" src="image/y3-35x37.png" class="fm_default_hide">
-    <img id="FM051" src="image/y3-35x37.png" class="fm_default_hide"> 
+    <img id="FM051" src="image/y3-35x37.png" class="fm_default_hide">
     <img id="FM053" src="image/y3-35x37.png" class="fm_default_hide">
     <img id="FM054" src="image/y3-35x37.png" class="fm_default_hide">
     <img id="FM058" src="image/y3-35x37.png" class="fm_default_hide">
@@ -157,7 +149,7 @@
     <p id="WFM054" class="fm_tag fm_default_hide">054#</p>
     <p id="WFM058" class="fm_tag fm_default_hide">058#</p>
     </div>
-    
+
     <!-- 页面右侧面板 -->
     <div id="fix-panel">
     	<div>
@@ -166,19 +158,19 @@
 	    	</button>
 	    </div>
 
- 		<div class="hiden panel panel-info"> 
-			<div class="panel-heading" id="init_state">初始状态</div> 
-		</div> 
-		
+ 		<div class="hiden panel panel-info">
+			<div class="panel-heading" id="init_state">初始状态</div>
+		</div>
+
 		<div class="hiden btn-group">
-		   <button type="button" id="init_stat" class="btn btn-default dropdown-toggle" 
+		   <button type="button" id="init_stat" class="btn btn-default dropdown-toggle"
 		      data-toggle="dropdown">
 		         	全厂正常运行
 		   </button>
 		   <ul class="dropdown-menu" role="menu">
 		      <li id="fix_scheme" class="hcc">阀门维修</li>
 		      <li id="restore_scheme" class="hcc">阀门恢复</li>
-		   </ul>  
+		   </ul>
 		</div>
 
 		<div class="hiden panel panel-info" id="fix_table">
@@ -210,5 +202,14 @@
     <jsp:include page="down.jsp" />
 </div>
 
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/ocanvas-2.7.4.min.js"></script>
+    <script type="text/javascript" src="js/my_oCanvas.js"></script>
+    <script type="text/javascript" src="js/fix_fm.js"></script>
+    <script type="text/javascript" src="js/models/animation-queue.js"></script>
+
+    <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 </body>
 </html>

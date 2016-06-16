@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1197bacf-fdd0-454e-9cca-e0b3ce0fe22e" name="tomcat" url="http://localhost:8080/ZLS-ITTC">
+        <fileTransfer port="0" mountedRoot="F:\apache-tomcat-8.0\webapps\ZLS-ITTC" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

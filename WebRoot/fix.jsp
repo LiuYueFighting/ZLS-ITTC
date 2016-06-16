@@ -184,8 +184,7 @@
 		
 		<div class="hiden btn-group">
 		   <button type="button" id="init_stat" class="btn btn-default dropdown-toggle" 
-		      data-toggle="dropdown">
-		         	全厂正常运行
+		      data-toggle="dropdown">全厂正常运行
 		   </button>
 		   <ul class="dropdown-menu" role="menu">
 		      <li id="fix_scheme" class="hcc">西侧阀门维修</li>

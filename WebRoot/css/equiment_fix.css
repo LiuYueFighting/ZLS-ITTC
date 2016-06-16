@@ -29,7 +29,7 @@ a:hover {
     color: #283a45;
     /*background: rgba(255,255,255,0.5);
     border: 1px solid black;*/
-} 
+}
 #fix-panel{
     position:absolute;
     left: 91.2%;
@@ -65,7 +65,7 @@ a:hover {
 .name_ob{
   	text-decoration: none;
   	cursor: default;
-} 
+}
 #name_HX{
 	cursor: pointer;
 }
@@ -110,7 +110,7 @@ a:hover {
 	position: absolute;
 	height:20px;
 	padding:4px;
-} 
+}
 .dropdown-menu>li{
     padding: 3px 20px;
     clear: both;
