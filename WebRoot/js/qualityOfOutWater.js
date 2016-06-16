@@ -281,7 +281,7 @@ function listOutStat(data) {
 		            		return value.substring(0, 10);  //显示日期到小时
 		            		}
 		            },
-		            {field : 'poolID', title : '出水池编号', align : 'center', sortable : true,width:100,
+		            {field : 'poolID', title : '清水池编号', align : 'center', sortable : true,width:100,
 		            	formatter:function(value){
 		            		return formPoolID(value);
 		            		}
@@ -625,28 +625,28 @@ function dealSearch() {
 		switch(buttonID) {
 //		case 'index1':
 		case 'MTG_JJC_SC01':
-			title = '1# 出水池 水质分析表';
-			ImageTitle = "1# 出水池水质分析图 ";
+			title = '1# 清水池 水质分析表';
+			ImageTitle = "1# 清水池水质分析图 ";
 			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_JJC_SC01');
 			//treeURL = '${pageContext.request.contextPath}/searchOutStat.action?dataAnalysis.PoolID=MTG_JJC_SC01';
 			break;
 //		case 'index2':
 		case 'MTG_JJC_SC02':
-			title = '2# 出水池 水质分析表';
-			ImageTitle = "2# 出水池水质分析图 ";
+			title = '2# 清水池 水质分析表';
+			ImageTitle = "2# 清水池水质分析图 ";
 			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_JJC_SC02');
 			//treeURL = '${pageContext.request.contextPath}/searchOutStat.action?dataAnalysis.PoolID=MTG_JJC_SC02';
 			break;
 //		case 'index3':
 		case 'MTG_JJC_SC03':
-			title = '3# 出水池 水质分析表';
-			ImageTitle = "3# 出水池水质分析图 ";
+			title = '3# 清水池 水质分析表';
+			ImageTitle = "3# 清水池水质分析图 ";
 			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_JJC_SC03');
 			//treeURL = '${pageContext.request.contextPath}/searchOutStat.action?dataAnalysis.PoolID=MTG_JJC_SC03';
 			break;
 		default :
-			title = '出水池 水质分析表';
-			ImageTitle = "出水池水质分析图 ";
+			title = '清水池 水质分析表';
+			ImageTitle = "清水池水质分析图 ";
 			newParams = params;
 			//treeURL = '${pageContext.request.contextPath}/searchOutStat.action';
 		}
@@ -678,39 +678,39 @@ function dealSearch() {
 
 			switch(index) {
 				case '1':
-					title = '1# 出水池 水质分析表' + ' ' + TimeStr;
-					ImageTitle = "1# 出水池水质分析图 " + ' ' + TimeStr;
+					title = '1# 清水池 水质分析表' + ' ' + TimeStr;
+					ImageTitle = "1# 清水池水质分析图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 //					$('#chooseIndexButton2').combobox('setValue', 'MTG_JJC_SC01');
 					$('#chooseIndexButton2').val('MTG_JJC_SC01');
 					newParams = params;
 					break;
 				case '2':
-					title = '2# 出水池 水质分析表' + ' ' + TimeStr;
-					ImageTitle = "2# 出水池水质分析图 " + ' ' + TimeStr;
+					title = '2# 清水池 水质分析表' + ' ' + TimeStr;
+					ImageTitle = "2# 清水池水质分析图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index2"]').attr("checked", true);
 //					$('#chooseIndexButton2').combobox('setValue', 'MTG_JJC_SC02');
 					$('#chooseIndexButton2').val('MTG_JJC_SC02');
 					newParams = params;
 					break;
 				case '3':
-					title = '3# 出水池 水质分析表' + ' ' + TimeStr;
-					ImageTitle = "3# 出水池水质分析图 " + ' ' + TimeStr;
+					title = '3# 清水池 水质分析表' + ' ' + TimeStr;
+					ImageTitle = "3# 清水池水质分析图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 //					$('#chooseIndexButton2').combobox('setValue', 'MTG_JJC_SC03');
 					$('#chooseIndexButton2').val('MTG_JJC_SC03');
 					newParams = params;
 					break;
 				default :
-					title = '出水池 水质分析表' + ' ' + TimeStr;
-					ImageTitle = "出水池水质分析图 " + ' ' + TimeStr;
+					title = '清水池 水质分析表' + ' ' + TimeStr;
+					ImageTitle = "清水池水质分析图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index3"]').attr("checked", true);
 					newParams = params;
 					
 				}
 		} else {  // 如果  lowT、highT、searchPoolID均不为空  不满足，退出查询
 			failAppearence = true;
-			$.messager.alert('错误', '查询失败！<br />起始/结束日期、出水池编号不能为空！', 'warning');
+			$.messager.alert('错误', '查询失败！<br />起始/结束日期、清水池编号不能为空！', 'warning');
 			//设置一个错误的数据，使得查询失败，避免图表刷新，因为即便是数据缺失，SQLServer也会返回特定结果
 			newParams = 'lowT=2015-01-01&highT=2014-01-01&searchPoolID';
 			//closeSearchForm();
@@ -734,28 +734,28 @@ function dealSearch() {
 		switch(buttonID) {
 //			case 'index1':
 			case 'MTG_JJC_SC01':
-				title = '1# 出水池 水质分析表' + ' ' + TimeStr;
-				ImageTitle = "1# 出水池水质分析图 " + ' ' + TimeStr;
+				title = '1# 清水池 水质分析表' + ' ' + TimeStr;
+				ImageTitle = "1# 清水池水质分析图 " + ' ' + TimeStr;
 				poolIDInMode2 = 'MTG_JJC_SC01';
 				newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
 				break;
 //			case 'index2':
 			case 'MTG_JJC_SC02':
-				title = '2# 出水池 水质分析表' + ' ' + TimeStr;
-				ImageTitle = "2# 出水池水质分析图 " + ' ' + TimeStr;
+				title = '2# 清水池 水质分析表' + ' ' + TimeStr;
+				ImageTitle = "2# 清水池水质分析图 " + ' ' + TimeStr;
 				poolIDInMode2 = 'MTG_JJC_SC02';
 				newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
 				break;
 //			case 'index3':
 			case 'MTG_JJC_SC03':
-				title = '3# 出水池 水质分析表' + ' ' + TimeStr;
-				ImageTitle = "3# 出水池水质分析图 " + ' ' + TimeStr;
+				title = '3# 清水池 水质分析表' + ' ' + TimeStr;
+				ImageTitle = "3# 清水池水质分析图 " + ' ' + TimeStr;
 				poolIDInMode2 = 'MTG_JJC_SC03';
 				newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
 				break;
 			default :
-				title = '出水池 水质分析表' + ' ' + TimeStr;
-				ImageTitle = "出水池水质分析图 " + ' ' + TimeStr;
+				title = '清水池 水质分析表' + ' ' + TimeStr;
+				ImageTitle = "清水池水质分析图 " + ' ' + TimeStr;
 				poolIDInMode2 = 'MTG_JJC_SC03';
 				newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
 				
@@ -1050,7 +1050,7 @@ function formPoolID(value){
 	strs=value.split("_");//字符切割
 	poolID = strs[2].replace(/SC0/,'');
 	poolID = poolID.replace(/SC0/,'');
-	return poolID + "#"+"出水池" ;	
+	return poolID + "#"+"清水池" ;	
 }
 
 

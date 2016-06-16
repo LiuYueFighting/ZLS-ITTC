@@ -35,7 +35,7 @@
         <li class="Secondary_menu_item"><a href="fix_fm.jsp">阀门维修</a></li>
         </ul>
         </li>
-        <li class="nav_bag04">运行评估
+        <li class="nav_bag04">运行分析
         <ul class="Secondary_menu">
         <li class="Secondary_menu_item"><a href="PoolEvaluate.jsp">机加池分析</a></li>
         <li class="Secondary_menu_item"><a href="QualityOfOutWater.jsp">出水水质分析</a></li>
