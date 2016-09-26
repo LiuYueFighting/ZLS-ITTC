@@ -624,7 +624,7 @@ oCanvas.domReady(function(){
     });
     
     
-    var read = 1800;
+    var read = 3600;
     var openDgree_062=100;
     var openDgree_063=100;
     var openDgree_065=100;
@@ -632,9 +632,9 @@ oCanvas.domReady(function(){
     function changeInput(){
     showPanel();
     read =parseFloat(document.getElementById("read").value);
-        if(read<0||read>1800||isNaN(read)){
+        if(read<0||read>3600||isNaN(read)){
 
-			$.messager.alert('错误', '<strong>进厂水量输入有误！</strong> </br>进厂水量范围为0-1800m<sup>3</sup>/h', 'info');
+			$.messager.alert('错误', '<strong>进厂水量输入有误！</strong> </br>进厂水量范围为0-3600m<sup>3</sup>/h', 'info');
 			hidePanel(); 
         return;
     }
