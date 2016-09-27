@@ -215,4 +215,8 @@ oCanvas.domReady(function () {
         //GD01.paused=1;
     });
 
+
 });
+
+
+  

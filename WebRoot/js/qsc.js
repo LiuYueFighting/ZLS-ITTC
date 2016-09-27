@@ -16,11 +16,11 @@ var SC01=createSC({
 });
 var SC02=createSC({
     parent:canvas,
-    x:109,y:452,height:95,width:475,trail_flag:0,speed:speed_SC/4,color:color_SC
+    x:109,y:462,height:85,width:475,trail_flag:0,speed:speed_SC/4,color:color_SC
 });
 var SC03=createSC({
     parent:canvas,
-    x:766,y:451,height:96,width:514,trail_flag:0,speed:speed_SC/4,color:color_SC
+    x:766,y:461,height:86,width:514,trail_flag:0,speed:speed_SC/4,color:color_SC
 });
 //添加背景图片
 var bg = canvas.display.image({

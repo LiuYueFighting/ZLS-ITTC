@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta http-equiv="Pragma" content="no-cache">
     <Meta http-equiv="Page-Enter" Content="blendTrans(Duration=0.5)">
@@ -21,10 +22,11 @@
     <script src="js/my_oCanvas.js"></script>
     <script src="js/QS.js"></script>
 
-
     <style>
         body {
             background: #eeeeef;
+            width:100%;
+            font-size: 100%;
         }
 
         .sidebar a{
@@ -43,14 +45,14 @@
          #myContent{
             margin: 0px auto;
             position: relative;
-            height: 750px;
-            width: 1600px;
+            width: 89%;
         }
         * {
             font-family: '微软雅黑', 'Arial';
         }
 
         #down{
+        width:100%;
             height:100%;
             background-color: #eeeeef;
         }
@@ -62,6 +64,8 @@
             margin-left: 5%;
             margin-top: 0px;
             margin-right: 0px;
+            width:80%;
+            height:120%;
         }
         #right {
             padding-right: 0;
@@ -70,12 +74,13 @@
             margin-left: 0;
             margin-top: 0;
             margin-right:0;
+            width:auto;
         }
         #btn_group_container{
         position:absolute;
         bottom:5px;
         width:100%;
-        height:500px;
+        height:73%;
         overflow:hidden;
          }
         #btn_group_both{
@@ -83,7 +88,7 @@
         left:0;
         top:0;
         width:100%;
-        height:100px;
+        height:20%;
         -webkit-transition: all 0.5s ease-out 0s;
         -moz-transition: all 0.5s ease-out 0s;
         transition: all 0.5s ease-out 0s;
@@ -93,12 +98,11 @@
         }
         #btn_group_up{
         width:100%;
-        height:500px;
+        height:500%;
         }
         #btn_group{
             margin:0 auto;
             position:absolute;
-            top:500px;
             left:43%;
         }
         #btn_group i{
@@ -111,17 +115,17 @@
     #run_info,#run_danger{
     position:relative;
     top:110px;
-    font-size:15px;
+    font-size:1.5em;
     font-weight:bolder;
     }
     #list_group{
-    width:150px;
+    width:80%;
     position:absolute;
     top:50%;
-    font-size:20px;
+    font-size:2em;
     }
     .panel-heading{
-    font-size:18px;
+    font-size:1.27em;
     }
     #list_group>select{
     border: solid 2px #337ab7;
@@ -129,8 +133,15 @@
     -webkit-border-radius: 15px;
     border-radius: 6px;
     margin: 0;
-    width: 136px;
+    width: 91%;
     }
+    #canvas_QS_zp{
+	width:100%;
+    }
+    img { 
+    max-width: 100%;
+    }
+    canvas { display: block; }
 
     </style>
 </head>
@@ -143,8 +154,8 @@
     </ol>
     <div class="container-fluid">
         <div id="myContent" class="row" style="overflow: hidden;">
-    <div id="left" class="col-lg-10 col-md-10" style="height: 753px;">
-    <canvas id="canvas_QS_zp" width="1400" height="775"></canvas>
+    <div id="left" class="col-lg-10 col-md-10">
+    <canvas id="canvas_QS_zp" width="1330" height="750"></canvas>
     <div id="btn_group_container">
         <div id="btn_group_both">
             <div id="btn_group_up"></div>

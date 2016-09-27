@@ -40,6 +40,29 @@ oCanvas.domReady(function () {
      parent:canvas,
      x:779,y:625,height:15,width:137,trail_flag:0,speed:speed_SC*0.2,color:color_SC
  });
+ 
+ var x=140;
+ var xx=140;
+ var t=200;
+ var sprite = canvas.display.sprite({
+     x:580,
+     y:415,
+     origin: { x: "left", y: "top" },
+     image: "image/JJC_flash1.png",
+     frames:[
+         {x:0,y:0,h:200,w:x,d:t},
+         {x:xx,y:0,h:200,w:x,d:t},
+         {x:2*xx,y:0,h:200,w:x,d:t},
+         {x:3*xx,y:0,h:200,w:x,d:t},
+         {x:4*xx,y:0,h:200,w:x,d:t},
+         {x:5*xx,y:0,h:200,w:x,d:t},
+         {x:6*xx,y:0,h:200,w:x,d:t},
+         {x:7*xx,y:0,h:200,w:x,d:t},
+         {x:8*xx,y:0,h:200,w:x,d:t}
+     ],
+     frame:1
+ }).scale(0.7).add();
+ 
 //添加背景图片
  var bg = canvas.display.image({
      x: 0,
@@ -157,6 +180,7 @@ oCanvas.domReady(function () {
  	SC00.start=1;
     GD01.paused=1;
     canvas.timeline.start();
+    sprite.startAnimation();
  $("#btn_start").click(function(){
      if(this.value==1){
     	 SC00.start=1;
@@ -165,11 +189,13 @@ oCanvas.domReady(function () {
          this.innerHTML="&#xe61f;";
          this.value=0;
          canvas.timeline.start();
+         sprite.startAnimation();
      }
      else{
          this.innerHTML='&#xe626;';
          this.value=1;
          canvas.timeline.stop();
+         sprite.stopAnimation();
      }
  });
     $("#btn_upS").click(function(){

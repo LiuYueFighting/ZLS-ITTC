@@ -1856,7 +1856,8 @@ pre code {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    width:100%;
 }
 
 .row {
@@ -5737,7 +5738,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 
 .panel-heading {
 
-    padding: 10px 45px;
+    padding: 8% 28%;//10px 45px
     border-bottom: 1px solid transparent;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px

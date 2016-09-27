@@ -66,51 +66,95 @@ oCanvas.domReady(function () {
  //        {x:0,y:0,w:20,h:60,d:800}
  //
  //    ]
- //}).scale(1.5,1.1).add();
- var arrow_2=canvas.display.sprite({
-     x: 632,
-     y: 457,
-     image: "image/water-arrow/up.png",
+ //}).scale(1.5,1.1).add();   
+// var arrow_2=canvas.display.sprite({
+//     x: 632,
+//     y: 457,
+//     image: "image/water-arrow/up.png",
+//     generate:false,
+//     frames: [
+//         {x:20,y:0,w:20,h:60,d:400},
+//         {x:0,y:0,w:20,h:60,d:800}
+//
+//     ]
+// }).add();
+// var arrow_3=canvas.display.sprite({
+//     x: 724,
+//     y: 457,
+//     image: "image/water-arrow/up.png",
+//     generate:false,
+//     frames: [
+//         {x:20,y:0,w:20,h:60,d:400},
+//         {x:0,y:0,w:20,h:60,d:800}
+//
+//     ]
+// }).add();
+// var arrow_4=canvas.display.sprite({
+//     x: 816,
+//     y: 457,
+//     image: "image/water-arrow/up.png",
+//     generate:false,
+//     frames: [
+//         {x:20,y:0,w:20,h:60,d:400},
+//         {x:0,y:0,w:20,h:60,d:800}
+//
+//     ]
+// }).add();
+// var arrow_5=canvas.display.sprite({
+//     x: 908,
+//     y: 457,
+//     image: "image/water-arrow/up.png",
+//     generate:false,
+//     frames: [
+//         {x:20,y:0,w:20,h:60,d:400},
+//         {x:0,y:0,w:20,h:60,d:800}
+//
+//     ]
+// }).add();
+ var arrow_6=canvas.display.sprite({
+     x: 983,
+     y: 385,
+     image: "image/water-arrow/right_roll.png",
      generate:false,
      frames: [
-         {x:20,y:0,w:20,h:60,d:400},
-         {x:0,y:0,w:20,h:60,d:800}
+		{x:60,y:0,w:60,h:60,d:400},
+		{x:0,y:0,w:60,h:60,d:800}
 
      ]
- }).add();
- var arrow_3=canvas.display.sprite({
-     x: 724,
-     y: 457,
-     image: "image/water-arrow/up.png",
+ }).scale(0.8).add();
+ var arrow_7=canvas.display.sprite({
+     x: 634,
+     y: 388,
+     image: "image/water-arrow/upright_roll.png",
      generate:false,
      frames: [
-         {x:20,y:0,w:20,h:60,d:400},
-         {x:0,y:0,w:20,h:60,d:800}
+		{x:60,y:0,w:60,h:60,d:400},
+		{x:0,y:0,w:60,h:60,d:800}
 
      ]
- }).add();
- var arrow_4=canvas.display.sprite({
-     x: 816,
-     y: 457,
-     image: "image/water-arrow/up.png",
+ }).scale(1.2).add();
+ var arrow_8=canvas.display.sprite({
+     x: 740,
+     y: 388,
+     image: "image/water-arrow/upright_roll.png",
      generate:false,
      frames: [
-         {x:20,y:0,w:20,h:60,d:400},
-         {x:0,y:0,w:20,h:60,d:800}
+		{x:60,y:0,w:60,h:60,d:400},
+		{x:0,y:0,w:60,h:60,d:800}
 
      ]
- }).add();
- var arrow_5=canvas.display.sprite({
-     x: 908,
-     y: 457,
-     image: "image/water-arrow/up.png",
+ }).scale(1.2).add();
+ var arrow_9=canvas.display.sprite({
+     x: 847,
+     y: 388,
+     image: "image/water-arrow/upright_roll.png",
      generate:false,
      frames: [
-         {x:20,y:0,w:20,h:60,d:400},
-         {x:0,y:0,w:20,h:60,d:800}
+		{x:60,y:0,w:60,h:60,d:400},
+		{x:0,y:0,w:60,h:60,d:800}
 
      ]
- }).add();
+ }).scale(1.2).add();
 //绘制两条管道
  var GD01=createGD({
      parent:canvas,
@@ -202,16 +246,25 @@ oCanvas.domReady(function () {
      }
      if(SC01.full==1){
          SC01.full=0;         
-         arrow_2.start();
-         arrow_3.start();
-         arrow_4.start();
-         arrow_5.start();
-     }     
+//         arrow_2.start();
+//         arrow_3.start();
+//         arrow_4.start();
+//         arrow_5.start();
+     }   
+     if(SC02.height_now>=180){
+    	 arrow_7.start();
+//    	 arrow_6.start();
+    	 arrow_8.start();
+    	 arrow_9.start();
+     }
+     if(SC02.height_now>=210){
+    	 arrow_6.start();
+     }
      if(SC02.height_now>=247){
          GD05.paused=1;
          SC03.start=1;
          SC001.start=1;
-         //arrow_1.start();
+         
 //         GD04.full=0;
      }
      if(SC02.full==1){
@@ -221,14 +274,22 @@ oCanvas.domReady(function () {
          SC02.full=0;         
      }
      if(GD05.full==1){
-         arrow_2.stopAnimation();
-         arrow_3.stopAnimation();
-         arrow_4.stopAnimation();
-         arrow_5.stopAnimation();
-         arrow_3.frame=2;
-         arrow_4.frame=2;
-         arrow_5.frame=2;
-         arrow_2.frame=2;
+//         arrow_2.stopAnimation();
+//         arrow_3.stopAnimation();
+//         arrow_4.stopAnimation();
+//         arrow_5.stopAnimation();
+         arrow_6.stopAnimation();
+         arrow_7.stopAnimation();
+         arrow_8.stopAnimation();
+         arrow_9.stopAnimation();
+//         arrow_3.frame=2;
+//         arrow_4.frame=2;
+//         arrow_5.frame=2;
+         arrow_6.frame=2;
+         arrow_7.frame=2;
+         arrow_8.frame=2;
+         arrow_9.frame=2;
+//         arrow_2.frame=2;
          GD05.full=0;
      }
      canvas.redraw();

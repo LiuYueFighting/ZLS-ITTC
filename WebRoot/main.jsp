@@ -7,6 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta charset="UTF-8">
 <meta http-equiv="Access-Control-Allow-Origin" content="*">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -24,12 +25,13 @@
     body {
         background: #eeeeed;
         text-align:center;
+        width:1903px;
     }
     #myPage {
         font-family: '微软雅黑', 'Source Sans Pro';
         font-size: 1px;
         width: 1600px;
-        margin: 0px auto;
+        margin: 0 auto;
     }
     a{
         margin-left: 10px;
@@ -38,7 +40,8 @@
         margin: 0px 0px 0px 0px;
         position: relative;
         height: 750px;
-        width: 1600px;
+        width: 100%;
+        float:left;
     }
     <%--#btn_start{--%>
     <%--position: absolute;--%>
@@ -71,8 +74,9 @@
     font-size: 16px;
     font-weight: 700;
     font-family: '微软雅黑', 'Arial';
-    width: 142px;
+    width:10%;
     text-align: left;
+    float:right;
 
     }
 
@@ -232,15 +236,18 @@
     position:relative;
     width:100%;
     height:50px;
+    clear:both;
     }
     #btn_group{
     margin:0 auto;
     position:absolute;
     top:0;
     left:42%;
+    clear:both;
     }
     #btn_group i{
     margin-left:10px;
+    clear:both;
     }
 </style>
 

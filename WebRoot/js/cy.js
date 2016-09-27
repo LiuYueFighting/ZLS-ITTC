@@ -246,7 +246,7 @@ oCanvas.domReady(function () {
         start:{x:903,y:566},
         container:SC04,
         width:50,
-        offset:1.5,
+        offset:1.1,
         speed:5
     }).add();
 //设置循环

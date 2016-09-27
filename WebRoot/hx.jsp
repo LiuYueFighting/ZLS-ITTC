@@ -5,6 +5,7 @@
         <html lang="en">
         <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
         <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
         <title>北京自来水集团工艺平台</title>
@@ -22,12 +23,13 @@
         <style>
         body {
         background: #eeeeef;
+        width:100%;
         }
 
         .sidebar a{
         color: #000000;
         margin-top: 2px;
-        }
+        }                                                                                                                       
         .sidebar a:hover{
         color:blue;
         }
@@ -47,10 +49,12 @@
         font-family: '微软雅黑', 'Arial';
         }
         #down{
+        
         height:100%;
         background-color: #eeeeef;
         }
         #left {
+        float:left;
         position:relative;
         padding-right: 0px;
         padding-top: 0px;
@@ -60,12 +64,14 @@
         margin-right: 0px;
         }
         #right {
+        float:left;
         padding-right: 0;
         padding-top: 0;
         padding-left: 0;
         margin-left: 0;
         margin-top: 0;
         margin-right:0;
+        width:auto;
         }
         #btn_group_container{
         position:absolute;
@@ -139,7 +145,7 @@
         <div id="myContent" style="overflow: hidden">
 
         <div id="left" class="col-lg-10" style="height: 753px">
-        <canvas id="canvas_hx" width="1400" height="775"></canvas>
+        <canvas id="canvas_hx" width="1330" height="775"></canvas>
         <div id="btn_group_container">
         <div id="btn_group_both">
         <div id="btn_group_up"></div>

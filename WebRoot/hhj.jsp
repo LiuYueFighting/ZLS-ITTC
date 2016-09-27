@@ -5,6 +5,7 @@
         <html lang="en">
         <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
         <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
         <title>北京自来水集团工艺平台</title>
@@ -59,6 +60,7 @@
         margin-left: 5%;
         margin-top: 0px;
         margin-right: 0px;
+        float:left;
         }
         #right {
         padding-right: 0;
@@ -67,6 +69,8 @@
         margin-left: 0;
         margin-top: 0;
         margin-right:0;
+        float:left;
+        width:auto;
         }
         #btn_group_container{
         position:absolute;
@@ -141,7 +145,7 @@
         <div id="myContent" class="row" style="overflow: hidden">
 
         <div id="left" class="col-lg-10 col-md-10" style="height: 753px">
-        <canvas id="canvas_hhj" width="1400" height="775"></canvas>
+        <canvas id="canvas_hhj" width="1330" height="775"></canvas>
         <div id="btn_group_container">
         <div id="btn_group_both">
         <div id="btn_group_up"></div>
