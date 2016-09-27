@@ -16,10 +16,10 @@ $(document).ready(function() {
 			+ "<td style='width:1px;height:26px'><input type='hidden' id='dateTempAdd' name='dateTemp' style='width:1px;height:25px' /></td>"
 			+ "<td style='width:1px;height:26px'><input type='hidden' id='IDAdd' name='moChiAnalysis.ID' style='width:1px;height:25px' /></td>"
 			+ "<td id='indexNum" + _len + "'style='text-align:center; width:40px;height:26px'>" + _len + "</td>"
-			+ "<td style='width:152px;height:26px'><input name='moChiAnalysis.t' id='tAdd' type='datetime-local' style='width:150px;height:25px'/></td>"
-			+ "<td style='width:102px;height:26px'><select name='moChiAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'>"
-						+"<option value='MTG_MoChi_SC01' selected='selected'>1#膜池#</option><option value='MTG_MoChi_SC02'>2#膜池#</option><option value='MTG_MoChi_SC03'>3#膜池#</option>" 
-						+"<option value='MTG_MoChi_SC04'>4#膜池#</option><option value='MTG_MoChi_SC05'>5#膜池#</option><option value='MTG_MoChi_SC06'>6#膜池</option></select></td>"
+			+ "<td style='width:152px;height:26px'><input name='moChiAnalysis.t' id='tAdd' type='datetime-local' style='width:188px;height:25px'/></td>"
+			+ "<td style='width:102px;height:26px'><select name='moChiAnalysis.PoolID' id='PoolIDAdd' style='width:72px;height:25px'>"
+						+"<option value='MTG_MoChi_SC01' selected='selected'>1# 膜池</option><option value='MTG_MoChi_SC02'>2# 膜池</option><option value='MTG_MoChi_SC03'>3# 膜池</option>" 
+						+"<option value='MTG_MoChi_SC04'>4# 膜池</option><option value='MTG_MoChi_SC05'>5# 膜池</option><option value='MTG_MoChi_SC06'>6# 膜池</option></select></td>"
 			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='InPress' name='moChiAnalysis.InPress' data-options='min:0,precision:0,' /></td>"
 			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='OutPress' name='moChiAnalysis.OutPress' data-options='min:0,precision:0' /></td>"
 			+ "<td style='width:102px;height:26px'><input style='width:100px;height:25px' id='DiffPress' name='moChiAnalysis.DiffPress' data-options='min:0,precision:0'/></td>"
@@ -221,7 +221,7 @@ var deltr = function(index, event) {
 				+ "<td style='width:1px;height:26px'><input type='hidden' id='IDAdd' name='moChiAnalysis.ID' style='width:1px;height:25px' /></td>"
 				+ "<td id='indexNum" + (i-1) + "'style='text-align:center; width:40px;height:26px'>" + (i-1) + "</td>"
 				+ "<td style='width:152px;height:26px'><input name='moChiAnalysis.t' id='tAdd' type='datetime-local' style='width:150px;height:25px'/></td>"
-				+ "<td style='width:102px;height:26px'><select name='moChiAnalysis.PoolID' id='PoolIDAdd' style='width:100px;height:25px'>" +
+				+ "<td style='width:102px;height:26px'><select name='moChiAnalysis.PoolID' id='PoolIDAdd' style='width:72px;height:25px'>" +
 						"<option value='MTG_MoChi_SC01' selected='selected'>1#膜池</option><option value='MTG_MoChi_SC02'>2#膜池</option><option value='MTG_MoChi_SC03'>3#膜池</option>" +
 						"<option value='MTG_MoChi_SC04'>4#膜池</option><option value='MTG_MoChi_SC05'>5#膜池</option><option value='MTG_MoChi_SC06'>6#膜池</option></select></td>"
 				+ "<td style='width:72px;height:26px'><input style='width:70px;height:25px' id='InPress' name='moChiAnalysis.InPress' data-options='min:0,precision:0,' /></td>"
@@ -1184,7 +1184,7 @@ function prehImage(){
 	            	overflow: 'justify'
 	            },
 				min: 0,
-			    //max: 150,
+			    max: 350,
 			    startOnTick: true,
 	            endOnTick: true,
 	            minPadding: 0,

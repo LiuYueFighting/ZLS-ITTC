@@ -352,12 +352,12 @@ text-align: center;
 								&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;水 池 编 号 : &nbsp;
 								<select class="easyui-combobox textbox " id="PoolID" name="moChiAnalysis.PoolID"
 									style="width: 200px; height: 25px" data-options="required:true,missingMessage:'请输入膜池编号'">
-									<option value="MTG_MoChi_SC01" selected>1#膜池</option>
-									<option value="MTG_MoChi_SC02">2#膜池</option>
-									<option value="MTG_MoChi_SC03">3#膜池</option>
-									<option value="MTG_MoChi_SC04">4#膜池</option>
-									<option value="MTG_MoChi_SC05">5#膜池</option>
-									<option value="MTG_MoChi_SC06">6#膜池</option>
+									<option value="MTG_MoChi_SC01" selected>1# 膜池</option>
+									<option value="MTG_MoChi_SC02">2# 膜池</option>
+									<option value="MTG_MoChi_SC03">3# 膜池</option>
+									<option value="MTG_MoChi_SC04">4# 膜池</option>
+									<option value="MTG_MoChi_SC05">5# 膜池</option>
+									<option value="MTG_MoChi_SC06">6# 膜池</option>
 								</select>
 							</dl>
 							<dl>
@@ -431,17 +431,17 @@ text-align: center;
 									<td id="indexNum1" style="text-align:center; width:40px;height:26px">1</td>
 									<td style="width: 152px; height: 26px">
 										<!-- 时间 -->
-										<input name="moChiAnalysis.t" id="tAdd1" type="datetime-local" style="width: 150px; height: 25px" />
+										<input name="moChiAnalysis.t" id="tAdd1" type="datetime-local" style="width: 188px; height: 25px" />
 									</td>
 									<td style="width: 102px; height: 26px">
 										<!-- 膜池编号 -->
-										<select id="PoolIDAdd1" name="moChiAnalysis.PoolID" style="width: 100px; height: 25px">
-											<option value="MTG_MoChi_SC01" selected>1#膜池</option>
-											<option value="MTG_MoChi_SC02">2#膜池</option>
-											<option value="MTG_MoChi_SC03">3#膜池</option>
-											<option value="MTG_MoChi_SC04">4#膜池</option>
-											<option value="MTG_MoChi_SC05">5#膜池</option>
-											<option value="MTG_MoChi_SC06">6#膜池</option>
+										<select id="PoolIDAdd1" name="moChiAnalysis.PoolID" style="width: 72px; height: 25px">
+											<option value="MTG_MoChi_SC01" selected>1# 膜池</option>
+											<option value="MTG_MoChi_SC02">2# 膜池</option>
+											<option value="MTG_MoChi_SC03">3# 膜池</option>
+											<option value="MTG_MoChi_SC04">4# 膜池</option>
+											<option value="MTG_MoChi_SC05">5# 膜池</option>
+											<option value="MTG_MoChi_SC06">6# 膜池</option>
 										</select>
 									</td>
 									<td style="width: 102px; height: 26px">

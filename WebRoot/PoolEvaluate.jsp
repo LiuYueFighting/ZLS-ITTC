@@ -471,9 +471,9 @@ th, td, input, option {
 										<!-- 机加池编号 -->
 										<select id="PoolIDAdd1" name="poolEvaluate.PoolID"
 										class="easyui-combox" style="width: 100px; height: 25px">
-											<option value="MTG_JJC_SC01">1#机加池</option>
-											<option value="MTG_JJC_SC02">2#机加池</option>
-											<option value="MTG_JJC_SC03" selected>3#机加池</option>
+											<option value="MTG_JJC_SC01">1# 机加池</option>
+											<option value="MTG_JJC_SC02">2# 机加池</option>
+											<option value="MTG_JJC_SC03" selected>3# 机加池</option>
 									</select>
 									</td>
 									<td style="width: 82px; height: 26px" >
