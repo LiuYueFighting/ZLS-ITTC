@@ -28,8 +28,8 @@
 <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 <link rel="stylesheet" type="text/css" href="style/myeasyui.css" />
 
-<script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="easyui/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 <script type="text/javascript" src="highcharts/highstock.js" ></script>
