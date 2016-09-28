@@ -186,7 +186,7 @@ function showImportPanel() {
 		modal : true,// 模式窗口
 		title : '导入文件操作',
 		iconCls : 'icon-redo',
-		closed:false,
+		closed: false,
 		buttons : [ {
 			text : '确认',
 			handler : function() {
@@ -480,6 +480,11 @@ function dealSave() {
 	}
 }
 
+//// debug
+//function sleep(d){
+//	 for(var t = Date.now();Date.now() - t <= d;);
+//}
+
 function dealAddSave() {
 	// 表单数据序列化成一个字符串用&拼接
 	var params = $("#newfrmEdit").serialize();
@@ -524,6 +529,7 @@ function dealAddSave() {
 		else {
 			if ($("#IDAdd").val() == "") {
 				//alert('Add POST test');
+				
 				$.post("addMoChiAnalysis.action", paramsArray[i], function(result) {
 					//alert('test' + result.operateSuccess);
 					if (result.operateSuccess){
@@ -536,6 +542,7 @@ function dealAddSave() {
 				});
 			}//添加if
 			else {
+				
 				// 表示更新
 				$.post("updateMoChiAnalysis.action", params, function(result) {
 					if (result.operateSuccess) {
@@ -551,6 +558,7 @@ function dealAddSave() {
 			
 		}//test = trye
 	}//for loop
+//	location.reload();
 	if(flag == false)
 		$.messager.alert('错误', errorMessage, 'error');	
 }
