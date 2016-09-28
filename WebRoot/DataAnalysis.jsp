@@ -32,10 +32,10 @@
 <link rel="stylesheet" type="text/css" href="easyui/themes/default/datagrid.css" />
 <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 <link rel="stylesheet" type="text/css" href="style/myeasyui.css" />
-<script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="easyui/jquery.min.js"></script>
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="highcharts/highstock.js"></script>
 <script type="text/javascript" src="highcharts/exporting.src.js"></script>
 <script type="text/javascript" src="highcharts/themes/grid.js"></script>
@@ -570,14 +570,14 @@ top: 10px;
 									<td id="indexNum1" style="text-align:center; width:40px;height:26px">1</td>
 									<td style="width: 152px; height: 26px">
 										<!-- 时间 -->
-										<input name="dataAnalysis.t" id="tAdd1" type="datetime-local" style="width: 150px; height: 25px" />
+										<input name="dataAnalysis.t" id="tAdd1" type="datetime-local" style="width: 188px; height: 25px" />
 									</td>
 									<td style="width: 102px; height: 26px">
 										<!-- 水池编号 -->
 										<select id="PoolIDAdd1" name="dataAnalysis.PoolID" style="width: 100px; height: 25px">
-											<option value="MTG_QingS_SC01" selected>1#清水池</option>
-											<option value="MTG_QingS_SC02">2#清水池</option>
-											<option value="MTG_QingS_SC03">3#清水池</option>
+											<option value="MTG_QingS_SC01" selected>1# 清水池</option>
+											<option value="MTG_QingS_SC02">2# 清水池</option>
+											<option value="MTG_QingS_SC03">3# 清水池</option>
 										</select>
 									</td>
 									<td style="width: 72px; height: 26px">

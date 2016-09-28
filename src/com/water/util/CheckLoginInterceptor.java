@@ -14,6 +14,7 @@ public class CheckLoginInterceptor extends AbstractInterceptor{
 	    // TODO Auto-generated method stub
 	        // 对LoginAction不做该项拦截
 	        Object action = actionInvocation.getAction();
+	        
 	        if (action instanceof UserAction) {
 	            //System.out.println("exit check login, because this is login action.");
 	            //UserInfoAction userinfoAction = (UserInfoAction)action;

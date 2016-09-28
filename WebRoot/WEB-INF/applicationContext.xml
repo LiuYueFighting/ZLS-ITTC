@@ -70,7 +70,7 @@
 		<property name="userService" ref="userService" />
 	</bean>
 	
-	<bean id="userAction" class="com.water.action.UserAction">
+	<bean id="userAction" class="com.water.action.UserAction" scope="prototype">
 		<property name="userService" ref="userService" />
 	</bean>
 	<!-- PoolEvaluate -->
@@ -85,7 +85,7 @@
 	</bean>
 
 	<!-- action -->
-	<bean id="poolEvaluateAction" class="com.water.action.PoolEvaluateAction">
+	<bean id="poolEvaluateAction" class="com.water.action.PoolEvaluateAction" scope="prototype">
 		<property name="poolEvaluateService" ref="poolEvaluateService" />
 	</bean>
 	
@@ -100,7 +100,7 @@
 	</bean>
 
 	<!-- action -->
-	<bean id="dataAnalysisAction" class="com.water.action.DataAnalysisAction">
+	<bean id="dataAnalysisAction" class="com.water.action.DataAnalysisAction" scope="prototype">
 		<property name="dataAnalysisService" ref="dataAnalysisService" />
 	</bean>
 	
@@ -116,7 +116,7 @@
 	</bean>
 
 	<!-- action -->
-	<bean id="outStatAction" class="com.water.action.OutStatAction">
+	<bean id="outStatAction" class="com.water.action.OutStatAction" scope="prototype">
 		<property name="outStatService" ref="outStatService" />
 	</bean>
 	
@@ -132,7 +132,7 @@
 	</bean>
 
 	<!-- action -->
-	<bean id="moChiAnalysisAction" class="com.water.action.MoChiAnalysisAction">
+	<bean id="moChiAnalysisAction" class="com.water.action.MoChiAnalysisAction" scope="prototype">
 		<property name="moChiAnalysisService" ref="moChiAnalysisService" />
 	</bean>
 	
