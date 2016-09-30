@@ -395,7 +395,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img2);
     img2.bind("click",function(){
-        window.location.href="JJC.jsp";
+        window.location.href="JJC1.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 20px #eee";
@@ -433,7 +433,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(img21);
     img21.bind("click",function(){
-        window.location.href="JJC.jsp";
+        window.location.href="JJC2.jsp";
     }).bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
         this.shadow="0 0 20px #eee";

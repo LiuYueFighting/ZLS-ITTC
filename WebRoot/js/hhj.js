@@ -45,7 +45,7 @@ oCanvas.domReady(function () {
  var xx=140;
  var t=200;
  var sprite = canvas.display.sprite({
-     x:580,
+     x:576,
      y:415,
      origin: { x: "left", y: "top" },
      image: "image/JJC_flash1.png",
@@ -67,7 +67,7 @@ oCanvas.domReady(function () {
  var bg = canvas.display.image({
      x: 0,
      y: 0,
-     image: "image/hhj_v1.png"
+     image: "image/hhj_v2.png"
  }).add();
 //绘制两条管道
  var GD01=createGD({

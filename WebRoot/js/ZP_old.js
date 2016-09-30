@@ -2,18 +2,19 @@
  * Created by Administrator on 2015/7/28.
  */
 $(document).ready(function(){
-	
     oCanvas.domReady(function () {
-    	
+
         var speed_all=3,//1.5
-            width_all=20,
+             width_all=20,
             speed_SC=1.8,//0.9
             color_GD="#007fff",
             color_SC="#43d9f9",
             color_txt="#337ab7";
-
+        
+        //调试，水池动画总开关	
         var start_all = 0,
-            paused_all = 0;
+        	paused_all = 0;
+        
 
         var canvas = oCanvas.create({
             canvas: "#canvas_ZP_old",
@@ -23,7 +24,7 @@ $(document).ready(function(){
         var bg = canvas.display.image({
             x: 0,
             y: 0,
-            image: "image/waterLine_old.png"
+            image: "image/waterLine_old_v1.png"
         });
         var bg1 = canvas.display.image({
             x: 0,
@@ -32,48 +33,51 @@ $(document).ready(function(){
         });
 
         canvas.addChild(bg1);
-        
-        var SC01 = canvas.display.SC_show({
-            x: 234, y: 178,
-            Width: 359, Height: 175,
-            height_now: 0,
-            trail_flag: 0,
-            t: 0,
-            start:start_all,
-            full:0,
-            speed:speed_SC,
-            fill: color_SC
-        });
-        canvas.addChild(SC01);
 
-        var SC02 = canvas.display.SC_show({
-            x: 718, y: 180,
-            Width: 74, Height: 161,
-            height_now: 0,
-            trail_flag: 0,
-            t: 0,
-            start:start_all,
-            full:0,
-            speed:speed_SC,
-            fill: color_SC
+        var SC01=createSC({
+            parent:canvas,
+            x:111,y:176,height:174,width:313,trail_flag:0,speed:speed_SC,color:color_SC
         });
-        canvas.addChild(SC02);
+        var SC02=createSC({
+            parent:canvas,
+            x:522,y:177,height:163,width:81,trail_flag:0,speed:speed_SC,color:color_SC
+        });
+        var SC03=createSC({
+            parent:canvas,
+            x:603,y:177,height:163,width:46,trail_flag:0,speed:speed_SC,color:color_SC
+        });
 
-        var SC03 = canvas.display.SC_show({
-            x: 792, y: 180,
-            Width: 37, Height:163,
-            height_now: 0,
-            trail_flag: 0,
-            t: 0,
-            start:start_all,
-            full:0,
-            speed:speed_SC,
-            fill: color_SC
-        });
-        canvas.addChild(SC03);
+        //var SC04=createSC({
+        //    parent:canvas,
+        //    x:99,y:164,height:182,width:260,trail_flag:0,speed:speed_SC,color:color_SC
+        //});
+        //var SC05=createSC({
+        //    parent:canvas,
+        //    x:99,y:164,height:182,width:260,trail_flag:0,speed:speed_SC,color:color_SC
+        //});
+        //var SC06=createSC({
+        //    parent:canvas,
+        //    x:99,y:164,height:182,width:260,trail_flag:0,speed:speed_SC,color:color_SC
+        //});
+        //var SC07=createSC({
+        //    parent:canvas,
+        //    x:99,y:164,height:182,width:260,trail_flag:0,speed:speed_SC,color:color_SC
+        //});
+        //var SC08=createSC({
+        //    parent:canvas,
+        //    x:99,y:164,height:182,width:260,trail_flag:0,speed:speed_SC,color:color_SC
+        //});
+        //var SC09=createSC({
+        //    parent:canvas,
+        //    x:99,y:164,height:182,width:260,trail_flag:0,speed:speed_SC,color:color_SC
+        //});
+        //var SC10=createSC({
+        //    parent:canvas,
+        //    x:99,y:164,height:182,width:260,trail_flag:0,speed:speed_SC,color:color_SC
+        //});
         var left_t=canvas.display.SC_show({
-            x:1161,
-            y:292,
+        	x:1161-202,
+            y:292-7,
             Width:15,
             Height:15,
             height_now:0,
@@ -89,8 +93,8 @@ $(document).ready(function(){
             start:start_all
         }).add();
         var right_t=canvas.display.SC_show({
-            x:1308,
-            y:284,
+        	x:1111,
+            y:277,
             Width:25,
             Height:25,
             height_now:0,
@@ -105,21 +109,26 @@ $(document).ready(function(){
             full:0,
             start:start_all
         }).add();
+        //水池4表示的是机加池整个大池子
         var SC04 = canvas.display.SC_show({
-            x: 1026,
-            y: 185,
-            Width: 431,
-            Height: 208,
+        	x: 817,
+            y: 186,
+            Width: 481,
+            Height: 221,
             height_now: 0,
             trail_flag: 1,
             trail: [
-                {x_t: 0, y_t: 24},
-                {x_t: 78, y_t: 208},
-                {x_t: 335, y_t: 208},
-                {x_t: 417, y_t: 24},
-                {x_t: 417, y_t: 0},
-                {x_t: 22, y_t: 0},
-                {x_t: 22, y_t: 24}
+				{x_t: 20, y_t: 7},
+				{x_t: 20, y_t: 20},
+				{x_t: 0, y_t: 20},
+				{x_t: 124, y_t: 221},
+				{x_t: 342, y_t: 221},
+				{x_t: 449, y_t: 22},
+				{x_t: 449, y_t: 7},
+				{x_t: 321, y_t: 7},
+				{x_t: 321, y_t: 0},
+				{x_t: 138, y_t: 0},
+				{x_t: 138, y_t: 7}
             ],
             t: 1405,
             fill: color_SC,
@@ -131,10 +140,10 @@ $(document).ready(function(){
 
         //5、6原来表示的是机加池左右的两个池子
         var SC05 = canvas.display.SC_show({
-            x: 1034,
-            y: 196,
-            Width: 424,
-            Height: 16,
+        	x: 819,
+            y: 193,
+            Width: 461,
+            Height: 17,
             height_now: 0,
             trail_flag: 0,
             t: 1405,
@@ -146,10 +155,10 @@ $(document).ready(function(){
         canvas.addChild(SC05);
 
         var SC06 = canvas.display.SC_show({
-            x: 1458,
-            y: 196,
-            Width: 14,
-            Height: 18,
+        	x: 1278,
+            y: 192,
+            Width: 19,
+            Height: 19,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -159,41 +168,41 @@ $(document).ready(function(){
             start:start_all
         });
         canvas.addChild(SC06);
-
+        
         var SC07 = canvas.display.SC_show({
-            x: 1200,
-            y: 595,
-            Width: 153,
-            Height: 51,
+        	x: 1331,
+            y: 266,
+            Width: 169,
+            Height: 72,
             height_now: 0,
             trail_flag: 0,
             t: 0,
             fill: color_SC,
-            speed:speed_SC/2,
+            speed:speed_SC,
             full:0,
             start:start_all
         });
         canvas.addChild(SC07);
-
+        
         var SC08 = canvas.display.SC_show({
-            x: 1149,
-            y: 631,
-            Width: 50,
-            Height: 38,
+        	x: 1500,
+            y: 295,
+            Width: 54,
+            Height: 43,
             height_now: 0,
             trail_flag: 0,
             t: 0,
             fill: color_SC,
-            speed:speed_SC/2,
+            speed:speed_SC,
             full:0,
             start:start_all
         });
         canvas.addChild(SC08);
 
         var SC09 = canvas.display.SC_show({
-            x: 1021,
-            y: 562,
-            Width: 38,
+        	x: 1421,
+            y: 551,
+            Width: 41,
             Height: 92,
             height_now: 0,
             trail_flag: 0,
@@ -206,9 +215,9 @@ $(document).ready(function(){
         canvas.addChild(SC09);
 
         var SC10 = canvas.display.SC_show({
-            x: 971,
-            y: 562,
-            Width: 51,
+        	x: 1366,
+            y: 551,
+            Width: 55,
             Height: 92,
             height_now: 0,
             trail_flag: 0,
@@ -221,9 +230,9 @@ $(document).ready(function(){
         canvas.addChild(SC10);
 
         var SC11 = canvas.display.SC_show({
-            x: 895,
-            y: 562,
-            Width: 75,
+        	x: 1285,
+            y: 551,
+            Width: 81,
             Height: 92,
             height_now: 0,
             trail_flag: 0,
@@ -236,9 +245,9 @@ $(document).ready(function(){
         canvas.addChild(SC11);
 
         var SC12 = canvas.display.SC_show({
-            x: 845,
-            y: 562,
-            Width: 52,
+        	x: 1232,
+            y: 551,
+            Width: 57,
             Height: 92,
             height_now: 0,
             trail_flag: 0,
@@ -251,10 +260,10 @@ $(document).ready(function(){
         canvas.addChild(SC12);
 
         var SC13 = canvas.display.SC_show({
-            x: 814,
-            y: 562,
-            Width: 30,
-            Height: 92,
+        	x: 1201,
+            y: 551,
+            Width: 33,
+            Height: 95,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -266,10 +275,10 @@ $(document).ready(function(){
         canvas.addChild(SC13);
 
         var SC14 = canvas.display.SC_show({
-            x: 536,
-            y: 590,
-            Width: 113,
-            Height: 65,
+        	x: 912,
+            y: 577,
+            Width: 128,
+            Height: 68,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -279,24 +288,12 @@ $(document).ready(function(){
             start:start_all
         });
         canvas.addChild(SC14);
-        var SC131 = canvas.display.SC_show({
-            x: 649,
-            y: 622,
-            Width: 14,
-            Height: 29,
-            height_now: 0,
-            trail_flag: 0,
-            t: 0,
-            fill: color_SC,
-            speed:speed_SC,
-            full:0,
-            start:start_all
-        });
+        
         var SC141 = canvas.display.SC_show({
-            x: 516,
-            y: 586,
-            Width: 19,
-            Height: 17,
+            x: 893,
+            y: 576,
+            Width: 21,
+            Height: 16,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -305,12 +302,13 @@ $(document).ready(function(){
             full:0,
             start:start_all
         });
-        canvas.addChild(SC14);
+        canvas.addChild(SC141);
+        
         var SC15 = canvas.display.SC_show({
-            x: 164,
-            y: 576,
-            Width: 336,
-            Height: 77,
+        	x: 446,
+            y: 573,
+            Width: 366,
+            Height: 74,
             height_now: 0,
             trail_flag: 0,
             t: 0,
@@ -321,7 +319,25 @@ $(document).ready(function(){
         });
         canvas.addChild(SC15);
 
-
+//        var SC151=createSC({
+//            parent:canvas,
+//            x:877,y:623,height:15,width:25,trail_flag:0,speed:speed_SC,color:color_SC
+//        });
+//
+//        var SC16 = canvas.display.SC_show({
+//            x: 411,
+//            y: 602,
+//            Width: 388,
+//            Height: 74,
+//            height_now: 0,
+//            trail_flag: 0,
+//            t: 0,
+//            fill: color_SC,
+//            speed:speed_SC,
+//            full:0,
+//            start:start_all
+//        });
+//        canvas.addChild(SC16);
 
 
         var GD01 = canvas.display.GD({
@@ -329,8 +345,8 @@ $(document).ready(function(){
                 x_d: 0, y_d: 0
             },
             cells: [
-                {x_cell: 170 ,y_cell: 333},
-                {x_cell: 242, y_cell: 333}
+                {x_cell: 44 ,y_cell: 329},
+                {x_cell: 122, y_cell: 329}
             ],
             deta: 1,
             deta_x: 1,
@@ -359,9 +375,9 @@ $(document).ready(function(){
                 x_d: 0, y_d: 0
             },
             cells: [
-                {x_cell: 581, y_cell: 330},
-                {x_cell: 749, y_cell: 330},
-                {x_cell: 749, y_cell: 305}
+                {x_cell: 417, y_cell: 324},
+                {x_cell: 564, y_cell: 324},
+                {x_cell: 564, y_cell: 300}
             ],  //锟秸碉拷锟斤拷锟斤拷
             deta: 1,
             deta_x: 1, deta_y: 0,
@@ -385,10 +401,10 @@ $(document).ready(function(){
                 x_d: 0, y_d: 0
             },
             cells: [
-                {x_cell: 821, y_cell: 333},
-                {x_cell: 1041, y_cell: 333},
-                {x_cell: 1085, y_cell: 298},
-                {x_cell: 1160, y_cell: 298}
+                {x_cell: 644, y_cell: 328},
+                {x_cell: 831, y_cell: 328},
+                {x_cell: 878, y_cell: 292},
+                {x_cell: 964, y_cell: 292}
             ],  //锟秸碉拷锟斤拷锟斤拷
             deta: 1,
             deta_x: 1, deta_y: 0,
@@ -412,9 +428,9 @@ $(document).ready(function(){
                 x_d: 0, y_d: 0
             },
             cells: [
-                {x_cell: 1463, y_cell: 215},
-                {x_cell: 1463, y_cell: 576},
-                {x_cell: 1353, y_cell: 576}
+                {x_cell: 1288, y_cell: 209},
+                {x_cell: 1288, y_cell: 245},
+                {x_cell: 1496, y_cell: 245}
             ],
             deta: 1,
             deta_x: 1, deta_y: 0,
@@ -432,14 +448,40 @@ $(document).ready(function(){
             full:0
         });
         canvas.addChild(GD04);
-
+        
         var GD05 = canvas.display.GD({
             destination: {
                 x_d: 0, y_d: 0
             },
             cells: [
-                {x_cell: 1352, y_cell: 577},
-                {x_cell: 1200, y_cell: 577}
+                {x_cell: 1335, y_cell: 245},
+                {x_cell: 1496, y_cell: 245}
+            ],
+            deta: 1,
+            deta_x: 1, deta_y: 0,
+            flag_x: 1, flag_y: 0,
+            cellIndex: 0,
+            Speed: speed_all,
+            GDwidth: 30,
+            LineHeight: 5,
+            x_now: 0,  y_now: 0,
+            firstX: 0, firstY: 0,
+            beginHeight: 0, endHeight: 0,
+            legacyHeight: 0,
+            paused: paused_all,
+            fill:color_GD,
+            full:0
+        });
+        canvas.addChild(GD05);
+
+        var GD06 = canvas.display.GD({
+            destination: {
+                x_d: 0, y_d: 0
+            },
+            cells: [
+                {x_cell: 1521, y_cell: 330},
+                {x_cell: 1521, y_cell: 585},
+                {x_cell: 1466, y_cell: 585}
             ],
             deta: 1,
             deta_x: 1, deta_y: 0,
@@ -456,6 +498,7 @@ $(document).ready(function(){
             fill:color_GD,
             full:0
         });
+        canvas.addChild(GD06);
 
 
         //var GD06 = canvas.display.GD({
@@ -518,16 +561,39 @@ $(document).ready(function(){
         //});
         //canvas.addChild(GD07);
 
+        var GD07 = canvas.display.GD({
+            destination: {
+                x_d: 0, y_d: 0
+            },
+            cells: [
+                {x_cell: 1208, y_cell: 632},
+                {x_cell: 1089, y_cell: 632}
+            ],
+            deta: 1,
+            deta_x: 1, deta_y: 0,
+            flag_x: 1, flag_y: 0,
+            cellIndex: 0,
+            Speed:speed_all,
+            GDwidth: 20,
+            LineHeight: 5,
+            x_now: 0,  y_now: 0,
+            firstX: 0, firstY: 0,
+            beginHeight: 0, endHeight: 0,
+            legacyHeight: 0,
+            paused: paused_all,
+            fill:color_GD,
+            full:0
+        });
+        canvas.addChild(GD07);
+        
         var GD08 = canvas.display.GD({
             destination: {
                 x_d: 0, y_d: 0
             },
             cells: [
-                {x_cell: 1175, y_cell: 670},
-                {x_cell: 1175, y_cell: 700},
-                {x_cell: 1106, y_cell: 700},
-                {x_cell: 1106, y_cell: 598},
-                {x_cell: 1060, y_cell: 598}
+                {x_cell: 902, y_cell: 592},
+                {x_cell: 902, y_cell: 618},
+                {x_cell: 805, y_cell: 618}
             ],
             deta: 1,
             deta_x: 1, deta_y: 0,
@@ -546,17 +612,39 @@ $(document).ready(function(){
         });
         canvas.addChild(GD08);
         
+//        var GD10 = canvas.display.GD({
+//            destination: {
+//                x_d: 0, y_d: 0
+//            },
+//            cells: [
+//                {x_cell: 642, y_cell: 634},
+//                {x_cell: 615, y_cell: 634}
+//            ],
+//            deta: 1,
+//            deta_x: 1, deta_y: 0,
+//            flag_x: 1, flag_y: 0,
+//            cellIndex: 0,
+//            Speed:speed_all,
+//            GDwidth: 20,
+//            LineHeight: 5,
+//            x_now: 0,  y_now: 0,
+//            firstX: 0, firstY: 0,
+//            beginHeight: 0, endHeight: 0,
+//            legacyHeight: 0,
+//            paused: paused_all,
+//            fill:color_GD,
+//            full:0
+//        });
+//        canvas.addChild(GD10);
+        
         var GD09 = canvas.display.GD({
             destination: {
                 x_d: 0, y_d: 0
             },
             cells: [
-                {x_cell: 1332, y_cell: 640},
-                {x_cell: 1332, y_cell: 536},
-                {x_cell: 1312, y_cell: 536},
-                {x_cell: 1312, y_cell: 719},
-                {x_cell: 304, y_cell: 719},
-                {x_cell: 304, y_cell: 650}
+//                {x_cell: 416, y_cell: 641},
+                {x_cell: 417, y_cell: 636},
+                {x_cell: 133, y_cell: 636}
             ],
             deta: 1,
             deta_x: 1, deta_y: 0,
@@ -575,98 +663,37 @@ $(document).ready(function(){
         });
         canvas.addChild(GD09);
         
-        var GD10 = canvas.display.GD({
-            destination: {
-                x_d: 0, y_d: 0
-            },
-            cells: [
-                {x_cell: 137, y_cell: 651},
-                {x_cell: 137, y_cell: 606},
-                {x_cell:  49, y_cell: 606}
-            ],
-            deta: 1,
-            deta_x: 1, deta_y: 0,
-            flag_x: 1, flag_y: 0,
-            cellIndex: 0,
-            Speed:speed_all,
-            GDwidth: 20,
-            LineHeight: 5,
-            x_now: 0,  y_now: 0,
-            firstX: 0, firstY: 0,
-            beginHeight: 0, endHeight: 0,
-            legacyHeight: 0,
-            paused: paused_all,
-            fill:color_GD,
-            full:0
-        });
-        canvas.addChild(GD10);
-        
-        var GD11 = canvas.display.GD({
-            destination: {
-                x_d: 0, y_d: 0
-            },
-            cells: [
-                {x_cell: 825, y_cell: 643},
-                {x_cell: 697, y_cell: 643}
-            ],
-            deta: 1,
-            deta_x: 1, deta_y: 0,
-            flag_x: 1, flag_y: 0,
-            cellIndex: 0,
-            Speed:speed_all,
-            GDwidth: 20,
-            LineHeight: 5,
-            x_now: 0,  y_now: 0,
-            firstX: 0, firstY: 0,
-            beginHeight: 0, endHeight: 0,
-            legacyHeight: 0,
-            paused: paused_all,
-            fill:color_GD,
-            full:0
-        });
-        canvas.addChild(GD11);
-        
-        var GD12 = canvas.display.GD({
-            destination: {
-                x_d: 0, y_d: 0
-            },
-            cells: [
-                {x_cell: 529, y_cell: 597},
-                {x_cell: 529, y_cell: 635},
-                {x_cell: 493, y_cell: 635}
-            ],
-            deta: 1,
-            deta_x: 1, deta_y: 0,
-            flag_x: 1, flag_y: 0,
-            cellIndex: 0,
-            Speed:speed_all,
-            GDwidth: 20,
-            LineHeight: 5,
-            x_now: 0,  y_now: 0,
-            firstX: 0, firstY: 0,
-            beginHeight: 0, endHeight: 0,
-            legacyHeight: 0,
-            paused: paused_all,
-            fill:color_GD,
-            full:0
-        });
-        canvas.addChild(GD12);
-        
-        canvas.addChild(bg);
-        canvas.addChild(GD05);
-
-//        var txt1=canvas.display.text({
-//            x: 770,
-//            y: 10,
-//            origin: { x: "center", y: "top" },
-//            font: "bold 25px sans-serif",
-//            text: "当前速度:"+((canvas.settings.fps-50)/50+1)+"倍速",
-//            fill: color_txt
+//        var GD10 = canvas.display.GD({
+//            destination: {
+//                x_d: 0, y_d: 0
+//            },
+//            cells: [
+//                {x_cell: 264, y_cell: 627},
+//                {x_cell: 133, y_cell: 627}
+//            ],
+//            deta: 1,
+//            deta_x: 1, deta_y: 0,
+//            flag_x: 1, flag_y: 0,
+//            cellIndex: 0,
+//            Speed:speed_all,
+//            GDwidth: 30,
+//            LineHeight: 5,
+//            x_now: 0,  y_now: 0,
+//            firstX: 0, firstY: 0,
+//            beginHeight: 0, endHeight: 0,
+//            legacyHeight: 0,
+//            paused: paused_all,
+//            fill:color_GD,
+//            full:0
 //        });
+//        canvas.addChild(GD10);
+        canvas.addChild(bg);
+
+       
 
         var txt_QS=canvas.display.text({
-            x:300,
-            y:440,
+            x:240,
+            y:410,
             origin: { x: "center", y: "top" },
             font: "bold 22px 微软雅黑",
             text: "取水泵房",
@@ -682,43 +709,44 @@ $(document).ready(function(){
             fill:"#0e406b"
         });
         var txt_HHJ=txt_QS.clone({
-            x:780,
-            y:440,
+            x:600-7,
+            y:410,
             text:"混合井"
         });
 
         var txt_JJC=txt_QS.clone({
-            x:1243,
-            y:440,
+            x:1243-197,
+            y:410,
             text:"机加池"
         });
 
         var txt_HX=txt_QS.clone({
-            x:1270,
-            y:726,
+            x:1270+154,
+            y:410,
             text:"虹吸滤池"
         });
         var txt_CY=txt_QS.clone({
-            x:940,
-            y:726,
+            x:940+393,
+            y:716,
             text:"臭氧接触池"
         });
         var txt_TC=txt_QS.clone({
-            x:625,
-            y:726,
+            x:625+393,
+            y:716,
             text:"活性炭池"
         });
         var txt_QSC=txt_QS.clone({
-            x:332,
-            y:726,
+            x:332+295,
+            y:716,
             text:"清水池"
         });
         var txt_PS=txt_QS.clone({
-            x:95,
-            y:726,
+            x:95+154,
+            y:716,
             text:"配水"
         });
 
+  
         canvas.addChild(txt_Title);
         canvas.addChild(txt_QS);
         canvas.addChild(txt_HHJ);
@@ -729,27 +757,23 @@ $(document).ready(function(){
         canvas.addChild(txt_QSC);
         canvas.addChild(txt_PS);
 
-
         canvas.setLoop(function () {
-            
             GD01.advance();
             GD02.advance();
             GD03.advance();
             GD04.advance();
             GD05.advance();
-            //GD06.advance();
-//            GD07.advance();
+            GD06.advance();
+            GD07.advance();
             GD08.advance();
-//            GD09.advance();
-            GD10.advance();
-            GD11.advance();
-            GD12.advance();
+            GD09.advance();
+//            GD10.advance();
 
             SC01.advance();
             SC02.advance();
             SC03.advance();
-            right_t.advance();
             left_t.advance();
+            right_t.advance();
             SC04.advance();
             SC05.advance();
             SC06.advance();
@@ -760,11 +784,10 @@ $(document).ready(function(){
             SC11.advance();
             SC12.advance();
             SC13.advance();
-            SC131.advance();
             SC14.advance();
             SC141.advance();
             SC15.advance();
-
+//            SC151.advance();
 
 
             if(GD01.full==1){
@@ -780,7 +803,7 @@ $(document).ready(function(){
                 SC03.start = 1;
                 GD03.paused = 1;
             }
-            if(GD03.full==1) {
+            if(GD03.full==1){
                 left_t.start=1;
                 right_t.start=1;
             }
@@ -795,53 +818,52 @@ $(document).ready(function(){
                 SC06.start = 1;
                 GD04.paused = 1;
             }
-            if(GD04.full==1 ) {
-                GD05.paused=1;
-                SC07.start=1;
+            if(GD04.full==1) {
+            	GD05.paused = 1;
+            	SC07.start = 1;
             }
-
-            if(SC07.full==1 ) {
-               SC08.start=1;
+            if(SC07.full==1) {
+                SC08.start = 1;
             }
-            if(SC08.full==1){
-                //GD06.paused=1;
-                GD08.paused=1;
+            if(SC08.full==1) {
+                GD06.paused = 1;
             }
-            if(GD08.full==1) {
+            if(GD06.full==1) {
                 SC09.start = 1;
             }
             if(SC09.full==1) {
             	SC10.start = 1;
             }
             if(SC10.full==1) {
-                SC11.start = 1;
+            	SC11.start = 1;
             }
             if(SC11.full==1) {
-                SC12.start = 1;
+            	SC12.start = 1;
             }
             if(SC12.full==1) {
-                SC13.start = 1;
+            	SC13.start = 1;
             }
             if(SC13.height_now>=SC13.Height*0.2) {
-                GD11.paused = 1;
+                GD07.paused = 1;
             }
-            if( GD11.full==1) {
-                SC131.start=1;
-            }
-            if(SC131.full==1){
-                SC14.start = 1;
+            if(GD07.full==1) {
+            	SC14.start=1;
             }
             if(SC14.full==1) {
-                SC141.start=1;
-                GD12.paused = 1;
+            	SC141.start = 1;
             }
-//            if(GD07.full==1 && GD09.full==1 && GD12.full==1) {
-            if(GD12.full==1) {
+            if(SC141.full==1) {
+                GD08.paused = 1;
+            }
+            if(GD08.full==1) {
                 SC15.start = 1;
             }
-            if(SC15.full==1) {
-                GD10.paused = 1;
-            } 
+            if(SC15.height_now>=SC15.Height*0.2) {
+                GD09.paused = 1;
+            }
+//            if(GD09.full==1) {
+//            	GD10.paused = 1;
+//            }
             canvas.redraw();
         }).start();
         GD01.paused=1;
@@ -867,17 +889,15 @@ $(document).ready(function(){
             GD03.init();
             GD04.init();
             GD05.init();
+            GD06.init();
+            GD07.init();
             GD08.init();
             GD09.init();
-            GD10.init();
-            GD11.init();
-            GD12.init();
-
-            left_t.init();
-            right_t.init();
             SC01.init();
             SC02.init();
             SC03.init();
+            left_t.init();
+            right_t.init();
             SC04.init();
             SC05.init();
             SC06.init();
@@ -888,10 +908,11 @@ $(document).ready(function(){
             SC11.init();
             SC12.init();
             SC13.init();
-            SC131.init();
             SC14.init();
             SC141.init();
             SC15.init();
+//            SC151.init();
+//            SC16.init();
             GD01.paused=1;
             canvas.settings.fps=40;
             var spanText=document.getElementById("speed");
@@ -911,7 +932,7 @@ $(document).ready(function(){
         });
         $("#btn_downS").click(function () {
             if(canvas.settings.fps>=25)
-                canvas.settings.fps-=5;
+            canvas.settings.fps-=5;
             var spanText=document.getElementById("speed");
             var speed=(canvas.settings.fps/40).toFixed(1);
             spanText.innerHTML=speed+"X";

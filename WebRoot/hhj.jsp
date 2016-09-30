@@ -193,7 +193,9 @@
         <select name="server" onchange="self.location.href=options[selectedIndex].value" id="server">
         <option value="QS.jsp">取水泵房</option>
         <option value="hhj.jsp" selected>混合井</option>
-        <option value="JJC.jsp">机加池</option>
+        <option value="JJC1.jsp">1#机加池</option>
+        <option value="JJC2.jsp">2#机加池</option>
+        <option value="JJC.jsp">3#机加池</option>
         <option value="VL.jsp">V型滤池</option>
         <option value="hx.jsp">虹吸滤池</option>
         <option value="cy.jsp">臭氧接触池</option>
