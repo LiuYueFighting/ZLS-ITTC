@@ -437,7 +437,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 					String day = sdfDay.format(list.get(i).getT());
 					if (day.equals(tempT)){					
 						sheet.addCell(new Label(0,j,sdf.format(list.get(i).getT()),formatBody));
-						sheet.addCell(new Label(1,j,list.get(i).getPoolID(),formatBody));
+						sheet.addCell(new Label(1,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
 						sheet.addCell(new Label(2,j,list.get(i).getInPress()==null?"":Double.toString(list.get(i).getInPress()),formatBody));
 						sheet.addCell(new Label(3,j,list.get(i).getOutPress()==null?"":Double.toString(list.get(i).getOutPress()),formatBody));
 						sheet.addCell(new Label(4,j,list.get(i).getDiffPress()==null?"":Double.toString(list.get(i).getDiffPress()),formatBody));
@@ -471,7 +471,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 						sheet.addCell(new Label(9,1," 出膜藻类(万个/L) ",formatHead));
 
 						sheet.addCell(new Label(0,j,sdf.format(list.get(i).getT()),formatBody));
-						sheet.addCell(new Label(1,j,list.get(i).getPoolID(),formatBody));
+						sheet.addCell(new Label(1,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
 						sheet.addCell(new Label(2,j,list.get(i).getInPress()==null?"":Double.toString(list.get(i).getInPress()),formatBody));
 						sheet.addCell(new Label(3,j,list.get(i).getOutPress()==null?"":Double.toString(list.get(i).getOutPress()),formatBody));
 						sheet.addCell(new Label(4,j,list.get(i).getDiffPress()==null?"":Double.toString(list.get(i).getDiffPress()),formatBody));

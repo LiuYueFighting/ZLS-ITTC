@@ -36,6 +36,7 @@ import com.water.beans.OutStat;
 import com.water.service.OutStatService;
 import com.water.util.ListSort;
 import com.water.util.TimeTree;
+import com.water.util.Tools;
 import com.water.util.TreeNode;
 
 
@@ -409,7 +410,7 @@ public class OutStatAction extends ActionSupport{
 					String day = sdfDay.format(list.get(i).getT());
 					if (day.equals(tempT)){					
 //						sheet.addCell(new Label(0,j,sdfDay.format(list.get(i).getT()),formatBody));
-						sheet.addCell(new Label(0,j,list.get(i).getPoolID(),formatBody));
+						sheet.addCell(new Label(0,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
 						sheet.addCell(new Label(1,j,Double.toString(list.get(i).getNTU()),formatBody));
 						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getCl()),formatBody));
 						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getFe()),formatBody));
@@ -434,7 +435,7 @@ public class OutStatAction extends ActionSupport{
 						sheet.addCell(new Label(4,1," 铝 ",formatHead));
 
 //						sheet.addCell(new Label(0,j,sdfDay.format(list.get(i).getT()),formatBody));
-						sheet.addCell(new Label(0,j,list.get(i).getPoolID(),formatBody));
+						sheet.addCell(new Label(0,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
 						sheet.addCell(new Label(1,j,Double.toString(list.get(i).getNTU()),formatBody));
 						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getCl()),formatBody));
 						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getFe()),formatBody));
