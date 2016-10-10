@@ -24,7 +24,7 @@ $(document).ready(function(){
         var bg = canvas.display.image({
             x: 0,
             y: 0,
-            image: "image/waterLine_new.png"
+            image: "image/waterLine_new_v1.png"
         });
         var bg1 = canvas.display.image({
             x: 0,
@@ -531,15 +531,15 @@ $(document).ready(function(){
                 x_d: 0, y_d: 0
             },
             cells: [
-                {x_cell: 418, y_cell: 662},
-                {x_cell: 360, y_cell: 662}
+                {x_cell: 416, y_cell: 665},
+                {x_cell: 300, y_cell: 665}
             ],  //锟秸碉拷锟斤拷锟斤拷
             deta: 1,
             deta_x: 1, deta_y: 0,
             flag_x: 1, flag_y: 0,
             cellIndex: 0,
             Speed:speed_all,
-            GDwidth: 20,
+            GDwidth: 30,
             LineHeight: 5,
             x_now: 0,  y_now: 0,
             firstX: 0, firstY: 0,
@@ -550,13 +550,38 @@ $(document).ready(function(){
             full:0
         });
         canvas.addChild(GD08);
+        
+        var GD09 = canvas.display.GD({
+            destination: {
+                x_d: 0, y_d: 0
+            },
+            cells: [
+                {x_cell: 267, y_cell: 666},
+                {x_cell: 139, y_cell: 666}
+            ],  //锟秸碉拷锟斤拷锟斤拷
+            deta: 1,
+            deta_x: 1, deta_y: 0,
+            flag_x: 1, flag_y: 0,
+            cellIndex: 0,
+            Speed:speed_all,
+            GDwidth: 30,
+            LineHeight: 5,
+            x_now: 0,  y_now: 0,
+            firstX: 0, firstY: 0,
+            beginHeight: 0, endHeight: 0,
+            legacyHeight: 0,
+            paused: paused_all,
+            fill:color_GD,
+            full:0
+        });
+        canvas.addChild(GD09);
         canvas.addChild(bg);
 
        
 
         var txt_QS=canvas.display.text({
             x:215,
-            y:440,
+            y:410,
             origin: { x: "center", y: "top" },
             font: "bold 22px 微软雅黑",
             text: "取水泵房",
@@ -573,19 +598,19 @@ $(document).ready(function(){
         });
         var txt_HHJ=txt_QS.clone({
             x:480,
-            y:440,
+            y:410,
             text:"混合井"
         });
 
         var txt_JJC=txt_QS.clone({
             x:916,
-            y:440,
+            y:410,
             text:"机加池"
         });
 
         var txt_HX=txt_QS.clone({
             x:1350,
-            y:440,
+            y:410,
             text:"V型滤池"
         });
         var txt_CY=txt_QS.clone({
@@ -604,7 +629,7 @@ $(document).ready(function(){
             text:"清水池"
         });
         var txt_PS=txt_QS.clone({
-            x:332,
+            x:252,
             y:726,
             text:"配水"
         });
@@ -629,6 +654,7 @@ $(document).ready(function(){
             GD06.advance();
             GD07.advance();
             GD08.advance();
+            GD09.advance();
 
             SC01.advance();
             SC02.advance();
@@ -726,6 +752,9 @@ $(document).ready(function(){
             if(SC16.height_now>=SC16.Height*0.2) {
                 GD08.paused = 1;
             }
+            if(GD08.full==1) {
+            	GD09.paused = 1;
+            }
             canvas.redraw();
         }).start();
         GD01.paused=1;
@@ -754,6 +783,7 @@ $(document).ready(function(){
             GD06.init();
             GD07.init();
             GD08.init();
+            GD09.init();
             SC01.init();
             SC02.init();
             SC03.init();
