@@ -32,6 +32,7 @@ import com.water.beans.PoolEvaluate;
 import com.water.service.PoolEvaluateService;
 import com.water.util.ListSort;
 import com.water.util.TimeTree;
+import com.water.util.Tools;
 import com.water.util.TreeNode;
 
 
@@ -512,7 +513,7 @@ public class PoolEvaluateAction extends ActionSupport{
 				for (int i=0;i<list.size();i++){
 					String day = sdfDay.format(list.get(i).getT());
 					if (day.equals(tempT)){	
-						sheet.addCell(new Label(0,j,list.get(i).getPoolID(),formatBody));	//水池编号
+						sheet.addCell(new Label(0,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));	//水池编号
 						sheet.addCell(new Label(1,j,Double.toString(list.get(i).getPAC()),formatBody)); //PAC投加量
 						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getFeCl3()),formatBody));	 //FeCl3投加量
 						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOpenDegree()),formatBody)); //开启度
@@ -554,7 +555,7 @@ public class PoolEvaluateAction extends ActionSupport{
 						sheet.addCell(new Label(12,1," 水温 ",formatHead));
 
 //						sheet.addCell(new Label(0,j,sdfDay.format(list.get(i).getT()),formatBody));  //时间
-						sheet.addCell(new Label(0,j,list.get(i).getPoolID(),formatBody));	//水池编号
+						sheet.addCell(new Label(0,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));	//水池编号
 						sheet.addCell(new Label(1,j,Double.toString(list.get(i).getPAC()),formatBody)); //PAC投加量
 						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getFeCl3()),formatBody));	 //FeCl3投加量
 						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOpenDegree()),formatBody)); //开启度

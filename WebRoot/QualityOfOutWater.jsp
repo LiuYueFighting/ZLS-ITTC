@@ -265,9 +265,9 @@ div.menuSecond{
 				
 			<select  id="chooseIndexButton2" name="chooseIndexButton2" onchange="javascript:changeButton2()"
 						 data-options="required:true,missingMessage:'请选择出水池编号' ">
-									<option value="MTG_JJC_SC01">1#清水池</option>
-									<option value="MTG_JJC_SC02">2#清水池</option>
-									<option value="MTG_JJC_SC03"  selected>3#清水池</option>
+									<option value="MTG_QingS_SC01">1#清水池</option>
+									<option value="MTG_QingS_SC02">2#清水池</option>
+									<option value="MTG_QingS_SC03"  selected>3#清水池</option>
 			</select>
 			
 			
@@ -320,9 +320,9 @@ div.menuSecond{
 							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水池编号 : &nbsp; 
 							<select id="PoolID" name="outStat.PoolID" type="text" class="easyui-combobox"
 									style="width: 200px; height: 25px">
-									<option value="MTG_JJC_SC01" selected>1# 清水池</option>
-									<option value="MTG_JJC_SC02">2# 清水池</option>
-									<option value="MTG_JJC_SC03">3# 清水池</option>
+									<option value="MTG_QingS_SC01" selected>1# 清水池</option>
+									<option value="MTG_QingS_SC02">2# 清水池</option>
+									<option value="MTG_QingS_SC03">3# 清水池</option>
 								</select>
 							
 						</dl>
@@ -376,9 +376,9 @@ div.menuSecond{
 							<input id="t" name="outStat.t" type="date" style="width: 150px; height: 25px"/></td>
 							<td style="width: 102px; height: 26px">
 								<select id="PoolID" name="outStat.PoolID" type="text" style="width: 100px; height: 25px">
-									<option value="MTG_JJC_SC01" selected>1# 清水池</option>
-									<option value="MTG_JJC_SC02">2# 清水池</option>
-									<option value="MTG_JJC_SC03">3# 清水池</option>
+									<option value="MTG_QingS_SC01" selected>1# 清水池</option>
+									<option value="MTG_QingS_SC02">2# 清水池</option>
+									<option value="MTG_QingS_SC03">3# 清水池</option>
 								</select>
 							</td>
 							<td style="width: 72px; height: 26px">
@@ -411,9 +411,9 @@ div.menuSecond{
 							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水  &nbsp;池 &nbsp; 编  &nbsp;号 : &nbsp; 
 								<select class="easyui-combobox" style="width: 150px"
 									id="searchPoolID" name="searchPoolID">
-									<option value="MTG_JJC_SC01">1#清水池</option>
-									<option value="MTG_JJC_SC02">2#清水池</option>
-									<option value="MTG_JJC_SC03">3#清水池</option>
+									<option value="MTG_QingS_SC01">1#清水池</option>
+									<option value="MTG_QingS_SC02">2#清水池</option>
+									<option value="MTG_QingS_SC03">3#清水池</option>
 								</select>									
 							</dl>
 					<!-- <table>
@@ -427,9 +427,9 @@ div.menuSecond{
 							<td>编号  : </td>
 							<td style="width: 200px; height: 30px"><select id="searchPoolID" name="searchPoolID" type="text" class="easyui-combobox"
 									style="width: 200px; height: 25px">
-									<option value="MTG_JJC_SC01" selected>1#出水池</option>
-									<option value="MTG_JJC_SC02">2#出水池</option>
-									<option value="MTG_JJC_SC03">3#出水池</option>
+									<option value="MTG_QingS_SC01" selected>1#出水池</option>
+									<option value="MTG_QingS_SC02">2#出水池</option>
+									<option value="MTG_QingS_SC03">3#出水池</option>
 								</select>
 							</td>
 						</tr>
@@ -450,9 +450,9 @@ div.menuSecond{
 							    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 水  &nbsp;池 &nbsp; 编  &nbsp;号 : &nbsp; 
 								<select class="easyui-combobox" style="width: 150px"
 									id="searchPoolID" name="searchPoolID">
-									<option value="MTG_JJC_SC01">1# 清水池</option>
-									<option value="MTG_JJC_SC02">2# 清水池</option>
-									<option value="MTG_JJC_SC03">3# 清水池</option>
+									<option value="MTG_QingS_SC01">1# 清水池</option>
+									<option value="MTG_QingS_SC02">2# 清水池</option>
+									<option value="MTG_QingS_SC03">3# 清水池</option>
 								</select>									
 							</dl>
 						</form><!-- frmSearchForExport -->

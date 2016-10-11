@@ -35,6 +35,7 @@ import com.water.service.DataAnalysisService;
 import com.water.util.ListSort;
 //import com.water.util.ListTool;
 import com.water.util.TimeTree;
+import com.water.util.Tools;
 import com.water.util.TreeNode;
 
 
@@ -467,7 +468,7 @@ public class DataAnalysisAction extends ActionSupport{
 					String day = sdfDay.format(list.get(i).getT());
 					if (day.equals(tempT)){					
 						sheet.addCell(new Label(0,j,sdf.format(list.get(i).getT()),formatBody));
-						sheet.addCell(new Label(1,j,list.get(i).getPoolID(),formatBody));
+						sheet.addCell(new Label(1,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
 						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getInV()),formatBody));
 						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOutV()),formatBody));
 						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getHXOutV()),formatBody));
@@ -502,7 +503,7 @@ public class DataAnalysisAction extends ActionSupport{
 						sheet.addCell(new Label(10,1," 预测水位 ",formatHead));
 						
 						sheet.addCell(new Label(0,j,sdf.format(list.get(i).getT()),formatBody));
-						sheet.addCell(new Label(1,j,list.get(i).getPoolID(),formatBody));
+						sheet.addCell(new Label(1,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
 						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getInV()),formatBody));
 						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getOutV()),formatBody));
 						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getHXOutV()),formatBody));
