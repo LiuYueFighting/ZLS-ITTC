@@ -392,57 +392,60 @@ public class OutStatAction extends ActionSupport{
 				DateFormat sdf = new SimpleDateFormat("HH");
 
 				String tempT = sdfDay.format(list.get(0).getT());
-				WritableSheet sheet = book.createSheet(tempT, 0);
+				String sheetname = "出水水质";     //修改
+				
+				WritableSheet sheet = book.createSheet(sheetname, 0);
 				//给sheet电子版中所有的列设置默认的列的宽度;  
 				sheet.getSettings().setDefaultColumnWidth(15);
 				sheet.setColumnView(1, 20);//给第二列设置列宽 
 				sheet.mergeCells(0, 0, 4, 0); //合并单元格，用于显示标题
 				sheet.addCell(new Label(0,0, "出厂水水质统计表",formatTitle));
 				//添加表头
-//				sheet.addCell(new Label(0,1," 时间 ",formatHead));
-				sheet.addCell(new Label(0,1," 水池编号 ",formatHead));
-				sheet.addCell(new Label(1,1," 出水浊度 ",formatHead));
-				sheet.addCell(new Label(2,1," 余氯",formatHead));
-				sheet.addCell(new Label(3,1," 铁  ",formatHead));
-				sheet.addCell(new Label(4,1," 铝 ",formatHead));
+				sheet.addCell(new Label(0,1," 时间 ",formatHead));    //修改
+				sheet.addCell(new Label(1,1," 水池编号 ",formatHead));
+				sheet.addCell(new Label(2,1," 出水浊度 ",formatHead));
+				sheet.addCell(new Label(3,1," 余氯",formatHead));
+				sheet.addCell(new Label(4,1," 铁  ",formatHead));
+				sheet.addCell(new Label(5,1," 铝 ",formatHead));
 				int j=2;
 				for(int i=0;i<list.size();i++){
 					String day = sdfDay.format(list.get(i).getT());
-					if (day.equals(tempT)){					
-//						sheet.addCell(new Label(0,j,sdfDay.format(list.get(i).getT()),formatBody));
-						sheet.addCell(new Label(0,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
-						sheet.addCell(new Label(1,j,Double.toString(list.get(i).getNTU()),formatBody));
-						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getCl()),formatBody));
-						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getFe()),formatBody));
-						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getAl()),formatBody));
+//					if (day.equals(tempT)){		修改			
+						sheet.addCell(new Label(0,j,sdfDay.format(list.get(i).getT()),formatBody));   //修改
+						sheet.addCell(new Label(1,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
+						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getNTU()),formatBody));
+						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getCl()),formatBody));
+						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getFe()),formatBody));
+						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getAl()),formatBody));
 						j=j+1;
-					}else{ //新建个sheet
-						j=2;
-						tempT = day;
-						sheet = book.createSheet(tempT, 0);
-						//给sheet电子版中所有的列设置默认的列的宽度;  
-						sheet.getSettings().setDefaultColumnWidth(15);
-						sheet.setColumnView(1, 20);//给第二列设置列宽 
-						sheet.mergeCells(0, 0, 4, 0); //合并单元格，用于显示标题
-						sheet.addCell(new Label(0,0, "出厂水水质统计表",formatTitle));
-						//添加表头
-						//				sheet.addCell(new Label(0,1," 编号 ",formatHead));
-//						sheet.addCell(new Label(0,1," 时间 ",formatHead));
-						sheet.addCell(new Label(0,1," 水池编号 ",formatHead));
-						sheet.addCell(new Label(1,1," 出水浊度 ",formatHead));
-						sheet.addCell(new Label(2,1," 余氯",formatHead));
-						sheet.addCell(new Label(3,1," 铁  ",formatHead));
-						sheet.addCell(new Label(4,1," 铝 ",formatHead));
-
-//						sheet.addCell(new Label(0,j,sdfDay.format(list.get(i).getT()),formatBody));
-						sheet.addCell(new Label(0,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
-						sheet.addCell(new Label(1,j,Double.toString(list.get(i).getNTU()),formatBody));
-						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getCl()),formatBody));
-						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getFe()),formatBody));
-						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getAl()),formatBody));
-						j=j+1;
-					}
-				}
+//					}
+//						else{ //新建个sheet                     //修改
+//						j=2;
+//						tempT = day;
+//						sheet = book.createSheet(tempT, 0);
+//						//给sheet电子版中所有的列设置默认的列的宽度;  
+//						sheet.getSettings().setDefaultColumnWidth(15);
+//						sheet.setColumnView(1, 20);//给第二列设置列宽 
+//						sheet.mergeCells(0, 0, 4, 0); //合并单元格，用于显示标题
+//						sheet.addCell(new Label(0,0, "出厂水水质统计表",formatTitle));
+//						//添加表头
+//						//				sheet.addCell(new Label(0,1," 编号 ",formatHead));
+////						sheet.addCell(new Label(0,1," 时间 ",formatHead));
+//						sheet.addCell(new Label(0,1," 水池编号 ",formatHead));
+//						sheet.addCell(new Label(1,1," 出水浊度 ",formatHead));
+//						sheet.addCell(new Label(2,1," 余氯",formatHead));
+//						sheet.addCell(new Label(3,1," 铁  ",formatHead));
+//						sheet.addCell(new Label(4,1," 铝 ",formatHead));
+//
+////						sheet.addCell(new Label(0,j,sdfDay.format(list.get(i).getT()),formatBody));
+//						sheet.addCell(new Label(0,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
+//						sheet.addCell(new Label(1,j,Double.toString(list.get(i).getNTU()),formatBody));
+//						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getCl()),formatBody));
+//						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getFe()),formatBody));
+//						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getAl()),formatBody));
+//						j=j+1;
+//					}
+				}//for
 			}//if
 			System.out.println("--写入excel:"+path+"--");
 			//写入数据并关闭文件
