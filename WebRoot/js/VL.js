@@ -11,9 +11,9 @@ oCanvas.domReady(function () {
     var bg = canvas.display.image({
         x: 0,
         y: 0,
-        image: "image/vl_v2.png"
+        image: "image/vl_v3.png"
     });
-    canvas.addChild(bg);
+//    canvas.addChild(bg);
     var speed_all=1.5,
         width_all=20,
         speed_SC=0.9,
@@ -23,14 +23,14 @@ oCanvas.domReady(function () {
     
     var SC00=createSC({
         parent:canvas,
-        x:0,y:169,height:8,width:160,trail_flag:0,speed:speed_SC*0.05,color:color_SC
+        x:3,y:167,height:12,width:167,trail_flag:0,speed:speed_SC*0.07,color:color_SC
     });
     
     var SC001 = canvas.display.SC_show_down({
-        x: 160,
-        y: 167,
-        Width: 9,
-        Height: 81,
+        x: 170,
+        y: 168,
+        Width: 11,
+        Height: 82,
         height_now: 0,
         trail_flag: 0,
         t: 7540,
@@ -42,11 +42,11 @@ oCanvas.domReady(function () {
     canvas.addChild(SC001);
     var SC01=createSC({
         parent:canvas,
-        x:145,y:274,height:61,width:125,trail_flag:0,speed:speed_SC,color:color_SC
+        x:157,y:273,height:69,width:105,trail_flag:0,speed:speed_SC,color:color_SC
     });
     var SC02=createSC({
         parent:canvas,
-        x:270,y:274,height:61,width:39,trail_flag:0,speed:speed_SC,color:color_SC
+        x:262,y:273,height:67,width:30,trail_flag:0,speed:speed_SC,color:color_SC
     });
 
     //var SC03=createSC({
@@ -54,10 +54,10 @@ oCanvas.domReady(function () {
     //    x:359,y:207,height:61,width:39,trail_flag:0,speed:speed_SC,color:color_SC
     //});
     var SC04 = canvas.display.SC_show_down({
-        x: 310,
+        x: 292,
         y: 274,
-        Width: 39,
-        Height: 61,
+        Width: 33,
+        Height: 62,
         height_now: 0,
         trail_flag: 0,
         t: 7540,
@@ -68,10 +68,10 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(SC04);
     var SC03 = canvas.display.SC_show_down({
-        x: 357,
-        y: 342, 
-        Width: 509,
-        Height: 230,
+        x: 329,
+        y: 341, 
+        Width: 417,
+        Height: 223,
         height_now: 0,
         trail_flag: 0,
         t: 7540,
@@ -83,17 +83,36 @@ oCanvas.domReady(function () {
     canvas.addChild(SC03);
     var SC002=createSC({
         parent:canvas,
-        x:866,y:524,height:8,width:364,trail_flag:0,speed:speed_SC*0.026,color:color_SC
+        x:744,y:523,height:8,width:278,trail_flag:0,speed:speed_SC*0.026,color:color_SC
     });
+    var SC05=createSC({
+        parent:canvas,
+        x:1016,y:487,height:138,width:83,trail_flag:0,speed:speed_SC,color:color_SC
+    });
+    var SC06 = canvas.display.SC_show_down({
+        x: 1103,
+        y: 487, 
+        Width: 110,
+        Height: 142,
+        height_now: 0,
+        trail_flag: 0,
+        t: 7540,
+        speed:speed_SC,
+        fill:color_SC,
+        full:0,
+        start:0
+    });
+    canvas.addChild(SC06);
+
 
     var fg = canvas.display.image({
         x: 0,
         y: 0,
-        image: "image/vl_v2.png"
+        image: "image/vl_v3.png"
     });
     canvas.addChild(fg);
     var arrow_0=canvas.display.sprite({
-        x: 172,
+        x: 179,
         y: 296,
         image: "image/water-arrow/right.png",
         generate:false,
@@ -103,7 +122,7 @@ oCanvas.domReady(function () {
         ]
     }).add();
     var arrow_1=canvas.display.sprite({
-        x: 475-160,
+        x: 475-180,
         y: 450-243+67,
         image: "image/water-arrow/down.png",
         generate:false,
@@ -115,8 +134,8 @@ oCanvas.domReady(function () {
     }).add();
 
     var arrow_2=canvas.display.sprite({
-        x: 475-167+23,
-        y: 450-246+37+67,
+        x: 475-164,
+        y: 450-246+37+69,
         image: "image/water-arrow/right.png",
         generate:false,
         frames: [
@@ -126,7 +145,7 @@ oCanvas.domReady(function () {
     }).add();
 
     var arrow_3=canvas.display.sprite({
-        x: 475-40,
+        x: 400,
         y: 450-153+67,
         image: "image/water-arrow/down.png",
         generate:false,
@@ -137,7 +156,7 @@ oCanvas.domReady(function () {
         ]
     }).add();
     var arrow_4=canvas.display.sprite({
-        x: 475+60,
+        x: 485,
         y: 450-153+67,
         image: "image/water-arrow/down.png",
         generate:false,
@@ -148,7 +167,7 @@ oCanvas.domReady(function () {
         ]
     }).add();
     var arrow_5=canvas.display.sprite({
-        x: 475+160,
+        x: 475+98,
         y: 450-153+67,
         image: "image/water-arrow/down.png",
         generate:false,
@@ -159,7 +178,7 @@ oCanvas.domReady(function () {
         ]
     }).add();
     var arrow_6=canvas.display.sprite({
-        x: 475+260,
+        x: 475+180,
         y: 450-153+67,
         image: "image/water-arrow/down.png",
         generate:false,
@@ -172,9 +191,9 @@ oCanvas.domReady(function () {
     var GD00=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 0,y_cell: 172},
-            {x_cell: 164,y_cell: 172},
-            {x_cell: 164,y_cell: 249}
+            {x_cell: 3,y_cell: 172},
+            {x_cell: 174,y_cell: 172},
+            {x_cell: 174,y_cell: 248}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -186,8 +205,8 @@ oCanvas.domReady(function () {
             x_d: 0, y_d: 0
         },
         cells: [
-            {x_cell: 862, y_cell: 468+60},
-            {x_cell: 1228, y_cell: 468+60}
+            {x_cell: 745, y_cell: 528},
+            {x_cell: 1021, y_cell: 528}
 
         ],  //拐点数组
         cellIndex: 0,         //当前数组索引
@@ -205,6 +224,33 @@ oCanvas.domReady(function () {
         fill:color_GD
     });
     canvas.addChild(GD01);
+    
+    var GD02 = canvas.display.GD({
+        x: 0,
+        y: 0,
+        destination: {
+            x_d: 0, y_d: 0
+        },
+        cells: [
+            {x_cell: 1184, y_cell: 584},
+            {x_cell: 1208, y_cell: 584}
+
+        ],  //拐点数组
+        cellIndex: 0,         //当前数组索引
+        Speed: 2,           //水流速度
+        GDwidth: 20,          //管道宽度
+        LineHeight: 20,       //线条的长??
+        x_now: 0,        //当前绘制点的位置x
+        y_now: 0,        //当前绘制点的位置y
+        firstX: 0,       //第一个水流效果线段的起始坐标X
+        firstY: 0,       //第一个水流效果线段的其实坐标Y
+        beginHeight: 0,       //第一段管道第??个水流效果线段的长度
+        endHeight: 0,     //第一段管道最后一个水流效果线段的长度
+        paused: 0,
+        full:0,
+        fill:color_GD
+    });
+    canvas.addChild(GD02);
 
 
     var txt1=canvas.display.text({
@@ -226,8 +272,8 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(txt2);
     var txt3=canvas.display.text({
-        x:1200,
-        y:490,
+        x:1250,
+        y:551,
         origin: { x:"center", y: "top" },
         font: "bold 25px 微软雅黑",
         fill:"#337ab7",
@@ -237,6 +283,7 @@ oCanvas.domReady(function () {
     canvas.setLoop(function () {
         GD00.advance();
         GD01.advance();
+        GD02.advance();
         SC00.advance();
         SC001.advance();
         SC01.advance();
@@ -244,6 +291,8 @@ oCanvas.domReady(function () {
         SC03.advance();
         SC04.advance();
         SC002.advance();
+        SC05.advance();
+        SC06.advance();
         if(SC00.full==1){
         	SC001.start=1;
         }
@@ -280,6 +329,15 @@ oCanvas.domReady(function () {
             arrow_6.frame=2;
             SC002.start = 1;
         	GD01.paused = 1;
+        }
+        if(GD01.full==1){
+        	SC05.start = 1;
+        }
+        if(SC05.full==1){
+        	SC06.start = 1;
+        }
+        if(SC06.height_now>=100){
+        	GD02.paused = 1;
         }
         canvas.redraw();
     }).start();

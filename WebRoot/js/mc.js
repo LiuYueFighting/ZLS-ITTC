@@ -119,7 +119,7 @@ oCanvas.domReady(function () {
 //    });
 //    canvas.addChild(bg);
     var jtbg = canvas.display.image({
-        x: 390,
+        x: 390+150,
         y: 100,
         height:1,
         width:1,
@@ -132,7 +132,7 @@ oCanvas.domReady(function () {
 //        x:830,y:200,height:45,width:45,trail_flag:0,speed:speed_SC*1.2,color:color_SC
 //    });
     var SC05 = canvas.display.SC_show_down({
-        x: 805,
+        x: 805+150,
         y: 160,
         Width: 31,
         Height: 80,
@@ -146,7 +146,7 @@ oCanvas.domReady(function () {
     });
     canvas.addChild(SC05);
     var SC051 = canvas.display.SC_show_down({
-        x: 717,
+        x: 717+150,
         y: 237,
         Width: 196,
         Height: 90,
@@ -161,14 +161,14 @@ oCanvas.domReady(function () {
     canvas.addChild(SC051);
     var SC06=createSC({
         parent:canvas,
-        x:805,y:467,height:80,width:31,trail_flag:0,speed:speed_SC*2,color:color_SC
+        x:805+150,y:467,height:80,width:31,trail_flag:0,speed:speed_SC*2,color:color_SC
     });
     var SC061=createSC({
         parent:canvas,
-        x:717,y:377,height:90,width:186,trail_flag:0,speed:speed_SC*1.7,color:color_SC
+        x:717+150,y:377,height:90,width:186,trail_flag:0,speed:speed_SC*1.7,color:color_SC
     });
     var SC07 = canvas.display.SC_show_fill({
-        x: 511,
+        x: 511+150,
         y: 243,
         Width: 209,
         Height: 107,
@@ -192,7 +192,7 @@ oCanvas.domReady(function () {
     canvas.addChild(SC07);
     
     var SC071 = canvas.display.SC_show_fill({
-        x: 511,
+        x: 511+150,
         y: 361,
         Width: 209,
         Height: 104,
@@ -216,7 +216,7 @@ oCanvas.domReady(function () {
     canvas.addChild(SC071);
     
     var arrow_0=canvas.display.sprite({
-        x: 717,
+        x: 717+150,
         y: 268,
         image: "image/water-arrow/left.png",
         generate:false,
@@ -226,7 +226,7 @@ oCanvas.domReady(function () {
         ]
     }).add();
     var arrow_1=canvas.display.sprite({
-        x: 717,
+        x: 717+150,
         y: 410,
         image: "image/water-arrow/left.png",
         generate:false,
@@ -240,8 +240,8 @@ oCanvas.domReady(function () {
     var GD04=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 821,y_cell: 162},
-            {x_cell: 821, y_cell: 240}
+            {x_cell: 821+150,y_cell: 162},
+            {x_cell: 821+150, y_cell: 240}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -249,25 +249,25 @@ oCanvas.domReady(function () {
     var GD05=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 821,y_cell: 545},
-            {x_cell: 821, y_cell: 467}
+            {x_cell: 821+150,y_cell: 545},
+            {x_cell: 821+150, y_cell: 467}
         ],
         GDwidth:width_all,
         color:color_GD
     });
     var SC08=createSC({
         parent:canvas,
-        x:680,y:331,height:45,width:345,trail_flag:0,speed:speed_SC*0.1,color:color_SC
+        x:680+150,y:331,height:45,width:345,trail_flag:0,speed:speed_SC*0.1,color:color_SC
     });
     var SC081=createSC({
         parent:canvas,
-        x:438,y:351,height:10,width:242,trail_flag:0,speed:speed_SC*0.05,color:color_SC
+        x:438+150,y:351,height:10,width:242,trail_flag:0,speed:speed_SC*0.05,color:color_SC
     });
     var GD06=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 571,y_cell: 355},
-            {x_cell: 1020, y_cell: 355}
+            {x_cell: 571+150,y_cell: 355},
+            {x_cell: 1020+150, y_cell: 355}
         ],
         GDwidth:width_all,
         color:color_GD
@@ -275,22 +275,155 @@ oCanvas.domReady(function () {
     var GD061=createGD({
         parent:canvas,
         cells:[
-            {x_cell: 571,y_cell: 355},
-            {x_cell: 438, y_cell: 355}
+            {x_cell: 571+150,y_cell: 355},
+            {x_cell: 438+150, y_cell: 355}
         ],
         GDwidth:width_all,
         color:color_GD
     });
     
     var detail = canvas.display.image({
-        x: 390,
+        x: 390+150,
         y: 100,
         height:1,
         width:1,
         image: "image/mc_in.png"
     });
-    canvas.addChild(detail);     
+    canvas.addChild(detail); 
+    
+    var SC09 = canvas.display.SC_show_fill({
+        x: 350,
+        y: 181,
+        Width: 280,
+        Height: 52,
+        height_now: 107,
+        trail_flag: 0,
+        t: 7540,
+        speed:speed_SC*0.8,
+//        a:0.1,
+        fill:"rgba(26,215,255,0)",
+        full:0,
+        start:0
+    });
+    canvas.addChild(SC09);
+    
+    var SC1001=createSC({
+        parent:canvas,
+        x:350,y:137,height:44,width:280,trail_flag:0,speed:speed_SC*0.6,color:color_SC
+    });
+    
+    var SC10 = canvas.display.SC_show_down({
+        x: 350,
+        y: 136+96,
+        Width: 280,
+        Height: 44,
+        height_now: 0,
+        trail_flag: 0,
+        t: 7540,
+        speed:speed_SC,
+        fill:color_SC,
+        full:0,
+        start:0
+    });
+    canvas.addChild(SC10);
+    
+    var detail2 = canvas.display.image({
+        x: 350,
+        y: 136,
+        height:1,
+        width:1,
+        image: "image/mc_in2.png"
+    });
+    canvas.addChild(detail2);
 
+    var arrow_31 = canvas.display.sprite({
+        x: 405,
+        y: 225,
+        image: "image/water-arrow/down.png",
+        generate: false,
+        frames: [
+            {x: 60, y: 0, w: 60, h: 60, d: 400},
+            {x: 0, y: 0, w: 60, h: 60, d: 800}
+        ]
+    }).scale(0.5,1).add();
+    
+    var arrow_32 = canvas.display.sprite({
+        x: 464,
+        y: 225,
+        image: "image/water-arrow/down.png",
+        generate: false,
+        frames: [
+            {x: 60, y: 0, w: 60, h: 60, d: 400},
+            {x: 0, y: 0, w: 60, h: 60, d: 800}
+        ]
+    }).scale(0.5,1).add();//.scale(1,2)
+    
+    var arrow_33 = canvas.display.sprite({
+        x: 522,
+        y: 225,
+        image: "image/water-arrow/down.png",
+        generate: false,
+        frames: [
+            {x: 60, y: 0, w: 60, h: 60, d: 400},
+            {x: 0, y: 0, w: 60, h: 60, d: 800}
+        ]
+    }).scale(0.5,1).add();//.scale(1,2)
+    
+    var arrow_34 = canvas.display.sprite({
+        x: 581,
+        y: 225,
+        image: "image/water-arrow/down.png",
+        generate: false,
+        frames: [
+            {x: 60, y: 0, w: 60, h: 60, d: 400},
+            {x: 0, y: 0, w: 60, h: 60, d: 800}
+        ]
+    }).scale(0.5,1).add();//.scale(1,2)
+    
+    var arrow_21 = canvas.display.sprite({
+        x: 405,
+        y: 128,
+        image: "image/water-arrow/up.png",
+        generate: false,
+        frames: [
+            {x: 60, y: 0, w: 60, h: 60, d: 400},
+            {x: 0, y: 0, w: 60, h: 60, d: 800}
+        ]
+    }).scale(0.5,1).add();//.scale(1,2)
+    
+    var arrow_22 = canvas.display.sprite({
+        x: 464,
+        y: 128,
+        image: "image/water-arrow/up.png",
+        generate: false,
+        frames: [
+            {x: 60, y: 0, w: 60, h: 60, d: 400},
+            {x: 0, y: 0, w: 60, h: 60, d: 800}
+        ]
+    }).scale(0.5,1).add();//.scale(1,2)
+    
+    var arrow_23 = canvas.display.sprite({
+        x: 522,
+        y: 128,
+        image: "image/water-arrow/up.png",
+        generate: false,
+        frames: [
+            {x: 60, y: 0, w: 60, h: 60, d: 400},
+            {x: 0, y: 0, w: 60, h: 60, d: 800}
+        ]
+    }).scale(0.5,1).add();//.scale(1,2)
+    
+    var arrow_24 = canvas.display.sprite({
+        x: 581,
+        y: 128,
+        image: "image/water-arrow/up.png",
+        generate: false,
+        frames: [
+            {x: 60, y: 0, w: 60, h: 60, d: 400},
+            {x: 0, y: 0, w: 60, h: 60, d: 800}
+        ]
+    }).scale(0.5,1).add();//.scale(1,2)
+    
     var txt1=canvas.display.text({
         x:700,
         y:30,
@@ -342,6 +475,10 @@ oCanvas.domReady(function () {
         GD061.advance();
         SC08.advance();
         SC081.advance();
+        SC09.advance();
+        SC10.advance();
+        SC1001.advance();
+        
 
         if(GD00.full==1&&GD01.full==1){
         	SC01.start=1;
@@ -402,9 +539,27 @@ oCanvas.domReady(function () {
         	SC081.start=1;        	
         }
         if(SC081.full==1){       	
-        	SC08.start=1;
+//        	SC08.start=1;
         	arrow_0.frame=2;
         	arrow_1.frame=2;
+        }
+        if(SC08.full==1){       	
+//        	SC08.start=1;
+        	detail2.width=280;
+        	detail2.height=140;
+        	SC09.start=1;
+        }
+        if(SC09.full==1){
+        	arrow_21.start();
+        	arrow_22.start();
+        	arrow_23.start();
+        	arrow_24.start();
+        	arrow_31.start();
+        	arrow_32.start();
+        	arrow_33.start();
+        	arrow_34.start();
+        	SC10.start=1;
+        	SC1001.start=1;
         }
         canvas.redraw();
     }).start();
