@@ -440,12 +440,13 @@ top: 10px;
 					<ul id="timeTree" class="easyui-tree"></ul>
 				</div><!-- treeGuid -->
 				
-				<div id="chooseIndex">
-					<form id="indexForm">
-						<p style="color:#337ab7; font-weight:bold;font-size:18px">请选择清水池编号：</p>
-						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1#清水池</label><br />
+				<div id="chooseIndex" style = "display:none">   
+				<!-- 默认选择一号池，将复选框隐藏 -->
+					<form id="indexForm" >
+						<p style="color:#337ab7; font-weight:bold;font-size:18px;"  >请选择清水池编号：</p>
+						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1"  checked="checked"/><label for="index1">1#清水池</label><br />
 						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">2#清水池</label><br />
-						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">3#清水池</label><br />
+						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3"  /><label for="index3">3#清水池</label><br />
 					</form>
 				</div><!-- chooseIndex -->
 				

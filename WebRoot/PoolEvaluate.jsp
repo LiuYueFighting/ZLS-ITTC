@@ -311,9 +311,9 @@ th, td, input, option {
 				<div id="chooseIndex" style="display:none">
 					<form id="indexForm">
 						<p style="color:#337ab7; font-weight:bold;font-size:18px">请选择机加池编号：</p>
-						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1#机加池</label><br />
+						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" checked="checked" /><label for="index1">1#机加池</label><br />
 						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">2#机加池</label><br />
-						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">3#机加池</label><br />
+						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" /><label for="index3">3#机加池</label><br />
 					</form>
 				</div>
 				<!-- icon -->
@@ -361,9 +361,9 @@ th, td, input, option {
 			</div>
 			<select  id="chooseIndexButton2" name="chooseIndexButton2" onchange="javascript:changeButton2()"
 						 data-options="required:true,missingMessage:'请选择机加池编号' ">
-									<option value="MTG_JJC_SC01">1#机加池</option>
+									<option value="MTG_JJC_SC01" selected>1#机加池</option>
 									<option value="MTG_JJC_SC02">2#机加池</option>
-									<option value="MTG_JJC_SC03" selected>3#机加池</option>
+									<option value="MTG_JJC_SC03" >3#机加池</option>
 			</select>
 						
 			<!-- 编辑数据的div，默认看不到 -->
@@ -471,9 +471,9 @@ th, td, input, option {
 										<!-- 机加池编号 -->
 										<select id="PoolIDAdd1" name="poolEvaluate.PoolID"
 										class="easyui-combox" style="width: 100px; height: 25px">
-											<option value="MTG_JJC_SC01">1# 机加池</option>
+											<option value="MTG_JJC_SC01" selected>1# 机加池</option>
 											<option value="MTG_JJC_SC02">2# 机加池</option>
-											<option value="MTG_JJC_SC03" selected>3# 机加池</option>
+											<option value="MTG_JJC_SC03" >3# 机加池</option>
 									</select>
 									</td>
 									<td style="width: 82px; height: 26px" >

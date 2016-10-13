@@ -264,10 +264,11 @@ div.menuSecond{
 			</div>
 				
 			<select  id="chooseIndexButton2" name="chooseIndexButton2" onchange="javascript:changeButton2()"
-						 data-options="required:true,missingMessage:'请选择出水池编号' ">
-									<option value="MTG_QingS_SC01">1#清水池</option>
+						 data-options="required:true,missingMessage:'请选择出水池编号' "  style = "display:none">
+						 <!-- 默认选择一号池，将复选框隐藏 -->
+									<option value="MTG_QingS_SC01" selected>1#清水池</option>
 									<option value="MTG_QingS_SC02">2#清水池</option>
-									<option value="MTG_QingS_SC03"  selected>3#清水池</option>
+									<option value="MTG_QingS_SC03" >3#清水池</option>
 			</select>
 			
 			
@@ -279,9 +280,9 @@ div.menuSecond{
 				<div id="chooseIndex" style="display:none"> <!-- 不显示该模块 -->
 					<form id="indexForm">
 						<p style="color:#337ab7; font-weight:bold;font-size:18px">请选择清水池编号：</p>
-						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1" /><label for="index1">1# 出水池</label><br />
+						<input type="radio" id="index1" class="radioItem" name="chooseIndexButton" value="index1"  checked="checked" /><label for="index1">1# 出水池</label><br />
 						<input type="radio" id="index2" class="radioItem" name="chooseIndexButton" value="index2" /><label for="index2">2# 出水池</label><br />
-						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" checked="checked" /><label for="index3">3# 出水池</label><br />
+						<input type="radio" id="index3" class="radioItem" name="chooseIndexButton" value="index3" /><label for="index3">3# 出水池</label><br />
 					</form>
 				</div>
 				<div id="icon">

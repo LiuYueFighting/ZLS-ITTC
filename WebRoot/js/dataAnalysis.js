@@ -672,8 +672,8 @@ function dealSearch() {
 		// lowT=&highT=&searchPoolID=&lowNTU=0&highNTU=100&lowAlgaeContent=0&highAlgaeContent=100&lowOutNTU=0&highOutNTU=100&lowSV=0.00&highSV=100.00
 		switch(buttonID) {
 		case 'index1':
-			title = '1# 清水池水位计算表';
-			ImageTitle = "1# 清水池水位预测图 ";
+			title = '清水池水位计算表';
+			ImageTitle = "清水池水位预测图 ";
 			newParams = params.replace(/searchPoolID=/,'searchPoolID=MTG_QingS_SC01');
 			//treeURL = '${pageContext.request.contextPath}/searchDataAnalysis.action?dataAnalysis.PoolID=MTG_QingS_SC01';
 			break;
@@ -722,8 +722,8 @@ function dealSearch() {
 				TimeStr = lowTimeStr;
 			switch(index) {
 				case '1':
-					title = '1# 清水池水位计算表' + ' ' + TimeStr;
-					ImageTitle = "1# 清水池水位预测图 " + ' ' + TimeStr;
+					title = '清水池水位计算表' + ' ' + TimeStr;
+					ImageTitle = "清水池水位预测图 " + ' ' + TimeStr;
 					$('input[name="chooseIndexButton"][value="index1"]').attr("checked", true);
 					newParams = params;
 					break;
@@ -771,8 +771,8 @@ function dealSearch() {
 //		alert(TimeStr)
 		switch(buttonID) {
 			case 'index1':
-				title = '1# 清水池水位计算表' + ' ' + TimeStr;
-				ImageTitle = "1# 清水池水位预测图 " + ' ' + TimeStr;
+				title = '清水池水位计算表' + ' ' + TimeStr;
+				ImageTitle = "清水池水位预测图 " + ' ' + TimeStr;
 				poolIDInMode2 = 'MTG_QingS_SC01';
 				newParams = params.substring(0, 46) + poolIDInMode2 + params.substring(46);
 				break;

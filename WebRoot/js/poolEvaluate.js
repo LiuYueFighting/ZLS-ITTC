@@ -397,11 +397,11 @@ function listPoolEvaluate(data) {
 		             },
 		             {
 		            	 field : 'algaeContent',
-		            	 title : '原水藻类含量',
+		            	 title : '原水藻类含量<br>万个/L',
 		            	 width : 90,
 		            	 align : 'center',
 		            	 formatter : function(value) {
-		            		 return value+"%";
+		            		 return value;          //修改之前return value+"%"
 		            	 },
 		            	 sortable : true
 		             },
