@@ -31,12 +31,13 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/ocanvas-2.7.4.min.js"></script>
     <script src="js/my_oCanvas.js"></script>
-    <script src="js/fix.js"></script>
+    <%--<script src="js/fix.js"></script>--%>
+    <script src="js/components/equipment_repairment.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
     <script type="text/javascript" src="js/zebra_dialog.js"></script>
     <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script> 
-	
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+
 </head>
 <body>
     <jsp:include page="top.jsp" />
@@ -70,7 +71,7 @@
 		    <a href="#" id="name_YC"   class="name_ob">预沉池</a>
 		    <a href="#" id="name_HHJ1" class="name_ob">旧混合井</a>
 		    <a href="#" id="name_HHJ2" class="name_ob">新混合井</a>
-		    <a href="#" id="name_HX"   class="name_ob"> 虹吸滤池</a>
+		    <a href="#" id="name_HX"   class="name_ob">虹吸滤池</a>
 		    <a href="#" id="name_QSC1" class="name_ob">3#清水池</a>
 		    <a href="#" id="name_QSC2" class="name_ob">1#清水池</a>
 		    <a href="#" id="name_QSC3" class="name_ob">2#清水池</a>
@@ -187,7 +188,7 @@
 		      data-toggle="dropdown">
 		         	全厂正常运行
 		   </button>
-		   <ul class="dropdown-menu" role="menu">
+		   <ul id="schema-list" class="dropdown-menu" role="menu">
 		      <li id="fix_scheme" class="hcc">西侧阀门维修</li>
 		      <li id="restore_scheme" class="hcc">西侧阀门恢复</li>
 		      <li id="extra_fix_scheme" class="hcc">东侧阀门维修</li>
@@ -217,7 +218,7 @@
 			<div class="panel-heading">功能</div>
 			<table class="table">
 				<!-- <tr><td id="scheme_extra" class="hcc">&nbsp;</td><td id="scheme" class="hcc">&nbsp;</td></tr> -->
-				<tr><td class="hcc"><a href="#" id="export">&nbsp;</a></td><td id="reset" class="hcc">&nbsp;</td></tr>
+				<tr><td class="hcc"><a href="#" id="export">生成方案</a></td><td id="reset" class="hcc">重置</td></tr>
 			</table>
 		</div>
     </div>
