@@ -619,7 +619,7 @@ oCanvas.domReady(function () {
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//1
+  });//1 取水泵房
   GD0101 = createGD1({
     parent: canvas,
     cells: [
@@ -683,7 +683,7 @@ oCanvas.domReady(function () {
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//6
+  });//6 旧混合井-1#机加池
   GD06 = createGD1({
     parent: canvas,
     cells: [
@@ -695,7 +695,7 @@ oCanvas.domReady(function () {
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//7
+  });//7 旧混合井-2#机加池
   GD07 = createGD1({
     parent: canvas,
     cells: [
@@ -770,7 +770,7 @@ oCanvas.domReady(function () {
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//13
+  });//13 #15-#45？
   GD11 = createGD1({
     parent: canvas,
     cells: [
@@ -819,7 +819,7 @@ oCanvas.domReady(function () {
     speed: speed_GD * 1.1,
     GDwidth: width_all,
     color: color_GD
-  });//17
+  });//17 #19-#20
 
  	GD15 = createGD1({
     parent: canvas,
@@ -1025,6 +1025,7 @@ oCanvas.domReady(function () {
     GDwidth: width_all,
     color: color_GD
   });//33
+
   GD30 = createGD1({
     parent: canvas,
     cells: [
@@ -1148,6 +1149,18 @@ oCanvas.domReady(function () {
 	    GDwidth: width_all,
 	    color: color_GD
 	  });//15 3#机加池-V滤
+//  GD2901 = createGD1({
+//	    parent: canvas,
+//	    cells: [	      
+//	      {x_cell: 902, y_cell: 485},
+//	      {x_cell: 832, y_cell: 485}
+//
+//	    ],
+//	    state: 1,
+//	    speed: speed_GD,
+//	    GDwidth: width_all,
+//	    color: color_GD
+//	  });//33
 
   var img1 = canvas.display.image({
     x: 692,
