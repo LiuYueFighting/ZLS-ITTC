@@ -9,7 +9,7 @@ a:hover {
 }
 #left-align-td td {
 	text-align: left;
-	colspan="2";
+	colspan: 2;
 }
 #myPage {
     font-family: '微软雅黑','Source Sans Pro';
@@ -27,8 +27,6 @@ a:hover {
 }
 #myContent a{
     color: #283a45;
-    /*background: rgba(255,255,255,0.5);
-    border: 1px solid black;*/
 }
 #fix-panel{
     position:absolute;
@@ -36,6 +34,10 @@ a:hover {
     top: 4.7%;
     Z-INDEX: 999;
     font-family: 微软雅黑, Arial;
+}
+
+#fix_table td, #panel_button td {
+    height: 30px;
 }
 #panel_heading{
     cursor: pointer;
@@ -67,8 +69,15 @@ a:hover {
   	cursor: default;
 }
 #name_HX{
-	cursor: pointer;
+     cursor: pointer;
+ }
+#name_TC{
+    cursor: pointer;
 }
+#name_TC1{
+    cursor: pointer;
+}
+
 #fix_table{
    	font-size:12px
 }
@@ -104,6 +113,7 @@ a:hover {
 .panel-heading{
   	text-align: center;
 }
+
 .table_line{
    	text-align: left;
    	width:100%;
@@ -130,3 +140,8 @@ a:hover {
 .fm_default_hide{
 	display:none;
 }
+
+.selected-building-tag {
+    color : #8dd9ff !important;
+    background : rgba(255,0,0,0.7) !important;
+} 

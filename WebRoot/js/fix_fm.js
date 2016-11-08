@@ -1718,12 +1718,8 @@ oCanvas.domReady(function () {
 
     $("#fix_head").bind("mouseenter", function () {
         canvas.mouse.cursor("pointer");
-//        this.shadow="0 0 10px #eee";
-//        canvas.redraw();
     }).bind("mouseleave", function () {
         canvas.mouse.cursor("default");
-//        this.shadow="0 0 0px #eee";
-//        canvas.redraw();
     });
     
     $("#reset").bind("click", function () {

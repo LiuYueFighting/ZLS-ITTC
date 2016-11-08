@@ -10,7 +10,7 @@ animation_queue.animationQueueModel = function namespace() {
 
     function AnimationQueueFactory(qn) {
         this._color = 'rgba(194,215,245,0.5)';  // default color
-        this._queueName = qn || 'default_queue';
+        this._queueName = qn || 'empty_queue';
         this._queueArr = [];
         this.arr = [];
         this.delays = [];
@@ -194,8 +194,8 @@ animation_queue.animationQueueModel = function namespace() {
             var FMTagId = "W" + id;
             var tag = document.getElementById(FMTagId);
 
-            image.style.display = "block"
-            tag.style.display = "block"
+            image.style.display = "block" ;
+            tag.style.display = "block";
             image.src = "image/y2-35x37.png";
         },
 
@@ -204,11 +204,11 @@ animation_queue.animationQueueModel = function namespace() {
             var FMTagId = "W" + id;
             var tag = document.getElementById(FMTagId);
 
-            image.style.display = "block"
-            tag.style.display = "block"
+            image.style.display = "block";
+            tag.style.display = "block";
             image.src = "image/y3-35x37.png";
         }
-    }
+    };
 
 
     // 通过返回命名空间对象将API导出
