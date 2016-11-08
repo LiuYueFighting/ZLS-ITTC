@@ -68,14 +68,8 @@ a:hover {
   	text-decoration: none;
   	cursor: default;
 }
-#name_HX{
+#name_HX ,#name_JJC1, #name_JJC2, #name_JJC3, #name_TC, #name_TC1, #name_VL{
      cursor: pointer;
- }
-#name_TC{
-    cursor: pointer;
-}
-#name_TC1{
-    cursor: pointer;
 }
 
 #fix_table{

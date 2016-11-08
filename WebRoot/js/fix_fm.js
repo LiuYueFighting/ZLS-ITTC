@@ -1210,7 +1210,7 @@ oCanvas.domReady(function () {
     	GD25.state=1;
 //    	GD11.state=3;
 //    	GD1001.state=3;
-
+        $('#FM062').removeClass("blink");
 //        canvas.children[2].fill=color_GD;
 //        canvas.children[14].fill=color_GD;
 //        canvas.children[12].fill=color_GD;
@@ -1386,6 +1386,7 @@ oCanvas.domReady(function () {
     function fix_fm062(){
         $("#fix_head").html("62#阀门维修配合方案");
         document.getElementById("FM062").src="image/y1.png";
+        $('#FM062').addClass("blink");
         
     	$("#init_state").text("状态");
     	$("#init_stat").html('062#阀门维修<span class="caret"></span>');

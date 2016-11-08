@@ -1695,6 +1695,7 @@ var mockdata = {
         {"content": "1&nbsp;&nbsp;阀门56#维持关闭状态，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;"},
         {"content": "2&nbsp;&nbsp;开启阀门44#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复老炭池出水"},
         {"content": "3&nbsp;&nbsp;开启阀门57#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复老炭池进水"}
+
     ]
     },
 
