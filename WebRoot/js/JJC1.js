@@ -126,8 +126,8 @@ oCanvas.domReady(function () {
         ]
     }).add();
     var arrow_3=canvas.display.sprite({
-        x: 474,
-        y: 292+36,
+        x: 467,
+        y: 329,
         image: "image/water-arrow/left_roll.png",
         generate:false,
         frames: [
