@@ -1019,7 +1019,7 @@ oCanvas.domReady(function () {
     cells: [
       {x_cell: 897, y_cell: 445},
       {x_cell: 897, y_cell: 485},
-      {x_cell: 832, y_cell: 485},
+      {x_cell: 832, y_cell: 485}
 
     ],
     state: 1,
@@ -1187,9 +1187,7 @@ oCanvas.domReady(function () {
     image: "image/main/hx.png"
   });
   canvas.addChild(img5);
-  img5.bind("click", function () {
-    onClickHX();
-  }).bind("mouseenter", function () {
+  img5.bind("mouseenter", function () {
     canvas.mouse.cursor("pointer");
     this.shadow = "0 0 10px #eee";
   }).bind("mouseleave", function () {
@@ -1265,6 +1263,78 @@ oCanvas.domReady(function () {
                 "2#炭池恢复" : {
                     "schemeName" : "restore_tc1",
                     "elements"   : ['#step_1','FM055','#step_2','FM059'],
+                    "delayGroup" : [1000, 1000, 1000, 1000]
+                }
+            }
+
+        },
+
+        "#name_VL" : {
+            "structureName" : "V型滤池",
+            "schemes" : {
+                "V型滤池维修" : {
+                    "schemeName" : "fix_vl",
+                    "elements"   : ['#step_1','FM068','#step_2','FM067','#step_3','FM052'],
+                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000]
+                },
+
+                "V型滤池恢复" : {
+                    "schemeName" : "restore_vl",
+                    "elements"   : ['#step_1', 'FM052','#step_2', 'FM067','#step_3','FM068'],
+                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000]
+                }
+            }
+
+        },
+
+        "#name_JJC1" : {
+            "structureName" : "1#机加池",
+            "schemes" : {
+                "1#机加池维修" : {
+                    "schemeName" : "fix_jjc1",
+                    "elements"   : ['#step_1', 'FM062'],
+                    "delayGroup" : [1000, 1000]
+                },
+
+                "1#机加池恢复" : {
+                    "schemeName" : "restore_jjc1",
+                    "elements"   : ['#step_1', 'FM062'],
+                    "delayGroup" : [1000, 1000]
+                }
+            }
+
+        },
+
+        "#name_JJC2" : {
+            "structureName" : "2#机加池",
+            "schemes" : {
+                "2#机加池维修" : {
+                    "schemeName" : "fix_jjc2",
+                    "elements"   : ['#step_1', 'FM062'],
+                    "delayGroup" : [1000, 1000]
+                },
+
+                "2#机加池恢复" : {
+                    "schemeName" : "restore_jjc2",
+                    "elements"   : ['#step_1', 'FM062'],
+                    "delayGroup" : [1000, 1000]
+                }
+            }
+
+        },
+
+        "#name_JJC3" : {
+            "structureName" : "3#机加池",
+            "schemes" : {
+                "3#机加池维修" : {
+                    "schemeName" : "fix_jjc3",
+                    "elements"   : ['#step_1', 'FM065', '#step_2', 'FM066'],
+                    "delayGroup" : [1000, 1000, 1000, 1000]
+                },
+
+                "3#机加池恢复" : {
+                    "schemeName" : "restore_jjc3",
+                    "elements"   : ['#step_1', '#step_2', 'FM065', 'FM066'],
                     "delayGroup" : [1000, 1000, 1000, 1000]
                 }
             }
@@ -1544,7 +1614,7 @@ var mockdata = {
     "fix_vl":
     {
         "schemaName" : "V型滤池进出水闸门维修<br>方案",
-        "status" : "出水闸门维修<span class='caret'></span>",
+        "status" : "V型滤池进出水闸门维修<span class='caret'></span>",
         "valveGroup" : [67, 68, 52],
         "schemaDownload" : "download/V型滤池进出水闸门维修方案.doc",
         "schemaContext" : [
@@ -1557,7 +1627,7 @@ var mockdata = {
     "restore_vl":
     {
         "schemaName" : "V型滤池进出水闸门维修<br>方案",
-        "status" : "出水闸门恢复<span class='caret'></span>",
+        "status" : "V型滤池进出水闸门恢复<span class='caret'></span>",
         "valveGroup" : [67, 68, 52],
         "schemaDownload" : "download/V型滤池进出水闸门维修方案.doc",
         "schemaContext" : [
@@ -1570,7 +1640,7 @@ var mockdata = {
     "fix_tc":
     {
         "schemaName" : "老炭池进出水闸门维修<br>方案",
-        "status" : "炭池闸门维修<span class='caret'></span>",
+        "status" : "老炭池闸门维修<span class='caret'></span>",
         "valveGroup" : [56, 57, 44],
         "schemaDownload" : "download/老炭池进出水闸门更换方案.doc",
         "schemaContext" : [
@@ -1583,7 +1653,7 @@ var mockdata = {
     "restore_tc":
     {
         "schemaName" : "老炭池进出水闸门维修<br>方案",
-        "status" : "炭池闸门恢复<span class='caret'></span>",
+        "status" : "老炭池闸门恢复<span class='caret'></span>",
         "valveGroup" : [56, 57, 44],
         "schemaDownload" : "download/老炭池进出水闸门更换方案.doc",
         "schemaContext" : [
@@ -1596,7 +1666,7 @@ var mockdata = {
     "fix_tc1":
     {
         "schemaName" : "新炭池进出水闸门维修<br>方案",
-        "status" : "炭池闸门维修<span class='caret'></span>",
+        "status" : "新炭池闸门维修<span class='caret'></span>",
         "valveGroup" : [59, 55],
         "schemaDownload" : "download/新炭池进出水闸门更换方案.doc",
         "schemaContext" : [
@@ -1608,7 +1678,7 @@ var mockdata = {
     "restore_tc1":
     {
         "schemaName" : "新炭池进出水闸门维修<br>方案",
-        "status" : "炭池闸门恢复<span class='caret'></span>",
+        "status" : "新炭池闸门恢复<span class='caret'></span>",
         "valveGroup" : [59, 55],
         "schemaDownload" : "download/新炭池进出水闸门更换方案.doc",
         "schemaContext" : [
@@ -1620,7 +1690,7 @@ var mockdata = {
     "fix_jjc1":
     {
         "schemaName" : "1#机加池停池检修<br>方案",
-        "status" : "闸门维修<span class='caret'></span>",
+        "status" : "1#机加池维修<span class='caret'></span>",
         "valveGroup" : [62],
         "schemaDownload" : "download/1#机加池停池检修方案.doc",
         "schemaContext" : [
@@ -1631,7 +1701,7 @@ var mockdata = {
     "restore_jjc1":
     {
         "schemaName" : "1#机加池停池检修<br>方案",
-        "status" : "闸门恢复<span class='caret'></span>",
+        "status" : "1#机加池恢复<span class='caret'></span>",
         "valveGroup" : [62],
         "schemaDownload" : "download/1#机加池停池检修方案.doc",
         "schemaContext" : [
@@ -1642,7 +1712,7 @@ var mockdata = {
     "fix_jjc2":
     {
         "schemaName" : "2#机加池停池检修<br>方案",
-        "status" : "闸门维修<span class='caret'></span>",
+        "status" : "2#机加池维修<span class='caret'></span>",
         "valveGroup" : [62],
         "schemaDownload" : "download/2#机加池停池检修方案.doc",
         "schemaContext" : [
@@ -1653,7 +1723,7 @@ var mockdata = {
     "restore_jjc2":
     {
         "schemaName" : "2#机加池停池检修<br>方案",
-        "status" : "闸门恢复<span class='caret'></span>",
+        "status" : "2#机加池恢复<span class='caret'></span>",
         "valveGroup" : [62],
         "schemaDownload" : "download/2#机加池停池检修方案.doc",
         "schemaContext" : [
@@ -1664,7 +1734,7 @@ var mockdata = {
     "fix_jjc3":
     {
         "schemaName" : "3#机加池停池检修<br>方案",
-        "status" : "闸门维修<span class='caret'></span>",
+        "status" : "3#机加池维修<span class='caret'></span>",
         "valveGroup" : [65, 66],
         "schemaDownload" : "download/3#机加池停池检修方案.doc",
         "schemaContext" : [
@@ -1676,7 +1746,7 @@ var mockdata = {
     "restore_jjc3":
     {
         "schemaName" : "3#机加池停池检修<br>方案",
-        "status" : "闸门恢复<span class='caret'></span>",
+        "status" : "3#机加池恢复<span class='caret'></span>",
         "valveGroup" : [65, 66],
         "schemaDownload" : "download/3#机加池停池检修方案.doc",
         "schemaContext" : [
