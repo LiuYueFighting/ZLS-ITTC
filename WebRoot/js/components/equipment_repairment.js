@@ -1200,170 +1200,141 @@ oCanvas.domReady(function () {
 
 
     // todo loop these
-    $("#name_HX").click(function () {
-    onClickHX();
-    });
-
-    function onClickHX() {
-    //window.location.href="hx.jsp";
-    //弹窗提示样式
-    resetAll();
-    $('#fix_scheme').text("西侧阀门维修");
-    $('#restore_scheme').text("西侧阀门恢复");
-    $('#extra_fix_scheme').text("东侧阀门维修");
-    $('#extra_restore_scheme').text("东侧阀门恢复");
-    $('#extra_fix_scheme')[0].style.display = 'block';
-    $('#extra_restore_scheme')[0].style.display = 'block';
-    $.messager.confirm('确认', '是否将<strong>虹吸滤池</strong>设置为维修状态？', function (r) {
-        if (r) {
-            /*fix_hx_right();*/
-            $(".hiden").show();
-            $('#init_stat').html('选择维修方案<span class="caret"></span>');
-            $('#fix_scheme').click(function () {
-                generateSchema("fix_hx_left");
-
-                $(document).off('drain');
-                var elements = ['#step_1','FM014',[GD26, GD27],'#step_2', 'FM017',
+    var clickBinder = {
+        "#name_HX" : {
+            "structureName" : "虹吸滤池",
+            "schemes" : {
+                "西侧阀门维修" : {
+                    "schemeName" : "fix_hx_left",
+                    "elements" : ['#step_1','FM014',[GD26, GD27],'#step_2', 'FM017',
                         '#step_3', GD30, '#step_4', '#step_5', 'FM019', '#step_6', GD141],
-                    delayGroup = [1000, 0, 0, 1000, 1000, 1000, 1000, 1000, 1000, 1000],
-                    fixController = new AnimationQueueFactory('fix_hx_left_queue');
+                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
+                },
 
-                fixController.createQueue(elements, delayGroup);
-                fixController.play();
-            });
-            $('#restore_scheme').click(function () {
-                var schemaName = "restore_hx_left";
-                generateSchema(schemaName);
-                // registerAnimation(schemaName+"_queue");
-
-                $(document).off('drain');
-                var elements = ['FM019','#step_1','#step_2', '#step_3','FM017',
+                "西侧阀门恢复" : {
+                    "schemeName" : "restore_hx_left",
+                    "elements" : ['FM019', '#step_1','#step_2', '#step_3','FM017',
                         '#step_4', '#step_5', 'FM014', '#step_6', [GD26, GD27], GD30, GD141],
-                    delayGroup = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000],
-                    fixController = new AnimationQueueFactory(schemaName+"_queue");
+                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
+                },
 
-                fixController.createQueue(elements, delayGroup);
-                fixController.play();
-            });
-            $('#extra_fix_scheme').click(function () {
-                var schemaName = "fix_hx_right";
-                generateSchema(schemaName);
-                // registerAnimation(schemaName+"_queue");
-
-                $(document).off('drain');
-                var elements = ['#step_1','FM016',[GD11, GD1001],'#step_2', 'FM018',
+                "东侧阀门维修" : {
+                    "schemeName" : "fix_hx_right",
+                    "elements" : ['#step_1','FM016',[GD11, GD1001],'#step_2', 'FM018',
                         '#step_3', GD30, '#step_4', '#step_5', 'FM019', '#step_6', GD141],
-                    delayGroup = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000],
-                    fixController = new AnimationQueueFactory(schemaName+"_queue");
+                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
+                },
 
-                fixController.createQueue(elements, delayGroup);
-                fixController.play();
-            });
-            $('#extra_restore_scheme').click(function () {
-                var schemaName = "restore_hx_right";
-                generateSchema(schemaName);
-                // registerAnimation(schemaName+"_queue");
-
-                var elements = ['FM019','#step_1','#step_2', '#step_3','FM018',
+                "东侧阀门恢复" : {
+                    "schemeName" : "restore_hx_right",
+                    "elements" : ['FM019','#step_1','#step_2', '#step_3','FM018',
                         '#step_4', '#step_5', 'FM016', '#step_6', [GD1001, GD11], GD30, GD141],
-                    delayGroup = [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000],
-                    fixController = new AnimationQueueFactory(schemaName+"_queue");
-
-                fixController.createQueue(elements, delayGroup);
-                fixController.play();
-            });
-        }
-    });
-    }
-
-    // 1#炭滤池 老炭池
-    $("#name_TC").click(function () {
-    onClickTC();
-    });
-
-    function onClickTC() {
-        resetAll();
-        $('#extra_fix_scheme')[0].style.display = 'none';
-        $('#extra_restore_scheme')[0].style.display = 'none';
-        $('#fix_scheme').text("维修");
-        $('#restore_scheme').text("恢复");
-        $.messager.confirm('确认', '是否将<strong>1#炭池</strong>设置为维修状态？', function (r) {
-            if (r) {
-                /*fix_hx_right();*/
-                $(".hiden").show();
-                $('#init_stat').html('选择维修方案<span class="caret"></span>');
-                $('#fix_scheme').click(function () {
-                    var schemaName = "fix_tc";
-                    generateSchema(schemaName);
-
-                    var elements = ['#step_1','FM056','#step_2','FM057','#step_3','FM044'],
-                        delayGroup = [1000, 1000, 1000, 1000, 1000, 1000],
-                        fixController = new AnimationQueueFactory(schemaName+"_queue");
-
-                    fixController.createQueue(elements, delayGroup);
-                    fixController.play();
-                });
-                $('#restore_scheme').click(function () {
-                    var schemaName = "restore_tc";
-                    generateSchema(schemaName);
-
-                    var elements = ['#step_1','FM044','#step_2','FM057','#step_3','FM056'],
-                        delayGroup = [1000, 1000, 1000, 1000, 1000, 1000],
-                        fixController = new AnimationQueueFactory(schemaName+"_queue");
-
-                    fixController.createQueue(elements, delayGroup);
-                    fixController.play();
-                });
-
+                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000]
+                }
             }
-        });
-    }
 
-    // 2#炭滤池
-    $("#name_TC1").click(function () {
-    onClickTC1();
-    });
+        },
 
-    function onClickTC1() {
-    resetAll();
-    $('#extra_fix_scheme')[0].style.display = 'none';
-    $('#extra_restore_scheme')[0].style.display = 'none';
-    $('#fix_scheme').text("维修");
-    $('#restore_scheme').text("恢复");
-    $.messager.confirm('确认', '是否将<strong>2#炭池</strong>设置为维修状态？', function (r) {
-        if (r) {
-            /*fix_hx_right();*/
-            $(".hiden").show();
-            $('#init_stat').html('选择维修方案<span class="caret"></span>');
-            $('#fix_scheme').click(function () {
-                var schemaName = "fix_tc1";
-                generateSchema(schemaName);
+        "#name_TC" : {
+            "structureName" : "1#炭池",
+            "schemes" : {
+                "1#炭池维修" : {
+                    "schemeName" : "fix_tc",
+                    "elements" : ['#step_1','FM056','#step_2','FM057','#step_3','FM044'],
+                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000]
+                },
 
-                var elements = ['#step_1','FM059','#step_2','FM055'],
-                    delayGroup = [1000, 1000, 1000, 1000],
-                    fixController = new AnimationQueueFactory(schemaName+"_queue");
+                "1#炭池恢复" : {
+                    "schemeName" : "restore_tc",
+                    "elements" : ['#step_1','FM044','#step_2','FM057','#step_3','FM056'],
+                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000]
+                }
+            }
 
-                fixController.createQueue(elements, delayGroup);
-                fixController.play();
-            });
-            $('#restore_scheme').click(function () {
-                var schemaName = "restore_tc1";
-                generateSchema(schemaName);
+        },
 
-                var elements = ['#step_1','FM055','#step_2','FM059'],
-                    delayGroup = [1000, 1000, 1000, 1000],
-                    fixController = new AnimationQueueFactory(schemaName+"_queue");
+        "#name_TC1" : {
+            "structureName" : "2#炭池",
+            "schemes" : {
+                "2#炭池维修" : {
+                    "schemeName" : "fix_tc1",
+                    "elements"   : ['#step_1','FM059','#step_2','FM055'],
+                    "delayGroup" : [1000, 1000, 1000, 1000]
+                },
 
-                fixController.createQueue(elements, delayGroup);
-                fixController.play();
-            });
+                "2#炭池恢复" : {
+                    "schemeName" : "restore_tc1",
+                    "elements"   : ['#step_1','FM055','#step_2','FM059'],
+                    "delayGroup" : [1000, 1000, 1000, 1000]
+                }
+            }
 
         }
-    });
+
+    };
+
+    var structureCount = Object.keys(clickBinder).length,
+        i = 0;
+
+    for(;i<structureCount;i++) {
+        (function(j){
+
+            var structureItem = Object.keys(clickBinder)[j];
+            console.log(structureItem); // normal
+            $(structureItem).click(function() {
+                var schemes = clickBinder[structureItem]["schemes"],
+                    len     = Object.keys(schemes).length,     // json vs map??
+                    ids     = [],
+                    i       = 0;
+                resetAll();
+
+                if(len === 4) {
+                    ids = ['#fix_scheme', '#restore_scheme', '#extra_fix_scheme', '#extra_restore_scheme'];
+                    $(ids[2])[0].style.display = 'block';
+                    $(ids[3])[0].style.display = 'block';
+                } else if (len === 2) {
+                    ids = ['#fix_scheme', '#restore_scheme'];
+                    $('#extra_restore_scheme')[0].style.display = 'none';
+                    $('#extra_fix_scheme')[0].style.display = 'none';
+                }
+
+                for(;i<ids.length;i++) {
+                    $(ids[i]).text(Object.keys(schemes)[i]);
+                }
+
+                $.messager.confirm('确认',
+                    '是否将<strong>' + clickBinder[structureItem]["structureName"] + '</strong>设置为维修状态？', function (r) {
+
+                    var i = 0, schemeName,elements,delayGroup,fixController;
+                    if (r) {
+                        $(".hiden").show();
+                        $('#init_stat').html('选择维修方案<span class="caret"></span>');
+
+                        for (;i<ids.length;i++) {
+                            (function(j){
+                                $(ids[i]).click(function () {
+                                    // console.log(schemes[Object.keys(schemes)[0]]);
+                                    console.log(j);
+                                    schemeName = schemes[Object.keys(schemes)[j]]["schemeName"],
+                                    elements   = schemes[Object.keys(schemes)[j]]["elements"],
+                                    delayGroup = schemes[Object.keys(schemes)[j]]["delayGroup"],
+                                    fixController = new AnimationQueueFactory(schemeName+"_queue");
+                                    generateSchema(schemeName);
+
+                                    $(document).off('drain');
+
+                                    fixController.createQueue(elements, delayGroup);
+                                    fixController.play();
+                                });
+                            })(i);
+
+                        } // for
+                    } // if
+                }); // messager
+
+            });
+        })(i);
     }
-
-
-    // binder end
 
   var img6 = canvas.display.image({
     x: 284,
