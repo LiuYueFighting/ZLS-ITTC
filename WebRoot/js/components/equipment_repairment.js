@@ -581,9 +581,9 @@ var canvas = null,
 	GD10,
 	GD1001,
 	GD1002,
-	GD11,GD12,GD13,GD141,GD15,GD1501,
+	GD11,GD12,GD1201,GD13,GD141,GD15,GD1501,
 	GD16,GD17,GD18,GD19,GD20,GD21,GD22,GD23,GD24,GD25,GD26,GD27,
-	GD28,GD29,GD30,GD31,GD32,GD33,GD34,GD35,GD36,GD37;
+	GD28,GD29,GD30,GD31,GD32,GD33,GD34,GD35,GD36,GD37,GD1500;
 
 // canvas 
 oCanvas.domReady(function () {
@@ -641,13 +641,14 @@ oCanvas.domReady(function () {
       {x_cell: 747, y_cell: 222},
       {x_cell: 775, y_cell: 240},
       {x_cell: 1019, y_cell: 240},
-      {x_cell: 1019, y_cell: 256}
+      {x_cell: 1019, y_cell: 260},
+      {x_cell: 1039, y_cell: 260}
     ],
     state: 1,
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//3
+  });//3 #10-#65
   GD03 = createGD1({
     parent: canvas,
     cells: [
@@ -662,15 +663,15 @@ oCanvas.domReady(function () {
   GD04 = createGD1({
     parent: canvas,
     cells: [
-      {x_cell: 1023, y_cell: 261},
+      {x_cell: 1039, y_cell: 261},
       {x_cell: 1188, y_cell: 261},
-      {x_cell: 1188, y_cell: 374}
+      {x_cell: 1188, y_cell: 498}
     ],
     state: 1,
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//5
+  });//5 #65-新混合井
   GD05 = createGD1({
     parent: canvas,
     cells: [
@@ -698,14 +699,14 @@ oCanvas.domReady(function () {
   GD07 = createGD1({
     parent: canvas,
     cells: [
-      {x_cell: 1187, y_cell: 412},
+      {x_cell: 1187, y_cell: 498},
       {x_cell: 1187, y_cell: 573}
     ],
     state: 1,
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//8
+  });//8 新混合井-3#机加池
   GD08 = createGD1({
     parent: canvas,
     cells: [
@@ -746,7 +747,7 @@ oCanvas.domReady(function () {
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//11
+  });//11 2#机加池-#15
   GD1001 = createGD1({
     parent: canvas,
     cells: [
@@ -758,7 +759,7 @@ oCanvas.domReady(function () {
     speed: 1.5,
     GDwidth: width_all,
     color: color_GD
-  });//12
+  });//12 #16-虹吸滤池 上
   GD1002 = createGD1({
     parent: canvas,
     cells: [
@@ -781,19 +782,19 @@ oCanvas.domReady(function () {
     speed: 1.5,
     GDwidth: width_all,
     color: color_GD
-  });//14
+  });//14 #16-虹吸滤池 下
   GD12 = createGD1({
     parent: canvas,
     cells: [
       {x_cell: 1129, y_cell: 653},
-      {x_cell: 962, y_cell: 653},
-      {x_cell: 962, y_cell: 667}
+      {x_cell: 1019, y_cell: 653}
     ],
     state: 1,
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//15
+  });//15 3#机加池-V滤
+  
   GD13 = createGD1({
     parent: canvas,
     cells: [
@@ -806,7 +807,7 @@ oCanvas.domReady(function () {
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//16
+  });//16 #17-臭氧接触池
 
   GD141 = createGD1({
     parent: canvas,
@@ -824,28 +825,25 @@ oCanvas.domReady(function () {
     parent: canvas,
     cells: [
       {x_cell: 808, y_cell: 711},
-      {x_cell: 717, y_cell: 711},
-      {x_cell: 717, y_cell: 633},
-      {x_cell: 633, y_cell: 633},
-      {x_cell: 633, y_cell: 646}
+      {x_cell: 768, y_cell: 711}
     ],
     state: 1,
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
   });//18
+ 	
   GD1501 = createGD1({
     parent: canvas,
     cells: [
-      {x_cell: 807, y_cell: 708},
-      {x_cell: 715, y_cell: 708},
-      {x_cell: 715, y_cell: 735},
-      {x_cell: 673, y_cell: 735}
+		{x_cell: 717, y_cell: 633},
+		{x_cell: 633, y_cell: 633},
+		{x_cell: 633, y_cell: 646}
     ],
     state: 1,
     speed: speed_GD,
     GDwidth: width_all,
-    color: "rgba(1,0,0,0)"
+    color: color_GD
   });//19
   GD16 = createGD1({
     parent: canvas,
@@ -857,7 +855,7 @@ oCanvas.domReady(function () {
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//20
+  });//20 #59
   GD17 = createGD1({
     parent: canvas,
     cells: [
@@ -870,7 +868,7 @@ oCanvas.domReady(function () {
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//21
+  });//21 #57-#1碳滤池
   GD18 = createGD1({
     parent: canvas,
     cells: [
@@ -881,7 +879,7 @@ oCanvas.domReady(function () {
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//22
+  });//22 #44-3#清水池
   GD19 = createGD1({
     parent: canvas,
     cells: [
@@ -894,7 +892,7 @@ oCanvas.domReady(function () {
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//23
+  });//23 #44-#55
   GD20 = createGD1({
     parent: canvas,
     cells: [
@@ -918,7 +916,7 @@ oCanvas.domReady(function () {
     speed: speed_GD,
     GDwidth: width_all,
     color: color_GD
-  });//25
+  });//25 3#清水池-1#清水池
   GD22 = createGD1({
     parent: canvas,
     cells: [
@@ -1126,6 +1124,30 @@ oCanvas.domReady(function () {
     GDwidth: width_all,
     color: color_GD
   });
+  GD1500 = createGD1({
+	    parent: canvas,
+	    cells: [
+	      {x_cell: 768, y_cell: 711},
+	      {x_cell: 717, y_cell: 711},
+	      {x_cell: 717, y_cell: 633}
+	    ],
+	    state: 1,
+	    speed: speed_GD,
+	    GDwidth: width_all,
+	    color: color_GD
+	  });//18
+  GD1201 = createGD1({
+	    parent: canvas,
+	    cells: [
+	      {x_cell: 1019, y_cell: 653},
+	      {x_cell: 962, y_cell: 653},
+	      {x_cell: 962, y_cell: 667}
+	    ],
+	    state: 1,
+	    speed: speed_GD,
+	    GDwidth: width_all,
+	    color: color_GD
+	  });//15 3#机加池-V滤
 
   var img1 = canvas.display.image({
     x: 692,
@@ -1238,14 +1260,14 @@ oCanvas.domReady(function () {
             "schemes" : {
                 "1#炭池维修" : {
                     "schemeName" : "fix_tc",
-                    "elements" : ['#step_1','FM056','#step_2','FM057','#step_3','FM044'],
-                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000]
+                    "elements" : ['#step_1','FM056','#step_2','FM057', GD17,'#step_3','FM044', GD18],
+                    "delayGroup" : [1000, 1000, 1000, 500, 1000, 1000, 500]
                 },
 
                 "1#炭池恢复" : {
                     "schemeName" : "restore_tc",
-                    "elements" : ['#step_1','FM044','#step_2','FM057','#step_3','FM056'],
-                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000]
+                    "elements" : ['#step_1','FM044', '#step_2','FM057', GD17, GD18,'#step_3'],
+                    "delayGroup" : [1000, 1000, 1000, 500, 500, 1000]
                 }
             }
 
@@ -1256,14 +1278,14 @@ oCanvas.domReady(function () {
             "schemes" : {
                 "2#炭池维修" : {
                     "schemeName" : "fix_tc1",
-                    "elements"   : ['#step_1','FM059','#step_2','FM055'],
-                    "delayGroup" : [1000, 1000, 1000, 1000]
+                    "elements"   : ['#step_1','FM059', GD16,'#step_2','FM055',GD19],
+                    "delayGroup" : [1000, 1000, 1000, 1000, 500]
                 },
 
                 "2#炭池恢复" : {
                     "schemeName" : "restore_tc1",
-                    "elements"   : ['#step_1','FM055','#step_2','FM059'],
-                    "delayGroup" : [1000, 1000, 1000, 1000]
+                    "elements"   : ['#step_1','FM055','#step_2','FM059', GD16, GD19],
+                    "delayGroup" : [1000, 1000, 1000, 1000, 500]
                 }
             }
 
@@ -1274,14 +1296,14 @@ oCanvas.domReady(function () {
             "schemes" : {
                 "V型滤池维修" : {
                     "schemeName" : "fix_vl",
-                    "elements"   : ['#step_1','FM068','#step_2','FM067','#step_3','FM052'],
-                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000]
+                    "elements"   : ['#step_1','FM068', '#step_2','FM067', GD1201,'#step_3',GD15, 'FM052',GD1500],
+                    "delayGroup" : [1000, 1000, 1000, 500, 1000, 500,1000,500]
                 },
 
                 "V型滤池恢复" : {
                     "schemeName" : "restore_vl",
-                    "elements"   : ['#step_1', 'FM052','#step_2', 'FM067','#step_3','FM068'],
-                    "delayGroup" : [1000, 1000, 1000, 1000, 1000, 1000]
+                    "elements"   : ['#step_1', 'FM052','#step_2', 'FM067','#step_3', GD1201, GD15, GD1500],
+                    "delayGroup" : [1000, 1000, 1000, 1000, 500, 500, 100]
                 }
             }
 
@@ -1328,14 +1350,14 @@ oCanvas.domReady(function () {
             "schemes" : {
                 "3#机加池维修" : {
                     "schemeName" : "fix_jjc3",
-                    "elements"   : ['#step_1', 'FM065', '#step_2', 'FM066'],
-                    "delayGroup" : [1000, 1000, 1000, 1000]
+                    "elements"   : ['#step_1', 'FM065', GD04, '#step_2', 'FM066', GD07, GD12, GD1201, GD15, GD1500],
+                    "delayGroup" : [1000, 1000, 500, 1000, 1000, 500, 0, 500, 0]
                 },
 
                 "3#机加池恢复" : {
                     "schemeName" : "restore_jjc3",
-                    "elements"   : ['#step_1', '#step_2', 'FM065', 'FM066'],
-                    "delayGroup" : [1000, 1000, 1000, 1000]
+                    "elements"   : ['#step_1', '#step_2', 'FM065', 'FM066', GD04, GD07, GD12, GD1201, GD15, GD1500],
+                    "delayGroup" : [1000, 1000, 1000, 1000, 500, 500, 0, 500, 0]
                 }
             }
 
@@ -1487,22 +1509,22 @@ oCanvas.domReady(function () {
   });
   canvas.addChild(img10);
 
-  GD15.bind("start", function () {
-    canvas.timeline.stop();
-    window.setTimeout(restart, 1000);
-    this.paused = 1;
-  });
-  canvas.addChild(GD15);
-  GD01.paused = 1;
-  GD22.paused = 1;
-  GD02.paused = 1;
-  GD25.paused = 1;
+//  GD15.bind("start", function () {
+//    canvas.timeline.stop();
+//    window.setTimeout(restart, 1000);
+//    this.paused = 1;
+//  });
+//  canvas.addChild(GD15);
+//  GD01.paused = 1;
+//  GD22.paused = 1;
+//  GD02.paused = 1;
+//  GD25.paused = 1;
 
 
   canvas.setLoop(function () {
   	var pipes = [GD01, GD0101, GD25, GD02, GD03, GD04, GD05, GD06,
-                GD07, GD08, GD09, GD10, GD1001, GD1002, GD11, GD12,
-                GD13, GD141, GD15, GD1501, GD16, GD17, GD18, GD19, GD20,
+                GD07, GD08, GD09, GD10, GD1001, GD1002, GD11, GD12, GD1201,
+                GD13, GD141,GD15, GD1500,GD1501, GD16, GD17, GD18, GD19, GD20,
                 GD21, GD22, GD23, GD24, GD26, GD27, GD28, GD29, GD30,
                 GD31, GD32, GD33, GD34, GD35, GD36, GD37],
   			i = 0;
@@ -1530,8 +1552,8 @@ oCanvas.domReady(function () {
 
   function init() {
   	var pipes = [GD01, GD02, GD25, GD03, GD04, GD05, GD06,
-                 GD07, GD08, GD09, GD10, GD11, GD12, GD13,
-                 GD15, GD16, GD17, GD18, GD19, GD20, GD21,
+                 GD07, GD08, GD09, GD10, GD11, GD12, GD1201, GD13,
+                 GD15, GD1500, GD1501, GD16, GD17, GD18, GD19, GD20, GD21,
                  GD22, GD23, GD24, GD26, GD27, GD29, GD32,
                  GD33, GD34, GD35, GD36, GD37],
   			i=0;
@@ -1646,7 +1668,7 @@ var mockdata = {
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;阀门56#维持关闭状态，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;"},
         {"content": "2&nbsp;&nbsp;关闭阀门57#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止老炭池进水"},
-        {"content": "3&nbsp;&nbsp;开启阀门52#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止老炭池出水"}
+        {"content": "3&nbsp;&nbsp;关闭阀门44#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止老炭池出水"}
     ]
     },
 
@@ -1658,8 +1680,8 @@ var mockdata = {
         "schemaDownload" : "download/老炭池进出水闸门更换方案.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;阀门56#维持关闭状态，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;"},
-        {"content": "2&nbsp;&nbsp;开启阀门57#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复老炭池进水"},
-        {"content": "3&nbsp;&nbsp;开启阀门52#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复老炭池出水"}
+        {"content": "2&nbsp;&nbsp;开启阀门44#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复老炭池出水"},
+        {"content": "3&nbsp;&nbsp;开启阀门57#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复老炭池进水"}
     ]
     },
 
