@@ -1653,8 +1653,8 @@ var mockdata = {
         "valveGroup" : [67, 68, 52],
         "schemaDownload" : "download/V型滤池进出水闸门维修方案.doc",
         "schemaContext" : [
-        {"content": "1&nbsp;&nbsp;关闭阀门67#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止V型滤池进水"},
-        {"content": "2&nbsp;&nbsp;关闭阀门68#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止V型滤池进水"},
+        {"content": "1&nbsp;&nbsp;关闭阀门68#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止V型滤池进水"},
+        {"content": "2&nbsp;&nbsp;关闭阀门67#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止V型滤池进水"},
         {"content": "3&nbsp;&nbsp;关闭阀门52#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止V型滤池出水"}
     ]
     },
@@ -1666,8 +1666,8 @@ var mockdata = {
         "valveGroup" : [67, 68, 52],
         "schemaDownload" : "download/V型滤池进出水闸门维修方案.doc",
         "schemaContext" : [
-        {"content": "1&nbsp;&nbsp;开启阀门67#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复V型滤池进水"},
-        {"content": "2&nbsp;&nbsp;开启阀门68#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复V型滤池进水"},
+        {"content": "1&nbsp;&nbsp;开启阀门68#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复V型滤池进水"},
+        {"content": "2&nbsp;&nbsp;开启阀门67#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复V型滤池进水"},
         {"content": "3&nbsp;&nbsp;开启阀门52#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复V型滤池出水"}
     ]
     },
