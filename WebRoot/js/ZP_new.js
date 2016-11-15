@@ -209,6 +209,21 @@ $(document).ready(function(){
             start:start_all
         });
         canvas.addChild(SC09);
+        
+        var SC091 = canvas.display.SC_show({
+            x: 1430,
+            y: 322,
+            Width: 97,
+            Height: 25,
+            height_now: 0,
+            trail_flag: 0,
+            t: 0,
+            fill: color_SC,
+            speed:speed_SC,
+            full:0,
+            start:start_all
+        });
+        canvas.addChild(SC091);
 
         var SC10 = canvas.display.SC_show({
             x: 1470,
@@ -444,6 +459,32 @@ $(document).ready(function(){
             full:0
         });
         canvas.addChild(GD04);
+        
+        var GD041 = canvas.display.GD({
+            destination: {
+                x_d: 0, y_d: 0
+            },
+            cells: [
+                {x_cell: 1429, y_cell: 308},
+                {x_cell: 1499, y_cell: 308},
+                {x_cell: 1499, y_cell: 323}
+            ],  //锟秸碉拷锟斤拷锟斤拷
+            deta: 1,
+            deta_x: 1, deta_y: 0,
+            flag_x: 1, flag_y: 0,
+            cellIndex: 0,
+            Speed: speed_all,
+            GDwidth: 30,
+            LineHeight: 5,
+            x_now: 0,  y_now: 0,
+            firstX: 0, firstY: 0,
+            beginHeight: 0, endHeight: 0,
+            legacyHeight: 0,
+            paused: paused_all,
+            fill:color_GD,
+            full:0
+        });
+        canvas.addChild(GD041);
 
         var GD05 = canvas.display.GD({
             destination: {
@@ -650,6 +691,7 @@ $(document).ready(function(){
             GD02.advance();
             GD03.advance();
             GD04.advance();
+            GD041.advance();
             GD05.advance();
             GD06.advance();
             GD07.advance();
@@ -667,6 +709,7 @@ $(document).ready(function(){
             SC07.advance();
             SC08.advance();
             SC09.advance();
+            SC091.advance();
             SC10.advance();
             SC11.advance();
             SC12.advance();
@@ -716,6 +759,12 @@ $(document).ready(function(){
                 SC09.start = 1;
             }
             if(SC09.full==1) {
+                GD041.paused = 1;
+            }
+            if(GD041.full==1) {
+            	SC091.start = 1;
+            }
+            if(SC091.full==1) {
                 GD05.paused = 1;
             }
             if(GD05.full==1) {
@@ -779,6 +828,7 @@ $(document).ready(function(){
             GD02.init();
             GD03.init();
             GD04.init();
+            GD041.init();
             GD05.init();
             GD06.init();
             GD07.init();
@@ -795,6 +845,7 @@ $(document).ready(function(){
             SC07.init();
             SC08.init();
             SC09.init();
+            SC091.init();
             SC10.init();
             SC11.init();
             SC12.init();
