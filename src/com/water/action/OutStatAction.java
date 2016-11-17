@@ -504,22 +504,30 @@ public class OutStatAction extends ActionSupport{
 			}
 			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
 			//得到当前天数
-			String sheetName = sheet.getName();
+//			String sheetName = sheet.getName(); //修改前
 			try{
-				Date day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
-				String poolIDTemp=sheet.getCell(0,2).getContents();
+				for(int i=2;i<sheet.getRows();i++){ //修改后
+				//导入表单只有一页，时间不再是sheetname，而被放在了第一列
+				//Date day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName)); //修改前
+//				String poolIDTemp=sheet.getCell(0,2).getContents(); //修改前
+				String poolIDTemp="MTG_QingS_SC01"; //修改后，原excel里为中文，现转化为数据库中的参数值
+				String day = sheet.getCell(0,i).getContents(); //修改后
+				System.out.println(day); //修改后，debug
+				System.out.println(sheet.getCell(0,i).getType()); //修改后，debug
 				String sql="delete OutStat where PoolID like '%"+poolIDTemp+"'";
-				sql+= " and Convert(varchar,t,120)  like '%"+sheetName+"%'";
+//				sql+= " and Convert(varchar,t,120)  like '%"+sheetName+"%'"; //修改前
+				sql+= " and Convert(varchar,t,120)  like '%"+day+"%'"; //修改后
 				System.out.println(sql);
 				// 直接覆盖
 				int deleteResult = outStatService.bulkUpadte(sql);
 				System.out.println("受影响结果："+deleteResult);
-				for(int i=2;i<sheet.getRows();i++){ //共11列数据,从第三行开始
-					if(null==sheet.getCell(0,i).getContents() || ""==sheet.getCell(0,i).getContents())
+				
+//				for(int i=2;i<sheet.getRows();i++){ //共11列数据,从第三行开始 //修改前
+					if(null==sheet.getCell(0,i).getContents() || "".equals(sheet.getCell(0,i).getContents()))// 字符串比较用.equals
 					{	
 						continue;
-					}
-					else{
+					} 
+					else{ 
 						OutStat dataTemp = new OutStat();
 						dataTemp.setID(0);
 //						try{
@@ -530,16 +538,27 @@ public class OutStatAction extends ActionSupport{
 //						}catch(Exception e){
 //							e.printStackTrace();
 //						}
-						dataTemp.setT(day);
-						dataTemp.setPoolID(sheet.getCell(0,i).getContents());						
-						dataTemp.setNTU(Double.parseDouble(sheet.getCell(1,i).getContents()));
-						dataTemp.setCl(Double.parseDouble(sheet.getCell(2,i).getContents()));
-						dataTemp.setFe(Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setAl(Double.parseDouble(sheet.getCell(4,i).getContents()));
+						//修改前
+//						dataTemp.setT(day);    
+//						dataTemp.setPoolID(sheet.getCell(0,i).getContents());						
+//						dataTemp.setNTU(Double.parseDouble(sheet.getCell(1,i).getContents()));
+//						dataTemp.setCl(Double.parseDouble(sheet.getCell(2,i).getContents()));
+//						dataTemp.setFe(Double.parseDouble(sheet.getCell(3,i).getContents()));
+//						dataTemp.setAl(Double.parseDouble(sheet.getCell(4,i).getContents()));
+						//修改后
+						dataTemp.setT(new SimpleDateFormat("yyyy-MM-dd").parse(sheet.getCell(0,i).getContents())); //将String转化成Date
+//						dataTemp.setPoolID(sheet.getCell(1,i).getContents()); //修改前
+						dataTemp.setPoolID("MTG_QingS_SC01"); //修改后
+						dataTemp.setNTU(Double.parseDouble(sheet.getCell(2,i).getContents()));
+						dataTemp.setCl(Double.parseDouble(sheet.getCell(3,i).getContents()));
+						dataTemp.setFe(Double.parseDouble(sheet.getCell(4,i).getContents()));
+						dataTemp.setAl(Double.parseDouble(sheet.getCell(5,i).getContents()));
 						operateSuccess=(outStatService.addOutStat(dataTemp)>0);	//添加到数据库
+						
 					}
 				} //for
-			}catch(Exception e){
+			} //try
+			catch(Exception e){
 				e.printStackTrace();
 				ServletActionContext.getServletContext().setAttribute("errorMsg", "文件上传错误！");
 				operateSuccess = false;
@@ -576,13 +595,18 @@ public class OutStatAction extends ActionSupport{
 			}
 			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
 			//得到当前天数
-			String sheetName = sheet.getName();
+//			String sheetName = sheet.getName(); //修改前
 			try{
-				Date day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
-				String poolIDTemp=sheet.getCell(0,2).getContents();
-				String sql="from OutStat where 1=1 ";
-				sql+= "and Convert(varchar,t,120) like '%"+sheetName+"%'";
-				sql+=" and PoolID like '%"+poolIDTemp+"'";
+				for(int i=2;i<sheet.getRows();i++){
+//				Date day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName)); //修改前
+				//String poolIDTemp=sheet.getCell(0,2).getContents(); //修改前
+				String day = sheet.getCell(0,i).getContents();
+				String poolIDTemp="MTG_QingS_SC01"; //修改后
+//				String sql="from OutStat where 1=1 "; //修改前
+				String sql="from OutStat where PoolID like '%"+poolIDTemp+"'"; //修改后
+//				sql+= "and Convert(varchar,t,120) like '%"+sheetName+"%'"; //修改前
+				sql+= "and Convert(varchar,t,120) like '%"+day+"%'"; //修改后 dd/mm/yy ---103 ,yyyy/mm/dd ---120
+//				sql+=" and PoolID like '%"+poolIDTemp+"'"; //修改前
 				List<OutStat> list = outStatService.findBySql(sql);
 				if(null == list||list.isEmpty()){
 					errMsg="";
@@ -592,6 +616,7 @@ public class OutStatAction extends ActionSupport{
 					errMsg = "文件冲突，已存在相关信息！";	
 					operateSuccess=false;
 				}
+				} //for 修改后
 			}catch(Exception e){
 				e.printStackTrace();
 				errMsg="文件格式不正确";

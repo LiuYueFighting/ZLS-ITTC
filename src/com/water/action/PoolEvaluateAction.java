@@ -52,7 +52,8 @@ public class PoolEvaluateAction extends ActionSupport{
 	private File   upload;
 	private String uploadFileName;
 	private String uploadContentType;
-
+	private String PoolID; //修改后
+	
 	public File getUpload() {
 		return upload;
 	}
@@ -642,37 +643,55 @@ public class PoolEvaluateAction extends ActionSupport{
 				}
 				DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 				Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-				String sheetName = sheet.getName();
-				Date day = sdf.parse(sheetName);
-				String sql="delete PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
+//				String sheetName = sheet.getName(); //修改前
+//				Date day = sdf.parse(sheetName); //修改前
+				try{ //修改后
+				for(int i=2;i<sheet.getRows();i++){ //修改后
+				String day = sheet.getCell(0,i).getContents(); //修改后
+				String poolIDExcel = sheet.getCell(1,i).getContents(); //修改后
+				String poolIDTemp = poolIDTransform(poolIDExcel); //修改后
+				System.out.println(poolIDTemp);
+//				String sql="delete PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'"; //修改前
 				// 直接覆盖当天信息
+				String sql="delete PoolEvaluate where Convert(varchar,t,120)  like '%"+day+"%'"; //修改后
+				sql += "and PoolID like '%" + poolIDTemp + "'"; //修改后
+				System.out.println(sql);
 				int deleteResult = poolEvaluateService.bulkUpadte(sql);
 				System.out.println("受影响的行数："+deleteResult);
-				for(int i=2;i<sheet.getRows();i++){ //共13列数据,从第3行开始
-					if(null==sheet.getCell(1,i).getContents() || ""==sheet.getCell(1,i).getContents())
+				
+				
+//				for(int i=2;i<sheet.getRows();i++){ //共13列数据,从第3行开始 //修改前
+					if(null==sheet.getCell(0,i).getContents() || "".equals(sheet.getCell(0,i).getContents()))
 					{	
 						continue;
 					}
 					else{
 						PoolEvaluate dataTemp = new PoolEvaluate();
 						dataTemp.setID(0);
-						dataTemp.setT(day);
-						dataTemp.setPoolID(sheet.getCell(0,i).getContents());
-						dataTemp.setPAC(Double.parseDouble(sheet.getCell(1,i).getContents()));
-						dataTemp.setFeCl3(Double.parseDouble(sheet.getCell(2,i).getContents()));
-						dataTemp.setOpenDegree(Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setRotationSpeed(Double.parseDouble(sheet.getCell(4,i).getContents()));
-						dataTemp.setSV(Double.parseDouble(sheet.getCell(5,i).getContents()));
-						dataTemp.setSmallMudFre(Double.parseDouble(sheet.getCell(6,i).getContents()));
-						dataTemp.setBigMudFre(Double.parseDouble(sheet.getCell(7,i).getContents()));
-						dataTemp.setNTU(Double.parseDouble(sheet.getCell(8,i).getContents()));
-						dataTemp.setAlgaeContent(Double.parseDouble(sheet.getCell(9,i).getContents()));
-						dataTemp.setOutNTU(Double.parseDouble(sheet.getCell(10,i).getContents()));
-						dataTemp.setCL(Double.parseDouble(sheet.getCell(11,i).getContents()));
-						dataTemp.setWaterTemp(Double.parseDouble(sheet.getCell(12,i).getContents()));
+//						dataTemp.setT(day); //修改前
+						dataTemp.setT(sdf.parse(day)); //修改后
+						dataTemp.setPoolID(poolIDTemp);
+						dataTemp.setPAC(Double.parseDouble(sheet.getCell(2,i).getContents()));
+						dataTemp.setFeCl3(Double.parseDouble(sheet.getCell(3,i).getContents()));
+						dataTemp.setOpenDegree(Double.parseDouble(sheet.getCell(4,i).getContents()));
+						dataTemp.setRotationSpeed(Double.parseDouble(sheet.getCell(5,i).getContents()));
+						dataTemp.setSV(Double.parseDouble(sheet.getCell(6,i).getContents()));
+						dataTemp.setSmallMudFre(Double.parseDouble(sheet.getCell(7,i).getContents()));
+						dataTemp.setBigMudFre(Double.parseDouble(sheet.getCell(8,i).getContents()));
+						dataTemp.setNTU(Double.parseDouble(sheet.getCell(9,i).getContents()));
+						dataTemp.setAlgaeContent(Double.parseDouble(sheet.getCell(10,i).getContents()));
+						dataTemp.setOutNTU(Double.parseDouble(sheet.getCell(11,i).getContents()));
+						dataTemp.setCL(Double.parseDouble(sheet.getCell(12,i).getContents()));
+						dataTemp.setWaterTemp(Double.parseDouble(sheet.getCell(13,i).getContents()));
 						operateSuccess=(poolEvaluateService.addPoolEvaluate(dataTemp)>0);	//添加到数据库
 					}
 				} //for
+				}//try 修改后
+				catch(Exception e){                             
+					e.printStackTrace();						
+					ServletActionContext.getServletContext().setAttribute("errorMsg", "文件上传错误！");
+					operateSuccess = false;
+				}
 				workBook.close(); //关闭
 			}//upload!=null
 			else{
@@ -705,10 +724,19 @@ public class PoolEvaluateAction extends ActionSupport{
 			}
 			DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Sheet sheet = workBook.getSheet(0); //只取第一个sheet的值
-			String sheetName = sheet.getName();
+//			String sheetName = sheet.getName(); //修改前
 			//得到当前天数
-			Date day = (Date) sdf.parse(sheetName);
-			String sql="from PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'";
+			for(int i=2;i<sheet.getRows();i++){
+//			Date day = (Date) sdf.parse(sheetName); //修改前
+			String day = sheet.getCell(0,i).getContents(); //修改后
+			String poolIDExcel = sheet.getCell(1,i).getContents(); //修改后
+			System.out.println(poolIDExcel);
+			System.out.println(sheet.getCell(1,i).getType());
+			String poolIDTemp = poolIDTransform(poolIDExcel); //修改后
+//			String sql="delete PoolEvaluate where Convert(varchar,t,120)  like '%"+sdf.format(day)+"%'"; //修改前
+			String sql="from PoolEvaluate where Convert(varchar,t,120)  like '%" + day + "%'"; //修改后
+			sql += "and PoolID like '%" + poolIDTemp + "'"; //修改后
+			System.out.println(sql); 
 			List<PoolEvaluate> list = poolEvaluateService.findBySql(sql);
 			if(null == list||list.isEmpty()){
 				errMsg="";
@@ -718,6 +746,7 @@ public class PoolEvaluateAction extends ActionSupport{
 				errMsg = "文件冲突，已存在相关信息！";	
 				operateSuccess=false;
 			}
+			} //for 修改后
 		}else{ //upload=''
 			errMsg = "请选择上传文件！";
 			operateSuccess=false;
@@ -726,4 +755,20 @@ public class PoolEvaluateAction extends ActionSupport{
 		ServletActionContext.getServletContext().setAttribute("errorMsg",errMsg);
 		return SUCCESS;
 	}
+
+
+//导入Excel时的PoolID转换
+public String poolIDTransform(String poolIDExcel) {
+	if ("1# 机加池".equals(poolIDExcel)){
+		PoolID = "MTG_JJC_SC01";
+	}else if("2# 机加池".equals(poolIDExcel)){
+		PoolID = "MTG_JJC_SC02";
+	}else if("3# 机加池".equals(poolIDExcel)){
+		PoolID = "MTG_JJC_SC03";
+	}else {
+		PoolID = "omg";
+	}
+	return PoolID;
+} //修改后
+
 }
