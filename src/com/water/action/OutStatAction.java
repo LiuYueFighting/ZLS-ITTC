@@ -415,7 +415,8 @@ public class OutStatAction extends ActionSupport{
 						sheet.addCell(new Label(1,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
 						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getNTU()),formatBody));
 						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getCl()),formatBody));
-						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getFe()),formatBody));
+						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getFe()),formatBody)); //修改前
+//						sheet.addCell(new Label(4,j,list.get(i).getFe(),formatBody)); //修改后
 						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getAl()),formatBody));
 						j=j+1;
 //					}
@@ -551,7 +552,8 @@ public class OutStatAction extends ActionSupport{
 						dataTemp.setPoolID("MTG_QingS_SC01"); //修改后
 						dataTemp.setNTU(Double.parseDouble(sheet.getCell(2,i).getContents()));
 						dataTemp.setCl(Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setFe(Double.parseDouble(sheet.getCell(4,i).getContents()));
+						dataTemp.setFe(Double.parseDouble(sheet.getCell(4,i).getContents())); //修改前
+//						dataTemp.setFe(sheet.getCell(4,i).getContents()); // 修改后
 						dataTemp.setAl(Double.parseDouble(sheet.getCell(5,i).getContents()));
 						operateSuccess=(outStatService.addOutStat(dataTemp)>0);	//添加到数据库
 						

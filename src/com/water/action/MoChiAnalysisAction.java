@@ -543,7 +543,8 @@ public class MoChiAnalysisAction extends ActionSupport{
 				operateSuccess = false;
 			}
 			String poolIDTemp=sheet.getCell(1,2).getContents();
-			String sql="delete from MoChiAnalysis where PoolID like '%"+poolIDTemp+"'";
+			String poolID = poolIDTransform(poolIDTemp); //修改后
+			String sql="delete from MoChiAnalysis where PoolID like '%"+poolID+"'"; //修改后
 			sql+= " and Convert(varchar,t,120)  like '%"+sheetName+"%'";
 			System.out.println("sql:"+sql);
 			// 直接覆盖
@@ -562,8 +563,9 @@ public class MoChiAnalysisAction extends ActionSupport{
 						int hour = Integer.parseInt(sheet.getCell(0,i).getContents());
 						Date datetime = new Date();
 						datetime.setTime(day.getTime()+hour*3600*1000);
-						dataTemp.setT(datetime);					
-						dataTemp.setPoolID(sheet.getCell(1,i).getContents());
+						dataTemp.setT(datetime);
+//						dataTemp.setPoolID(sheet.getCell(1,i).getContents()); //修改前
+						dataTemp.setPoolID(poolIDTransform(sheet.getCell(1,i).getContents())); //修改后
 						dataTemp.setInPress(Tools.isNumeric(sheet.getCell(2,i).getContents())?null:Double.parseDouble(sheet.getCell(2,i).getContents()));
 						dataTemp.setOutPress(Tools.isNumeric(sheet.getCell(3,i).getContents())?null:Double.parseDouble(sheet.getCell(3,i).getContents()));
 						dataTemp.setDiffPress(Tools.isNumeric(sheet.getCell(4,i).getContents())?null:Double.parseDouble(sheet.getCell(4,i).getContents()));
@@ -614,9 +616,12 @@ public class MoChiAnalysisAction extends ActionSupport{
 
 				day= (new SimpleDateFormat("yyyy-MM-dd").parse(sheetName));
 				String poolIDTemp=sheet.getCell(1,2).getContents();
+				String poolID = poolIDTransform(poolIDTemp); // 修改后
+				System.out.println(poolID);
 				String sql="from MoChiAnalysis where 1=1 ";
 				sql+= "and Convert(varchar,t,120) like '%"+sheetName+"%'";
-				sql+=" and PoolID like '%"+poolIDTemp+"'";
+//				sql+=" and PoolID like '%"+poolIDTemp+"'"; //修改前
+				sql+=" and PoolID like '%"+poolID+"'"; //修改后
 				List<MoChiAnalysis> list = moChiAnalysisService.findBySql(sql);
 				System.out.println("sql:"+sql+",result:"+list.size());
 				if(null == list||list.isEmpty()){
@@ -641,4 +646,25 @@ public class MoChiAnalysisAction extends ActionSupport{
 		ServletActionContext.getServletContext().setAttribute("errorMsg",errMsg);
 		return SUCCESS;
 	}
+	
+	// 修改后
+	private String poolIDTransform (String poolIDExcel){
+		String poolID;
+		if ("1# 膜池".equals(poolIDExcel)){
+			poolID = "MTG_MoChi_SC01";
+		}else if("2# 膜池".equals(poolIDExcel)){
+			poolID = "MTG_MoChi_SC02";
+		}else if("3# 膜池".equals(poolIDExcel)){
+			poolID = "MTG_MoChi_SC03";
+		}else if("4# 膜池".equals(poolIDExcel)){
+			poolID = "MTG_MoChi_SC04";
+		}else if("5# 膜池".equals(poolIDExcel)){
+			poolID = "MTG_MoChi_SC05";
+		}else if("6# 膜池".equals(poolIDExcel)){
+			poolID = "MTG_MoChi_SC06";
+		}else {
+			poolID = "omg";
+		}
+		return poolID;
+		} //poolIDTransform	
 }

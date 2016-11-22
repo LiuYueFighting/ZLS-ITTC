@@ -12,7 +12,8 @@ public class OutStat implements Comparable<OutStat> {
 	private String PoolID; 	//水池编号
 	private double NTU;		//出水浊度
 	private double Cl;		//余氯
-	private double Fe;		//铁
+	private double Fe;		//铁 修改前
+//	private String Fe; //修改后
 	private double Al;		//铝
 	
 	public int compareTo(OutStat other) {
@@ -56,12 +57,20 @@ public class OutStat implements Comparable<OutStat> {
 	public void setCl(double cl) {
 		this.Cl = cl;
 	}
+// 修改前
 	public double getFe() {
 		return Fe;
 	}
 	public void setFe(double fe) {
-		this.Fe = fe;
+		this.Fe =fe;
 	}
+//修改后
+//	public String getFe() {
+//		return Fe;
+//	}
+//	public void setFe(String fe) {
+//		this.Fe =fe;
+//	}
 	public double getAl() {
 		return Al;
 	}
