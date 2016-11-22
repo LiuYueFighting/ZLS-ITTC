@@ -1651,7 +1651,7 @@ var mockdata = {
         "schemaName" : "V型滤池进出水闸门维修<br>方案",
         "status" : "V型滤池进出水闸门维修<span class='caret'></span>",
         "valveGroup" : [67, 68, 52],
-        "schemaDownload" : "download/V型滤池进出水闸门维修方案.doc",
+        "schemaDownload" : "download/VL_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;关闭阀门68#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止V型滤池进水"},
         {"content": "2&nbsp;&nbsp;关闭阀门67#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止V型滤池进水"},
@@ -1664,7 +1664,7 @@ var mockdata = {
         "schemaName" : "V型滤池进出水闸门维修<br>方案",
         "status" : "V型滤池进出水闸门恢复<span class='caret'></span>",
         "valveGroup" : [67, 68, 52],
-        "schemaDownload" : "download/V型滤池进出水闸门维修方案.doc",
+        "schemaDownload" : "download/VL_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;开启阀门68#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复V型滤池进水"},
         {"content": "2&nbsp;&nbsp;开启阀门67#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复V型滤池进水"},
@@ -1677,7 +1677,7 @@ var mockdata = {
         "schemaName" : "老炭池进出水闸门维修<br>方案",
         "status" : "老炭池闸门维修<span class='caret'></span>",
         "valveGroup" : [56, 57, 44],
-        "schemaDownload" : "download/老炭池进出水闸门更换方案.doc",
+        "schemaDownload" : "download/1_TC_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;阀门56#维持关闭状态，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;"},
         {"content": "2&nbsp;&nbsp;关闭阀门57#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止老炭池进水"},
@@ -1690,7 +1690,7 @@ var mockdata = {
         "schemaName" : "老炭池进出水闸门维修<br>方案",
         "status" : "老炭池闸门恢复<span class='caret'></span>",
         "valveGroup" : [56, 57, 44],
-        "schemaDownload" : "download/老炭池进出水闸门更换方案.doc",
+        "schemaDownload" : "download/1_TC_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;阀门56#维持关闭状态，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;"},
         {"content": "2&nbsp;&nbsp;开启阀门44#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复老炭池出水"},
@@ -1704,7 +1704,7 @@ var mockdata = {
         "schemaName" : "新炭池进出水闸门维修<br>方案",
         "status" : "新炭池闸门维修<span class='caret'></span>",
         "valveGroup" : [59, 55],
-        "schemaDownload" : "download/新炭池进出水闸门更换方案.doc",
+        "schemaDownload" : "download/2_TC_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;关闭阀门59#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止新炭池进水"},
         {"content": "2&nbsp;&nbsp;关闭阀门55#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止新炭池出水"}
@@ -1716,7 +1716,7 @@ var mockdata = {
         "schemaName" : "新炭池进出水闸门维修<br>方案",
         "status" : "新炭池闸门恢复<span class='caret'></span>",
         "valveGroup" : [59, 55],
-        "schemaDownload" : "download/新炭池进出水闸门更换方案.doc",
+        "schemaDownload" : "download/2_TC_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;开启阀门59#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复新炭池进水"},
         {"content": "2&nbsp;&nbsp;开启阀门55#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;恢复新炭池出水"}
@@ -1728,7 +1728,7 @@ var mockdata = {
         "schemaName" : "1#机加池停池检修<br>方案",
         "status" : "1#机加池维修<span class='caret'></span>",
         "valveGroup" : [62],
-        "schemaDownload" : "download/1#机加池停池检修方案.doc",
+        "schemaDownload" : "download/1_JJC_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;关闭阀门62#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水"}
     ]
@@ -1739,7 +1739,7 @@ var mockdata = {
         "schemaName" : "1#机加池停池检修<br>方案",
         "status" : "1#机加池恢复<span class='caret'></span>",
         "valveGroup" : [62],
-        "schemaDownload" : "download/1#机加池停池检修方案.doc",
+        "schemaDownload" : "download/1_JJC_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;开启阀门62#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水"}
     ]
@@ -1750,7 +1750,7 @@ var mockdata = {
         "schemaName" : "2#机加池停池检修<br>方案",
         "status" : "2#机加池维修<span class='caret'></span>",
         "valveGroup" : [62],
-        "schemaDownload" : "download/2#机加池停池检修方案.doc",
+        "schemaDownload" : "download/2_JJC_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;关闭阀门62#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水"}
     ]
@@ -1761,7 +1761,7 @@ var mockdata = {
         "schemaName" : "2#机加池停池检修<br>方案",
         "status" : "2#机加池恢复<span class='caret'></span>",
         "valveGroup" : [62],
-        "schemaDownload" : "download/2#机加池停池检修方案.doc",
+        "schemaDownload" : "download/2_JJC_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;开启阀门62#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水"}
     ]
@@ -1772,7 +1772,7 @@ var mockdata = {
         "schemaName" : "3#机加池停池检修<br>方案",
         "status" : "3#机加池维修<span class='caret'></span>",
         "valveGroup" : [65, 66],
-        "schemaDownload" : "download/3#机加池停池检修方案.doc",
+        "schemaDownload" : "download/3_JJC_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;关闭阀门65#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水"},
         {"content": "2&nbsp;&nbsp;关闭阀门66#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水"}
@@ -1784,7 +1784,7 @@ var mockdata = {
         "schemaName" : "3#机加池停池检修<br>方案",
         "status" : "3#机加池恢复<span class='caret'></span>",
         "valveGroup" : [65, 66],
-        "schemaDownload" : "download/3#机加池停池检修方案.doc",
+        "schemaDownload" : "download/3_JJC_FIX.doc",
         "schemaContext" : [
         {"content": "1&nbsp;&nbsp;开启阀门65#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水"},
         {"content": "2&nbsp;&nbsp;开启阀门66#，", "result": "&nbsp;&nbsp;&nbsp;&nbsp;停止西侧虹吸进水"}
