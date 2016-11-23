@@ -276,12 +276,54 @@ function listMoChiAnalysis(data) {
 		            },
 		            /*{field : 'inPress', title : '进膜压力', align :'center', sortable : true, width:80},
 		            {field : 'outPress', title : '出水压力', align : 'center', sortable : true,width:70},*/
-		            {field : 'diffPress', title : '跨膜压差<br>Mpa', align :'center', sortable : true,width:105},
-		            {field : 'inFlow', title : '进水流量<br>m<sup>3', align : 'center', sortable : true,width:105},
-		            {field : 'inNTU', title : '进膜浊度 <br>NTU', align :'center', sortable : true,width:105},
-		            {field : 'outNTU', title : '出膜浊度<br>NTU', align : 'center', sortable : true,width:105},
-		            {field : 'inAlga', title : '进膜藻类 <br>10000/L', align :'center', sortable : true,width:105},
-		            {field : 'outAlga', title : '出膜藻类 <br>10000/L', align : 'center', sortable : true,width:105},
+		            {field : 'diffPress', title : '跨膜压差<br>Mpa', align :'center', sortable : true,width:105,
+		            	formatter : function(value) {  //只显示两位小数
+		            		if(!value) {		            			
+		            			return;
+		            		}
+	            			  return value.toFixed(2);
+		            	}
+		            },
+		            {field : 'inFlow', title : '进水流量<br>m<sup>3', align : 'center', sortable : true,width:105,
+		            	formatter : function(value) {  //只显示两位小数
+		            		if(!value) {		            			
+		            			return;
+		            		}
+	            			  return value.toFixed(2);
+		            	}	
+		            },
+		            {field : 'inNTU', title : '进膜浊度 <br>NTU', align :'center', sortable : true,width:105,
+		            	formatter : function(value) {  //只显示两位小数
+		            		if(!value) {		            			
+		            			return;
+		            		}
+	            			  return value.toFixed(2);
+		            	}	
+		            },
+		            {field : 'outNTU', title : '出膜浊度<br>NTU', align : 'center', sortable : true,width:105,
+		            	formatter : function(value) {  //只显示两位小数
+		            		if(!value) {		            			
+		            			return;
+		            		}
+	            			  return value.toFixed(2);
+		            	}
+		            },
+		            {field : 'inAlga', title : '进膜藻类 <br>10000/L', align :'center', sortable : true,width:105,
+		            	formatter : function(value) {  //只显示两位小数
+		            		if(!value) {		            			
+		            			return;
+		            		}
+	            			  return value;
+		            	}	
+		            },
+		            {field : 'outAlga', title : '出膜藻类 <br>10000/L', align : 'center', sortable : true,width:105,
+		            	formatter : function(value) {  //只显示两位小数
+		            		if(!value) {		            			
+		            			return;
+		            		}
+	            			  return value;
+		            	}	
+		            },
 		            ]],
 		onLoadError: function () {
 			 $.messager.alert("提示", "服务器忙，请稍后再试！", "warning");

@@ -555,11 +555,11 @@ public class OutStatAction extends ActionSupport{
 						dataTemp.setT(new SimpleDateFormat("yyyy-MM-dd").parse(sheet.getCell(0,i).getContents())); //将String转化成Date
 //						dataTemp.setPoolID(sheet.getCell(1,i).getContents()); //修改前
 						dataTemp.setPoolID("MTG_QingS_SC01"); //修改后
-						dataTemp.setNTU(Tools.isNumeric(sheet.getCell(2,i).getContents())? null:Double.parseDouble(sheet.getCell(2,i).getContents()));
-						dataTemp.setCl(Tools.isNumeric(sheet.getCell(3,i).getContents())? null:Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setFe(Tools.isNumeric(sheet.getCell(4,i).getContents())? null:Double.parseDouble(sheet.getCell(4,i).getContents())); //修改前
+						dataTemp.setNTU(Tools.isNumeric(sheet.getCell(2,i).getContents())? Double.parseDouble(sheet.getCell(2,i).getContents()):null);
+						dataTemp.setCl(Tools.isNumeric(sheet.getCell(3,i).getContents())? Double.parseDouble(sheet.getCell(3,i).getContents()):null);
+						dataTemp.setFe(Tools.isNumeric(sheet.getCell(4,i).getContents())? Double.parseDouble(sheet.getCell(4,i).getContents()):null); //修改前
 //						dataTemp.setFe(sheet.getCell(4,i).getContents()); // 修改后
-						dataTemp.setAl(Tools.isNumeric(sheet.getCell(5,i).getContents())?null:Double.parseDouble(sheet.getCell(5,i).getContents()));
+						dataTemp.setAl(Tools.isNumeric(sheet.getCell(5,i).getContents())? Double.parseDouble(sheet.getCell(5,i).getContents()):null);
 						operateSuccess=(outStatService.addOutStat(dataTemp)>0);	//添加到数据库
 						
 					}

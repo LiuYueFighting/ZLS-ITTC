@@ -287,6 +287,12 @@ function listOutStat(data) {
 		            		}
 		            },
 		            {field : 'NTU', title : '出水浊度NTU', align :'center', sortable : true, width:100,
+		            	formatter : function(value) {  //只显示两位小数
+		            		if(!value) {		            			
+		            			return;
+		            		}
+	            			  return value.toFixed(2);
+		            	},
 		            	styler: function(value) {
 		            		if(value> 0.25 && value < 0.3){
 		            			return 'background-color:#FFFF00;font-weight:bolder;border:2px solid #FFFF00';
@@ -297,6 +303,9 @@ function listOutStat(data) {
 		            },
 		            {field : 'cl', title : '余氯mg/L', align : 'center', sortable : true,width:100,
 		            	formatter : function(value) {  //只显示两位小数
+		            		if(!value) {		            			
+		            			return;
+		            		}
 	            			  return value.toFixed(2);
 		            	},
 		            	styler: function(value) {
@@ -307,6 +316,9 @@ function listOutStat(data) {
 		            },
 		            {field : 'fe', title : '铁含量mg/L', align :'center', sortable : true,width:100,
 		            	formatter : function(value) {  //只显示两位小数
+		            		if(!value) {		            			
+		            			return;
+		            		}
 	            			  return value.toFixed(2);
 		            	},
 		            	styler: function(value) {

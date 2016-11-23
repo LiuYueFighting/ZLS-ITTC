@@ -567,14 +567,14 @@ public class MoChiAnalysisAction extends ActionSupport{
 						dataTemp.setT(datetime);
 //						dataTemp.setPoolID(sheet.getCell(1,i).getContents()); //修改前
 						dataTemp.setPoolID(poolIDTransform(sheet.getCell(1,i).getContents())); //修改后
-						dataTemp.setInPress(Tools.isNumeric(sheet.getCell(2,i).getContents())?null:Double.parseDouble(sheet.getCell(2,i).getContents()));
-						dataTemp.setOutPress(Tools.isNumeric(sheet.getCell(3,i).getContents())?null:Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setDiffPress(Tools.isNumeric(sheet.getCell(4,i).getContents())?null:Double.parseDouble(sheet.getCell(4,i).getContents()));
-						dataTemp.setInFlow(Tools.isNumeric(sheet.getCell(5,i).getContents())?null:Double.parseDouble(sheet.getCell(5,i).getContents()));
-						dataTemp.setInNTU(Tools.isNumeric(sheet.getCell(6,i).getContents())?null:Double.parseDouble(sheet.getCell(6,i).getContents()));
-						dataTemp.setOutNTU(Tools.isNumeric(sheet.getCell(7,i).getContents())?null:Double.parseDouble(sheet.getCell(7,i).getContents()));
-						dataTemp.setInAlga(Tools.isNumeric(sheet.getCell(8,i).getContents())?null:Double.parseDouble(sheet.getCell(8,i).getContents()));
-						dataTemp.setOutAlga(Tools.isNumeric(sheet.getCell(9,i).getContents())?null:Double.parseDouble(sheet.getCell(9,i).getContents()));
+						dataTemp.setInPress(Tools.isNumeric(sheet.getCell(2,i).getContents())?Double.parseDouble(sheet.getCell(2,i).getContents()):null);
+						dataTemp.setOutPress(Tools.isNumeric(sheet.getCell(3,i).getContents())?Double.parseDouble(sheet.getCell(3,i).getContents()):null);
+						dataTemp.setDiffPress(Tools.isNumeric(sheet.getCell(4,i).getContents())?Double.parseDouble(sheet.getCell(4,i).getContents()):null);
+						dataTemp.setInFlow(Tools.isNumeric(sheet.getCell(5,i).getContents())?Double.parseDouble(sheet.getCell(5,i).getContents()):null);
+						dataTemp.setInNTU(Tools.isNumeric(sheet.getCell(6,i).getContents())?Double.parseDouble(sheet.getCell(6,i).getContents()):null);
+						dataTemp.setOutNTU(Tools.isNumeric(sheet.getCell(7,i).getContents())?Double.parseDouble(sheet.getCell(7,i).getContents()):null);
+						dataTemp.setInAlga(Tools.isNumeric(sheet.getCell(8,i).getContents())?Double.parseDouble(sheet.getCell(8,i).getContents()):null);
+						dataTemp.setOutAlga(Tools.isNumeric(sheet.getCell(9,i).getContents())?Double.parseDouble(sheet.getCell(9,i).getContents()):null);
 						System.out.println(dataTemp.getID());
 						System.out.println("import2DB-----dataTemp:"+dataTemp);
 						operateSuccess=(moChiAnalysisService.addMoChiAnalysis(dataTemp)>0);	//添加到数据库
