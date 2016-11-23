@@ -56,9 +56,9 @@ public class OutStatAction extends ActionSupport{
 	//导入的文件路径和文件名,文件类型
 
 
-	private File   upload;
-	private String uploadFileName;
-	private String uploadContentType;
+	private static File   upload;
+	private static String uploadFileName;
+	private static String uploadContentType;
 
 	public File getUpload() {
 		return upload;
