@@ -54,9 +54,9 @@ public class MoChiAnalysisAction extends ActionSupport{
 	//导入的文件路径和文件名,文件类型
 
 
-	private File   upload;
-	private String uploadFileName;
-	private String uploadContentType;
+	private static File   upload;
+	private static String uploadFileName;
+	private static String uploadContentType;
 
 	public File getUpload() {
 		return upload;
@@ -515,6 +515,7 @@ public class MoChiAnalysisAction extends ActionSupport{
 			}
 			//判断文件的大小
 			if (1000000 < upload.length()) {
+			
 				ServletActionContext.getServletContext().setAttribute("errorMsg", uploadFileName+ "文件过大");
 				operateSuccess=false;
 			}

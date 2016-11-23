@@ -413,11 +413,16 @@ public class OutStatAction extends ActionSupport{
 //					if (day.equals(tempT)){		修改			
 						sheet.addCell(new Label(0,j,sdfDay.format(list.get(i).getT()),formatBody));   //修改
 						sheet.addCell(new Label(1,j,Tools.transPoolID(list.get(i).getPoolID()),formatBody));
-						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getNTU()),formatBody));
-						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getCl()),formatBody));
-						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getFe()),formatBody)); //修改前
+//						sheet.addCell(new Label(2,j,Double.toString(list.get(i).getNTU()),formatBody));
+//						sheet.addCell(new Label(3,j,Double.toString(list.get(i).getCl()),formatBody));
+//						sheet.addCell(new Label(4,j,Double.toString(list.get(i).getFe()),formatBody)); //修改前
+////						sheet.addCell(new Label(4,j,list.get(i).getFe(),formatBody)); //修改后
+//						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getAl()),formatBody));
+						sheet.addCell(new Label(2,j,list.get(i).getNTU() == null? "" : Double.toString(list.get(i).getNTU()),formatBody));
+						sheet.addCell(new Label(3,j,list.get(i).getCl() == null? "" : Double.toString(list.get(i).getCl()),formatBody));
+						sheet.addCell(new Label(4,j,list.get(i).getFe() == null? "" : Double.toString(list.get(i).getFe()),formatBody)); //修改前
 //						sheet.addCell(new Label(4,j,list.get(i).getFe(),formatBody)); //修改后
-						sheet.addCell(new Label(5,j,Double.toString(list.get(i).getAl()),formatBody));
+						sheet.addCell(new Label(5,j,list.get(i).getAl() == null? "" : Double.toString(list.get(i).getAl()),formatBody));
 						j=j+1;
 //					}
 //						else{ //新建个sheet                     //修改
@@ -550,11 +555,11 @@ public class OutStatAction extends ActionSupport{
 						dataTemp.setT(new SimpleDateFormat("yyyy-MM-dd").parse(sheet.getCell(0,i).getContents())); //将String转化成Date
 //						dataTemp.setPoolID(sheet.getCell(1,i).getContents()); //修改前
 						dataTemp.setPoolID("MTG_QingS_SC01"); //修改后
-						dataTemp.setNTU(Double.parseDouble(sheet.getCell(2,i).getContents()));
-						dataTemp.setCl(Double.parseDouble(sheet.getCell(3,i).getContents()));
-						dataTemp.setFe(Double.parseDouble(sheet.getCell(4,i).getContents())); //修改前
+						dataTemp.setNTU(Tools.isNumeric(sheet.getCell(2,i).getContents())? null:Double.parseDouble(sheet.getCell(2,i).getContents()));
+						dataTemp.setCl(Tools.isNumeric(sheet.getCell(3,i).getContents())? null:Double.parseDouble(sheet.getCell(3,i).getContents()));
+						dataTemp.setFe(Tools.isNumeric(sheet.getCell(4,i).getContents())? null:Double.parseDouble(sheet.getCell(4,i).getContents())); //修改前
 //						dataTemp.setFe(sheet.getCell(4,i).getContents()); // 修改后
-						dataTemp.setAl(Double.parseDouble(sheet.getCell(5,i).getContents()));
+						dataTemp.setAl(Tools.isNumeric(sheet.getCell(5,i).getContents())?null:Double.parseDouble(sheet.getCell(5,i).getContents()));
 						operateSuccess=(outStatService.addOutStat(dataTemp)>0);	//添加到数据库
 						
 					}

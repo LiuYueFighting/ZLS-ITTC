@@ -10,11 +10,11 @@ public class OutStat implements Comparable<OutStat> {
 	private long ID;		//表的ID
 	private Date t;			//时间
 	private String PoolID; 	//水池编号
-	private double NTU;		//出水浊度
-	private double Cl;		//余氯
-	private double Fe;		//铁 修改前
+	private Double NTU;		//出水浊度
+	private Double Cl;		//余氯
+	private Double Fe;		//铁 修改前
 //	private String Fe; //修改后
-	private double Al;		//铝
+	private Double Al;		//铝
 	
 	public int compareTo(OutStat other) {
 		if(this.t == null || other.t == null) {
@@ -45,23 +45,23 @@ public class OutStat implements Comparable<OutStat> {
 	public void setPoolID(String poolID) {
 		this.PoolID = poolID;
 	}
-	public double getNTU() {
+	public Double getNTU() {
 		return NTU;
 	}
-	public void setNTU(double nTU) {
+	public void setNTU(Double nTU) {
 		this.NTU = nTU;
 	}
-	public double getCl() {
+	public Double getCl() {
 		return Cl;
 	}
-	public void setCl(double cl) {
+	public void setCl(Double cl) {
 		this.Cl = cl;
 	}
 // 修改前
-	public double getFe() {
+	public Double getFe() {
 		return Fe;
 	}
-	public void setFe(double fe) {
+	public void setFe(Double fe) {
 		this.Fe =fe;
 	}
 //修改后
@@ -71,10 +71,10 @@ public class OutStat implements Comparable<OutStat> {
 //	public void setFe(String fe) {
 //		this.Fe =fe;
 //	}
-	public double getAl() {
+	public Double getAl() {
 		return Al;
 	}
-	public void setAl(double al) {
+	public void setAl(Double al) {
 		this.Al = al;
 	}
 	

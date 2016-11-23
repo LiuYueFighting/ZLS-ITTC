@@ -320,7 +320,11 @@ function listOutStat(data) {
 		            },
 		            {field : 'al', title : '铝含量mg/L', align : 'center', sortable : true,width:100,
 		            	formatter : function(value) {  //只显示两位小数
-	            			  return value.toFixed(3);
+		            		if(!value) {		            			
+		            			return;
+		            		}
+		            		return value.toFixed(3);
+		            		
 		            	},
 		            	styler: function(value) {
 		            		if(value> 0.15 && value < 0.2){
@@ -1460,6 +1464,9 @@ function prehImage(){
 				    },
 				    enableMouseTracking: true,
 				}, 
+				series: {
+					connectNulls: true,
+				}
 			},
 				        //指定数据列
 				        series: []
